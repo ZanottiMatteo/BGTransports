@@ -83,6 +83,10 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lg2asJ3_Ee-xo4pCa1e-lw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lg3BwJ3_Ee-xo4pCa1e-lw" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Rp4EcKEZEe-vSYkfm02-4A" name="mezzi" type="_bRPZkKEUEe-vSYkfm02-4A" association="_Rp2PQKEZEe-vSYkfm02-4A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rp4EcaEZEe-vSYkfm02-4A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rp4EcqEZEe-vSYkfm02-4A" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_uejSUJ37Ee-xo4pCa1e-lw" name="Contatti">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_KHUTMJ3-Ee-xo4pCa1e-lw" name="Telefono">
@@ -108,6 +112,10 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_UTzf4p3_Ee-xo4pCa1e-lw" name="utenteregistrato" type="_TXsZwJ37Ee-xo4pCa1e-lw" association="_UTyRwJ3_Ee-xo4pCa1e-lw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UT0uAJ3_Ee-xo4pCa1e-lw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UT0uAZ3_Ee-xo4pCa1e-lw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_185KkqEZEe-vSYkfm02-4A" name="autista" type="_oh3v4KEZEe-vSYkfm02-4A" association="_1838cKEZEe-vSYkfm02-4A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_185Kk6EZEe-vSYkfm02-4A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_185xoKEZEe-vSYkfm02-4A" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iTdHEJ3-Ee-xo4pCa1e-lw" name="Indirizzo">
@@ -138,6 +146,10 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gcAn0J3_Ee-xo4pCa1e-lw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gcAn0Z3_Ee-xo4pCa1e-lw" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3akCcKEZEe-vSYkfm02-4A" name="autista" type="_oh3v4KEZEe-vSYkfm02-4A" association="_3ai0UKEZEe-vSYkfm02-4A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3akCcaEZEe-vSYkfm02-4A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3akCcqEZEe-vSYkfm02-4A" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Dsa24J3_Ee-xo4pCa1e-lw" name="Sede">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Iw9HwJ3_Ee-xo4pCa1e-lw" name="Tipo">
@@ -146,6 +158,87 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_dIclUJ3_Ee-xo4pCa1e-lw" name="azienda" type="_r1AdMJ37Ee-xo4pCa1e-lw" association="_dIbXMJ3_Ee-xo4pCa1e-lw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dIfooJ3_Ee-xo4pCa1e-lw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dIir8J3_Ee-xo4pCa1e-lw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bRPZkKEUEe-vSYkfm02-4A" name="Mezzi">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Jek-UKEWEe-vSYkfm02-4A" name="NumeroPosti">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6BtdIKEUEe-vSYkfm02-4A" name="Stato">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_25l1oKEUEe-vSYkfm02-4A" name="ID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HITOAqEXEe-vSYkfm02-4A" name="Autista">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_NXBvMqEZEe-vSYkfm02-4A" name="viaggio" type="_pDXlUKEXEe-vSYkfm02-4A" association="_NXBIIKEZEe-vSYkfm02-4A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NXBvM6EZEe-vSYkfm02-4A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NXBvNKEZEe-vSYkfm02-4A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0moiQaEZEe-vSYkfm02-4A" name="autista" type="_oh3v4KEZEe-vSYkfm02-4A" association="_0mn7MKEZEe-vSYkfm02-4A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0moiQqEZEe-vSYkfm02-4A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0moiQ6EZEe-vSYkfm02-4A" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iqpQEKEUEe-vSYkfm02-4A" name="Pullman">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dt13gKEXEe-vSYkfm02-4A" general="_bRPZkKEUEe-vSYkfm02-4A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ioOjUKEWEe-vSYkfm02-4A" name="Targa">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zFqmIKEWEe-vSYkfm02-4A" name="Treno">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eam24KEXEe-vSYkfm02-4A" general="_bRPZkKEUEe-vSYkfm02-4A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zFqmIaEWEe-vSYkfm02-4A" name="Vagoni">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HITOAKEXEe-vSYkfm02-4A" name="Tram">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fC93YKEXEe-vSYkfm02-4A" general="_bRPZkKEUEe-vSYkfm02-4A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HITOAaEXEe-vSYkfm02-4A" name="Vagoni">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Rt3egKEXEe-vSYkfm02-4A" name="Funicolare">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fwJGcKEXEe-vSYkfm02-4A" general="_bRPZkKEUEe-vSYkfm02-4A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pDXlUKEXEe-vSYkfm02-4A" name="Viaggio">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5WWroKEXEe-vSYkfm02-4A" name="StazionePartenza">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8hvCgKEXEe-vSYkfm02-4A" name="StazioneArrivo">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AJt10KEYEe-vSYkfm02-4A" name="OrarioPartenza">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_C4izkKEYEe-vSYkfm02-4A" name="OrarioArrivo"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MIWVkqEZEe-vSYkfm02-4A" name="fermata" type="_1lNf0KEYEe-vSYkfm02-4A" association="_MIVugKEZEe-vSYkfm02-4A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MIWVk6EZEe-vSYkfm02-4A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MIW8oKEZEe-vSYkfm02-4A" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1lNf0KEYEe-vSYkfm02-4A" name="Fermata">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6SZnsKEYEe-vSYkfm02-4A" name="Nome">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8lxYgKEYEe-vSYkfm02-4A" name="Orario">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ErVKYKEZEe-vSYkfm02-4A" name="Direzione">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oh3v4KEZEe-vSYkfm02-4A" name="Autista">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tub7YKEZEe-vSYkfm02-4A" name="Nome">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tudwkKEZEe-vSYkfm02-4A" name="DataDiNascita">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tueXoKEZEe-vSYkfm02-4A" name="Cognome">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
   </packagedElement>
@@ -202,5 +295,41 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lg1zoJ3_Ee-xo4pCa1e-lw" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_lg3o0J3_Ee-xo4pCa1e-lw" name="azienda" type="_r1AdMJ37Ee-xo4pCa1e-lw" association="_lg0lgJ3_Ee-xo4pCa1e-lw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MIVugKEZEe-vSYkfm02-4A" memberEnd="_MIWVkqEZEe-vSYkfm02-4A _MIW8oaEZEe-vSYkfm02-4A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MIWVkKEZEe-vSYkfm02-4A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MIWVkaEZEe-vSYkfm02-4A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MIW8oaEZEe-vSYkfm02-4A" name="viaggio" type="_pDXlUKEXEe-vSYkfm02-4A" association="_MIVugKEZEe-vSYkfm02-4A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NXBIIKEZEe-vSYkfm02-4A" memberEnd="_NXBvMqEZEe-vSYkfm02-4A _NXBvNaEZEe-vSYkfm02-4A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NXBvMKEZEe-vSYkfm02-4A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NXBvMaEZEe-vSYkfm02-4A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_NXBvNaEZEe-vSYkfm02-4A" name="mezzi" type="_bRPZkKEUEe-vSYkfm02-4A" association="_NXBIIKEZEe-vSYkfm02-4A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Rp2PQKEZEe-vSYkfm02-4A" memberEnd="_Rp4EcKEZEe-vSYkfm02-4A _Rp4Ec6EZEe-vSYkfm02-4A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Rp3dYKEZEe-vSYkfm02-4A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rp3dYaEZEe-vSYkfm02-4A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Rp4Ec6EZEe-vSYkfm02-4A" name="azienda" type="_r1AdMJ37Ee-xo4pCa1e-lw" association="_Rp2PQKEZEe-vSYkfm02-4A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0mn7MKEZEe-vSYkfm02-4A" memberEnd="_0moiQaEZEe-vSYkfm02-4A _0moiRKEZEe-vSYkfm02-4A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0mn7MaEZEe-vSYkfm02-4A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0moiQKEZEe-vSYkfm02-4A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0moiRKEZEe-vSYkfm02-4A" name="mezzi" type="_bRPZkKEUEe-vSYkfm02-4A" association="_0mn7MKEZEe-vSYkfm02-4A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1838cKEZEe-vSYkfm02-4A" memberEnd="_185KkqEZEe-vSYkfm02-4A _185xoaEZEe-vSYkfm02-4A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_185KkKEZEe-vSYkfm02-4A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_185KkaEZEe-vSYkfm02-4A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_185xoaEZEe-vSYkfm02-4A" name="contatti" type="_uejSUJ37Ee-xo4pCa1e-lw" association="_1838cKEZEe-vSYkfm02-4A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3ai0UKEZEe-vSYkfm02-4A" memberEnd="_3akCcKEZEe-vSYkfm02-4A _3akCc6EZEe-vSYkfm02-4A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ajbYKEZEe-vSYkfm02-4A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ajbYaEZEe-vSYkfm02-4A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3akCc6EZEe-vSYkfm02-4A" name="indirizzo" type="_iTdHEJ3-Ee-xo4pCa1e-lw" association="_3ai0UKEZEe-vSYkfm02-4A"/>
   </packagedElement>
 </uml:Model>
