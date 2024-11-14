@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"sqlite_jdbc-1932b5554d5-68ce48f1112da506": {
+		"sqlite_jdbc-1932b1a56ab-405a16d6cefcbabe": {
 			"provider": "sqlite",
 			"driver": "sqlite_jdbc",
 			"name": "mezziPubblici.db3",
