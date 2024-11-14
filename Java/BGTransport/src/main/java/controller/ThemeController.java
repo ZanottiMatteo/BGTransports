@@ -21,6 +21,23 @@ public class ThemeController {
 	
 	public static boolean themeL = true;
 	
+	public static void setTheme() {
+	       
+		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf) 
+        {
+        	themeL = true;
+            FlatLightLaf.setup();
+        } 
+        else 
+        {
+        	themeL = false;
+            FlatDarkLaf.setup();
+        }
+        for (Window window : Window.getWindows()) {
+            SwingUtilities.updateComponentTreeUI(window);
+        }
+    }
+	
 	public static void setTheme(JLabel logoLabel) {
        
 		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf) 
@@ -39,7 +56,7 @@ public class ThemeController {
             SwingUtilities.updateComponentTreeUI(window);
         }
     }
-	
+
 	/*
 	 * Theme setted by variable
 	 * @return theme, if 1 -> dark | 0 -> light

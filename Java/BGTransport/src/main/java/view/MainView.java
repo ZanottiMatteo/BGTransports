@@ -8,18 +8,15 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.awt.Frame;
+
 
 import controller.NewWindowController;
 import controller.ThemeController;
 import controller.ResizeController;
-import java.awt.Canvas;
+import view.RoundedPanel;
 
 public class MainView extends JFrame {
 
@@ -32,12 +29,14 @@ public class MainView extends JFrame {
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
 	public final Dimension MinPanelSize = new Dimension(945, 655);
 	public JTextField textField;	
+	private static boolean isFullScreen = true;
+	private static Rectangle windowedBounds = new Rectangle(350,350,1050,700);
 	
     public MainView() {
-    	
+
     	setExtendedState(Frame.MAXIMIZED_BOTH);
     	setMinimumSize(MinPanelSize);
-    	
+    	      
     	if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
@@ -60,7 +59,7 @@ public class MainView extends JFrame {
     	
     	mainPanel.setBounds(0, 0, 1920, 1080);      
     	mainPanel.setLayout(null);
-    	getContentPane().add(mainPanel);    	
+    	getContentPane().add(mainPanel);   	
     	
     	JLabel textEmail = new JLabel("Email");
     	textEmail.setHorizontalAlignment(SwingConstants.CENTER);
@@ -68,7 +67,7 @@ public class MainView extends JFrame {
     	textEmail.setBounds(852, 422, 55, 16);
     	mainPanel.add(textEmail);
 	        	
-    	LogoLabel.setBounds(580, 167, 760, 260);
+    	LogoLabel.setBounds(662, 167, 596, 260);
     	mainPanel.add(LogoLabel);
 	       	
     	JButton signInButton = new JButton("Sign In");
@@ -114,9 +113,9 @@ public class MainView extends JFrame {
         signupButton.addActionListener(e -> NewWindowController.openSignUp());
         mainPanel.add(signupButton);
         
-        JPanel panel = new JPanel();
+        RoundedPanel panel = new RoundedPanel();
         panel.setLayout(null);
-        panel.setBounds(580, 426, 760, 385);
+        panel.setBounds(580, 167, 760, 644);
         mainPanel.add(panel);
         
         JLabel lblBGwallpaper = new JLabel("");
@@ -129,7 +128,7 @@ public class MainView extends JFrame {
         }
         initComponents();
     }
-
+    
     private void initComponents() {
         setTitle("BGTransport");
         setSize(1920,1080);

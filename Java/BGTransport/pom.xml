@@ -29,7 +29,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<dependencies>
+	<dependencies>		
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
@@ -47,6 +47,7 @@
 			<artifactId>flatlaf</artifactId>
 			<version>2.6</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.xerial</groupId>
 			<artifactId>sqlite-jdbc</artifactId>
@@ -69,6 +70,12 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+	    <repository>
+	        <id>jcenter</id>
+	        <url>https://jcenter.bintray.com</url>
+	    </repository>
+	</repositories>
 
 	<build>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
