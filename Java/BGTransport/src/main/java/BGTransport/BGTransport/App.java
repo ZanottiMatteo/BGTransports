@@ -6,6 +6,7 @@ import java.awt.event.ComponentEvent;
 import javax.swing.SwingUtilities;
 
 import controller.ResizeController;
+import controller.ThemeController;
 import view.SignUpWindow;
 import view.MainView;
 

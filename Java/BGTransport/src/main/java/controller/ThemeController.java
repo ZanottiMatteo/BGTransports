@@ -20,25 +20,20 @@ import view.MainView;
 public class ThemeController {
 	
 	public static boolean themeL = true;
-	public static void setTheme(JLabel logoLabel, List<JButton> buttons) {
+	
+	public static void setTheme(JLabel logoLabel) {
        
 		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf) 
         {
         	themeL = true;
             FlatLightLaf.setup();
-            logoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/Logo.png")));
-            for (JButton button : buttons) {
-                button.setBackground(Color.WHITE);
-            }
+            logoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/Logo.png")));           
         } 
         else 
         {
         	themeL = false;
             FlatDarkLaf.setup();
             logoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/LogoDark.png")));
-            for (JButton button : buttons) {
-                button.setBackground(new Color(60, 63, 65));
-            }
         }
         for (Window window : Window.getWindows()) {
             SwingUtilities.updateComponentTreeUI(window);
