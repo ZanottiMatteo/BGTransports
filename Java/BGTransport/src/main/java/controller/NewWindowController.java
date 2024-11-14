@@ -2,11 +2,11 @@ package controller;
 
 import javax.swing.SwingUtilities;
 
-import view.LogInWindow;
+import view.SignUpWindow;
 
 public class NewWindowController {
 
 	public static void openSignUp() {
-		SwingUtilities.invokeLater(() -> {new LogInWindow().setVisible(true); });
+		SwingUtilities.invokeLater(() -> {new SignUpWindow().setVisible(true); });
 	}
 }

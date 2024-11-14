@@ -10,7 +10,7 @@ import java.awt.Font;
 import BGTransport.BGTransport.App;
 import controller.ThemeController;
 
-public class LogInWindow extends JFrame {
+public class SignUpWindow extends JFrame {
 
 	private JFrame frame;
 	private JPanel panel;
@@ -28,7 +28,7 @@ public class LogInWindow extends JFrame {
 	private JLabel lblCap;
 	
 	
-	public LogInWindow() {		
+	public SignUpWindow() {		
 		setResizable(false);
 		if (ThemeController.getTheme()) {
 			try {
