@@ -1,10 +1,17 @@
 package controller;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+
+import view.LogInWindow; 
+import view.MainView;
+
 public class MainController {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+    }
 
 	}
-
-}
+	
+	

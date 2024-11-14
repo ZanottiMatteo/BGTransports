@@ -40,6 +40,7 @@
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- Light/Dark Theme GUI -->
     <dependency>
 	    <groupId>com.formdev</groupId>
 	    <artifactId>flatlaf</artifactId>

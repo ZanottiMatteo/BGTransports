@@ -7,30 +7,36 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.awt.Frame;
-import java.awt.BorderLayout;
 
-public class MainView extends JFrame{
+import controller.NewWindowController;
+import controller.ThemeController;
+import controller.ResizeController;
 
-	JPanel mainPanel = new JPanel();	
-	JLabel LogoLabel = new JLabel(new ImageIcon(MainView.class.getResource("/images/Logo.png"))); 
-	private JPasswordField passwordField;
-	private JButton switchThemeButton;
-	JButton signupButton = new JButton("Sign Up");
+public class MainView extends JFrame {
+
+	public JPanel mainPanel = new JPanel();	
+	public JLabel LogoLabel = new JLabel(new ImageIcon(MainView.class.getResource("/images/Logo.png"))); 
+	public JPasswordField passwordField;
+	public JButton switchThemeButton;
+	public JButton signupButton = new JButton("Sign Up");
 	
-	private Map<Component, Rectangle> componentBounds = new HashMap<>();
-	private final Dimension originalPanelSize = new Dimension(1920, 1080);
-	private final Dimension MinPanelSize = new Dimension(945, 655);
-	private JTextField textField;
+	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+	public final Dimension originalPanelSize = new Dimension(1920, 1080);
+	public final Dimension MinPanelSize = new Dimension(945, 655);
+	public JTextField textField;
+	
+	
 	
     public MainView() {
+    	List<JButton> buttons = new ArrayList<>();
     	setExtendedState(Frame.MAXIMIZED_BOTH);
     	setMinimumSize(MinPanelSize);
     	
@@ -54,21 +60,24 @@ public class MainView extends JFrame{
     	LogoLabel.setBounds(207, 35, 1386, 366);
     	mainPanel.add(LogoLabel);
 	       	
-    	JButton sendButton = new JButton("Sign In");
-    	sendButton.setForeground(new Color(255, 255, 255));
-    	sendButton.setFont(new Font("SansSerif", Font.BOLD, 16));
-    	sendButton.setBackground(new Color(210, 105, 30));
-    	sendButton.setBounds(817, 741, 150, 50);
-    	mainPanel.add(sendButton);
+    	JButton signInButton = new JButton("Sign In");
+    	signInButton.setForeground(new Color(255, 255, 255));
+    	signInButton.setFont(new Font("SansSerif", Font.BOLD, 16));
+    	signInButton.setBackground(new Color(210, 105, 30));
+    	signInButton.setBounds(817, 741, 150, 50);
+    	mainPanel.add(signInButton);
     	
     	switchThemeButton = new JButton();
+    	buttons.add(switchThemeButton);
+    	buttons.add(signupButton);
     	switchThemeButton.setLocation(1797, 944);
     	switchThemeButton.setSize(70, 70);
     	switchThemeButton.setIcon(new ImageIcon(MainView.class.getResource("/images/LDMode.png")));
     	switchThemeButton.setForeground(new Color(230, 230, 250));    	
     	switchThemeButton.setRolloverEnabled(false);
     	switchThemeButton.setBorderPainted(false);
-        switchThemeButton.addActionListener(e -> setTheme());
+        switchThemeButton.addActionListener(e -> ThemeController.setTheme(LogoLabel, buttons));
+
         mainPanel.add(switchThemeButton);
         
         passwordField = new JPasswordField();
@@ -81,68 +90,30 @@ public class MainView extends JFrame{
         textField.setColumns(10);
         
         JLabel textEmail = new JLabel("Email");
+        textEmail.setFont(new Font("SansSerif", Font.BOLD, 12));
        // textEmail.setForeground(Color.GRAY);
         textEmail.setHorizontalAlignment(SwingConstants.CENTER);
         textEmail.setBounds(784, 477, 55, 16);
         mainPanel.add(textEmail);
         
         JLabel lblPassword = new JLabel("Password");
+        lblPassword.setFont(new Font("SansSerif", Font.BOLD, 12));
        // lblPassword.setForeground(Color.GRAY);
         lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
         lblPassword.setBounds(784, 567, 80, 16);
         mainPanel.add(lblPassword);
         
-        
+        signupButton.setFont(new Font("SansSerif", Font.BOLD, 12));       
         signupButton.setRolloverEnabled(false);
-        signupButton.setBorderPainted(false);
-    	
-    	signupButton.setBounds(769, 657, 75, 16);
+        signupButton.setBorderPainted(false);   	
+    	signupButton.setBounds(769, 657, 75, 26);
+    	signupButton.addActionListener(e -> NewWindowController.openSignUp());
         mainPanel.add(signupButton);
         
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }
-        
-        addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-               resizeComponents();
-            }
-        });
         initComponents();
-    }
-    
-    //Da spostare in controller  
-    private void resizeComponents() {
-    	double widthRatio = (double) getWidth() / originalPanelSize.width;
-        double heightRatio = (double) getHeight() / originalPanelSize.height;        
-       // System.out.println("W: " + getWidth() + "H: " + getHeight());     
-        
-        for (Map.Entry<Component, Rectangle> entry : componentBounds.entrySet()) {
-            Component comp = entry.getKey();
-            Rectangle originalBounds = entry.getValue();
-            comp.setBounds((int)(originalBounds.x * widthRatio), (int)(originalBounds.y * heightRatio), (int)(originalBounds.width * widthRatio), (int)(originalBounds.height * heightRatio));
-        }       
-        mainPanel.repaint();
-        mainPanel.revalidate();
-    }
-    //Da spostare in controller 
-    private void setTheme() {
-        if (UIManager.getLookAndFeel() instanceof FlatDarkLaf) 
-        {
-            FlatLightLaf.setup();
-            LogoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/Logo.png")));
-            signupButton.setBackground(Color.WHITE);
-            switchThemeButton.setBackground(Color.WHITE);
-        } 
-        else 
-        {
-            FlatDarkLaf.setup();
-            LogoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/LogoDark.png")));
-            signupButton.setBackground(new Color(60, 63, 65));
-            switchThemeButton.setBackground(new Color(60, 63, 65));
-        }            
-        SwingUtilities.updateComponentTreeUI(this);          
     }
 
     private void initComponents() {
