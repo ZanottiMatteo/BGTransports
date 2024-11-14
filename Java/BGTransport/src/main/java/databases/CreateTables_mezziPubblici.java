@@ -11,52 +11,58 @@ import org.jooq.impl.SQLDataType;
 
 public class CreateTables_mezziPubblici {
 
-	static String autobus = "AUTOBUS";
+	static String pullman = "PULLMAN";
 	static String funicolare = "FUNICOLARE";
 	static String treno = "TRENO";
 	static String tram = "TRAM";
+	static String targa = "TARGA";
+	static String id = "ID";
+	static String autista = "AUTISTA";
+	static String stato = "STATO";
+	static String numero_posti = "NUMERO_POSTI";
+	static String numero_vagoni = "NUMERO_VAGONI";
 
 	public static void create(DSLContext create) {
-		// Crea la tabella "AUTOBUS" se non esiste già
-		create.createTableIfNotExists(autobus).column("ID", SQLDataType.INTEGER.identity(true)) // Colonna ID con
-																								// auto-incremento
-				.column("NOME", SQLDataType.VARCHAR(255).nullable(false)) // Colonna NOME
-				.column("EMAIL", SQLDataType.VARCHAR(255)) // Colonna EMAIL
-				.column("TELEFONO", SQLDataType.VARCHAR(20)) // Colonna TELEFONO
-				.constraints(DSL.constraint("PK_" + autobus).primaryKey("ID") // Imposta una chiave primaria
+		// Crea la tabella "PULLMAN" se non esiste già
+		create.createTableIfNotExists(pullman).column(id, SQLDataType.INTEGER.identity(true)) // Colonna ID con auto-incremento																
+				.column(targa, SQLDataType.VARCHAR(255).nullable(false)) // Colonna TARGA
+				.column(autista, SQLDataType.VARCHAR(255)) // Colonna AUTISTA
+				.column(stato, SQLDataType.VARCHAR(255)) // Colonna STATO
+				.column(numero_posti, SQLDataType.INTEGER) // Colonna NUMERO_POSTI
+				.constraints(DSL.constraint("PK_" + pullman).primaryKey(id) // Imposta una chiave primaria
 				).execute();
 
-		System.out.println("Tabella " + autobus + " creata con successo!");
+		System.out.println("Tabella " + pullman + " creata con successo!");
 
 		// Crea la tabella "FUNICOLARE" se non esiste già
-		create.createTableIfNotExists(funicolare).column("ID", SQLDataType.INTEGER.identity(true)) // Colonna ID con
+		create.createTableIfNotExists(funicolare).column(id, SQLDataType.INTEGER.identity(true)) // Colonna ID con
 																									// auto-incremento
-				.column("NOME", SQLDataType.VARCHAR(255).nullable(false)) // Colonna NOME
-				.column("EMAIL", SQLDataType.VARCHAR(255)) // Colonna EMAIL
-				.column("TELEFONO", SQLDataType.VARCHAR(20)) // Colonna TELEFONO
-				.constraints(DSL.constraint("PK_" + funicolare).primaryKey("ID") // Imposta una chiave primaria
+				.column(autista, SQLDataType.VARCHAR(255)) // Colonna AUTISTA
+				.column(stato, SQLDataType.VARCHAR(255)) // Colonna STATO
+				.column(numero_posti, SQLDataType.INTEGER) // Colonna NUMERO_POSTI
+				.constraints(DSL.constraint("PK_" + funicolare).primaryKey(id) // Imposta una chiave primaria
 				).execute();
 
 		System.out.println("Tabella " + funicolare + " creata con successo!");
 
 		// Crea la tabella "TRENO" se non esiste già
-		create.createTableIfNotExists(treno).column("ID", SQLDataType.INTEGER.identity(true)) // Colonna ID con
-																								// auto-incremento
-				.column("NOME", SQLDataType.VARCHAR(255).nullable(false)) // Colonna NOME
-				.column("EMAIL", SQLDataType.VARCHAR(255)) // Colonna EMAIL
-				.column("TELEFONO", SQLDataType.VARCHAR(20)) // Colonna TELEFONO
-				.constraints(DSL.constraint("PK_" + treno).primaryKey("ID") // Imposta una chiave primaria
+		create.createTableIfNotExists(treno).column(id, SQLDataType.INTEGER.identity(true)) // Colonna ID con auto-incremento
+				.column(autista, SQLDataType.VARCHAR(255)) // Colonna AUTISTA
+				.column(stato, SQLDataType.VARCHAR(255)) // Colonna STATO
+				.column(numero_posti, SQLDataType.INTEGER) // Colonna NUMERO_POSTI
+				.column(numero_vagoni, SQLDataType.INTEGER) // Colonna NUMERO_VAGONI
+				.constraints(DSL.constraint("PK_" + treno).primaryKey(id) // Imposta una chiave primaria
 				).execute();
 
 		System.out.println("Tabella " + treno + " creata con successo!");
 
 		// Crea la tabella "TRAM" se non esiste già
-		create.createTableIfNotExists(tram).column("ID", SQLDataType.INTEGER.identity(true)) // Colonna ID con
-																								// auto-incremento
-				.column("NOME", SQLDataType.VARCHAR(255).nullable(false)) // Colonna NOME
-				.column("EMAIL", SQLDataType.VARCHAR(255)) // Colonna EMAIL
-				.column("TELEFONO", SQLDataType.VARCHAR(20)) // Colonna TELEFONO
-				.constraints(DSL.constraint("PK_" + tram).primaryKey("ID") // Imposta una chiave primaria
+		create.createTableIfNotExists(tram).column(id, SQLDataType.INTEGER.identity(true)) // Colonna ID con auto-incremento																			
+				.column(autista, SQLDataType.VARCHAR(255)) // Colonna AUTISTA
+				.column(stato, SQLDataType.VARCHAR(255)) // Colonna STATO
+				.column(numero_posti, SQLDataType.INTEGER) // Colonna NUMERO_POSTI
+				.column(numero_vagoni, SQLDataType.INTEGER) // Colonna NUMERO_VAGONI
+				.constraints(DSL.constraint("PK_" + tram).primaryKey(id) // Imposta una chiave primaria
 				).execute();
 
 		System.out.println("Tabella " + tram + " creata con successo!");
