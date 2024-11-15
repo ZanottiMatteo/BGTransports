@@ -23,12 +23,13 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.driver, SQLDataType.VARCHAR(255)) // DRIVER column
 	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.INTEGER) // NUMBER OF SEATS column
-	            .column(utility.Constant.departure_station, SQLDataType.INTEGER) // Column identifying the DEPARTURE STATION
-	            .column(utility.Constant.arrival_station, SQLDataType.INTEGER) // Column identifying the ARRIVAL STATION
-	            .column(utility.Constant.departure_timetable, SQLDataType.TIME) // DEPARTURE TIME from the station column
-	            .column(utility.Constant.arrival_timetable, SQLDataType.TIME) // ARRIVAL TIME at the station column
+	            .column(utility.Constant.departure_stop, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE STOP
+	            .column(utility.Constant.departure_timetable, SQLDataType.TIME) // DEPARTURE TIME from the stop column
+	            .column(utility.Constant.arrival_stop, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL STOP
+	            .column(utility.Constant.arrival_timetable, SQLDataType.TIME) // ARRIVAL TIME at the stop column
 	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
-	            .column(utility.Constant.stop, SQLDataType.INTEGER) // STOP column
+	            .column(utility.Constant.pullman_stop, SQLDataType.VARCHAR(255)) // STOP column
+	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.pullman).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.pullman + " created successfully!");
@@ -39,12 +40,11 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.driver, SQLDataType.VARCHAR(255)) // DRIVER column
 	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.INTEGER) // NUMBER_OF_SEATS column
-	            .column(utility.Constant.departure_station, SQLDataType.INTEGER) // Column identifying the DEPARTURE STATION
-	            .column(utility.Constant.arrival_station, SQLDataType.INTEGER) // Column identifying the ARRIVAL STATION
+	            .column(utility.Constant.departure_funicular_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE FUNICULAR STATION
+	            .column(utility.Constant.arrival_funicular_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL FUNICULAR STATION
 	            .column(utility.Constant.departure_timetable, SQLDataType.TIME) // DEPARTURE TIME from the station column
 	            .column(utility.Constant.arrival_timetable, SQLDataType.TIME) // ARRIVAL TIME at the station column
 	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
-	            .column(utility.Constant.stop, SQLDataType.INTEGER) // STOP column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.funicular).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.funicular + " created successfully!");
@@ -56,12 +56,13 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.INTEGER) // NUMBER_OF_SEATS column
 	            .column(utility.Constant.number_of_carriages, SQLDataType.INTEGER) // NUMBER_OF_CARRIAGES column
-	            .column(utility.Constant.departure_station, SQLDataType.INTEGER) // Column identifying the DEPARTURE STATION
-	            .column(utility.Constant.arrival_station, SQLDataType.INTEGER) // Column identifying the ARRIVAL STATION
+	            .column(utility.Constant.departure_train_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAIN STATION
+	            .column(utility.Constant.arrival_train_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL TRAIN STATION
 	            .column(utility.Constant.departure_timetable, SQLDataType.TIME) // DEPARTURE TIME from the station column
 	            .column(utility.Constant.arrival_timetable, SQLDataType.TIME) // ARRIVAL TIME at the station column
 	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
-	            .column(utility.Constant.stop, SQLDataType.INTEGER) // STOP column
+	            .column(utility.Constant.train_stop, SQLDataType.VARCHAR(255)) // TRAIN STOP column
+	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.train).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.train + " created successfully!");
@@ -73,24 +74,16 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.INTEGER) // NUMBER_OF_SEATS column
 	            .column(utility.Constant.number_of_carriages, SQLDataType.INTEGER) // NUMBER_OF_CARRIAGES column
-	            .column(utility.Constant.departure_station, SQLDataType.INTEGER) // Column identifying the DEPARTURE STATION
-	            .column(utility.Constant.arrival_station, SQLDataType.INTEGER) // Column identifying the ARRIVAL STATION
+	            .column(utility.Constant.departure_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAM STATION
+	            .column(utility.Constant.arrival_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL TRAM STATION
 	            .column(utility.Constant.departure_timetable, SQLDataType.TIME) // DEPARTURE TIME from the station column
 	            .column(utility.Constant.arrival_timetable, SQLDataType.TIME) // ARRIVAL TIME at the station column
 	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
-	            .column(utility.Constant.stop, SQLDataType.INTEGER) // STOP column
+	            .column(utility.Constant.tram_stop, SQLDataType.VARCHAR(255)) // TRAM STOP column
+	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.tram).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.tram + " created successfully!");
-	    
-	    // Creates the "STATION" table if it does not already exist
-	    create.createTableIfNotExists(utility.Constant.station)
-	            .column(utility.Constant.id, SQLDataType.INTEGER) // ID column with auto-increment
-	            .column(utility.Constant.place, SQLDataType.VARCHAR(255)) // STATE column
-	            .column(utility.Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
-	            .constraints(DSL.constraint("PK_" + utility.Constant.station).primaryKey(utility.Constant.id) // Set a primary key
-	            ).execute();
-	    System.out.println("Table " + utility.Constant.station + " created successfully!");
 
 	    // Creates the "SCHEDULE" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.timetable)
@@ -150,17 +143,36 @@ public class CreateTables_PublicTransportation {
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.company + " created successfully!");
 	    
-	    // Creates the "STOP" table if it does not already exist
-	    create.createTableIfNotExists(utility.Constant.stop)
-	    		.column(utility.Constant.id, SQLDataType.INTEGER) // ID column with auto-increment
+	    // Creates the "PULLMAN STOP" table if it does not already exist
+	    create.createTableIfNotExists(utility.Constant.pullman_stop)
 				.column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME of the company column
-				.column(utility.Constant.place, SQLDataType.VARCHAR(255)) // STATE column
-				.column(utility.Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
-				.column(utility.Constant.time, SQLDataType.TIME) // TIME column
-				.column(utility.Constant.arrival_station, SQLDataType.INTEGER) // Column identifying the ARRIVAL STATION
-        		.constraints(DSL.constraint("PK_" + utility.Constant.stop).primaryKey(utility.Constant.id) // Set a primary key
+        		.constraints(DSL.constraint("PK_" + utility.Constant.pullman_stop).primaryKey(utility.Constant.name) // Set a primary key
         		).execute();
-	    System.out.println("Table " + utility.Constant.stop + " created successfully!");
+	    System.out.println("Table " + utility.Constant.pullman_stop + " created successfully!");
+	    
+	    // Creates the "TRAM STOP" table if it does not already exist
+	    create.createTableIfNotExists(utility.Constant.tram_stop)
+				.column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME of the company column
+        		.constraints(DSL.constraint("PK_" + utility.Constant.tram_stop).primaryKey(utility.Constant.name) // Set a primary key
+        		).execute();
+	    System.out.println("Table " + utility.Constant.tram_stop + " created successfully!");
+	    
+	    // Creates the "FUNICULAR STATION" table if it does not already exist
+	    create.createTableIfNotExists(utility.Constant.funicular_station)
+				.column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME of the company column
+        		.constraints(DSL.constraint("PK_" + utility.Constant.funicular_station).primaryKey(utility.Constant.name) // Set a primary key
+        		).execute();
+	    System.out.println("Table " + utility.Constant.funicular_station + " created successfully!");
+	    
+	    // Creates the "TRAIN STATION" table if it does not already exist
+	    create.createTableIfNotExists(utility.Constant.train_station)
+	            .column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME column
+	            .column(utility.Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
+	            .column(utility.Constant.town, SQLDataType.VARCHAR(255)) // TOWN column
+	            .column(utility.Constant.province, SQLDataType.VARCHAR(255)) // PROVINCE column
+	            .constraints(DSL.constraint("PK_" + utility.Constant.train_station).primaryKey(utility.Constant.name) // Set a primary key
+	            ).execute();
+	    System.out.println("Table " + utility.Constant.train_station + " created successfully!");
 	}
 
 	/**
