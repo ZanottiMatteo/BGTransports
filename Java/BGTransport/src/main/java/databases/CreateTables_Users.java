@@ -21,9 +21,9 @@ public class CreateTables_Users {
 	            .column(utility.Constant.surname, SQLDataType.VARCHAR(100)) // SURNAME column
 	            .column(utility.Constant.name, SQLDataType.VARCHAR(100)) // NAME column
 	            .column(utility.Constant.fiscal_code, SQLDataType.VARCHAR(50)) // FISCAL CODE column
-	            .column(utility.Constant.date_of_birth, SQLDataType.DATE) // DATE OF BIRTH column
+	            .column(utility.Constant.date_of_birth, SQLDataType.VARCHAR(20)) // DATE OF BIRTH column
 	            .column(utility.Constant.place_of_birth, SQLDataType.VARCHAR(50)) // PLACE OF BIRTH column
-	            .column(utility.Constant.CAP, SQLDataType.INTEGER) // POSTAL CODE (CAP) column
+	            .column(utility.Constant.CAP, SQLDataType.VARCHAR(10)) // POSTAL CODE (CAP) column
 	            .column(utility.Constant.town, SQLDataType.VARCHAR(50)) // MUNICIPALITY column
 	            .column(utility.Constant.province, SQLDataType.VARCHAR(4)) // PROVINCE column
 	            .column(utility.Constant.street_number, SQLDataType.VARCHAR(50)) // STREET NUMBER column
@@ -32,7 +32,7 @@ public class CreateTables_Users {
 	            .column(utility.Constant.registered_user, SQLDataType.BOOLEAN) // REGISTERED USER column
 	            .column(utility.Constant.manager, SQLDataType.BOOLEAN) // MANAGER column
 	            .column(utility.Constant.developer, SQLDataType.BOOLEAN) // DEVELOPER column
-	            .column(utility.Constant.telephone, SQLDataType.INTEGER) // TELEPHONE column
+	            .column(utility.Constant.telephone, SQLDataType.VARCHAR(50)) // TELEPHONE column
 	            .column(utility.Constant.mail, SQLDataType.VARCHAR(100)) // MAIL column
 	            .column(utility.Constant.social, SQLDataType.VARCHAR(100)) // SOCIAL NETWORK column
 	            .column(utility.Constant.web_site, SQLDataType.VARCHAR(100)) // WEB SITE column

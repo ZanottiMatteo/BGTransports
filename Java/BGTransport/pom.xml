@@ -29,7 +29,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<dependencies>		
+	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
@@ -47,7 +47,7 @@
 			<artifactId>flatlaf</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.xerial</groupId>
 			<artifactId>sqlite-jdbc</artifactId>
@@ -68,21 +68,26 @@
 			<artifactId>jooq-codegen</artifactId>
 			<version>3.19.15</version>
 		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20211205</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
-	    <repository>
-	        <id>jcenter</id>
-	        <url>https://jcenter.bintray.com</url>
-	    </repository>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
 	</repositories>
 
 	<build>
-    <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-        </resource>
-    </resources>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
@@ -131,5 +136,35 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.jooq</groupId>
+				<artifactId>jooq-codegen-maven</artifactId>
+				<version>3.18.0</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<jdbc>
+								<driver>org.sqlite.JDBC</driver>
+								<url>jdbc:sqlite:database/Public Transportation.db3</url>
+							</jdbc>
+							<generator>
+								<database>
+									<name>org.jooq.meta.sqlite.SQLiteDatabase</name>
+								</database>
+								<target>
+									<packageName>com.example.generated</packageName>
+									<directory>target/generated-sources/jooq</directory>
+								</target>
+							</generator>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

@@ -2,9 +2,9 @@ package utility;
 
 public class Constant {
 
-	public static String DB_PUBLIC_TRANSPORTATION = "db/Public Transportation.db3";
+	public static String DB_PUBLIC_TRANSPORTATION = "database/Public Transportation.db3";
 	public static String DB_URL_PUBLIC_TRANSPORTATION = "jdbc:sqlite:" + DB_PUBLIC_TRANSPORTATION;
-	public static String DB_USERS = "db/Users.db3";
+	public static String DB_USERS = "database/Users.db3";
 	public static String DB_URL_USERS = "jdbc:sqlite:" + DB_USERS;
 	public static String[] URLS = { DB_URL_PUBLIC_TRANSPORTATION, DB_URL_USERS };
 	public static String[] DBS = { DB_PUBLIC_TRANSPORTATION, DB_USERS };
