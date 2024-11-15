@@ -8,32 +8,41 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Frame;
-
+import java.awt.Graphics;
+import java.awt.Image;
 
 import controller.NewWindowController;
 import controller.ThemeController;
 import controller.ResizeController;
 import view.RoundedPanel;
 
+
 public class MainView extends JFrame {
 
-	public JPanel mainPanel = new JPanel();	
+	public JPanel mainPanel;	
 	public JLabel LogoLabel = new JLabel(new ImageIcon(MainView.class.getResource("/images/Logo.png"))); 
+	public ResizableImage lblBGwallpaper = new ResizableImage(MainView.class.getResource("/images/BG.png")); 
 	public JPasswordField passwordField;
 	public JButton switchThemeButton;
+	public JPanel BGpanel;
 	
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
 	public final Dimension MinPanelSize = new Dimension(945, 655);
 	public JTextField textField;	
-	private static boolean isFullScreen = true;
-	private static Rectangle windowedBounds = new Rectangle(350,350,1050,700);
 	
     public MainView() {
-
+    	 mainPanel = new JPanel() {
+         	@Override
+         	public void paintComponent(Graphics g) {
+         		super.paintComponent(g);
+         		g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
+         	}
+         };      
     	setExtendedState(Frame.MAXIMIZED_BOTH);
     	setMinimumSize(MinPanelSize);
     	      
@@ -117,15 +126,12 @@ public class MainView extends JFrame {
         panel.setLayout(null);
         panel.setBounds(580, 167, 760, 644);
         mainPanel.add(panel);
-        
-        JLabel lblBGwallpaper = new JLabel("");
-        lblBGwallpaper.setIcon(new ImageIcon(MainView.class.getResource("/images/BG.jpg")));
-        lblBGwallpaper.setBounds(0, 0, 1920, 1080);
-        mainPanel.add(lblBGwallpaper);
-        
+                   
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
-        }
+        } 
+        
+        
         initComponents();
     }
     

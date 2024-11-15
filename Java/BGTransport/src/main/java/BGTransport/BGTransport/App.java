@@ -22,6 +22,7 @@ public class App {
             @Override
             public void componentResized(ComponentEvent e) {
                ResizeController.resizeComponents(mainV.originalPanelSize, mainV, mainV.componentBounds, mainV.mainPanel);
+               ResizeController.resizeImage(mainV, mainV.lblBGwallpaper, mainV.mainPanel);            
             }
         });
         SwingUtilities.invokeLater(() -> {homeV.setVisible(true); });
@@ -29,6 +30,7 @@ public class App {
             @Override
             public void componentResized(ComponentEvent e) {
                ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.componentBounds, homeV.mainPanel);
+               ResizeController.resizeImage(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
             }
         });
     }

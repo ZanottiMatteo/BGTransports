@@ -24,6 +24,7 @@ public class HomeView extends JFrame {
 
 	public JPanel mainPanel = new JPanel();	
 	public JButton switchThemeButton;
+	public ResizableImage lblBGwallpaper = new ResizableImage(MainView.class.getResource("/images/BG.png")); 
 	
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
@@ -34,6 +35,14 @@ public class HomeView extends JFrame {
     	setExtendedState(Frame.MAXIMIZED_BOTH);
     	setMinimumSize(MinPanelSize);
     	
+    	mainPanel = new JPanel() {
+         	@Override
+         	public void paintComponent(Graphics g) {
+         		super.paintComponent(g);
+         		g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
+         	}
+         };
+         
     	if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
@@ -80,11 +89,6 @@ public class HomeView extends JFrame {
         switchThemeButton.setRolloverEnabled(false);
         switchThemeButton.setBorderPainted(false);
         switchThemeButton.addActionListener(e -> ThemeController.setTheme());
-        
-        JLabel lblBGwallpaper = new JLabel("");
-        lblBGwallpaper.setIcon(new ImageIcon(HomeView.class.getResource("/images/BG.jpg")));
-        lblBGwallpaper.setBounds(0, 0, 1920, 1080);
-        mainPanel.add(lblBGwallpaper);
         
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
