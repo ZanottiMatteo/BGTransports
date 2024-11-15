@@ -15,7 +15,7 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
-import view.MainView;
+import view.LoginView;
 
 public class ThemeController {
 	
@@ -44,13 +44,13 @@ public class ThemeController {
         {
         	themeL = true;
             FlatLightLaf.setup();
-            logoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/Logo.png")));           
+            logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));           
         } 
         else 
         {
         	themeL = false;
             FlatDarkLaf.setup();
-            logoLabel.setIcon(new ImageIcon(MainView.class.getResource("/images/LogoDark.png")));
+            logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/LogoDark.png")));
         }
         for (Window window : Window.getWindows()) {
             SwingUtilities.updateComponentTreeUI(window);

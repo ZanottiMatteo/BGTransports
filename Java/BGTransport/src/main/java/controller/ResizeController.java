@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import view.ResizableImage;
@@ -26,7 +28,7 @@ public class ResizeController {
 	public static void resizeComponents(Dimension originalPanelSize, JFrame jframe, Map<Component, Rectangle> componentBounds, JPanel panel) {
     	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;        
-       // System.out.println("W: " + getWidth() + "H: " + getHeight());     
+        System.out.println("W: " + jframe.getWidth() + "H: " + jframe.getHeight());     
         
         for (Map.Entry<Component, Rectangle> entry : componentBounds.entrySet()) {
             Component comp = entry.getKey();
@@ -37,7 +39,7 @@ public class ResizeController {
         panel.revalidate();
     } 
 	
-	public static void resizeImage(JFrame jframe, ResizableImage Rimage, JPanel panel) {
+	public static void resizeImagePanel(JFrame jframe, ResizableImage Rimage, JPanel panel) {
 		int newWidth = jframe.getWidth();
         int newHeight = jframe.getHeight();
         Rimage.resizeImage(newWidth, newHeight);
@@ -45,4 +47,17 @@ public class ResizeController {
         panel.revalidate();
 	}
 	
+	public static void resizeImageButton(Dimension originalPanelSize, JFrame jframe, ImageIcon Rimage, JButton jbutton) {
+		double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
+        double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
+        double singleRatio = 0.0;
+        if (widthRatio > heightRatio) {
+        	singleRatio = heightRatio;
+        } else {
+        	singleRatio = widthRatio;
+        }     
+        Image scaledImage = Rimage.getImage().getScaledInstance((int)(Rimage.getIconWidth() * singleRatio), (int)(Rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(scaledImage);
+        jbutton.setIcon(resizedIcon);
+	}
 }

@@ -17,6 +17,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
 
+import controller.MainController;
+import controller.NewWindowController;
+import controller.ResizeController;
 import controller.ThemeController;
 import view.RoundedPanel;
 
@@ -24,11 +27,13 @@ public class HomeView extends JFrame {
 
 	public JPanel mainPanel = new JPanel();	
 	public JButton switchThemeButton;
-	public ResizableImage lblBGwallpaper = new ResizableImage(MainView.class.getResource("/images/BG.png")); 
+	public JButton userButton;
+	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png")); 
+	public ImageIcon iconUser = new ImageIcon(HomeView.class.getResource("/images/User.png"));
 	
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
-	public final Dimension MinPanelSize = new Dimension(945, 655);
+	public final Dimension MinPanelSize = new Dimension(1075, 615);
 	
     public HomeView() {
     	
@@ -79,10 +84,19 @@ public class HomeView extends JFrame {
 
         mainPanel.add(menuPanel);
         menuPanel.setLayout(null);
+                
+        userButton = new JButton();
+        userButton.setBounds(22, 22, 62, 62);
+        userButton.setRolloverEnabled(false);
+        userButton.setBorderPainted(false);
+        userButton.setIcon(iconUser);
+        userButton.setBackground(new Color(0,0,0,0));
+        userButton.addActionListener(e -> NewWindowController.openUserPanel(MainController.mainV));
+        menuPanel.add(userButton);
         
         switchThemeButton = new JButton();
-        switchThemeButton.setBounds(10, 11, 81, 58);
-        menuPanel.add(switchThemeButton);
+        switchThemeButton.setBounds(1855, 1000, 44, 35);
+        mainPanel.add(switchThemeButton);
         switchThemeButton.setBackground(new Color(0,0,0,0));
         switchThemeButton.setIcon(new ImageIcon(HomeView.class.getResource("/images/LDMode.png")));
         switchThemeButton.setForeground(new Color(230, 230, 250));    	
@@ -91,6 +105,9 @@ public class HomeView extends JFrame {
         switchThemeButton.addActionListener(e -> ThemeController.setTheme());
         
         for (Component comp : mainPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
+        for (Component comp : menuPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }
         initComponents();
