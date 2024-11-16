@@ -1,0 +1,830 @@
+[
+  {
+    "name": "AEROPORTO Arrivi Nazionali"
+  },
+  {
+    "name": "ALBANO via Cavour fr.10"
+  },
+  {
+    "name": "ALBANO via Madonna delle Rose 4a"
+  },
+  {
+    "name": "ALBANO via Monte Grappa fr.3"
+  },
+  {
+    "name": "ALBANO via Santuario"
+  },
+  {
+    "name": "ALME'"
+  },
+  {
+    "name": "ALME via Campo dei Fiori 22"
+  },
+  {
+    "name": "ALME via Torre d Oro"
+  },
+  {
+    "name": "ALMENNO S.SALVATORE via Buttinoni Gabbio"
+  },
+  {
+    "name": "ALZANO"
+  },
+  {
+    "name": "ALZANO Burro via Bracc"
+  },
+  {
+    "name": "ALZANO Castello"
+  },
+  {
+    "name": "ALZANO GARIBALDI"
+  },
+  {
+    "name": "ALZANO SOPRA via Piave TEB"
+  },
+  {
+    "name": "ALZANO via Busa"
+  },
+  {
+    "name": "ALZANO via Europa 64 fr. Scuole"
+  },
+  {
+    "name": "ALZANO via Europa 83 Scuole"
+  },
+  {
+    "name": "ALZANO via IV novembre (parcheggio)"
+  },
+  {
+    "name": "ALZANO via Lacca"
+  },
+  {
+    "name": "Astino fermata 977"
+  },
+  {
+    "name": "AZZANO S.PAOLO via Don Gonella 2a"
+  },
+  {
+    "name": "AZZANO S.PAOLO via Roma fr.44"
+  },
+  {
+    "name": "AZZONICA via Broli 1"
+  },
+  {
+    "name": "BIANZANA"
+  },
+  {
+    "name": "BORGO PALAZZO TEB"
+  },
+  {
+    "name": "BREMBO via Segantini"
+  },
+  {
+    "name": "BRIOLO via Paglia fr.7"
+  },
+  {
+    "name": "BRUNTINO via degli Alpini 57"
+  },
+  {
+    "name": "BUSA DI NESE via BUSA via Caprini"
+  },
+  {
+    "name": "CAMPAGNOLA via Campagnola 19/19a"
+  },
+  {
+    "name": "CAPANNELLE via Traversa Capannelle orato"
+  },
+  {
+    "name": "CELADINA P.le Prealpi Orobiche"
+  },
+  {
+    "name": "Centro Commerciale Le due Torri"
+  },
+  {
+    "name": "CLEMENTINA via Gandhi"
+  },
+  {
+    "name": "CLINICA Ponte S.Pietro via Forlanini"
+  },
+  {
+    "name": "COLLE APERTO"
+  },
+  {
+    "name": "COLOGNOLA BELOTTI"
+  },
+  {
+    "name": "COLOGNOLA FILIBERTO"
+  },
+  {
+    "name": "COLOGNOLA VIA MUZIO"
+  },
+  {
+    "name": "CROCE ROSSA VIA BROSETA"
+  },
+  {
+    "name": "CROCE ROSSA VIA CURIE"
+  },
+  {
+    "name": "CROCETTE"
+  },
+  {
+    "name": "CURNO largo Vittoria fr. Chiesa"
+  },
+  {
+    "name": "CURNO Marigolda via Abruzzi 4"
+  },
+  {
+    "name": "CURNO via Brembo fr.30"
+  },
+  {
+    "name": "CURNO via De Amicis 16"
+  },
+  {
+    "name": "CURNO via Emilia fr. scuole"
+  },
+  {
+    "name": "CURNO via IV Novembre Scuole Medie"
+  },
+  {
+    "name": "DALMINE VIA LOCATELLI"
+  },
+  {
+    "name": "DALMINE via Manzoni 66"
+  },
+  {
+    "name": "DALMINE via Marconi"
+  },
+  {
+    "name": "DALMINE via Pesenti"
+  },
+  {
+    "name": "DALMINE via Pesenti fr.44"
+  },
+  {
+    "name": "DALMINE via Stella Alpina fr. via Genzia"
+  },
+  {
+    "name": "DALMINE VIA VERDI"
+  },
+  {
+    "name": "DON ORIONE via Don Orione via Goisis"
+  },
+  {
+    "name": "FUNICOLARE"
+  },
+  {
+    "name": "FUNICOLARE COLLE APERTO"
+  },
+  {
+    "name": "GAVARNO via Monte Misma"
+  },
+  {
+    "name": "GORLE via Bersaglieri Baio"
+  },
+  {
+    "name": "GORLE via Don Mazza fr.11/13"
+  },
+  {
+    "name": "GORLE via Don Mazza via Carducci"
+  },
+  {
+    "name": "GORLE via Libertà scuole medie"
+  },
+  {
+    "name": "Grassobbio Matteotti 35"
+  },
+  {
+    "name": "Grassobbio Tonale 5a"
+  },
+  {
+    "name": "GRASSOBBIO via Colombo capolinea"
+  },
+  {
+    "name": "GRASSOBBIO via XXV Aprile 11"
+  },
+  {
+    "name": "GRASSOBBIO viale Europa 25"
+  },
+  {
+    "name": "GUZZANICA via Guzzanica 104"
+  },
+  {
+    "name": "IPER SERIATE via Europa 21 fr. ITIS Majorana"
+  },
+  {
+    "name": "ITIS Majorana SERIATE"
+  },
+  {
+    "name": "LALLIO via Aldo Moro fr.3"
+  },
+  {
+    "name": "LALLIO via Europa"
+  },
+  {
+    "name": "LALLIO via Mascagni fr.Banca"
+  },
+  {
+    "name": "LALLIO via Rossini fr. Oratorio"
+  },
+  {
+    "name": "LALLIO via Sforzatica conf. comunale"
+  },
+  {
+    "name": "LALLIO via Sforzatica per Bg conf. comun"
+  },
+  {
+    "name": "LALLIO x Osio Sopra via Aldo Moro"
+  },
+  {
+    "name": "LOCATE via Don Foiadelli fr.1"
+  },
+  {
+    "name": "LONGUELO ORATORIO"
+  },
+  {
+    "name": "LONGUELO VIA MATTIOLI"
+  },
+  {
+    "name": "LONGUELO via Puccini fr.34 Focasina"
+  },
+  {
+    "name": "LORETO via Pasteur fr.1A"
+  },
+  {
+    "name": "MALPENSATA"
+  },
+  {
+    "name": "MALPENSATA via Carnovali 88"
+  },
+  {
+    "name": "MALPENSATA via Carnovali 95"
+  },
+  {
+    "name": "MALPENSATA via Don Bosco 17a Pesa"
+  },
+  {
+    "name": "MARIANO via Cimaripa 2"
+  },
+  {
+    "name": "MARIANO via Cimaripa fr.4"
+  },
+  {
+    "name": "Monte di Nese Parcheggio"
+  },
+  {
+    "name": "MONTEROSSO viale G.Cesare via Tremana"
+  },
+  {
+    "name": "MOZZO via Dante Alighieri"
+  },
+  {
+    "name": "MOZZO VIA MOZZI"
+  },
+  {
+    "name": "MOZZO via Mozzi capolinea"
+  },
+  {
+    "name": "MOZZO via Piatti fr.10"
+  },
+  {
+    "name": "MOZZO via Piatti fr.12 Comune"
+  },
+  {
+    "name": "MOZZO via Todeschini fr.29"
+  },
+  {
+    "name": "Nembro Oratorio"
+  },
+  {
+    "name": "NEMBRO via Gavarno fr.25"
+  },
+  {
+    "name": "NEMBRO via Gavarno fr.96"
+  },
+  {
+    "name": "NEMBRO via Puccini 37"
+  },
+  {
+    "name": "NEMBRO via Verdi edicola"
+  },
+  {
+    "name": "OLERA piazza Fra Tommaso Acerbis"
+  },
+  {
+    "name": "ORIO AL SERIO via Locatelli 18/18a Comun"
+  },
+  {
+    "name": "ORIO AL SERIO via Portico Orio Center"
+  },
+  {
+    "name": "OSIO SOPRA via Monte Bianco 10"
+  },
+  {
+    "name": "OSPEDALE"
+  },
+  {
+    "name": "OSPEDALE MARTIN LUTHER KING"
+  },
+  {
+    "name": "OSTELLO via G.Ferraris"
+  },
+  {
+    "name": "P.LE CIMITERO per Loreto"
+  },
+  {
+    "name": "PALADINA GHIAIE via del Brembo"
+  },
+  {
+    "name": "PALADINA Sombreno via S.Fermo e Rustico"
+  },
+  {
+    "name": "Paladina SP Dalmine/Almè fr.4"
+  },
+  {
+    "name": "PALADINA via Bolis 13"
+  },
+  {
+    "name": "PALADINA via Degli Alpini Cimitero"
+  },
+  {
+    "name": "PALADINA via Don Carminati 6"
+  },
+  {
+    "name": "PALADINA via Don Carminati fr.8"
+  },
+  {
+    "name": "PALADINA via G.Galilei 3"
+  },
+  {
+    "name": "PALADINA via IV Novembre fr. Banca"
+  },
+  {
+    "name": "PEDRENGO via Kennedy"
+  },
+  {
+    "name": "PEDRENGO via Papa Giovanni XXIII 11"
+  },
+  {
+    "name": "PEDRENGO via Papa Giovanni XXIII 4"
+  },
+  {
+    "name": "piazza Libertà"
+  },
+  {
+    "name": "piazza S. Anna fr.1"
+  },
+  {
+    "name": "piazza S.Anna via Ghislandi 2"
+  },
+  {
+    "name": "piazzale Cimitero per Clementina"
+  },
+  {
+    "name": "PIAZZALE LOVERINI"
+  },
+  {
+    "name": "PIAZZALE OBERDAN"
+  },
+  {
+    "name": "PONTE S.PIETRO via Vittorio Emanuele 58"
+  },
+  {
+    "name": "PONTE S.PIETRO viale Italia 15"
+  },
+  {
+    "name": "PONTERANICA via Fustina 2"
+  },
+  {
+    "name": "PONTERANICA via Fustina 41"
+  },
+  {
+    "name": "PONTERANICA via IV Novembre 65"
+  },
+  {
+    "name": "PONTERANICA via Papa Giovanni XXIII 2"
+  },
+  {
+    "name": "PONTERANICA via Ramera 4 Pontesecco"
+  },
+  {
+    "name": "PONTERANICA via Ramera fr. Chiesa"
+  },
+  {
+    "name": "PONTERANICA via Valbona 44/46"
+  },
+  {
+    "name": "PONTERANICA via Valbona fr. 93"
+  },
+  {
+    "name": "PONTERANICA via Valbona fr.55 ex FVB"
+  },
+  {
+    "name": "PONTERANICA via Valbona fr.93"
+  },
+  {
+    "name": "PORTA NUOVA"
+  },
+  {
+    "name": "PORTA NUOVA NESSI"
+  },
+  {
+    "name": "PORTA NUOVA TIRABOSCHI"
+  },
+  {
+    "name": "PORTA NUOVA VIA CAMOZZI"
+  },
+  {
+    "name": "RANICA piazza Europa 4"
+  },
+  {
+    "name": "RANICA via Adelasio"
+  },
+  {
+    "name": "RANICA via Marconi"
+  },
+  {
+    "name": "RANICA via Marconi 57"
+  },
+  {
+    "name": "RANICA via Provinciale Arredamenti Sala"
+  },
+  {
+    "name": "RONCOLA via Ambrosioni fr. Chiesa"
+  },
+  {
+    "name": "Roncola via Lungobrembo fr. 60"
+  },
+  {
+    "name": "S. ANTONIO via Ruggeri da Stabello 53b"
+  },
+  {
+    "name": "S. ANTONIO via Ruggeri da Stabello 72d"
+  },
+  {
+    "name": "S.ANTONIO via Biava 26"
+  },
+  {
+    "name": "S.ANTONIO via Ruggeri da Stabello 72d"
+  },
+  {
+    "name": "S.COLOMBANO"
+  },
+  {
+    "name": "SABBIO via Don Cortesi Scuole elementari"
+  },
+  {
+    "name": "SCANZO"
+  },
+  {
+    "name": "SCANZO corso Europa 38"
+  },
+  {
+    "name": "SCANZO corso Europa, 74"
+  },
+  {
+    "name": "SCANZO Negrone via Piave fr.40"
+  },
+  {
+    "name": "SCANZO via Sporla 6"
+  },
+  {
+    "name": "SERIATE c.so Europa piscine"
+  },
+  {
+    "name": "SERIATE corso Roma 110"
+  },
+  {
+    "name": "SERIATE corso Roma 43a Quartiere Primave"
+  },
+  {
+    "name": "Seriate Paderno fr.55"
+  },
+  {
+    "name": "SERIATE piazza Caduti della Libertà"
+  },
+  {
+    "name": "SERIATE v.le Italia 51 Comune"
+  },
+  {
+    "name": "SERIATE via Brusaporto fr.34"
+  },
+  {
+    "name": "SERIATE via Decò e Canetta 120"
+  },
+  {
+    "name": "SERIATE via Europa 21 fr."
+  },
+  {
+    "name": "SERIATE via Europa 21 fr. ITIS Majorana"
+  },
+  {
+    "name": "SERIATE via Marconi 16/18"
+  },
+  {
+    "name": "SERIATE via Paderno"
+  },
+  {
+    "name": "SERIATE viale Italia 95 Legler"
+  },
+  {
+    "name": "SERIATE viale Lombardia mercato"
+  },
+  {
+    "name": "SORISOLE Azzonica via Don Carminati 12/1"
+  },
+  {
+    "name": "SORISOLE Petosino via Martiri della Libe"
+  },
+  {
+    "name": "SORISOLE Petosino via Zambelli fr.3"
+  },
+  {
+    "name": "SORISOLE Piazza Donatori del Sangue merc"
+  },
+  {
+    "name": "SORISOLE via Madonna dei Campi fr. 25"
+  },
+  {
+    "name": "STAZIONE"
+  },
+  {
+    "name": "STAZIONE SUPERIORE FUNICOLARE Piazza Mer"
+  },
+  {
+    "name": "STAZIONE via per Orio fr.56"
+  },
+  {
+    "name": "STEZZANO OVEST via Zanchi 5a"
+  },
+  {
+    "name": "STEZZANO via Circ. Ovest 6"
+  },
+  {
+    "name": "STEZZANO via Papa Giovanni XXIII, 7"
+  },
+  {
+    "name": "STEZZANO via Rizzo fr. 7"
+  },
+  {
+    "name": "STEZZANO via Santuario Banca"
+  },
+  {
+    "name": "TORRE BOLDONE via Borghetto fr.28"
+  },
+  {
+    "name": "TORRE BOLDONE via Della Colombera"
+  },
+  {
+    "name": "TORRE BOLDONE via Lombardia fr.65/67"
+  },
+  {
+    "name": "TORRE BOLDONE via Reich 15 Farmacia"
+  },
+  {
+    "name": "TORRE BOLDONE via S.Martino Vecchio fr.1"
+  },
+  {
+    "name": "TORRE DE ROVERI piazza Del Donatore"
+  },
+  {
+    "name": "TORRE DE ROVERI Pitturello via Castello"
+  },
+  {
+    "name": "TORRE DE ROVERI via Papa Giovanni XXIII"
+  },
+  {
+    "name": "TORRE DEL GALGARIO"
+  },
+  {
+    "name": "TREVIOLO Albegno via IV Novembre 6"
+  },
+  {
+    "name": "TREVIOLO via Ambrosioni via Amato"
+  },
+  {
+    "name": "TREVIOLO via dei Cedri 8"
+  },
+  {
+    "name": "TREVIOLO via Lega Lombarda via Gorizia"
+  },
+  {
+    "name": "TREVIOLO via Marconi fr. via Rillosi"
+  },
+  {
+    "name": "TRIBULINA via Monte Misma fr.3"
+  },
+  {
+    "name": "URBAN CENTER"
+  },
+  {
+    "name": "VALBREMBO CORNELLE corso Europa Unita 11"
+  },
+  {
+    "name": "VALBREMBO via A.Moro fr. parcheggio"
+  },
+  {
+    "name": "VALBREMBO via Donizetti NECTA"
+  },
+  {
+    "name": "VALBREMBO via Matteotti parco"
+  },
+  {
+    "name": "VALBREMBO via Padre Murialdo 21 Padri Gi"
+  },
+  {
+    "name": "VALBREMBO via Roma 12"
+  },
+  {
+    "name": "VALBREMBO via Sombreno 27/29 villino"
+  },
+  {
+    "name": "via A. Mai 32 Scuola Fantoni"
+  },
+  {
+    "name": "via A. Mai 35b Scuola Fantoni"
+  },
+  {
+    "name": "via Berenson A.T.B. per Bergamo"
+  },
+  {
+    "name": "via Berenson A.T.B. per Seriate"
+  },
+  {
+    "name": "VIA BERIZZI PONTE S.PIETRO"
+  },
+  {
+    "name": "via Borgo Palazzo 100h/102 viale Pirovan"
+  },
+  {
+    "name": "via Borgo Palazzo 163 fr.ASL"
+  },
+  {
+    "name": "via Borgo Palazzo 230 Portone del diavol"
+  },
+  {
+    "name": "via Borgo Palazzo 69 TEB"
+  },
+  {
+    "name": "via Borgo Palazzo fr. Portone del Diavol"
+  },
+  {
+    "name": "via Broseta 115 Piazza Risorgimento"
+  },
+  {
+    "name": "via Camozzi 162 via Borgo Palazzo"
+  },
+  {
+    "name": "via Canovine"
+  },
+  {
+    "name": "via Carducci Auchan"
+  },
+  {
+    "name": "via Cavalli"
+  },
+  {
+    "name": "via Corridoni 73/75"
+  },
+  {
+    "name": "via Corridoni 74c Pesa Parcheggio"
+  },
+  {
+    "name": "via Daste e Spalenga"
+  },
+  {
+    "name": "via Dei Caniana fr.6 Chiesa"
+  },
+  {
+    "name": "VIA DEI CANIANA UNIVERSITA'"
+  },
+  {
+    "name": "via dello Statuto - Accademia della Guardia di Finanza"
+  },
+  {
+    "name": "via dello Statuto - Piscine"
+  },
+  {
+    "name": "via dello Statuto 29"
+  },
+  {
+    "name": "via Don Bosco via Zanica"
+  },
+  {
+    "name": "via Europa Quarenghi"
+  },
+  {
+    "name": "via F.lli Vicentini (Navetta Mercato)"
+  },
+  {
+    "name": "via G.Cesare edicola stadio"
+  },
+  {
+    "name": "via G.Rosa 20e farmacia"
+  },
+  {
+    "name": "via Gasparini fr.11a"
+  },
+  {
+    "name": "via Gavazzeni clinica"
+  },
+  {
+    "name": "via Gleno C.F.P. Regione"
+  },
+  {
+    "name": "via Isabello 1 Chiesa"
+  },
+  {
+    "name": "via Leonardo da Vinci"
+  },
+  {
+    "name": "via Leonardo da Vinci Chiesa"
+  },
+  {
+    "name": "via Luzzatti 9"
+  },
+  {
+    "name": "via Madonna del Bosco 54/56 Chiesa"
+  },
+  {
+    "name": "via Madonna del Bosco Chiesa"
+  },
+  {
+    "name": "via Maironi da Ponte 16/18"
+  },
+  {
+    "name": "via Maironi da Ponte ponte Morla"
+  },
+  {
+    "name": "via Mattioli fr. Chiesa"
+  },
+  {
+    "name": "via Mazzini 20 Clinica Castelli"
+  },
+  {
+    "name": "via Moroni 234 Centro Studi L. da Vinci"
+  },
+  {
+    "name": "via Paleocapa 1 Parcheggio"
+  },
+  {
+    "name": "via Pescaria 3"
+  },
+  {
+    "name": "via Petrarca fr.12/14 Banca d'Italia"
+  },
+  {
+    "name": "via Presolana Centro per l'Impiego"
+  },
+  {
+    "name": "via Ruggeri da Stabello 1"
+  },
+  {
+    "name": "via S.Ambrogio fr.18"
+  },
+  {
+    "name": "via S.Bernardino 116"
+  },
+  {
+    "name": "via S.Vigilio Belvedere"
+  },
+  {
+    "name": "via Salvo D Acquisto 17"
+  },
+  {
+    "name": "via Suardi 17a"
+  },
+  {
+    "name": "via Suardi 79"
+  },
+  {
+    "name": "via Tremana Scuole"
+  },
+  {
+    "name": "via XXIV maggio"
+  },
+  {
+    "name": "via XXIV Maggio 43"
+  },
+  {
+    "name": "via Zambonate 60 Cinque Vie"
+  },
+  {
+    "name": "via Zambonate 89 Cinque Vie"
+  },
+  {
+    "name": "viale G.Cesare 18d Stadio"
+  },
+  {
+    "name": "VILLA D'ALME via Ronco Basso fermata scu"
+  },
+  {
+    "name": "VILLA DI SERIO via A.Moro 21"
+  },
+  {
+    "name": "VILLA DI SERIO via Carrara piazza Mercat"
+  },
+  {
+    "name": "VILLA DI SERIO via Dosie fr. poste"
+  },
+  {
+    "name": "VILLAGGIO SPOSI VIA CAVALLI"
+  }
+]

@@ -87,7 +87,7 @@ public class CreateJSONFile_COMPANY {
                 "]";
 
         // Creare il file JSON nella cartella "json"
-        File file = new File("json/COMPANY.json");
+        File file = new File(utility.Constant.JSON_COMPANY);
 
         // Scrivere i dati nel file JSON
         try (FileWriter fileWriter = new FileWriter(file)) {

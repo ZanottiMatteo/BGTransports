@@ -20,15 +20,15 @@ public class CreateTables_PublicTransportation {
 	    create.createTableIfNotExists(utility.Constant.pullman)
 	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
 	            .column(utility.Constant.license_plate, SQLDataType.VARCHAR(255)) // LICENSE PLATE column
-	            .column(utility.Constant.driver, SQLDataType.VARCHAR(255)) // DRIVER column
-	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
+	            .column(utility.Constant.driver_name, SQLDataType.VARCHAR(255)) // DRIVER column
+	            .column(utility.Constant.description, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER OF SEATS column
 	            .column(utility.Constant.departure_stop, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE STOP
 	            .column(utility.Constant.departure_timetable, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the stop column
 	            .column(utility.Constant.arrival_stop, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL STOP
 	            .column(utility.Constant.arrival_timetable, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the stop column
-	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
-	            .column(utility.Constant.pullman_stop, SQLDataType.VARCHAR(255)) // STOP column
+	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
+	            .column(utility.Constant.pullman_stop_name, SQLDataType.VARCHAR(255)) // STOP column
 	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.pullman).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
@@ -37,14 +37,14 @@ public class CreateTables_PublicTransportation {
 	    // Creates the "FUNICULAR" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.funicular)
 	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
-	            .column(utility.Constant.driver, SQLDataType.VARCHAR(255)) // DRIVER column
-	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
+	            .column(utility.Constant.driver_name, SQLDataType.VARCHAR(255)) // DRIVER column
+	            .column(utility.Constant.description, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
 	            .column(utility.Constant.departure_funicular_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE FUNICULAR STATION
 	            .column(utility.Constant.arrival_funicular_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL FUNICULAR STATION
 	            .column(utility.Constant.departure_timetable, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the station column
 	            .column(utility.Constant.arrival_timetable, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the station column
-	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
+	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.funicular).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.funicular + " created successfully!");
@@ -52,15 +52,15 @@ public class CreateTables_PublicTransportation {
 	    // Creates the "TRAIN" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.train)
 	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
-	            .column(utility.Constant.driver, SQLDataType.VARCHAR(255)) // DRIVER column
-	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
+	            .column(utility.Constant.driver_name, SQLDataType.VARCHAR(255)) // DRIVER column
+	            .column(utility.Constant.description, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
 	            .column(utility.Constant.number_of_carriages, SQLDataType.VARCHAR(255)) // NUMBER_OF_CARRIAGES column
 	            .column(utility.Constant.departure_train_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAIN STATION
 	            .column(utility.Constant.arrival_train_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL TRAIN STATION
 	            .column(utility.Constant.departure_timetable, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the station column
 	            .column(utility.Constant.arrival_timetable, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the station column
-	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
+	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 	            .column(utility.Constant.train_stop, SQLDataType.VARCHAR(255)) // TRAIN STOP column
 	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.train).primaryKey(utility.Constant.id) // Set a primary key
@@ -70,22 +70,22 @@ public class CreateTables_PublicTransportation {
 	    // Creates the "TRAM" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.tram)
 	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
-	            .column(utility.Constant.driver, SQLDataType.VARCHAR(255)) // DRIVER column
-	            .column(utility.Constant.state, SQLDataType.VARCHAR(255)) // STATE column
+	            .column(utility.Constant.driver_name, SQLDataType.VARCHAR(255)) // DRIVER column
+	            .column(utility.Constant.description, SQLDataType.VARCHAR(255)) // STATE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
 	            .column(utility.Constant.number_of_carriages, SQLDataType.VARCHAR(255)) // NUMBER_OF_CARRIAGES column
 	            .column(utility.Constant.departure_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAM STATION
 	            .column(utility.Constant.arrival_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL TRAM STATION
 	            .column(utility.Constant.departure_timetable, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the station column
 	            .column(utility.Constant.arrival_timetable, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the station column
-	            .column(utility.Constant.company, SQLDataType.VARCHAR(255)) // COMPANY name column
-	            .column(utility.Constant.tram_stop, SQLDataType.VARCHAR(255)) // TRAM STOP column
+	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
+	            .column(utility.Constant.tram_stop_name, SQLDataType.VARCHAR(255)) // TRAM STOP column
 	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.tram).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.tram + " created successfully!");
 
-	    // Creates the "SCHEDULE" table if it does not already exist
+	    // Creates the "TIMETABLE" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.timetable)
 	            .column(utility.Constant.time, SQLDataType.VARCHAR(255)) // TIME column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.timetable).primaryKey(utility.Constant.time) // Set a primary key

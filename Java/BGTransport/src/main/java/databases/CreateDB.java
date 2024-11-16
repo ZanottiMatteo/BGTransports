@@ -9,8 +9,6 @@ import java.sql.SQLException;
 
 public class CreateDB {
 
-	
-
 	/**
 	 * function that creates the databases (Public Transportation, Users)
 	 * @param args

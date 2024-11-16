@@ -14,77 +14,203 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.example.generated.tables.Company;
+import com.example.generated.tables.FunicularStation;
+import com.example.generated.tables.PullmanStop;
+import com.example.generated.tables.State;
+import com.example.generated.tables.Timetable;
+import com.example.generated.tables.TrainStation;
+import com.example.generated.tables.TramStop;
 import com.example.generated.tables.records.CompanyRecord;
+import com.example.generated.tables.records.FunicularStationRecord;
+import com.example.generated.tables.records.PullmanStopRecord;
+import com.example.generated.tables.records.StateRecord;
+import com.example.generated.tables.records.TimetableRecord;
+import com.example.generated.tables.records.TrainStationRecord;
+import com.example.generated.tables.records.TramStopRecord;
 
 public class InsertData_PublicTransportation {
 
+	public static JSONArray fileReader(File jsonFile) throws IOException {
+		FileReader fileReader = new FileReader(jsonFile);
+		StringBuilder jsonContent = new StringBuilder();
+
+		int i;
+		while ((i = fileReader.read()) != -1) {
+			jsonContent.append((char) i);
+		}
+		fileReader.close();
+
+		// Converti il contenuto JSON in un JSONArray
+		JSONArray companiesJsonArray = new JSONArray(jsonContent.toString());
+
+		return companiesJsonArray;
+	}
+
+	public static void COMPANY(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_COMPANY);
+		JSONArray companiesJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < companiesJsonArray.length(); j++) {
+			JSONObject companyJson = companiesJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String name = companyJson.getString(utility.Constant.name);
+			String legalStructure = companyJson.getString(utility.Constant.legal_structure);
+			String businessTaxCode = companyJson.getString(utility.Constant.business_tax_code);
+			String companyRegistrationNumber = companyJson.getString(utility.Constant.company_registration_number);
+			String incorporationDate = companyJson.getString(utility.Constant.incorporation_date);
+			String legalRepresentative = companyJson.optString(utility.Constant.legal_representative, "");
+			String numberOfEmployees = companyJson.getString(utility.Constant.number_of_employees);
+			String atecoCode = companyJson.getString(utility.Constant.ATECO_code);
+			String registeredOffice = companyJson.getString(utility.Constant.registered_office);
+			String province = companyJson.getString(utility.Constant.province);
+			String cap = companyJson.getString(utility.Constant.CAP);
+			String address = companyJson.getString(utility.Constant.address);
+			String streetNumber = companyJson.getString(utility.Constant.street_number);
+			String telephone = companyJson.getString(utility.Constant.telephone);
+			String mail = companyJson.getString(utility.Constant.mail);
+			String social = companyJson.getString(utility.Constant.social);
+			String webSite = companyJson.getString(utility.Constant.web_site);
+
+			// Crea un CompanyRecord con i dati estratti
+			CompanyRecord companyRecord = new CompanyRecord(name, legalStructure, businessTaxCode,
+					companyRegistrationNumber, incorporationDate, legalRepresentative, numberOfEmployees, atecoCode,
+					registeredOffice, province, cap, address, streetNumber, telephone, mail, social, webSite);
+			// Inserisci i dati nel database
+			create.insertInto(Company.COMPANY).set(companyRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.company + " con successo!");
+	}
+
+	public static void TIMETABLE(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_TIMETABLE);
+		JSONArray timetableJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < timetableJsonArray.length(); j++) {
+			JSONObject timetableJson = timetableJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String time = timetableJson.getString(utility.Constant.time);
+
+			// Crea un TimetableRecord con i dati estratti
+			TimetableRecord timetableRecord = new TimetableRecord(time);
+			// Inserisci i dati nel database
+			create.insertInto(Timetable.TIMETABLE).set(timetableRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.timetable + " con successo!");
+	}
+
+	public static void STATE(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_STATE);
+		JSONArray stateJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < stateJsonArray.length(); j++) {
+			JSONObject stateJson = stateJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String description = stateJson.getString(utility.Constant.description);
+
+			// Crea un StateRecord con i dati estratti
+			StateRecord stateRecord = new StateRecord(description);
+			// Inserisci i dati nel database
+			create.insertInto(State.STATE).set(stateRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.state + " con successo!");
+	}
+
+	public static void PULLMAN_STOP(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_PULLMAN_STOP);
+		JSONArray pullmanStopJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < pullmanStopJsonArray.length(); j++) {
+			JSONObject pullmanStopJson = pullmanStopJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String name = pullmanStopJson.getString(utility.Constant.name);
+
+			// Crea un StateRecord con i dati estratti
+			PullmanStopRecord pullmanStopRecord = new PullmanStopRecord(name);
+			// Inserisci i dati nel database
+			create.insertInto(PullmanStop.PULLMAN_STOP).set(pullmanStopRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.pullman_stop + " con successo!");
+	}
+
+	public static void FUNICULAR_STATION(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_FUNICULAR_STATION);
+		JSONArray funicularStationJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < funicularStationJsonArray.length(); j++) {
+			JSONObject funicularStationJson = funicularStationJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String name = funicularStationJson.getString(utility.Constant.name);
+
+			// Crea un StateRecord con i dati estratti
+			FunicularStationRecord funicularStationRecord = new FunicularStationRecord(name);
+			// Inserisci i dati nel database
+			create.insertInto(FunicularStation.FUNICULAR_STATION).set(funicularStationRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.funicular_station + " con successo!");
+	}
+
+	public static void TRAM_STOP(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_TRAM_STOP);
+		JSONArray tramStopJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < tramStopJsonArray.length(); j++) {
+			JSONObject tramStopJson = tramStopJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String name = tramStopJson.getString(utility.Constant.name);
+
+			// Crea un StateRecord con i dati estratti
+			TramStopRecord tramStopRecord = new TramStopRecord(name);
+			// Inserisci i dati nel database
+			create.insertInto(TramStop.TRAM_STOP).set(tramStopRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.tram_stop + " con successo!");
+	}
+
+	public static void TRAIN_STATION(DSLContext create) throws IOException {
+		// Leggere il file JSON dalla cartella "json"
+		File jsonFile = new File(utility.Constant.JSON_TRAIN_STATION);
+		JSONArray trainStationJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < trainStationJsonArray.length(); j++) {
+			JSONObject trainStationJson = trainStationJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			String name = trainStationJson.getString(utility.Constant.name);
+			String address = trainStationJson.getString(utility.Constant.address);
+			String town = trainStationJson.getString(utility.Constant.town);
+			String province = trainStationJson.getString(utility.Constant.province);
+
+			// Crea un CompanyRecord con i dati estratti
+			TrainStationRecord trainStationRecord = new TrainStationRecord(name, address, town, province);
+			// Inserisci i dati nel database
+			create.insertInto(TrainStation.TRAIN_STATION).set(trainStationRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.train_station + " con successo!");
+	}
+
 	public static void main(String[] args) throws SQLException, IOException {
-        // Connessione al database
-        Connection conn = DriverManager.getConnection(utility.Constant.DB_URL_PUBLIC_TRANSPORTATION);
-        DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
+		// Connessione al database
+		Connection conn = DriverManager.getConnection(utility.Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
 
-        // Leggere il file JSON dalla cartella "json"
-        File jsonFile = new File("json/COMPANY.json");
-        FileReader fileReader = new FileReader(jsonFile);
-        StringBuilder jsonContent = new StringBuilder();
-
-        int i;
-        while ((i = fileReader.read()) != -1) {
-            jsonContent.append((char) i);
-        }
-        fileReader.close();
-
-        // Converti il contenuto JSON in un JSONArray
-        JSONArray companiesJsonArray = new JSONArray(jsonContent.toString());
-
-        // Ciclo su ogni oggetto del JSONArray e inserimento nel database
-        for (int j = 0; j < companiesJsonArray.length(); j++) {
-            JSONObject companyJson = companiesJsonArray.getJSONObject(j);
-
-            // Estrai i valori dal JSON
-            String name = companyJson.getString("name");
-            String legalStructure = companyJson.getString("legal_structure");
-            String businessTaxCode = companyJson.getString("business_tax_code");
-            String companyRegistrationNumber = companyJson.getString("company_registration_number");
-            String incorporationDate = companyJson.getString("incorporation_date");
-            String legalRepresentative = companyJson.optString("legal_representative", "");
-            String numberOfEmployees = companyJson.getString("number_of_employees");
-            String atecoCode = companyJson.getString("ateco_code");
-            String registeredOffice = companyJson.getString("registered_office");
-            String province = companyJson.getString("province");
-            String cap = companyJson.getString("cap");
-            String address = companyJson.getString("address");
-            String streetNumber = companyJson.getString("street_number");
-            String telephone = companyJson.getString("telephone");
-            String mail = companyJson.getString("mail");
-            String social = companyJson.getString("social");
-            String webSite = companyJson.getString("web_site");
-            
-         // Crea un CompanyRecord con i dati estratti
-            CompanyRecord companyRecord = new CompanyRecord(
-                    name,
-                    legalStructure,
-                    businessTaxCode,
-                    companyRegistrationNumber,
-                    incorporationDate,
-                    legalRepresentative,
-                    numberOfEmployees,
-                    atecoCode,
-                    registeredOffice,
-                    province,
-                    cap,
-                    address,
-                    streetNumber,
-                    telephone,
-                    mail,
-                    social,
-                    webSite
-            );
-
-            // Inserisci i dati nel database
-            create.insertInto(Company.COMPANY).set(companyRecord).execute();
-        }
-
-        System.out.println("Dati inseriti con successo!");
-    }
+		COMPANY(create);
+		FUNICULAR_STATION(create);
+		STATE(create);
+		TIMETABLE(create);
+		TRAIN_STATION(create);
+		TRAM_STOP(create);
+		PULLMAN_STOP(create);
+	}
 }
