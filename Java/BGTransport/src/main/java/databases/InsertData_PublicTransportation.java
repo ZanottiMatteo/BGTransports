@@ -13,20 +13,20 @@ import org.jooq.impl.DSL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.example.generated.tables.Company;
-import com.example.generated.tables.FunicularStation;
-import com.example.generated.tables.PullmanStop;
-import com.example.generated.tables.State;
-import com.example.generated.tables.Timetable;
-import com.example.generated.tables.TrainStation;
-import com.example.generated.tables.TramStop;
-import com.example.generated.tables.records.CompanyRecord;
-import com.example.generated.tables.records.FunicularStationRecord;
-import com.example.generated.tables.records.PullmanStopRecord;
-import com.example.generated.tables.records.StateRecord;
-import com.example.generated.tables.records.TimetableRecord;
-import com.example.generated.tables.records.TrainStationRecord;
-import com.example.generated.tables.records.TramStopRecord;
+import transportation.jooq.generated.tables.Company;
+import transportation.jooq.generated.tables.FunicularStation;
+import transportation.jooq.generated.tables.PullmanStop;
+import transportation.jooq.generated.tables.State;
+import transportation.jooq.generated.tables.Timetable;
+import transportation.jooq.generated.tables.TrainStation;
+import transportation.jooq.generated.tables.TramStop;
+import transportation.jooq.generated.tables.records.CompanyRecord;
+import transportation.jooq.generated.tables.records.FunicularStationRecord;
+import transportation.jooq.generated.tables.records.PullmanStopRecord;
+import transportation.jooq.generated.tables.records.StateRecord;
+import transportation.jooq.generated.tables.records.TimetableRecord;
+import transportation.jooq.generated.tables.records.TrainStationRecord;
+import transportation.jooq.generated.tables.records.TramStopRecord;
 
 public class InsertData_PublicTransportation {
 
