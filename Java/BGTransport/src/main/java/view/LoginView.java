@@ -19,6 +19,7 @@ import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
 import controller.ResizeController;
+import controller.LoginController;
 import view.RoundedPanel;
 
 
@@ -27,14 +28,15 @@ public class LoginView extends JFrame {
 	public JPanel mainPanel;	
 	public JLabel LogoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
 	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png")); 
-	public JPasswordField passwordField;
+	public JPasswordField passwordField = new JPasswordField();;
 	public JButton switchThemeButton;
 	public JPanel BGpanel;
+	public JTextField textField = new JTextField();
 	
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
 	public final Dimension MinPanelSize = new Dimension(1075, 615);
-	public JTextField textField;	
+	
 	
     public LoginView() {
     	 mainPanel = new JPanel() {
@@ -50,14 +52,12 @@ public class LoginView extends JFrame {
     	if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
-		         
 		    } catch (UnsupportedLookAndFeelException e) {
 		        e.printStackTrace();
 		    }}			
 		else {
 			try {
 	            UIManager.setLookAndFeel(new FlatDarkLaf());
-
 	        } catch (UnsupportedLookAndFeelException e) {
 	            e.printStackTrace();
 	        }	
@@ -67,6 +67,15 @@ public class LoginView extends JFrame {
         UIManager.put("TextComponent.arc", 15); 
         UIManager.put("Component.arc", 15);
     	getContentPane().setLayout(null);
+    	
+    	JButton signInButton = new JButton();
+    	signInButton.setText("Sign In");
+    	signInButton.setForeground(new Color(255, 255, 255));
+    	signInButton.setFont(new Font("SansSerif", Font.BOLD, 16));
+    	signInButton.setBackground(new Color(210, 105, 30));
+    	signInButton.setBounds(885, 684, 150, 60);	
+    	signInButton.addActionListener(e -> LoginController.Login(textField, passwordField));
+    	mainPanel.add(signInButton);
     	
     	JButton signupButton = new JButton("Sign Up");
     	signupButton.setHorizontalAlignment(SwingConstants.LEFT);
@@ -92,30 +101,20 @@ public class LoginView extends JFrame {
 	        	
     	LogoLabel.setBounds(662, 167, 596, 260);
     	mainPanel.add(LogoLabel);
-	       	
-    	JButton signInButton = new JButton("Sign In");
-    	signInButton.setForeground(new Color(255, 255, 255));
-    	signInButton.setFont(new Font("SansSerif", Font.BOLD, 16));
-    	signInButton.setBackground(new Color(210, 105, 30));
-    	signInButton.setBounds(885, 684, 150, 60);
-    	mainPanel.add(signInButton);
-    	
+	       	   	
     	switchThemeButton = new JButton();
     	switchThemeButton.setBackground(new Color(0,0,0,0));
     	switchThemeButton.setBounds(1855, 1000, 44, 35);
-        mainPanel.add(switchThemeButton);
     	switchThemeButton.setIcon(new ImageIcon(LoginView.class.getResource("/images/LDMode.png")));
     	switchThemeButton.setForeground(new Color(230, 230, 250));    	
     	switchThemeButton.setRolloverEnabled(false);
     	switchThemeButton.setBorderPainted(false);
         switchThemeButton.addActionListener(e -> ThemeController.setTheme(LogoLabel));
+        mainPanel.add(switchThemeButton);
         
-        
-        passwordField = new JPasswordField();
         passwordField.setBounds(852, 538, 216, 50);
         mainPanel.add(passwordField);
         
-        textField = new JTextField();
         textField.setBounds(852, 445, 216, 50);
         mainPanel.add(textField);
         textField.setColumns(10);
@@ -130,7 +129,7 @@ public class LoginView extends JFrame {
         panel.setLayout(null);
         panel.setBounds(580, 167, 760, 644);
         mainPanel.add(panel);
-                   
+    	           
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         } 
@@ -140,7 +139,6 @@ public class LoginView extends JFrame {
     private void initComponents() {
         setTitle("BGTransport");
         setSize(1920,1080);
-        SwingUtilities.updateComponentTreeUI(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }

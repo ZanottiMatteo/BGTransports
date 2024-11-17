@@ -11,7 +11,7 @@ import view.SignUpWindow;
 
 public class NewWindowController {
 
-	public static void openUserPanel(HomeView homeV) {
+	public static void openHomePanel(HomeView homeV) {
 		SwingUtilities.invokeLater(() -> {homeV.setVisible(true); });
 		homeV.addComponentListener(new ComponentAdapter() {
 			@Override
@@ -23,13 +23,13 @@ public class NewWindowController {
 		});
 	}
 	
-	public static void openUserPanel(LoginView mainV) {
-		SwingUtilities.invokeLater(() -> {mainV.setVisible(true); });
-		mainV.addComponentListener(new ComponentAdapter() {
+	public static void openLoginPanel(LoginView loginV) {
+		SwingUtilities.invokeLater(() -> {loginV.setVisible(true); });
+		loginV.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
-               ResizeController.resizeComponents(mainV.originalPanelSize, mainV, mainV.componentBounds, mainV.mainPanel);
-               ResizeController.resizeImagePanel(mainV, mainV.lblBGwallpaper, mainV.mainPanel);            
+               ResizeController.resizeComponents(loginV.originalPanelSize, loginV, loginV.componentBounds, loginV.mainPanel);
+               ResizeController.resizeImagePanel(loginV, loginV.lblBGwallpaper, loginV.mainPanel);            
             }
         });   
 	}
