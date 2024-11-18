@@ -55,24 +55,19 @@ public class Pullman extends TableImpl<PullmanRecord> {
     public final TableField<PullmanRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>PULLMAN.license_plate</code>.
+     * The column <code>PULLMAN.company_name</code>.
      */
-    public final TableField<PullmanRecord, String> LICENSE_PLATE = createField(DSL.name("license_plate"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<PullmanRecord, String> COMPANY_NAME = createField(DSL.name("company_name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>PULLMAN.driver_name</code>.
+     * The column <code>PULLMAN.name</code>.
      */
-    public final TableField<PullmanRecord, String> DRIVER_NAME = createField(DSL.name("driver_name"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<PullmanRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>PULLMAN.description</code>.
+     * The column <code>PULLMAN.line</code>.
      */
-    public final TableField<PullmanRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>PULLMAN.number_of_seats</code>.
-     */
-    public final TableField<PullmanRecord, String> NUMBER_OF_SEATS = createField(DSL.name("number_of_seats"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<PullmanRecord, String> LINE = createField(DSL.name("line"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>PULLMAN.departure_stop</code>.
@@ -95,11 +90,6 @@ public class Pullman extends TableImpl<PullmanRecord> {
     public final TableField<PullmanRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>PULLMAN.company_name</code>.
-     */
-    public final TableField<PullmanRecord, String> COMPANY_NAME = createField(DSL.name("company_name"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
      * The column <code>PULLMAN.pullman_stop_name</code>.
      */
     public final TableField<PullmanRecord, String> PULLMAN_STOP_NAME = createField(DSL.name("pullman_stop_name"), SQLDataType.VARCHAR(255), this, "");
@@ -108,6 +98,21 @@ public class Pullman extends TableImpl<PullmanRecord> {
      * The column <code>PULLMAN.time</code>.
      */
     public final TableField<PullmanRecord, String> TIME = createField(DSL.name("time"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>PULLMAN.number_of_seats</code>.
+     */
+    public final TableField<PullmanRecord, String> NUMBER_OF_SEATS = createField(DSL.name("number_of_seats"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>PULLMAN.license_plate</code>.
+     */
+    public final TableField<PullmanRecord, String> LICENSE_PLATE = createField(DSL.name("license_plate"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>PULLMAN.description</code>.
+     */
+    public final TableField<PullmanRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
 
     private Pullman(Name alias, Table<PullmanRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

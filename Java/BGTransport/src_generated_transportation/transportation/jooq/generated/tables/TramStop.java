@@ -54,6 +54,21 @@ public class TramStop extends TableImpl<TramStopRecord> {
      */
     public final TableField<TramStopRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
 
+    /**
+     * The column <code>TRAM STOP.address</code>.
+     */
+    public final TableField<TramStopRecord, String> ADDRESS = createField(DSL.name("address"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAM STOP.town</code>.
+     */
+    public final TableField<TramStopRecord, String> TOWN = createField(DSL.name("town"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAM STOP.province</code>.
+     */
+    public final TableField<TramStopRecord, String> PROVINCE = createField(DSL.name("province"), SQLDataType.VARCHAR(255), this, "");
+
     private TramStop(Name alias, Table<TramStopRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }

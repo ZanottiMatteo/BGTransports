@@ -11,55 +11,23 @@ import java.io.IOException;
 public class CreateJSONFile_TRAM_STOP {
     public static void main(String[] args) {
         // Dati JSON da scrivere nel file
-        String jsonData = "[\n" +
-                "  {\n" +
-                "    \"name\": \"ALBINO\"\n" + 
-                "  },\n" + 
-                "  {\n" +
-                "    \"name\": \"ALZANO CENTRO\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"ALZANO SOPRA\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BG BIANZANA\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BG BORGO PALAZZO\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BG MARTINELLA\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BG NEGRISOLI\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BG REDONA\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BG SAN FERMO\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"BERGAMO FS\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"NEMBRO CAMOZZI\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"NEMBRO CENTRO\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"NEMBRO SALETTI\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"PRADALUNGA\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"RANICA\"\n" + 
-                "  },\n" +
-                "  {\n" +
-                "    \"name\": \"TORRE BOLDONE\"\n" + 
-                "  }\n" + 
+    	String jsonData = "[\n" +
+                "  { \"name\": \"ALBINO\", \"address\": \"Piazza Giovanni XXIII\", \"town\": \"Albino\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"ALZANO CENTRO\", \"address\": \"Via Bonomelli\", \"town\": \"Alzano Lombardo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"ALZANO SOPRA\", \"address\": \"Via San Giovanni\", \"town\": \"Alzano Sopra\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BG BIANZANA\", \"address\": \"Via Bianzana\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BG BORGO PALAZZO\", \"address\": \"Via Borgo Palazzo\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BG MARTINELLA\", \"address\": \"Via Martinella\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BG NEGRISOLI\", \"address\": \"Via Negrisoli\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BG REDONA\", \"address\": \"Via Redona\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BG SAN FERMO\", \"address\": \"Via San Fermo\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"BERGAMO FS\", \"address\": \"Piazza Marconi\", \"town\": \"Bergamo\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"NEMBRO CAMOZZI\", \"address\": \"Via Camozzi\", \"town\": \"Nembro\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"NEMBRO CENTRO\", \"address\": \"Via Gianetti\", \"town\": \"Nembro\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"NEMBRO SALETTI\", \"address\": \"Via Saletti\", \"town\": \"Nembro\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"PRADALUNGA\", \"address\": \"Via dei Martiri\", \"town\": \"Pradalunga\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"RANICA\", \"address\": \"Via Cimitero\", \"town\": \"Ranica\", \"province\": \"BG\" },\n" +
+                "  { \"name\": \"TORRE BOLDONE\", \"address\": \"Via Fratelli Calvi\", \"town\": \"Torre Boldone\", \"province\": \"BG\" }\n" +
                 "]";
 
         // Creare il file JSON nella cartella "json"

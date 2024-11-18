@@ -20,5 +20,6 @@ public class GenerateCode {
 	// generator.getGenerate().setPojos(true);
 	Configuration configuration = new Configuration().withJdbc(JDBC).withGenerator(generator);
 	GenerationTool.generate(configuration);
+	System.out.println("Done!");
     }
 }

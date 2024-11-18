@@ -12,13 +12,10 @@ import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
 import transportation.jooq.generated.tables.Company;
-import transportation.jooq.generated.tables.Driver;
 import transportation.jooq.generated.tables.Funicular;
 import transportation.jooq.generated.tables.FunicularStation;
 import transportation.jooq.generated.tables.Pullman;
 import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.State;
-import transportation.jooq.generated.tables.Timetable;
 import transportation.jooq.generated.tables.Train;
 import transportation.jooq.generated.tables.TrainStation;
 import transportation.jooq.generated.tables.Tram;
@@ -44,11 +41,6 @@ public class DefaultSchema extends SchemaImpl {
     public final Company COMPANY = Company.COMPANY;
 
     /**
-     * The table <code>DRIVER</code>.
-     */
-    public final Driver DRIVER = Driver.DRIVER;
-
-    /**
      * The table <code>FUNICULAR</code>.
      */
     public final Funicular FUNICULAR = Funicular.FUNICULAR;
@@ -67,16 +59,6 @@ public class DefaultSchema extends SchemaImpl {
      * The table <code>PULLMAN STOP</code>.
      */
     public final PullmanStop PULLMAN_STOP = PullmanStop.PULLMAN_STOP;
-
-    /**
-     * The table <code>STATE</code>.
-     */
-    public final State STATE = State.STATE;
-
-    /**
-     * The table <code>TIMETABLE</code>.
-     */
-    public final Timetable TIMETABLE = Timetable.TIMETABLE;
 
     /**
      * The table <code>TRAIN</code>.
@@ -115,13 +97,10 @@ public class DefaultSchema extends SchemaImpl {
     public final List<Table<?>> getTables() {
         return Arrays.asList(
             Company.COMPANY,
-            Driver.DRIVER,
             Funicular.FUNICULAR,
             FunicularStation.FUNICULAR_STATION,
             Pullman.PULLMAN,
             PullmanStop.PULLMAN_STOP,
-            State.STATE,
-            Timetable.TIMETABLE,
             Train.TRAIN,
             TrainStation.TRAIN_STATION,
             Tram.TRAM,

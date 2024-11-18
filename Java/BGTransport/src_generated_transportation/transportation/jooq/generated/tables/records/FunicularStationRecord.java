@@ -32,6 +32,48 @@ public class FunicularStationRecord extends UpdatableRecordImpl<FunicularStation
         return (String) get(0);
     }
 
+    /**
+     * Setter for <code>FUNICULAR STATION.address</code>.
+     */
+    public void setAddress(String value) {
+        set(1, value);
+    }
+
+    /**
+     * Getter for <code>FUNICULAR STATION.address</code>.
+     */
+    public String getAddress() {
+        return (String) get(1);
+    }
+
+    /**
+     * Setter for <code>FUNICULAR STATION.town</code>.
+     */
+    public void setTown(String value) {
+        set(2, value);
+    }
+
+    /**
+     * Getter for <code>FUNICULAR STATION.town</code>.
+     */
+    public String getTown() {
+        return (String) get(2);
+    }
+
+    /**
+     * Setter for <code>FUNICULAR STATION.province</code>.
+     */
+    public void setProvince(String value) {
+        set(3, value);
+    }
+
+    /**
+     * Getter for <code>FUNICULAR STATION.province</code>.
+     */
+    public String getProvince() {
+        return (String) get(3);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -55,10 +97,13 @@ public class FunicularStationRecord extends UpdatableRecordImpl<FunicularStation
     /**
      * Create a detached, initialised FunicularStationRecord
      */
-    public FunicularStationRecord(String name) {
+    public FunicularStationRecord(String name, String address, String town, String province) {
         super(FunicularStation.FUNICULAR_STATION);
 
         setName(name);
+        setAddress(address);
+        setTown(town);
+        setProvince(province);
         resetChangedOnNotNull();
     }
 }

@@ -33,157 +33,171 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     }
 
     /**
-     * Setter for <code>TRAIN.driver_name</code>.
-     */
-    public void setDriverName(String value) {
-        set(1, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.driver_name</code>.
-     */
-    public String getDriverName() {
-        return (String) get(1);
-    }
-
-    /**
-     * Setter for <code>TRAIN.description</code>.
-     */
-    public void setDescription(String value) {
-        set(2, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.description</code>.
-     */
-    public String getDescription() {
-        return (String) get(2);
-    }
-
-    /**
-     * Setter for <code>TRAIN.number_of_seats</code>.
-     */
-    public void setNumberOfSeats(String value) {
-        set(3, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.number_of_seats</code>.
-     */
-    public String getNumberOfSeats() {
-        return (String) get(3);
-    }
-
-    /**
-     * Setter for <code>TRAIN.number_of_carriages</code>.
-     */
-    public void setNumberOfCarriages(String value) {
-        set(4, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.number_of_carriages</code>.
-     */
-    public String getNumberOfCarriages() {
-        return (String) get(4);
-    }
-
-    /**
-     * Setter for <code>TRAIN.departure_train_station</code>.
-     */
-    public void setDepartureTrainStation(String value) {
-        set(5, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.departure_train_station</code>.
-     */
-    public String getDepartureTrainStation() {
-        return (String) get(5);
-    }
-
-    /**
-     * Setter for <code>TRAIN.arrival_train_station</code>.
-     */
-    public void setArrivalTrainStation(String value) {
-        set(6, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.arrival_train_station</code>.
-     */
-    public String getArrivalTrainStation() {
-        return (String) get(6);
-    }
-
-    /**
-     * Setter for <code>TRAIN.departure_timetable</code>.
-     */
-    public void setDepartureTimetable(String value) {
-        set(7, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.departure_timetable</code>.
-     */
-    public String getDepartureTimetable() {
-        return (String) get(7);
-    }
-
-    /**
-     * Setter for <code>TRAIN.arrival_timetable</code>.
-     */
-    public void setArrivalTimetable(String value) {
-        set(8, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.arrival_timetable</code>.
-     */
-    public String getArrivalTimetable() {
-        return (String) get(8);
-    }
-
-    /**
      * Setter for <code>TRAIN.company_name</code>.
      */
     public void setCompanyName(String value) {
-        set(9, value);
+        set(1, value);
     }
 
     /**
      * Getter for <code>TRAIN.company_name</code>.
      */
     public String getCompanyName() {
-        return (String) get(9);
+        return (String) get(1);
     }
 
     /**
-     * Setter for <code>TRAIN.train_stop</code>.
+     * Setter for <code>TRAIN.name</code>.
      */
-    public void setTrainStop(String value) {
-        set(10, value);
+    public void setName(String value) {
+        set(2, value);
     }
 
     /**
-     * Getter for <code>TRAIN.train_stop</code>.
+     * Getter for <code>TRAIN.name</code>.
      */
-    public String getTrainStop() {
-        return (String) get(10);
+    public String getName() {
+        return (String) get(2);
+    }
+
+    /**
+     * Setter for <code>TRAIN.departure_tram_station</code>.
+     */
+    public void setDepartureTramStation(String value) {
+        set(3, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.departure_tram_station</code>.
+     */
+    public String getDepartureTramStation() {
+        return (String) get(3);
+    }
+
+    /**
+     * Setter for <code>TRAIN.departure_timetable</code>.
+     */
+    public void setDepartureTimetable(String value) {
+        set(4, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.departure_timetable</code>.
+     */
+    public String getDepartureTimetable() {
+        return (String) get(4);
+    }
+
+    /**
+     * Setter for <code>TRAIN.arrival_tram_station</code>.
+     */
+    public void setArrivalTramStation(String value) {
+        set(5, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.arrival_tram_station</code>.
+     */
+    public String getArrivalTramStation() {
+        return (String) get(5);
+    }
+
+    /**
+     * Setter for <code>TRAIN.arrival_timetable</code>.
+     */
+    public void setArrivalTimetable(String value) {
+        set(6, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.arrival_timetable</code>.
+     */
+    public String getArrivalTimetable() {
+        return (String) get(6);
+    }
+
+    /**
+     * Setter for <code>TRAIN.tram_stop_name</code>.
+     */
+    public void setTramStopName(String value) {
+        set(7, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.tram_stop_name</code>.
+     */
+    public String getTramStopName() {
+        return (String) get(7);
     }
 
     /**
      * Setter for <code>TRAIN.time</code>.
      */
     public void setTime(String value) {
-        set(11, value);
+        set(8, value);
     }
 
     /**
      * Getter for <code>TRAIN.time</code>.
      */
     public String getTime() {
+        return (String) get(8);
+    }
+
+    /**
+     * Setter for <code>TRAIN.type</code>.
+     */
+    public void setType(String value) {
+        set(9, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.type</code>.
+     */
+    public String getType() {
+        return (String) get(9);
+    }
+
+    /**
+     * Setter for <code>TRAIN.number_of_seats</code>.
+     */
+    public void setNumberOfSeats(String value) {
+        set(10, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.number_of_seats</code>.
+     */
+    public String getNumberOfSeats() {
+        return (String) get(10);
+    }
+
+    /**
+     * Setter for <code>TRAIN.number_of_carriages</code>.
+     */
+    public void setNumberOfCarriages(String value) {
+        set(11, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.number_of_carriages</code>.
+     */
+    public String getNumberOfCarriages() {
         return (String) get(11);
+    }
+
+    /**
+     * Setter for <code>TRAIN.description</code>.
+     */
+    public void setDescription(String value) {
+        set(12, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN.description</code>.
+     */
+    public String getDescription() {
+        return (String) get(12);
     }
 
     // -------------------------------------------------------------------------
@@ -209,21 +223,22 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     /**
      * Create a detached, initialised TrainRecord
      */
-    public TrainRecord(String id, String driverName, String description, String numberOfSeats, String numberOfCarriages, String departureTrainStation, String arrivalTrainStation, String departureTimetable, String arrivalTimetable, String companyName, String trainStop, String time) {
+    public TrainRecord(String id, String companyName, String name, String departureTramStation, String departureTimetable, String arrivalTramStation, String arrivalTimetable, String tramStopName, String time, String type, String numberOfSeats, String numberOfCarriages, String description) {
         super(Train.TRAIN);
 
         setId(id);
-        setDriverName(driverName);
-        setDescription(description);
+        setCompanyName(companyName);
+        setName(name);
+        setDepartureTramStation(departureTramStation);
+        setDepartureTimetable(departureTimetable);
+        setArrivalTramStation(arrivalTramStation);
+        setArrivalTimetable(arrivalTimetable);
+        setTramStopName(tramStopName);
+        setTime(time);
+        setType(type);
         setNumberOfSeats(numberOfSeats);
         setNumberOfCarriages(numberOfCarriages);
-        setDepartureTrainStation(departureTrainStation);
-        setArrivalTrainStation(arrivalTrainStation);
-        setDepartureTimetable(departureTimetable);
-        setArrivalTimetable(arrivalTimetable);
-        setCompanyName(companyName);
-        setTrainStop(trainStop);
-        setTime(time);
+        setDescription(description);
         resetChangedOnNotNull();
     }
 }

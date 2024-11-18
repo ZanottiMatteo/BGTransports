@@ -20,7 +20,7 @@ public class Constant {
 	public static String address = "address";
 	public static String arrival_funicular_station = "arrival_funicular_station";
 	public static String arrival_stop = "arrival_stop";
-	public static String arrival_timetable = "arrival_timetable";
+	public static String arrival_time = "arrival_timetable";
 	public static String arrival_train_station = "arrival_train_station";
 	public static String arrival_tram_station = "arrival_tram_station";
 	public static String ATECO_code = "ateco_code";
@@ -32,13 +32,11 @@ public class Constant {
 	public static String date_of_birth = "date_of_birth";
 	public static String departure_funicular_station = "departure_funicular_station";
 	public static String departure_stop = "departure_stop";
-	public static String departure_timetable = "departure_timetable";
+	public static String departure_time = "departure_timetable";
 	public static String departure_train_station = "departure_train_station";
 	public static String departure_tram_station = "departure_tram_station";
-	public static String description = "description";
+	public static String info = "description";
 	public static String developer = "developer";
-	public static String driver = "DRIVER";
-	public static String driver_name = "driver_name";
 	public static String fiscal_code = "fiscal_code";
 	public static String funicular = "FUNICULAR";
 	public static String funicular_station = "FUNICULAR STATION";
@@ -47,6 +45,7 @@ public class Constant {
 	public static String legal_representative = "legal_representative";
 	public static String legal_structure = "legal_structure";
 	public static String license_plate = "license_plate";
+	public static String line = "line";
 	public static String mail = "mail";
 	public static String manager = "manager";
 	public static String name = "name";
@@ -67,7 +66,7 @@ public class Constant {
 	public static String street_number = "street_number";
 	public static String surname = "surname";
 	public static String telephone = "telephone";
-	public static String time = "time";
+	public static String time_stop = "time";
 	public static String timetable = "TIMETABLE";
 	public static String town = "town";
 	public static String train = "TRAIN";
@@ -75,7 +74,8 @@ public class Constant {
 	public static String train_stop = "train_stop";
 	public static String tram = "TRAM";
 	public static String tram_stop = "TRAM STOP";
-	public static String tram_stop_name = "tram_stop_name";
+	public static String type = "type";
+	public static String next_stop = "tram_stop_name";
 	public static String user = "USER";
 	public static String web_site = "web_site";
 

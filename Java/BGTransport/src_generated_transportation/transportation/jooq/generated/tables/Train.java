@@ -55,14 +55,49 @@ public class Train extends TableImpl<TrainRecord> {
     public final TableField<TrainRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.driver_name</code>.
+     * The column <code>TRAIN.company_name</code>.
      */
-    public final TableField<TrainRecord, String> DRIVER_NAME = createField(DSL.name("driver_name"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> COMPANY_NAME = createField(DSL.name("company_name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.description</code>.
+     * The column <code>TRAIN.name</code>.
      */
-    public final TableField<TrainRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.departure_tram_station</code>.
+     */
+    public final TableField<TrainRecord, String> DEPARTURE_TRAM_STATION = createField(DSL.name("departure_tram_station"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.departure_timetable</code>.
+     */
+    public final TableField<TrainRecord, String> DEPARTURE_TIMETABLE = createField(DSL.name("departure_timetable"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.arrival_tram_station</code>.
+     */
+    public final TableField<TrainRecord, String> ARRIVAL_TRAM_STATION = createField(DSL.name("arrival_tram_station"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.arrival_timetable</code>.
+     */
+    public final TableField<TrainRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.tram_stop_name</code>.
+     */
+    public final TableField<TrainRecord, String> TRAM_STOP_NAME = createField(DSL.name("tram_stop_name"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.time</code>.
+     */
+    public final TableField<TrainRecord, String> TIME = createField(DSL.name("time"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN.type</code>.
+     */
+    public final TableField<TrainRecord, String> TYPE = createField(DSL.name("type"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAIN.number_of_seats</code>.
@@ -75,39 +110,9 @@ public class Train extends TableImpl<TrainRecord> {
     public final TableField<TrainRecord, String> NUMBER_OF_CARRIAGES = createField(DSL.name("number_of_carriages"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.departure_train_station</code>.
+     * The column <code>TRAIN.description</code>.
      */
-    public final TableField<TrainRecord, String> DEPARTURE_TRAIN_STATION = createField(DSL.name("departure_train_station"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.arrival_train_station</code>.
-     */
-    public final TableField<TrainRecord, String> ARRIVAL_TRAIN_STATION = createField(DSL.name("arrival_train_station"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.departure_timetable</code>.
-     */
-    public final TableField<TrainRecord, String> DEPARTURE_TIMETABLE = createField(DSL.name("departure_timetable"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.arrival_timetable</code>.
-     */
-    public final TableField<TrainRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.company_name</code>.
-     */
-    public final TableField<TrainRecord, String> COMPANY_NAME = createField(DSL.name("company_name"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.train_stop</code>.
-     */
-    public final TableField<TrainRecord, String> TRAIN_STOP = createField(DSL.name("train_stop"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.time</code>.
-     */
-    public final TableField<TrainRecord, String> TIME = createField(DSL.name("time"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
 
     private Train(Name alias, Table<TrainRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

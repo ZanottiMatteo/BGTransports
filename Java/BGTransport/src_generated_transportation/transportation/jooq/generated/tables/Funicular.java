@@ -55,19 +55,14 @@ public class Funicular extends TableImpl<FunicularRecord> {
     public final TableField<FunicularRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>FUNICULAR.driver_name</code>.
+     * The column <code>FUNICULAR.company_name</code>.
      */
-    public final TableField<FunicularRecord, String> DRIVER_NAME = createField(DSL.name("driver_name"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<FunicularRecord, String> COMPANY_NAME = createField(DSL.name("company_name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>FUNICULAR.description</code>.
+     * The column <code>FUNICULAR.name</code>.
      */
-    public final TableField<FunicularRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>FUNICULAR.number_of_seats</code>.
-     */
-    public final TableField<FunicularRecord, String> NUMBER_OF_SEATS = createField(DSL.name("number_of_seats"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<FunicularRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>FUNICULAR.departure_funicular_station</code>.
@@ -75,14 +70,14 @@ public class Funicular extends TableImpl<FunicularRecord> {
     public final TableField<FunicularRecord, String> DEPARTURE_FUNICULAR_STATION = createField(DSL.name("departure_funicular_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>FUNICULAR.arrival_funicular_station</code>.
-     */
-    public final TableField<FunicularRecord, String> ARRIVAL_FUNICULAR_STATION = createField(DSL.name("arrival_funicular_station"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
      * The column <code>FUNICULAR.departure_timetable</code>.
      */
     public final TableField<FunicularRecord, String> DEPARTURE_TIMETABLE = createField(DSL.name("departure_timetable"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>FUNICULAR.arrival_funicular_station</code>.
+     */
+    public final TableField<FunicularRecord, String> ARRIVAL_FUNICULAR_STATION = createField(DSL.name("arrival_funicular_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>FUNICULAR.arrival_timetable</code>.
@@ -90,9 +85,19 @@ public class Funicular extends TableImpl<FunicularRecord> {
     public final TableField<FunicularRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>FUNICULAR.company_name</code>.
+     * The column <code>FUNICULAR.type</code>.
      */
-    public final TableField<FunicularRecord, String> COMPANY_NAME = createField(DSL.name("company_name"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<FunicularRecord, String> TYPE = createField(DSL.name("type"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>FUNICULAR.number_of_seats</code>.
+     */
+    public final TableField<FunicularRecord, String> NUMBER_OF_SEATS = createField(DSL.name("number_of_seats"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>FUNICULAR.description</code>.
+     */
+    public final TableField<FunicularRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
 
     private Funicular(Name alias, Table<FunicularRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

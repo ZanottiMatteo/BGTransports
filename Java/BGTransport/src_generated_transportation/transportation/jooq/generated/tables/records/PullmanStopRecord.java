@@ -32,6 +32,34 @@ public class PullmanStopRecord extends UpdatableRecordImpl<PullmanStopRecord> {
         return (String) get(0);
     }
 
+    /**
+     * Setter for <code>PULLMAN STOP.town</code>.
+     */
+    public void setTown(String value) {
+        set(1, value);
+    }
+
+    /**
+     * Getter for <code>PULLMAN STOP.town</code>.
+     */
+    public String getTown() {
+        return (String) get(1);
+    }
+
+    /**
+     * Setter for <code>PULLMAN STOP.province</code>.
+     */
+    public void setProvince(String value) {
+        set(2, value);
+    }
+
+    /**
+     * Getter for <code>PULLMAN STOP.province</code>.
+     */
+    public String getProvince() {
+        return (String) get(2);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -55,10 +83,12 @@ public class PullmanStopRecord extends UpdatableRecordImpl<PullmanStopRecord> {
     /**
      * Create a detached, initialised PullmanStopRecord
      */
-    public PullmanStopRecord(String name) {
+    public PullmanStopRecord(String name, String town, String province) {
         super(PullmanStop.PULLMAN_STOP);
 
         setName(name);
+        setTown(town);
+        setProvince(province);
         resetChangedOnNotNull();
     }
 }

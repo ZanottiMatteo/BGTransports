@@ -5,13 +5,10 @@ package transportation.jooq.generated;
 
 
 import transportation.jooq.generated.tables.Company;
-import transportation.jooq.generated.tables.Driver;
 import transportation.jooq.generated.tables.Funicular;
 import transportation.jooq.generated.tables.FunicularStation;
 import transportation.jooq.generated.tables.Pullman;
 import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.State;
-import transportation.jooq.generated.tables.Timetable;
 import transportation.jooq.generated.tables.Train;
 import transportation.jooq.generated.tables.TrainStation;
 import transportation.jooq.generated.tables.Tram;
@@ -28,11 +25,6 @@ public class Tables {
      * The table <code>COMPANY</code>.
      */
     public static final Company COMPANY = Company.COMPANY;
-
-    /**
-     * The table <code>DRIVER</code>.
-     */
-    public static final Driver DRIVER = Driver.DRIVER;
 
     /**
      * The table <code>FUNICULAR</code>.
@@ -53,16 +45,6 @@ public class Tables {
      * The table <code>PULLMAN STOP</code>.
      */
     public static final PullmanStop PULLMAN_STOP = PullmanStop.PULLMAN_STOP;
-
-    /**
-     * The table <code>STATE</code>.
-     */
-    public static final State STATE = State.STATE;
-
-    /**
-     * The table <code>TIMETABLE</code>.
-     */
-    public static final Timetable TIMETABLE = Timetable.TIMETABLE;
 
     /**
      * The table <code>TRAIN</code>.

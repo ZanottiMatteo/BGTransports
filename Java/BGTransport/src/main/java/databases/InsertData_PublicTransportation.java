@@ -16,15 +16,11 @@ import org.json.JSONObject;
 import transportation.jooq.generated.tables.Company;
 import transportation.jooq.generated.tables.FunicularStation;
 import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.State;
-import transportation.jooq.generated.tables.Timetable;
 import transportation.jooq.generated.tables.TrainStation;
 import transportation.jooq.generated.tables.TramStop;
 import transportation.jooq.generated.tables.records.CompanyRecord;
 import transportation.jooq.generated.tables.records.FunicularStationRecord;
 import transportation.jooq.generated.tables.records.PullmanStopRecord;
-import transportation.jooq.generated.tables.records.StateRecord;
-import transportation.jooq.generated.tables.records.TimetableRecord;
 import transportation.jooq.generated.tables.records.TrainStationRecord;
 import transportation.jooq.generated.tables.records.TramStopRecord;
 
@@ -83,44 +79,6 @@ public class InsertData_PublicTransportation {
 		System.out.println("Dati inseriti in " + utility.Constant.company + " con successo!");
 	}
 
-	public static void TIMETABLE(DSLContext create) throws IOException {
-		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_TIMETABLE);
-		JSONArray timetableJsonArray = fileReader(jsonFile);
-		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
-		for (int j = 0; j < timetableJsonArray.length(); j++) {
-			JSONObject timetableJson = timetableJsonArray.getJSONObject(j);
-
-			// Estrai i valori dal JSON
-			String time = timetableJson.getString(utility.Constant.time);
-
-			// Crea un TimetableRecord con i dati estratti
-			TimetableRecord timetableRecord = new TimetableRecord(time);
-			// Inserisci i dati nel database
-			create.insertInto(Timetable.TIMETABLE).set(timetableRecord).execute();
-		}
-		System.out.println("Dati inseriti in " + utility.Constant.timetable + " con successo!");
-	}
-
-	public static void STATE(DSLContext create) throws IOException {
-		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_STATE);
-		JSONArray stateJsonArray = fileReader(jsonFile);
-		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
-		for (int j = 0; j < stateJsonArray.length(); j++) {
-			JSONObject stateJson = stateJsonArray.getJSONObject(j);
-
-			// Estrai i valori dal JSON
-			String description = stateJson.getString(utility.Constant.description);
-
-			// Crea un StateRecord con i dati estratti
-			StateRecord stateRecord = new StateRecord(description);
-			// Inserisci i dati nel database
-			create.insertInto(State.STATE).set(stateRecord).execute();
-		}
-		System.out.println("Dati inseriti in " + utility.Constant.state + " con successo!");
-	}
-
 	public static void PULLMAN_STOP(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(utility.Constant.JSON_PULLMAN_STOP);
@@ -131,9 +89,11 @@ public class InsertData_PublicTransportation {
 
 			// Estrai i valori dal JSON
 			String name = pullmanStopJson.getString(utility.Constant.name);
+			String town = pullmanStopJson.getString(utility.Constant.town);
+			String province = pullmanStopJson.getString(utility.Constant.province);
 
 			// Crea un StateRecord con i dati estratti
-			PullmanStopRecord pullmanStopRecord = new PullmanStopRecord(name);
+			PullmanStopRecord pullmanStopRecord = new PullmanStopRecord(name, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(PullmanStop.PULLMAN_STOP).set(pullmanStopRecord).execute();
 		}
@@ -150,9 +110,12 @@ public class InsertData_PublicTransportation {
 
 			// Estrai i valori dal JSON
 			String name = funicularStationJson.getString(utility.Constant.name);
+			String address = funicularStationJson.getString(utility.Constant.address);
+			String town = funicularStationJson.getString(utility.Constant.town);
+			String province = funicularStationJson.getString(utility.Constant.province);
 
 			// Crea un StateRecord con i dati estratti
-			FunicularStationRecord funicularStationRecord = new FunicularStationRecord(name);
+			FunicularStationRecord funicularStationRecord = new FunicularStationRecord(name, address, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(FunicularStation.FUNICULAR_STATION).set(funicularStationRecord).execute();
 		}
@@ -169,9 +132,12 @@ public class InsertData_PublicTransportation {
 
 			// Estrai i valori dal JSON
 			String name = tramStopJson.getString(utility.Constant.name);
+			String address = tramStopJson.getString(utility.Constant.address);
+			String town = tramStopJson.getString(utility.Constant.town);
+			String province = tramStopJson.getString(utility.Constant.province);
 
 			// Crea un StateRecord con i dati estratti
-			TramStopRecord tramStopRecord = new TramStopRecord(name);
+			TramStopRecord tramStopRecord = new TramStopRecord(name, address, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(TramStop.TRAM_STOP).set(tramStopRecord).execute();
 		}
@@ -207,8 +173,6 @@ public class InsertData_PublicTransportation {
 
 		COMPANY(create);
 		FUNICULAR_STATION(create);
-		STATE(create);
-		TIMETABLE(create);
 		TRAIN_STATION(create);
 		TRAM_STOP(create);
 		PULLMAN_STOP(create);

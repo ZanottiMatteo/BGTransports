@@ -54,6 +54,16 @@ public class PullmanStop extends TableImpl<PullmanStopRecord> {
      */
     public final TableField<PullmanStopRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
 
+    /**
+     * The column <code>PULLMAN STOP.town</code>.
+     */
+    public final TableField<PullmanStopRecord, String> TOWN = createField(DSL.name("town"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>PULLMAN STOP.province</code>.
+     */
+    public final TableField<PullmanStopRecord, String> PROVINCE = createField(DSL.name("province"), SQLDataType.VARCHAR(255), this, "");
+
     private PullmanStop(Name alias, Table<PullmanStopRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
