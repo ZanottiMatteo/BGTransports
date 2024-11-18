@@ -136,35 +136,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.jooq</groupId>
-				<artifactId>jooq-codegen-maven</artifactId>
-				<version>3.19.15</version>
-				<executions>
-					<execution>
-						<id>generate</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<jdbc>
-								<driver>org.sqlite.JDBC</driver>
-								<url>jdbc:sqlite:database/Public Transportation.db3</url>
-							</jdbc>
-							<generator>
-								<database>
-									<name>org.jooq.meta.sqlite.SQLiteDatabase</name>
-								</database>
-								<target>
-									<packageName>com.example.generated</packageName>
-									<directory>target/generated-sources/jooq</directory>
-								</target>
-							</generator>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
 	</build>
 </project>
