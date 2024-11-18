@@ -9,6 +9,7 @@ import java.awt.Font;
 
 import BGTransport.BGTransport.App;
 import controller.ThemeController;
+import controller.SignUpController;
 
 public class SignUpWindow extends JFrame {
 
@@ -21,11 +22,15 @@ public class SignUpWindow extends JFrame {
 	private JTextField textUsername;
 	private JTextField textAddress;
 	private JTextField textCity;
-	private JTextField textCAP;
+	private JTextField textZIP;
 	private JLabel lblPassword_2;
 	private JLabel lblAddress;
 	private JLabel lblCity;
-	private JLabel lblCap;
+	private JLabel lblZip;
+	JButton signUpButton = new JButton("SignUp");
+	private JTextField textBirthday;
+	private JTextField textSurname;
+	private JTextField textName;
 	
 	
 	public SignUpWindow() {		
@@ -63,101 +68,138 @@ public class SignUpWindow extends JFrame {
 		
 		textEmail = new JTextField();
 		textEmail.setColumns(10);
-		textEmail.setBounds(185, 140, 216, 50);
+		textEmail.setBounds(185, 338, 216, 50);
 		panel.add(textEmail);
 		
 		passwordFirst = new JPasswordField();
-		passwordFirst.setBounds(185, 330, 216, 50);
+		passwordFirst.setBounds(185, 462, 216, 50);
 		panel.add(passwordFirst);
 		
 		passwordConfirm = new JPasswordField();
-		passwordConfirm.setBounds(185, 425, 216, 50);
+		passwordConfirm.setBounds(185, 524, 216, 50);
 		panel.add(passwordConfirm);
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		
 		textUsername = new JTextField();
 		textUsername.setColumns(10);
-		textUsername.setBounds(185, 235, 216, 50);
+		textUsername.setBounds(185, 400, 216, 50);
 		panel.add(textUsername);
 		
 		textAddress = new JTextField();
 		textAddress.setColumns(10);
-		textAddress.setBounds(185, 520, 216, 50);
+		textAddress.setBounds(185, 586, 216, 50);
 		panel.add(textAddress);
 		
 		textCity = new JTextField();
 		textCity.setColumns(10);
-		textCity.setBounds(185, 615, 216, 50);
+		textCity.setBounds(185, 648, 216, 50);
 		panel.add(textCity);
 		
-		textCAP = new JTextField();
-		textCAP.setColumns(10);
-		textCAP.setBounds(185, 710, 216, 50);
-		panel.add(textCAP);
+		textZIP = new JTextField();
+		textZIP.setColumns(10);
+		textZIP.setBounds(185, 710, 216, 50);
+		panel.add(textZIP);
 		
-		JButton signUpButton = new JButton("SignUp");
+		
 		signUpButton.setForeground(Color.WHITE);
 		signUpButton.setFont(new Font("SansSerif", Font.BOLD, 16));
 		signUpButton.setBackground(new Color(210, 105, 30));
 		signUpButton.setBounds(216, 805, 150, 50);
+		signUpButton.addActionListener(e -> SignUpController.SignUp(textName, textSurname, textBirthday,textEmail, passwordFirst, passwordConfirm, textUsername, textAddress, textCity, textZIP));
 		panel.add(signUpButton);
 		
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEmail.setForeground(new Color(210, 105, 30));
 		lblEmail.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblEmail.setBounds(75, 146, 105, 35);
+		lblEmail.setBounds(75, 344, 105, 35);
 		panel.add(lblEmail);
 		
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setForeground(new Color(210, 105, 30));
 		lblUsername.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblUsername.setBounds(75, 241, 105, 35);
+		lblUsername.setBounds(75, 406, 105, 35);
 		panel.add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword.setForeground(new Color(210, 105, 30));
 		lblPassword.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblPassword.setBounds(75, 336, 105, 35);
+		lblPassword.setBounds(75, 468, 105, 35);
 		panel.add(lblPassword);
 		
 		JLabel lblPassword_1 = new JLabel("Confirm");
 		lblPassword_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword_1.setForeground(new Color(210, 105, 30));
 		lblPassword_1.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblPassword_1.setBounds(75, 425, 105, 21);
+		lblPassword_1.setBounds(75, 524, 105, 21);
 		panel.add(lblPassword_1);
 		
 		lblPassword_2 = new JLabel("Password");
 		lblPassword_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword_2.setForeground(new Color(210, 105, 30));
 		lblPassword_2.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblPassword_2.setBounds(75, 447, 105, 28);
+		lblPassword_2.setBounds(75, 546, 105, 28);
 		panel.add(lblPassword_2);
 		
 		lblAddress = new JLabel("Indirizzo");
 		lblAddress.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAddress.setForeground(new Color(210, 105, 30));
 		lblAddress.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblAddress.setBounds(75, 526, 105, 35);
+		lblAddress.setBounds(75, 592, 105, 35);
 		panel.add(lblAddress);
 		
 		lblCity = new JLabel("Città");
 		lblCity.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCity.setForeground(new Color(210, 105, 30));
 		lblCity.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblCity.setBounds(75, 621, 105, 35);
+		lblCity.setBounds(75, 654, 105, 35);
 		panel.add(lblCity);
 		
-		lblCap = new JLabel("CAP");
-		lblCap.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCap.setForeground(new Color(210, 105, 30));
-		lblCap.setFont(new Font("SansSerif", Font.PLAIN, 16));
-		lblCap.setBounds(75, 716, 105, 35);
-		panel.add(lblCap);
+		lblZip = new JLabel("CAP");
+		lblZip.setHorizontalAlignment(SwingConstants.CENTER);
+		lblZip.setForeground(new Color(210, 105, 30));
+		lblZip.setFont(new Font("SansSerif", Font.PLAIN, 16));
+		lblZip.setBounds(75, 716, 105, 35);
+		panel.add(lblZip);
+		
+		JLabel lblBirthday = new JLabel("Data di Nascita");
+		lblBirthday.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBirthday.setForeground(new Color(210, 105, 30));
+		lblBirthday.setFont(new Font("SansSerif", Font.PLAIN, 16));
+		lblBirthday.setBounds(60, 282, 120, 35);
+		panel.add(lblBirthday);
+		
+		textBirthday = new JTextField();
+		textBirthday.setColumns(10);
+		textBirthday.setBounds(185, 276, 216, 50);
+		panel.add(textBirthday);
+		
+		JLabel lblSurname = new JLabel("Cognome");
+		lblSurname.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSurname.setForeground(new Color(210, 105, 30));
+		lblSurname.setFont(new Font("SansSerif", Font.PLAIN, 16));
+		lblSurname.setBounds(75, 220, 105, 35);
+		panel.add(lblSurname);
+		
+		textSurname = new JTextField();
+		textSurname.setColumns(10);
+		textSurname.setBounds(185, 214, 216, 50);
+		panel.add(textSurname);
+		
+		JLabel lblName = new JLabel("Nome");
+		lblName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblName.setForeground(new Color(210, 105, 30));
+		lblName.setFont(new Font("SansSerif", Font.PLAIN, 16));
+		lblName.setBounds(75, 155, 105, 35);
+		panel.add(lblName);
+		
+		textName = new JTextField();
+		textName.setColumns(10);
+		textName.setBounds(185, 149, 216, 50);
+		panel.add(textName);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(0, 0, 600, 500);
