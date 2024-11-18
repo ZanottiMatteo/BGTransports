@@ -19,7 +19,9 @@ import transportation.jooq.generated.tables.PullmanStop;
 import transportation.jooq.generated.tables.TrainStation;
 import transportation.jooq.generated.tables.TramStop;
 import transportation.jooq.generated.tables.records.CompanyRecord;
+import transportation.jooq.generated.tables.records.FunicularRecord;
 import transportation.jooq.generated.tables.records.FunicularStationRecord;
+import transportation.jooq.generated.tables.records.PullmanRecord;
 import transportation.jooq.generated.tables.records.PullmanStopRecord;
 import transportation.jooq.generated.tables.records.TrainStationRecord;
 import transportation.jooq.generated.tables.records.TramStopRecord;
@@ -165,6 +167,33 @@ public class InsertData_PublicTransportation {
 		}
 		System.out.println("Dati inseriti in " + utility.Constant.train_station + " con successo!");
 	}
+	
+	public static void FUNICULAR(DSLContext create) throws IOException {
+		File jsonFile = new File(utility.Constant.JSON_FUNICULAR);
+		JSONArray funicularJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < funicularJsonArray.length(); j++) {
+			JSONObject funicularJson = funicularJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			int id = funicularJson.getInt(utility.Constant.id);
+			String company_name = funicularJson.getString(utility.Constant.company_name);
+			String name = funicularJson.getString(utility.Constant.name);
+			String departureFunicularStation = funicularJson.getString(utility.Constant.departure_funicular_station);
+			String departureTime = funicularJson.getString(utility.Constant.departure_time);
+			String arrivalFunicularStation = funicularJson.getString(utility.Constant.arrival_funicular_station);
+			String arrivalTime = funicularJson.getString(utility.Constant.arrival_time);
+			String type = funicularJson.getString(utility.Constant.type);
+			String numberOfSeats = funicularJson.getString(utility.Constant.number_of_seats);
+			String info = funicularJson.getString(utility.Constant.info);
+
+			// Crea un CompanyRecord con i dati estratti
+			FunicularRecord trainStationRecord = new FunicularRecord(id, company_name, name, departureFunicularStation, departureTime, arrivalFunicularStation, arrivalTime, type, numberOfSeats, info);
+			// Inserisci i dati nel database
+			create.insertInto(TrainStation.TRAIN_STATION).set(trainStationRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.train_station + " con successo!");
+	}
 
 	public static void main(String[] args) throws SQLException, IOException {
 		// Connessione al database
@@ -176,5 +205,6 @@ public class InsertData_PublicTransportation {
 		TRAIN_STATION(create);
 		TRAM_STOP(create);
 		PULLMAN_STOP(create);
+		FUNICULAR(create);
 	}
 }

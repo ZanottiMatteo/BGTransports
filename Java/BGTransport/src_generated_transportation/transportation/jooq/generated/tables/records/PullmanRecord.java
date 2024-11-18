@@ -21,15 +21,15 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     /**
      * Setter for <code>PULLMAN.id</code>.
      */
-    public void setId(String value) {
+    public void setId(Integer value) {
         set(0, value);
     }
 
     /**
      * Getter for <code>PULLMAN.id</code>.
      */
-    public String getId() {
-        return (String) get(0);
+    public Integer getId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -205,7 +205,7 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<String> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -223,7 +223,7 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     /**
      * Create a detached, initialised PullmanRecord
      */
-    public PullmanRecord(String id, String companyName, String name, String line, String departureStop, String departureTimetable, String arrivalStop, String arrivalTimetable, String pullmanStopName, String time, String numberOfSeats, String licensePlate, String description) {
+    public PullmanRecord(Integer id, String companyName, String name, String line, String departureStop, String departureTimetable, String arrivalStop, String arrivalTimetable, String pullmanStopName, String time, String numberOfSeats, String licensePlate, String description) {
         super(Pullman.PULLMAN);
 
         setId(id);

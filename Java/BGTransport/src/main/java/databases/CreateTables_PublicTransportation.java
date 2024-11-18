@@ -18,7 +18,7 @@ public class CreateTables_PublicTransportation {
 	public static void create(DSLContext create) {
 	    // Creates the "PULLMAN" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.pullman)
-	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
+	            .column(utility.Constant.id, SQLDataType.INTEGER) // ID column
 	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 	            .column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME column
 	            .column(utility.Constant.line, SQLDataType.VARCHAR(255)) // type of LINE column
@@ -37,7 +37,7 @@ public class CreateTables_PublicTransportation {
 
 	    // Creates the "FUNICULAR" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.funicular)
-	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
+	            .column(utility.Constant.id, SQLDataType.INTEGER) // ID column
 	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 	            .column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME column
 	            .column(utility.Constant.departure_funicular_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE FUNICULAR STATION
@@ -53,7 +53,7 @@ public class CreateTables_PublicTransportation {
 
 	    // Creates the "TRAIN" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.train)
-	    		.column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
+	    		.column(utility.Constant.id, SQLDataType.INTEGER) // ID column
 	    		.column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 	    		.column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME of the tram column
 	    		.column(utility.Constant.departure_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAM STATION
@@ -72,7 +72,7 @@ public class CreateTables_PublicTransportation {
 
 	    // Creates the "TRAM" table if it does not already exist
 	    create.createTableIfNotExists(utility.Constant.tram)
-	            .column(utility.Constant.id, SQLDataType.VARCHAR(255)) // ID column with auto-increment
+	            .column(utility.Constant.id, SQLDataType.INTEGER) // ID column
 	            .column(utility.Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 	            .column(utility.Constant.name, SQLDataType.VARCHAR(255)) // NAME of the tram column
 	            .column(utility.Constant.departure_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAM STATION

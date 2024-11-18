@@ -21,15 +21,15 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     /**
      * Setter for <code>TRAIN.id</code>.
      */
-    public void setId(String value) {
+    public void setId(Integer value) {
         set(0, value);
     }
 
     /**
      * Getter for <code>TRAIN.id</code>.
      */
-    public String getId() {
-        return (String) get(0);
+    public Integer getId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -205,7 +205,7 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<String> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -223,7 +223,7 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     /**
      * Create a detached, initialised TrainRecord
      */
-    public TrainRecord(String id, String companyName, String name, String departureTramStation, String departureTimetable, String arrivalTramStation, String arrivalTimetable, String tramStopName, String time, String type, String numberOfSeats, String numberOfCarriages, String description) {
+    public TrainRecord(Integer id, String companyName, String name, String departureTramStation, String departureTimetable, String arrivalTramStation, String arrivalTimetable, String tramStopName, String time, String type, String numberOfSeats, String numberOfCarriages, String description) {
         super(Train.TRAIN);
 
         setId(id);

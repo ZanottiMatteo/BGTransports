@@ -16,6 +16,7 @@ public class Constant {
 	public static String JSON_TRAIN_STATION = "json/TRAIN STATION.json";
 	public static String JSON_FUNICULAR_STATION = "json/FUNICULAR STATION.json";
 	public static String JSON_PULLMAN_STOP = "json/PULLMAN STOP.json";
+	public static String JSON_FUNICULAR = "json/FUNICULAR.json";
 	
 	public static String address = "address";
 	public static String arrival_funicular_station = "arrival_funicular_station";

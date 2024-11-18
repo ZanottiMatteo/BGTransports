@@ -52,7 +52,7 @@ public class Funicular extends TableImpl<FunicularRecord> {
     /**
      * The column <code>FUNICULAR.id</code>.
      */
-    public final TableField<FunicularRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<FunicularRecord, Integer> ID = createField(DSL.name("id"), SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>FUNICULAR.company_name</code>.

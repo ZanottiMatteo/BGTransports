@@ -52,7 +52,7 @@ public class Pullman extends TableImpl<PullmanRecord> {
     /**
      * The column <code>PULLMAN.id</code>.
      */
-    public final TableField<PullmanRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<PullmanRecord, Integer> ID = createField(DSL.name("id"), SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>PULLMAN.company_name</code>.

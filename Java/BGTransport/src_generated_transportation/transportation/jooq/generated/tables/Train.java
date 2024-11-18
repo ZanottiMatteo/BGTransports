@@ -52,7 +52,7 @@ public class Train extends TableImpl<TrainRecord> {
     /**
      * The column <code>TRAIN.id</code>.
      */
-    public final TableField<TrainRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, Integer> ID = createField(DSL.name("id"), SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>TRAIN.company_name</code>.

@@ -21,15 +21,15 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
     /**
      * Setter for <code>FUNICULAR.id</code>.
      */
-    public void setId(String value) {
+    public void setId(Integer value) {
         set(0, value);
     }
 
     /**
      * Getter for <code>FUNICULAR.id</code>.
      */
-    public String getId() {
-        return (String) get(0);
+    public Integer getId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -163,7 +163,7 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<String> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -181,7 +181,7 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
     /**
      * Create a detached, initialised FunicularRecord
      */
-    public FunicularRecord(String id, String companyName, String name, String departureFunicularStation, String departureTimetable, String arrivalFunicularStation, String arrivalTimetable, String type, String numberOfSeats, String description) {
+    public FunicularRecord(Integer id, String companyName, String name, String departureFunicularStation, String departureTimetable, String arrivalFunicularStation, String arrivalTimetable, String type, String numberOfSeats, String description) {
         super(Funicular.FUNICULAR);
 
         setId(id);

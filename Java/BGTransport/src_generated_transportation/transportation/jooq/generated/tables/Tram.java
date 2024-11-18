@@ -52,7 +52,7 @@ public class Tram extends TableImpl<TramRecord> {
     /**
      * The column <code>TRAM.id</code>.
      */
-    public final TableField<TramRecord, String> ID = createField(DSL.name("id"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TramRecord, Integer> ID = createField(DSL.name("id"), SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>TRAM.company_name</code>.
