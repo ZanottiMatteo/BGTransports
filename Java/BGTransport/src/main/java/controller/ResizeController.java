@@ -21,10 +21,6 @@ public class ResizeController {
 	private static BufferedImage originalImage;
     private Image scaledImage;
 	
-	public ResizeController() {
-		
-	}
-	
 	public static void resizeComponents(Dimension originalPanelSize, JFrame jframe, Map<Component, Rectangle> componentBounds, JPanel panel) {
     	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;        
@@ -38,6 +34,14 @@ public class ResizeController {
         panel.repaint();
         panel.revalidate();
     } 
+	
+	public static void resizePanel(Dimension originalPanelSize, JFrame jframe, JPanel panel, Dimension paneldimension ) {
+    	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
+        double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;         
+        panel.setSize((int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
+        panel.repaint();
+        panel.revalidate();
+    }
 	
 	public static void resizeImagePanel(JFrame jframe, ResizableImage Rimage, JPanel panel) {
 		int newWidth = jframe.getWidth();

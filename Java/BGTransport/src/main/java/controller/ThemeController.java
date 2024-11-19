@@ -15,6 +15,7 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
+import view.HomeView;
 import view.LoginView;
 
 public class ThemeController {
@@ -38,7 +39,23 @@ public class ThemeController {
         }
     }
 	
-	public static void setTheme(JLabel logoLabel) {
+	public static void setThemeHomePanel(HomeView homeV) {
+	       
+		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf) 
+        {
+        	themeL = true;
+            FlatLightLaf.setup();
+            homeV.homePanel.setBackground(new Color(255, 255, 255, 100));
+        } 
+        else 
+        {
+        	themeL = false;
+            FlatDarkLaf.setup();
+            homeV.homePanel.setBackground(new Color(0, 0, 0, 100));
+        }
+    }
+	
+	public static void setThemeLabel(JLabel logoLabel) {
        
 		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf) 
         {

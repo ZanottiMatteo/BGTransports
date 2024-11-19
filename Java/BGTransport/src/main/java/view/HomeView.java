@@ -9,6 +9,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Rectangle;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Graphics;
@@ -18,7 +19,9 @@ import controller.MainController;
 import controller.NewWindowController;
 import controller.ResizeController;
 import controller.ThemeController;
+import model.WeatherModel;
 import view.RoundedPanel;
+import java.awt.Font;
 
 /**
  * HomeView class represents the main view of the application, displaying a background image, 
@@ -26,13 +29,18 @@ import view.RoundedPanel;
  * to interact with the main functionality of the application.
  */
 public class HomeView extends JFrame {
-
-    // Main panel that holds all the components.
-    public JPanel mainPanel = new JPanel();  
-    
-    // Buttons for switching themes and user interactions.
-    public JButton switchThemeButton;
+	
+	public JPanel mainPanel = new JPanel();  
+	
+	public RoundedPanel menuPanel = new RoundedPanel();
+	public JButton switchThemeButton;
     public JButton userButton;
+    
+    public RoundedPanel homePanel = new RoundedPanel();
+    public RoundedPanel weatherPanel = new RoundedPanel();
+    JLabel lblweather = new JLabel();
+    
+    
     
     // Background wallpaper (image that adjusts to screen size).
     public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png")); 
@@ -45,13 +53,14 @@ public class HomeView extends JFrame {
     
     // Original and minimum size for the window.
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
-    public final Dimension MinPanelSize = new Dimension(1075, 615);
+    public final Dimension MenuPanelSize = new Dimension(100, 900);
+    public final Dimension MinPanelSize = new Dimension(1085, 615);
 
     /**
      * Constructor that sets up the UI components, layout, and theming for the home view.
      * It also initializes the main panel, menu panel, and other UI elements.
      */
-    public HomeView() {
+    public HomeView(){
         
         // Set the window to be maximized on launch.
         setExtendedState(Frame.MAXIMIZED_BOTH);
@@ -95,56 +104,71 @@ public class HomeView extends JFrame {
         getContentPane().setLayout(null);
         
         // Initialize and configure the main panel.
-        mainPanel.setBounds(0, 0, 1920, 1080);      
+        mainPanel.setBounds(0, 0, 1920, 1041);      
         mainPanel.setLayout(null);
         getContentPane().add(mainPanel);
         
         // Create and configure a rounded panel for the main content area.
-        RoundedPanel homePanel = new RoundedPanel();
         homePanel.setLayout(null);
-        homePanel.setBounds(180, 90, 1700, 900);
+        homePanel.setOpaque(true);
+         
+        homePanel.setBounds(26, 40, 1854, 960);
         mainPanel.add(homePanel);
         
         // Create and configure a menu panel for user options.
-        RoundedPanel menuPanel = new RoundedPanel();
+       
+        menuPanel.setBounds(15, 30, 100, 900);       
         menuPanel.setBackground(new Color(210, 105, 30));  
         menuPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
-        menuPanel.setBounds(41, 90, 101, 900);
-        mainPanel.add(menuPanel);
         menuPanel.setLayout(null);
-                
+        homePanel.add(menuPanel);
+
+        
+        lblweather.setFont(new Font("SansSerif", Font.BOLD, 20));
+        lblweather.setBounds(10,11,440,78);
+        
+        try {
+			WeatherModel.getMeteo(lblweather);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+		weatherPanel.setLayout(null);
+        weatherPanel.setLocation(235, 30);
+        weatherPanel.setSize(471, 100);
+        weatherPanel.add(lblweather);
+        homePanel.add(weatherPanel);
+        
         // Create and configure the user button (with user icon).
         userButton = new JButton();
-        userButton.setBounds(22, 22, 62, 62);
+        userButton.setBounds(20, 20, 60, 60);
         userButton.setRolloverEnabled(false);  
         userButton.setBorderPainted(false);   // Remove border.
         userButton.setIcon(iconUser);         // Set the icon.
         userButton.setBackground(new Color(0, 0, 0, 0));  // Transparent background.
-        
-        // Add action listener to the user button to open the user panel when clicked.
         userButton.addActionListener(e -> NewWindowController.openLoginPanel(MainController.loginV));
         menuPanel.add(userButton);
         
         // Create and configure the theme switch button.
         switchThemeButton = new JButton();
-        switchThemeButton.setBounds(1855, 1000, 44, 35);  
-        mainPanel.add(switchThemeButton);
+        switchThemeButton.setBounds(20, 830, 60, 60);
+        menuPanel.add(switchThemeButton);
         switchThemeButton.setBackground(new Color(0, 0, 0, 0));  
         switchThemeButton.setIcon(new ImageIcon(HomeView.class.getResource("/images/LDMode.png"))); 
         switchThemeButton.setForeground(new Color(230, 230, 250)); 
         switchThemeButton.setRolloverEnabled(false); 
         switchThemeButton.setBorderPainted(false);  
-        
-        // Add action listener to the theme switch button to toggle between light and dark themes.
-        switchThemeButton.addActionListener(e -> ThemeController.setTheme());
+        switchThemeButton.addActionListener(e -> ThemeController.setThemeHomePanel(this));
         
         // Store the bounds of each component for possible future resizing.
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }
+        
         for (Component comp : menuPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
-        }
+        }        
         
         // Initialize other components like the title and default window behavior.
         initComponents();

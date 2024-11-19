@@ -109,7 +109,7 @@ public class LoginView extends JFrame {
     	switchThemeButton.setForeground(new Color(230, 230, 250));    	
     	switchThemeButton.setRolloverEnabled(false);
     	switchThemeButton.setBorderPainted(false);
-        switchThemeButton.addActionListener(e -> ThemeController.setTheme(LogoLabel));
+        switchThemeButton.addActionListener(e -> ThemeController.setThemeLabel(LogoLabel));
         mainPanel.add(switchThemeButton);
         
         passwordField.setBounds(852, 538, 216, 50);
@@ -139,7 +139,7 @@ public class LoginView extends JFrame {
     private void initComponents() {
         setTitle("BGTransport");
         setSize(1920,1080);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 }
