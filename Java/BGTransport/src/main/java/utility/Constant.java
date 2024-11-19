@@ -10,13 +10,17 @@ public class Constant {
 	public static String[] DBS = { DB_PUBLIC_TRANSPORTATION, DB_USERS };
 	
 	public static String JSON_COMPANY = "json/COMPANY.json";
-	public static String JSON_TIMETABLE = "json/TIMETABLE.json";
-	public static String JSON_STATE = "json/STATE.json";
 	public static String JSON_TRAM_STOP = "json/TRAM STOP.json";
 	public static String JSON_TRAIN_STATION = "json/TRAIN STATION.json";
 	public static String JSON_FUNICULAR_STATION = "json/FUNICULAR STATION.json";
 	public static String JSON_PULLMAN_STOP = "json/PULLMAN STOP.json";
 	public static String JSON_FUNICULAR = "json/FUNICULAR.json";
+	
+	public static String EXCEL_COMPANIES_LIST = "src/main/resources/excel/companies_list.xlsx";
+	public static String EXCEL_FUNICULAR_STATION_LIST = "src/main/resources/excel/funicular_station_list.xlsx";
+	public static String EXCEL_PULLMAN_STOP_LIST = "src/main/resources/excel/pullman_stop_list.xlsx";
+	public static String EXCEL_TRAIN_STATION_LIST = "src/main/resources/excel/train_station_list.xlsx";
+	public static String EXCEL_TRAM_STOP_LIST = "src/main/resources/excel/tram_station_list.xlsx";
 	
 	public static String address = "address";
 	public static String arrival_funicular_station = "arrival_funicular_station";
