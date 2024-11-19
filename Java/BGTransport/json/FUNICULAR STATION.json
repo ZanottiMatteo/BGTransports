@@ -1,71 +1,21 @@
 [ {
-  "station" : "FUNICOLARE",
+  "name" : "FUNICOLARE",
   "address" : "Viale Vittorio Emanuele II",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "Staz.Sup.Fun.Città",
+  "name" : "Staz.Sup.Fun.Città",
   "address" : "Piazza Mercato delle Scarpe",
   "town" : "Città Alta",
   "province" : "BG"
 }, {
-  "station" : "Staz.Inf.Fun.S.Vigilio",
+  "name" : "Staz.Inf.Fun.S.Vigilio",
   "address" : "Largo di Porta S. Alessandro",
   "town" : "Città Alta",
   "province" : "BG"
 }, {
-  "station" : "Staz.Sup.Fun.S.Vigilio",
+  "name" : "Staz.Sup.Fun.S.Vigilio",
   "address" : "Piazza San Vigilio",
   "town" : "Città Alta",
   "province" : "BG"
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
-}, {
-  "station" : "",
-  "address" : "",
-  "town" : "",
-  "province" : ""
 } ]

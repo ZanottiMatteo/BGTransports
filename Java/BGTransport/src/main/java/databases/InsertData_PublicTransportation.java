@@ -205,6 +205,6 @@ public class InsertData_PublicTransportation {
 		TRAIN_STATION(create);
 		TRAM_STOP(create);
 		PULLMAN_STOP(create);
-		FUNICULAR(create);
+		//FUNICULAR(create);
 	}
 }

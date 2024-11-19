@@ -20,13 +20,12 @@ public class CreateJSONFile {
 
 	public static void main(String[] args) {
 		try {
-			// Legge il file Excel e lo converte in una lista di oggetti
-			List<Map<String, String>> companies = readExcelFile(utility.Constant.EXCEL_COMPANIES_LIST);
-			// Converte i dati in JSON e li scrive su un file
-			writeJsonToFile(companies, utility.Constant.JSON_COMPANY);
 
 			List<Map<String, String>> funicularStation = readExcelFile(utility.Constant.EXCEL_FUNICULAR_STATION_LIST);
 			writeJsonToFile(funicularStation, utility.Constant.JSON_FUNICULAR_STATION);
+
+			List<Map<String, String>> companies = readExcelFile(utility.Constant.EXCEL_COMPANIES_LIST);
+			writeJsonToFile(companies, utility.Constant.JSON_COMPANY);
 
 			List<Map<String, String>> pullmanStop = readExcelFile(utility.Constant.EXCEL_PULLMAN_STOP_LIST);
 			writeJsonToFile(pullmanStop, utility.Constant.JSON_PULLMAN_STOP);
@@ -71,14 +70,17 @@ public class CreateJSONFile {
 			}
 
 			Map<String, String> rowData = new LinkedHashMap<>(); // Utilizziamo LinkedHashMap per preservare l'ordine
-																	// delle intestazioni
 
 			// Assegna i valori delle celle alle rispettive intestazioni mantenendo l'ordine
 			for (int j = 0; j < row.getPhysicalNumberOfCells(); j++) {
 				String cellValue = getCellValue(row.getCell(j));
 				rowData.put(headers.get(j), cellValue);
 			}
-			dataList.add(rowData);
+
+			// Verifica se la riga contiene almeno un valore non vuoto
+			if (rowData.values().stream().anyMatch(value -> !value.isEmpty())) {
+				dataList.add(rowData); // Aggiungi la riga solo se contiene valori non vuoti
+			}
 		}
 
 		workbook.close();

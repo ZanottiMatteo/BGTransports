@@ -1,80 +1,80 @@
 [ {
-  "station" : "BERGAMO FS",
+  "name" : "BERGAMO FS",
   "address" : "Piazza Marconi",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "BG BORGO PALAZZO",
+  "name" : "BG BORGO PALAZZO",
   "address" : "Via Borgo Palazzo",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "BG SAN FERMO",
+  "name" : "BG SAN FERMO",
   "address" : "Via San Fermo",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "BG BIANZANA",
+  "name" : "BG BIANZANA",
   "address" : "Via Bianzana",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "BG REDONA",
+  "name" : "BG REDONA",
   "address" : "Via Redona",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "BG NEGRISOLI",
+  "name" : "BG NEGRISOLI",
   "address" : "Via Negrisoli",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "BG MARTINELLA",
+  "name" : "BG MARTINELLA",
   "address" : "Via Martinella",
   "town" : "Bergamo",
   "province" : "BG"
 }, {
-  "station" : "TORRE BOLDONE",
+  "name" : "TORRE BOLDONE",
   "address" : "Via Fratelli Calvi",
   "town" : "Torre Boldone",
   "province" : "BG"
 }, {
-  "station" : "RANICA",
+  "name" : "RANICA",
   "address" : "Via Cimitero",
   "town" : "Ranica",
   "province" : "BG"
 }, {
-  "station" : "ALZANO CENTRO",
+  "name" : "ALZANO CENTRO",
   "address" : "Via Bonomelli",
   "town" : "Alzano Lombardo",
   "province" : "BG"
 }, {
-  "station" : "ALZANO SOPRA",
+  "name" : "ALZANO SOPRA",
   "address" : "Via San Giovanni",
   "town" : "Alzano Sopra",
   "province" : "BG"
 }, {
-  "station" : "NEMBRO CAMOZZI",
+  "name" : "NEMBRO CAMOZZI",
   "address" : "Via Camozzi",
   "town" : "Nembro",
   "province" : "BG"
 }, {
-  "station" : "NEMBRO CENTRO",
+  "name" : "NEMBRO CENTRO",
   "address" : "Via Gianetti",
   "town" : "Nembro",
   "province" : "BG"
 }, {
-  "station" : "NEMBRO SALETTI",
+  "name" : "NEMBRO SALETTI",
   "address" : "Via Saletti",
   "town" : "Nembro",
   "province" : "BG"
 }, {
-  "station" : "PRADALUNGA",
+  "name" : "PRADALUNGA",
   "address" : "Via dei Martiri",
   "town" : "Pradalunga",
   "province" : "BG"
 }, {
-  "station" : "ALBINO",
+  "name" : "ALBINO",
   "address" : "Piazza Giovanni XXIII",
   "town" : "Albino",
   "province" : "BG"
