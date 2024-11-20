@@ -19,16 +19,16 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>USER.surname</code>.
+     * Setter for <code>USER.username</code>.
      */
-    public void setSurname(String value) {
+    public void setUsername(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>USER.surname</code>.
+     * Getter for <code>USER.username</code>.
      */
-    public String getSurname() {
+    public String getUsername() {
         return (String) get(0);
     }
 
@@ -47,16 +47,16 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
     }
 
     /**
-     * Setter for <code>USER.fiscal_code</code>.
+     * Setter for <code>USER.surname</code>.
      */
-    public void setFiscalCode(String value) {
+    public void setSurname(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>USER.fiscal_code</code>.
+     * Getter for <code>USER.surname</code>.
      */
-    public String getFiscalCode() {
+    public String getSurname() {
         return (String) get(2);
     }
 
@@ -75,199 +75,87 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
     }
 
     /**
-     * Setter for <code>USER.place_of_birth</code>.
-     */
-    public void setPlaceOfBirth(String value) {
-        set(4, value);
-    }
-
-    /**
-     * Getter for <code>USER.place_of_birth</code>.
-     */
-    public String getPlaceOfBirth() {
-        return (String) get(4);
-    }
-
-    /**
-     * Setter for <code>USER.cap</code>.
-     */
-    public void setCap(String value) {
-        set(5, value);
-    }
-
-    /**
-     * Getter for <code>USER.cap</code>.
-     */
-    public String getCap() {
-        return (String) get(5);
-    }
-
-    /**
-     * Setter for <code>USER.town</code>.
-     */
-    public void setTown(String value) {
-        set(6, value);
-    }
-
-    /**
-     * Getter for <code>USER.town</code>.
-     */
-    public String getTown() {
-        return (String) get(6);
-    }
-
-    /**
-     * Setter for <code>USER.province</code>.
-     */
-    public void setProvince(String value) {
-        set(7, value);
-    }
-
-    /**
-     * Getter for <code>USER.province</code>.
-     */
-    public String getProvince() {
-        return (String) get(7);
-    }
-
-    /**
-     * Setter for <code>USER.street_number</code>.
-     */
-    public void setStreetNumber(String value) {
-        set(8, value);
-    }
-
-    /**
-     * Getter for <code>USER.street_number</code>.
-     */
-    public String getStreetNumber() {
-        return (String) get(8);
-    }
-
-    /**
      * Setter for <code>USER.address</code>.
      */
     public void setAddress(String value) {
-        set(9, value);
+        set(4, value);
     }
 
     /**
      * Getter for <code>USER.address</code>.
      */
     public String getAddress() {
-        return (String) get(9);
+        return (String) get(4);
+    }
+
+    /**
+     * Setter for <code>USER.town</code>.
+     */
+    public void setTown(String value) {
+        set(5, value);
+    }
+
+    /**
+     * Getter for <code>USER.town</code>.
+     */
+    public String getTown() {
+        return (String) get(5);
+    }
+
+    /**
+     * Setter for <code>USER.cap</code>.
+     */
+    public void setCap(String value) {
+        set(6, value);
+    }
+
+    /**
+     * Getter for <code>USER.cap</code>.
+     */
+    public String getCap() {
+        return (String) get(6);
     }
 
     /**
      * Setter for <code>USER.password</code>.
      */
     public void setPassword(String value) {
-        set(10, value);
+        set(7, value);
     }
 
     /**
      * Getter for <code>USER.password</code>.
      */
     public String getPassword() {
-        return (String) get(10);
-    }
-
-    /**
-     * Setter for <code>USER.registered_user</code>.
-     */
-    public void setRegisteredUser(Boolean value) {
-        set(11, value);
-    }
-
-    /**
-     * Getter for <code>USER.registered_user</code>.
-     */
-    public Boolean getRegisteredUser() {
-        return (Boolean) get(11);
-    }
-
-    /**
-     * Setter for <code>USER.manager</code>.
-     */
-    public void setManager(Boolean value) {
-        set(12, value);
-    }
-
-    /**
-     * Getter for <code>USER.manager</code>.
-     */
-    public Boolean getManager() {
-        return (Boolean) get(12);
-    }
-
-    /**
-     * Setter for <code>USER.developer</code>.
-     */
-    public void setDeveloper(Boolean value) {
-        set(13, value);
-    }
-
-    /**
-     * Getter for <code>USER.developer</code>.
-     */
-    public Boolean getDeveloper() {
-        return (Boolean) get(13);
-    }
-
-    /**
-     * Setter for <code>USER.telephone</code>.
-     */
-    public void setTelephone(String value) {
-        set(14, value);
-    }
-
-    /**
-     * Getter for <code>USER.telephone</code>.
-     */
-    public String getTelephone() {
-        return (String) get(14);
+        return (String) get(7);
     }
 
     /**
      * Setter for <code>USER.mail</code>.
      */
     public void setMail(String value) {
-        set(15, value);
+        set(8, value);
     }
 
     /**
      * Getter for <code>USER.mail</code>.
      */
     public String getMail() {
-        return (String) get(15);
+        return (String) get(8);
     }
 
     /**
-     * Setter for <code>USER.social</code>.
+     * Setter for <code>USER.role</code>.
      */
-    public void setSocial(String value) {
-        set(16, value);
+    public void setRole(Integer value) {
+        set(9, value);
     }
 
     /**
-     * Getter for <code>USER.social</code>.
+     * Getter for <code>USER.role</code>.
      */
-    public String getSocial() {
-        return (String) get(16);
-    }
-
-    /**
-     * Setter for <code>USER.web_site</code>.
-     */
-    public void setWebSite(String value) {
-        set(17, value);
-    }
-
-    /**
-     * Getter for <code>USER.web_site</code>.
-     */
-    public String getWebSite() {
-        return (String) get(17);
+    public Integer getRole() {
+        return (Integer) get(9);
     }
 
     // -------------------------------------------------------------------------
@@ -293,27 +181,19 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
     /**
      * Create a detached, initialised UserRecord
      */
-    public UserRecord(String surname, String name, String fiscalCode, String dateOfBirth, String placeOfBirth, String cap, String town, String province, String streetNumber, String address, String password, Boolean registeredUser, Boolean manager, Boolean developer, String telephone, String mail, String social, String webSite) {
+    public UserRecord(String username, String name, String surname, String dateOfBirth, String address, String town, String cap, String password, String mail, Integer role) {
         super(User.USER);
 
-        setSurname(surname);
+        setUsername(username);
         setName(name);
-        setFiscalCode(fiscalCode);
+        setSurname(surname);
         setDateOfBirth(dateOfBirth);
-        setPlaceOfBirth(placeOfBirth);
-        setCap(cap);
-        setTown(town);
-        setProvince(province);
-        setStreetNumber(streetNumber);
         setAddress(address);
+        setTown(town);
+        setCap(cap);
         setPassword(password);
-        setRegisteredUser(registeredUser);
-        setManager(manager);
-        setDeveloper(developer);
-        setTelephone(telephone);
         setMail(mail);
-        setSocial(social);
-        setWebSite(webSite);
+        setRole(role);
         resetChangedOnNotNull();
     }
 }

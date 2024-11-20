@@ -1,4 +1,4 @@
-package databases;
+package model;
 
 import java.io.File;
 import java.io.FileReader;
@@ -52,30 +52,30 @@ public class InsertDataDB {
 
 	public static void company(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_COMPANY);
+		File jsonFile = new File(Constant.JSON_COMPANY);
 		JSONArray companiesJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < companiesJsonArray.length(); j++) {
 			JSONObject companyJson = companiesJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			String name = companyJson.getString(utility.Constant.name);
-			String legalStructure = companyJson.getString(utility.Constant.legal_structure);
-			String businessTaxCode = companyJson.getString(utility.Constant.business_tax_code);
-			String companyRegistrationNumber = companyJson.getString(utility.Constant.company_registration_number);
-			String incorporationDate = companyJson.getString(utility.Constant.incorporation_date);
-			String legalRepresentative = companyJson.optString(utility.Constant.legal_representative, "");
-			String numberOfEmployees = companyJson.getString(utility.Constant.number_of_employees);
-			String atecoCode = companyJson.getString(utility.Constant.ATECO_code);
-			String registeredOffice = companyJson.getString(utility.Constant.registered_office);
-			String province = companyJson.getString(utility.Constant.province);
-			String cap = companyJson.getString(utility.Constant.CAP);
-			String address = companyJson.getString(utility.Constant.address);
-			String streetNumber = companyJson.getString(utility.Constant.street_number);
-			String telephone = companyJson.getString(utility.Constant.telephone);
-			String mail = companyJson.getString(utility.Constant.mail);
-			String social = companyJson.getString(utility.Constant.social);
-			String webSite = companyJson.getString(utility.Constant.web_site);
+			String name = companyJson.getString(Constant.name);
+			String legalStructure = companyJson.getString(Constant.legal_structure);
+			String businessTaxCode = companyJson.getString(Constant.business_tax_code);
+			String companyRegistrationNumber = companyJson.getString(Constant.company_registration_number);
+			String incorporationDate = companyJson.getString(Constant.incorporation_date);
+			String legalRepresentative = companyJson.optString(Constant.legal_representative, "");
+			String numberOfEmployees = companyJson.getString(Constant.number_of_employees);
+			String atecoCode = companyJson.getString(Constant.ATECO_code);
+			String registeredOffice = companyJson.getString(Constant.registered_office);
+			String province = companyJson.getString(Constant.province);
+			String cap = companyJson.getString(Constant.CAP);
+			String address = companyJson.getString(Constant.address);
+			String streetNumber = companyJson.getString(Constant.street_number);
+			String telephone = companyJson.getString(Constant.telephone);
+			String mail = companyJson.getString(Constant.mail);
+			String social = companyJson.getString(Constant.social);
+			String webSite = companyJson.getString(Constant.web_site);
 
 			// Crea un CompanyRecord con i dati estratti
 			CompanyRecord companyRecord = new CompanyRecord(name, legalStructure, businessTaxCode,
@@ -84,113 +84,113 @@ public class InsertDataDB {
 			// Inserisci i dati nel database
 			create.insertInto(Company.COMPANY).set(companyRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.company + " con successo!");
+		System.out.println("Add data in " + Constant.company + " with success!");
 	}
 
 	public static void pullman_stop(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_PULLMAN_STOP);
+		File jsonFile = new File(Constant.JSON_PULLMAN_STOP);
 		JSONArray pullmanStopJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < pullmanStopJsonArray.length(); j++) {
 			JSONObject pullmanStopJson = pullmanStopJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			String name = pullmanStopJson.getString(utility.Constant.name);
-			String town = pullmanStopJson.getString(utility.Constant.town);
-			String province = pullmanStopJson.getString(utility.Constant.province);
+			String name = pullmanStopJson.getString(Constant.name);
+			String town = pullmanStopJson.getString(Constant.town);
+			String province = pullmanStopJson.getString(Constant.province);
 
 			// Crea un StateRecord con i dati estratti
 			PullmanStopRecord pullmanStopRecord = new PullmanStopRecord(name, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(PullmanStop.PULLMAN_STOP).set(pullmanStopRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.pullman_stop + " con successo!");
+		System.out.println("Add data in " + Constant.pullman_stop + " with success!");
 	}
 
 	public static void funicular_station(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_FUNICULAR_STATION);
+		File jsonFile = new File(Constant.JSON_FUNICULAR_STATION);
 		JSONArray funicularStationJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < funicularStationJsonArray.length(); j++) {
 			JSONObject funicularStationJson = funicularStationJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			String name = funicularStationJson.getString(utility.Constant.name);
-			String address = funicularStationJson.getString(utility.Constant.address);
-			String town = funicularStationJson.getString(utility.Constant.town);
-			String province = funicularStationJson.getString(utility.Constant.province);
+			String name = funicularStationJson.getString(Constant.name);
+			String address = funicularStationJson.getString(Constant.address);
+			String town = funicularStationJson.getString(Constant.town);
+			String province = funicularStationJson.getString(Constant.province);
 
 			// Crea un StateRecord con i dati estratti
 			FunicularStationRecord funicularStationRecord = new FunicularStationRecord(name, address, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(FunicularStation.FUNICULAR_STATION).set(funicularStationRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.funicular_station + " con successo!");
+		System.out.println("Add data in " + Constant.funicular_station + " with success!");
 	}
 
 	public static void tram_stop(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_TRAM_STOP);
+		File jsonFile = new File(Constant.JSON_TRAM_STOP);
 		JSONArray tramStopJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < tramStopJsonArray.length(); j++) {
 			JSONObject tramStopJson = tramStopJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			String name = tramStopJson.getString(utility.Constant.name);
-			String address = tramStopJson.getString(utility.Constant.address);
-			String town = tramStopJson.getString(utility.Constant.town);
-			String province = tramStopJson.getString(utility.Constant.province);
+			String name = tramStopJson.getString(Constant.name);
+			String address = tramStopJson.getString(Constant.address);
+			String town = tramStopJson.getString(Constant.town);
+			String province = tramStopJson.getString(Constant.province);
 
 			// Crea un StateRecord con i dati estratti
 			TramStopRecord tramStopRecord = new TramStopRecord(name, address, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(TramStop.TRAM_STOP).set(tramStopRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.tram_stop + " con successo!");
+		System.out.println("Add data in " + Constant.tram_stop + " with success!");
 	}
 
 	public static void train_station(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
-		File jsonFile = new File(utility.Constant.JSON_TRAIN_STATION);
+		File jsonFile = new File(Constant.JSON_TRAIN_STATION);
 		JSONArray trainStationJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < trainStationJsonArray.length(); j++) {
 			JSONObject trainStationJson = trainStationJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			String name = trainStationJson.getString(utility.Constant.name);
-			String address = trainStationJson.getString(utility.Constant.address);
-			String town = trainStationJson.getString(utility.Constant.town);
-			String province = trainStationJson.getString(utility.Constant.province);
+			String name = trainStationJson.getString(Constant.name);
+			String address = trainStationJson.getString(Constant.address);
+			String town = trainStationJson.getString(Constant.town);
+			String province = trainStationJson.getString(Constant.province);
 
 			// Crea un CompanyRecord con i dati estratti
 			TrainStationRecord trainStationRecord = new TrainStationRecord(name, address, town, province);
 			// Inserisci i dati nel database
 			create.insertInto(TrainStation.TRAIN_STATION).set(trainStationRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.train_station + " con successo!");
+		System.out.println("Add data in " + Constant.train_station + " with success!");
 	}
 
 	public static void funicular(DSLContext create) throws IOException {
-		File jsonFile = new File(utility.Constant.JSON_FUNICULAR_TIMETABLE);
+		File jsonFile = new File(Constant.JSON_FUNICULAR_TIMETABLE);
 		JSONArray funicularJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < funicularJsonArray.length(); j++) {
 			JSONObject funicularJson = funicularJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			int id = funicularJson.getInt(utility.Constant.id);
-			String company_name = funicularJson.getString(utility.Constant.company_name);
-			String name = funicularJson.getString(utility.Constant.name);
-			String departureFunicularStation = funicularJson.getString(utility.Constant.departure_funicular_station);
-			String departureTime = funicularJson.getString(utility.Constant.departure_time);
-			String arrivalFunicularStation = funicularJson.getString(utility.Constant.arrival_funicular_station);
-			String arrivalTime = funicularJson.getString(utility.Constant.arrival_time);
-			String type = funicularJson.getString(utility.Constant.type);
-			String numberOfSeats = funicularJson.getString(utility.Constant.number_of_seats);
+			int id = funicularJson.getInt(Constant.id);
+			String company_name = funicularJson.getString(Constant.company_name);
+			String name = funicularJson.getString(Constant.name);
+			String departureFunicularStation = funicularJson.getString(Constant.departure_funicular_station);
+			String departureTime = funicularJson.getString(Constant.departure_time);
+			String arrivalFunicularStation = funicularJson.getString(Constant.arrival_funicular_station);
+			String arrivalTime = funicularJson.getString(Constant.arrival_time);
+			String type = funicularJson.getString(Constant.type);
+			String numberOfSeats = funicularJson.getString(Constant.number_of_seats);
 
 			// Crea un CompanyRecord con i dati estratti
 			FunicularRecord funicularRecord = new FunicularRecord(id, company_name, name, departureFunicularStation,
@@ -198,29 +198,29 @@ public class InsertDataDB {
 			// Inserisci i dati nel database
 			create.insertInto(Funicular.FUNICULAR).set(funicularRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.funicular + " con successo!");
+		System.out.println("Add data in " + Constant.funicular + " with success!");
 	}
 
 	public static void tram(DSLContext create) throws IOException {
-		File jsonFile = new File(utility.Constant.JSON_TRAM_TIMETABLE);
+		File jsonFile = new File(Constant.JSON_TRAM_TIMETABLE);
 		JSONArray tramJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < tramJsonArray.length(); j++) {
 			JSONObject tramJson = tramJsonArray.getJSONObject(j);
 
 			// Estrai i valori dal JSON
-			int id = tramJson.getInt(utility.Constant.id);
-			String company_name = tramJson.getString(utility.Constant.company_name);
-			String name = tramJson.getString(utility.Constant.name);
-			String departureTramStation = tramJson.getString(utility.Constant.departure_tram_station);
-			String departureTime = tramJson.getString(utility.Constant.departure_time);
-			String arrivalTramStation = tramJson.getString(utility.Constant.arrival_tram_station);
-			String arrivalTime = tramJson.getString(utility.Constant.arrival_time);
-			String nextStop = tramJson.getString(utility.Constant.next_stop);
-			String timeStop = tramJson.getString(utility.Constant.time_stop);
-			String type = tramJson.getString(utility.Constant.type);
-			String numberOfSeats = tramJson.getString(utility.Constant.number_of_seats);
-			String numberOfCarriages = tramJson.getString(utility.Constant.number_of_carriages);
+			int id = tramJson.getInt(Constant.id);
+			String company_name = tramJson.getString(Constant.company_name);
+			String name = tramJson.getString(Constant.name);
+			String departureTramStation = tramJson.getString(Constant.departure_tram_station);
+			String departureTime = tramJson.getString(Constant.departure_time);
+			String arrivalTramStation = tramJson.getString(Constant.arrival_tram_station);
+			String arrivalTime = tramJson.getString(Constant.arrival_time);
+			String nextStop = tramJson.getString(Constant.next_stop);
+			String timeStop = tramJson.getString(Constant.time_stop);
+			String type = tramJson.getString(Constant.type);
+			String numberOfSeats = tramJson.getString(Constant.number_of_seats);
+			String numberOfCarriages = tramJson.getString(Constant.number_of_carriages);
 
 			// Crea un CompanyRecord con i dati estratti
 			TramRecord tramRecord = new TramRecord(id, company_name, name, departureTramStation, departureTime,
@@ -228,35 +228,7 @@ public class InsertDataDB {
 			// Inserisci i dati nel database
 			create.insertInto(Tram.TRAM).set(tramRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.tram + " con successo!");
+		System.out.println("Add data in " + Constant.tram + " with success!");
 	}
 
-	/*
-	 * public static void user(DSLContext create) throws IOException { String name =
-	 * SignUpController.getString(utility.Constant.name); String
-	 * departureTramStation =
-	 * tramJson.getString(utility.Constant.departure_tram_station); String
-	 * departureTime = tramJson.getString(utility.Constant.departure_time); String
-	 * arrivalTramStation =
-	 * tramJson.getString(utility.Constant.arrival_tram_station); String arrivalTime
-	 * = tramJson.getString(utility.Constant.arrival_time); String nextStop =
-	 * tramJson.getString(utility.Constant.next_stop); String timeStop =
-	 * tramJson.getString(utility.Constant.time_stop); String type =
-	 * tramJson.getString(utility.Constant.type); String numberOfSeats =
-	 * tramJson.getString(utility.Constant.number_of_seats); String
-	 * numberOfCarriages = tramJson.getString(utility.Constant.number_of_carriages);
-	 * 
-	 * // Crea un CompanyRecord con i dati estratti UserRecord userRecord = new
-	 * UserRecord(); // Inserisci i dati nel database
-	 * create.insertInto(User.USER).set(userRecord).execute(); }
-	 * System.out.println("Dati inseriti in " + utility.Constant.user +
-	 * " con successo!"); }
-	 */
-
-	public static DSLContext connection(String database) throws SQLException {
-		Connection conn = DriverManager.getConnection(database);
-		DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
-
-		return create;
-	}
 }

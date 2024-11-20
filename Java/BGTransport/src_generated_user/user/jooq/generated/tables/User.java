@@ -50,9 +50,9 @@ public class User extends TableImpl<UserRecord> {
     }
 
     /**
-     * The column <code>USER.surname</code>.
+     * The column <code>USER.username</code>.
      */
-    public final TableField<UserRecord, String> SURNAME = createField(DSL.name("surname"), SQLDataType.VARCHAR(100), this, "");
+    public final TableField<UserRecord, String> USERNAME = createField(DSL.name("username"), SQLDataType.VARCHAR(100), this, "");
 
     /**
      * The column <code>USER.name</code>.
@@ -60,9 +60,9 @@ public class User extends TableImpl<UserRecord> {
     public final TableField<UserRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.fiscal_code</code>.
+     * The column <code>USER.surname</code>.
      */
-    public final TableField<UserRecord, String> FISCAL_CODE = createField(DSL.name("fiscal_code"), SQLDataType.VARCHAR(50), this, "");
+    public final TableField<UserRecord, String> SURNAME = createField(DSL.name("surname"), SQLDataType.VARCHAR(100), this, "");
 
     /**
      * The column <code>USER.date_of_birth</code>.
@@ -70,14 +70,9 @@ public class User extends TableImpl<UserRecord> {
     public final TableField<UserRecord, String> DATE_OF_BIRTH = createField(DSL.name("date_of_birth"), SQLDataType.VARCHAR(20), this, "");
 
     /**
-     * The column <code>USER.place_of_birth</code>.
+     * The column <code>USER.address</code>.
      */
-    public final TableField<UserRecord, String> PLACE_OF_BIRTH = createField(DSL.name("place_of_birth"), SQLDataType.VARCHAR(50), this, "");
-
-    /**
-     * The column <code>USER.cap</code>.
-     */
-    public final TableField<UserRecord, String> CAP = createField(DSL.name("cap"), SQLDataType.VARCHAR(10), this, "");
+    public final TableField<UserRecord, String> ADDRESS = createField(DSL.name("address"), SQLDataType.VARCHAR(50), this, "");
 
     /**
      * The column <code>USER.town</code>.
@@ -85,19 +80,9 @@ public class User extends TableImpl<UserRecord> {
     public final TableField<UserRecord, String> TOWN = createField(DSL.name("town"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>USER.province</code>.
+     * The column <code>USER.cap</code>.
      */
-    public final TableField<UserRecord, String> PROVINCE = createField(DSL.name("province"), SQLDataType.VARCHAR(4), this, "");
-
-    /**
-     * The column <code>USER.street_number</code>.
-     */
-    public final TableField<UserRecord, String> STREET_NUMBER = createField(DSL.name("street_number"), SQLDataType.VARCHAR(50), this, "");
-
-    /**
-     * The column <code>USER.address</code>.
-     */
-    public final TableField<UserRecord, String> ADDRESS = createField(DSL.name("address"), SQLDataType.VARCHAR(50), this, "");
+    public final TableField<UserRecord, String> CAP = createField(DSL.name("cap"), SQLDataType.VARCHAR(100), this, "");
 
     /**
      * The column <code>USER.password</code>.
@@ -105,39 +90,14 @@ public class User extends TableImpl<UserRecord> {
     public final TableField<UserRecord, String> PASSWORD = createField(DSL.name("password"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>USER.registered_user</code>.
-     */
-    public final TableField<UserRecord, Boolean> REGISTERED_USER = createField(DSL.name("registered_user"), SQLDataType.BOOLEAN, this, "");
-
-    /**
-     * The column <code>USER.manager</code>.
-     */
-    public final TableField<UserRecord, Boolean> MANAGER = createField(DSL.name("manager"), SQLDataType.BOOLEAN, this, "");
-
-    /**
-     * The column <code>USER.developer</code>.
-     */
-    public final TableField<UserRecord, Boolean> DEVELOPER = createField(DSL.name("developer"), SQLDataType.BOOLEAN, this, "");
-
-    /**
-     * The column <code>USER.telephone</code>.
-     */
-    public final TableField<UserRecord, String> TELEPHONE = createField(DSL.name("telephone"), SQLDataType.VARCHAR(50), this, "");
-
-    /**
      * The column <code>USER.mail</code>.
      */
     public final TableField<UserRecord, String> MAIL = createField(DSL.name("mail"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.social</code>.
+     * The column <code>USER.role</code>.
      */
-    public final TableField<UserRecord, String> SOCIAL = createField(DSL.name("social"), SQLDataType.VARCHAR(100), this, "");
-
-    /**
-     * The column <code>USER.web_site</code>.
-     */
-    public final TableField<UserRecord, String> WEB_SITE = createField(DSL.name("web_site"), SQLDataType.VARCHAR(100), this, "");
+    public final TableField<UserRecord, Integer> ROLE = createField(DSL.name("role"), SQLDataType.INTEGER, this, "");
 
     private User(Name alias, Table<UserRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

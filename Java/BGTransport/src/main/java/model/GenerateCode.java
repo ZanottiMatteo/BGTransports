@@ -1,4 +1,4 @@
-package databases;
+package model;
 
 import org.jooq.codegen.GenerationTool;
 import org.jooq.meta.jaxb.Configuration;

@@ -6,6 +6,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.sql.SQLException;
 
 import BGTransport.BGTransport.App;
 import controller.ThemeController;
@@ -106,7 +107,14 @@ public class SignUpWindow extends JFrame {
 		signUpButton.setFont(new Font("SansSerif", Font.BOLD, 16));
 		signUpButton.setBackground(new Color(210, 105, 30));
 		signUpButton.setBounds(216, 805, 150, 50);
-		signUpButton.addActionListener(e -> SignUpController.SignUp(textName, textSurname, textBirthday,textEmail, passwordFirst, passwordConfirm, textUsername, textAddress, textCity, textZIP));
+		signUpButton.addActionListener(e -> {
+			try {
+				SignUpController.SignUp(textName, textSurname, textBirthday,textEmail, passwordFirst, passwordConfirm, textUsername, textAddress, textCity, textZIP);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		panel.add(signUpButton);
 		
 		JLabel lblEmail = new JLabel("Email");

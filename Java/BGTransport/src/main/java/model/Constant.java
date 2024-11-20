@@ -1,4 +1,4 @@
-package utility;
+package model;
 
 public class Constant {
 
@@ -78,6 +78,7 @@ public class Constant {
 	public static String pullman_stop = "PULLMAN STOP";
 	public static String registered_office = "registered_office";
 	public static String registered_user = "registered_user";
+	public static String role = "role";
 	public static String social = "social";
 	public static String state = "STATE";
 	public static String street_number = "street_number";
@@ -93,6 +94,6 @@ public class Constant {
 	public static String type = "type";
 	public static String next_stop = "next_stop";
 	public static String user = "USER";
+	public static String username = "username";
 	public static String web_site = "web_site";
-
 }
