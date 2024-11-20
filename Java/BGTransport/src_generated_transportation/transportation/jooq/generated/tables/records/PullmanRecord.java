@@ -89,16 +89,16 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     }
 
     /**
-     * Setter for <code>PULLMAN.departure_timetable</code>.
+     * Setter for <code>PULLMAN.departure_time</code>.
      */
-    public void setDepartureTimetable(String value) {
+    public void setDepartureTime(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>PULLMAN.departure_timetable</code>.
+     * Getter for <code>PULLMAN.departure_time</code>.
      */
-    public String getDepartureTimetable() {
+    public String getDepartureTime() {
         return (String) get(5);
     }
 
@@ -117,44 +117,44 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     }
 
     /**
-     * Setter for <code>PULLMAN.arrival_timetable</code>.
+     * Setter for <code>PULLMAN.arrival_time</code>.
      */
-    public void setArrivalTimetable(String value) {
+    public void setArrivalTime(String value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>PULLMAN.arrival_timetable</code>.
+     * Getter for <code>PULLMAN.arrival_time</code>.
      */
-    public String getArrivalTimetable() {
+    public String getArrivalTime() {
         return (String) get(7);
     }
 
     /**
-     * Setter for <code>PULLMAN.pullman_stop_name</code>.
+     * Setter for <code>PULLMAN.next_stop</code>.
      */
-    public void setPullmanStopName(String value) {
+    public void setNextStop(String value) {
         set(8, value);
     }
 
     /**
-     * Getter for <code>PULLMAN.pullman_stop_name</code>.
+     * Getter for <code>PULLMAN.next_stop</code>.
      */
-    public String getPullmanStopName() {
+    public String getNextStop() {
         return (String) get(8);
     }
 
     /**
-     * Setter for <code>PULLMAN.time</code>.
+     * Setter for <code>PULLMAN.time_stop</code>.
      */
-    public void setTime(String value) {
+    public void setTimeStop(String value) {
         set(9, value);
     }
 
     /**
-     * Getter for <code>PULLMAN.time</code>.
+     * Getter for <code>PULLMAN.time_stop</code>.
      */
-    public String getTime() {
+    public String getTimeStop() {
         return (String) get(9);
     }
 
@@ -186,20 +186,6 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
         return (String) get(11);
     }
 
-    /**
-     * Setter for <code>PULLMAN.description</code>.
-     */
-    public void setDescription(String value) {
-        set(12, value);
-    }
-
-    /**
-     * Getter for <code>PULLMAN.description</code>.
-     */
-    public String getDescription() {
-        return (String) get(12);
-    }
-
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -223,7 +209,7 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     /**
      * Create a detached, initialised PullmanRecord
      */
-    public PullmanRecord(Integer id, String companyName, String name, String line, String departureStop, String departureTimetable, String arrivalStop, String arrivalTimetable, String pullmanStopName, String time, String numberOfSeats, String licensePlate, String description) {
+    public PullmanRecord(Integer id, String companyName, String name, String line, String departureStop, String departureTime, String arrivalStop, String arrivalTime, String nextStop, String timeStop, String numberOfSeats, String licensePlate) {
         super(Pullman.PULLMAN);
 
         setId(id);
@@ -231,14 +217,13 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
         setName(name);
         setLine(line);
         setDepartureStop(departureStop);
-        setDepartureTimetable(departureTimetable);
+        setDepartureTime(departureTime);
         setArrivalStop(arrivalStop);
-        setArrivalTimetable(arrivalTimetable);
-        setPullmanStopName(pullmanStopName);
-        setTime(time);
+        setArrivalTime(arrivalTime);
+        setNextStop(nextStop);
+        setTimeStop(timeStop);
         setNumberOfSeats(numberOfSeats);
         setLicensePlate(licensePlate);
-        setDescription(description);
         resetChangedOnNotNull();
     }
 }

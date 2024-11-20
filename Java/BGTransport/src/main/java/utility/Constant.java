@@ -9,23 +9,30 @@ public class Constant {
 	public static String[] URLS = { DB_URL_PUBLIC_TRANSPORTATION, DB_URL_USERS };
 	public static String[] DBS = { DB_PUBLIC_TRANSPORTATION, DB_USERS };
 	
-	public static String JSON_COMPANY = "json/COMPANY.json";
-	public static String JSON_TRAM_STOP = "json/TRAM STOP.json";
-	public static String JSON_TRAIN_STATION = "json/TRAIN STATION.json";
-	public static String JSON_FUNICULAR_STATION = "json/FUNICULAR STATION.json";
-	public static String JSON_PULLMAN_STOP = "json/PULLMAN STOP.json";
-	public static String JSON_FUNICULAR = "json/FUNICULAR.json";
+	public static String JSON_COMPANY = "json/company.json";
+	public static String JSON_TRAM_STOP = "json/tram_stop.json";
+	public static String JSON_TRAIN_STATION = "json/train_station.json";
+	public static String JSON_FUNICULAR_STATION = "json/funicular_station.json";
+	public static String JSON_PULLMAN_STOP = "json/pullman_stop.json";
+	public static String JSON_FUNICULAR_TIMETABLE = "json/funicular_timetable.json";
+	public static String JSON_TRAM_TIMETABLE = "json/tram_timetable.json";
+	public static String JSON_PULLMAN_TIMETABLE = "json/pullman_timetable.json";
+	public static String JSON_TRAIN_TIMETABLE = "json/train_timetable.json";
 	
-	public static String EXCEL_COMPANIES_LIST = "src/main/resources/excel/companies_list.xlsx";
-	public static String EXCEL_FUNICULAR_STATION_LIST = "src/main/resources/excel/funicular_station_list.xlsx";
-	public static String EXCEL_PULLMAN_STOP_LIST = "src/main/resources/excel/pullman_stop_list.xlsx";
-	public static String EXCEL_TRAIN_STATION_LIST = "src/main/resources/excel/train_station_list.xlsx";
-	public static String EXCEL_TRAM_STOP_LIST = "src/main/resources/excel/tram_station_list.xlsx";
+	public static String EXCEL_COMPANIES_LIST = "src/main/resources/excel/list/companies_list.xlsx";
+	public static String EXCEL_FUNICULAR_STATION_LIST = "src/main/resources/excel/list/funicular_station_list.xlsx";
+	public static String EXCEL_PULLMAN_STOP_LIST = "src/main/resources/excel/list/pullman_stop_list.xlsx";
+	public static String EXCEL_TRAIN_STATION_LIST = "src/main/resources/excel/list/train_station_list.xlsx";
+	public static String EXCEL_TRAM_STOP_LIST = "src/main/resources/excel/list/tram_station_list.xlsx";
+	public static String EXCEL_FUNICULAR_TIMETABLE = "src/main/resources/excel/timetable/funicular_timetable.xlsx";
+	public static String EXCEL_TRAM_TIMETABLE = "src/main/resources/excel/timetable/tram_timetable.xlsx";
+	public static String EXCEL_PULLMAN_TIMETABLE = "src/main/resources/excel/timetable/pullmam_timetable.xlsx";
+	public static String EXCEL_TRAIN_TIMETABLE = "src/main/resources/excel/timetable/train_timetable.xlsx";
 	
 	public static String address = "address";
 	public static String arrival_funicular_station = "arrival_funicular_station";
 	public static String arrival_stop = "arrival_stop";
-	public static String arrival_time = "arrival_timetable";
+	public static String arrival_time = "arrival_time";
 	public static String arrival_train_station = "arrival_train_station";
 	public static String arrival_tram_station = "arrival_tram_station";
 	public static String ATECO_code = "ateco_code";
@@ -37,10 +44,9 @@ public class Constant {
 	public static String date_of_birth = "date_of_birth";
 	public static String departure_funicular_station = "departure_funicular_station";
 	public static String departure_stop = "departure_stop";
-	public static String departure_time = "departure_timetable";
+	public static String departure_time = "departure_time";
 	public static String departure_train_station = "departure_train_station";
 	public static String departure_tram_station = "departure_tram_station";
-	public static String info = "description";
 	public static String developer = "developer";
 	public static String fiscal_code = "fiscal_code";
 	public static String funicular = "FUNICULAR";
@@ -63,7 +69,6 @@ public class Constant {
 	public static String province = "province";
 	public static String pullman = "PULLMAN";
 	public static String pullman_stop = "PULLMAN STOP";
-	public static String pullman_stop_name = "pullman_stop_name";
 	public static String registered_office = "registered_office";
 	public static String registered_user = "registered_user";
 	public static String social = "social";
@@ -71,8 +76,7 @@ public class Constant {
 	public static String street_number = "street_number";
 	public static String surname = "surname";
 	public static String telephone = "telephone";
-	public static String time_stop = "time";
-	public static String timetable = "TIMETABLE";
+	public static String time_stop = "time_stop";
 	public static String town = "town";
 	public static String train = "TRAIN";
 	public static String train_station = "TRAIN STATION";
@@ -80,7 +84,7 @@ public class Constant {
 	public static String tram = "TRAM";
 	public static String tram_stop = "TRAM STOP";
 	public static String type = "type";
-	public static String next_stop = "tram_stop_name";
+	public static String next_stop = "next_stop";
 	public static String user = "USER";
 	public static String web_site = "web_site";
 

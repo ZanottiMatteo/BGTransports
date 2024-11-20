@@ -26,11 +26,10 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.departure_time, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the stop column
 	            .column(utility.Constant.arrival_stop, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL STOP
 	            .column(utility.Constant.arrival_time, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the stop column
-	            .column(utility.Constant.pullman_stop_name, SQLDataType.VARCHAR(255)) // STOP column
+	            .column(utility.Constant.next_stop, SQLDataType.VARCHAR(255)) // STOP column
 	            .column(utility.Constant.time_stop, SQLDataType.VARCHAR(255)) // TIME column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER OF SEATS column
 	            .column(utility.Constant.license_plate, SQLDataType.VARCHAR(255)) // LICENSE PLATE column
-	            .column(utility.Constant.info, SQLDataType.VARCHAR(255)) // INFO column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.pullman).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.pullman + " created successfully!");
@@ -46,7 +45,6 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.arrival_time, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the station column
 	            .column(utility.Constant.type, SQLDataType.VARCHAR(255)) // holiday and weekday TYPE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
-	            .column(utility.Constant.info, SQLDataType.VARCHAR(255)) // INFO column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.funicular).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.funicular + " created successfully!");
@@ -65,7 +63,6 @@ public class CreateTables_PublicTransportation {
 	    		.column(utility.Constant.type, SQLDataType.VARCHAR(255)) // holiday and weekday TYPE column
 	    		.column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
 	    		.column(utility.Constant.number_of_carriages, SQLDataType.VARCHAR(255)) // NUMBER_OF_CARRIAGES column
-	    		.column(utility.Constant.info, SQLDataType.VARCHAR(255)) // INFO column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.train).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.train + " created successfully!");
@@ -84,7 +81,6 @@ public class CreateTables_PublicTransportation {
 	            .column(utility.Constant.type, SQLDataType.VARCHAR(255)) // holiday and weekday TYPE column
 	            .column(utility.Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
 	            .column(utility.Constant.number_of_carriages, SQLDataType.VARCHAR(255)) // NUMBER_OF_CARRIAGES column
-	            .column(utility.Constant.info, SQLDataType.VARCHAR(255)) // INFO column
 	            .constraints(DSL.constraint("PK_" + utility.Constant.tram).primaryKey(utility.Constant.id) // Set a primary key
 	            ).execute();
 	    System.out.println("Table " + utility.Constant.tram + " created successfully!");

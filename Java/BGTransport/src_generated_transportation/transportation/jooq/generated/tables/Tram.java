@@ -70,9 +70,9 @@ public class Tram extends TableImpl<TramRecord> {
     public final TableField<TramRecord, String> DEPARTURE_TRAM_STATION = createField(DSL.name("departure_tram_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAM.departure_timetable</code>.
+     * The column <code>TRAM.departure_time</code>.
      */
-    public final TableField<TramRecord, String> DEPARTURE_TIMETABLE = createField(DSL.name("departure_timetable"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TramRecord, String> DEPARTURE_TIME = createField(DSL.name("departure_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAM.arrival_tram_station</code>.
@@ -80,19 +80,19 @@ public class Tram extends TableImpl<TramRecord> {
     public final TableField<TramRecord, String> ARRIVAL_TRAM_STATION = createField(DSL.name("arrival_tram_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAM.arrival_timetable</code>.
+     * The column <code>TRAM.arrival_time</code>.
      */
-    public final TableField<TramRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TramRecord, String> ARRIVAL_TIME = createField(DSL.name("arrival_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAM.tram_stop_name</code>.
+     * The column <code>TRAM.next_stop</code>.
      */
-    public final TableField<TramRecord, String> TRAM_STOP_NAME = createField(DSL.name("tram_stop_name"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TramRecord, String> NEXT_STOP = createField(DSL.name("next_stop"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAM.time</code>.
+     * The column <code>TRAM.time_stop</code>.
      */
-    public final TableField<TramRecord, String> TIME = createField(DSL.name("time"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TramRecord, String> TIME_STOP = createField(DSL.name("time_stop"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAM.type</code>.
@@ -108,11 +108,6 @@ public class Tram extends TableImpl<TramRecord> {
      * The column <code>TRAM.number_of_carriages</code>.
      */
     public final TableField<TramRecord, String> NUMBER_OF_CARRIAGES = createField(DSL.name("number_of_carriages"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAM.description</code>.
-     */
-    public final TableField<TramRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
 
     private Tram(Name alias, Table<TramRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

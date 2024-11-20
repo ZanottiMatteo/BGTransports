@@ -70,9 +70,9 @@ public class Funicular extends TableImpl<FunicularRecord> {
     public final TableField<FunicularRecord, String> DEPARTURE_FUNICULAR_STATION = createField(DSL.name("departure_funicular_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>FUNICULAR.departure_timetable</code>.
+     * The column <code>FUNICULAR.departure_time</code>.
      */
-    public final TableField<FunicularRecord, String> DEPARTURE_TIMETABLE = createField(DSL.name("departure_timetable"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<FunicularRecord, String> DEPARTURE_TIME = createField(DSL.name("departure_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>FUNICULAR.arrival_funicular_station</code>.
@@ -80,9 +80,9 @@ public class Funicular extends TableImpl<FunicularRecord> {
     public final TableField<FunicularRecord, String> ARRIVAL_FUNICULAR_STATION = createField(DSL.name("arrival_funicular_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>FUNICULAR.arrival_timetable</code>.
+     * The column <code>FUNICULAR.arrival_time</code>.
      */
-    public final TableField<FunicularRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<FunicularRecord, String> ARRIVAL_TIME = createField(DSL.name("arrival_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>FUNICULAR.type</code>.
@@ -93,11 +93,6 @@ public class Funicular extends TableImpl<FunicularRecord> {
      * The column <code>FUNICULAR.number_of_seats</code>.
      */
     public final TableField<FunicularRecord, String> NUMBER_OF_SEATS = createField(DSL.name("number_of_seats"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>FUNICULAR.description</code>.
-     */
-    public final TableField<FunicularRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
 
     private Funicular(Name alias, Table<FunicularRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

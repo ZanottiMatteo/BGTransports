@@ -75,16 +75,16 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
     }
 
     /**
-     * Setter for <code>FUNICULAR.departure_timetable</code>.
+     * Setter for <code>FUNICULAR.departure_time</code>.
      */
-    public void setDepartureTimetable(String value) {
+    public void setDepartureTime(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>FUNICULAR.departure_timetable</code>.
+     * Getter for <code>FUNICULAR.departure_time</code>.
      */
-    public String getDepartureTimetable() {
+    public String getDepartureTime() {
         return (String) get(4);
     }
 
@@ -103,16 +103,16 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
     }
 
     /**
-     * Setter for <code>FUNICULAR.arrival_timetable</code>.
+     * Setter for <code>FUNICULAR.arrival_time</code>.
      */
-    public void setArrivalTimetable(String value) {
+    public void setArrivalTime(String value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>FUNICULAR.arrival_timetable</code>.
+     * Getter for <code>FUNICULAR.arrival_time</code>.
      */
-    public String getArrivalTimetable() {
+    public String getArrivalTime() {
         return (String) get(6);
     }
 
@@ -144,20 +144,6 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
         return (String) get(8);
     }
 
-    /**
-     * Setter for <code>FUNICULAR.description</code>.
-     */
-    public void setDescription(String value) {
-        set(9, value);
-    }
-
-    /**
-     * Getter for <code>FUNICULAR.description</code>.
-     */
-    public String getDescription() {
-        return (String) get(9);
-    }
-
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -181,19 +167,18 @@ public class FunicularRecord extends UpdatableRecordImpl<FunicularRecord> {
     /**
      * Create a detached, initialised FunicularRecord
      */
-    public FunicularRecord(Integer id, String companyName, String name, String departureFunicularStation, String departureTimetable, String arrivalFunicularStation, String arrivalTimetable, String type, String numberOfSeats, String description) {
+    public FunicularRecord(Integer id, String companyName, String name, String departureFunicularStation, String departureTime, String arrivalFunicularStation, String arrivalTime, String type, String numberOfSeats) {
         super(Funicular.FUNICULAR);
 
         setId(id);
         setCompanyName(companyName);
         setName(name);
         setDepartureFunicularStation(departureFunicularStation);
-        setDepartureTimetable(departureTimetable);
+        setDepartureTime(departureTime);
         setArrivalFunicularStation(arrivalFunicularStation);
-        setArrivalTimetable(arrivalTimetable);
+        setArrivalTime(arrivalTime);
         setType(type);
         setNumberOfSeats(numberOfSeats);
-        setDescription(description);
         resetChangedOnNotNull();
     }
 }

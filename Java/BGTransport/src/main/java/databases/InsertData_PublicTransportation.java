@@ -14,9 +14,11 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import transportation.jooq.generated.tables.Company;
+import transportation.jooq.generated.tables.Funicular;
 import transportation.jooq.generated.tables.FunicularStation;
 import transportation.jooq.generated.tables.PullmanStop;
 import transportation.jooq.generated.tables.TrainStation;
+import transportation.jooq.generated.tables.Tram;
 import transportation.jooq.generated.tables.TramStop;
 import transportation.jooq.generated.tables.records.CompanyRecord;
 import transportation.jooq.generated.tables.records.FunicularRecord;
@@ -24,6 +26,7 @@ import transportation.jooq.generated.tables.records.FunicularStationRecord;
 import transportation.jooq.generated.tables.records.PullmanRecord;
 import transportation.jooq.generated.tables.records.PullmanStopRecord;
 import transportation.jooq.generated.tables.records.TrainStationRecord;
+import transportation.jooq.generated.tables.records.TramRecord;
 import transportation.jooq.generated.tables.records.TramStopRecord;
 
 public class InsertData_PublicTransportation {
@@ -44,7 +47,7 @@ public class InsertData_PublicTransportation {
 		return companiesJsonArray;
 	}
 
-	public static void COMPANY(DSLContext create) throws IOException {
+	public static void company(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(utility.Constant.JSON_COMPANY);
 		JSONArray companiesJsonArray = fileReader(jsonFile);
@@ -81,7 +84,7 @@ public class InsertData_PublicTransportation {
 		System.out.println("Dati inseriti in " + utility.Constant.company + " con successo!");
 	}
 
-	public static void PULLMAN_STOP(DSLContext create) throws IOException {
+	public static void pullman_stop(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(utility.Constant.JSON_PULLMAN_STOP);
 		JSONArray pullmanStopJsonArray = fileReader(jsonFile);
@@ -102,7 +105,7 @@ public class InsertData_PublicTransportation {
 		System.out.println("Dati inseriti in " + utility.Constant.pullman_stop + " con successo!");
 	}
 
-	public static void FUNICULAR_STATION(DSLContext create) throws IOException {
+	public static void funicular_station(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(utility.Constant.JSON_FUNICULAR_STATION);
 		JSONArray funicularStationJsonArray = fileReader(jsonFile);
@@ -124,7 +127,7 @@ public class InsertData_PublicTransportation {
 		System.out.println("Dati inseriti in " + utility.Constant.funicular_station + " con successo!");
 	}
 
-	public static void TRAM_STOP(DSLContext create) throws IOException {
+	public static void tram_stop(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(utility.Constant.JSON_TRAM_STOP);
 		JSONArray tramStopJsonArray = fileReader(jsonFile);
@@ -146,7 +149,7 @@ public class InsertData_PublicTransportation {
 		System.out.println("Dati inseriti in " + utility.Constant.tram_stop + " con successo!");
 	}
 
-	public static void TRAIN_STATION(DSLContext create) throws IOException {
+	public static void train_station(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(utility.Constant.JSON_TRAIN_STATION);
 		JSONArray trainStationJsonArray = fileReader(jsonFile);
@@ -168,8 +171,8 @@ public class InsertData_PublicTransportation {
 		System.out.println("Dati inseriti in " + utility.Constant.train_station + " con successo!");
 	}
 	
-	public static void FUNICULAR(DSLContext create) throws IOException {
-		File jsonFile = new File(utility.Constant.JSON_FUNICULAR);
+	public static void funicular(DSLContext create) throws IOException {
+		File jsonFile = new File(utility.Constant.JSON_FUNICULAR_TIMETABLE);
 		JSONArray funicularJsonArray = fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < funicularJsonArray.length(); j++) {
@@ -185,14 +188,42 @@ public class InsertData_PublicTransportation {
 			String arrivalTime = funicularJson.getString(utility.Constant.arrival_time);
 			String type = funicularJson.getString(utility.Constant.type);
 			String numberOfSeats = funicularJson.getString(utility.Constant.number_of_seats);
-			String info = funicularJson.getString(utility.Constant.info);
 
 			// Crea un CompanyRecord con i dati estratti
-			FunicularRecord trainStationRecord = new FunicularRecord(id, company_name, name, departureFunicularStation, departureTime, arrivalFunicularStation, arrivalTime, type, numberOfSeats, info);
+			FunicularRecord funicularRecord = new FunicularRecord(id, company_name, name, departureFunicularStation, departureTime, arrivalFunicularStation, arrivalTime, type, numberOfSeats);
 			// Inserisci i dati nel database
-			create.insertInto(TrainStation.TRAIN_STATION).set(trainStationRecord).execute();
+			create.insertInto(Funicular.FUNICULAR).set(funicularRecord).execute();
 		}
-		System.out.println("Dati inseriti in " + utility.Constant.train_station + " con successo!");
+		System.out.println("Dati inseriti in " + utility.Constant.funicular + " con successo!");
+	}
+	
+	public static void tram(DSLContext create) throws IOException {
+		File jsonFile = new File(utility.Constant.JSON_TRAM_TIMETABLE);
+		JSONArray tramJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < tramJsonArray.length(); j++) {
+			JSONObject tramJson = tramJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			int id = tramJson.getInt(utility.Constant.id);
+			String company_name = tramJson.getString(utility.Constant.company_name);
+			String name = tramJson.getString(utility.Constant.name);
+			String departureTramStation = tramJson.getString(utility.Constant.departure_tram_station);
+			String departureTime = tramJson.getString(utility.Constant.departure_time);
+			String arrivalTramStation = tramJson.getString(utility.Constant.arrival_tram_station);
+			String arrivalTime = tramJson.getString(utility.Constant.arrival_time);
+			String nextStop = tramJson.getString(utility.Constant.next_stop);
+			String timeStop = tramJson.getString(utility.Constant.time_stop);
+			String type = tramJson.getString(utility.Constant.type);
+			String numberOfSeats = tramJson.getString(utility.Constant.number_of_seats);
+			String numberOfCarriages = tramJson.getString(utility.Constant.number_of_carriages);
+
+			// Crea un CompanyRecord con i dati estratti
+			TramRecord tramRecord = new TramRecord(id, company_name, name, departureTramStation, departureTime, arrivalTramStation, arrivalTime, nextStop, timeStop, type, numberOfSeats, numberOfCarriages);
+			// Inserisci i dati nel database
+			create.insertInto(Tram.TRAM).set(tramRecord).execute();
+		}
+		System.out.println("Dati inseriti in " + utility.Constant.tram + " con successo!");
 	}
 
 	public static void main(String[] args) throws SQLException, IOException {
@@ -200,11 +231,12 @@ public class InsertData_PublicTransportation {
 		Connection conn = DriverManager.getConnection(utility.Constant.DB_URL_PUBLIC_TRANSPORTATION);
 		DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
 
-		COMPANY(create);
-		FUNICULAR_STATION(create);
-		TRAIN_STATION(create);
-		TRAM_STOP(create);
-		PULLMAN_STOP(create);
-		//FUNICULAR(create);
+		company(create);
+		funicular_station(create);
+		train_station(create);
+		tram_stop(create);
+		pullman_stop(create);
+		funicular(create);
+		tram(create);
 	}
 }

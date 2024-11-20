@@ -70,9 +70,9 @@ public class Train extends TableImpl<TrainRecord> {
     public final TableField<TrainRecord, String> DEPARTURE_TRAM_STATION = createField(DSL.name("departure_tram_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.departure_timetable</code>.
+     * The column <code>TRAIN.departure_time</code>.
      */
-    public final TableField<TrainRecord, String> DEPARTURE_TIMETABLE = createField(DSL.name("departure_timetable"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> DEPARTURE_TIME = createField(DSL.name("departure_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAIN.arrival_tram_station</code>.
@@ -80,19 +80,19 @@ public class Train extends TableImpl<TrainRecord> {
     public final TableField<TrainRecord, String> ARRIVAL_TRAM_STATION = createField(DSL.name("arrival_tram_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.arrival_timetable</code>.
+     * The column <code>TRAIN.arrival_time</code>.
      */
-    public final TableField<TrainRecord, String> ARRIVAL_TIMETABLE = createField(DSL.name("arrival_timetable"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> ARRIVAL_TIME = createField(DSL.name("arrival_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.tram_stop_name</code>.
+     * The column <code>TRAIN.next_stop</code>.
      */
-    public final TableField<TrainRecord, String> TRAM_STOP_NAME = createField(DSL.name("tram_stop_name"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> NEXT_STOP = createField(DSL.name("next_stop"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.time</code>.
+     * The column <code>TRAIN.time_stop</code>.
      */
-    public final TableField<TrainRecord, String> TIME = createField(DSL.name("time"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> TIME_STOP = createField(DSL.name("time_stop"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAIN.type</code>.
@@ -108,11 +108,6 @@ public class Train extends TableImpl<TrainRecord> {
      * The column <code>TRAIN.number_of_carriages</code>.
      */
     public final TableField<TrainRecord, String> NUMBER_OF_CARRIAGES = createField(DSL.name("number_of_carriages"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.description</code>.
-     */
-    public final TableField<TrainRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.VARCHAR(255), this, "");
 
     private Train(Name alias, Table<TrainRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

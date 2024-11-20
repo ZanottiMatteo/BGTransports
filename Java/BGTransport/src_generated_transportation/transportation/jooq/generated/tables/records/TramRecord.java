@@ -75,16 +75,16 @@ public class TramRecord extends UpdatableRecordImpl<TramRecord> {
     }
 
     /**
-     * Setter for <code>TRAM.departure_timetable</code>.
+     * Setter for <code>TRAM.departure_time</code>.
      */
-    public void setDepartureTimetable(String value) {
+    public void setDepartureTime(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>TRAM.departure_timetable</code>.
+     * Getter for <code>TRAM.departure_time</code>.
      */
-    public String getDepartureTimetable() {
+    public String getDepartureTime() {
         return (String) get(4);
     }
 
@@ -103,44 +103,44 @@ public class TramRecord extends UpdatableRecordImpl<TramRecord> {
     }
 
     /**
-     * Setter for <code>TRAM.arrival_timetable</code>.
+     * Setter for <code>TRAM.arrival_time</code>.
      */
-    public void setArrivalTimetable(String value) {
+    public void setArrivalTime(String value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>TRAM.arrival_timetable</code>.
+     * Getter for <code>TRAM.arrival_time</code>.
      */
-    public String getArrivalTimetable() {
+    public String getArrivalTime() {
         return (String) get(6);
     }
 
     /**
-     * Setter for <code>TRAM.tram_stop_name</code>.
+     * Setter for <code>TRAM.next_stop</code>.
      */
-    public void setTramStopName(String value) {
+    public void setNextStop(String value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>TRAM.tram_stop_name</code>.
+     * Getter for <code>TRAM.next_stop</code>.
      */
-    public String getTramStopName() {
+    public String getNextStop() {
         return (String) get(7);
     }
 
     /**
-     * Setter for <code>TRAM.time</code>.
+     * Setter for <code>TRAM.time_stop</code>.
      */
-    public void setTime(String value) {
+    public void setTimeStop(String value) {
         set(8, value);
     }
 
     /**
-     * Getter for <code>TRAM.time</code>.
+     * Getter for <code>TRAM.time_stop</code>.
      */
-    public String getTime() {
+    public String getTimeStop() {
         return (String) get(8);
     }
 
@@ -186,20 +186,6 @@ public class TramRecord extends UpdatableRecordImpl<TramRecord> {
         return (String) get(11);
     }
 
-    /**
-     * Setter for <code>TRAM.description</code>.
-     */
-    public void setDescription(String value) {
-        set(12, value);
-    }
-
-    /**
-     * Getter for <code>TRAM.description</code>.
-     */
-    public String getDescription() {
-        return (String) get(12);
-    }
-
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -223,22 +209,21 @@ public class TramRecord extends UpdatableRecordImpl<TramRecord> {
     /**
      * Create a detached, initialised TramRecord
      */
-    public TramRecord(Integer id, String companyName, String name, String departureTramStation, String departureTimetable, String arrivalTramStation, String arrivalTimetable, String tramStopName, String time, String type, String numberOfSeats, String numberOfCarriages, String description) {
+    public TramRecord(Integer id, String companyName, String name, String departureTramStation, String departureTime, String arrivalTramStation, String arrivalTime, String nextStop, String timeStop, String type, String numberOfSeats, String numberOfCarriages) {
         super(Tram.TRAM);
 
         setId(id);
         setCompanyName(companyName);
         setName(name);
         setDepartureTramStation(departureTramStation);
-        setDepartureTimetable(departureTimetable);
+        setDepartureTime(departureTime);
         setArrivalTramStation(arrivalTramStation);
-        setArrivalTimetable(arrivalTimetable);
-        setTramStopName(tramStopName);
-        setTime(time);
+        setArrivalTime(arrivalTime);
+        setNextStop(nextStop);
+        setTimeStop(timeStop);
         setType(type);
         setNumberOfSeats(numberOfSeats);
         setNumberOfCarriages(numberOfCarriages);
-        setDescription(description);
         resetChangedOnNotNull();
     }
 }
