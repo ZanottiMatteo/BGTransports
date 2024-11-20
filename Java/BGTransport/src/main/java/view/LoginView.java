@@ -73,21 +73,20 @@ public class LoginView extends JFrame {
     	signInButton.setForeground(new Color(255, 255, 255));
     	signInButton.setFont(new Font("SansSerif", Font.BOLD, 16));
     	signInButton.setBackground(new Color(210, 105, 30));
-    	signInButton.setBounds(885, 684, 150, 60);	
+    	signInButton.setBounds(885, 645, 150, 60);	
     	signInButton.addActionListener(e -> LoginController.Login(textField, passwordField));
     	mainPanel.add(signInButton);
     	
     	JButton signupButton = new JButton("Sign Up");
-    	signupButton.setHorizontalAlignment(SwingConstants.LEFT);
     	signupButton.setForeground(new Color(210, 105, 30));
     	signupButton.setRolloverEnabled(false);
-    	signupButton.setBounds(840, 595, 136, 35);
+    	signupButton.setBounds(885, 730, 150, 35);
     	signupButton.setPreferredSize(null);
-    	signupButton.setFont(new Font("SansSerif", Font.BOLD, 12));
+    	signupButton.setFont(new Font("SansSerif", Font.BOLD, 15));
     	signupButton.setBorderPainted(false);       
     	signupButton.setBackground(new Color(0,0,0,0));
     	signupButton.addActionListener(e -> NewWindowController.openSignUp(MainController.signupV));
-    	getContentPane().add(signupButton);
+    	mainPanel.add(signupButton);
     	
     	mainPanel.setBounds(0, 0, 1920, 1080);      
     	mainPanel.setLayout(null);
@@ -96,7 +95,7 @@ public class LoginView extends JFrame {
     	JLabel textEmail = new JLabel("Email");
     	textEmail.setHorizontalAlignment(SwingConstants.LEFT);
     	textEmail.setFont(new Font("SansSerif", Font.BOLD, 12));
-    	textEmail.setBounds(852, 422, 93, 16);
+    	textEmail.setBounds(852, 405, 150, 30);
     	mainPanel.add(textEmail);
 	        	
     	LogoLabel.setBounds(662, 167, 596, 260);
@@ -112,7 +111,7 @@ public class LoginView extends JFrame {
         switchThemeButton.addActionListener(e -> ThemeController.setThemeLabel(LogoLabel));
         mainPanel.add(switchThemeButton);
         
-        passwordField.setBounds(852, 538, 216, 50);
+        passwordField.setBounds(852, 550, 216, 50);
         mainPanel.add(passwordField);
         
         textField.setBounds(852, 445, 216, 50);
@@ -122,7 +121,7 @@ public class LoginView extends JFrame {
         JLabel lblPassword = new JLabel("Password");
         lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
         lblPassword.setFont(new Font("SansSerif", Font.BOLD, 12));
-        lblPassword.setBounds(852, 515, 114, 16);
+        lblPassword.setBounds(852, 515, 150, 30);
         mainPanel.add(lblPassword);
         
         RoundedPanel panel = new RoundedPanel();

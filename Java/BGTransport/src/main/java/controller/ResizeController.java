@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -13,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.ResizableImage;
 
@@ -29,7 +31,17 @@ public class ResizeController {
         for (Map.Entry<Component, Rectangle> entry : componentBounds.entrySet()) {
             Component comp = entry.getKey();
             Rectangle originalBounds = entry.getValue();
+            int size = 0;
             comp.setBounds((int)(originalBounds.x * widthRatio), (int)(originalBounds.y * heightRatio), (int)(originalBounds.width * widthRatio), (int)(originalBounds.height * heightRatio));
+            if (comp instanceof JLabel) {
+                JLabel label = (JLabel) comp;
+                
+                // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
+                int fontSize = Math.max(jframe.getWidth() / 75, 10);  // La dimensione del font deve essere almeno 10
+
+                // Impostiamo il nuovo font per la JLabel
+                label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
+            }
         }       
         panel.repaint();
         panel.revalidate();

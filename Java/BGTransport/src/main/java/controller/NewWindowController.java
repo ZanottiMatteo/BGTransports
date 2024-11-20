@@ -26,6 +26,7 @@ public class NewWindowController {
 				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
            		ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconUser, homeV.userButton);
            		ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.menuPanel, homeV.MenuPanelSize);
+           		ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.weatherPanel, homeV.WeatherPanelSize);
         	}
 		});
 	}

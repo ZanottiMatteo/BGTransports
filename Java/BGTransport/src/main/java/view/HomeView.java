@@ -9,6 +9,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,8 +39,9 @@ public class HomeView extends JFrame {
     
     public RoundedPanel homePanel = new RoundedPanel();
     public RoundedPanel weatherPanel = new RoundedPanel();
-    JLabel lblweather = new JLabel();
-    
+    public JLabel lblweather = new JLabel();
+    public JLabel lblweatherimg = new JLabel();
+    public JLabel lblweathertxt = new JLabel("Meteo di Bergamo");
     
     
     // Background wallpaper (image that adjusts to screen size).
@@ -52,8 +54,10 @@ public class HomeView extends JFrame {
     public Map<Component, Rectangle> componentBounds = new HashMap<>();
     
     // Original and minimum size for the window.
+    //public final Dimension originalPanelSize = new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
     public final Dimension MenuPanelSize = new Dimension(100, 900);
+    public final Dimension WeatherPanelSize = new Dimension(350, 250);
     public final Dimension MinPanelSize = new Dimension(1085, 615);
 
     /**
@@ -61,7 +65,7 @@ public class HomeView extends JFrame {
      * It also initializes the main panel, menu panel, and other UI elements.
      */
     public HomeView(){
-        
+        System.out.println(originalPanelSize);
         // Set the window to be maximized on launch.
         setExtendedState(Frame.MAXIMIZED_BOTH);
         
@@ -122,22 +126,33 @@ public class HomeView extends JFrame {
         menuPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
         menuPanel.setLayout(null);
         homePanel.add(menuPanel);
+        lblweather.setHorizontalAlignment(SwingConstants.CENTER);
 
         
         lblweather.setFont(new Font("SansSerif", Font.BOLD, 20));
-        lblweather.setBounds(10,11,440,78);
+        lblweather.setBounds(40,60,270,50);
         
         try {
 			WeatherModel.getMeteo(lblweather);
+			WeatherModel.getWeatherIcon(lblweatherimg);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
+
 		weatherPanel.setLayout(null);
         weatherPanel.setLocation(235, 30);
-        weatherPanel.setSize(471, 100);
+        weatherPanel.setSize(350, 250);
         weatherPanel.add(lblweather);
+        lblweatherimg.setHorizontalAlignment(SwingConstants.CENTER);
+        lblweatherimg.setLocation(105, 100);
+        lblweatherimg.setSize(125, 125);
+        lblweathertxt.setHorizontalAlignment(SwingConstants.CENTER);
+        lblweathertxt.setForeground(new Color(210, 105, 30));
+        lblweathertxt.setFont(new Font("SansSerif", Font.BOLD, 30));
+        lblweathertxt.setSize(270, 50);
+        lblweathertxt.setLocation(40, 10);
+        weatherPanel.add(lblweathertxt);
+        weatherPanel.add(lblweatherimg);
         homePanel.add(weatherPanel);
         
         // Create and configure the user button (with user icon).
@@ -158,7 +173,7 @@ public class HomeView extends JFrame {
         switchThemeButton.setIcon(new ImageIcon(HomeView.class.getResource("/images/LDMode.png"))); 
         switchThemeButton.setForeground(new Color(230, 230, 250)); 
         switchThemeButton.setRolloverEnabled(false); 
-        switchThemeButton.setBorderPainted(false);  
+        switchThemeButton.setBorderPainted(false);
         switchThemeButton.addActionListener(e -> ThemeController.setThemeHomePanel(this));
         
         // Store the bounds of each component for possible future resizing.
@@ -170,6 +185,9 @@ public class HomeView extends JFrame {
             componentBounds.put(comp, comp.getBounds());
         }        
         
+        for (Component comp : weatherPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
         // Initialize other components like the title and default window behavior.
         initComponents();
     }
