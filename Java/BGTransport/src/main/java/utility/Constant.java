@@ -2,12 +2,19 @@ package utility;
 
 public class Constant {
 
+	public static String JDBC = "org.sqlite.JDBC";
+	public static String SQLiteDatabase = "org.jooq.meta.sqlite.SQLiteDatabase";
+	
+	public static String SRC_TRANSPORTATION = "src_generated_transportation/";
+	public static String SRC_USER = "src_generated_user/";
+	
 	public static String DB_PUBLIC_TRANSPORTATION = "database/Public Transportation.db3";
 	public static String DB_URL_PUBLIC_TRANSPORTATION = "jdbc:sqlite:" + DB_PUBLIC_TRANSPORTATION;
 	public static String DB_USERS = "database/Users.db3";
 	public static String DB_URL_USERS = "jdbc:sqlite:" + DB_USERS;
-	public static String[] URLS = { DB_URL_PUBLIC_TRANSPORTATION, DB_URL_USERS };
-	public static String[] DBS = { DB_PUBLIC_TRANSPORTATION, DB_USERS };
+	
+	public static String JOOQ_TRANSPORTATION = "transportation.jooq.generated";
+	public static String JOOQ_USER = "user.jooq.generated";
 	
 	public static String JSON_COMPANY = "json/company.json";
 	public static String JSON_TRAM_STOP = "json/tram_stop.json";

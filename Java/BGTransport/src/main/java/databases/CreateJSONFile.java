@@ -1,4 +1,4 @@
-package utility;
+package databases;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,38 +20,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import utility.Constant;
+
 public class CreateJSONFile {
-
-	public static void main(String[] args) {
-		try {
-			System.out.println("start funicular station");
-			List<Map<String, String>> funicularStation = readExcelFile(utility.Constant.EXCEL_FUNICULAR_STATION_LIST);
-			writeJsonToFile(funicularStation, utility.Constant.JSON_FUNICULAR_STATION);
-			System.out.println("start company");
-			List<Map<String, String>> companies = readExcelFile(utility.Constant.EXCEL_COMPANIES_LIST);
-			writeJsonToFile(companies, utility.Constant.JSON_COMPANY);
-			System.out.println("start pullman stop");
-			List<Map<String, String>> pullmanStop = readExcelFile(utility.Constant.EXCEL_PULLMAN_STOP_LIST);
-			writeJsonToFile(pullmanStop, utility.Constant.JSON_PULLMAN_STOP);
-			System.out.println("start train station");
-			List<Map<String, String>> trainStation = readExcelFile(utility.Constant.EXCEL_TRAIN_STATION_LIST);
-			writeJsonToFile(trainStation, utility.Constant.JSON_TRAIN_STATION);
-			System.out.println("start tram stop");
-			List<Map<String, String>> tramStop = readExcelFile(utility.Constant.EXCEL_TRAM_STOP_LIST);
-			writeJsonToFile(tramStop, utility.Constant.JSON_TRAM_STOP);
-			System.out.println("start funicular");
-			List<Map<String, String>> funicularTimetable = readExcelFile(utility.Constant.EXCEL_FUNICULAR_TIMETABLE);
-			writeJsonToFile(funicularTimetable, utility.Constant.JSON_FUNICULAR_TIMETABLE);
-			System.out.println("start tram");
-			List<Map<String, String>> tramTimetable = readExcelFile(utility.Constant.EXCEL_TRAM_TIMETABLE);
-			writeJsonToFile(tramTimetable, utility.Constant.JSON_TRAM_TIMETABLE);
-
-			System.out.println("Conversione completata con successo!");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	// Funzione che legge il file Excel e restituisce i dati come lista di Map
 	public static List<Map<String, String>> readExcelFile(String filePath) throws Exception {
 		List<Map<String, String>> dataList = new ArrayList<>();
@@ -107,15 +78,15 @@ public class CreateJSONFile {
 
 		switch (cell.getCellType()) {
 		case NUMERIC:
-            if (DateUtil.isCellDateFormatted(cell)) {
-                // La cella contiene una data, ma vogliamo solo l'orario
-                Date date = cell.getDateCellValue();
-                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Solo il formato dell'orario
-                return sdf.format(date); // Restituiamo solo l'orario come stringa
-            } else {
-                // La cella contiene un numero
-                return String.valueOf((long) cell.getNumericCellValue()); // Usa getRawValue() per ottenere il testo
-            }
+			if (DateUtil.isCellDateFormatted(cell)) {
+				// La cella contiene una data, ma vogliamo solo l'orario
+				Date date = cell.getDateCellValue();
+				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Solo il formato dell'orario
+				return sdf.format(date); // Restituiamo solo l'orario come stringa
+			} else {
+				// La cella contiene un numero
+				return String.valueOf((long) cell.getNumericCellValue()); // Usa getRawValue() per ottenere il testo
+			}
 		case STRING:
 			return cell.getStringCellValue(); // Restituisce la stringa
 		case BOOLEAN:
@@ -126,15 +97,15 @@ public class CreateJSONFile {
 					.evaluate(cell);
 			switch (cellValue.getCellType()) {
 			case NUMERIC:
-	            if (DateUtil.isCellDateFormatted(cell)) {
-	                // La cella contiene una data, ma vogliamo solo l'orario
-	                Date date = cell.getDateCellValue();
-	                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Solo il formato dell'orario
-	                return sdf.format(date); // Restituiamo solo l'orario come stringa
-	            } else {
-	                // La cella contiene un numero
-	                return String.valueOf((long) cell.getNumericCellValue()); // Usa getRawValue() per ottenere il testo
-	            }
+				if (DateUtil.isCellDateFormatted(cell)) {
+					// La cella contiene una data, ma vogliamo solo l'orario
+					Date date = cell.getDateCellValue();
+					SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Solo il formato dell'orario
+					return sdf.format(date); // Restituiamo solo l'orario come stringa
+				} else {
+					// La cella contiene un numero
+					return String.valueOf((long) cell.getNumericCellValue()); // Usa getRawValue() per ottenere il testo
+				}
 			case STRING:
 				return cell.getStringCellValue(); // Restituisce la stringa
 			case BOOLEAN:
