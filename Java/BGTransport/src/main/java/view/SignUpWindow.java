@@ -36,6 +36,7 @@ public class SignUpWindow extends JFrame {
 	
 	public SignUpWindow() {		
 		setResizable(false);
+		System.out.println("signup" + ThemeController.getTheme());
 		if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
@@ -49,7 +50,6 @@ public class SignUpWindow extends JFrame {
 	            e.printStackTrace();
 	        }
 		}
-		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -212,16 +212,15 @@ public class SignUpWindow extends JFrame {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(0, 0, 600, 500);
         getContentPane().add(scrollPane);
-        SwingUtilities.updateComponentTreeUI(this);
 		initComponents();
 	}
 
 	private void initComponents() 
 	{
 		setTitle("BGTransport");
-        setSize(600,500);
-        SwingUtilities.updateComponentTreeUI(this);
+        setSize(600,500);       
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        SwingUtilities.updateComponentTreeUI(this);
         setLocationRelativeTo(null);        	
 	}
 }

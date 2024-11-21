@@ -29,7 +29,7 @@ import java.awt.Font;
  * theme switching button, and user-related components. It provides an interface for the user 
  * to interact with the main functionality of the application.
  */
-public class HomeView extends JFrame {
+public class MapView extends JFrame {
 	
 	public JPanel mainPanel = new JPanel();  
 	
@@ -39,18 +39,12 @@ public class HomeView extends JFrame {
     public JButton mapButton;
     
     public RoundedPanel homePanel = new RoundedPanel();
-    public RoundedPanel weatherPanel = new RoundedPanel();
-    public JLabel lblweather = new JLabel();
-    public CircleLabel lblweatherimg = new CircleLabel("");
-    public JLabel lblweathertxt = new JLabel("Meteo di Bergamo");
-    
     
     // Background wallpaper (image that adjusts to screen size).
     public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png")); 
     
     // Icon for the user button.
-    public ImageIcon iconUser = new ImageIcon(HomeView.class.getResource("/images/User.png"));
-    public ImageIcon iconWeather;
+    public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png"));
     public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
     
     // Map for storing the bounds of each component (used for resizing).
@@ -59,20 +53,13 @@ public class HomeView extends JFrame {
     // Original and minimum size for the window.
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
     public final Dimension MenuPanelSize = new Dimension(100, 900);
-    public final Dimension WeatherPanelSize = new Dimension(350, 250);
     public final Dimension MinPanelSize = new Dimension(1085, 615);
 
     /**
      * Constructor that sets up the UI components, layout, and theming for the home view.
      * It also initializes the main panel, menu panel, and other UI elements.
      */
-    public HomeView(){
-    	try {
-			WeatherModel.getMeteo();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    	iconWeather = WeatherModel.getWeatherIcon();
+    public MapView(){
         // Set the window to be maximized on launch.
         setExtendedState(Frame.MAXIMIZED_BOTH);
         
@@ -87,9 +74,8 @@ public class HomeView extends JFrame {
                 g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);  // Draw background image
             }
         };
-        
+        System.out.println("map:" + ThemeController.getTheme());
         // Apply the selected theme (Light or Dark).
-        System.out.println("home" + ThemeController.getTheme());
         if (ThemeController.getTheme()) {
             try {
                 UIManager.setLookAndFeel(new FlatLightLaf());  // Set light theme
@@ -103,7 +89,7 @@ public class HomeView extends JFrame {
                 e.printStackTrace();
             }
         }
-        
+
         
         // Set rounded corner UI properties.
         UIManager.put("Button.arc", 999);
@@ -132,36 +118,6 @@ public class HomeView extends JFrame {
         menuPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
         menuPanel.setLayout(null);
         homePanel.add(menuPanel);
-        lblweather.setHorizontalAlignment(SwingConstants.CENTER);
-
-        
-        lblweather.setFont(new Font("SansSerif", Font.BOLD, 20));
-        lblweather.setBounds(40,60,270,50);
-        lblweatherimg.setVerticalAlignment(SwingConstants.TOP);
-        lblweatherimg.setIcon(iconWeather);
-        
-        try {
-			WeatherModel.getMeteo(lblweather);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		weatherPanel.setLayout(null);
-        weatherPanel.setLocation(235, 30);
-        weatherPanel.setSize(350, 250);
-        weatherPanel.add(lblweather);
-        lblweatherimg.setHorizontalAlignment(SwingConstants.LEFT);
-        lblweatherimg.setLocation(125, 121);
-        lblweatherimg.setSize(100, 100);
-        lblweatherimg.setCircleColor(new Color(87, 198, 250));;
-        lblweathertxt.setHorizontalAlignment(SwingConstants.CENTER);
-        lblweathertxt.setForeground(new Color(210, 105, 30));
-        lblweathertxt.setFont(new Font("SansSerif", Font.BOLD, 30));
-        lblweathertxt.setSize(270, 50);
-        lblweathertxt.setLocation(40, 10);
-        weatherPanel.add(lblweathertxt);
-        weatherPanel.add(lblweatherimg);
-        homePanel.add(weatherPanel);
         
         // Create and configure the user button (with user icon).
         userButton = new JButton();
@@ -170,16 +126,22 @@ public class HomeView extends JFrame {
         userButton.setBorderPainted(false);   // Remove border.
         userButton.setIcon(iconUser);         // Set the icon.
         userButton.setBackground(new Color(0, 0, 0, 0));  // Transparent background.
-        userButton.addActionListener(e -> NewWindowController.openLoginPanel(MainController.loginV));
+        userButton.addActionListener(e -> {
+        	NewWindowController.openLoginPanel(MainController.loginV);
+        	this.setVisible(false);
+        });
         menuPanel.add(userButton);
-          
+        
         mapButton = new JButton();
         mapButton.setBounds(20, 150, 60, 60);
         mapButton.setRolloverEnabled(false);  
         mapButton.setBorderPainted(false);   // Remove border.
         mapButton.setIcon(iconUser);         // Set the icon.
         mapButton.setBackground(new Color(0, 0, 0, 0));  // Transparent background.
-        mapButton.addActionListener(e -> NewWindowController.openMapPanel(MainController.mapV));
+        mapButton.addActionListener(e -> {
+        	NewWindowController.openMapPanel(MainController.mapV);
+        	this.setVisible(false);
+        });
         menuPanel.add(mapButton);
         
         // Create and configure the theme switch button.
@@ -187,7 +149,7 @@ public class HomeView extends JFrame {
         switchThemeButton.setBounds(20, 830, 60, 60);
         menuPanel.add(switchThemeButton);
         switchThemeButton.setBackground(new Color(0, 0, 0, 0));  
-        switchThemeButton.setIcon(new ImageIcon(HomeView.class.getResource("/images/LDMode.png"))); 
+        switchThemeButton.setIcon(new ImageIcon(MapView.class.getResource("/images/LDMode.png"))); 
         switchThemeButton.setForeground(new Color(230, 230, 250)); 
         switchThemeButton.setRolloverEnabled(false); 
         switchThemeButton.setBorderPainted(false);
@@ -202,10 +164,6 @@ public class HomeView extends JFrame {
         for (Component comp : menuPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }        
-        
-        for (Component comp : weatherPanel.getComponents()) {
-            componentBounds.put(comp, comp.getBounds());
-        }
         // Initialize other components like the title and default window behavior.
         initComponents();
     }
@@ -217,7 +175,7 @@ public class HomeView extends JFrame {
         setTitle("BGTransport");  // Set the window title.
         setSize(1920, 1080);      // Set the initial size of the window.
         
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close the application when the window is closed.
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Close the application when the window is closed.
         SwingUtilities.updateComponentTreeUI(this);  // Update the UI components after changes.
         setLocationRelativeTo(null);  // Center the window on the screen.
     }

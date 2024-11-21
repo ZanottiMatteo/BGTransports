@@ -30,6 +30,31 @@ public class WeatherModel {
 	static int weathercode;
 	static int isday;
 	
+	public static void getMeteo() throws IOException{
+        String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
+        try {
+            URL url = new URL(apiUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            conn.disconnect();
+            String response = content.toString();           
+            JSONObject json = new JSONObject(response);
+            JSONObject currentWeather = json.getJSONObject("current_weather");
+            weathercode = currentWeather.getInt("weathercode");
+            isday = currentWeather.getInt("is_day");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
+	
 	public static void getMeteo(JLabel label) throws IOException{
         String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
         try {
@@ -61,7 +86,7 @@ public class WeatherModel {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public static void getWeatherIcon(JLabel label) {
+	public static ImageIcon getWeatherIcon() {
 		String iconPath;
         String code = Integer.toString(weathercode);
         System.out.println(code);
@@ -97,9 +122,9 @@ public class WeatherModel {
                 // Get the image stream
                 InputStream inputStream = connection.getInputStream();
                 BufferedImage image = ImageIO.read(inputStream);
+                image.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
                 inputStream.close();
-                label.setBackground(new Color(0,0,0,100));
-                label.setIcon(new ImageIcon(image));
+                return new ImageIcon(image);
             } else System.out.println("error");
             
 
@@ -107,6 +132,7 @@ public class WeatherModel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
 	}   
 }
 

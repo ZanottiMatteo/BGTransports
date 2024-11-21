@@ -76,4 +76,18 @@ public class ResizeController {
         ImageIcon resizedIcon = new ImageIcon(scaledImage);
         jbutton.setIcon(resizedIcon);
 	}
+	
+	public static void resizeImageLabel(Dimension originalPanelSize, JFrame jframe, ImageIcon Rimage, JLabel jlabel) {
+		double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
+        double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
+        double singleRatio = 0.0;
+        if (widthRatio > heightRatio) {
+        	singleRatio = heightRatio;
+        } else {
+        	singleRatio = widthRatio;
+        }     
+        Image scaledImage = Rimage.getImage().getScaledInstance((int)(Rimage.getIconWidth() * singleRatio), (int)(Rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(scaledImage);
+        jlabel.setIcon(resizedIcon);
+	}
 }

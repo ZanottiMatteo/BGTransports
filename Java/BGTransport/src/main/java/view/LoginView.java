@@ -48,21 +48,21 @@ public class LoginView extends JFrame {
          };      
     	setExtendedState(Frame.MAXIMIZED_BOTH);
     	setMinimumSize(MinPanelSize);    	    
-    	
+    	System.out.println("login" + ThemeController.getTheme());
     	if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
 		    } catch (UnsupportedLookAndFeelException e) {
 		        e.printStackTrace();
-		    }}			
+		    }}
 		else {
 			try {
 	            UIManager.setLookAndFeel(new FlatDarkLaf());
 	        } catch (UnsupportedLookAndFeelException e) {
 	            e.printStackTrace();
-	        }	
+	        }
 		}
-    	SwingUtilities.updateComponentTreeUI(this);
+ 	
     	UIManager.put("Button.arc", 999);         
         UIManager.put("TextComponent.arc", 15); 
         UIManager.put("Component.arc", 15);
@@ -108,7 +108,8 @@ public class LoginView extends JFrame {
     	switchThemeButton.setForeground(new Color(230, 230, 250));    	
     	switchThemeButton.setRolloverEnabled(false);
     	switchThemeButton.setBorderPainted(false);
-        switchThemeButton.addActionListener(e -> ThemeController.setThemeLabel(LogoLabel));
+    	 switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
+ 				MainController.signupV));
         mainPanel.add(switchThemeButton);
         
         passwordField.setBounds(852, 550, 216, 50);
@@ -138,7 +139,8 @@ public class LoginView extends JFrame {
     private void initComponents() {
         setTitle("BGTransport");
         setSize(1920,1080);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        SwingUtilities.updateComponentTreeUI(this); 
         setLocationRelativeTo(null);
     }
 }
