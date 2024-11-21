@@ -17,10 +17,11 @@ import model.WeatherModel;
 
 public class MainController {
 
-	public static LoginView loginV = new LoginView();
+	
 	public static HomeView homeV = new HomeView();
 	public static SignUpWindow signupV = new SignUpWindow();
 	public static MapView mapV = new MapView();
+	public static LoginView loginV = new LoginView();
 	public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
 	public static void main(String[] args) {

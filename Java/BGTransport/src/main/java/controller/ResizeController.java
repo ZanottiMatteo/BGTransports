@@ -17,6 +17,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import org.jxmapviewer.JXMapViewer;
+
 import view.ResizableImage;
 
 public class ResizeController {
@@ -54,6 +57,14 @@ public class ResizeController {
         panel.setBounds((int)(point.x*widthRatio), (int)(point.y*heightRatio), (int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
         panel.repaint();
         panel.revalidate();
+    }
+	
+	public static void resizePanel(Dimension originalPanelSize, JFrame jframe, JXMapViewer MapViewer, Dimension paneldimension, Point point) {
+    	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
+        double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;         
+        MapViewer.setBounds((int)(point.x*widthRatio), (int)(point.y*heightRatio), (int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
+        MapViewer.repaint();
+        MapViewer.revalidate();
     }
 	
 	public static void resizeImagePanel(JFrame jframe, ResizableImage Rimage, JPanel panel) {

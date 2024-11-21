@@ -75,6 +75,10 @@ public class LoginView extends JFrame {
     	returnButton.setBorderPainted(false);
     	returnButton.setBackground(new Color(0, 0, 0, 0));
     	returnButton.setIcon(iconReturn);
+    	returnButton.addActionListener(e -> {
+    		NewWindowController.openHomePanel(MainController.homeV);
+    		setVisible(false);
+    	});
     	mainPanel.add(returnButton);
     	
     	JButton signInButton = new JButton();

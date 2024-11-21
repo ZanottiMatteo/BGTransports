@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Point;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
@@ -52,6 +53,8 @@ public class NewWindowController {
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconUser, mapV.userButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconMap, mapV.mapButton);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.MenuPanelSize, mapV.menupanelpoint);
+				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.externmapPanel, mapV.MapPanelSize, mapV.mappanelpoint);
+				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.mapPanel, mapV.MapSize, mapV.mappoint);
 			}
 		});
 	}

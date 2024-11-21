@@ -149,10 +149,10 @@ public class HomeView extends JFrame {
 
 		lblweather.setHorizontalAlignment(SwingConstants.LEFT);
 		lblweather.setFont(new Font("SansSerif", Font.BOLD, 70));
-		lblweather.setBounds(154, 170, 167, 50);
+		lblweather.setBounds(140, 170, 200, 50);
 		lblweatherwind.setHorizontalAlignment(SwingConstants.LEFT);
 		lblweatherwind.setFont(new Font("SansSerif", Font.BOLD, 70));
-		lblweatherwind.setBounds(154, 100, 167, 50);
+		lblweatherwind.setBounds(140, 100, 200, 50);
 		lblweatherimg.setVerticalAlignment(SwingConstants.TOP);
 		lblweatherimg.setIcon(iconWeather);
 
@@ -174,8 +174,8 @@ public class HomeView extends JFrame {
 		lblweathertxt.setHorizontalAlignment(SwingConstants.LEFT);
 		lblweathertxt.setForeground(new Color(210, 105, 30));
 		lblweathertxt.setFont(new Font("SansSerif", Font.BOLD, 30));
-		lblweathertxt.setSize(196, 50);
-		lblweathertxt.setLocation(154, 30);
+		lblweathertxt.setSize(200, 50);
+		lblweathertxt.setLocation(140, 30);
 
 		weatherPanel.add(lblweatherwind);
 		weatherPanel.add(lblweathertxt);

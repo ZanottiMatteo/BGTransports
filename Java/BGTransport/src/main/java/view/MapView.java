@@ -2,6 +2,9 @@ package view;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+
+import org.jxmapviewer.JXMapViewer;
+
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
@@ -19,6 +22,7 @@ import java.awt.Insets;
 import java.awt.Point;
 
 import controller.MainController;
+import controller.MapController;
 import controller.NewWindowController;
 import controller.ResizeController;
 import controller.ThemeController;
@@ -27,38 +31,44 @@ import view.RoundedPanel;
 import java.awt.Font;
 
 /**
- * HomeView class represents the main view of the application, displaying a background image, 
- * theme switching button, and user-related components. It provides an interface for the user 
- * to interact with the main functionality of the application.
+ * HomeView class represents the main view of the application, displaying a
+ * background image, theme switching button, and user-related components. It
+ * provides an interface for the user to interact with the main functionality of
+ * the application.
  */
 public class MapView extends JFrame {
-	
-	public JPanel mainPanel = new JPanel();  
-	
-	public RoundedPanel menuPanel = new RoundedPanel();
-	public final Point menupanelpoint = new Point(15,30);
-	public JButton switchThemeButton;
-    public JButton userButton;
-    public JButton mapButton;
-    
-    public RoundedPanel homePanel = new RoundedPanel();
-    
-    // Background wallpaper (image that adjusts to screen size).
-    public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png")); 
-    
-    // Icon for the user button.
-    public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png"));
-    public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
-    
-    // Map for storing the bounds of each component (used for resizing).
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
-    
-    // Original and minimum size for the window.
-    public final Dimension originalPanelSize = new Dimension(1920, 1080);
-    public final Dimension MenuPanelSize = new Dimension(100, 900);
-    public final Dimension MinPanelSize = new Dimension(1085, 615);
 
-    /**
+	public JPanel mainPanel = new JPanel();
+
+	public RoundedPanel menuPanel = new RoundedPanel();
+	public final Point menupanelpoint = new Point(15, 30);
+	public JButton switchThemeButton;
+	public JButton userButton;
+	public JButton mapButton;
+
+	public RoundedPanel homePanel = new RoundedPanel();
+	public JXMapViewer mapPanel = new JXMapViewer();
+	public final Point mappoint = new Point(50, 50);
+	
+	public RoundedPanel externmapPanel = new RoundedPanel();
+	public final Point mappanelpoint = new Point(200, 30);
+	// Background wallpaper (image that adjusts to screen size).
+	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png"));
+
+	// Icon for the user button.
+	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png"));
+	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
+
+	// Map for storing the bounds of each component (used for resizing).
+	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+
+	// Original and minimum size for the window.
+	public final Dimension originalPanelSize = new Dimension(1920, 1080);
+	public final Dimension MenuPanelSize = new Dimension(100, 900);
+	public final Dimension MinPanelSize = new Dimension(1085, 615);
+	public final Dimension MapPanelSize = new Dimension(1600, 900);
+	public final Dimension MapSize = new Dimension(1500, 800);
+	/**
      * Constructor that sets up the UI components, layout, and theming for the home view.
      * It also initializes the main panel, menu panel, and other UI elements.
      */
@@ -149,15 +159,24 @@ public class MapView extends JFrame {
         
         // Create and configure the theme switch button.
         switchThemeButton = new JButton();
-        switchThemeButton.setBounds(20, 830, 60, 60);
-        menuPanel.add(switchThemeButton);
+        switchThemeButton.setBounds(20, 830, 60, 60);       
         switchThemeButton.setBackground(new Color(0, 0, 0, 0));  
         switchThemeButton.setIcon(new ImageIcon(MapView.class.getResource("/images/LDMode.png"))); 
         switchThemeButton.setForeground(new Color(230, 230, 250)); 
         switchThemeButton.setRolloverEnabled(false); 
         switchThemeButton.setBorderPainted(false);
+        menuPanel.add(switchThemeButton);
+        
         switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
 				MainController.signupV));
+        
+        mapPanel = MapController.generateMap();
+        mapPanel.setBounds(50, 50, 1500, 800);
+        externmapPanel.setBounds(200, 30, 1600, 900);
+        externmapPanel.add(mapPanel);
+        homePanel.add(externmapPanel);
+        externmapPanel.setLayout(null);
+        
         
         // Store the bounds of each component for possible future resizing.
         for (Component comp : mainPanel.getComponents()) {
@@ -171,15 +190,16 @@ public class MapView extends JFrame {
         initComponents();
     }
 
-    /**
-     * Initializes the window settings such as title, size, close operation, and positioning.
-     */
-    private void initComponents() {
-        setTitle("BGTransport");  // Set the window title.
-        setSize(1920, 1080);      // Set the initial size of the window.
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Close the application when the window is closed.
-        SwingUtilities.updateComponentTreeUI(this);  // Update the UI components after changes.
-        setLocationRelativeTo(null);  // Center the window on the screen.
-    }
+	/**
+	 * Initializes the window settings such as title, size, close operation, and
+	 * positioning.
+	 */
+	private void initComponents() {
+		setTitle("BGTransport"); // Set the window title.
+		setSize(1920, 1080); // Set the initial size of the window.
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed.
+		SwingUtilities.updateComponentTreeUI(this); // Update the UI components after changes.
+		setLocationRelativeTo(null); // Center the window on the screen.
+	}
 }
