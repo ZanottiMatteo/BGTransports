@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -37,7 +38,7 @@ public class ResizeController {
                 JLabel label = (JLabel) comp;
                 
                 // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
-                int fontSize = Math.max(jframe.getWidth() / 75, 10);  // La dimensione del font deve essere almeno 10
+                int fontSize = Math.max(jframe.getWidth() / 60, 10);  // La dimensione del font deve essere almeno 10
 
                 // Impostiamo il nuovo font per la JLabel
                 label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
@@ -47,10 +48,10 @@ public class ResizeController {
         panel.revalidate();
     } 
 	
-	public static void resizePanel(Dimension originalPanelSize, JFrame jframe, JPanel panel, Dimension paneldimension ) {
+	public static void resizePanel(Dimension originalPanelSize, JFrame jframe, JPanel panel, Dimension paneldimension, Point point) {
     	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;         
-        panel.setSize((int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
+        panel.setBounds((int)(point.x*widthRatio), (int)(point.y*heightRatio), (int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
         panel.repaint();
         panel.revalidate();
     }

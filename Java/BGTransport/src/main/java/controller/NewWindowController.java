@@ -27,11 +27,14 @@ public class NewWindowController {
 				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconUser, homeV.userButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconMap, homeV.mapButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconLDmode, homeV.switchThemeButton);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.iconWeather,
 						homeV.lblweatherimg);
-				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.menuPanel, homeV.MenuPanelSize);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.menuPanel, homeV.MenuPanelSize, homeV.menupanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.weatherPanel,
-						homeV.WeatherPanelSize);
+						homeV.WidgetPanelSizeMedium, homeV.weatherpanelpoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.timePanel,
+						homeV.WidgetPanelSizeSmall, homeV.timepanelpoint);
 			}
 		});
 	}
@@ -48,7 +51,7 @@ public class NewWindowController {
 				ResizeController.resizeImagePanel(mapV, mapV.lblBGwallpaper, mapV.mainPanel);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconUser, mapV.userButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconMap, mapV.mapButton);
-				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.MenuPanelSize);
+				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.MenuPanelSize, mapV.menupanelpoint);
 			}
 		});
 	}

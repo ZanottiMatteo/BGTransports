@@ -16,6 +16,8 @@ import java.util.Map;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
+import java.awt.Point;
+
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ResizeController;
@@ -34,6 +36,7 @@ public class MapView extends JFrame {
 	public JPanel mainPanel = new JPanel();  
 	
 	public RoundedPanel menuPanel = new RoundedPanel();
+	public final Point menupanelpoint = new Point(15,30);
 	public JButton switchThemeButton;
     public JButton userButton;
     public JButton mapButton;

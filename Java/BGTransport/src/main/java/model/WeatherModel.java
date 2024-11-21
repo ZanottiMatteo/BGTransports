@@ -25,7 +25,6 @@ import okhttp3.Response;
 import javax.imageio.ImageIO;
 
 public class WeatherModel {
-	private static final String BASE_URL = "https://wttr.in/";
 	
 	static int weathercode;
 	static int isday;
@@ -55,7 +54,7 @@ public class WeatherModel {
         }
 	}
 	
-	public static void getMeteo(JLabel label) throws IOException{
+	public static void getMeteo(JLabel label, JLabel label2) throws IOException{
         String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
         try {
             URL url = new URL(apiUrl);
@@ -76,10 +75,12 @@ public class WeatherModel {
 
             JSONObject currentWeather = json.getJSONObject("current_weather");
             double temperature = currentWeather.getDouble("temperature");
+            double windspeed = currentWeather.getDouble("windspeed");
             weathercode = currentWeather.getInt("weathercode");
             isday = currentWeather.getInt("is_day");
 
-                label.setText("Temperatura: " + temperature + "°C");
+                label.setText("🌡 " + temperature + "°C");
+                label2.setText("💨 " + windspeed + "Km/h");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -122,7 +123,7 @@ public class WeatherModel {
                 // Get the image stream
                 InputStream inputStream = connection.getInputStream();
                 BufferedImage image = ImageIO.read(inputStream);
-                image.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                image.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
                 inputStream.close();
                 return new ImageIcon(image);
             } else System.out.println("error");
