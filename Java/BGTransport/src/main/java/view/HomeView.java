@@ -212,7 +212,10 @@ public class HomeView extends JFrame {
 		userButton.setBorderPainted(false); // Remove border.
 		userButton.setIcon(iconUser); // Set the icon.
 		userButton.setBackground(new Color(0, 0, 0, 0)); // Transparent background.
-		userButton.addActionListener(e -> NewWindowController.openLoginPanel(MainController.loginV));
+		userButton.addActionListener(e ->{
+			NewWindowController.openLoginPanel(MainController.loginV);
+			setVisible(false);
+		});
 		menuPanel.add(userButton);
 
 		mapButton = new JButton();
@@ -221,7 +224,10 @@ public class HomeView extends JFrame {
 		mapButton.setBorderPainted(false); // Remove border.
 		mapButton.setIcon(iconUser); // Set the icon.
 		mapButton.setBackground(new Color(0, 0, 0, 0)); // Transparent background.
-		mapButton.addActionListener(e -> NewWindowController.openMapPanel(MainController.mapV));
+		mapButton.addActionListener(e -> {
+			NewWindowController.openMapPanel(MainController.mapV);
+			setVisible(false);
+		});
 		menuPanel.add(mapButton);
 
 		// Create and configure the theme switch button.
