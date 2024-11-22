@@ -1,0 +1,81 @@
+[ {
+  "name" : "BERGAMO FS",
+  "address" : "Piazza Marconi",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "BG BORGO PALAZZO",
+  "address" : "Via Borgo Palazzo",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "BG SAN FERMO",
+  "address" : "Via San Fermo",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "BG BIANZANA",
+  "address" : "Via Bianzana",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "BG REDONA",
+  "address" : "Via Redona",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "BG NEGRISOLI",
+  "address" : "Via Negrisoli",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "BG MARTINELLA",
+  "address" : "Via Martinella",
+  "town" : "Bergamo",
+  "province" : "BG"
+}, {
+  "name" : "TORRE BOLDONE",
+  "address" : "Via Fratelli Calvi",
+  "town" : "Torre Boldone",
+  "province" : "BG"
+}, {
+  "name" : "RANICA",
+  "address" : "Via Cimitero",
+  "town" : "Ranica",
+  "province" : "BG"
+}, {
+  "name" : "ALZANO CENTRO",
+  "address" : "Via Bonomelli",
+  "town" : "Alzano Lombardo",
+  "province" : "BG"
+}, {
+  "name" : "ALZANO SOPRA",
+  "address" : "Via San Giovanni",
+  "town" : "Alzano Sopra",
+  "province" : "BG"
+}, {
+  "name" : "NEMBRO CAMOZZI",
+  "address" : "Via Camozzi",
+  "town" : "Nembro",
+  "province" : "BG"
+}, {
+  "name" : "NEMBRO CENTRO",
+  "address" : "Via Gianetti",
+  "town" : "Nembro",
+  "province" : "BG"
+}, {
+  "name" : "NEMBRO SALETTI",
+  "address" : "Via Saletti",
+  "town" : "Nembro",
+  "province" : "BG"
+}, {
+  "name" : "PRADALUNGA",
+  "address" : "Via dei Martiri",
+  "town" : "Pradalunga",
+  "province" : "BG"
+}, {
+  "name" : "ALBINO",
+  "address" : "Piazza Giovanni XXIII",
+  "town" : "Albino",
+  "province" : "BG"
+} ]
