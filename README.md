@@ -1,1 +1,4 @@
 # BGTransports
+BGTransport è nato per facilitare il ritrovamento di informazioni dei mezzi pubblici nella provincia di Bergamo. Questo progetto permette di visualizzare in modo chiaro, 
+semplice e veloce, all’interno di una pagina web, tutte le linee di pullman, percorsi ferroviari, la funicolare e le linee tranviarie di Bergamo.
+Ci sono anche differenti ruoli basati sul tipo di utente: Sviluppatore, che può accedere e modificare tutte le sezioni, specialmente quelle a lui dedicate; Manager, che ha accesso alle sezioni a lui dedicate e può gestire e modificare le informazioni della propria azienda; gli Utenti, che potranno accedere alle funzioni di base e registrandosi possono ottenere dei vantaggi, cioè avere una propria area riservata dove registrare gli abbonamenti o salvare i percorsi, stazioni, fermate preferite.
