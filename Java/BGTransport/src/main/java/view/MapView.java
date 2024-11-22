@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 import org.jxmapviewer.JXMapViewer;
+import org.jxmapviewer.viewer.GeoPosition;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
@@ -14,7 +15,9 @@ import java.awt.Frame;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -61,6 +64,7 @@ public class MapView extends JFrame {
 
 	// Map for storing the bounds of each component (used for resizing).
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+	
 
 	// Original and minimum size for the window.
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
@@ -177,7 +181,8 @@ public class MapView extends JFrame {
         homePanel.add(externmapPanel);
         externmapPanel.setLayout(null);
         
-        
+
+        MapController.addMarkers(mapPanel, MapController.positions);
         // Store the bounds of each component for possible future resizing.
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
