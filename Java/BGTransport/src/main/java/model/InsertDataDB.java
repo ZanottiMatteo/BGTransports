@@ -18,6 +18,7 @@ import transportation.jooq.generated.tables.Company;
 import transportation.jooq.generated.tables.Funicular;
 import transportation.jooq.generated.tables.FunicularStation;
 import transportation.jooq.generated.tables.PullmanStop;
+import transportation.jooq.generated.tables.Train;
 import transportation.jooq.generated.tables.TrainStation;
 import transportation.jooq.generated.tables.Tram;
 import transportation.jooq.generated.tables.TramStop;
@@ -26,6 +27,7 @@ import transportation.jooq.generated.tables.records.FunicularRecord;
 import transportation.jooq.generated.tables.records.FunicularStationRecord;
 import transportation.jooq.generated.tables.records.PullmanRecord;
 import transportation.jooq.generated.tables.records.PullmanStopRecord;
+import transportation.jooq.generated.tables.records.TrainRecord;
 import transportation.jooq.generated.tables.records.TrainStationRecord;
 import transportation.jooq.generated.tables.records.TramRecord;
 import transportation.jooq.generated.tables.records.TramStopRecord;
@@ -229,6 +231,33 @@ public class InsertDataDB {
 			create.insertInto(Tram.TRAM).set(tramRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.tram + " with success!");
+	}
+	
+	public static void train(DSLContext create) throws IOException {
+		File jsonFile = new File(Constant.JSON_TRAIN_TIMETABLE);
+		JSONArray tramJsonArray = fileReader(jsonFile);
+		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
+		for (int j = 0; j < tramJsonArray.length(); j++) {
+			JSONObject tramJson = tramJsonArray.getJSONObject(j);
+
+			// Estrai i valori dal JSON
+			int id = tramJson.getInt(Constant.id);
+			String company_name = tramJson.getString(Constant.company_name);
+			String name = tramJson.getString(Constant.name);
+			String departureTrainStation = tramJson.getString(Constant.departure_train_station);
+			String departureTime = tramJson.getString(Constant.departure_time);
+			String arrivalTrainStation = tramJson.getString(Constant.arrival_train_station);
+			String arrivalTime = tramJson.getString(Constant.arrival_time);
+			String nextStop = tramJson.getString(Constant.next_stop);
+			String timeStop = tramJson.getString(Constant.time_stop);
+
+			// Crea un CompanyRecord con i dati estratti
+			TrainRecord trainRecord = new TrainRecord(id, company_name, name, departureTrainStation, departureTime,
+					arrivalTrainStation, arrivalTime, nextStop, timeStop);
+			// Inserisci i dati nel database
+			create.insertInto(Train.TRAIN).set(trainRecord).execute();
+		}
+		System.out.println("Add data in " + Constant.train + " with success!");
 	}
 
 }

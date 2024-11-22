@@ -65,9 +65,9 @@ public class Train extends TableImpl<TrainRecord> {
     public final TableField<TrainRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.departure_tram_station</code>.
+     * The column <code>TRAIN.departure_train_station</code>.
      */
-    public final TableField<TrainRecord, String> DEPARTURE_TRAM_STATION = createField(DSL.name("departure_tram_station"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> DEPARTURE_TRAIN_STATION = createField(DSL.name("departure_train_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAIN.departure_time</code>.
@@ -75,9 +75,9 @@ public class Train extends TableImpl<TrainRecord> {
     public final TableField<TrainRecord, String> DEPARTURE_TIME = createField(DSL.name("departure_time"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAIN.arrival_tram_station</code>.
+     * The column <code>TRAIN.arrival_train_station</code>.
      */
-    public final TableField<TrainRecord, String> ARRIVAL_TRAM_STATION = createField(DSL.name("arrival_tram_station"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TrainRecord, String> ARRIVAL_TRAIN_STATION = createField(DSL.name("arrival_train_station"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>TRAIN.arrival_time</code>.
@@ -93,21 +93,6 @@ public class Train extends TableImpl<TrainRecord> {
      * The column <code>TRAIN.time_stop</code>.
      */
     public final TableField<TrainRecord, String> TIME_STOP = createField(DSL.name("time_stop"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.type</code>.
-     */
-    public final TableField<TrainRecord, String> TYPE = createField(DSL.name("type"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.number_of_seats</code>.
-     */
-    public final TableField<TrainRecord, String> NUMBER_OF_SEATS = createField(DSL.name("number_of_seats"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>TRAIN.number_of_carriages</code>.
-     */
-    public final TableField<TrainRecord, String> NUMBER_OF_CARRIAGES = createField(DSL.name("number_of_carriages"), SQLDataType.VARCHAR(255), this, "");
 
     private Train(Name alias, Table<TrainRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

@@ -57,25 +57,17 @@ public class CreateTablesDB {
 		System.out.println("Table " + Constant.funicular + " created successfully!");
 
 		// Creates the "TRAIN" table if it does not already exist
-		create.createTableIfNotExists(Constant.train).column(Constant.id, SQLDataType.INTEGER) // ID
-																								// column
+		create.createTableIfNotExists(Constant.train)
+				.column(Constant.id, SQLDataType.INTEGER) // ID
 				.column(Constant.company_name, SQLDataType.VARCHAR(255)) // COMPANY name column
 				.column(Constant.name, SQLDataType.VARCHAR(255)) // NAME of the tram column
-				.column(Constant.departure_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the
-																					// DEPARTURE TRAM STATION
-				.column(Constant.departure_time, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the station
-																			// column
-				.column(Constant.arrival_tram_station, SQLDataType.VARCHAR(255)) // Column identifying the
-																					// ARRIVAL TRAM STATION
+				.column(Constant.departure_train_station, SQLDataType.VARCHAR(255)) // Column identifying the DEPARTURE TRAM STATION
+				.column(Constant.departure_time, SQLDataType.VARCHAR(255)) // DEPARTURE TIME from the station column
+				.column(Constant.arrival_train_station, SQLDataType.VARCHAR(255)) // Column identifying the ARRIVAL TRAM STATION
 				.column(Constant.arrival_time, SQLDataType.VARCHAR(255)) // ARRIVAL TIME at the station column
 				.column(Constant.next_stop, SQLDataType.VARCHAR(255)) // TRAM STOP column
 				.column(Constant.time_stop, SQLDataType.VARCHAR(255)) // TIME column
-				.column(Constant.type, SQLDataType.VARCHAR(255)) // holiday and weekday TYPE column
-				.column(Constant.number_of_seats, SQLDataType.VARCHAR(255)) // NUMBER_OF_SEATS column
-				.column(Constant.number_of_carriages, SQLDataType.VARCHAR(255)) // NUMBER_OF_CARRIAGES column
-				.constraints(DSL.constraint("PK_" + Constant.train).primaryKey(Constant.id) // Set a
-																							// primary
-																							// key
+				.constraints(DSL.constraint("PK_" + Constant.train).primaryKey(Constant.id)
 				).execute();
 		System.out.println("Table " + Constant.train + " created successfully!");
 

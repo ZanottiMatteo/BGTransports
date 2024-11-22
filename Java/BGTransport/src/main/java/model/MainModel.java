@@ -65,6 +65,13 @@ public class MainModel {
 			List<Map<String, String>> tramTimetable = CreateJSONFile.readExcelFile(Constant.EXCEL_TRAM_TIMETABLE);
 			CreateJSONFile.writeJsonToFile(tramTimetable, Constant.JSON_TRAM_TIMETABLE);
 		}
+		
+		Boolean controlTrainTimetable = ControlDB.control(Constant.JSON_TRAIN_TIMETABLE);
+		if (controlTrainTimetable == false) {
+			System.out.println("start train timetable");
+			List<Map<String, String>> trainTimetable = CreateJSONFile.readExcelFile(Constant.EXCEL_TRAIN_TIMETABLE);
+			CreateJSONFile.writeJsonToFile(trainTimetable, Constant.JSON_TRAIN_TIMETABLE);
+		}
 
 		InsertDataDB.company(createPublicTrasnportation);
 		InsertDataDB.funicular_station(createPublicTrasnportation);
@@ -73,6 +80,7 @@ public class MainModel {
 		InsertDataDB.pullman_stop(createPublicTrasnportation);
 		InsertDataDB.funicular(createPublicTrasnportation);
 		InsertDataDB.tram(createPublicTrasnportation);
+		InsertDataDB.train(createPublicTrasnportation);
 
 		// create database User
 		CreateDB.createDatabase(Constant.DB_URL_USERS);

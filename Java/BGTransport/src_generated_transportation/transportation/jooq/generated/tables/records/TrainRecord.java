@@ -61,16 +61,16 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     }
 
     /**
-     * Setter for <code>TRAIN.departure_tram_station</code>.
+     * Setter for <code>TRAIN.departure_train_station</code>.
      */
-    public void setDepartureTramStation(String value) {
+    public void setDepartureTrainStation(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>TRAIN.departure_tram_station</code>.
+     * Getter for <code>TRAIN.departure_train_station</code>.
      */
-    public String getDepartureTramStation() {
+    public String getDepartureTrainStation() {
         return (String) get(3);
     }
 
@@ -89,16 +89,16 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     }
 
     /**
-     * Setter for <code>TRAIN.arrival_tram_station</code>.
+     * Setter for <code>TRAIN.arrival_train_station</code>.
      */
-    public void setArrivalTramStation(String value) {
+    public void setArrivalTrainStation(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>TRAIN.arrival_tram_station</code>.
+     * Getter for <code>TRAIN.arrival_train_station</code>.
      */
-    public String getArrivalTramStation() {
+    public String getArrivalTrainStation() {
         return (String) get(5);
     }
 
@@ -144,48 +144,6 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
         return (String) get(8);
     }
 
-    /**
-     * Setter for <code>TRAIN.type</code>.
-     */
-    public void setType(String value) {
-        set(9, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.type</code>.
-     */
-    public String getType() {
-        return (String) get(9);
-    }
-
-    /**
-     * Setter for <code>TRAIN.number_of_seats</code>.
-     */
-    public void setNumberOfSeats(String value) {
-        set(10, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.number_of_seats</code>.
-     */
-    public String getNumberOfSeats() {
-        return (String) get(10);
-    }
-
-    /**
-     * Setter for <code>TRAIN.number_of_carriages</code>.
-     */
-    public void setNumberOfCarriages(String value) {
-        set(11, value);
-    }
-
-    /**
-     * Getter for <code>TRAIN.number_of_carriages</code>.
-     */
-    public String getNumberOfCarriages() {
-        return (String) get(11);
-    }
-
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -209,21 +167,18 @@ public class TrainRecord extends UpdatableRecordImpl<TrainRecord> {
     /**
      * Create a detached, initialised TrainRecord
      */
-    public TrainRecord(Integer id, String companyName, String name, String departureTramStation, String departureTime, String arrivalTramStation, String arrivalTime, String nextStop, String timeStop, String type, String numberOfSeats, String numberOfCarriages) {
+    public TrainRecord(Integer id, String companyName, String name, String departureTrainStation, String departureTime, String arrivalTrainStation, String arrivalTime, String nextStop, String timeStop) {
         super(Train.TRAIN);
 
         setId(id);
         setCompanyName(companyName);
         setName(name);
-        setDepartureTramStation(departureTramStation);
+        setDepartureTrainStation(departureTrainStation);
         setDepartureTime(departureTime);
-        setArrivalTramStation(arrivalTramStation);
+        setArrivalTrainStation(arrivalTrainStation);
         setArrivalTime(arrivalTime);
         setNextStop(nextStop);
         setTimeStop(timeStop);
-        setType(type);
-        setNumberOfSeats(numberOfSeats);
-        setNumberOfCarriages(numberOfCarriages);
         resetChangedOnNotNull();
     }
 }

@@ -23,49 +23,56 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class CreateJSONFile {
 	// Funzione che legge il file Excel e restituisce i dati come lista di Map
 	public static List<Map<String, String>> readExcelFile(String filePath) throws Exception {
-		List<Map<String, String>> dataList = new ArrayList<>();
-		FileInputStream file = new FileInputStream(new File(filePath));
+	    List<Map<String, String>> dataList = new ArrayList<>();
+	    FileInputStream file = new FileInputStream(new File(filePath));
 
-		// Crea un workbook (cartella di lavoro) a partire dal file Excel
-		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheetAt(0); // Legge il primo foglio
+	    // Crea un workbook (cartella di lavoro) a partire dal file Excel
+	    Workbook workbook = new XSSFWorkbook(file);
+	    Sheet sheet = workbook.getSheetAt(0); // Legge il primo foglio
 
-		// Ottiene le intestazioni (prima riga del foglio)
-		Row headerRow = sheet.getRow(0);
-		List<String> headers = new ArrayList<>();
-		if (headerRow != null) { // Controlla se la riga delle intestazioni esiste
-			for (Cell cell : headerRow) {
-				headers.add(cell.getStringCellValue());
-			}
-		}
+	    // Ottiene le intestazioni (prima riga del foglio)
+	    Row headerRow = sheet.getRow(0);
+	    List<String> headers = new ArrayList<>();
+	    if (headerRow != null) { // Controlla se la riga delle intestazioni esiste
+	        for (Cell cell : headerRow) {
+	            headers.add(cell.getStringCellValue());
+	        }
+	    }
 
-		// Legge tutte le righe restanti
-		for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) {
-			Row row = sheet.getRow(i);
+	    // Legge tutte le righe restanti
+	    for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Usa getLastRowNum per evitare problemi con righe vuote in fondo
+	        Row row = sheet.getRow(i);
 
-			// Se la riga è nulla, salta questa iterazione
-			if (row == null) {
-				continue; // Salta righe vuote
-			}
+	        // Se la riga è nulla, salta questa iterazione
+	        if (row == null) {
+	            continue;
+	        }
 
-			Map<String, String> rowData = new LinkedHashMap<>(); // Utilizziamo LinkedHashMap per preservare l'ordine
+	        Map<String, String> rowData = new LinkedHashMap<>(); // Utilizziamo LinkedHashMap per preservare l'ordine
+	        boolean hasNonEmptyValue = false; // Controllo se la riga ha almeno un valore non vuoto
 
-			// Assegna i valori delle celle alle rispettive intestazioni mantenendo l'ordine
-			for (int j = 0; j < row.getPhysicalNumberOfCells(); j++) {
-				String cellValue = getCellValue(row.getCell(j));
-				rowData.put(headers.get(j), cellValue);
-			}
+	        // Assegna i valori delle celle alle rispettive intestazioni mantenendo l'ordine
+	        for (int j = 0; j < headers.size(); j++) {
+	            Cell cell = (row.getCell(j) != null) ? row.getCell(j) : null;
+	            String cellValue = (cell != null) ? getCellValue(cell) : ""; // Celle vuote diventano stringhe vuote
+	            rowData.put(headers.get(j), cellValue);
 
-			// Verifica se la riga contiene almeno un valore non vuoto
-			if (rowData.values().stream().anyMatch(value -> !value.isEmpty())) {
-				dataList.add(rowData); // Aggiungi la riga solo se contiene valori non vuoti
-			}
-		}
+	            // Verifica se almeno una cella della riga contiene un valore non vuoto
+	            if (!cellValue.isEmpty()) {
+	                hasNonEmptyValue = true;
+	            }
+	        }
 
-		workbook.close();
-		file.close();
+	        // Aggiungi la riga alla lista solo se ha almeno un valore non vuoto
+	        if (hasNonEmptyValue) {
+	            dataList.add(rowData);
+	        }
+	    }
 
-		return dataList;
+	    workbook.close();
+	    file.close();
+
+	    return dataList;
 	}
 
 	// Funzione che ottiene il valore di una cella e lo converte correttamente
