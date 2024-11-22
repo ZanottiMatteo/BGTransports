@@ -6,11 +6,10 @@
 
 	<groupId>BGTransport</groupId>
 	<artifactId>BGTransport</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<name>BGTransport</name>
-	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
+	<url>https://github.com/ZanottiMatteo/BGTransports</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
