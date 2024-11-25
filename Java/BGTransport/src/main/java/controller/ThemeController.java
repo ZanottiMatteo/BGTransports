@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
@@ -25,6 +26,7 @@ import view.SignUpWindow;
 public class ThemeController {
 
 	public static boolean themeL = false;
+	
 
 	public static void setThemeHomePanel(HomeView homeV) {
 
@@ -106,18 +108,27 @@ public class ThemeController {
 		}
 	}
 	
-	public static void updateThemes(HomeView homeV, MapView mapV, LoginView loginV, SignUpWindow signupV) {
-		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf && !themeL) {
-			themeL = true;
-			FlatLightLaf.setup();
-		} else if (UIManager.getLookAndFeel() instanceof FlatLightLaf && themeL){
-			themeL = false;
-			FlatDarkLaf.setup();
-		}
-		setThemeHomePanel(homeV);
-		setThemeMapPanel(mapV);
-		setThemeLoginPanel(loginV);
-		setThemeSignUpPanel(signupV);
+	public static void updateThemes() {
+		themeL = !themeL;
+		 try {
+	        if (getTheme()) {
+	            UIManager.setLookAndFeel(new FlatLightLaf());
+	        } else {
+	            UIManager.setLookAndFeel(new FlatDarkLaf());
+	        }
+	        // Aggiorna tutti i componenti del sistema
+	        for (Window window : Window.getWindows()) {
+	            SwingUtilities.updateComponentTreeUI(window);
+	        }
+		 }
+	        catch (UnsupportedLookAndFeelException e) {
+	            e.printStackTrace();
+	        }
+
+		setThemeHomePanel(MainController.homeV);
+		setThemeMapPanel(MainController.mapV);
+		setThemeLoginPanel(MainController.loginV);
+		setThemeSignUpPanel(MainController.signupV);
 	}
 	
 	/*

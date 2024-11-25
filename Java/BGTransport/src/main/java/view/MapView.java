@@ -50,7 +50,7 @@ public class MapView extends JFrame {
 	public JButton mapButton;
 
 	public RoundedPanel homePanel = new RoundedPanel();
-	public JXMapViewer mapPanel = new JXMapViewer();
+	public JXMapViewer mapPanel = MapController.generateMap();
 	public final Point mappoint = new Point(50, 50);
 	
 	public RoundedPanel externmapPanel = new RoundedPanel();
@@ -91,20 +91,12 @@ public class MapView extends JFrame {
                 g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);  // Draw background image
             }
         };
-        System.out.println("map:" + ThemeController.getTheme());
-        // Apply the selected theme (Light or Dark).
-        if (ThemeController.getTheme()) {
-            try {
-                UIManager.setLookAndFeel(new FlatLightLaf());  // Set light theme
-            } catch (UnsupportedLookAndFeelException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                UIManager.setLookAndFeel(new FlatDarkLaf());  // Set dark theme
-            } catch (UnsupportedLookAndFeelException e) {
-                e.printStackTrace();
-            }
+        
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());  // Set light theme
+            
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
         }
 
         
@@ -171,18 +163,14 @@ public class MapView extends JFrame {
         switchThemeButton.setBorderPainted(false);
         menuPanel.add(switchThemeButton);
         
-        switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
-				MainController.signupV));
+        switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
         
-        mapPanel = MapController.generateMap();
         mapPanel.setBounds(50, 50, 1500, 800);
         externmapPanel.setBounds(200, 30, 1600, 900);
         externmapPanel.add(mapPanel);
         homePanel.add(externmapPanel);
         externmapPanel.setLayout(null);
         
-
-        MapController.addMarkers(mapPanel, MapController.positions);
         // Store the bounds of each component for possible future resizing.
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());

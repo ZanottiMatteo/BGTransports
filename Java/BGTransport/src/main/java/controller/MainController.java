@@ -26,13 +26,8 @@ public class MainController {
 
 	public static void main(String[] args) {
 		System.out.println("BGTransport!");
-		ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
-				MainController.signupV);
+		ThemeController.updateThemes();
 		NewWindowController.openHomePanel(homeV);
-
-		users.add(new RegisteredUser("Mario", "Rossi", "12/11/45", 1));
-		users.add(new RegisteredUser("Piero", "Rossi", "12/10/45", 2));
-		users.add(new RegisteredUser("Gigi", "Rossi", "5/11/45", 1));
 
 	}
 }

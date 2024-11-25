@@ -104,8 +104,7 @@ public class HomeView extends JFrame {
 		};
 
 		// Apply the selected theme (Light or Dark).
-		System.out.println("home" + ThemeController.getTheme());
-		if (ThemeController.getTheme()) {
+		/*if (ThemeController.getTheme()) {
 			try {
 				UIManager.setLookAndFeel(new FlatLightLaf()); // Set light theme
 			} catch (UnsupportedLookAndFeelException e) {
@@ -117,7 +116,7 @@ public class HomeView extends JFrame {
 			} catch (UnsupportedLookAndFeelException e) {
 				e.printStackTrace();
 			}
-		}
+		}*/
 
 		// Set rounded corner UI properties.
 		UIManager.put("Button.arc", 999);
@@ -240,8 +239,7 @@ public class HomeView extends JFrame {
 		switchThemeButton.setForeground(new Color(230, 230, 250));
 		switchThemeButton.setRolloverEnabled(false);
 		switchThemeButton.setBorderPainted(false);
-		switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV,
-				MainController.loginV, MainController.signupV));
+		switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
 
 		// Store the bounds of each component for possible future resizing.
 		for (Component comp : mainPanel.getComponents()) {

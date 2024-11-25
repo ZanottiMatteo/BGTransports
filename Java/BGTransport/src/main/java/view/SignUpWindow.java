@@ -36,7 +36,7 @@ public class SignUpWindow extends JFrame {
 	
 	public SignUpWindow() {		
 		setResizable(false);
-		System.out.println("signup" + ThemeController.getTheme());
+		/*System.out.println("signup" + ThemeController.getTheme());
 		if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
@@ -49,7 +49,7 @@ public class SignUpWindow extends JFrame {
 	        } catch (UnsupportedLookAndFeelException e) {
 	            e.printStackTrace();
 	        }
-		}
+		}*/
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

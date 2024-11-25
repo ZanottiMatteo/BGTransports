@@ -51,7 +51,7 @@ public class LoginView extends JFrame {
          };      
     	setExtendedState(Frame.MAXIMIZED_BOTH);
     	setMinimumSize(MinPanelSize);    	    
-    	System.out.println("login" + ThemeController.getTheme());
+    	/*System.out.println("login" + ThemeController.getTheme());
     	if (ThemeController.getTheme()) {
 			try {
 		        UIManager.setLookAndFeel(new FlatLightLaf());
@@ -64,7 +64,7 @@ public class LoginView extends JFrame {
 	        } catch (UnsupportedLookAndFeelException e) {
 	            e.printStackTrace();
 	        }
-		}
+		}*/
  	
     	UIManager.put("Button.arc", 999);         
         UIManager.put("TextComponent.arc", 15); 
@@ -121,8 +121,7 @@ public class LoginView extends JFrame {
     	switchThemeButton.setForeground(new Color(230, 230, 250));    	
     	switchThemeButton.setRolloverEnabled(false);
     	switchThemeButton.setBorderPainted(false);
-    	 switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
- 				MainController.signupV));
+    	 switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
         mainPanel.add(switchThemeButton);
         
         passwordField.setBounds(852, 550, 216, 50);
