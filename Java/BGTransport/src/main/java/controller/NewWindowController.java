@@ -27,6 +27,7 @@ public class NewWindowController {
 				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconUser, homeV.userButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconMap, homeV.mapButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconHome, homeV.homeButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.iconLDmode, homeV.switchThemeButton);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.iconWeather,
 						homeV.lblweatherimg);
@@ -52,6 +53,7 @@ public class NewWindowController {
 				ResizeController.resizeImagePanel(mapV, mapV.lblBGwallpaper, mapV.mainPanel);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconUser, mapV.userButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconMap, mapV.mapButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconHome, mapV.homeButton);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.MenuPanelSize, mapV.menupanelpoint);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.externmapPanel, mapV.MapPanelSize, mapV.mappanelpoint);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, MapController.fullMapViewer, mapV.MapSize,

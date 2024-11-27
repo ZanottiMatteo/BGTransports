@@ -53,6 +53,7 @@ public class MapView extends JFrame {
 	public JButton switchThemeButton; // Button to toggle between light and dark themes.
 	public JButton userButton;        // Button to navigate to the user menu.
 	public JButton mapButton;         // Button to navigate to the map view.
+	public JButton homeButton;
 
 	// Main content panel with rounded corners.
 	public RoundedPanel homePanel = new RoundedPanel();
@@ -70,6 +71,7 @@ public class MapView extends JFrame {
 	// Icons for the user and map buttons.
 	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png")); // Icon for the user button.
 	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));   // Icon for the map button.
+	public ImageIcon iconHome = new ImageIcon(MapView.class.getResource("/images/Home.png"));
 
 	// A map to store the bounds (dimensions and positions) of each component for resizing purposes.
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
@@ -176,8 +178,12 @@ public class MapView extends JFrame {
         userButton = createIconButton(iconUser, 20, 20);
         menuPanel.add(userButton);
 
+        // Add home button
+        homeButton = createIconButton(iconHome, 20, 140);
+        menuPanel.add(homeButton);
+        
         // Add map button
-        mapButton = createIconButton(iconMap, 20, 150);
+        mapButton = createIconButton(iconMap, 20, 260);
         menuPanel.add(mapButton);
 
         // Add theme switch button
@@ -218,11 +224,12 @@ public class MapView extends JFrame {
             this.setVisible(false);
         });
 
-        // Action listener for the map button
-        mapButton.addActionListener(e -> {
-            NewWindowController.openMapPanel(MainController.mapV);
-            this.setVisible(false);
-        });
+        // Action listener for the home button
+        homeButton.addActionListener(e -> {
+			NewWindowController.openHomePanel(MainController.homeV);
+			setVisible(false);
+		});
+		menuPanel.add(homeButton);
 
         // Action listener for the theme switch button
         switchThemeButton.addActionListener(e -> ThemeController.updateThemes());

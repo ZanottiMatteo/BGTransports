@@ -40,6 +40,8 @@ public class MapController {
     private static final List<Painter<JXMapViewer>> painters = new ArrayList<>();
     public static JXMapViewer fullMapViewer = new JXMapViewer(); // Create a separate instance for the full map
     public static JXMapViewer miniMapViewer = new JXMapViewer(); // Create a separate instance for the mini map
+    private static final double TOLERANCE = 0.0003;
+    
     /**
      * Method to configure and generate a map with OpenStreetMap
      * 
@@ -80,17 +82,55 @@ public class MapController {
         mapViewer.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (e.getClickCount() == 2 && !e.isConsumed()) {
+            	if (e.getClickCount() == 2 && !e.isConsumed()) {
                     e.consume();
                     Point2D point = e.getPoint();
-                    GeoPosition geoPosition = mapViewer.convertPointToGeoPosition(point);
-                    if (!positions.contains(geoPosition)) { // Ensure uniqueness of waypoints
-                        positions.add(geoPosition);
-                        addMarkers(positions);
+                    GeoPosition clickedPosition = mapViewer.convertPointToGeoPosition(point);
+
+                    // Cerca un waypoint vicino alla posizione cliccata
+                    GeoPosition nearbyPosition = findNearbyWaypoint(clickedPosition);
+
+                    if (nearbyPosition != null) {
+                        // Rimuovi il waypoint se è vicino
+                        positions.remove(nearbyPosition);
+                    } else {
+                        // Aggiungi un nuovo waypoint se nessuno è vicino
+                        positions.add(clickedPosition);
                     }
+
+                    // Aggiorna i marker sulla mappa
+                    addMarkers(positions);
                 }
             }
         });
+    }
+    
+    /**
+     * Trova un waypoint vicino alla posizione specificata entro una certa tolleranza.
+     * 
+     * @param clickedPosition la posizione cliccata
+     * @return il waypoint vicino, o null se nessun waypoint è vicino
+     */
+    private static GeoPosition findNearbyWaypoint(GeoPosition clickedPosition) {
+        for (GeoPosition position : positions) {
+            if (isWithinTolerance(position, clickedPosition)) {
+                return position;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Controlla se due posizioni sono entro una certa tolleranza.
+     * 
+     * @param pos1 la prima posizione
+     * @param pos2 la seconda posizione
+     * @return true se le posizioni sono vicine, false altrimenti
+     */
+    private static boolean isWithinTolerance(GeoPosition pos1, GeoPosition pos2) {
+        double latDiff = Math.abs(pos1.getLatitude() - pos2.getLatitude());
+        double lonDiff = Math.abs(pos1.getLongitude() - pos2.getLongitude());
+        return latDiff <= TOLERANCE && lonDiff <= TOLERANCE;
     }
 
     /**

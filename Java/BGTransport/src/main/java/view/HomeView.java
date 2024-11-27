@@ -33,6 +33,7 @@ public class HomeView extends JFrame {
 	public JButton switchThemeButton;
 	public JButton userButton;
 	public JButton mapButton;
+	public JButton homeButton;
 
 	public RoundedPanel homePanel = new RoundedPanel();
 	public RoundedPanel weatherPanel = new RoundedPanel();
@@ -61,6 +62,7 @@ public class HomeView extends JFrame {
 	public ImageIcon iconLDmode = new ImageIcon(HomeView.class.getResource("/images/LDMode.png"));
 	public ImageIcon iconWeather;
 	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
+	public ImageIcon iconHome = new ImageIcon(HomeView.class.getResource("/images/Home.png"));
 
 	// Component bounds storage for resizing purposes.
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
@@ -229,8 +231,12 @@ public class HomeView extends JFrame {
 		});
 		menuPanel.add(userButton);
 
+		// User button.
+		homeButton = createMenuButton(iconHome, 20, 140);
+		menuPanel.add(homeButton);
+		
 		// Map button.
-		mapButton = createMenuButton(iconMap, 20, 150);
+		mapButton = createMenuButton(iconMap, 20, 260);
 		mapButton.addActionListener(e -> {
 			NewWindowController.openMapPanel(MainController.mapV);
 			setVisible(false);
