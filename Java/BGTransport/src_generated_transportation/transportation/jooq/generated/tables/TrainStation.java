@@ -69,6 +69,16 @@ public class TrainStation extends TableImpl<TrainStationRecord> {
      */
     public final TableField<TrainStationRecord, String> PROVINCE = createField(DSL.name("province"), SQLDataType.VARCHAR(255), this, "");
 
+    /**
+     * The column <code>TRAIN STATION.lat</code>.
+     */
+    public final TableField<TrainStationRecord, String> LAT = createField(DSL.name("lat"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>TRAIN STATION.long</code>.
+     */
+    public final TableField<TrainStationRecord, String> LONG = createField(DSL.name("long"), SQLDataType.VARCHAR(255), this, "");
+
     private TrainStation(Name alias, Table<TrainStationRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }

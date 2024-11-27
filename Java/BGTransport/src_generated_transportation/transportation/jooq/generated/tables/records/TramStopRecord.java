@@ -74,6 +74,34 @@ public class TramStopRecord extends UpdatableRecordImpl<TramStopRecord> {
         return (String) get(3);
     }
 
+    /**
+     * Setter for <code>TRAM STOP.lat</code>.
+     */
+    public void setLat(String value) {
+        set(4, value);
+    }
+
+    /**
+     * Getter for <code>TRAM STOP.lat</code>.
+     */
+    public String getLat() {
+        return (String) get(4);
+    }
+
+    /**
+     * Setter for <code>TRAM STOP.long</code>.
+     */
+    public void setLong(String value) {
+        set(5, value);
+    }
+
+    /**
+     * Getter for <code>TRAM STOP.long</code>.
+     */
+    public String getLong() {
+        return (String) get(5);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -97,13 +125,15 @@ public class TramStopRecord extends UpdatableRecordImpl<TramStopRecord> {
     /**
      * Create a detached, initialised TramStopRecord
      */
-    public TramStopRecord(String name, String address, String town, String province) {
+    public TramStopRecord(String name, String address, String town, String province, String lat, String long_) {
         super(TramStop.TRAM_STOP);
 
         setName(name);
         setAddress(address);
         setTown(town);
         setProvince(province);
+        setLat(lat);
+        setLong(long_);
         resetChangedOnNotNull();
     }
 }

@@ -2,295 +2,413 @@
   "name" : "Albano S.Alessandro",
   "address" : "V. Santuario, 19",
   "town" : "Albano Sant'alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Ambivere-Mapello",
   "address" : "V. Donizetti, 1",
   "town" : "Ambivere",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Arcene",
   "address" : "Strada Provinciale Ex Ss 42 Del Tonale/Sempione",
   "town" : "Arcene",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Arcore",
   "address" : "Piazzale Martire della Libertà",
   "town" : "Arcore",
-  "province" : "MB"
+  "province" : "MB",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Bergamo",
   "address" : "Piazza Marconi, 7",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Bergamo Ospedale",
   "address" : "Via Martin Luther King",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Brescia",
   "address" : "Viale della Stazione, 54",
   "town" : "Brescia",
-  "province" : "BS"
+  "province" : "BS",
+  "lat" : "45",
+  "lon" : "10"
 }, {
   "name" : "Calolziocorte-Olginate",
   "address" : "Via Attilio Galli, 15",
   "town" : "Calolziocorte",
-  "province" : "LC"
+  "province" : "LC",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Calusco",
   "address" : "Via Trieste, 22",
   "town" : "Calusco D'adda",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Caravaggio",
   "address" : "Viale Papa Giovanni Xxiii",
   "town" : "Caravaggio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Carnate-Usmate",
   "address" : "Via Roma, 2",
   "town" : "Carnate",
-  "province" : "MB"
+  "province" : "MB",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Cassano d'Adda",
   "address" : "Piazza Gobetti",
   "town" : "Cassano d'Adda",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Chiuduno",
   "address" : "Via Monsignor Valoti",
   "town" : "Chiuduno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Cisano-Caprino Bergamasco",
   "address" : "Piazza Martiri Della Libertà, 5",
   "town" : "Cisano Bergamasco",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Cividate-Calcio",
   "address" : "Via Stazione",
   "town" : "Cividate Al Piano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Coccaglio",
   "address" : "Viale Giacomo Matteotti, 14",
   "town" : "Coccaglio",
-  "province" : "BS"
+  "province" : "BS",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Cologne",
   "address" : "Via Roma, 141",
   "town" : "Cologne",
-  "province" : "BS"
+  "province" : "BS",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Grumello del Monte",
   "address" : "Viale Vittorio Veneto, 42",
   "town" : "Grumello Del Monte",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Lecco",
   "address" : "Piazza Stazione",
   "town" : "Lecco",
-  "province" : "LC"
+  "province" : "LC",
+  "lat" : "",
+  "lon" : ""
 }, {
   "name" : "Lecco-Maggianico",
   "address" : "Via Antonio Carlo Gomez, 15",
   "town" : "Lecco",
-  "province" : "LC"
+  "province" : "LC",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Levate",
   "address" : "Via S.Maria",
   "town" : "Levate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Melzo",
   "address" : "Via Stazione",
   "town" : "Melzo",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Centrale",
   "address" : "Piazza Duca d'Aosta",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Certosa",
   "address" : "Via Triboniano",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Dateo",
   "address" : "Viale Piceno",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Forlanini",
   "address" : "Via Marco Bruto",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Greco Pirelli",
   "address" : "Piazzale Egeo",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Lambrate",
   "address" : "Piazza Enrico Bottini, 10",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Lancetti",
   "address" : "Via Lancetti",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Porta Garibaldi",
   "address" : "Piazza Sigmund Freud, 1",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Porta Garibaldi Passante",
   "address" : "Piazza Sigmund Freud",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Porta Venezia",
   "address" : "Corso Buenos Aires",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Porta Vittoria",
   "address" : "Via Cervignano",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Repubblica",
   "address" : "Piazza della Repubblica",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Milano Villapizzone",
   "address" : "Via Arnaldo Fusinato, 26",
   "town" : "Milano",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Montello-Gorlago",
   "address" : "Via Stazione, 6",
   "town" : "Montello",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Monza",
   "address" : "Via Enrico Arosio, 14",
   "town" : "Monza",
-  "province" : "MB"
+  "province" : "MB",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Morengo-Bariano",
   "address" : "Via Locatelli",
   "town" : "Bariano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Ospitaletto-Travagliato",
   "address" : "Via Martiri della Libertà (SP19), 183",
   "town" : "Ospitaletto",
-  "province" : "BS"
+  "province" : "BS",
+  "lat" : "45",
+  "lon" : "10"
 }, {
   "name" : "Paderno-Robbiate",
   "address" : "Viale Libertà, 1",
   "town" : "Paderno d'Adda",
-  "province" : "LC"
+  "province" : "LC",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Palazzolo sull'Oglio",
   "address" : "Via Guglielmo Marconi, 100",
   "town" : "Palazzolo sull'Oglio",
-  "province" : "BS"
+  "province" : "BS",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Pioltello-Limito",
   "address" : "Via alla Stazione, 1",
   "town" : "Pioltello",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Ponte S.Pietro",
   "address" : "Piazza Dante, 8",
   "town" : "Ponte San Pietro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Pontida",
   "address" : "Via Stazione",
   "town" : "Pontida",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Pozzuolo Martesana",
   "address" : "Via Stazione",
   "town" : "Pozzuolo Martesana",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Romano",
   "address" : "Piazza Stazione, 6",
   "town" : "Romano Di Lombardia",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Rovato",
   "address" : "Viale Lombardia, 10",
   "town" : "Rovato",
-  "province" : "BS"
+  "province" : "BS",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Segrate",
   "address" : "Via Stazione",
   "town" : "Segrate",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Seriate",
   "address" : "Via Stazione, 2",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Sesto San Giovanni",
   "address" : "Piazza I Maggio, 1",
   "town" : "Sesto San Giovanni",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Stezzano",
   "address" : "Via Santuario",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Terno",
   "address" : "Via Marconi, 14",
   "town" : "Terno D'isola",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Tracella",
   "address" : "Via Stazione",
   "town" : "Tracella",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Treviglio",
   "address" : "Piazza Verdi, 4",
   "town" : "Treviglio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Treviglio Ovest",
   "address" : "Piazzale Mazzini",
   "town" : "Treviglio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Vercurago San Girolamo",
   "address" : "Via IV Novembre, 25",
   "town" : "Vercurago",
-  "province" : "LC"
+  "province" : "LC",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Verdello-Dalmine",
   "address" : "Via Marconi, 54",
   "town" : "Verdellino",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Vidalengo",
   "address" : "Via Donizetti",
   "town" : "Caravaggio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Vignate",
   "address" : "Via Stazione",
   "town" : "Vignate",
-  "province" : "MI"
+  "province" : "MI",
+  "lat" : "45",
+  "lon" : "9"
 } ]

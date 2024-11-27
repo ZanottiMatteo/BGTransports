@@ -74,6 +74,34 @@ public class TrainStationRecord extends UpdatableRecordImpl<TrainStationRecord> 
         return (String) get(3);
     }
 
+    /**
+     * Setter for <code>TRAIN STATION.lat</code>.
+     */
+    public void setLat(String value) {
+        set(4, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN STATION.lat</code>.
+     */
+    public String getLat() {
+        return (String) get(4);
+    }
+
+    /**
+     * Setter for <code>TRAIN STATION.long</code>.
+     */
+    public void setLong(String value) {
+        set(5, value);
+    }
+
+    /**
+     * Getter for <code>TRAIN STATION.long</code>.
+     */
+    public String getLong() {
+        return (String) get(5);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -97,13 +125,15 @@ public class TrainStationRecord extends UpdatableRecordImpl<TrainStationRecord> 
     /**
      * Create a detached, initialised TrainStationRecord
      */
-    public TrainStationRecord(String name, String address, String town, String province) {
+    public TrainStationRecord(String name, String address, String town, String province, String lat, String long_) {
         super(TrainStation.TRAIN_STATION);
 
         setName(name);
         setAddress(address);
         setTown(town);
         setProvince(province);
+        setLat(lat);
+        setLong(long_);
         resetChangedOnNotNull();
     }
 }

@@ -101,9 +101,11 @@ public class InsertDataDB {
 			String name = pullmanStopJson.getString(Constant.name);
 			String town = pullmanStopJson.getString(Constant.town);
 			String province = pullmanStopJson.getString(Constant.province);
-
+			String latitude = pullmanStopJson.getString(Constant.province);
+			String longitude = pullmanStopJson.getString(Constant.province);
+			
 			// Crea un StateRecord con i dati estratti
-			PullmanStopRecord pullmanStopRecord = new PullmanStopRecord(name, town, province);
+			PullmanStopRecord pullmanStopRecord = new PullmanStopRecord(name, town, province, latitude, longitude);
 			// Inserisci i dati nel database
 			create.insertInto(PullmanStop.PULLMAN_STOP).set(pullmanStopRecord).execute();
 		}
@@ -123,9 +125,11 @@ public class InsertDataDB {
 			String address = funicularStationJson.getString(Constant.address);
 			String town = funicularStationJson.getString(Constant.town);
 			String province = funicularStationJson.getString(Constant.province);
+			String latitude = funicularStationJson.getString(Constant.province);
+			String longitude = funicularStationJson.getString(Constant.province);
 
 			// Crea un StateRecord con i dati estratti
-			FunicularStationRecord funicularStationRecord = new FunicularStationRecord(name, address, town, province);
+			FunicularStationRecord funicularStationRecord = new FunicularStationRecord(name, address, town, province, latitude, longitude);
 			// Inserisci i dati nel database
 			create.insertInto(FunicularStation.FUNICULAR_STATION).set(funicularStationRecord).execute();
 		}
@@ -145,9 +149,11 @@ public class InsertDataDB {
 			String address = tramStopJson.getString(Constant.address);
 			String town = tramStopJson.getString(Constant.town);
 			String province = tramStopJson.getString(Constant.province);
+			String latitude = tramStopJson.getString(Constant.province);
+			String longitude = tramStopJson.getString(Constant.province);
 
 			// Crea un StateRecord con i dati estratti
-			TramStopRecord tramStopRecord = new TramStopRecord(name, address, town, province);
+			TramStopRecord tramStopRecord = new TramStopRecord(name, address, town, province, latitude, longitude);
 			// Inserisci i dati nel database
 			create.insertInto(TramStop.TRAM_STOP).set(tramStopRecord).execute();
 		}
@@ -167,9 +173,11 @@ public class InsertDataDB {
 			String address = trainStationJson.getString(Constant.address);
 			String town = trainStationJson.getString(Constant.town);
 			String province = trainStationJson.getString(Constant.province);
+			String latitude = trainStationJson.getString(Constant.province);
+			String longitude = trainStationJson.getString(Constant.province);
 
 			// Crea un CompanyRecord con i dati estratti
-			TrainStationRecord trainStationRecord = new TrainStationRecord(name, address, town, province);
+			TrainStationRecord trainStationRecord = new TrainStationRecord(name, address, town, province, latitude, longitude);
 			// Inserisci i dati nel database
 			create.insertInto(TrainStation.TRAIN_STATION).set(trainStationRecord).execute();
 		}

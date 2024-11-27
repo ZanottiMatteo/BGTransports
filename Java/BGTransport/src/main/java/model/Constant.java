@@ -96,4 +96,6 @@ public class Constant {
 	public static String user = "USER";
 	public static String username = "username";
 	public static String web_site = "web_site";
+	public static String latutude = "lat";
+	public static String longitude = "long";
 }

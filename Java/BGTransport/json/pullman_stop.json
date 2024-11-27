@@ -1,1149 +1,1723 @@
 [ {
   "name" : "AEROPORTO Arrivi Nazionali",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45665912",
+  "lon" : "9.697650"
 }, {
   "name" : "Aeroporto partenze nazionali",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45665912",
+  "lon" : "9.697650"
 }, {
   "name" : "ALBANO piazza Santuario",
   "town" : "Albano Sant'Alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.68406575",
+  "lon" : "9.768195314003592"
 }, {
   "name" : "ALBANO via Cavour fr.10",
   "town" : "Albano Sant'Alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.68597",
+  "lon" : "9.766046"
 }, {
   "name" : "ALBANO via Cavour fr.5",
   "town" : "Albano Sant'Alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6867",
+  "lon" : "9.766494"
 }, {
   "name" : "ALBANO via Madonna delle Rose 4a",
   "town" : "Albano Sant'Alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.682745",
+  "lon" : "9.760869"
 }, {
   "name" : "ALBANO via Monte Grappa fr.3",
   "town" : "Albano Sant'Alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.684661",
+  "lon" : "9.777283"
 }, {
   "name" : "ALBANO via Santuario",
   "town" : "Albano Sant'Alessandro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6839423",
+  "lon" : "9.7678164"
 }, {
   "name" : "ALME'",
   "town" : "Almè",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.739771",
+  "lon" : "9.620754"
 }, {
   "name" : "ALME via Campo dei Fiori 22",
   "town" : "Almè",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.741281",
+  "lon" : "9.605889"
 }, {
   "name" : "ALME via Torre d Oro",
   "town" : "Almè",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7417342",
+  "lon" : "9.6147257"
 }, {
   "name" : "ALMENNO S.SALVATORE via Buttinoni Gabbio",
   "town" : "Almenno San Salvatore",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7499556",
+  "lon" : "9.5963684"
 }, {
   "name" : "ALZANO",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2407",
+  "lon" : "13.19113"
 }, {
   "name" : "ALZANO Burro via Bracc",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "ALZANO Castello",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2407",
+  "lon" : "13.19113"
 }, {
   "name" : "ALZANO GARIBALDI",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2407",
+  "lon" : "13.19113"
 }, {
   "name" : "ALZANO SOPRA via Piave TEB",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "ALZANO via Busa",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "ALZANO via Europa 64 fr. Scuole",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "ALZANO via Europa 83 Scuole",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "ALZANO via IV novembre (parcheggio)",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "ALZANO via Lacca",
   "town" : "Alzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "42.2409962",
+  "lon" : "13.1913421"
 }, {
   "name" : "Astino fermata 977",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45702594",
+  "lon" : "9.635844"
 }, {
   "name" : "AZZANO S.PAOLO via Don Gonella 2a",
   "town" : "Azzano San Paolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.660198",
+  "lon" : "9.67071"
 }, {
   "name" : "AZZANO S.PAOLO via Roma fr.44",
   "town" : "Azzano San Paolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.660815",
+  "lon" : "9.674096"
 }, {
   "name" : "AZZONICA via Broli 1",
   "town" : "Azzonica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7395116",
+  "lon" : "9.6494089"
 }, {
   "name" : "BIANZANA",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7037292",
+  "lon" : "9.6992648"
 }, {
   "name" : "BORGO PALAZZO TEB",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6955467",
+  "lon" : "9.6851947"
 }, {
   "name" : "BREMBO via Segantini",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6904762",
+  "lon" : "9.6576371"
 }, {
   "name" : "BRIOLO via Paglia fr.7",
   "town" : "Briolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.570421",
+  "lon" : "9.57043"
 }, {
   "name" : "BRUNTINO via degli Alpini 57",
   "town" : "Villa d'almè",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.750186",
+  "lon" : "9.622056"
 }, {
   "name" : "BUSA DI NESE via BUSA via Caprini",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "CAMPAGNOLA via Campagnola 19/19a",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6796371",
+  "lon" : "9.6779589"
 }, {
   "name" : "CAPANNELLE via Traversa Capannelle orato",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.631148",
+  "lon" : "9.724551"
 }, {
   "name" : "CELADINA P.le Prealpi Orobiche",
   "town" : "Celadina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6930454",
+  "lon" : "9.7074832"
 }, {
   "name" : "Centro Commerciale Le due Torri",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6513805",
+  "lon" : "9.6535097"
 }, {
   "name" : "CLEMENTINA via Gandhi",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.690548",
+  "lon" : "9.6954725"
 }, {
   "name" : "CLINICA Ponte S.Pietro via Forlanini",
   "town" : "Ponte San Pietro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6979186",
+  "lon" : "9.5769202"
 }, {
   "name" : "COLLE APERTO",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.70649025",
+  "lon" : "9.65745699918189"
 }, {
   "name" : "COLOGNOLA BELOTTI",
   "town" : "Colognola",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6732393",
+  "lon" : "9.6621552"
 }, {
   "name" : "COLOGNOLA FILIBERTO",
   "town" : "Colognola",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6732393",
+  "lon" : "9.6621552"
 }, {
   "name" : "COLOGNOLA VIA MUZIO",
   "town" : "Colognola",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.67273",
+  "lon" : "9.6621076"
 }, {
   "name" : "CROCE ROSSA VIA BROSETA",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6927636",
+  "lon" : "9.640755"
 }, {
   "name" : "CROCE ROSSA VIA CURIE",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6909363",
+  "lon" : "9.6462556"
 }, {
   "name" : "CROCETTE",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.701558",
+  "lon" : "9.607757"
 }, {
   "name" : "CURNO largo Vittoria fr. Chiesa",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.682846",
+  "lon" : "9.610731"
 }, {
   "name" : "CURNO Marigolda via Abruzzi 4",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.692978",
+  "lon" : "9.597946"
 }, {
   "name" : "CURNO via Brembo fr.30",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.687157",
+  "lon" : "9.597472"
 }, {
   "name" : "CURNO via De Amicis 16",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.690046",
+  "lon" : "9.606162"
 }, {
   "name" : "CURNO via Emilia fr. scuole",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.691054",
+  "lon" : "9.621718"
 }, {
   "name" : "CURNO via IV Novembre Scuole Medie",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6911403",
+  "lon" : "9.621374330347093"
 }, {
   "name" : "CURNO via Marconi fr.1/3 mercato",
   "town" : "Curno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.689013",
+  "lon" : "9.603208"
 }, {
   "name" : "DALMINE VIA LOCATELLI",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.648932",
+  "lon" : "9.601059"
 }, {
   "name" : "DALMINE via Manzoni 66",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6515079",
+  "lon" : "9.6053258"
 }, {
   "name" : "DALMINE via Marconi",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.657741",
+  "lon" : "9.601128"
 }, {
   "name" : "DALMINE via Pesenti",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.651758",
+  "lon" : "9.585135"
 }, {
   "name" : "DALMINE via Pesenti fr.44",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.651736",
+  "lon" : "9.585117"
 }, {
   "name" : "DALMINE via Stella Alpina fr. via Genzia",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.657741",
+  "lon" : "9.601128"
 }, {
   "name" : "DALMINE VIA VERDI",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6503878",
+  "lon" : "9.5953011"
 }, {
   "name" : "DON ORIONE via Don Orione via Goisis",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.714568",
+  "lon" : "9.693825"
 }, {
   "name" : "FUNICOLARE",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.70092",
+  "lon" : "9.665204"
 }, {
   "name" : "GAVARNO via Monte Misma",
   "town" : "Gavarno",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.716196",
+  "lon" : "9.776549"
 }, {
   "name" : "GORLE via Bersaglieri Baio",
   "town" : "Gorle",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.702146",
+  "lon" : "9.718823"
 }, {
   "name" : "GORLE via Don Mazza fr.11/13",
   "town" : "Gorle",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.704121",
+  "lon" : "9.716871"
 }, {
   "name" : "GORLE via Don Mazza via Carducci",
   "town" : "Gorle",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.704323",
+  "lon" : "9.712744"
 }, {
   "name" : "GORLE via Libertà scuole medie",
   "town" : "Gorle",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7037349",
+  "lon" : "9.7190224"
 }, {
   "name" : "Grassobbio Matteotti 35",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.662557",
+  "lon" : "9.7210675"
 }, {
   "name" : "Grassobbio Tonale 5a",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6637054",
+  "lon" : "9.717426"
 }, {
   "name" : "GRASSOBBIO via Colombo capolinea",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.655168",
+  "lon" : "9.724118"
 }, {
   "name" : "GRASSOBBIO via Epis 21",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6500741",
+  "lon" : "9.7279903"
 }, {
   "name" : "GRASSOBBIO via Marconi 2",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.659832",
+  "lon" : "9.72334"
 }, {
   "name" : "GRASSOBBIO via XXV Aprile 11",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.650656",
+  "lon" : "9.714129"
 }, {
   "name" : "GRASSOBBIO viale Europa 25",
   "town" : "Grassobbio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.658367",
+  "lon" : "9.720502"
 }, {
   "name" : "GUZZANICA via Guzzanica 104",
   "town" : "Guzzanica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6521901",
+  "lon" : "9.6114701"
 }, {
   "name" : "LALLIO via Aldo Moro fr.3",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.665369",
+  "lon" : "9.6307"
 }, {
   "name" : "LALLIO via Europa",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.66291",
+  "lon" : "9.627072"
 }, {
   "name" : "LALLIO via Mascagni fr.Banca",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.666414",
+  "lon" : "9.633463311290143"
 }, {
   "name" : "LALLIO via Rossini fr. Oratorio",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.662859",
+  "lon" : "9.630983"
 }, {
   "name" : "LALLIO via Sforzatica conf. comunale",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.661748",
+  "lon" : "9.621989"
 }, {
   "name" : "LALLIO via Sforzatica per Bg conf. comun",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.662859",
+  "lon" : "9.630983"
 }, {
   "name" : "LALLIO x Osio Sopra via Aldo Moro",
   "town" : "Lallio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6650271",
+  "lon" : "9.6307376"
 }, {
   "name" : "LOCATE via Don Foiadelli fr.1",
   "town" : "Locate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.690341",
+  "lon" : "8.930829"
 }, {
   "name" : "LONGUELO ORATORIO",
   "town" : "Longuelo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6965945",
+  "lon" : "9.6328663"
 }, {
   "name" : "LONGUELO VIA MATTIOLI",
   "town" : "Longuelo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6936695",
+  "lon" : "9.6315372"
 }, {
   "name" : "LONGUELO via Puccini fr.34 Focasina",
   "town" : "Longuelo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.695529",
+  "lon" : "9.626659"
 }, {
   "name" : "LORETO via Pasteur fr.1A",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6934588",
+  "lon" : "9.6461114"
 }, {
   "name" : "MALPENSATA",
   "town" : "Loreto",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "43.433888",
+  "lon" : "13.607885"
 }, {
   "name" : "MALPENSATA via Carnovali 88",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6866154",
+  "lon" : "9.6696987"
 }, {
   "name" : "MALPENSATA via Carnovali 95",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6866903",
+  "lon" : "9.6701495"
 }, {
   "name" : "MALPENSATA via Don Bosco 17a Pesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.687289",
+  "lon" : "9.67243"
 }, {
   "name" : "MARIANO via Cimaripa 2",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.694516",
+  "lon" : "9.663089"
 }, {
   "name" : "MARIANO via Cimaripa fr.4",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "Monte di Nese Parcheggio",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.762104",
+  "lon" : "9.70244"
 }, {
   "name" : "MONTEROSSO viale G.Cesare via Tremana",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.717391",
+  "lon" : "9.6833753"
 }, {
   "name" : "MOZZO via Dante Alighieri",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.700007",
+  "lon" : "9.607382"
 }, {
   "name" : "MOZZO VIA MOZZI",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.700834",
+  "lon" : "9.609472"
 }, {
   "name" : "MOZZO via Mozzi capolinea",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69868",
+  "lon" : "9.608652"
 }, {
   "name" : "MOZZO via Piatti fr.10",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.694245",
+  "lon" : "9.606065"
 }, {
   "name" : "MOZZO via Piatti fr.12 Comune",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.700607",
+  "lon" : "9.607789"
 }, {
   "name" : "MOZZO via Todeschini fr.29",
   "town" : "Mozzo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.704017",
+  "lon" : "9.608419"
 }, {
   "name" : "Nembro Oratorio",
   "town" : "Nembro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.726042",
+  "lon" : "9.762314"
 }, {
   "name" : "NEMBRO via Gavarno fr.25",
   "town" : "Nembro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.734873",
+  "lon" : "9.757267"
 }, {
   "name" : "NEMBRO via Gavarno fr.96",
   "town" : "Nembro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.72165",
+  "lon" : "9.765398"
 }, {
   "name" : "NEMBRO via Puccini 37",
   "town" : "Nembro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.741668",
+  "lon" : "9.74552"
 }, {
   "name" : "NEMBRO via Verdi edicola",
   "town" : "Nembro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7439737",
+  "lon" : "9.7592752"
 }, {
   "name" : "OLERA piazza Fra Tommaso Acerbis",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.691272",
+  "lon" : "9.694198"
 }, {
   "name" : "ORIO AL SERIO via Locatelli 1",
   "town" : "Orio al Serio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.675809",
+  "lon" : "9.691021"
 }, {
   "name" : "ORIO AL SERIO via Locatelli 18/18a Comun",
   "town" : "Orio al Serio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.675998",
+  "lon" : "9.691906"
 }, {
   "name" : "ORIO AL SERIO via Portico Orio Center",
   "town" : "Orio al Serio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.664368",
+  "lon" : "9.684532"
 }, {
   "name" : "OSIO SOPRA via Monte Bianco 10",
   "town" : "Osio Sopra",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.629931",
+  "lon" : "9.576885"
 }, {
   "name" : "OSPEDALE",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.688167",
+  "lon" : "9.638903"
 }, {
   "name" : "OSPEDALE MARTIN LUTHER KING",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.688167",
+  "lon" : "9.638903"
 }, {
   "name" : "OSTELLO via G.Ferraris",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.718355200000005",
+  "lon" : "9.686476221135457"
 }, {
   "name" : "P.LE CIMITERO per Loreto",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "PALADINA GHIAIE via del Brembo",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7287894",
+  "lon" : "9.600771"
 }, {
   "name" : "PALADINA Sombreno via S.Fermo e Rustico",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.726585",
+  "lon" : "9.611571"
 }, {
   "name" : "Paladina SP Dalmine/Almè fr.4",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.729803",
+  "lon" : "9.605786"
 }, {
   "name" : "PALADINA via Bolis 13",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.727009",
+  "lon" : "9.61014"
 }, {
   "name" : "PALADINA via Degli Alpini Cimitero",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7265735",
+  "lon" : "9.6072569"
 }, {
   "name" : "PALADINA via Degli Alpini oratorio",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.723654",
+  "lon" : "9.604242"
 }, {
   "name" : "PALADINA via Don Carminati 6",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7312178",
+  "lon" : "9.6070116"
 }, {
   "name" : "PALADINA via Don Carminati fr.8",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.732427",
+  "lon" : "9.606679"
 }, {
   "name" : "PALADINA via G.Galilei 3",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7341528",
+  "lon" : "9.6048115"
 }, {
   "name" : "PALADINA via IV Novembre fr. Banca",
   "town" : "Paladina",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.726893",
+  "lon" : "9.6080445"
 }, {
   "name" : "PEDRENGO via Frizzoni 7/9",
   "town" : "Pedrengo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.701221",
+  "lon" : "9.735125"
 }, {
   "name" : "PEDRENGO via Kennedy",
   "town" : "Pedrengo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6972206",
+  "lon" : "9.7385953"
 }, {
   "name" : "PEDRENGO via Papa Giovanni XXIII 11",
   "town" : "Pedrengo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.701733",
+  "lon" : "9.733783"
 }, {
   "name" : "PEDRENGO via Papa Giovanni XXIII 4",
   "town" : "Pedrengo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.701484",
+  "lon" : "9.73211"
 }, {
   "name" : "piazza Libertà",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.696892",
+  "lon" : "9.669219"
 }, {
   "name" : "piazza S.Anna fr.1",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6966861",
+  "lon" : "9.6824766"
 }, {
   "name" : "PIAZZA S.ANNA via Ghislandi 2",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.696822",
+  "lon" : "9.683636"
 }, {
   "name" : "piazzale Cimitero per Clementina",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.697909",
+  "lon" : "9.690272"
 }, {
   "name" : "PIAZZALE LOVERINI",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.706449",
+  "lon" : "9.6873866921423"
 }, {
   "name" : "PIAZZALE OBERDAN",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7042506",
+  "lon" : "9.6777237"
 }, {
   "name" : "PONTE S.PIETRO via Vittorio Emanuele 58",
   "town" : "Ponte San Pietro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.690734",
+  "lon" : "9.583269"
 }, {
   "name" : "PONTE S.PIETRO viale Italia 15",
   "town" : "Ponte San Pietro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.690734",
+  "lon" : "9.583269"
 }, {
   "name" : "PONTERANICA via Fustina 2",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7315897",
+  "lon" : "9.6538099"
 }, {
   "name" : "PONTERANICA via Fustina 41",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.732676",
+  "lon" : "9.65202"
 }, {
   "name" : "PONTERANICA via IV Novembre 65",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7340192",
+  "lon" : "9.6593058"
 }, {
   "name" : "PONTERANICA via Papa Giovanni XXIII 2",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7214117",
+  "lon" : "9.6587891"
 }, {
   "name" : "PONTERANICA via Ramera 4 Pontesecco",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.722301",
+  "lon" : "9.65648"
 }, {
   "name" : "PONTERANICA via Ramera fr. Chiesa",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7261486",
+  "lon" : "9.651945704549764"
 }, {
   "name" : "PONTERANICA via Valbona 44/46",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.730752",
+  "lon" : "9.653882"
 }, {
   "name" : "PONTERANICA via Valbona fr.55 ex FVB",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7298267",
+  "lon" : "9.653209"
 }, {
   "name" : "PONTERANICA via Valbona fr.93",
   "town" : "Ponteranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.732232",
+  "lon" : "9.654141"
 }, {
   "name" : "PORTA NUOVA",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.694516",
+  "lon" : "9.663089"
 }, {
   "name" : "PORTA NUOVA NESSI",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6937824",
+  "lon" : "9.6700043"
 }, {
   "name" : "PORTA NUOVA TIRABOSCHI",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6939129",
+  "lon" : "9.6698516"
 }, {
   "name" : "PORTA NUOVA VIA CAMOZZI",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6973732",
+  "lon" : "9.6765255"
 }, {
   "name" : "RANICA piazza Europa 4",
   "town" : "Ranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7270206",
+  "lon" : "9.7142369"
 }, {
   "name" : "RANICA via Adelasio",
   "town" : "Ranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.72701",
+  "lon" : "9.7151932"
 }, {
   "name" : "RANICA via Marconi",
   "town" : "Ranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.725525",
+  "lon" : "9.719219"
 }, {
   "name" : "RANICA via Marconi 57",
   "town" : "Ranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7225622",
+  "lon" : "9.7163267"
 }, {
   "name" : "RANICA via Provinciale Arredamenti Sala",
   "town" : "Ranica",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.729931",
+  "lon" : "9.710091"
 }, {
   "name" : "RONCOLA via Ambrosioni fr. Chiesa",
   "town" : "Roncola",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.768165",
+  "lon" : "9.561233"
 }, {
   "name" : "Roncola via Lungobrembo fr. 60",
   "town" : "Roncola",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7792318",
+  "lon" : "9.5464464"
 }, {
   "name" : "S.ANTONIO via Biava 26",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7183519",
+  "lon" : "9.6591323"
 }, {
   "name" : "S.ANTONIO via Ruggeri da Stabello 53b",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7199796",
+  "lon" : "9.6602544"
 }, {
   "name" : "S.ANTONIO via Ruggeri da Stabello 72d",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7194691",
+  "lon" : "9.6604955"
 }, {
   "name" : "S.COLOMBANO",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.717322749999994",
+  "lon" : "9.675407164256303"
 }, {
   "name" : "SABBIO via Don Cortesi Scuole elementari",
   "town" : "Dalmine",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.639565",
+  "lon" : "9.619367"
 }, {
   "name" : "SCANZO",
   "town" : "Scanzorosciate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.709302",
+  "lon" : "9.739723"
 }, {
   "name" : "SCANZO corso Europa 38",
   "town" : "Scanzorosciate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.707377",
+  "lon" : "9.730127"
 }, {
   "name" : "SCANZO corso Europa, 74",
   "town" : "Scanzorosciate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "BG",
+  "lon" : "45.7056577"
 }, {
   "name" : "SCANZO Negrone via Piave fr.40",
   "town" : "Scanzorosciate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.706887",
+  "lon" : "9.76039"
 }, {
   "name" : "SCANZO via Matteotti fr.6",
   "town" : "Scanzorosciate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.711236",
+  "lon" : "9.732567"
 }, {
   "name" : "SCANZO via Sporla 6",
   "town" : "Scanzorosciate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.714649",
+  "lon" : "9.769388"
 }, {
   "name" : "SERIATE c.so Europa piscine",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.689565",
+  "lon" : "9.7493"
 }, {
   "name" : "SERIATE corso Roma 110",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.68155",
+  "lon" : "9.709808"
 }, {
   "name" : "SERIATE corso Roma 43a Quartiere Primave",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.681368",
+  "lon" : "9.710584"
 }, {
   "name" : "Seriate Paderno fr.55",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6843709",
+  "lon" : "9.7179982"
 }, {
   "name" : "SERIATE piazza Caduti della Libertà",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.685406",
+  "lon" : "9.726039"
 }, {
   "name" : "SERIATE S. GIUSEPPE via Decò e Canetta",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.679699",
+  "lon" : "9.7264781"
 }, {
   "name" : "SERIATE v.le Italia 51 Comune",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "44.347321",
+  "lon" : "9.3186138"
 }, {
   "name" : "SERIATE via Brusaporto fr.34",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6798967",
+  "lon" : "9.7449719"
 }, {
   "name" : "SERIATE via Brusaporto fr.34L/34a IPER",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6798967",
+  "lon" : "9.7449719"
 }, {
   "name" : "SERIATE via Decò e Canetta 120",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.673654",
+  "lon" : "9.732748"
 }, {
   "name" : "SERIATE via Europa 21 fr. ITIS Majorana",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.689565",
+  "lon" : "9.7493"
 }, {
   "name" : "SERIATE via Europa ITIS Majorana",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6798967",
+  "lon" : "9.7449719"
 }, {
   "name" : "SERIATE via Marconi 16/18",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.684741",
+  "lon" : "9.726465"
 }, {
   "name" : "SERIATE via Paderno",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.668612",
+  "lon" : "9.7264155"
 }, {
   "name" : "SERIATE viale Italia 95 Legler",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6849337",
+  "lon" : "9.7176852"
 }, {
   "name" : "SERIATE viale Lombardia mercato",
   "town" : "Seriate",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.684453",
+  "lon" : "9.71781"
 }, {
   "name" : "SORISOLE Azzonica via Don Carminati 12/1",
   "town" : "Sorisole",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7445793",
+  "lon" : "9.6611952"
 }, {
   "name" : "SORISOLE Petosino via Martiri della Libe",
   "town" : "Sorisole",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.732129",
+  "lon" : "9.641711"
 }, {
   "name" : "SORISOLE Petosino via Zambelli fr.3",
   "town" : "Sorisole",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7445793",
+  "lon" : "9.6611952"
 }, {
   "name" : "SORISOLE Piazza Donatori del Sangue merc",
   "town" : "Sorisole",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.730758",
+  "lon" : "9.633791"
 }, {
   "name" : "SORISOLE via Madonna dei Campi fr.25",
   "town" : "Sorisole",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7445793",
+  "lon" : "9.6611952"
 }, {
   "name" : "STAZIONE",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6921266",
+  "lon" : "9.675496"
 }, {
   "name" : "STAZIONE SUPERIORE FUNICOLARE Piazza Mer",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "STEZZANO OVEST via Zanchi 5a",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.652782",
+  "lon" : "9.649928"
 }, {
   "name" : "STEZZANO via Circ. Ovest 6",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.645783",
+  "lon" : "9.646553"
 }, {
   "name" : "STEZZANO via Papa Giovanni XXIII fr. Sup",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6588759",
+  "lon" : "9.6448435"
 }, {
   "name" : "STEZZANO via Papa Giovanni XXIII, 7",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "BG",
+  "lon" : "45.651617"
 }, {
   "name" : "STEZZANO via Rizzo fr. 7",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.645097",
+  "lon" : "9.651454"
 }, {
   "name" : "STEZZANO via Santuario Banca",
   "town" : "Stezzano",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.658876",
+  "lon" : "9.644844"
 }, {
   "name" : "TORRE BOLDONE via Borghetto fr.28",
   "town" : "Torre Boldone",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7187",
+  "lon" : "9.706138"
 }, {
   "name" : "TORRE BOLDONE via Della Colombera",
   "town" : "Torre Boldone",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7171285",
+  "lon" : "9.7117475"
 }, {
   "name" : "TORRE BOLDONE via Lombardia fr.65/67",
   "town" : "Torre Boldone",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7136746",
+  "lon" : "9.7082033"
 }, {
   "name" : "TORRE BOLDONE via Reich 15 Farmacia",
   "town" : "Torre Boldone",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7157093",
+  "lon" : "9.7060227"
 }, {
   "name" : "TORRE BOLDONE via S.Martino Vecchio fr.1",
   "town" : "Torre Boldone",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7134389",
+  "lon" : "9.7095351"
 }, {
   "name" : "TORRE DE ROVERI piazza Del Donatore",
   "town" : "Torre De Roveri",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.70144",
+  "lon" : "9.772218"
 }, {
   "name" : "TORRE DE ROVERI Pitturello via Castello",
   "town" : "Torre De Roveri",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6960539",
+  "lon" : "9.7632292"
 }, {
   "name" : "TORRE DE ROVERI via Papa Giovanni XXIII",
   "town" : "Torre De Roveri",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6987192",
+  "lon" : "9.7686636"
 }, {
   "name" : "TORRE DEL GALGARIO SOLO PER TABELLE DI M",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "",
+  "lon" : ""
 }, {
   "name" : "TREVIOLO Albegno via IV Novembre 6",
   "town" : "Treviolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6687646",
+  "lon" : "9.6048304"
 }, {
   "name" : "TREVIOLO via Ambrosioni via Amato",
   "town" : "Treviolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.668466",
+  "lon" : "9.611157"
 }, {
   "name" : "TREVIOLO via dei Cedri 8",
   "town" : "Treviolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.674121",
+  "lon" : "9.616679"
 }, {
   "name" : "TREVIOLO via Lega Lombarda via Gorizia",
   "town" : "Treviolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.67006",
+  "lon" : "9.611044"
 }, {
   "name" : "TREVIOLO via Marconi fr. via Rillosi",
   "town" : "Treviolo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.668466",
+  "lon" : "9.611157"
 }, {
   "name" : "TRIBULINA via Monte Misma fr.3",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6944076",
+  "lon" : "9.711491"
 }, {
   "name" : "URBAN CENTER",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.691705400000004",
+  "lon" : "9.67439403868027"
 }, {
   "name" : "VALBREMBO c.so Europa Unita fr.11",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7108581",
+  "lon" : "9.5988862"
 }, {
   "name" : "VALBREMBO CORNELLE corso Europa Unita 11",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.717833",
+  "lon" : "9.6075364"
 }, {
   "name" : "VALBREMBO corso Europa Unita 18",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.713468",
+  "lon" : "9.608192"
 }, {
   "name" : "VALBREMBO via A.Moro fr. parcheggio",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.720076",
+  "lon" : "9.596367"
 }, {
   "name" : "VALBREMBO via Donizetti NECTA",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7174308",
+  "lon" : "9.6094013"
 }, {
   "name" : "VALBREMBO via Matteotti parco",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.720076",
+  "lon" : "9.596367"
 }, {
   "name" : "VALBREMBO via Padre Murialdo 21 Padri Gi",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.719635",
+  "lon" : "9.618716"
 }, {
   "name" : "VALBREMBO via Roma 12",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7134897",
+  "lon" : "9.608172209811038"
 }, {
   "name" : "VALBREMBO via Sombreno 27/29 villino",
   "town" : "Valbrembo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.715278",
+  "lon" : "9.6225248"
 }, {
   "name" : "via A.Mai 32 Scuola Fantoni",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6957429",
+  "lon" : "9.6822502"
 }, {
   "name" : "via A.Mai 35b Scuola Fantoni",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6957429",
+  "lon" : "9.6822502"
 }, {
   "name" : "via Berenson A.T.B. per Seriate",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Berenson A.T.B.per Bergamo",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "VIA BERIZZI PONTE S.PIETRO",
   "town" : "Ponte San Pietro",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6962848",
+  "lon" : "9.577582"
 }, {
   "name" : "via Borgo Palazzo 100h/102 viale Pirovan",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.694887",
+  "lon" : "9.687464"
 }, {
   "name" : "via Borgo Palazzo 163 fr.ASL",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.692053",
+  "lon" : "9.697203"
 }, {
   "name" : "via Borgo Palazzo 230 Portone del diavol",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6891023",
+  "lon" : "9.7093651"
 }, {
   "name" : "via Borgo Palazzo 69 TEB",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6953365",
+  "lon" : "9.6854393"
 }, {
   "name" : "via Borgo Palazzo fr. Portone del Diavol",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Broseta 115 Piazza Risorgimento",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6934512",
+  "lon" : "9.6461091"
 }, {
   "name" : "via Camozzi 162 via Borgo Palazzo",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.698252",
+  "lon" : "9.677263"
 }, {
   "name" : "via Canovine",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6799133",
+  "lon" : "9.6654917"
 }, {
   "name" : "via Carducci Auchan",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.688504",
+  "lon" : "9.659486"
 }, {
   "name" : "via Cavalli",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.680627",
+  "lon" : "9.641306"
 }, {
   "name" : "via Corridoni 73/75",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.709825",
+  "lon" : "9.695779"
 }, {
   "name" : "via Corridoni 74c Pesa Parcheggio",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7060879",
+  "lon" : "9.6880868"
 }, {
   "name" : "via Daste e Spalenga",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6977877",
+  "lon" : "9.7067448"
 }, {
   "name" : "via Dei Caniana fr.6 Chiesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.692679",
+  "lon" : "9.915283"
 }, {
   "name" : "VIA DEI CANIANA UNIVERSITA'",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.700215",
+  "lon" : "9.665188"
 }, {
   "name" : "via dello Statuto - Accademia della Guardia di Finanza",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6973735",
+  "lon" : "9.6573533"
 }, {
   "name" : "via dello Statuto - Piscine",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69703",
+  "lon" : "9.658016"
 }, {
   "name" : "via dello Statuto 29",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6995116",
+  "lon" : "9.6534672"
 }, {
   "name" : "via Don Bosco via Zanica",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Europa Quarenghi",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via F.lli Vicentini (Navetta Mercato)",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via G.Cesare edicola stadio",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7033987",
+  "lon" : "9.6775992"
 }, {
   "name" : "via G.Rosa 20e farmacia",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.689005",
+  "lon" : "9.691463"
 }, {
   "name" : "via Gasparini fr.11a",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.68185",
+  "lon" : "9.681971"
 }, {
   "name" : "via Gavazzeni clinica",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.687724",
+  "lon" : "9.672336"
 }, {
   "name" : "via Gleno C.F.P. Regione",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.698876917736165",
+  "lon" : " 9.698755265585403"
 }, {
   "name" : "via Isabello 1 Chiesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.688146",
+  "lon" : "9.6897775"
 }, {
   "name" : "via Leonardo da Vinci",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.719959",
+  "lon" : "9.684218"
 }, {
   "name" : "via Leonardo da Vinci Chiesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Luzzatti 9",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6845286",
+  "lon" : "9.6746959"
 }, {
   "name" : "via Madonna del Bosco 54/56 Chiesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.692679",
+  "lon" : "9.915283"
 }, {
   "name" : "via Madonna del Bosco Chiesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Maironi da Ponte 16/18",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7099006",
+  "lon" : "9.6658095"
 }, {
   "name" : "via Maironi da Ponte ponte Morla",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Mattioli fr. Chiesa",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Mazzini 20 Clinica Castelli",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.695852",
+  "lon" : "9.656807"
 }, {
   "name" : "via Moroni 234 Centro Studi L. da Vinci",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.687881",
+  "lon" : "9.659755"
 }, {
   "name" : "via Paleocapa 1 Parcheggio",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.692265",
+  "lon" : "9.672542"
 }, {
   "name" : "via per Orio fr.43",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via per Orio fr.56",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Pescaria 3",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7112527",
+  "lon" : "9.671706"
 }, {
   "name" : "via Petrarca fr.12/14 Banca d Italia",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.693785",
+  "lon" : "9.665726"
 }, {
   "name" : "via Presolana Centro per l impiego",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via Ruggeri da Stabello 1",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7133002",
+  "lon" : "9.6683206"
 }, {
   "name" : "via S.Ambrogio fr.18",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via S.Bernardino 116",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.678382",
+  "lon" : "9.661491"
 }, {
   "name" : "via S.Vigilio Belvedere",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.73261",
+  "lon" : "9.5296"
 }, {
   "name" : "via Salvo D Acquisto 17",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.5503225",
+  "lon" : "9.6463334"
 }, {
   "name" : "via Suardi 17a",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7027759",
+  "lon" : "9.6821037"
 }, {
   "name" : "via Suardi 79",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.704968",
+  "lon" : "9.6852626"
 }, {
   "name" : "via Tremana Scuole",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.69331",
+  "lon" : "9.663539"
 }, {
   "name" : "via XXIV maggio",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6968942",
+  "lon" : "9.653444"
 }, {
   "name" : "via XXIV Maggio 43",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6950522",
+  "lon" : "9.6511491"
 }, {
   "name" : "via Zambonate 60 Cinque Vie",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.692399",
+  "lon" : "9.664507"
 }, {
   "name" : "via Zambonate 89 Cinque Vie",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.6923233",
+  "lon" : "9.664288"
 }, {
   "name" : "viale G.Cesare 18d Stadio",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.708968",
+  "lon" : "9.681591"
 }, {
   "name" : "VILLA D ALME via Ronco Basso fermata scu",
   "town" : "Villa d'almè",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.74949",
+  "lon" : "9.60922"
 }, {
   "name" : "VILLA DI SERIO via A.Moro 21",
   "town" : "Villa di Serio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.701953",
+  "lon" : "9.739042"
 }, {
   "name" : "VILLA DI SERIO via Carrara piazza Mercat",
   "town" : "Villa di Serio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.72196395",
+  "lon" : "9.736180850000002"
 }, {
   "name" : "VILLA DI SERIO via Dosie fr. poste",
   "town" : "Villa di Serio",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.7176276",
+  "lon" : "9.732205793700958"
 }, {
   "name" : "VILLAGGIO SPOSI VIA CAVALLI",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45.680627",
+  "lon" : "9.641306"
 } ]

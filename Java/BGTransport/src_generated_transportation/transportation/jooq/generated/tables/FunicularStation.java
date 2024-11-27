@@ -69,6 +69,16 @@ public class FunicularStation extends TableImpl<FunicularStationRecord> {
      */
     public final TableField<FunicularStationRecord, String> PROVINCE = createField(DSL.name("province"), SQLDataType.VARCHAR(255), this, "");
 
+    /**
+     * The column <code>FUNICULAR STATION.lat</code>.
+     */
+    public final TableField<FunicularStationRecord, String> LAT = createField(DSL.name("lat"), SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>FUNICULAR STATION.long</code>.
+     */
+    public final TableField<FunicularStationRecord, String> LONG = createField(DSL.name("long"), SQLDataType.VARCHAR(255), this, "");
+
     private FunicularStation(Name alias, Table<FunicularStationRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }

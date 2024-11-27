@@ -2,20 +2,28 @@
   "name" : "FUNICOLARE",
   "address" : "Viale Vittorio Emanuele II",
   "town" : "Bergamo",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Staz.Sup.Fun.Città",
   "address" : "Piazza Mercato delle Scarpe",
   "town" : "Città Alta",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Staz.Inf.Fun.S.Vigilio",
   "address" : "Largo di Porta S. Alessandro",
   "town" : "Città Alta",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 }, {
   "name" : "Staz.Sup.Fun.S.Vigilio",
   "address" : "Piazza San Vigilio",
   "town" : "Città Alta",
-  "province" : "BG"
+  "province" : "BG",
+  "lat" : "45",
+  "lon" : "9"
 } ]
