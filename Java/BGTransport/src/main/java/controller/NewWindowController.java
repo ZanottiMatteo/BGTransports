@@ -16,7 +16,6 @@ import controller.ThemeController;;
 public class NewWindowController {
 
 	public static void openHomePanel(HomeView homeV) {
-
 		SwingUtilities.invokeLater(() -> {
 			homeV.setVisible(true);
 		});
@@ -36,12 +35,13 @@ public class NewWindowController {
 						homeV.WidgetPanelSizeMedium, homeV.weatherpanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.timePanel,
 						homeV.WidgetPanelSizeSmall, homeV.timepanelpoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.miniMapPanel, homeV.MapPanelSize, homeV.miniMapPanelPoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, MapController.miniMapViewer, homeV.MapSize, homeV.mappoint);
 			}
 		});
 	}
 
 	public static void openMapPanel(MapView mapV) {
-
 		SwingUtilities.invokeLater(() -> {
 			mapV.setVisible(true);
 		});
@@ -54,7 +54,8 @@ public class NewWindowController {
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconMap, mapV.mapButton);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.MenuPanelSize, mapV.menupanelpoint);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.externmapPanel, mapV.MapPanelSize, mapV.mappanelpoint);
-				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.mapPanel, mapV.MapSize, mapV.mappoint);
+				ResizeController.resizePanel(mapV.originalPanelSize, mapV, MapController.fullMapViewer, mapV.MapSize,
+						mapV.mappoint);
 			}
 		});
 	}

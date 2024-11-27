@@ -30,6 +30,7 @@ public class MainController {
 		System.out.println("BGTransport!");
         // Pass the map to the view
 		MapController.generateMap();
+		MapController.generateMiniMap();
 		ThemeController.updateThemes();
 		NewWindowController.openHomePanel(homeV);
 

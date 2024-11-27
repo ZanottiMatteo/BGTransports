@@ -45,6 +45,10 @@ public class HomeView extends JFrame {
 	public JLabel lbltime = new JLabel();
 	public JLabel lbldate = new JLabel();
 
+	public static RoundedPanel miniMapPanel = new RoundedPanel();
+	public final Point miniMapPanelPoint = new Point(1200, 30);
+	public final Point mappoint = new Point(25, 25);
+	
 	// Weather-related fields.
 	public CircleLabel lblweatherimg = new CircleLabel("");
 	public JLabel lblweathertxt = new JLabel("🏠 Bergamo");
@@ -67,7 +71,8 @@ public class HomeView extends JFrame {
 	public final Dimension WidgetPanelSizeMedium = new Dimension(350, 250);
 	public final Dimension WidgetPanelSizeSmall = new Dimension(250, 180);
 	public final Dimension MinPanelSize = new Dimension(1085, 615);
-
+	public final Dimension MapSize = new Dimension(550, 350);
+	public final Dimension MapPanelSize = new Dimension(600, 400);
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
 	 * view. It also initializes the main panel, menu panel, and other UI elements.
@@ -126,6 +131,9 @@ public class HomeView extends JFrame {
 
 		// Menu buttons setup.
 		setupMenuButtons();
+		
+		// Mini Map panel setup.
+		setupMiniMapPanel();
 
 		// Store initial bounds for resizing purposes.
 		storeComponentBounds();
@@ -203,21 +211,9 @@ public class HomeView extends JFrame {
 	 * Configures the time panel.
 	 */
 	private void setupMiniMapPanel() {
-		
-
-		lbltime.setHorizontalAlignment(SwingConstants.CENTER);
-		lbltime.setFont(new Font("SansSerif", Font.BOLD, 20));
-		lbltime.setBounds(15, 25, 220, 50);
-
-		lbldate.setHorizontalAlignment(SwingConstants.CENTER);
-		lbldate.setFont(new Font("SansSerif", Font.BOLD, 20));
-		lbldate.setBounds(15, 110, 220, 50);
-
-		timePanel.setLayout(null);
-		timePanel.setBounds(235, 310, 250, 180);
-		timePanel.add(lbltime);
-		timePanel.add(lbldate);
-		homePanel.add(timePanel);
+		miniMapPanel.setLayout(null);
+		miniMapPanel.setBounds(1200, 30, 600, 400);
+		homePanel.add(miniMapPanel);
 	}
 
 	

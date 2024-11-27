@@ -56,8 +56,6 @@ public class MapView extends JFrame {
 
 	// Main content panel with rounded corners.
 	public RoundedPanel homePanel = new RoundedPanel();
-	// Map panel using JXMapViewer to display geographic data.
-	public JXMapViewer mapPanel = new JXMapViewer();
 	// Position of the map panel within the layout.
 	public final Point mappoint = new Point(50, 50);
 
@@ -199,21 +197,14 @@ public class MapView extends JFrame {
         button.setBackground(new Color(0, 0, 0, 0)); // Transparent background
         return button;
     }
-
-   /* public void setMap(JXMapViewer mapViewer) {
-        this.mapPanel = mapViewer;
-        mapPanel.repaint();
-    }*/
     
     /**
      * Sets up the map panel and its container.
      */
     private void setupMapPanel() {
         // Configure the map panel
-        //mapPanel.setBounds(50, 50, 1500, 800);
         externmapPanel.setBounds(200, 30, 1600, 900);
         externmapPanel.setLayout(null);
-        //externmapPanel.add(mapPanel);
         homePanel.add(externmapPanel);
     }
 
