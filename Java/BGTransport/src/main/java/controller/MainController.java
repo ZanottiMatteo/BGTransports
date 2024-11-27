@@ -8,6 +8,8 @@ import java.util.List;
 
 import javax.swing.SwingUtilities;
 
+import org.jxmapviewer.JXMapViewer;
+
 import view.SignUpWindow;
 import view.HomeView;
 import view.LoginView;
@@ -26,6 +28,8 @@ public class MainController {
 
 	public static void main(String[] args) {
 		System.out.println("BGTransport!");
+        // Pass the map to the view
+		MapController.generateMap();
 		ThemeController.updateThemes();
 		NewWindowController.openHomePanel(homeV);
 

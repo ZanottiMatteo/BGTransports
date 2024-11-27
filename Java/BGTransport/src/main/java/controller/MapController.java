@@ -30,12 +30,19 @@ import org.jxmapviewer.viewer.DefaultTileFactory;
 import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.TileFactoryInfo;
 
+import view.MapView;
+
 public class MapController {
 
 	public static List<GeoPosition> positions = new ArrayList<>();
 	private static final List<Painter<JXMapViewer>> painters = new ArrayList<>();
-
-	public static JXMapViewer generateMap() {
+	
+	/**
+     * Metodo per configurare e generare la mappa con OpenStreetMap
+     * 
+     * @param mapViewer la vista della mappa
+     */
+	public static void generateMap() {
 		// Crea un TileFactoryInfo per OpenStreetMap
 		TileFactoryInfo info = new OSMTileFactoryInfo();
 		DefaultTileFactory tileFactory = new DefaultTileFactory(info);
@@ -46,7 +53,7 @@ public class MapController {
 		GeoPosition initialPosition = new GeoPosition(45.695138, 9.669602);
 
 		// Configura JXMapViewer
-		JXMapViewer mapViewer = new JXMapViewer();
+	   JXMapViewer mapViewer = new JXMapViewer();
 		mapViewer.setTileFactory(tileFactory);
 		MouseInputListener mia = new PanMouseInputListener(mapViewer);
 
@@ -80,9 +87,21 @@ public class MapController {
 				}
 			}
 		});
-		return mapViewer;
+		
+			mapViewer.setBounds(50, 50, 1500, 800);
+			mapViewer.setVisible(true);
+
+			MapView.externmapPanel.add(mapViewer, 0);
+			MapView.externmapPanel.revalidate(); 
+			MapView.externmapPanel.repaint();
 	}
 
+	/**
+     * Aggiunge marker sulla mappa nelle posizioni specificate
+     * 
+     * @param mapViewer la vista della mappa
+     * @param positions le posizioni dei marker
+     */
 	public static void addMarkers(JXMapViewer mapViewer, List<GeoPosition> positions) {
 		for (GeoPosition position : positions) {
 			Painter<JXMapViewer> markerPainter = new WaypointController(position);
@@ -91,4 +110,19 @@ public class MapController {
 		CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(painters);
 		mapViewer.setOverlayPainter(compoundPainter);
 	}
+	
+	/**
+     * Controlla se la cache contiene tiles danneggiati e tenta di ripulirla
+     */
+    public static void clearCache() {
+        File cacheDir = new File(System.getProperty("user.home") + File.separator + ".jxmapviewer2");
+        File[] files = cacheDir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    file.delete(); // Pulisce il file danneggiato
+                }
+            }
+        }
+    }
 }

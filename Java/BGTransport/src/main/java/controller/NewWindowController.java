@@ -67,8 +67,8 @@ public class NewWindowController {
 		loginV.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {
-				ResizeController.resizeComponents(loginV.originalPanelSize, loginV, loginV.componentBounds,
-						loginV.mainPanel);
+				ResizeController.resizePanel(loginV.originalPanelSize, loginV, loginV.centerPanel, loginV.CentralPanelSize, loginV.centerPanelpoint);
+				ResizeController.resizeComponents(loginV.originalPanelSize, loginV, loginV.componentBounds,	loginV.mainPanel);
 				ResizeController.resizeImagePanel(loginV, loginV.lblBGwallpaper, loginV.mainPanel);
 				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconReturn, loginV.returnButton);
 				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconLDmode, loginV.switchThemeButton);
