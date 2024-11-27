@@ -88,7 +88,7 @@ public class MainModel {
 		DSLContext createUsers = ControlDB.DSLContext(Constant.DB_URL_USERS);
 		CreateTablesDB.createTablesUsers(createUsers);
 		
-		GenerateCode.generateCode(Constant.DB_URL_USERS, Constant.JDBC, Constant.SQLiteDatabase, Constant.JOOQ_USER,Constant.SRC_USER);
+		GenerateCode.generateCode(Constant.DB_URL_USERS, Constant.JDBC, Constant.SQLiteDatabase, Constant.JOOQ_USER, Constant.SRC_USER);
 	}
 
 }

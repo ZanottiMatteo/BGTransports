@@ -36415,7 +36415,7 @@
   "departure_train_station" : "Treviglio",
   "departure_time" : "23:10:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Cassano d'Adda",
   "time_stop" : "23:17:00",
   "" : ""
@@ -36426,7 +36426,7 @@
   "departure_train_station" : "Cassano d'Adda",
   "departure_time" : "23:17:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Tracella",
   "time_stop" : "23:21:00",
   "" : ""
@@ -36437,7 +36437,7 @@
   "departure_train_station" : "Tracella",
   "departure_time" : "23:21:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Pozzuolo Martesana",
   "time_stop" : "23:25:00",
   "" : ""
@@ -36448,7 +36448,7 @@
   "departure_train_station" : "Pozzuolo Martesana",
   "departure_time" : "23:25:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Melzo",
   "time_stop" : "23:29:00",
   "" : ""
@@ -36459,7 +36459,7 @@
   "departure_train_station" : "Melzo",
   "departure_time" : "23:29:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Vignate",
   "time_stop" : "23:33:00",
   "" : ""
@@ -36470,7 +36470,7 @@
   "departure_train_station" : "Vignate",
   "departure_time" : "23:33:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Pioltello-Limito",
   "time_stop" : "23:38:00",
   "" : ""
@@ -36481,7 +36481,7 @@
   "departure_train_station" : "Pioltello-Limito",
   "departure_time" : "23:38:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Segrate",
   "time_stop" : "23:42:00",
   "" : ""
@@ -36492,7 +36492,7 @@
   "departure_train_station" : "Segrate",
   "departure_time" : "23:42:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Forlanini",
   "time_stop" : "23:47:00",
   "" : ""
@@ -36503,7 +36503,7 @@
   "departure_train_station" : "Milano Forlanini",
   "departure_time" : "23:47:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Porta Vittoria",
   "time_stop" : "23:52:00",
   "" : ""
@@ -36514,7 +36514,7 @@
   "departure_train_station" : "Milano Porta Vittoria",
   "departure_time" : "23:52:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Dateo",
   "time_stop" : "23:55:00",
   "" : ""
@@ -36525,7 +36525,7 @@
   "departure_train_station" : "Milano Dateo",
   "departure_time" : "23:55:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Porta Venezia",
   "time_stop" : "23:58:00",
   "" : ""
@@ -36536,7 +36536,7 @@
   "departure_train_station" : "Milano Porta Venezia",
   "departure_time" : "23:58:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Repubblica",
   "time_stop" : "00:00:00",
   "" : ""
@@ -36547,42 +36547,42 @@
   "departure_train_station" : "Milano Repubblica",
   "departure_time" : "00:00:00",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Porta Garibaldi Passante",
-  "time_stop" : "00:03:00",
+  "time_stop" : "1",
   "" : ""
 }, {
   "id" : "3324",
   "company_name" : "TRENORD",
   "name" : "FNM3",
   "departure_train_station" : "Milano Porta Garibaldi Passante",
-  "departure_time" : "00:03:00",
+  "departure_time" : "1",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Lancetti",
-  "time_stop" : "00:06:00",
+  "time_stop" : "1",
   "" : ""
 }, {
   "id" : "3325",
   "company_name" : "TRENORD",
   "name" : "FNM3",
   "departure_train_station" : "Milano Lancetti",
-  "departure_time" : "00:06:00",
+  "departure_time" : "1",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Villapizzone",
-  "time_stop" : "00:09:00",
+  "time_stop" : "1",
   "" : ""
 }, {
   "id" : "3326",
   "company_name" : "TRENORD",
   "name" : "FNM3",
   "departure_train_station" : "Milano Villapizzone",
-  "departure_time" : "00:09:00",
+  "departure_time" : "1",
   "arrival_train_station" : "Milano Certosa",
-  "arrival_time" : "00:12:00",
+  "arrival_time" : "1",
   "next_stop" : "Milano Certosa",
-  "time_stop" : "00:12:00",
+  "time_stop" : "1",
   "" : ""
 }, {
   "id" : "3327",

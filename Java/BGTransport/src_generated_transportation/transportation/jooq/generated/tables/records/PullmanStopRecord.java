@@ -75,16 +75,16 @@ public class PullmanStopRecord extends UpdatableRecordImpl<PullmanStopRecord> {
     }
 
     /**
-     * Setter for <code>PULLMAN STOP.long</code>.
+     * Setter for <code>PULLMAN STOP.lon</code>.
      */
-    public void setLong(String value) {
+    public void setLon(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>PULLMAN STOP.long</code>.
+     * Getter for <code>PULLMAN STOP.lon</code>.
      */
-    public String getLong() {
+    public String getLon() {
         return (String) get(4);
     }
 
@@ -111,14 +111,14 @@ public class PullmanStopRecord extends UpdatableRecordImpl<PullmanStopRecord> {
     /**
      * Create a detached, initialised PullmanStopRecord
      */
-    public PullmanStopRecord(String name, String town, String province, String lat, String long_) {
+    public PullmanStopRecord(String name, String town, String province, String lat, String lon) {
         super(PullmanStop.PULLMAN_STOP);
 
         setName(name);
         setTown(town);
         setProvince(province);
         setLat(lat);
-        setLong(long_);
+        setLon(lon);
         resetChangedOnNotNull();
     }
 }

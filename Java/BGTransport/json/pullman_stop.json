@@ -2,13 +2,13 @@
   "name" : "AEROPORTO Arrivi Nazionali",
   "town" : "Bergamo",
   "province" : "BG",
-  "lat" : "45665912",
+  "lat" : "45.665912",
   "lon" : "9.697650"
 }, {
   "name" : "Aeroporto partenze nazionali",
   "town" : "Bergamo",
   "province" : "BG",
-  "lat" : "45665912",
+  "lat" : "45.665912",
   "lon" : "9.697650"
 }, {
   "name" : "ALBANO piazza Santuario",
@@ -134,7 +134,7 @@
   "name" : "Astino fermata 977",
   "town" : "Bergamo",
   "province" : "BG",
-  "lat" : "45702594",
+  "lat" : "45.702594",
   "lon" : "9.635844"
 }, {
   "name" : "AZZANO S.PAOLO via Don Gonella 2a",

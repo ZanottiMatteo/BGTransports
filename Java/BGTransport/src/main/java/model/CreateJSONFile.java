@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CellValue;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -53,9 +53,12 @@ public class CreateJSONFile {
 
 	        // Assegna i valori delle celle alle rispettive intestazioni mantenendo l'ordine
 	        for (int j = 0; j < headers.size(); j++) {
+	            String columnName = headers.get(j); // Ottieni il nome della colonna
 	            Cell cell = (row.getCell(j) != null) ? row.getCell(j) : null;
-	            String cellValue = (cell != null) ? getCellValue(cell) : ""; // Celle vuote diventano stringhe vuote
-	            rowData.put(headers.get(j), cellValue);
+	            
+	            // Passa il nome della colonna alla funzione getCellValue
+	            String cellValue = (cell != null) ? getCellValue(cell, columnName) : ""; 
+	            rowData.put(columnName, cellValue);
 
 	            // Verifica se almeno una cella della riga contiene un valore non vuoto
 	            if (!cellValue.isEmpty()) {
@@ -76,51 +79,70 @@ public class CreateJSONFile {
 	}
 
 	// Funzione che ottiene il valore di una cella e lo converte correttamente
-	public static String getCellValue(Cell cell) {
-		if (cell == null) {
-			return ""; // Se la cella è vuota, restituiamo una stringa vuota
-		}
+	public static String getCellValue(Cell cell, String columnName) {
+	    if (cell == null) {
+	        return ""; // Se la cella è vuota, restituiamo una stringa vuota
+	    }
 
-		switch (cell.getCellType()) {
-		case NUMERIC:
-			if (DateUtil.isCellDateFormatted(cell)) {
-				// La cella contiene una data, ma vogliamo solo l'orario
-				Date date = cell.getDateCellValue();
-				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Solo il formato dell'orario
-				return sdf.format(date); // Restituiamo solo l'orario come stringa
-			} else {
-				// La cella contiene un numero
-				return String.valueOf((long) cell.getNumericCellValue()); // Usa getRawValue() per ottenere il testo
-			}
-		case STRING:
-			return cell.getStringCellValue(); // Restituisce la stringa
-		case BOOLEAN:
-			return String.valueOf(cell.getBooleanCellValue()); // Restituisce il valore booleano come stringa
-		case FORMULA:
-			// Restituisce il valore calcolato dalla formula
-			CellValue cellValue = cell.getSheet().getWorkbook().getCreationHelper().createFormulaEvaluator()
-					.evaluate(cell);
-			switch (cellValue.getCellType()) {
-			case NUMERIC:
-				if (DateUtil.isCellDateFormatted(cell)) {
-					// La cella contiene una data, ma vogliamo solo l'orario
-					Date date = cell.getDateCellValue();
-					SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Solo il formato dell'orario
-					return sdf.format(date); // Restituiamo solo l'orario come stringa
-				} else {
-					// La cella contiene un numero
-					return String.valueOf((long) cell.getNumericCellValue()); // Usa getRawValue() per ottenere il testo
-				}
-			case STRING:
-				return cell.getStringCellValue(); // Restituisce la stringa
-			case BOOLEAN:
-				return String.valueOf(cell.getBooleanCellValue()); // Restituisce il valore booleano come stringa
-			default:
-				return ""; // Nel caso in cui il tipo di risultato non è previsto
-			}
-		default:
-			return ""; // Se la cella contiene un tipo non gestito, restituisce una stringa vuota
-		}
+	    // Se la colonna è 'lat' o 'lon', trattiamo il valore come un numero decimale
+	    if (columnName.equalsIgnoreCase("lat") || columnName.equalsIgnoreCase("lon")) {
+	        if (cell.getCellType() == CellType.NUMERIC) {
+	            // Se la cella è numerica, la trattiamo come un numero decimale
+	            return String.valueOf(cell.getNumericCellValue()); // Manteniamo il valore come decimale
+	        } else if (cell.getCellType() == CellType.STRING) {
+	            return cell.getStringCellValue(); // Restituiamo la stringa se è già una stringa
+	        }
+	    }
+
+	    // Se la cella contiene un orario (time), lo trattiamo come tale
+	    if (cell.getCellType() == CellType.NUMERIC) {
+	        double numericValue = cell.getNumericCellValue();
+	        
+	        // Se il numero è una frazione di giorno (indica un orario)
+	        if (numericValue >= 0 && numericValue < 1) {
+	            Date time = cell.getDateCellValue();
+	            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Modifica il formato dell'orario
+	            return sdf.format(time); // Restituiamo l'orario formattato come stringa
+	        }
+	    }
+
+	    // Gestione delle celle con valore numerico per altre colonne (id e altre)
+	    if (cell.getCellType() == CellType.NUMERIC) {
+	        double numericValue = cell.getNumericCellValue();
+	        
+	        // Se il numero è intero (es. 1.0 deve diventare 1), restituiamo come intero
+	        if (numericValue == Math.floor(numericValue)) {
+	            return String.valueOf((int) numericValue); // Convertiamo in intero, senza decimali
+	        } else {
+	            // Altrimenti restituiamo il numero come stringa
+	            return String.valueOf((long) numericValue); // Se è decimale, lo trattiamo come numero intero
+	        }
+	    } else if (cell.getCellType() == CellType.STRING) {
+	        return cell.getStringCellValue(); // Restituiamo la stringa direttamente se è già una stringa
+	    } else if (cell.getCellType() == CellType.BOOLEAN) {
+	        return String.valueOf(cell.getBooleanCellValue()); // Restituiamo il valore booleano come stringa
+	    } else if (cell.getCellType() == CellType.FORMULA) {
+	        // Calcoliamo il valore della formula
+	        CellValue cellValue = cell.getSheet().getWorkbook().getCreationHelper().createFormulaEvaluator()
+	                .evaluate(cell);
+	        switch (cellValue.getCellType()) {
+	        case NUMERIC:
+	            double formulaNumericValue = cellValue.getNumberValue();
+	            if (formulaNumericValue == Math.floor(formulaNumericValue)) {
+	                return String.valueOf((int) formulaNumericValue); // Intero senza decimali
+	            } else {
+	                return String.valueOf(formulaNumericValue); // Decimale se non intero
+	            }
+	        case STRING:
+	            return cellValue.getStringValue(); // Restituisce la stringa
+	        case BOOLEAN:
+	            return String.valueOf(cellValue.getBooleanValue()); // Restituisce il valore booleano come stringa
+	        default:
+	            return ""; // Nel caso in cui il tipo di risultato non è previsto
+	        }
+	    }
+
+	    return ""; // Se la cella contiene un tipo non gestito, restituiamo una stringa vuota
 	}
 
 	// Funzione che scrive i dati in formato JSON nel file

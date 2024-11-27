@@ -75,9 +75,9 @@ public class TramStop extends TableImpl<TramStopRecord> {
     public final TableField<TramStopRecord, String> LAT = createField(DSL.name("lat"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>TRAM STOP.long</code>.
+     * The column <code>TRAM STOP.lon</code>.
      */
-    public final TableField<TramStopRecord, String> LONG = createField(DSL.name("long"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TramStopRecord, String> LON = createField(DSL.name("lon"), SQLDataType.VARCHAR(255), this, "");
 
     private TramStop(Name alias, Table<TramStopRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

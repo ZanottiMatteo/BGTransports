@@ -70,9 +70,9 @@ public class PullmanStop extends TableImpl<PullmanStopRecord> {
     public final TableField<PullmanStopRecord, String> LAT = createField(DSL.name("lat"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>PULLMAN STOP.long</code>.
+     * The column <code>PULLMAN STOP.lon</code>.
      */
-    public final TableField<PullmanStopRecord, String> LONG = createField(DSL.name("long"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<PullmanStopRecord, String> LON = createField(DSL.name("lon"), SQLDataType.VARCHAR(255), this, "");
 
     private PullmanStop(Name alias, Table<PullmanStopRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

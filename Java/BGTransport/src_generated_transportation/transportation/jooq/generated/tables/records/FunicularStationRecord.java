@@ -89,16 +89,16 @@ public class FunicularStationRecord extends UpdatableRecordImpl<FunicularStation
     }
 
     /**
-     * Setter for <code>FUNICULAR STATION.long</code>.
+     * Setter for <code>FUNICULAR STATION.lon</code>.
      */
-    public void setLong(String value) {
+    public void setLon(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>FUNICULAR STATION.long</code>.
+     * Getter for <code>FUNICULAR STATION.lon</code>.
      */
-    public String getLong() {
+    public String getLon() {
         return (String) get(5);
     }
 
@@ -125,7 +125,7 @@ public class FunicularStationRecord extends UpdatableRecordImpl<FunicularStation
     /**
      * Create a detached, initialised FunicularStationRecord
      */
-    public FunicularStationRecord(String name, String address, String town, String province, String lat, String long_) {
+    public FunicularStationRecord(String name, String address, String town, String province, String lat, String lon) {
         super(FunicularStation.FUNICULAR_STATION);
 
         setName(name);
@@ -133,7 +133,7 @@ public class FunicularStationRecord extends UpdatableRecordImpl<FunicularStation
         setTown(town);
         setProvince(province);
         setLat(lat);
-        setLong(long_);
+        setLon(lon);
         resetChangedOnNotNull();
     }
 }

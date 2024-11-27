@@ -89,16 +89,16 @@ public class TramStopRecord extends UpdatableRecordImpl<TramStopRecord> {
     }
 
     /**
-     * Setter for <code>TRAM STOP.long</code>.
+     * Setter for <code>TRAM STOP.lon</code>.
      */
-    public void setLong(String value) {
+    public void setLon(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>TRAM STOP.long</code>.
+     * Getter for <code>TRAM STOP.lon</code>.
      */
-    public String getLong() {
+    public String getLon() {
         return (String) get(5);
     }
 
@@ -125,7 +125,7 @@ public class TramStopRecord extends UpdatableRecordImpl<TramStopRecord> {
     /**
      * Create a detached, initialised TramStopRecord
      */
-    public TramStopRecord(String name, String address, String town, String province, String lat, String long_) {
+    public TramStopRecord(String name, String address, String town, String province, String lat, String lon) {
         super(TramStop.TRAM_STOP);
 
         setName(name);
@@ -133,7 +133,7 @@ public class TramStopRecord extends UpdatableRecordImpl<TramStopRecord> {
         setTown(town);
         setProvince(province);
         setLat(lat);
-        setLong(long_);
+        setLon(lon);
         resetChangedOnNotNull();
     }
 }

@@ -1,11 +1,6 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 import org.jooq.DSLContext;
-import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 
@@ -132,7 +127,7 @@ public class CreateTablesDB {
 																												// column
 				.column(Constant.town, SQLDataType.VARCHAR(255)) // TOWN column
 				.column(Constant.province, SQLDataType.VARCHAR(255)) // PROVINCE column
-				.column(Constant.latutude, SQLDataType.VARCHAR(255)) // Latitude column
+				.column(Constant.latitude, SQLDataType.VARCHAR(255)) // Latitude column
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) // Longitude column
 				.constraints(DSL.constraint("PK_" + Constant.pullman_stop).primaryKey(Constant.name) // Set
 																										// a
@@ -149,7 +144,7 @@ public class CreateTablesDB {
 				.column(Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
 				.column(Constant.town, SQLDataType.VARCHAR(255)) // TOWN column
 				.column(Constant.province, SQLDataType.VARCHAR(255)) // PROVINCE column
-				.column(Constant.latutude, SQLDataType.VARCHAR(255)) // Latitude column
+				.column(Constant.latitude, SQLDataType.VARCHAR(255)) // Latitude column
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) // Longitude column
 				.constraints(DSL.constraint("PK_" + Constant.tram_stop).primaryKey(Constant.name) // Set
 																									// a
@@ -168,7 +163,7 @@ public class CreateTablesDB {
 				.column(Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
 				.column(Constant.town, SQLDataType.VARCHAR(255)) // TOWN column
 				.column(Constant.province, SQLDataType.VARCHAR(255)) // PROVINCE column
-				.column(Constant.latutude, SQLDataType.VARCHAR(255)) // Latitude column
+				.column(Constant.latitude, SQLDataType.VARCHAR(255)) // Latitude column
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) // Longitude column
 				.constraints(DSL.constraint("PK_" + Constant.funicular_station).primaryKey(Constant.name) // Set
 																											// a
@@ -186,7 +181,7 @@ public class CreateTablesDB {
 				.column(Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
 				.column(Constant.town, SQLDataType.VARCHAR(255)) // TOWN column
 				.column(Constant.province, SQLDataType.VARCHAR(255)) // PROVINCE column
-				.column(Constant.latutude, SQLDataType.VARCHAR(255)) // Latitude column
+				.column(Constant.latitude, SQLDataType.VARCHAR(255)) // Latitude column
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) // Longitude column
 				.constraints(DSL.constraint("PK_" + Constant.train_station).primaryKey(Constant.name) // Set
 																										// a
