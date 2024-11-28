@@ -14,7 +14,9 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +31,7 @@ import controller.MapController;
 import controller.NewWindowController;
 import controller.ResizeController;
 import controller.ThemeController;
+import model.ResizableImage;
 import model.WeatherModel;
 import view.RoundedPanel;
 import java.awt.Font;
@@ -71,7 +74,7 @@ public class MapView extends JFrame {
 	public final Point mappanelpoint = new Point(200, 30);
 
 	// Resizable background wallpaper that adjusts to the screen size.
-	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png"));
+	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
 	// Icons for the user and map buttons.
 	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png")); // Icon for the user button.
@@ -248,10 +251,46 @@ public class MapView extends JFrame {
 			NewWindowController.openHomePanel(MainController.homeV);
 			setVisible(false);
 		});
-		menuPanel.add(homeButton);
+		
+        // Action listener for the theme switch button
+        busButton.addActionListener(e -> {
+			try {
+				MapController.showBus();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+        
+        // Action listener for the theme switch button
+        trainButton.addActionListener(e -> {
+			try {
+				MapController.showTrain();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+        
+        // Action listener for the theme switch button
+        funicularButton.addActionListener(e -> {
+			try {
+				MapController.showFunicular();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+        
+        // Action listener for the theme switch button
+        tramButton.addActionListener(e -> {
+			try {
+				MapController.showTram();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
 
         // Action listener for the theme switch button
         switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        
     }
 
     /**

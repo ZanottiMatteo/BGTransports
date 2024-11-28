@@ -1,4 +1,4 @@
-package view;
+package model;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -14,7 +14,7 @@ public class ResizableImage{
 	private BufferedImage originalImage;
     private Image scaledImage;
 
-    public ResizableImage(URL imagePath) {
+    public ResizableImage(File imagePath) {
         try {
             originalImage = ImageIO.read(imagePath);
         } catch (IOException e) {

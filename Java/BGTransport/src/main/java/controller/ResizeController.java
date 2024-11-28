@@ -20,7 +20,10 @@ import javax.swing.JPanel;
 
 import org.jxmapviewer.JXMapViewer;
 
-import view.ResizableImage;
+import model.ResizableImage;
+import view.BigLabel;
+import view.LittleLabel;
+import view.MediumLabel;
 
 public class ResizeController {
 
@@ -37,7 +40,31 @@ public class ResizeController {
             Rectangle originalBounds = entry.getValue();
             int size = 0;
             comp.setBounds((int)(originalBounds.x * widthRatio), (int)(originalBounds.y * heightRatio), (int)(originalBounds.width * widthRatio), (int)(originalBounds.height * heightRatio));
-            if (comp instanceof JLabel) {
+            if (comp instanceof LittleLabel) {
+            	LittleLabel label = (LittleLabel) comp;
+                
+                // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
+                int fontSize = Math.max(jframe.getWidth() / 100, 10);  // La dimensione del font deve essere almeno 10
+
+                // Impostiamo il nuovo font per la JLabel
+                label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
+            } else if (comp instanceof MediumLabel) {
+            	MediumLabel label = (MediumLabel) comp;
+                
+                // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
+                int fontSize = Math.max(jframe.getWidth() / 80, 10);  // La dimensione del font deve essere almeno 10
+
+                // Impostiamo il nuovo font per la JLabel
+                label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
+            } else if (comp instanceof BigLabel) {
+            	BigLabel label = (BigLabel) comp;
+                
+                // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
+                int fontSize = Math.max(jframe.getWidth() / 50, 10);  // La dimensione del font deve essere almeno 10
+
+                // Impostiamo il nuovo font per la JLabel
+                label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
+            } else if (comp instanceof JLabel) {
                 JLabel label = (JLabel) comp;
                 
                 // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra

@@ -10,7 +10,8 @@ import view.HomeView;
 import view.LoginView;
 import view.MapView;
 import view.RoundedPanel;
-import view.SignUpWindow;
+import view.SignUpView;
+import view.UserView;
 import controller.ThemeController;;
 
 public class NewWindowController {
@@ -65,6 +66,26 @@ public class NewWindowController {
 			}
 		});
 	}
+	
+	public static void openUserPanel(UserView userV) {
+		SwingUtilities.invokeLater(() -> {
+			userV.setVisible(true);
+		});
+		userV.addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent e) {
+				ResizeController.resizeComponents(userV.originalPanelSize, userV, userV.componentBounds,
+						userV.mainPanel);
+				ResizeController.resizeImagePanel(userV, userV.lblBGwallpaper, userV.mainPanel);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.iconUser, userV.userButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.iconMap, userV.mapButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.iconHome, userV.homeButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.iconLDmode, userV.switchThemeButton);
+				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.menuPanel, userV.MenuPanelSize, userV.menupanelpoint);
+				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.centerPanel, userV.CenterPanelSize, userV.centerpanelpoint);
+			}
+		});
+	}
 
 	public static void openLoginPanel(LoginView loginV) {
 
@@ -83,7 +104,7 @@ public class NewWindowController {
 		});
 	}
 
-	public static void openSignUp(SignUpWindow signupV) {
+	public static void openSignUp(SignUpView signupV) {
 
 		SwingUtilities.invokeLater(() -> {
 			signupV.setVisible(true);

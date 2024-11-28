@@ -21,30 +21,16 @@ import com.formdev.flatlaf.FlatLightLaf;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
-import view.SignUpWindow;
+import view.SignUpView;
+import view.UserView;
 
 public class ThemeController {
 
-	public static boolean themeL = false;
+	public static boolean themeDark = true;
 	
 
 	public static void setThemeHomePanel(HomeView homeV) {
-
-		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf && !themeL) {
-			themeL = true;
-			FlatLightLaf.setup();
-		} else if (UIManager.getLookAndFeel() instanceof FlatLightLaf && themeL){
-			themeL = false;
-			FlatDarkLaf.setup();
-		}
-
-		// Update the Look and Feel for the entire component tree
-		for (Window window : Window.getWindows()) {
-			SwingUtilities.updateComponentTreeUI(window);
-		}
-
-		// Adjust specific component properties if necessary
-		if (themeL) {
+		if (themeDark) {
 			homeV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
 		} else {
 			homeV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
@@ -52,64 +38,35 @@ public class ThemeController {
 		
 	}
 	
-	public static void setThemeMapPanel(MapView mapV) {
-
-		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf && !themeL) {
-			themeL = true;
-			FlatLightLaf.setup();
-		} else if (UIManager.getLookAndFeel() instanceof FlatLightLaf && themeL){
-			themeL = false;
-			FlatDarkLaf.setup();
-		}
-		
-		// Update the Look and Feel for the entire component tree
-		for (Window window : Window.getWindows()) {
-			SwingUtilities.updateComponentTreeUI(window);
-		}
-
-		// Adjust specific component properties if necessary
-		if (themeL) {
+	public static void setThemeMapPanel(MapView mapV) {		
+		if (themeDark) {
 			mapV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
 		} else {
 			mapV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
-		}
-		
-		
+		}	
 	}
 
-	public static void setThemeLoginPanel(LoginView loginV) {
-
-		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf && !themeL) {
-			themeL = true;
-			FlatLightLaf.setup();
-		} else if (UIManager.getLookAndFeel() instanceof FlatLightLaf && themeL){
-			themeL = false;
-			FlatDarkLaf.setup();
-		}
+	public static void setThemeUserPanel(UserView userV) {	
+		if (themeDark) {
+			userV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+		} else {
+			userV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+		}	
+	}
 	
-		for (Window window : Window.getWindows()) {
-			SwingUtilities.updateComponentTreeUI(window);
-		}
-		
-		if (themeL) {
+	public static void setThemeLoginPanel(LoginView loginV) {
+		if (themeDark) {
 			loginV.LogoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
 		} else {
 			loginV.LogoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/LogoDark.png")));
 		}
 	}
 		
-	public static void setThemeSignUpPanel(SignUpWindow signupV) {
-		if (UIManager.getLookAndFeel() instanceof FlatDarkLaf && !themeL) {
-			themeL = true;
-			FlatLightLaf.setup();
-		} else if (UIManager.getLookAndFeel() instanceof FlatLightLaf && themeL){
-			themeL = false;
-			FlatDarkLaf.setup();
-		}
+	public static void setThemeSignUpPanel(SignUpView signupV) {
 	}
 	
 	public static void updateThemes() {
-		themeL = !themeL;
+		themeDark = !themeDark;
 		 try {
 	        if (getTheme()) {
 	            UIManager.setLookAndFeel(new FlatLightLaf());
@@ -125,10 +82,12 @@ public class ThemeController {
 	            e.printStackTrace();
 	        }
 
-		setThemeHomePanel(MainController.homeV);
-		setThemeMapPanel(MainController.mapV);
-		setThemeLoginPanel(MainController.loginV);
-		setThemeSignUpPanel(MainController.signupV);
+		    setThemeHomePanel(MainController.homeV);		    
+		    setThemeMapPanel(MainController.mapV);
+		    setThemeLoginPanel(MainController.loginV);		  
+		    setThemeSignUpPanel(MainController.signupV);
+		    setThemeUserPanel(MainController.userV); 
+		
 	}
 	
 	/*
@@ -137,6 +96,6 @@ public class ThemeController {
 	 * @return theme, if 1 -> dark | 0 -> light
 	 */
 	public static boolean getTheme() {
-		return themeL;
+		return themeDark;
 	}
 }

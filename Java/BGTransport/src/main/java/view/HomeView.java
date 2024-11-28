@@ -5,6 +5,7 @@ import javax.swing.border.Border;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,7 @@ import controller.MainController;
 import controller.NewWindowController;
 import controller.ResizeController;
 import controller.ThemeController;
+import model.ResizableImage;
 import model.TimestampModel;
 import model.WeatherModel;
 
@@ -55,7 +57,7 @@ public class HomeView extends JFrame {
 	public JLabel lblweathertxt = new JLabel("🏠 Bergamo");
 
 	// Background wallpaper.
-	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png"));
+	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
 	// Icons.
 	public ImageIcon iconUser = new ImageIcon(HomeView.class.getResource("/images/User.png"));
@@ -226,7 +228,7 @@ public class HomeView extends JFrame {
 		// User button.
 		userButton = createMenuButton(iconUser, 20, 20);
 		userButton.addActionListener(e -> {
-			NewWindowController.openLoginPanel(MainController.loginV);
+			NewWindowController.openUserPanel(MainController.userV);
 			setVisible(false);
 		});
 		menuPanel.add(userButton);

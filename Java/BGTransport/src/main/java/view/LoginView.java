@@ -11,6 +11,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.io.File;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +20,7 @@ import java.awt.Frame;
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
+import model.ResizableImage;
 import controller.LoginController;
 import view.RoundedPanel;
 
@@ -28,7 +30,7 @@ public class LoginView extends JFrame {
     public JPanel mainPanel;
     public JLabel LogoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
     public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
-    public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png"));
+    public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
     public JPasswordField passwordField = new JPasswordField();
     public JButton switchThemeButton;
     public JButton returnButton = new JButton();
@@ -36,11 +38,11 @@ public class LoginView extends JFrame {
     public JPanel BGpanel;
     public JTextField textField = new JTextField();
     public JButton signInButton = new JButton();
-    public JLabel textEmail = new JLabel("Email");
+    public LittleLabel textEmail = new LittleLabel("Email");
     public JButton signupButton = new JButton("Sign Up");
     public RoundedPanel centerPanel = new RoundedPanel();
     public final Point centerPanelpoint = new Point(580, 167);
-    public JLabel lblPassword = new JLabel("Password");
+    public LittleLabel lblPassword = new LittleLabel("Password");
 
     // Map to store component bounds for later resizing
     public Map<Component, Rectangle> componentBounds = new HashMap<>();

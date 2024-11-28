@@ -12,7 +12,8 @@ import javax.swing.SwingUtilities;
 
 import org.jxmapviewer.JXMapViewer;
 
-import view.SignUpWindow;
+import view.SignUpView;
+import view.UserView;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
@@ -24,9 +25,10 @@ public class MainController {
 
 	
 	public static HomeView homeV = new HomeView();
-	public static SignUpWindow signupV = new SignUpWindow();
+	public static SignUpView signupV = new SignUpView();
 	public static MapView mapV = new MapView();
 	public static LoginView loginV = new LoginView();
+	public static UserView userV = new UserView();
 	public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
 	public static void main(String[] args) {

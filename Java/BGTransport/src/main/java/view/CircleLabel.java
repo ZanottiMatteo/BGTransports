@@ -14,7 +14,11 @@ public class CircleLabel extends JLabel {
         setForeground(Color.WHITE); // Text color
     }
 
-    public void setCircleColor(Color color) {
+    public CircleLabel() {
+    	setOpaque(false);
+	}
+
+	public void setCircleColor(Color color) {
         this.circleColor = color;
         repaint(); // Repaint the label with the new color
     }

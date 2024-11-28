@@ -12,7 +12,7 @@ import BGTransport.BGTransport.App;
 import controller.ThemeController;
 import controller.SignUpController;
 
-public class SignUpWindow extends JFrame {
+public class SignUpView extends JFrame {
 
 	private JFrame frame;
 	private JPanel panel;
@@ -34,7 +34,7 @@ public class SignUpWindow extends JFrame {
 	private JTextField textName;
 	
 	
-	public SignUpWindow() {		
+	public SignUpView() {		
 		setResizable(false);
 		/*System.out.println("signup" + ThemeController.getTheme());
 		if (ThemeController.getTheme()) {

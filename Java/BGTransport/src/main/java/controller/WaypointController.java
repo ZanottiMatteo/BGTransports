@@ -30,8 +30,8 @@ public class WaypointController implements Painter<JXMapViewer> {
 		
 	}
 
-	public void setImage(String path) {
-		this.waypointImage = loadImage(path);
+	public void setImage(Image image) {
+		this.waypointImage = image;
 	}
 	
 	private Image loadImage(String path) {

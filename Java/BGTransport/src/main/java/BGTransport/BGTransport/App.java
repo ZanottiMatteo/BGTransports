@@ -7,7 +7,7 @@ import javax.swing.SwingUtilities;
 
 import controller.ResizeController;
 import controller.ThemeController;
-import view.SignUpWindow;
+import view.SignUpView;
 import view.HomeView;
 import view.LoginView;
 
