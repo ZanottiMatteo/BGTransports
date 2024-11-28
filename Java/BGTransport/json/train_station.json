@@ -129,8 +129,8 @@
   "address" : "Piazza Stazione",
   "town" : "Lecco",
   "province" : "LC",
-  "lat" : "",
-  "lon" : ""
+  "lat" : "45.855981",
+  "lon" : "9.393292"
 }, {
   "name" : "Lecco-Maggianico",
   "address" : "Via Antonio Carlo Gomez, 15",

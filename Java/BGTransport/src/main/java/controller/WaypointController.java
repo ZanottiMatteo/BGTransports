@@ -27,9 +27,13 @@ public class WaypointController implements Painter<JXMapViewer> {
 
 	public WaypointController(GeoPosition position) {
 		this.position = position;
-		this.waypointImage = loadImage("images/Waypoint.png");
+		
 	}
 
+	public void setImage(String path) {
+		this.waypointImage = loadImage(path);
+	}
+	
 	private Image loadImage(String path) {
 	    try {
 	        // Make sure the path is correct, relative to the classpath

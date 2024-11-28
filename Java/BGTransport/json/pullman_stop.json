@@ -980,8 +980,8 @@
   "name" : "SCANZO corso Europa, 74",
   "town" : "Scanzorosciate",
   "province" : "BG",
-  "lat" : "BG",
-  "lon" : "45.7056577"
+  "lat" : "45.705682",
+  "lon" : "9.724453"
 }, {
   "name" : "SCANZO Negrone via Piave fr.40",
   "town" : "Scanzorosciate",
@@ -1160,8 +1160,8 @@
   "name" : "STEZZANO via Papa Giovanni XXIII, 7",
   "town" : "Stezzano",
   "province" : "BG",
-  "lat" : "BG",
-  "lon" : "45.651617"
+  "lat" : "45.651617",
+  "lon" : "9.658735"
 }, {
   "name" : "STEZZANO via Rizzo fr. 7",
   "town" : "Stezzano",
@@ -1223,11 +1223,11 @@
   "lat" : "45.6987192",
   "lon" : "9.7686636"
 }, {
-  "name" : "TORRE DEL GALGARIO SOLO PER TABELLE DI M",
+  "name" : "TORRE DEL GALGARIO via Suardi, 4",
   "town" : "Bergamo",
   "province" : "BG",
-  "lat" : "",
-  "lon" : ""
+  "lat" : "45.701510",
+  "lon" : "9.680467"
 }, {
   "name" : "TREVIOLO Albegno via IV Novembre 6",
   "town" : "Treviolo",

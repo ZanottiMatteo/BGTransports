@@ -1,8 +1,10 @@
 package controller;
 
+import java.awt.Component;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import view.SignUpWindow;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
+import model.QueryDB;
 import model.RegisteredUser;
 import model.WeatherModel;
 
@@ -33,6 +36,6 @@ public class MainController {
 		MapController.generateMiniMap();
 		ThemeController.updateThemes();
 		NewWindowController.openHomePanel(homeV);
-
+		
 	}
 }

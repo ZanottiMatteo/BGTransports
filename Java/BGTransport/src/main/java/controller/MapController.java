@@ -10,7 +10,9 @@ import java.awt.geom.Point2D;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -30,6 +32,7 @@ import org.jxmapviewer.viewer.DefaultTileFactory;
 import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.TileFactoryInfo;
 
+import model.QueryDB;
 import view.HomeView;
 import view.MapView;
 
@@ -37,11 +40,16 @@ public class MapController {
 
     // List of unique waypoints across all maps
     public static List<GeoPosition> positions = new ArrayList<>();
+    public static List<GeoPosition> Train = new ArrayList<>();
+    public static List<GeoPosition> Pullman = new ArrayList<>();
+    public static List<GeoPosition> Funicular = new ArrayList<>();
+    public static List<GeoPosition> Tram = new ArrayList<>();
     private static final List<Painter<JXMapViewer>> painters = new ArrayList<>();
+    private static final List<Painter<JXMapViewer>> transport = new ArrayList<>();
     public static JXMapViewer fullMapViewer = new JXMapViewer(); // Create a separate instance for the full map
     public static JXMapViewer miniMapViewer = new JXMapViewer(); // Create a separate instance for the mini map
     private static final double TOLERANCE = 0.0003;
-    
+     
     /**
      * Method to configure and generate a map with OpenStreetMap
      * 
@@ -100,9 +108,35 @@ public class MapController {
 
                     // Aggiorna i marker sulla mappa
                     addMarkers(positions);
+                    
                 }
             }
         });
+        
+        try {
+        	Pullman.addAll(QueryDB.getPullmanGeopositions());
+			addPullman(QueryDB.getPullmanGeopositions());
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+        try {
+        	Train.addAll(QueryDB.getTrainGeopositions());
+			addTrain(QueryDB.getTrainGeopositions());
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+        try {
+        	Funicular.addAll(QueryDB.getFunicularGeopositions());
+			addFunicular(QueryDB.getFunicularGeopositions());
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+        try {
+        	Tram.addAll(QueryDB.getTramGeopositions());
+			addTram(QueryDB.getTramGeopositions());
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
     }
     
     /**
@@ -160,9 +194,79 @@ public class MapController {
         painters.clear();
         for (GeoPosition position : positions) {
             Painter<JXMapViewer> markerPainter = new WaypointController(position);
+            ((WaypointController) markerPainter).setImage("images/Waypoint.png");
             painters.add(markerPainter);
         }
-        CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(painters);
+     // Combina tutti i painter (senza toccare 'positions')
+        List<Painter<JXMapViewer>> allPainters = new ArrayList<>();
+        allPainters.addAll(painters);  // Waypoints dinamici
+        allPainters.addAll(transport); // Marker statici
+        
+        CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
+        fullMapViewer.setOverlayPainter(compoundPainter);
+        miniMapViewer.setOverlayPainter(compoundPainter);
+    }
+    
+    public static void addPullman(List<GeoPosition> positions) {
+        // Clear previous painters and add new ones  
+        for (GeoPosition position : positions) {
+        	Painter<JXMapViewer> markerPainter = new WaypointController(position);
+            ((WaypointController) markerPainter).setImage("images/Bus.png");
+            transport.add(markerPainter);
+        }
+        List<Painter<JXMapViewer>> allPainters = new ArrayList<>();
+        allPainters.addAll(painters);  // Waypoints dinamici
+        allPainters.addAll(transport); // Marker statici
+        
+        CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
+        fullMapViewer.setOverlayPainter(compoundPainter);
+        miniMapViewer.setOverlayPainter(compoundPainter);
+    }
+    
+    public static void addTrain(List<GeoPosition> positions) {
+        // Clear previous painters and add new ones        
+        for (GeoPosition position : positions) {
+        	Painter<JXMapViewer> markerPainter = new WaypointController(position);
+            ((WaypointController) markerPainter).setImage("images/Train.png");
+            transport.add(markerPainter);
+        }
+        List<Painter<JXMapViewer>> allPainters = new ArrayList<>();
+        allPainters.addAll(painters);  // Waypoints dinamici
+        allPainters.addAll(transport); // Marker statici
+        
+        CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
+        fullMapViewer.setOverlayPainter(compoundPainter);
+        miniMapViewer.setOverlayPainter(compoundPainter);
+    }
+    
+    public static void addFunicular(List<GeoPosition> positions) {
+        // Clear previous painters and add new ones        
+        for (GeoPosition position : positions) {
+        	Painter<JXMapViewer> markerPainter = new WaypointController(position);
+            ((WaypointController) markerPainter).setImage("images/Funicular.png");
+            transport.add(markerPainter);
+        }
+        List<Painter<JXMapViewer>> allPainters = new ArrayList<>();
+        allPainters.addAll(painters);  // Waypoints dinamici
+        allPainters.addAll(transport); // Marker statici
+        
+        CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
+        fullMapViewer.setOverlayPainter(compoundPainter);
+        miniMapViewer.setOverlayPainter(compoundPainter);
+    }
+    
+    public static void addTram(List<GeoPosition> positions) {
+        // Clear previous painters and add new ones        
+        for (GeoPosition position : positions) {
+        	Painter<JXMapViewer> markerPainter = new WaypointController(position);
+            ((WaypointController) markerPainter).setImage("images/Tram.png");
+            transport.add(markerPainter);
+        }
+        List<Painter<JXMapViewer>> allPainters = new ArrayList<>();
+        allPainters.addAll(painters);  // Waypoints dinamici
+        allPainters.addAll(transport); // Marker statici
+        
+        CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
         fullMapViewer.setOverlayPainter(compoundPainter);
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
