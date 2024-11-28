@@ -55,10 +55,15 @@ public class MapView extends JFrame {
 	public JButton mapButton;         // Button to navigate to the map view.
 	public JButton homeButton;
 
+	public JButton busButton;
+	public JButton trainButton;
+	public JButton funicularButton;
+	public JButton tramButton;
+	
 	// Main content panel with rounded corners.
 	public RoundedPanel homePanel = new RoundedPanel();
 	// Position of the map panel within the layout.
-	public final Point mappoint = new Point(50, 50);
+	public final Point mappoint = new Point(100, 50);
 
 	// Container panel for the map, designed with rounded corners. 
 	public static RoundedPanel externmapPanel = new RoundedPanel();
@@ -72,6 +77,11 @@ public class MapView extends JFrame {
 	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png")); // Icon for the user button.
 	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));   // Icon for the map button.
 	public ImageIcon iconHome = new ImageIcon(MapView.class.getResource("/images/Home.png"));
+	public ImageIcon iconBus = new ImageIcon(MapView.class.getResource("/images/Bus.png"));
+	public ImageIcon iconTrain = new ImageIcon(MapView.class.getResource("/images/Train.png"));
+	public ImageIcon iconTram = new ImageIcon(MapView.class.getResource("/images/Tram.png"));
+	public ImageIcon iconFunicular = new ImageIcon(MapView.class.getResource("/images/Funicular.png"));
+
 
 	// A map to store the bounds (dimensions and positions) of each component for resizing purposes.
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
@@ -85,7 +95,7 @@ public class MapView extends JFrame {
 	// Size of the panel containing the map.
 	public final Dimension MapPanelSize = new Dimension(1600, 900);
 	// Default size of the map itself within the map panel.
-	public final Dimension MapSize = new Dimension(1500, 800);
+	public final Dimension MapSize = new Dimension(1450, 800);
 
 	/**
      * Constructor that sets up the UI components, layout, and theming for the home view.
@@ -211,6 +221,15 @@ public class MapView extends JFrame {
         // Configure the map panel
         externmapPanel.setBounds(200, 30, 1600, 900);
         externmapPanel.setLayout(null);
+        
+        busButton = createIconButton(iconBus, 20, 300);
+        externmapPanel.add(busButton);
+        trainButton = createIconButton(iconTrain, 20, 380);
+        externmapPanel.add(trainButton);
+        funicularButton = createIconButton(iconFunicular, 20, 460);
+        externmapPanel.add(funicularButton);
+        tramButton = createIconButton(iconTram, 20, 540);
+        externmapPanel.add(tramButton);
         homePanel.add(externmapPanel);
     }
 
@@ -243,6 +262,9 @@ public class MapView extends JFrame {
             componentBounds.put(comp, comp.getBounds());
         }
         for (Component comp : menuPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
+        for (Component comp : externmapPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }
     }

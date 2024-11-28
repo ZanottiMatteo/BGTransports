@@ -54,6 +54,10 @@ public class NewWindowController {
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconUser, mapV.userButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconMap, mapV.mapButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconHome, mapV.homeButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconBus, mapV.busButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconTrain, mapV.trainButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconFunicular, mapV.funicularButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconTram, mapV.tramButton);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.MenuPanelSize, mapV.menupanelpoint);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.externmapPanel, mapV.MapPanelSize, mapV.mappanelpoint);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, MapController.fullMapViewer, mapV.MapSize,

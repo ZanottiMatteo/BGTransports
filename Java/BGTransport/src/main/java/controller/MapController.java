@@ -112,31 +112,10 @@ public class MapController {
                 }
             }
         });
-        
-        try {
-        	Pullman.addAll(QueryDB.getPullmanGeopositions());
-			addPullman(QueryDB.getPullmanGeopositions());
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-        try {
-        	Train.addAll(QueryDB.getTrainGeopositions());
-			addTrain(QueryDB.getTrainGeopositions());
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-        try {
-        	Funicular.addAll(QueryDB.getFunicularGeopositions());
-			addFunicular(QueryDB.getFunicularGeopositions());
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-        try {
-        	Tram.addAll(QueryDB.getTramGeopositions());
-			addTram(QueryDB.getTramGeopositions());
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
+        showPullman(true);
+        showFunicular(true);
+        showTrain(true);
+        showTram(true);
     }
     
     /**
@@ -189,7 +168,7 @@ public class MapController {
      * @param mapViewer the map view
      * @param positions the positions of the markers
      */
-    public static void addMarkers(List<GeoPosition> positions) {
+    public static void addMarkers (List<GeoPosition> positions) {
         // Clear previous painters and add new ones
         painters.clear();
         for (GeoPosition position : positions) {
@@ -207,9 +186,16 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
     
-    public static void addPullman(List<GeoPosition> positions) {
+    public static void showPullman (boolean check) {
+    	if (check) {
+    	try {
+			Pullman.addAll(QueryDB.getPullmanGeopositions());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}}
+    	else Pullman.clear();
         // Clear previous painters and add new ones  
-        for (GeoPosition position : positions) {
+        for (GeoPosition position : Pullman) {
         	Painter<JXMapViewer> markerPainter = new WaypointController(position);
             ((WaypointController) markerPainter).setImage("images/Bus.png");
             transport.add(markerPainter);
@@ -223,9 +209,16 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
     
-    public static void addTrain(List<GeoPosition> positions) {
+    public static void showTrain (boolean check) {
+    	if (check) {
+        	try {
+    			Train.addAll(QueryDB.getTrainGeopositions());
+    		} catch (SQLException e) {
+    			e.printStackTrace();
+    		}}
+        	else Train.clear();
         // Clear previous painters and add new ones        
-        for (GeoPosition position : positions) {
+        for (GeoPosition position : Train) {
         	Painter<JXMapViewer> markerPainter = new WaypointController(position);
             ((WaypointController) markerPainter).setImage("images/Train.png");
             transport.add(markerPainter);
@@ -239,9 +232,16 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
     
-    public static void addFunicular(List<GeoPosition> positions) {
+    public static void showFunicular (boolean check) {
+    	if (check) {
+        	try {
+        		Funicular.addAll(QueryDB.getFunicularGeopositions());
+    		} catch (SQLException e) {
+    			e.printStackTrace();
+    		}}
+        	else Funicular.clear();
         // Clear previous painters and add new ones        
-        for (GeoPosition position : positions) {
+        for (GeoPosition position : Funicular) {
         	Painter<JXMapViewer> markerPainter = new WaypointController(position);
             ((WaypointController) markerPainter).setImage("images/Funicular.png");
             transport.add(markerPainter);
@@ -255,9 +255,16 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
     
-    public static void addTram(List<GeoPosition> positions) {
+    public static void showTram (boolean check) {
+    	if (check) {
+        	try {
+        		Tram.addAll(QueryDB.getTramGeopositions());
+    		} catch (SQLException e) {
+    			e.printStackTrace();
+    		}}
+        	else Tram.clear();
         // Clear previous painters and add new ones        
-        for (GeoPosition position : positions) {
+        for (GeoPosition position : Tram) {
         	Painter<JXMapViewer> markerPainter = new WaypointController(position);
             ((WaypointController) markerPainter).setImage("images/Tram.png");
             transport.add(markerPainter);
