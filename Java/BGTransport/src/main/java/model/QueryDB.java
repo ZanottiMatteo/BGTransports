@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.xmlbeans.impl.values.XmlValueOutOfRangeException;
 import org.jetbrains.annotations.NotNull;
 import org.jooq.DSLContext;
 import org.jooq.Record1;
@@ -12,8 +11,6 @@ import org.jooq.Record2;
 import org.jooq.Result;
 import org.jxmapviewer.viewer.GeoPosition;
 
-import controller.MainController;
-import controller.MapController;
 import transportation.jooq.generated.tables.FunicularStation;
 import transportation.jooq.generated.tables.PullmanStop;
 import transportation.jooq.generated.tables.TrainStation;

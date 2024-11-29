@@ -98,4 +98,6 @@ public class Constant {
 	public static String web_site = "web_site";
 	public static String latitude = "lat";
 	public static String longitude = "lon";
+	
+	public static Boolean update = false;
 }

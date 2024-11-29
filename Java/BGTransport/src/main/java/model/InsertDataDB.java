@@ -3,17 +3,10 @@ package model;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 import org.jooq.DSLContext;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import controller.SignUpController;
 import transportation.jooq.generated.tables.Company;
 import transportation.jooq.generated.tables.Funicular;
 import transportation.jooq.generated.tables.FunicularStation;
@@ -25,14 +18,11 @@ import transportation.jooq.generated.tables.TramStop;
 import transportation.jooq.generated.tables.records.CompanyRecord;
 import transportation.jooq.generated.tables.records.FunicularRecord;
 import transportation.jooq.generated.tables.records.FunicularStationRecord;
-import transportation.jooq.generated.tables.records.PullmanRecord;
 import transportation.jooq.generated.tables.records.PullmanStopRecord;
 import transportation.jooq.generated.tables.records.TrainRecord;
 import transportation.jooq.generated.tables.records.TrainStationRecord;
 import transportation.jooq.generated.tables.records.TramRecord;
 import transportation.jooq.generated.tables.records.TramStopRecord;
-import user.jooq.generated.tables.User;
-import user.jooq.generated.tables.records.UserRecord;
 
 public class InsertDataDB {
 
