@@ -47,143 +47,115 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     }
 
     /**
-     * Setter for <code>PULLMAN.name</code>.
-     */
-    public void setName(String value) {
-        set(2, value);
-    }
-
-    /**
-     * Getter for <code>PULLMAN.name</code>.
-     */
-    public String getName() {
-        return (String) get(2);
-    }
-
-    /**
      * Setter for <code>PULLMAN.line</code>.
      */
     public void setLine(String value) {
-        set(3, value);
+        set(2, value);
     }
 
     /**
      * Getter for <code>PULLMAN.line</code>.
      */
     public String getLine() {
+        return (String) get(2);
+    }
+
+    /**
+     * Setter for <code>PULLMAN.departure_pullman_stop</code>.
+     */
+    public void setDeparturePullmanStop(String value) {
+        set(3, value);
+    }
+
+    /**
+     * Getter for <code>PULLMAN.departure_pullman_stop</code>.
+     */
+    public String getDeparturePullmanStop() {
         return (String) get(3);
-    }
-
-    /**
-     * Setter for <code>PULLMAN.departure_stop</code>.
-     */
-    public void setDepartureStop(String value) {
-        set(4, value);
-    }
-
-    /**
-     * Getter for <code>PULLMAN.departure_stop</code>.
-     */
-    public String getDepartureStop() {
-        return (String) get(4);
     }
 
     /**
      * Setter for <code>PULLMAN.departure_time</code>.
      */
     public void setDepartureTime(String value) {
-        set(5, value);
+        set(4, value);
     }
 
     /**
      * Getter for <code>PULLMAN.departure_time</code>.
      */
     public String getDepartureTime() {
+        return (String) get(4);
+    }
+
+    /**
+     * Setter for <code>PULLMAN.arrival_pullman_stop</code>.
+     */
+    public void setArrivalPullmanStop(String value) {
+        set(5, value);
+    }
+
+    /**
+     * Getter for <code>PULLMAN.arrival_pullman_stop</code>.
+     */
+    public String getArrivalPullmanStop() {
         return (String) get(5);
-    }
-
-    /**
-     * Setter for <code>PULLMAN.arrival_stop</code>.
-     */
-    public void setArrivalStop(String value) {
-        set(6, value);
-    }
-
-    /**
-     * Getter for <code>PULLMAN.arrival_stop</code>.
-     */
-    public String getArrivalStop() {
-        return (String) get(6);
     }
 
     /**
      * Setter for <code>PULLMAN.arrival_time</code>.
      */
     public void setArrivalTime(String value) {
-        set(7, value);
+        set(6, value);
     }
 
     /**
      * Getter for <code>PULLMAN.arrival_time</code>.
      */
     public String getArrivalTime() {
-        return (String) get(7);
+        return (String) get(6);
     }
 
     /**
      * Setter for <code>PULLMAN.next_stop</code>.
      */
     public void setNextStop(String value) {
-        set(8, value);
+        set(7, value);
     }
 
     /**
      * Getter for <code>PULLMAN.next_stop</code>.
      */
     public String getNextStop() {
-        return (String) get(8);
+        return (String) get(7);
     }
 
     /**
      * Setter for <code>PULLMAN.time_stop</code>.
      */
     public void setTimeStop(String value) {
-        set(9, value);
+        set(8, value);
     }
 
     /**
      * Getter for <code>PULLMAN.time_stop</code>.
      */
     public String getTimeStop() {
+        return (String) get(8);
+    }
+
+    /**
+     * Setter for <code>PULLMAN.type</code>.
+     */
+    public void setType(String value) {
+        set(9, value);
+    }
+
+    /**
+     * Getter for <code>PULLMAN.type</code>.
+     */
+    public String getType() {
         return (String) get(9);
-    }
-
-    /**
-     * Setter for <code>PULLMAN.number_of_seats</code>.
-     */
-    public void setNumberOfSeats(String value) {
-        set(10, value);
-    }
-
-    /**
-     * Getter for <code>PULLMAN.number_of_seats</code>.
-     */
-    public String getNumberOfSeats() {
-        return (String) get(10);
-    }
-
-    /**
-     * Setter for <code>PULLMAN.license_plate</code>.
-     */
-    public void setLicensePlate(String value) {
-        set(11, value);
-    }
-
-    /**
-     * Getter for <code>PULLMAN.license_plate</code>.
-     */
-    public String getLicensePlate() {
-        return (String) get(11);
     }
 
     // -------------------------------------------------------------------------
@@ -209,21 +181,19 @@ public class PullmanRecord extends UpdatableRecordImpl<PullmanRecord> {
     /**
      * Create a detached, initialised PullmanRecord
      */
-    public PullmanRecord(Integer id, String companyName, String name, String line, String departureStop, String departureTime, String arrivalStop, String arrivalTime, String nextStop, String timeStop, String numberOfSeats, String licensePlate) {
+    public PullmanRecord(Integer id, String companyName, String line, String departurePullmanStop, String departureTime, String arrivalPullmanStop, String arrivalTime, String nextStop, String timeStop, String type) {
         super(Pullman.PULLMAN);
 
         setId(id);
         setCompanyName(companyName);
-        setName(name);
         setLine(line);
-        setDepartureStop(departureStop);
+        setDeparturePullmanStop(departurePullmanStop);
         setDepartureTime(departureTime);
-        setArrivalStop(arrivalStop);
+        setArrivalPullmanStop(arrivalPullmanStop);
         setArrivalTime(arrivalTime);
         setNextStop(nextStop);
         setTimeStop(timeStop);
-        setNumberOfSeats(numberOfSeats);
-        setLicensePlate(licensePlate);
+        setType(type);
         resetChangedOnNotNull();
     }
 }

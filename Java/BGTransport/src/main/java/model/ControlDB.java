@@ -58,9 +58,11 @@ public class ControlDB {
 			InsertDataDB.train_station(createPublicTrasnportation);
 			InsertDataDB.tram_stop(createPublicTrasnportation);
 			InsertDataDB.pullman_stop(createPublicTrasnportation);
-			InsertDataDB.funicular(createPublicTrasnportation);
-			InsertDataDB.tram(createPublicTrasnportation);
-			InsertDataDB.train(createPublicTrasnportation);
+			InsertDataDB.funicularTimetable(createPublicTrasnportation);
+			InsertDataDB.tramTimetable(createPublicTrasnportation);
+			InsertDataDB.trainTimetable(createPublicTrasnportation);
+			//InsertDataDB.pullmanTimetable(createPublicTrasnportation);
+			
 		} else if (Constant.update) {
 			System.out.println("Database update: " + database);
 			dbFile.delete();
@@ -76,9 +78,10 @@ public class ControlDB {
 			InsertDataDB.train_station(createPublicTrasnportation);
 			InsertDataDB.tram_stop(createPublicTrasnportation);
 			InsertDataDB.pullman_stop(createPublicTrasnportation);
-			InsertDataDB.funicular(createPublicTrasnportation);
-			InsertDataDB.tram(createPublicTrasnportation);
-			InsertDataDB.train(createPublicTrasnportation);
+			InsertDataDB.funicularTimetable(createPublicTrasnportation);
+			InsertDataDB.tramTimetable(createPublicTrasnportation);
+			InsertDataDB.trainTimetable(createPublicTrasnportation);
+			//InsertDataDB.pullmanTimetable(createPublicTrasnportation);
 			
 			Constant.update = false;
 		} else {

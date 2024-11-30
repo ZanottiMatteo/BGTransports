@@ -38,7 +38,7 @@ public class Constant {
 	
 	public static String address = "address";
 	public static String arrival_funicular_station = "arrival_funicular_station";
-	public static String arrival_stop = "arrival_stop";
+	public static String arrival_pullman_stop = "arrival_pullman_stop";
 	public static String arrival_time = "arrival_time";
 	public static String arrival_train_station = "arrival_train_station";
 	public static String arrival_tram_station = "arrival_tram_station";
@@ -50,7 +50,7 @@ public class Constant {
 	public static String company_registration_number = "company_registration_number";
 	public static String date_of_birth = "date_of_birth";
 	public static String departure_funicular_station = "departure_funicular_station";
-	public static String departure_stop = "departure_stop";
+	public static String departure_pullman_stop = "departure_pullman_stop";
 	public static String departure_time = "departure_time";
 	public static String departure_train_station = "departure_train_station";
 	public static String departure_tram_station = "departure_tram_station";
