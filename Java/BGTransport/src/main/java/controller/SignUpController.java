@@ -42,7 +42,11 @@ public class SignUpController {
 		        && password != null && passwordconf != null && password.equals(passwordconf) 
 		        && username != null && !username.contains(" ")) {
 			
-			MainController.users.add(newUser = new RegisteredUser(name, surname, birthday, role));
+			MainController.users.add(newUser = new RegisteredUser());
+			newUser.setName(name);
+			newUser.setSurname(surname);
+			newUser.setBirthday(birthday);
+			newUser.setRole(role);
 			newUser.setEmail(email);
 			newUser.setPassword(password);
 			newUser.setUsername(username);

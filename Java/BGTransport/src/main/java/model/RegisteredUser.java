@@ -1,26 +1,68 @@
 package model;
 
+import java.sql.SQLException;
+
 public class RegisteredUser extends User{
 
-	String email = "ciao@gmail.com";
-	String password = "1234";
-	String username = "Ciao";
+	String name;
+	String surname;
+	String birthday;
+	String email;
+	String password;
+	String username;
 	String address;
 	String city;
 	String ZIPcode;
+	int role;
 	
-	public RegisteredUser(String name, String surname, String birthday, int role) {
-		super(name, surname, birthday, role);
-		
+	public RegisteredUser() {
 	}	
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return this.surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getBirthday() {
+		return this.birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public int getRole() {
+		return this.role;
+	}
+
+	public void setRole(int role) {
+		this.role = role;
+	}
 
 	public String getEmail() {
 		return this.email;
 	}
-
+	
 	public void setEmail(String email) {
 		this.email = email;
+		try {
+			QueryDB.getUserDetailsByEmail(email);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
+
 
 	public String getPassword() {
 		return this.password;

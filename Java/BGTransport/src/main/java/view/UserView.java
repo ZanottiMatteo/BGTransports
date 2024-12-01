@@ -7,13 +7,16 @@ import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import controller.MainController;
+import controller.MapController;
 import controller.NewWindowController;
 import controller.ResizeController;
 import controller.ThemeController;
+import controller.UserInfoController;
 import model.ResizableImage;
 import model.TimestampModel;
 import model.WeatherModel;
@@ -54,14 +57,18 @@ public class UserView extends JFrame {
 	private MediumLabel titleCity = new MediumLabel("Città");
 	private MediumLabel titleZip = new MediumLabel("CAP");
 	
-	private JTextField tfUsername = new JTextField();
-	private JTextField tfEmail = new JTextField();
-	private JTextField tfName = new JTextField();
-	private JTextField tfSurname = new JTextField();
-	private JTextField tfBirthday = new JTextField();
-	private JTextField tfAddress = new JTextField();
-	private JTextField tfCity = new JTextField();
-	private JTextField tfZip = new JTextField();
+	public static JTextField tfUsername = new JTextField();
+	public static JTextField tfEmail = new JTextField();
+	public static JTextField tfName = new JTextField();
+	public static JTextField tfSurname = new JTextField();
+	public static JTextField tfBirthday = new JTextField();
+	public static JTextField tfAddress = new JTextField();
+	public static JTextField tfCity = new JTextField();
+	public static JTextField tfZip = new JTextField();
+	
+	public JButton changeData = new JButton();
+	public JButton saveData = new JButton();
+	public JButton discardData = new JButton();
 	
 	// Background wallpaper.
 	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
@@ -124,8 +131,6 @@ public class UserView extends JFrame {
 		menuPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 		menuPanel.setLayout(null);
 		homePanel.add(menuPanel);
-		
-		
 
 		// Menu buttons setup.
 		setupMenuButtons();
@@ -135,6 +140,7 @@ public class UserView extends JFrame {
 		// Store initial bounds for resizing purposes.
 		storeComponentBounds();
 		
+		setupActionListeners();
 		
 		// Initialize other components.
 		initComponents();
@@ -202,9 +208,7 @@ public class UserView extends JFrame {
 		 profilePhoto.setBounds(110, 70, 250, 250);  // Circular placeholder
 		 profilePhoto.setCircleColor(Color.GRAY);  // Placeholder color for the profile picture
 		 centerPanel.add(profilePhoto);
-
-		 // Title for "Personal Information"		 
-		 
+ 
 
 		 // Define left and right positions for alternating columns
 		 int leftX = 500;
@@ -275,8 +279,54 @@ public class UserView extends JFrame {
 		 tfZip.setHorizontalAlignment(SwingConstants.LEADING); // Align text field to leading
 		 centerPanel.add(titleZip);
 		 centerPanel.add(tfZip);
+		 yPosition += 150;
+		 
+		 changeData.setBounds(800, yPosition, 200, 50);
+		 changeData.setText("Modifica");
+		 changeData.setForeground(Color.WHITE);
+		 changeData.setFont(new Font("SansSerif", Font.BOLD, 16));
+		 changeData.setBackground(new Color(210, 105, 30));
+		 centerPanel.add(changeData);
 	    }
 
+	 private void setupActionListeners() {
+	        // Action listener for the user button
+	        userButton.addActionListener(e -> {
+	            NewWindowController.openLoginPanel(MainController.loginV);
+	            this.setVisible(false);
+	        });
+
+	        // Action listener for the home button
+	        homeButton.addActionListener(e -> {
+				NewWindowController.openHomePanel(MainController.homeV);
+				setVisible(false);
+			});
+			
+	        // Action listener for the theme switch button
+	        switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+	        
+	        changeData.addActionListener(e -> {
+	        	UserInfoController.enableTextFields();
+	        	saveData.setVisible(true);
+	        	discardData.setVisible(true);
+	        	changeData.setVisible(false);
+	        });
+	        
+	        saveData.addActionListener(e -> {
+	        	UserInfoController.disableTextFields();
+	        	saveData.setVisible(false);
+	        	discardData.setVisible(false);
+	        	changeData.setVisible(true);
+	        });
+	        
+	        discardData.addActionListener(e -> {
+	        	UserInfoController.disableTextFields();
+	        	saveData.setVisible(false);
+	        	discardData.setVisible(false);
+	        	changeData.setVisible(true);
+	        });
+	 }
+	 
 	/**
 	 * Stores the bounds of all components for resizing.
 	 */

@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jooq.DSLContext;
 import org.jooq.Record1;
 import org.jooq.Record2;
+import org.jooq.Record9;
 import org.jooq.Result;
 import org.jxmapviewer.viewer.GeoPosition;
 
@@ -345,6 +347,56 @@ public class QueryDB {
 			System.out.println("Mail: " + mail);
 		}
 	}
+	
+	 /**
+     * Fetches all email addresses from the User table.
+     *
+     * @return List<String> containing all user emails.
+     * @throws SQLException if a database access error occurs.
+     */
+    public static List<String> getAllUserEmails() throws SQLException {
+        // Initialize the DSL context to interact with the database
+        DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+
+        // Fetch all emails from the User table
+        Result<Record1<String>> result = create.select(User.USER.MAIL)
+                                               .from(User.USER)
+                                               .fetch();
+
+        // Convert the result into a List<String>
+        List<String> emails = new ArrayList<>();
+        for (Record1<String> record : result) {
+            emails.add(record.value1());
+        }
+
+        // Return the list of emails
+        return emails;
+    }
+    
+    /**
+     * Fetches all email addresses from the User table.
+     *
+     * @return List<String> containing all user emails.
+     * @throws SQLException if a database access error occurs.
+     */
+    public static List<String> getAllUserPassword() throws SQLException {
+        // Initialize the DSL context to interact with the database
+        DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+
+        // Fetch all emails from the User table
+        Result<Record1<String>> result = create.select(User.USER.PASSWORD)
+                                               .from(User.USER)
+                                               .fetch();
+
+        // Convert the result into a List<String>
+        List<String> passwords = new ArrayList<>();
+        for (Record1<String> record : result) {
+        	passwords.add(record.value1());
+        }
+
+        // Return the list of emails
+        return passwords;
+    }
 
 	public static void getRoleUser() throws SQLException {
 		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
@@ -358,4 +410,43 @@ public class QueryDB {
 		}
 	}
 
+	
+	public static List<String> getUserDetailsByEmail(String email) throws SQLException {
+        DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+
+        // Fetch the user record with the specified email
+        @Nullable Record9<String, String, String, String, String, String, String, String, Integer> record = create.select(
+                User.USER.NAME,
+                User.USER.SURNAME,
+                User.USER.USERNAME,
+                User.USER.DATE_OF_BIRTH,
+                User.USER.ADDRESS,
+                User.USER.TOWN,
+                User.USER.CAP,
+                User.USER.MAIL,
+                User.USER.ROLE
+        ).from(User.USER)
+         .where(User.USER.MAIL.eq(email)) // Condition to filter by email
+         .fetchOne();
+
+        if (record != null) {
+            // Create a list of user details
+            List<String> userDetails = new ArrayList<>();
+            userDetails.add(record.get(User.USER.NAME));
+            userDetails.add(record.get(User.USER.SURNAME));
+            userDetails.add(record.get(User.USER.USERNAME));
+            userDetails.add(record.get(User.USER.DATE_OF_BIRTH));
+            userDetails.add(record.get(User.USER.ADDRESS));
+            userDetails.add(record.get(User.USER.TOWN));
+            userDetails.add(record.get(User.USER.CAP));
+            userDetails.add(record.get(User.USER.MAIL));
+            userDetails.add(record.get(User.USER.ROLE).toString());
+
+            return userDetails; // Return the list
+        } else {
+            // Return an empty list if no user is found
+            return new ArrayList<>();
+        }
+    }
 }
+

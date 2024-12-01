@@ -52,7 +52,7 @@ public class ResizeController {
             	MediumLabel label = (MediumLabel) comp;
                 
                 // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
-                int fontSize = Math.max(jframe.getWidth() / 80, 10);  // La dimensione del font deve essere almeno 10
+                int fontSize = Math.max(jframe.getWidth() / 90, 10);  // La dimensione del font deve essere almeno 10
 
                 // Impostiamo il nuovo font per la JLabel
                 label.setFont(new Font("SanSerif", Font.BOLD, fontSize));

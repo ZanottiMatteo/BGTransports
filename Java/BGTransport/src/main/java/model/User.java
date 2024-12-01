@@ -26,10 +26,7 @@ public class User {
      * @param birthday The user's birthday in string format.
      * @param role The user's role as an integer (1 - Normal User | 2 = Manager | 3 = Developer)
      */
-    public User(String name, String surname, String birthday, int role){
-        this.name = name;        
-        this.surname = surname;  
-        this.birthday = birthday; 
-        this.role = role;    
+    public User(){
+ 
     }
 }

@@ -71,6 +71,7 @@ public class NewWindowController {
 		SwingUtilities.invokeLater(() -> {
 			userV.setVisible(true);
 		});
+		UserInfoController.disableTextFields();
 		userV.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {

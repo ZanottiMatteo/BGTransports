@@ -19,6 +19,7 @@ import view.LoginView;
 import view.MapView;
 import model.QueryDB;
 import model.RegisteredUser;
+import model.User;
 import model.WeatherModel;
 
 public class MainController {
