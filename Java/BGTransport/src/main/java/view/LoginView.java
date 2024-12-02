@@ -43,6 +43,7 @@ public class LoginView extends JFrame {
     public RoundedPanel centerPanel = new RoundedPanel();
     public final Point centerPanelpoint = new Point(580, 167);
     public LittleLabel lblPassword = new LittleLabel("Password");
+    public MiniLabel ErrorLabel = new MiniLabel();
 
     // Map to store component bounds for later resizing
     public Map<Component, Rectangle> componentBounds = new HashMap<>();
@@ -51,6 +52,7 @@ public class LoginView extends JFrame {
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
     public final Dimension MinPanelSize = new Dimension(1150, 660);
     public final Dimension CentralPanelSize = new Dimension(760, 644);
+    
     
     public LoginView() {
         // Initialize main panel
@@ -191,6 +193,13 @@ public class LoginView extends JFrame {
         lblPassword.setFont(new Font("SansSerif", Font.BOLD, 12));
         lblPassword.setBounds(852, 515, 150, 30);
         mainPanel.add(lblPassword);
+        
+        ErrorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        ErrorLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
+        ErrorLabel.setForeground(new Color(255, 0, 0));
+        ErrorLabel.setBounds(580, 605, 760, 30);
+        ErrorLabel.setVisible(false);
+        mainPanel.add(ErrorLabel);
     }
 
     /**

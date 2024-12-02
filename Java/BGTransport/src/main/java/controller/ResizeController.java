@@ -24,6 +24,7 @@ import model.ResizableImage;
 import view.BigLabel;
 import view.LittleLabel;
 import view.MediumLabel;
+import view.MiniLabel;
 
 public class ResizeController {
 
@@ -48,6 +49,14 @@ public class ResizeController {
 
                 // Impostiamo il nuovo font per la JLabel
                 label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
+            } else if (comp instanceof MiniLabel) {
+            	MiniLabel label = (MiniLabel) comp;
+                
+                // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
+                int fontSize = Math.max(jframe.getWidth() / 130, 10);  // La dimensione del font deve essere almeno 10
+
+                // Impostiamo il nuovo font per la JLabel
+                label.setFont(new Font("SanSerif", Font.ITALIC, fontSize));
             } else if (comp instanceof MediumLabel) {
             	MediumLabel label = (MediumLabel) comp;
                 

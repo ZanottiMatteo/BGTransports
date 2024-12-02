@@ -228,7 +228,7 @@ public class HomeView extends JFrame {
 		// User button.
 		userButton = createMenuButton(iconUser, 20, 20);
 		userButton.addActionListener(e -> {
-			NewWindowController.openUserPanel(MainController.userV);
+			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
 			setVisible(false);
 		});
 		menuPanel.add(userButton);

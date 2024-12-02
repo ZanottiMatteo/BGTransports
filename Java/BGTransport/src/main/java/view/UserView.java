@@ -46,7 +46,7 @@ public class UserView extends JFrame {
 	public final Point centerpanelpoint = new Point(200, 30);
 	
 	private CircleLabel profilePhoto = new CircleLabel();
-	private BigLabel titlePersonalInfo = new BigLabel("Personal Information");
+	private BigLabel titlePersonalInfo = new BigLabel("Dati Personali");
 	
 	private MediumLabel titleUsername = new MediumLabel("Username");
 	private MediumLabel titleEmail = new MediumLabel("Email");
@@ -216,7 +216,7 @@ public class UserView extends JFrame {
 		 int yOffset = 40; 
 		 int yPosition = 100; // Start from this Y posit
 
-		 titlePersonalInfo.setBounds(leftX + 100, yPosition, 500, 50);
+		 titlePersonalInfo.setBounds(leftX + 150, yPosition, 500, 50);
 		 centerPanel.add(titlePersonalInfo);
 		 yPosition += 80;
 		 

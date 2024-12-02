@@ -7,7 +7,7 @@ public class RegisteredUser extends User{
 	String name;
 	String surname;
 	String birthday;
-	String email;
+	String email = null;
 	String password;
 	String username;
 	String address;

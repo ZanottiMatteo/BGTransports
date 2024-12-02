@@ -67,6 +67,13 @@ public class NewWindowController {
 		});
 	}
 	
+	public static void choseUserLogin(UserView userV, LoginView loginV) {
+		if (LoginController.user.getEmail() != null ) {
+			openUserPanel(userV);		
+		}
+		else openLoginPanel(loginV);
+	}
+	
 	public static void openUserPanel(UserView userV) {
 		SwingUtilities.invokeLater(() -> {
 			userV.setVisible(true);
@@ -89,7 +96,6 @@ public class NewWindowController {
 	}
 
 	public static void openLoginPanel(LoginView loginV) {
-
 		SwingUtilities.invokeLater(() -> {
 			loginV.setVisible(true);
 		});
@@ -106,7 +112,6 @@ public class NewWindowController {
 	}
 
 	public static void openSignUp(SignUpView signupV) {
-
 		SwingUtilities.invokeLater(() -> {
 			signupV.setVisible(true);
 		});
