@@ -123,7 +123,7 @@ public class WeatherModel {
                 // Get the image stream
                 InputStream inputStream = connection.getInputStream();
                 BufferedImage image = ImageIO.read(inputStream);
-                image.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+                image.getScaledInstance(150, 150, Image.SCALE_REPLICATE);
                 inputStream.close();
                 return new ImageIcon(image);
             } else System.out.println("error");

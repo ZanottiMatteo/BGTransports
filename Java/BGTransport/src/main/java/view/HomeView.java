@@ -158,12 +158,12 @@ public class HomeView extends JFrame {
 		lblweatherwind.setFont(new Font("SansSerif", Font.BOLD, 70));
 		lblweatherwind.setBounds(140, 100, 200, 50);
 
-		lblweatherimg.setVerticalAlignment(SwingConstants.TOP);
-		lblweatherimg.setHorizontalAlignment(SwingConstants.LEFT);
+		lblweatherimg.setVerticalAlignment(SwingConstants.CENTER);
+		lblweatherimg.setHorizontalAlignment(SwingConstants.CENTER);
 		lblweatherimg.setIcon(iconWeather);
 		lblweatherimg.setLocation(25, 75);
 		lblweatherimg.setSize(100, 100);
-		lblweatherimg.setCircleColor(new Color(87, 198, 250));
+		lblweatherimg.setCircleColor(new Color(76, 170, 252));
 
 		lblweathertxt.setHorizontalAlignment(SwingConstants.LEFT);
 		lblweathertxt.setForeground(new Color(210, 105, 30));
