@@ -51,7 +51,7 @@ public class HomeView extends JFrame {
 	public static RoundedPanel miniMapPanel = new RoundedPanel();
 	public final Point miniMapPanelPoint = new Point(1200, 30);
 	public final Point mappoint = new Point(25, 25);
-	
+
 	// Weather-related fields.
 	public CircleLabel lblweatherimg = new CircleLabel("");
 	public JLabel lblweathertxt = new JLabel("🏠 Bergamo");
@@ -77,6 +77,7 @@ public class HomeView extends JFrame {
 	public final Dimension MinPanelSize = new Dimension(1085, 615);
 	public final Dimension MapSize = new Dimension(550, 350);
 	public final Dimension MapPanelSize = new Dimension(600, 400);
+
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
 	 * view. It also initializes the main panel, menu panel, and other UI elements.
@@ -135,7 +136,7 @@ public class HomeView extends JFrame {
 
 		// Menu buttons setup.
 		setupMenuButtons();
-		
+
 		// Mini Map panel setup.
 		setupMiniMapPanel();
 
@@ -220,7 +221,6 @@ public class HomeView extends JFrame {
 		homePanel.add(miniMapPanel);
 	}
 
-	
 	/**
 	 * Configures menu buttons (user, map, theme switch).
 	 */
@@ -229,6 +229,7 @@ public class HomeView extends JFrame {
 		userButton = createMenuButton(iconUser, 20, 20);
 		userButton.addActionListener(e -> {
 			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
+			
 			setVisible(false);
 		});
 		menuPanel.add(userButton);
@@ -236,7 +237,7 @@ public class HomeView extends JFrame {
 		// User button.
 		homeButton = createMenuButton(iconHome, 20, 140);
 		menuPanel.add(homeButton);
-		
+
 		// Map button.
 		mapButton = createMenuButton(iconMap, 20, 260);
 		mapButton.addActionListener(e -> {
@@ -287,9 +288,9 @@ public class HomeView extends JFrame {
 	 */
 	private void initComponents() {
 		setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-        setMinimumSize(MinPanelSize); // Set minimum window size
-        setTitle("BGTransport"); // Set window title
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
-        setLocationRelativeTo(null); // Center the window on the screen
+		setMinimumSize(MinPanelSize); // Set minimum window size
+		setTitle("BGTransport"); // Set window title
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
+		setLocationRelativeTo(null); // Center the window on the screen
 	}
 }

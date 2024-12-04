@@ -86,9 +86,8 @@ public class WeatherModel {
         }
 	}
 	
-	@SuppressWarnings("deprecation")
+
 	public static ImageIcon getWeatherIcon() {
-		String iconPath;
         String code = Integer.toString(weathercode);
         System.out.println(code);
         try (FileReader openJSON = new FileReader("json/weather_images.json")) {

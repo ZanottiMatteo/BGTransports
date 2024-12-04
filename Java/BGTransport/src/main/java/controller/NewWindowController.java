@@ -6,6 +6,7 @@ import java.awt.event.ComponentEvent;
 
 import javax.swing.SwingUtilities;
 
+import view.AccountIconView;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
@@ -115,6 +116,12 @@ public class NewWindowController {
 		SwingUtilities.invokeLater(() -> {
 			signupV.setVisible(true);
 		});
+	}
+	public static void openAccountIconPanel(AccountIconView accountIconV) {
+		AccountController.showImages();
+	    SwingUtilities.invokeLater(() -> {
+	        accountIconV.setVisible(true);
+	    });
 	}
 
 }

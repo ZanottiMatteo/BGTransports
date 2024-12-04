@@ -69,6 +69,7 @@ public class UserView extends JFrame {
 	public JButton changeData = new JButton();
 	public JButton saveData = new JButton();
 	public JButton discardData = new JButton();
+	public JButton chooseIcon = new JButton();
 	
 	// Background wallpaper.
 	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
@@ -202,14 +203,18 @@ public class UserView extends JFrame {
 		 centerPanel.setBounds(200, 30, 1600, 900); // Adjust the panel size as needed
 		 centerPanel.setLayout(null);
 		 homePanel.add(centerPanel);
+		 
+		 chooseIcon.setBounds(110, 70, 250, 250);
+		 chooseIcon.setBorderPainted(false);
+		 chooseIcon.setBackground(new Color(0, 0, 0, 0));
+		 centerPanel.add(chooseIcon);
 
 		 // Profile Picture Placeholder (circular placeholder)
 
 		 profilePhoto.setBounds(110, 70, 250, 250);  // Circular placeholder
 		 profilePhoto.setCircleColor(Color.GRAY);  // Placeholder color for the profile picture
 		 centerPanel.add(profilePhoto);
- 
-
+		 
 		 // Define left and right positions for alternating columns
 		 int leftX = 500;
 		 int rightX = 1000;
@@ -324,6 +329,10 @@ public class UserView extends JFrame {
 	        	saveData.setVisible(false);
 	        	discardData.setVisible(false);
 	        	changeData.setVisible(true);
+	        });
+	        
+	        chooseIcon.addActionListener(e -> {
+	        	NewWindowController.openAccountIconPanel(MainController.accountV);
 	        });
 	 }
 	 
