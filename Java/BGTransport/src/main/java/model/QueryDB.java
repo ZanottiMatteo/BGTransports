@@ -13,21 +13,21 @@ import org.jooq.Record9;
 import org.jooq.Result;
 import org.jxmapviewer.viewer.GeoPosition;
 
-import transportation.jooq.generated.tables.FunicularStation;
-import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.TrainStation;
-import transportation.jooq.generated.tables.TramStop;
+import transportation.jooq.generated.tables.Funicularstation;
+import transportation.jooq.generated.tables.Pullmanstop;
+import transportation.jooq.generated.tables.Trainstation;
+import transportation.jooq.generated.tables.Tramstop;
 import user.jooq.generated.tables.User;
 
 public class QueryDB {
 
 	public static List<String> getLatFunicularStation() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
-		List<String> latitude = new ArrayList();
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
+		List<String> latitude = new ArrayList<String>();
 		
 		@NotNull
-		Result<Record1<String>> result = create.select(FunicularStation.FUNICULAR_STATION.LAT)
-				.from(FunicularStation.FUNICULAR_STATION).fetch();
+		Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LAT)
+				.from(Funicularstation.FUNICULARSTATION).fetch();
 
 		for (Record1<String> record : result) {
 			String lat = record.value1();
@@ -39,12 +39,12 @@ public class QueryDB {
 
 	public static String getLatFunicularStation(int index) throws SQLException {
 	    // Creazione del contesto DSL
-	    DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 	    // Esegui la query per ottenere tutte le latitudini
 	    @NotNull
-	    Result<Record1<String>> result = create.select(FunicularStation.FUNICULAR_STATION.LAT)
-	            .from(FunicularStation.FUNICULAR_STATION)
+	    Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LAT)
+	            .from(Funicularstation.FUNICULARSTATION)
 	            .fetch();
 
 	    // Controllo che l'indice sia valido
@@ -60,12 +60,12 @@ public class QueryDB {
 	}
 	
 	public static List<String> getLonFunicularStation() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
-		List<String> longitude = new ArrayList();
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
+		List<String> longitude = new ArrayList<String>();
 		
 		@NotNull
-		Result<Record1<String>> result = create.select(FunicularStation.FUNICULAR_STATION.LON)
-				.from(FunicularStation.FUNICULAR_STATION).fetch();
+		Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LON)
+				.from(Funicularstation.FUNICULARSTATION).fetch();
 
 		for (Record1<String> record : result) {
 			String lon = record.value1();
@@ -77,12 +77,12 @@ public class QueryDB {
 	
 	public static String getLongFunicularStation(int index) throws SQLException {
 	    // Creazione del contesto DSL
-	    DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 	    // Esegui la query per ottenere tutte le latitudini
 	    @NotNull
-	    Result<Record1<String>> result = create.select(FunicularStation.FUNICULAR_STATION.LON)
-	            .from(FunicularStation.FUNICULAR_STATION)
+	    Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LON)
+	            .from(Funicularstation.FUNICULARSTATION)
 	            .fetch();
 
 	    // Controllo che l'indice sia valido
@@ -97,12 +97,12 @@ public class QueryDB {
 	}
 	
 	public static List<GeoPosition> getFunicularGeopositions() throws SQLException {
-	    DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 	    List<GeoPosition> geopositions = new ArrayList<>();
 
 	    @NotNull
-	    Result<Record2<String, String>> result = create.select(FunicularStation.FUNICULAR_STATION.LAT, FunicularStation.FUNICULAR_STATION.LON)
-	            .from(FunicularStation.FUNICULAR_STATION)
+	    Result<Record2<String, String>> result = create.select(Funicularstation.FUNICULARSTATION.LAT, Funicularstation.FUNICULARSTATION.LON)
+	            .from(Funicularstation.FUNICULARSTATION)
 	            .fetch();
 
 	    for (Record2<String, String> record : result) {
@@ -116,10 +116,10 @@ public class QueryDB {
 	}
 
 	public static void getLatPullmanStop() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(PullmanStop.PULLMAN_STOP.LAT).from(PullmanStop.PULLMAN_STOP)
+		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.LAT).from(Pullmanstop.PULLMANSTOP)
 				.fetch();
 
 		for (Record1<String> record : result) {
@@ -129,10 +129,10 @@ public class QueryDB {
 	}
 
 	public static void getLonPullmanStop() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(PullmanStop.PULLMAN_STOP.LON).from(PullmanStop.PULLMAN_STOP)
+		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.LON).from(Pullmanstop.PULLMANSTOP)
 				.fetch();
 
 		for (Record1<String> record : result) {
@@ -142,12 +142,12 @@ public class QueryDB {
 	}
 	
 	public static List<GeoPosition> getPullmanGeopositions() throws SQLException {
-	    DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 	    List<GeoPosition> geopositions = new ArrayList<>();
 
 	    @NotNull
-	    Result<Record2<String, String>> result = create.select(PullmanStop.PULLMAN_STOP.LAT, PullmanStop.PULLMAN_STOP.LON)
-	            .from(PullmanStop.PULLMAN_STOP)
+	    Result<Record2<String, String>> result = create.select(Pullmanstop.PULLMANSTOP.LAT, Pullmanstop.PULLMANSTOP.LON)
+	            .from(Pullmanstop.PULLMANSTOP)
 	            .fetch();
 
 	    for (Record2<String, String> record : result) {
@@ -162,10 +162,10 @@ public class QueryDB {
 	}
 
 	public static void getLatTrainStation() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(TrainStation.TRAIN_STATION.LAT).from(TrainStation.TRAIN_STATION)
+		Result<Record1<String>> result = create.select(Trainstation.TRAINSTATION.LAT).from(Trainstation.TRAINSTATION)
 				.fetch();
 
 		for (Record1<String> record : result) {
@@ -175,10 +175,10 @@ public class QueryDB {
 	}
 
 	public static void getLonTrainStation() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(TrainStation.TRAIN_STATION.LON).from(TrainStation.TRAIN_STATION)
+		Result<Record1<String>> result = create.select(Trainstation.TRAINSTATION.LON).from(Trainstation.TRAINSTATION)
 				.fetch();
 
 		for (Record1<String> record : result) {
@@ -188,12 +188,12 @@ public class QueryDB {
 	}
 
 	public static List<GeoPosition> getTrainGeopositions() throws SQLException {
-	    DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 	    List<GeoPosition> geopositions = new ArrayList<>();
 
 	    @NotNull
-	    Result<Record2<String, String>> result = create.select(TrainStation.TRAIN_STATION.LAT, TrainStation.TRAIN_STATION.LON)
-	            .from(TrainStation.TRAIN_STATION)
+	    Result<Record2<String, String>> result = create.select(Trainstation.TRAINSTATION.LAT, Trainstation.TRAINSTATION.LON)
+	            .from(Trainstation.TRAINSTATION)
 	            .fetch();
 
 	    for (Record2<String, String> record : result) {
@@ -208,10 +208,10 @@ public class QueryDB {
 	}
 	
 	public static void getLatTramStop() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(TramStop.TRAM_STOP.LAT).from(TramStop.TRAM_STOP).fetch();
+		Result<Record1<String>> result = create.select(Tramstop.TRAMSTOP.LAT).from(Tramstop.TRAMSTOP).fetch();
 
 		for (Record1<String> record : result) {
 			String lat = record.value1();
@@ -220,10 +220,10 @@ public class QueryDB {
 	}
 
 	public static void getLonTramStop() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(TramStop.TRAM_STOP.LON).from(TramStop.TRAM_STOP).fetch();
+		Result<Record1<String>> result = create.select(Tramstop.TRAMSTOP.LON).from(Tramstop.TRAMSTOP).fetch();
 
 		for (Record1<String> record : result) {
 			String lon = record.value1();
@@ -232,12 +232,12 @@ public class QueryDB {
 	}
 	
 	public static List<GeoPosition> getTramGeopositions() throws SQLException {
-	    DSLContext create = ControlDB.DSLContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlPublicTransportation);
 	    List<GeoPosition> geopositions = new ArrayList<>();
 
 	    @NotNull
-	    Result<Record2<String, String>> result = create.select(TramStop.TRAM_STOP.LAT, TramStop.TRAM_STOP.LON)
-	            .from(TramStop.TRAM_STOP)
+	    Result<Record2<String, String>> result = create.select(Tramstop.TRAMSTOP.LAT, Tramstop.TRAMSTOP.LON)
+	            .from(Tramstop.TRAMSTOP)
 	            .fetch();
 
 	    for (Record2<String, String> record : result) {
@@ -253,7 +253,7 @@ public class QueryDB {
 
 
 	public static void getNameUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.NAME).from(User.USER).fetch();
@@ -265,7 +265,7 @@ public class QueryDB {
 	}
 
 	public static void getSurnameUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.SURNAME).from(User.USER).fetch();
@@ -277,7 +277,7 @@ public class QueryDB {
 	}
 
 	public static void getUsernameUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.USERNAME).from(User.USER).fetch();
@@ -289,10 +289,10 @@ public class QueryDB {
 	}
 
 	public static void getBirthdayUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.DATE_OF_BIRTH).from(User.USER).fetch();
+		Result<Record1<String>> result = create.select(User.USER.DATEOFBIRTH).from(User.USER).fetch();
 
 		for (Record1<String> record : result) {
 			String birthday = record.value1();
@@ -301,7 +301,7 @@ public class QueryDB {
 	}
 
 	public static void getAddressUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.ADDRESS).from(User.USER).fetch();
@@ -313,7 +313,7 @@ public class QueryDB {
 	}
 
 	public static void getTownUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.TOWN).from(User.USER).fetch();
@@ -325,7 +325,7 @@ public class QueryDB {
 	}
 
 	public static void getCAPUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.CAP).from(User.USER).fetch();
@@ -337,7 +337,7 @@ public class QueryDB {
 	}
 
 	public static void getMailUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.MAIL).from(User.USER).fetch();
@@ -356,7 +356,7 @@ public class QueryDB {
      */
     public static List<String> getAllUserEmails() throws SQLException {
         // Initialize the DSL context to interact with the database
-        DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+        DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
         // Fetch all emails from the User table
         Result<Record1<String>> result = create.select(User.USER.MAIL)
@@ -381,7 +381,7 @@ public class QueryDB {
      */
     public static List<String> getAllUserPassword() throws SQLException {
         // Initialize the DSL context to interact with the database
-        DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+        DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
         // Fetch all emails from the User table
         Result<Record1<String>> result = create.select(User.USER.PASSWORD)
@@ -399,7 +399,7 @@ public class QueryDB {
     }
 
 	public static void getRoleUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
 		Result<Record1<Integer>> result = create.select(User.USER.ROLE).from(User.USER).fetch();
@@ -412,14 +412,14 @@ public class QueryDB {
 
 	
 	public static List<String> getUserDetailsByEmail(String email) throws SQLException {
-        DSLContext create = ControlDB.DSLContext(Constant.DB_URL_USERS);
+        DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
         // Fetch the user record with the specified email
         @Nullable Record9<String, String, String, String, String, String, String, String, Integer> record = create.select(
                 User.USER.NAME,
                 User.USER.SURNAME,
                 User.USER.USERNAME,
-                User.USER.DATE_OF_BIRTH,
+                User.USER.DATEOFBIRTH,
                 User.USER.ADDRESS,
                 User.USER.TOWN,
                 User.USER.CAP,
@@ -435,7 +435,7 @@ public class QueryDB {
             userDetails.add(record.get(User.USER.NAME));
             userDetails.add(record.get(User.USER.SURNAME));
             userDetails.add(record.get(User.USER.USERNAME));
-            userDetails.add(record.get(User.USER.DATE_OF_BIRTH));
+            userDetails.add(record.get(User.USER.DATEOFBIRTH));
             userDetails.add(record.get(User.USER.ADDRESS));
             userDetails.add(record.get(User.USER.TOWN));
             userDetails.add(record.get(User.USER.CAP));

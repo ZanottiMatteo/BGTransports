@@ -20,7 +20,7 @@ public class SignUpController {
 							  JPasswordField passwordField, JPasswordField passwordconfField, JTextField usernameField, 
 							  JTextField addressField, JTextField cityField, JTextField zipcodeField) throws SQLException {
 		
-		DSLContext user = ControlDB.DSLContext(Constant.DB_URL_USERS);
+		DSLContext user = ControlDB.DSLContext(Constant.DBUrlUsers);
 		
 		String name = nameField.getText();
 		String surname = surnameField.getText();
@@ -57,7 +57,7 @@ public class SignUpController {
 			user.insertInto(User.USER)
 			.set(User.USER.NAME, name)
 			.set(User.USER.SURNAME, surname)
-			.set(User.USER.DATE_OF_BIRTH, birthday)
+			.set(User.USER.DATEOFBIRTH, birthday)
 			.set(User.USER.ROLE, role)
 			.set(User.USER.MAIL, email)
 			.set(User.USER.PASSWORD, password)

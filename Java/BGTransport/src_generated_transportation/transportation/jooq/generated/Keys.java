@@ -10,23 +10,23 @@ import org.jooq.impl.DSL;
 import org.jooq.impl.Internal;
 
 import transportation.jooq.generated.tables.Company;
-import transportation.jooq.generated.tables.Funicular;
-import transportation.jooq.generated.tables.FunicularStation;
-import transportation.jooq.generated.tables.Pullman;
-import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.Train;
-import transportation.jooq.generated.tables.TrainStation;
-import transportation.jooq.generated.tables.Tram;
-import transportation.jooq.generated.tables.TramStop;
+import transportation.jooq.generated.tables.Funicularstation;
+import transportation.jooq.generated.tables.Funiculartimetable;
+import transportation.jooq.generated.tables.Pullmanstop;
+import transportation.jooq.generated.tables.Pullmantimetable;
+import transportation.jooq.generated.tables.Trainstation;
+import transportation.jooq.generated.tables.Traintimetable;
+import transportation.jooq.generated.tables.Tramstop;
+import transportation.jooq.generated.tables.Tramtimetable;
 import transportation.jooq.generated.tables.records.CompanyRecord;
-import transportation.jooq.generated.tables.records.FunicularRecord;
-import transportation.jooq.generated.tables.records.FunicularStationRecord;
-import transportation.jooq.generated.tables.records.PullmanRecord;
-import transportation.jooq.generated.tables.records.PullmanStopRecord;
-import transportation.jooq.generated.tables.records.TrainRecord;
-import transportation.jooq.generated.tables.records.TrainStationRecord;
-import transportation.jooq.generated.tables.records.TramRecord;
-import transportation.jooq.generated.tables.records.TramStopRecord;
+import transportation.jooq.generated.tables.records.FunicularstationRecord;
+import transportation.jooq.generated.tables.records.FuniculartimetableRecord;
+import transportation.jooq.generated.tables.records.PullmanstopRecord;
+import transportation.jooq.generated.tables.records.PullmantimetableRecord;
+import transportation.jooq.generated.tables.records.TrainstationRecord;
+import transportation.jooq.generated.tables.records.TraintimetableRecord;
+import transportation.jooq.generated.tables.records.TramstopRecord;
+import transportation.jooq.generated.tables.records.TramtimetableRecord;
 
 
 /**
@@ -40,13 +40,13 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<CompanyRecord> COMPANY__PK_COMPANY = Internal.createUniqueKey(Company.COMPANY, DSL.name("PK_COMPANY"), new TableField[] { Company.COMPANY.NAME }, true);
-    public static final UniqueKey<FunicularRecord> FUNICULAR__PK_FUNICULAR = Internal.createUniqueKey(Funicular.FUNICULAR, DSL.name("PK_FUNICULAR"), new TableField[] { Funicular.FUNICULAR.ID }, true);
-    public static final UniqueKey<FunicularStationRecord> FUNICULAR_STATION__PK_FUNICULAR_STATION = Internal.createUniqueKey(FunicularStation.FUNICULAR_STATION, DSL.name("PK_FUNICULAR STATION"), new TableField[] { FunicularStation.FUNICULAR_STATION.NAME }, true);
-    public static final UniqueKey<PullmanRecord> PULLMAN__PK_PULLMAN = Internal.createUniqueKey(Pullman.PULLMAN, DSL.name("PK_PULLMAN"), new TableField[] { Pullman.PULLMAN.ID }, true);
-    public static final UniqueKey<PullmanStopRecord> PULLMAN_STOP__PK_PULLMAN_STOP = Internal.createUniqueKey(PullmanStop.PULLMAN_STOP, DSL.name("PK_PULLMAN STOP"), new TableField[] { PullmanStop.PULLMAN_STOP.NAME }, true);
-    public static final UniqueKey<TrainRecord> TRAIN__PK_TRAIN = Internal.createUniqueKey(Train.TRAIN, DSL.name("PK_TRAIN"), new TableField[] { Train.TRAIN.ID }, true);
-    public static final UniqueKey<TrainStationRecord> TRAIN_STATION__PK_TRAIN_STATION = Internal.createUniqueKey(TrainStation.TRAIN_STATION, DSL.name("PK_TRAIN STATION"), new TableField[] { TrainStation.TRAIN_STATION.NAME }, true);
-    public static final UniqueKey<TramRecord> TRAM__PK_TRAM = Internal.createUniqueKey(Tram.TRAM, DSL.name("PK_TRAM"), new TableField[] { Tram.TRAM.ID }, true);
-    public static final UniqueKey<TramStopRecord> TRAM_STOP__PK_TRAM_STOP = Internal.createUniqueKey(TramStop.TRAM_STOP, DSL.name("PK_TRAM STOP"), new TableField[] { TramStop.TRAM_STOP.NAME }, true);
+    public static final UniqueKey<CompanyRecord> COMPANY__PK_COMPANY = Internal.createUniqueKey(Company.COMPANY, DSL.name("PK_company"), new TableField[] { Company.COMPANY.NAME }, true);
+    public static final UniqueKey<FunicularstationRecord> FUNICULARSTATION__PK_FUNICULARSTATION = Internal.createUniqueKey(Funicularstation.FUNICULARSTATION, DSL.name("PK_funicularStation"), new TableField[] { Funicularstation.FUNICULARSTATION.NAME }, true);
+    public static final UniqueKey<FuniculartimetableRecord> FUNICULARTIMETABLE__PK_FUNICULARTIMETABLE = Internal.createUniqueKey(Funiculartimetable.FUNICULARTIMETABLE, DSL.name("PK_funicularTimetable"), new TableField[] { Funiculartimetable.FUNICULARTIMETABLE.ID }, true);
+    public static final UniqueKey<PullmanstopRecord> PULLMANSTOP__PK_PULLMANSTOP = Internal.createUniqueKey(Pullmanstop.PULLMANSTOP, DSL.name("PK_pullmanStop"), new TableField[] { Pullmanstop.PULLMANSTOP.NAME }, true);
+    public static final UniqueKey<PullmantimetableRecord> PULLMANTIMETABLE__PK_PULLMANTIMETABLE = Internal.createUniqueKey(Pullmantimetable.PULLMANTIMETABLE, DSL.name("PK_pullmanTimetable"), new TableField[] { Pullmantimetable.PULLMANTIMETABLE.ID }, true);
+    public static final UniqueKey<TrainstationRecord> TRAINSTATION__PK_TRAINSTATION = Internal.createUniqueKey(Trainstation.TRAINSTATION, DSL.name("PK_trainStation"), new TableField[] { Trainstation.TRAINSTATION.NAME }, true);
+    public static final UniqueKey<TraintimetableRecord> TRAINTIMETABLE__PK_TRAINTIMETABLE = Internal.createUniqueKey(Traintimetable.TRAINTIMETABLE, DSL.name("PK_trainTimetable"), new TableField[] { Traintimetable.TRAINTIMETABLE.ID }, true);
+    public static final UniqueKey<TramstopRecord> TRAMSTOP__PK_TRAMSTOP = Internal.createUniqueKey(Tramstop.TRAMSTOP, DSL.name("PK_tramStop"), new TableField[] { Tramstop.TRAMSTOP.NAME }, true);
+    public static final UniqueKey<TramtimetableRecord> TRAMTIMETABLE__PK_TRAMTIMETABLE = Internal.createUniqueKey(Tramtimetable.TRAMTIMETABLE, DSL.name("PK_tramTimetable"), new TableField[] { Tramtimetable.TRAMTIMETABLE.ID }, true);
 }

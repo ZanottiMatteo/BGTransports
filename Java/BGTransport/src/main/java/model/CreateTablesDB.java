@@ -8,138 +8,138 @@ public class CreateTablesDB {
 
 	public static void createTablesPublicTransportation(DSLContext create) {
 		// Creates the "PULLMAN TIMETABLE" table if it does not already exist
-		create.createTableIfNotExists(Constant.pullman)
+		create.createTableIfNotExists(Constant.pullmanTimetable)
 				.column(Constant.id, SQLDataType.INTEGER) 
-				.column(Constant.company_name, SQLDataType.VARCHAR(255)) 
+				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.line, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_pullman_stop, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_time, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_pullman_stop, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_time, SQLDataType.VARCHAR(255))
-				.column(Constant.next_stop, SQLDataType.VARCHAR(255)) 
-				.column(Constant.time_stop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departurePullmanStop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departureTime, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalPullmanStop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalTime, SQLDataType.VARCHAR(255))
+				.column(Constant.nextStop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.timeStop, SQLDataType.VARCHAR(255)) 
 				.column(Constant.type, SQLDataType.VARCHAR(255))
-				.constraints(DSL.constraint("PK_" + Constant.pullman).primaryKey(Constant.id) 
+				.constraints(DSL.constraint("PK_" + Constant.pullmanTimetable).primaryKey(Constant.id) 
 				).execute();
-		System.out.println("Table " + Constant.pullman + " created successfully!");
+		System.out.println("Table " + Constant.pullmanTimetable + " created successfully!");
 
 		// Creates the "FUNICULAR TIMETABLE" table if it does not already exist
-		create.createTableIfNotExists(Constant.funicular)
+		create.createTableIfNotExists(Constant.funicularTimetable)
 				.column(Constant.id, SQLDataType.INTEGER) 
-				.column(Constant.company_name, SQLDataType.VARCHAR(255)) 
+				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_funicular_station, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_time, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_funicular_station, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_time, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departureFunicularStation, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departureTime, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalFunicularStation, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalTime, SQLDataType.VARCHAR(255)) 
 				.column(Constant.type, SQLDataType.VARCHAR(255)) 
-				.column(Constant.number_of_seats, SQLDataType.VARCHAR(255)) 
-				.constraints(DSL.constraint("PK_" + Constant.funicular).primaryKey(Constant.id) 
+				.column(Constant.numberOfSeats, SQLDataType.VARCHAR(255)) 
+				.constraints(DSL.constraint("PK_" + Constant.funicularTimetable).primaryKey(Constant.id) 
 				).execute();
-		System.out.println("Table " + Constant.funicular + " created successfully!");
+		System.out.println("Table " + Constant.funicularTimetable + " created successfully!");
 
 		// Creates the "TRAIN TIMETABLE" table if it does not already exist
-		create.createTableIfNotExists(Constant.train)
+		create.createTableIfNotExists(Constant.trainTimetable)
 				.column(Constant.id, SQLDataType.INTEGER) 
-				.column(Constant.company_name, SQLDataType.VARCHAR(255)) 
+				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_train_station, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_time, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_train_station, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_time, SQLDataType.VARCHAR(255)) 
-				.column(Constant.next_stop, SQLDataType.VARCHAR(255)) 
-				.column(Constant.time_stop, SQLDataType.VARCHAR(255))
-				.constraints(DSL.constraint("PK_" + Constant.train).primaryKey(Constant.id)
+				.column(Constant.departureTrainStation, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departureTime, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalTrainStation, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalTime, SQLDataType.VARCHAR(255)) 
+				.column(Constant.nextStop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.timeStop, SQLDataType.VARCHAR(255))
+				.constraints(DSL.constraint("PK_" + Constant.trainTimetable).primaryKey(Constant.id)
 				).execute();
-		System.out.println("Table " + Constant.train + " created successfully!");
+		System.out.println("Table " + Constant.trainTimetable + " created successfully!");
 
 		// Creates the "TRAM TIMETABLE" table if it does not already exist
-		create.createTableIfNotExists(Constant.tram)
+		create.createTableIfNotExists(Constant.tramTimetable)
 				.column(Constant.id, SQLDataType.INTEGER) 
-				.column(Constant.company_name, SQLDataType.VARCHAR(255)) 
+				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_tram_station, SQLDataType.VARCHAR(255)) 
-				.column(Constant.departure_time, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_tram_station, SQLDataType.VARCHAR(255)) 
-				.column(Constant.arrival_time, SQLDataType.VARCHAR(255)) 
-				.column(Constant.next_stop, SQLDataType.VARCHAR(255)) 
-				.column(Constant.time_stop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departureTramStation, SQLDataType.VARCHAR(255)) 
+				.column(Constant.departureTime, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalTramStation, SQLDataType.VARCHAR(255)) 
+				.column(Constant.arrivalTime, SQLDataType.VARCHAR(255)) 
+				.column(Constant.nextStop, SQLDataType.VARCHAR(255)) 
+				.column(Constant.timeStop, SQLDataType.VARCHAR(255)) 
 				.column(Constant.type, SQLDataType.VARCHAR(255)) 
-				.column(Constant.number_of_seats, SQLDataType.VARCHAR(255)) 
-				.column(Constant.number_of_carriages, SQLDataType.VARCHAR(255))
-				.constraints(DSL.constraint("PK_" + Constant.tram).primaryKey(Constant.id) 
+				.column(Constant.numberOfSeats, SQLDataType.VARCHAR(255)) 
+				.column(Constant.numberOfCarriages, SQLDataType.VARCHAR(255))
+				.constraints(DSL.constraint("PK_" + Constant.tramTimetable).primaryKey(Constant.id) 
 				).execute();
-		System.out.println("Table " + Constant.tram + " created successfully!");
+		System.out.println("Table " + Constant.tramTimetable + " created successfully!");
 
 		// Creates the "COMPANY" table if it does not already exist
 		create.createTableIfNotExists(Constant.company)
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
-				.column(Constant.legal_structure, SQLDataType.VARCHAR(255)) 
-				.column(Constant.business_tax_code, SQLDataType.VARCHAR(255)) // BUSINESS TAX CODE column
-				.column(Constant.company_registration_number, SQLDataType.VARCHAR(255)) // COMPANY REGISTRATION column
-				.column(Constant.incorporation_date, SQLDataType.VARCHAR(255)) // INCORPORATION DATE column
-				.column(Constant.legal_representative, SQLDataType.VARCHAR(255)) // LEGAL REPRESENTATIVE column
-				.column(Constant.number_of_employees, SQLDataType.VARCHAR(255)) // NUMBER OF EMPLOYEES column
-				.column(Constant.ATECO_code, SQLDataType.VARCHAR(255)) // ATECO CODE column
-				.column(Constant.registered_office, SQLDataType.VARCHAR(255)) // REGISTERED OFFICE column
+				.column(Constant.legalStructure, SQLDataType.VARCHAR(255)) 
+				.column(Constant.businessTaxCode, SQLDataType.VARCHAR(255)) // BUSINESS TAX CODE column
+				.column(Constant.companyRegistrationNumber, SQLDataType.VARCHAR(255)) // COMPANY REGISTRATION column
+				.column(Constant.incorporationDate, SQLDataType.VARCHAR(255)) // INCORPORATION DATE column
+				.column(Constant.legalRepresentative, SQLDataType.VARCHAR(255)) // LEGAL REPRESENTATIVE column
+				.column(Constant.numberOfEmployees, SQLDataType.VARCHAR(255)) // NUMBER OF EMPLOYEES column
+				.column(Constant.atecoCode, SQLDataType.VARCHAR(255)) // ATECO CODE column
+				.column(Constant.registeredOffice, SQLDataType.VARCHAR(255)) // REGISTERED OFFICE column
 				.column(Constant.province, SQLDataType.VARCHAR(255)) // PROVINCE column
 				.column(Constant.CAP, SQLDataType.VARCHAR(255)) // POSTAL CODE (CAP) column
 				.column(Constant.address, SQLDataType.VARCHAR(255)) // ADDRESS column
-				.column(Constant.street_number, SQLDataType.VARCHAR(255)) // STREET NUMBER column
+				.column(Constant.streetNumber, SQLDataType.VARCHAR(255)) // STREET NUMBER column
 				.column(Constant.telephone, SQLDataType.VARCHAR(255)) // TELEPHONE column
 				.column(Constant.mail, SQLDataType.VARCHAR(255)) // MAIL column
 				.column(Constant.social, SQLDataType.VARCHAR(255)) // SOCIAL NETWORK column
-				.column(Constant.web_site, SQLDataType.VARCHAR(255)) // WEB SITE column
+				.column(Constant.webSite, SQLDataType.VARCHAR(255)) // WEB SITE column
 				.constraints(DSL.constraint("PK_" + Constant.company).primaryKey(Constant.name)
 				).execute();
 		System.out.println("Table " + Constant.company + " created successfully!");
 
 		// Creates the "PULLMAN STOP" table if it does not already exist
-		create.createTableIfNotExists(Constant.pullman_stop)
+		create.createTableIfNotExists(Constant.pullmanStop)
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
 				.column(Constant.town, SQLDataType.VARCHAR(255)) 
 				.column(Constant.province, SQLDataType.VARCHAR(255))
 				.column(Constant.latitude, SQLDataType.VARCHAR(255)) 
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) 
-				.constraints(DSL.constraint("PK_" + Constant.pullman_stop).primaryKey(Constant.name) 
+				.constraints(DSL.constraint("PK_" + Constant.pullmanStop).primaryKey(Constant.name) 
 				).execute();
-		System.out.println("Table " + Constant.pullman_stop + " created successfully!");
+		System.out.println("Table " + Constant.pullmanStop + " created successfully!");
 
 		// Creates the "TRAM STOP" table if it does not already exist
-		create.createTableIfNotExists(Constant.tram_stop)
+		create.createTableIfNotExists(Constant.tramStop)
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
 				.column(Constant.address, SQLDataType.VARCHAR(255)) 
 				.column(Constant.town, SQLDataType.VARCHAR(255)) 
 				.column(Constant.province, SQLDataType.VARCHAR(255)) 
 				.column(Constant.latitude, SQLDataType.VARCHAR(255)) 
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) 
-				.constraints(DSL.constraint("PK_" + Constant.tram_stop).primaryKey(Constant.name) 
+				.constraints(DSL.constraint("PK_" + Constant.tramStop).primaryKey(Constant.name) 
 				).execute();
-		System.out.println("Table " + Constant.tram_stop + " created successfully!");
+		System.out.println("Table " + Constant.tramStop + " created successfully!");
 
 		// Creates the "FUNICULAR STATION" table if it does not already exist
-		create.createTableIfNotExists(Constant.funicular_station)
+		create.createTableIfNotExists(Constant.funicularStation)
 				.column(Constant.name, SQLDataType.VARCHAR(255))
 				.column(Constant.address, SQLDataType.VARCHAR(255)) 
 				.column(Constant.town, SQLDataType.VARCHAR(255)) 
 				.column(Constant.province, SQLDataType.VARCHAR(255)) 
 				.column(Constant.latitude, SQLDataType.VARCHAR(255)) 
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) 
-				.constraints(DSL.constraint("PK_" + Constant.funicular_station).primaryKey(Constant.name) 
+				.constraints(DSL.constraint("PK_" + Constant.funicularStation).primaryKey(Constant.name) 
 				).execute();
-		System.out.println("Table " + Constant.funicular_station + " created successfully!");
+		System.out.println("Table " + Constant.funicularStation + " created successfully!");
 
 		// Creates the "TRAIN STATION" table if it does not already exist
-		create.createTableIfNotExists(Constant.train_station)
+		create.createTableIfNotExists(Constant.trainStation)
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
 				.column(Constant.address, SQLDataType.VARCHAR(255)) 
 				.column(Constant.town, SQLDataType.VARCHAR(255)) 
 				.column(Constant.province, SQLDataType.VARCHAR(255))
 				.column(Constant.latitude, SQLDataType.VARCHAR(255)) 
 				.column(Constant.longitude, SQLDataType.VARCHAR(255)) 
-				.constraints(DSL.constraint("PK_" + Constant.train_station).primaryKey(Constant.name) 
+				.constraints(DSL.constraint("PK_" + Constant.trainStation).primaryKey(Constant.name) 
 				).execute();
-		System.out.println("Table " + Constant.train_station + " created successfully!");
+		System.out.println("Table " + Constant.trainStation + " created successfully!");
 	}
 
 	public static void createTablesUsers(DSLContext create) {
@@ -148,7 +148,7 @@ public class CreateTablesDB {
 				.column(Constant.username, SQLDataType.VARCHAR(100))
 				.column(Constant.name, SQLDataType.VARCHAR(100)) 
 				.column(Constant.surname, SQLDataType.VARCHAR(100))
-				.column(Constant.date_of_birth, SQLDataType.VARCHAR(20)) 
+				.column(Constant.dateOfBirth, SQLDataType.VARCHAR(20)) 
 				.column(Constant.address, SQLDataType.VARCHAR(50)) 
 				.column(Constant.town, SQLDataType.VARCHAR(50)) 
 				.column(Constant.CAP, SQLDataType.VARCHAR(100))

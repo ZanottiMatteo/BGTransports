@@ -1,0 +1,113 @@
+[ {
+  "name" : "BERGAMO FS",
+  "address" : "Piazza Marconi",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.691384",
+  "lon" : "9.676638"
+}, {
+  "name" : "BG BORGO PALAZZO",
+  "address" : "Via Borgo Palazzo",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.6960361",
+  "lon" : "9.6832942"
+}, {
+  "name" : "BG SAN FERMO",
+  "address" : "Via San Fermo",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.7003364",
+  "lon" : "9.6917255"
+}, {
+  "name" : "BG BIANZANA",
+  "address" : "Via Bianzana",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.7060552",
+  "lon" : "9.6891683"
+}, {
+  "name" : "BG REDONA",
+  "address" : "Via Redona",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.707883",
+  "lon" : "9.693156"
+}, {
+  "name" : "BG NEGRISOLI",
+  "address" : "Via Negrisoli",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.7099044",
+  "lon" : "9.6970347"
+}, {
+  "name" : "BG MARTINELLA",
+  "address" : "Via Martinella",
+  "town" : "Bergamo",
+  "province" : "BG",
+  "lat" : "45.710841",
+  "lon" : "9.701012"
+}, {
+  "name" : "TORRE BOLDONE",
+  "address" : "Via Fratelli Calvi",
+  "town" : "Torre Boldone",
+  "province" : "BG",
+  "lat" : "45.7225502",
+  "lon" : "9.7047931"
+}, {
+  "name" : "RANICA",
+  "address" : "Via Cimitero",
+  "town" : "Ranica",
+  "province" : "BG",
+  "lat" : "45.721365",
+  "lon" : "9.717638"
+}, {
+  "name" : "ALZANO CENTRO",
+  "address" : "Via Bonomelli",
+  "town" : "Alzano Lombardo",
+  "province" : "BG",
+  "lat" : "45.732206",
+  "lon" : "9.722752"
+}, {
+  "name" : "ALZANO SOPRA",
+  "address" : "Via San Giovanni",
+  "town" : "Alzano Sopra",
+  "province" : "BG",
+  "lat" : "45.73333",
+  "lon" : "9.73333"
+}, {
+  "name" : "NEMBRO CAMOZZI",
+  "address" : "Via Camozzi",
+  "town" : "Nembro",
+  "province" : "BG",
+  "lat" : "45.7413488",
+  "lon" : "9.7529471"
+}, {
+  "name" : "NEMBRO CENTRO",
+  "address" : "Via Gianetti",
+  "town" : "Nembro",
+  "province" : "BG",
+  "lat" : "45.740182",
+  "lon" : "9.755005"
+}, {
+  "name" : "NEMBRO SALETTI",
+  "address" : "Via Saletti",
+  "town" : "Nembro",
+  "province" : "BG",
+  "lat" : "45.7455701",
+  "lon" : "9.7703302"
+}, {
+  "name" : "PRADALUNGA",
+  "address" : "Via dei Martiri",
+  "town" : "Pradalunga",
+  "province" : "BG",
+  "lat" : "45.74759",
+  "lon" : "9.778382"
+}, {
+  "name" : "ALBINO",
+  "address" : "Piazza Giovanni XXIII",
+  "town" : "Albino",
+  "province" : "BG",
+  "lat" : "45.783092",
+  "lon" : "9.825372"
+} ]
