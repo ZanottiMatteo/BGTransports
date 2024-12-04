@@ -10,21 +10,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.jooq.DSLContext;
+import org.jooq.Record1;
+import org.jooq.Result;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import transportation.jooq.generated.tables.Company;
-import transportation.jooq.generated.tables.Funicularstation;
-import transportation.jooq.generated.tables.Funiculartimetable;
-import transportation.jooq.generated.tables.Pullmanstop;
-import transportation.jooq.generated.tables.Pullmantimetable;
-import transportation.jooq.generated.tables.Trainstation;
-import transportation.jooq.generated.tables.Traintimetable;
-import transportation.jooq.generated.tables.Tramstop;
-import transportation.jooq.generated.tables.Tramtimetable;
 
 public class ControlDB {
 
@@ -74,75 +66,64 @@ public class ControlDB {
 			} else {
 				CreateTablesDB.createTablesUsers(create);
 			}
-
 			GenerateCode.generateCode(database, Constant.JDBC, Constant.SQLiteDatabase, jooq, src);
-
-			if (databasePath == Constant.DBPublicTransportation) {
-				InsertDataDB.company(create);
-				InsertDataDB.funicular_station(create);
-				InsertDataDB.train_station(create);
-				InsertDataDB.tram_stop(create);
-				InsertDataDB.pullman_stop(create);
-				InsertDataDB.funicularTimetable(create);
-				InsertDataDB.tramTimetable(create);
-				InsertDataDB.trainTimetable(create);
-				InsertDataDB.pullmanTimetable(create);
-			}
-
-		} else if (Constant.update) {
+		} else {
+			System.out.println("Database already exists: " + database);
+		}
+	}
+	
+	public static void DBupdate(Boolean update, String database) throws IOException, SQLException {
+		if (Constant.update) {
 			System.out.println("Database update: " + database);
 			DSLContext create = ControlDB.DSLContext(database);
-			deleteAll(create, myList);
+			QueryDB.deleteAll(create, myList);
 			Constant.update = false;
-		} else {
-			System.out.println("Database already existed and is up-to-date: " + database);
 		}
 	}
 
-	public static void deleteAll(DSLContext ctx, ArrayList<String> myList) throws IOException {
-		ArrayList<String> modifiedList = new ArrayList<>();
+	public static void DBNotEmpty(String databasePath, String database) throws Exception {
+		DSLContext create = ControlDB.DSLContext(database);
+		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
+				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
 
-		for (String item : myList) {
-			String modified = item.replace("json/", "").replace(".json", "");
-			modifiedList.add(modified);
-		}
+		for (Record1<String> table : tables) {
+			String tableName = table.value1();
+			System.out.println("Check table: " + tableName);
 
-		for (String tableName : modifiedList) {
-			if (tableName.equals(Constant.company)) {
-				ctx.deleteFrom(Company.COMPANY).execute();
-				InsertDataDB.company(ctx);
-			}
-			if (tableName.equals(Constant.funicularStation)) {
-				ctx.deleteFrom(Funicularstation.FUNICULARSTATION).execute();
-				InsertDataDB.funicular_station(ctx);
-			}
-			if (tableName.equals(Constant.trainStation)) {
-				ctx.deleteFrom(Trainstation.TRAINSTATION).execute();
-				InsertDataDB.train_station(ctx);
-			}
-			if (tableName.equals(Constant.tramStop)) {
-				ctx.deleteFrom(Tramstop.TRAMSTOP).execute();
-				InsertDataDB.tram_stop(ctx);
-			}
-			if (tableName.equals(Constant.pullmanStop)) {
-				ctx.deleteFrom(Pullmanstop.PULLMANSTOP).execute();
-				InsertDataDB.pullman_stop(ctx);
-			}
-			if (tableName.equals(Constant.funicularTimetable)) {
-				ctx.deleteFrom(Funiculartimetable.FUNICULARTIMETABLE).execute();
-				InsertDataDB.funicularTimetable(ctx);
-			}
-			if (tableName.equals(Constant.tramTimetable)) {
-				ctx.deleteFrom(Tramtimetable.TRAMTIMETABLE).execute();
-				InsertDataDB.tramTimetable(ctx);
-			}
-			if (tableName.equals(Constant.trainTimetable)) {
-				ctx.deleteFrom(Traintimetable.TRAINTIMETABLE).execute();
-				InsertDataDB.trainTimetable(ctx);
-			}
-			if (tableName.equals(Constant.pullmanTimetable)) {
-				ctx.deleteFrom(Pullmantimetable.PULLMANTIMETABLE).execute();
-				InsertDataDB.pullmanTimetable(ctx);
+			int count = create.fetchCount(DSL.table(DSL.name(tableName)));
+
+			if (count == 0) {
+				System.out.println(tableName + " is empty");
+				System.out.println("Insert in table " + tableName);
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.company(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.funicular_station(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.train_station(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.tram_stop(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.pullman_stop(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.funicularTimetable(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.tramTimetable(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.trainTimetable(create);
+				}
+				if(tableName.equals(Constant.company)) {
+					InsertDataDB.pullmanTimetable(create);
+				}
+			} else {
+				System.out.println(tableName + " has records");
 			}
 		}
 	}

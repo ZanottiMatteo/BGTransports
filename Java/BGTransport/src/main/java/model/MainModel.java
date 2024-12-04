@@ -16,6 +16,10 @@ public class MainModel {
 		
 		ControlDB.DBcheck(Constant.DBPublicTransportation, Constant.DBUrlPublicTransportation, Constant.jooqTransportation, Constant.srcTransportation);
 		
+		ControlDB.DBNotEmpty(Constant.DBPublicTransportation, Constant.DBUrlPublicTransportation);
+		
+		ControlDB.DBupdate(Constant.update, Constant.DBUrlPublicTransportation);
+		
 		// create database User
 		ControlDB.DBcheck(Constant.DBUsers, Constant.DBUrlUsers, Constant.jooqUser, Constant.srcUser);
 	}
