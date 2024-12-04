@@ -33,7 +33,7 @@ public class Constant {
 	public static String EXCEL_TRAM_STOP_LIST = "src/main/resources/excel/list/tram_station_list.xlsx";
 	public static String EXCEL_FUNICULAR_TIMETABLE = "src/main/resources/excel/timetable/funicular_timetable.xlsx";
 	public static String EXCEL_TRAM_TIMETABLE = "src/main/resources/excel/timetable/tram_timetable.xlsx";
-	public static String EXCEL_PULLMAN_TIMETABLE = "src/main/resources/excel/timetable/pullmam_timetable.xlsx";
+	public static String EXCEL_PULLMAN_TIMETABLE = "src/main/resources/excel/timetable/pullman_timetable.xlsx";
 	public static String EXCEL_TRAIN_TIMETABLE = "src/main/resources/excel/timetable/train_timetable.xlsx";
 	
 	public static String address = "address";
