@@ -12,31 +12,35 @@ import java.util.List;
 
 import BGTransport.BGTransport.App;
 import controller.ThemeController;
+import controller.UserInfoController;
 import controller.SignUpController;
 
 public class AccountIconView extends JFrame {
 
     // Move the JLabel declarations here and make them public static
     public static JLabel lblSignUp;
-    public static JLabel Image1Label;
-    public static JLabel Image2Label;
-    public static JLabel Image3Label;
-    public static JLabel Image4Label;
-    public static JLabel Image5Label;
-    public static JLabel Image6Label;
-    public static JLabel Image7Label;
-    public static JLabel Image8Label;
-    public static JLabel Image9Label;
-    public static JLabel Image10Label;
-    public static JLabel Image11Label;
-    public static JLabel Image12Label;
+    public static JButton button1Label;
+    public static JButton button2Label;
+    public static JButton button3Label;
+    public static JButton button4Label;
+    public static JButton button5Label;
+    public static JButton button6Label;
+    public static JButton button7Label;
+    public static JButton button8Label;
+    public static JButton button9Label;
+    public static JButton button10Label;
+    public static JButton button11Label;
+    public static JButton button12Label;
     
     private JFrame frame;
     private JPanel panel;
     JButton ConfirmButton = new JButton("Conferma");
     
     // Create a list to hold all the JLabels
-    private static List<JLabel> labelList = new ArrayList<>();
+    private static List<JButton> buttonList = new ArrayList<>();
+    
+    private int iconNumber;
+    private int x;
 
     public AccountIconView() {        
         setResizable(false);
@@ -69,77 +73,77 @@ public class AccountIconView extends JFrame {
         panel.add(ConfirmButton);
         
         // Declare and add each JLabel to the panel and the list
-        Image1Label = new JLabel("");
-        Image1Label.setBackground(new Color(192, 192, 192));
-        Image1Label.setBounds(30, 213, 128, 128);
-        panel.add(Image1Label);
-        labelList.add(Image1Label);
+        button1Label = new JButton("");
+        button1Label.setBackground(new Color(192, 192, 192));
+        button1Label.setBounds(30, 213, 128, 128);
+        panel.add(button1Label);
+        buttonList.add(button1Label);
         
-        Image2Label = new JLabel("");
-        Image2Label.setBackground(new Color(192, 192, 192));
-        Image2Label.setBounds(223, 213, 128, 128);
-        panel.add(Image2Label);
-        labelList.add(Image2Label);
+        button2Label = new JButton("");
+        button2Label.setBackground(new Color(192, 192, 192));
+        button2Label.setBounds(223, 213, 128, 128);
+        panel.add(button2Label);
+        buttonList.add(button2Label);
         
-        Image3Label = new JLabel("");
-        Image3Label.setBackground(new Color(192, 192, 192));
-        Image3Label.setBounds(424, 213, 128, 128);
-        panel.add(Image3Label);
-        labelList.add(Image3Label);
+        button3Label = new JButton("");
+        button3Label.setBackground(new Color(192, 192, 192));
+        button3Label.setBounds(424, 213, 128, 128);
+        panel.add(button3Label);
+        buttonList.add(button3Label);
         
-        Image4Label = new JLabel("");
-        Image4Label.setBackground(new Color(192, 192, 192));
-        Image4Label.setBounds(223, 353, 128, 128);
-        panel.add(Image4Label);
-        labelList.add(Image4Label);
+        button4Label = new JButton("");
+        button4Label.setBackground(new Color(192, 192, 192));
+        button4Label.setBounds(223, 353, 128, 128);
+        panel.add(button4Label);
+        buttonList.add(button4Label);
         
-        Image5Label = new JLabel("");
-        Image5Label.setBackground(new Color(192, 192, 192));
-        Image5Label.setBounds(30, 353, 128, 128);
-        panel.add(Image5Label);
-        labelList.add(Image5Label);
+        button5Label = new JButton("");
+        button5Label.setBackground(new Color(192, 192, 192));
+        button5Label.setBounds(30, 353, 128, 128);
+        panel.add(button5Label);
+        buttonList.add(button5Label);
         
-        Image6Label = new JLabel("");
-        Image6Label.setBackground(new Color(192, 192, 192));
-        Image6Label.setBounds(424, 353, 128, 128);
-        panel.add(Image6Label);
-        labelList.add(Image6Label);
+        button6Label = new JButton("");
+        button6Label.setBackground(new Color(192, 192, 192));
+        button6Label.setBounds(424, 353, 128, 128);
+        panel.add(button6Label);
+        buttonList.add(button6Label);
         
-        Image7Label = new JLabel("");
-        Image7Label.setBackground(Color.LIGHT_GRAY);
-        Image7Label.setBounds(30, 493, 128, 128);
-        panel.add(Image7Label);
-        labelList.add(Image7Label);
+        button7Label = new JButton("");
+        button7Label.setBackground(Color.LIGHT_GRAY);
+        button7Label.setBounds(30, 493, 128, 128);
+        panel.add(button7Label);
+        buttonList.add(button7Label);
         
-        Image8Label = new JLabel("");
-        Image8Label.setBackground(Color.LIGHT_GRAY);
-        Image8Label.setBounds(30, 633, 128, 128);
-        panel.add(Image8Label);
-        labelList.add(Image8Label);
+        button8Label = new JButton("");
+        button8Label.setBackground(Color.LIGHT_GRAY);
+        button8Label.setBounds(30, 633, 128, 128);
+        panel.add(button8Label);
+        buttonList.add(button8Label);
         
-        Image9Label = new JLabel("");
-        Image9Label.setBackground(Color.LIGHT_GRAY);
-        Image9Label.setBounds(223, 633, 128, 128);
-        panel.add(Image9Label);
-        labelList.add(Image9Label);
+        button9Label = new JButton("");
+        button9Label.setBackground(Color.LIGHT_GRAY);
+        button9Label.setBounds(223, 633, 128, 128);
+        panel.add(button9Label);
+        buttonList.add(button9Label);
         
-        Image10Label = new JLabel("");
-        Image10Label.setBackground(Color.LIGHT_GRAY);
-        Image10Label.setBounds(223, 493, 128, 128);
-        panel.add(Image10Label);
-        labelList.add(Image10Label);
+        button10Label = new JButton("");
+        button10Label.setBackground(Color.LIGHT_GRAY);
+        button10Label.setBounds(223, 493, 128, 128);
+        panel.add(button10Label);
+        buttonList.add(button10Label);
         
-        Image11Label = new JLabel("");
-        Image11Label.setBackground(Color.LIGHT_GRAY);
-        Image11Label.setBounds(424, 493, 128, 128);
-        panel.add(Image11Label);
-        labelList.add(Image11Label);
+        button11Label = new JButton("");
+        button11Label.setBackground(Color.LIGHT_GRAY);
+        button11Label.setBounds(424, 493, 128, 128);
+        panel.add(button11Label);
+        buttonList.add(button11Label);
         
-        Image12Label = new JLabel("");
-        Image12Label.setBackground(Color.LIGHT_GRAY);
-        Image12Label.setBounds(424, 633, 128, 128);
-        panel.add(Image12Label);
-        labelList.add(Image12Label);
+        button12Label = new JButton("");
+        button12Label.setBackground(Color.LIGHT_GRAY);
+        button12Label.setBounds(424, 633, 128, 128);
+        panel.add(button12Label);
+        buttonList.add(button12Label);
         
         JLabel lblScegliLaTua = new JLabel("Scegli la tua immagine profilo per l'account");
         lblScegliLaTua.setHorizontalAlignment(SwingConstants.CENTER);
@@ -157,6 +161,8 @@ public class AccountIconView extends JFrame {
         scrollPane.setBounds(0, 0, 600, 500);
         getContentPane().add(scrollPane);
         
+        initializeButtonListeners();
+        
         initComponents();
     }
 
@@ -170,7 +176,21 @@ public class AccountIconView extends JFrame {
     }
 
     // Method to return the list of JLabels
-    public static List<JLabel> getLabelList() {
-        return labelList;
+    public static List<JButton> getButtonList() {
+        return buttonList;
+    }
+    
+    private void initializeButtonListeners() {
+    	x = 0;
+        for (JButton button : buttonList) {
+            button.addActionListener(e -> {
+            	iconNumber = x;
+            });
+            x++;
+        }
+        
+        ConfirmButton.addActionListener(e -> {
+            UserInfoController.setProfileIcon(iconNumber);
+        }); 
     }
 }

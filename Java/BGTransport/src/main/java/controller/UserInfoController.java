@@ -14,6 +14,11 @@ public class UserInfoController {
     private static final String DISABLED_TEXT = "Field disabled";
 
 
+    public static void setProfileIcon(int n) {
+    	String str = String.valueOf(n);
+        UserView.profilePhoto.setIcon(AccountController.getAccountIcon(str));
+    }
+
     /**
      * Disables all the text fields in the UserView, making them non-editable and
      * displaying a placeholder text.

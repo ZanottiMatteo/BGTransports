@@ -45,7 +45,7 @@ public class UserView extends JFrame {
 	public RoundedPanel centerPanel = new RoundedPanel();
 	public final Point centerpanelpoint = new Point(200, 30);
 	
-	private CircleLabel profilePhoto = new CircleLabel();
+	public static CircleLabel profilePhoto = new CircleLabel();
 	private BigLabel titlePersonalInfo = new BigLabel("Dati Personali");
 	
 	private MediumLabel titleUsername = new MediumLabel("Username");
@@ -153,10 +153,6 @@ public class UserView extends JFrame {
 	private void setupMenuButtons() {
 		// User button.
 		userButton = createMenuButton(iconUser, 20, 20);
-		userButton.addActionListener(e -> {
-			NewWindowController.openLoginPanel(MainController.loginV);
-			setVisible(false);
-		});
 		menuPanel.add(userButton);
 
 		// User button.
@@ -294,13 +290,7 @@ public class UserView extends JFrame {
 		 centerPanel.add(changeData);
 	    }
 
-	 private void setupActionListeners() {
-	        // Action listener for the user button
-	        userButton.addActionListener(e -> {
-	            NewWindowController.openLoginPanel(MainController.loginV);
-	            this.setVisible(false);
-	        });
-
+	 private void setupActionListeners() {	
 	        // Action listener for the home button
 	        homeButton.addActionListener(e -> {
 				NewWindowController.openHomePanel(MainController.homeV);

@@ -2,13 +2,16 @@ package controller;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import org.json.JSONObject;
@@ -23,9 +26,9 @@ public class AccountController {
 
 	public static void showImages() {
 		int x = 1;
-		for (JLabel label : AccountIconView.getLabelList()) {
+		for (JButton button : AccountIconView.getButtonList()) {
 			String str = String.valueOf(x);
-			label.setIcon(getAccountIcon(str));
+			button.setIcon(getAccountIcon(str));
 			x++;
 		}
 	}
@@ -58,7 +61,7 @@ public class AccountController {
 				// Get the image stream
 				InputStream inputStream = connection.getInputStream();
 				BufferedImage image = ImageIO.read(inputStream);
-				image.getScaledInstance(150, 150, Image.SCALE_REPLICATE);
+				image.getScaledInstance(80, 80, Image.SCALE_REPLICATE);
 				inputStream.close();
 				return new ImageIcon(image);
 			} else
@@ -68,5 +71,20 @@ public class AccountController {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public static String getAccountIconURL(String number) throws FileNotFoundException, IOException {
+		try (FileReader openJSON = new FileReader("json/AccountIcon.json")) {
+			StringBuilder sb = new StringBuilder();
+			int c;
+			while ((c = openJSON.read()) != -1) {
+				sb.append((char) c);
+			}
+			JSONObject root = new JSONObject(sb.toString());
+			JSONObject AccImage = root.getJSONObject(number);
+			String logo = AccImage.getString("image");
+			return logo;
+
+		}	
 	}
 }
