@@ -14,7 +14,7 @@ import view.LoginView;
 public class LoginController {
 	
 	public static RegisteredUser user = new RegisteredUser();
-
+	public static String FinalEmail = null;
 	public static void Login(JTextField emailField, JPasswordField passwordField) {
 		String email = emailField.getText();
 		
@@ -27,7 +27,8 @@ public class LoginController {
 					for(int i = 0; i < QueryDB.getAllUserEmails().size(); i++) {
 					if ((email.equals(QueryDB.getAllUserEmails().get(i)) && (password.equals(QueryDB.getAllUserPassword().get(i))))) {
 						System.out.println("Login OK");
-						user.setEmail(email);
+						FinalEmail = email;
+						user.setEmail(FinalEmail);
 						MainController.loginV.setVisible(false);
 						MainController.homeV.setVisible(true);
 					}										

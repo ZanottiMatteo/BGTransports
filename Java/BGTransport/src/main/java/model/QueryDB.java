@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jooq.DSLContext;
 import org.jooq.Record1;
+import org.jooq.Record10;
 import org.jooq.Record2;
 import org.jooq.Record9;
 import org.jooq.Result;
@@ -258,88 +259,85 @@ public class QueryDB {
 	}
 
 
-	public static void getNameUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+	public static String getNameUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.NAME).from(User.USER).fetch();
+	    // Fetch the name of the user with the given email
+	    @Nullable Record1<String> record = create.select(User.USER.NAME)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
 
-		for (Record1<String> record : result) {
-			String name = record.value1();
-			System.out.println("Name: " + name);
-		}
+	    // Return the name or null if not found
+	    return record != null ? record.value1() : null;
 	}
 
-	public static void getSurnameUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+	public static String getSurnameUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.SURNAME).from(User.USER).fetch();
+	    @Nullable Record1<String> record = create.select(User.USER.SURNAME)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
 
-		for (Record1<String> record : result) {
-			String surname = record.value1();
-			System.out.println("Surname: " + surname);
-		}
+	    return record != null ? record.value1() : null;
 	}
 
-	public static void getUsernameUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.USERNAME).from(User.USER).fetch();
+	public static String getUsernameUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		for (Record1<String> record : result) {
-			String username = record.value1();
-			System.out.println("Username: " + username);
-		}
+	    @Nullable Record1<String> record = create.select(User.USER.USERNAME)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
+
+	    return record != null ? record.value1() : null;
 	}
 
-	public static void getBirthdayUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.DATEOFBIRTH).from(User.USER).fetch();
+	public static String getBirthdayUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		for (Record1<String> record : result) {
-			String birthday = record.value1();
-			System.out.println("Birthday: " + birthday);
-		}
+	    @Nullable Record1<String> record = create.select(User.USER.DATEOFBIRTH)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
+
+	    return record != null ? record.value1() : null;
 	}
 
-	public static void getAddressUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+	public static String getAddressUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.ADDRESS).from(User.USER).fetch();
+	    @Nullable Record1<String> record = create.select(User.USER.ADDRESS)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
 
-		for (Record1<String> record : result) {
-			String address = record.value1();
-			System.out.println("Address: " + address);
-		}
+	    return record != null ? record.value1() : null;
+	}
+	
+	public static String getTownUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+
+	    @Nullable Record1<String> record = create.select(User.USER.TOWN)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
+
+	    return record != null ? record.value1() : null;
 	}
 
-	public static void getTownUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+	public static String getCAPUser(String email) throws SQLException {
+	    DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.TOWN).from(User.USER).fetch();
+	    @Nullable Record1<String> record = create.select(User.USER.CAP)
+	                                             .from(User.USER)
+	                                             .where(User.USER.MAIL.eq(email))
+	                                             .fetchOne();
 
-		for (Record1<String> record : result) {
-			String town = record.value1();
-			System.out.println("Town: " + town);
-		}
-	}
-
-	public static void getCAPUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(User.USER.CAP).from(User.USER).fetch();
-
-		for (Record1<String> record : result) {
-			String cap = record.value1();
-			System.out.println("CAP: " + cap);
-		}
+	    return record != null ? record.value1() : null;
 	}
 
 	public static void getMailUser() throws SQLException {
@@ -404,24 +402,34 @@ public class QueryDB {
         return passwords;
     }
 
-	public static void getRoleUser() throws SQLException {
-		DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+    public static Integer getRoleUser(String email) throws SQLException {
+        DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
-		@NotNull
-		Result<Record1<Integer>> result = create.select(User.USER.ROLE).from(User.USER).fetch();
+        @Nullable Record1<Integer> record = create.select(User.USER.ROLE)
+                                                  .from(User.USER)
+                                                  .where(User.USER.MAIL.eq(email))
+                                                  .fetchOne();
 
-		for (Record1<Integer> record : result) {
-			Integer role = record.value1();
-			System.out.println("Role: " + role);
-		}
-	}
+        return record != null ? record.value1() : null;
+    }
+    
+    public static Integer getIconUser(String email) throws SQLException {
+        DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
+
+        @Nullable Record1<Integer> record = create.select(User.USER.ICONNUMBER)
+                                                  .from(User.USER)
+                                                  .where(User.USER.MAIL.eq(email))
+                                                  .fetchOne();
+
+        return record != null ? record.value1() : null;
+    }
 
 	
 	public static List<String> getUserDetailsByEmail(String email) throws SQLException {
         DSLContext create = ControlDB.DSLContext(Constant.DBUrlUsers);
 
         // Fetch the user record with the specified email
-        @Nullable Record9<String, String, String, String, String, String, String, String, Integer> record = create.select(
+        @Nullable Record10<String, String, String, String, String, String, String, String, Integer, Integer> record = create.select(
                 User.USER.NAME,
                 User.USER.SURNAME,
                 User.USER.USERNAME,
@@ -430,7 +438,8 @@ public class QueryDB {
                 User.USER.TOWN,
                 User.USER.CAP,
                 User.USER.MAIL,
-                User.USER.ROLE
+                User.USER.ROLE,
+                User.USER.ICONNUMBER
         ).from(User.USER)
          .where(User.USER.MAIL.eq(email)) // Condition to filter by email
          .fetchOne();
@@ -447,6 +456,7 @@ public class QueryDB {
             userDetails.add(record.get(User.USER.CAP));
             userDetails.add(record.get(User.USER.MAIL));
             userDetails.add(record.get(User.USER.ROLE).toString());
+            userDetails.add(record.get(User.USER.ICONNUMBER).toString());
 
             return userDetails; // Return the list
         } else {

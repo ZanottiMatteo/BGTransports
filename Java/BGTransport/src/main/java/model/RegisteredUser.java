@@ -1,15 +1,18 @@
 package model;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.jooq.DSLContext;
+
+import controller.LoginController;
 
 public class RegisteredUser extends User{
 
 	String name;
 	String surname;
 	String birthday;
-	String email = null;
+	String email;
 	String password;
 	String username;
 	String address;
@@ -18,8 +21,26 @@ public class RegisteredUser extends User{
 	int imageAccount;
 	int role;
 	
-	public RegisteredUser() {
-	}
+	 public RegisteredUser() {
+	        this.email = LoginController.FinalEmail;
+	    }
+	
+	private void loadUserDetails() throws SQLException {
+        List<String> userDetails = QueryDB.getUserDetailsByEmail(this.email);
+
+        if (!userDetails.isEmpty()) {
+            this.name = userDetails.get(0);
+            this.surname = userDetails.get(1);
+            this.username = userDetails.get(2);
+            this.birthday = userDetails.get(3);
+            this.address = userDetails.get(4);
+            this.city = userDetails.get(5);
+            this.ZIPcode = userDetails.get(6);
+            this.password = userDetails.get(7);  // Se desideri includere la password
+            this.role = Integer.parseInt(userDetails.get(8));  // Converte il ruolo in intero
+            this.imageAccount = Integer.parseInt(userDetails.get(9));
+        }
+    }
 	
 	public String getName() {
 		return this.name;
@@ -57,13 +78,9 @@ public class RegisteredUser extends User{
 		return this.email;
 	}
 	
-	public void setEmail(String email) {
+	public void setEmail(String email) throws SQLException {
 		this.email = email;
-		try {
-			QueryDB.getUserDetailsByEmail(email);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		loadUserDetails();
 	}
 
 
