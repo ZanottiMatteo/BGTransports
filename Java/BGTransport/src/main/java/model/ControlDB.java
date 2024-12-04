@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import javax.swing.SwingUtilities;
 
 import org.jooq.DSLContext;
 import org.jooq.Record1;
@@ -15,10 +18,12 @@ import org.jooq.impl.DSL;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import view.DownloadDataDB;
+
 public class ControlDB {
 
 	static ArrayList<String> myList = new ArrayList<>();
-	public static int sum;
+	public static int totalRecordCount = 0;
 
 	public static void controlJSON(String json, String excel) throws Exception {
 		File jsonFile = new File(json);
@@ -69,7 +74,7 @@ public class ControlDB {
 			System.out.println("Database already exists: " + database);
 		}
 	}
-	
+
 	public static void DBupdate(Boolean update, String database) throws IOException, SQLException {
 		if (Constant.update) {
 			System.out.println("Database update: " + database);
@@ -83,7 +88,11 @@ public class ControlDB {
 		DSLContext create = Utility.DSLContext(database);
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
 				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
-		Utility.sumNumberOfRecords(tables);
+
+		List<String> tableNames = tables.stream().map(record -> record.value1()).collect(Collectors.toList());
+		totalRecordCount = Utility.sumNumberOfRecords(tableNames);
+		DownloadDataDB db =new DownloadDataDB(totalRecordCount);
+		db.setVisible(true);
 
 		for (Record1<String> table : tables) {
 			String tableName = table.value1();

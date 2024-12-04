@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.jooq.DSLContext;
 import org.jooq.Record1;
@@ -38,7 +39,7 @@ public class Utility {
 		return create;
 	}
 
-	public static void sumNumberOfRecords(Result<Record1<String>> tables) throws IOException {
+	public static int sumNumberOfRecords(List<String> tableNames) throws IOException {
 		File jsonFile = new File("json/recordCount.json");
 		JSONArray jsonArray = fileReader(jsonFile);
 		int totalRecordCount = 0;
@@ -46,7 +47,8 @@ public class Utility {
 			JSONObject jsonObject = jsonArray.getJSONObject(i);
 			String tableName = jsonObject.getString("table");
 			int recordCount = jsonObject.getInt("recordCount");
-			totalRecordCount += recordCount;
+			totalRecordCount = totalRecordCount + recordCount;
 		}
+		return totalRecordCount;
 	}
 }
