@@ -26,6 +26,7 @@ public class SignUpController {
 		String surname = surnameField.getText();
 		String birthday = brithdayField.getText();
 		int role = 1;
+		int imageaccount = 0;
 		String email = emailField.getText();		
 		String password = new String(passwordField.getPassword());
 		String passwordconf = new String(passwordconfField.getPassword());
@@ -53,12 +54,14 @@ public class SignUpController {
 			newUser.setAddress(address);
 			newUser.setCity(city);
 			newUser.setZIPcode(zipcode);
+			newUser.setImageAccount(imageaccount);
 			
 			user.insertInto(User.USER)
 			.set(User.USER.NAME, name)
 			.set(User.USER.SURNAME, surname)
 			.set(User.USER.DATEOFBIRTH, birthday)
 			.set(User.USER.ROLE, role)
+			.set(User.USER.ICONNUMBER, imageaccount)
 			.set(User.USER.MAIL, email)
 			.set(User.USER.PASSWORD, password)
 			.set(User.USER.USERNAME, username)

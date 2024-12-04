@@ -96,6 +96,8 @@ public class Constant {
 	public static String webSite = "webSite";
 	public static String latitude = "lat";
 	public static String longitude = "lon";
+	public static String iconaccount = "IconNumber";
 	
 	public static Boolean update = false;
+	
 }

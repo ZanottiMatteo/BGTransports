@@ -60,11 +60,11 @@ public class HomeView extends JFrame {
 	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
 	// Icons.
-	public ImageIcon iconUser = new ImageIcon(HomeView.class.getResource("/images/User.png"));
-	public ImageIcon iconLDmode = new ImageIcon(HomeView.class.getResource("/images/LDMode.png"));
-	public ImageIcon iconWeather;
-	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
-	public ImageIcon iconHome = new ImageIcon(HomeView.class.getResource("/images/Home.png"));
+	public final ImageIcon iconUser = new ImageIcon(HomeView.class.getResource("/images/User.png"));
+	public final ImageIcon iconLDmode = new ImageIcon(HomeView.class.getResource("/images/LDMode.png"));
+	public final ImageIcon iconWeather;
+	public final ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
+	public final ImageIcon iconHome = new ImageIcon(HomeView.class.getResource("/images/Home.png"));
 
 	// Component bounds storage for resizing purposes.
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();

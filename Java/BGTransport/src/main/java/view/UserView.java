@@ -69,7 +69,7 @@ public class UserView extends JFrame {
 	public JButton changeData = new JButton();
 	public JButton saveData = new JButton();
 	public JButton discardData = new JButton();
-	public JButton chooseIcon = new JButton();
+	public static JButton chooseIcon = new JButton();
 	
 	// Background wallpaper.
 	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
@@ -80,7 +80,8 @@ public class UserView extends JFrame {
 	public ImageIcon iconWeather;
 	public ImageIcon iconMap = new ImageIcon(UserView.class.getResource("/images/Map.png"));
 	public ImageIcon iconHome = new ImageIcon(UserView.class.getResource("/images/Home.png"));
-
+	//public ImageIcon iconaddImage = 
+	
 	// Component bounds storage for resizing purposes.
 	public Map<Component, Rectangle> componentBounds = new HashMap<>();
 
@@ -200,15 +201,16 @@ public class UserView extends JFrame {
 		 centerPanel.setLayout(null);
 		 homePanel.add(centerPanel);
 		 
-		 chooseIcon.setBounds(110, 70, 250, 250);
+		 chooseIcon.setBounds(105, 70, 250, 250);
 		 chooseIcon.setBorderPainted(false);
 		 chooseIcon.setBackground(new Color(0, 0, 0, 0));
 		 centerPanel.add(chooseIcon);
 
 		 // Profile Picture Placeholder (circular placeholder)
-
+		 
 		 profilePhoto.setBounds(110, 70, 250, 250);  // Circular placeholder
 		 profilePhoto.setCircleColor(Color.GRAY);  // Placeholder color for the profile picture
+		 
 		 centerPanel.add(profilePhoto);
 		 
 		 // Define left and right positions for alternating columns

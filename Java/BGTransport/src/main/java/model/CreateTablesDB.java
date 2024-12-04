@@ -155,6 +155,7 @@ public class CreateTablesDB {
 				.column(Constant.password, SQLDataType.VARCHAR(50)) 
 				.column(Constant.mail, SQLDataType.VARCHAR(100)) 
 				.column(Constant.role, SQLDataType.INTEGER)
+				.column(Constant.iconaccount, SQLDataType.INTEGER)
 				.constraints(DSL.constraint("PK_" + Constant.user).primaryKey(Constant.username) 
 				).execute();
 		System.out.println("Table " + Constant.user + " created successfully!");

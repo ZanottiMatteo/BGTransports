@@ -2,8 +2,11 @@ package controller;
 
 import view.UserView;
 
+import java.awt.Color;
+import java.awt.Image;
 import java.sql.SQLException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
 import model.QueryDB;
@@ -14,9 +17,13 @@ public class UserInfoController {
     private static final String DISABLED_TEXT = "Field disabled";
 
 
-    public static void setProfileIcon(int n) {
+    public static void setProfileIcon() {
+    	int n = LoginController.user.getImageAccount();
+    	if (n != 0) {
     	String str = String.valueOf(n);
-        UserView.profilePhoto.setIcon(AccountController.getAccountIcon(str));
+    	UserView.chooseIcon.setIcon(null);
+    	UserView.profilePhoto.setIcon(new ImageIcon (AccountController.getAccountIcon(str, 242, 2)));
+    	} else UserView.chooseIcon.setIcon(new ImageIcon(AccountController.class.getResource("/images/Addimage.png")));
     }
 
     /**

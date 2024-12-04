@@ -158,6 +158,20 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
         return (Integer) get(9);
     }
 
+    /**
+     * Setter for <code>user.IconNumber</code>.
+     */
+    public void setIconnumber(Integer value) {
+        set(10, value);
+    }
+
+    /**
+     * Getter for <code>user.IconNumber</code>.
+     */
+    public Integer getIconnumber() {
+        return (Integer) get(10);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -181,7 +195,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
     /**
      * Create a detached, initialised UserRecord
      */
-    public UserRecord(String username, String name, String surname, String dateofbirth, String address, String town, String cap, String password, String mail, Integer role) {
+    public UserRecord(String username, String name, String surname, String dateofbirth, String address, String town, String cap, String password, String mail, Integer role, Integer iconnumber) {
         super(User.USER);
 
         setUsername(username);
@@ -194,6 +208,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> {
         setPassword(password);
         setMail(mail);
         setRole(role);
+        setIconnumber(iconnumber);
         resetChangedOnNotNull();
     }
 }

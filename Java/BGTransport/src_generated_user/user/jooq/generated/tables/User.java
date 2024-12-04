@@ -99,6 +99,11 @@ public class User extends TableImpl<UserRecord> {
      */
     public final TableField<UserRecord, Integer> ROLE = createField(DSL.name("role"), SQLDataType.INTEGER, this, "");
 
+    /**
+     * The column <code>user.IconNumber</code>.
+     */
+    public final TableField<UserRecord, Integer> ICONNUMBER = createField(DSL.name("IconNumber"), SQLDataType.INTEGER, this, "");
+
     private User(Name alias, Table<UserRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }

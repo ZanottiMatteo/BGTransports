@@ -2,6 +2,8 @@ package model;
 
 import java.sql.SQLException;
 
+import org.jooq.DSLContext;
+
 public class RegisteredUser extends User{
 
 	String name;
@@ -13,11 +15,12 @@ public class RegisteredUser extends User{
 	String address;
 	String city;
 	String ZIPcode;
+	int imageAccount;
 	int role;
 	
 	public RegisteredUser() {
-	}	
-
+	}
+	
 	public String getName() {
 		return this.name;
 	}
@@ -100,7 +103,15 @@ public class RegisteredUser extends User{
 		return this.ZIPcode;
 	}
 
-	public void setZIPcode(String zIPcode) {
-		this.ZIPcode = zIPcode;
+	public void setZIPcode(String ZIPcode) {
+		this.ZIPcode = ZIPcode;
+	}
+
+	public void setImageAccount(int imageAccount) {
+		this.imageAccount = imageAccount;
 	}	
+	
+	public int getImageAccount() {
+		return this.imageAccount;
+	}
 }

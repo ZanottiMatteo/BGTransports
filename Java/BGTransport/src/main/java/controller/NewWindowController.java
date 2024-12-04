@@ -79,6 +79,7 @@ public class NewWindowController {
 		SwingUtilities.invokeLater(() -> {
 			userV.setVisible(true);
 		});
+		UserInfoController.setProfileIcon();
 		UserInfoController.disableTextFields();
 		userV.addComponentListener(new ComponentAdapter() {
 			@Override
