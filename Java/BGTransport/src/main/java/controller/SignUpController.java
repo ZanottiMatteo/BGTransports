@@ -8,8 +8,8 @@ import javax.swing.JTextField;
 import org.jooq.DSLContext;
 
 import model.Constant;
-import model.ControlDB;
 import model.RegisteredUser;
+import model.Utility;
 import user.jooq.generated.tables.User;
 
 public class SignUpController {
@@ -20,7 +20,7 @@ public class SignUpController {
 							  JPasswordField passwordField, JPasswordField passwordconfField, JTextField usernameField, 
 							  JTextField addressField, JTextField cityField, JTextField zipcodeField) throws SQLException {
 		
-		DSLContext user = ControlDB.DSLContext(Constant.DBUrlUsers);
+		DSLContext user = Utility.DSLContext(Constant.DBUrlUsers);
 		
 		String name = nameField.getText();
 		String surname = surnameField.getText();

@@ -2,8 +2,6 @@ package model;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,6 @@ import java.util.Map;
 import org.jooq.DSLContext;
 import org.jooq.Record1;
 import org.jooq.Result;
-import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -21,6 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ControlDB {
 
 	static ArrayList<String> myList = new ArrayList<>();
+	public static int sum;
 
 	public static void controlJSON(String json, String excel) throws Exception {
 		File jsonFile = new File(json);
@@ -59,7 +57,7 @@ public class ControlDB {
 			CreateDB.createDatabase(database);
 
 			System.out.println("Creating tables in the database: " + database + " ...");
-			DSLContext create = ControlDB.DSLContext(database);
+			DSLContext create = Utility.DSLContext(database);
 
 			if (databasePath == Constant.DBPublicTransportation) {
 				CreateTablesDB.createTablesPublicTransportation(create);
@@ -75,16 +73,17 @@ public class ControlDB {
 	public static void DBupdate(Boolean update, String database) throws IOException, SQLException {
 		if (Constant.update) {
 			System.out.println("Database update: " + database);
-			DSLContext create = ControlDB.DSLContext(database);
+			DSLContext create = Utility.DSLContext(database);
 			QueryDB.deleteAll(create, myList);
 			Constant.update = false;
 		}
 	}
 
 	public static void DBNotEmpty(String databasePath, String database) throws Exception {
-		DSLContext create = ControlDB.DSLContext(database);
+		DSLContext create = Utility.DSLContext(database);
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
 				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
+		Utility.sumNumberOfRecords(tables);
 
 		for (Record1<String> table : tables) {
 			String tableName = table.value1();
@@ -126,11 +125,5 @@ public class ControlDB {
 				System.out.println(tableName + " has records");
 			}
 		}
-	}
-
-	public static DSLContext DSLContext(String database) throws SQLException {
-		Connection connection = DriverManager.getConnection(database);
-		DSLContext create = DSL.using(connection, SQLDialect.SQLITE);
-		return create;
 	}
 }

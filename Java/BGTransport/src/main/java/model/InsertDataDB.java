@@ -1,7 +1,6 @@
 package model;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import org.jooq.DSLContext;
 import org.json.JSONArray;
@@ -28,26 +27,10 @@ import transportation.jooq.generated.tables.records.TramtimetableRecord;
 
 public class InsertDataDB {
 
-	public static JSONArray fileReader(File jsonFile) throws IOException {
-		FileReader fileReader = new FileReader(jsonFile);
-		StringBuilder jsonContent = new StringBuilder();
-
-		int i;
-		while ((i = fileReader.read()) != -1) {
-			jsonContent.append((char) i);
-		}
-		fileReader.close();
-
-		// Converti il contenuto JSON in un JSONArray
-		JSONArray companiesJsonArray = new JSONArray(jsonContent.toString());
-
-		return companiesJsonArray;
-	}
-
 	public static void company(DSLContext create) throws IOException {
 		// Leggere il file JSON dalla cartella "json"
 		File jsonFile = new File(Constant.jsonCompany);
-		JSONArray companiesJsonArray = fileReader(jsonFile);
+		JSONArray companiesJsonArray = Utility.fileReader(jsonFile);
 		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < companiesJsonArray.length(); j++) {
 			JSONObject companyJson = companiesJsonArray.getJSONObject(j);
@@ -81,7 +64,7 @@ public class InsertDataDB {
 
 	public static void pullman_stop(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonPullmanStop);
-		JSONArray pullmanStopJsonArray = fileReader(jsonFile);
+		JSONArray pullmanStopJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < pullmanStopJsonArray.length(); j++) {
 			JSONObject pullmanStopJson = pullmanStopJsonArray.getJSONObject(j);
 
@@ -99,7 +82,7 @@ public class InsertDataDB {
 
 	public static void funicular_station(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonFunicularStation);
-		JSONArray funicularStationJsonArray = fileReader(jsonFile);
+		JSONArray funicularStationJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < funicularStationJsonArray.length(); j++) {
 			JSONObject funicularStationJson = funicularStationJsonArray.getJSONObject(j);
 
@@ -118,7 +101,7 @@ public class InsertDataDB {
 
 	public static void tram_stop(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonTramStop);
-		JSONArray tramStopJsonArray = fileReader(jsonFile);
+		JSONArray tramStopJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < tramStopJsonArray.length(); j++) {
 			JSONObject tramStopJson = tramStopJsonArray.getJSONObject(j);
 
@@ -137,7 +120,7 @@ public class InsertDataDB {
 
 	public static void train_station(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonTrainStation);
-		JSONArray trainStationJsonArray = fileReader(jsonFile);
+		JSONArray trainStationJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < trainStationJsonArray.length(); j++) {
 			JSONObject trainStationJson = trainStationJsonArray.getJSONObject(j);
 
@@ -156,7 +139,7 @@ public class InsertDataDB {
 
 	public static void funicularTimetable(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonFunicularTimetable);
-		JSONArray funicularJsonArray = fileReader(jsonFile);
+		JSONArray funicularJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < funicularJsonArray.length(); j++) {
 			JSONObject funicularJson = funicularJsonArray.getJSONObject(j);
 
@@ -179,7 +162,7 @@ public class InsertDataDB {
 
 	public static void tramTimetable(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonTramTimetable);
-		JSONArray tramJsonArray = fileReader(jsonFile);
+		JSONArray tramJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < tramJsonArray.length(); j++) {
 			JSONObject tramJson = tramJsonArray.getJSONObject(j);
 
@@ -205,7 +188,7 @@ public class InsertDataDB {
 	
 	public static void trainTimetable(DSLContext create) throws IOException {
 		File jsonFile = new File(Constant.jsonTrainTimetable);
-		JSONArray trainJsonArray = fileReader(jsonFile);
+		JSONArray trainJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < trainJsonArray.length(); j++) {
 			JSONObject trainJson = trainJsonArray.getJSONObject(j);
 
@@ -228,7 +211,7 @@ public class InsertDataDB {
 	
 	public static void pullmanTimetable(DSLContext create) throws IOException{
 		File jsonFile = new File(Constant.jsonPullmanTimetable);
-		JSONArray pullmanJsonArray = fileReader(jsonFile);
+		JSONArray pullmanJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < pullmanJsonArray.length(); j++) {
 			JSONObject pullmanJson = pullmanJsonArray.getJSONObject(j);
 			
