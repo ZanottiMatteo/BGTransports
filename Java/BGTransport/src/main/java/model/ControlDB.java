@@ -98,28 +98,28 @@ public class ControlDB {
 				if(tableName.equals(Constant.company)) {
 					InsertDataDB.company(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.funicularStation)) {
 					InsertDataDB.funicular_station(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.trainStation)) {
 					InsertDataDB.train_station(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.tramStop)) {
 					InsertDataDB.tram_stop(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.pullmanStop)) {
 					InsertDataDB.pullman_stop(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.funicularTimetable)) {
 					InsertDataDB.funicularTimetable(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.tramTimetable)) {
 					InsertDataDB.tramTimetable(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.trainTimetable)) {
 					InsertDataDB.trainTimetable(create);
 				}
-				if(tableName.equals(Constant.company)) {
+				if(tableName.equals(Constant.pullmanTimetable)) {
 					InsertDataDB.pullmanTimetable(create);
 				}
 			} else {
