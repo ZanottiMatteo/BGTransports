@@ -1,5 +1,6 @@
 package model;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +14,15 @@ import org.jooq.Record9;
 import org.jooq.Result;
 import org.jxmapviewer.viewer.GeoPosition;
 
+import transportation.jooq.generated.tables.Company;
 import transportation.jooq.generated.tables.Funicularstation;
+import transportation.jooq.generated.tables.Funiculartimetable;
 import transportation.jooq.generated.tables.Pullmanstop;
+import transportation.jooq.generated.tables.Pullmantimetable;
 import transportation.jooq.generated.tables.Trainstation;
+import transportation.jooq.generated.tables.Traintimetable;
 import transportation.jooq.generated.tables.Tramstop;
+import transportation.jooq.generated.tables.Tramtimetable;
 import user.jooq.generated.tables.User;
 
 public class QueryDB {
@@ -448,5 +454,55 @@ public class QueryDB {
             return new ArrayList<>();
         }
     }
+	
+	public static void deleteAll(DSLContext ctx, ArrayList<String> myList) throws IOException {
+		ArrayList<String> modifiedList = new ArrayList<>();
+
+		for (String item : myList) {
+			String modified = item.replace("json/", "").replace(".json", "");
+			modifiedList.add(modified);
+		}
+
+		for (String tableName : modifiedList) {
+			if (tableName.equals(Constant.company)) {
+				ctx.deleteFrom(Company.COMPANY).execute();
+				InsertDataDB.company(ctx);
+			}
+			if (tableName.equals(Constant.funicularStation)) {
+				ctx.deleteFrom(Funicularstation.FUNICULARSTATION).execute();
+				InsertDataDB.funicular_station(ctx);
+			}
+			if (tableName.equals(Constant.trainStation)) {
+				ctx.deleteFrom(Trainstation.TRAINSTATION).execute();
+				InsertDataDB.train_station(ctx);
+			}
+			if (tableName.equals(Constant.tramStop)) {
+				ctx.deleteFrom(Tramstop.TRAMSTOP).execute();
+				InsertDataDB.tram_stop(ctx);
+			}
+			if (tableName.equals(Constant.pullmanStop)) {
+				ctx.deleteFrom(Pullmanstop.PULLMANSTOP).execute();
+				InsertDataDB.pullman_stop(ctx);
+			}
+			if (tableName.equals(Constant.funicularTimetable)) {
+				ctx.deleteFrom(Funiculartimetable.FUNICULARTIMETABLE).execute();
+				InsertDataDB.funicularTimetable(ctx);
+			}
+			if (tableName.equals(Constant.tramTimetable)) {
+				ctx.deleteFrom(Tramtimetable.TRAMTIMETABLE).execute();
+				InsertDataDB.tramTimetable(ctx);
+			}
+			if (tableName.equals(Constant.trainTimetable)) {
+				ctx.deleteFrom(Traintimetable.TRAINTIMETABLE).execute();
+				InsertDataDB.trainTimetable(ctx);
+			}
+			if (tableName.equals(Constant.pullmanTimetable)) {
+				ctx.deleteFrom(Pullmantimetable.PULLMANTIMETABLE).execute();
+				InsertDataDB.pullmanTimetable(ctx);
+			}
+		}
+		
+		System.out.println("Data updated");
+	}
 }
 
