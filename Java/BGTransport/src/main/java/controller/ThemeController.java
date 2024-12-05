@@ -18,6 +18,7 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
+import model.MyLighterLaf;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
@@ -69,7 +70,7 @@ public class ThemeController {
 		themeDark = !themeDark;
 		 try {
 	        if (getTheme()) {
-	            UIManager.setLookAndFeel(new FlatLightLaf());
+	            UIManager.setLookAndFeel(new MyLighterLaf());
 	        } else {
 	            UIManager.setLookAndFeel(new FlatDarkLaf());
 	        }
