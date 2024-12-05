@@ -100,4 +100,14 @@ public class Constant {
 	
 	public static Boolean update = false;
 	
+	public static final int NumberCompanyRecord = 4;
+	public static final int NumberPullmanStopRecord = 287;
+	public static final int NumberTrainStationRecord = 59;
+	public static final int NumberTrainTimetableRecord = 3678;
+	public static final int NumberTramStopRecord = 16;
+	public static final int NumberTramTimetableRecord = 3284;
+	public static final int NumberPullmanTimetableRecord = 30623;
+	public static final int NumberFunicularStationRecord = 4;
+	public static final int NumberFunicularTimetableRecord = 1198;
+	
 }

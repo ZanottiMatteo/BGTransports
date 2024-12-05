@@ -27,15 +27,13 @@ import transportation.jooq.generated.tables.records.TramtimetableRecord;
 
 public class InsertDataDB {
 
-	public static void company(DSLContext create) throws IOException {
-		// Leggere il file JSON dalla cartella "json"
+	public static int company(DSLContext create) throws IOException {
+		int recordAdded = 0;
 		File jsonFile = new File(Constant.jsonCompany);
 		JSONArray companiesJsonArray = Utility.fileReader(jsonFile);
-		// Ciclo su ogni oggetto del JSONArray e inserimento nel database
 		for (int j = 0; j < companiesJsonArray.length(); j++) {
 			JSONObject companyJson = companiesJsonArray.getJSONObject(j);
 
-			// Estrai i valori dal JSON
 			String name = companyJson.getString(Constant.name);
 			String legalStructure = companyJson.getString(Constant.legalStructure);
 			String businessTaxCode = companyJson.getString(Constant.businessTaxCode);
@@ -60,9 +58,12 @@ public class InsertDataDB {
 			create.insertInto(Company.COMPANY).set(companyRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.company + " with success!");
+		
+		return recordAdded = Constant.NumberCompanyRecord;
 	}
 
-	public static void pullman_stop(DSLContext create) throws IOException {
+	public static int pullman_stop(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonPullmanStop);
 		JSONArray pullmanStopJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < pullmanStopJsonArray.length(); j++) {
@@ -78,9 +79,12 @@ public class InsertDataDB {
 			create.insertInto(Pullmanstop.PULLMANSTOP).set(pullmanStopRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.pullmanStop + " with success!");
+		
+		return recordAdded = Constant.NumberPullmanStopRecord;
 	}
 
-	public static void funicular_station(DSLContext create) throws IOException {
+	public static int funicular_station(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonFunicularStation);
 		JSONArray funicularStationJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < funicularStationJsonArray.length(); j++) {
@@ -97,9 +101,12 @@ public class InsertDataDB {
 			create.insertInto(Funicularstation.FUNICULARSTATION).set(funicularStationRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.funicularStation + " with success!");
+		
+		return recordAdded = Constant.NumberFunicularStationRecord;
 	}
 
-	public static void tram_stop(DSLContext create) throws IOException {
+	public static int tram_stop(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonTramStop);
 		JSONArray tramStopJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < tramStopJsonArray.length(); j++) {
@@ -116,9 +123,12 @@ public class InsertDataDB {
 			create.insertInto(Tramstop.TRAMSTOP).set(tramStopRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.tramStop + " with success!");
+		
+		return recordAdded = Constant.NumberTramStopRecord;
 	}
 
-	public static void train_station(DSLContext create) throws IOException {
+	public static int train_station(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonTrainStation);
 		JSONArray trainStationJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < trainStationJsonArray.length(); j++) {
@@ -135,9 +145,12 @@ public class InsertDataDB {
 			create.insertInto(Trainstation.TRAINSTATION).set(trainStationRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.trainStation + " with success!");
+		
+		return recordAdded = Constant.NumberTrainStationRecord;
 	}
 
-	public static void funicularTimetable(DSLContext create) throws IOException {
+	public static int funicularTimetable(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonFunicularTimetable);
 		JSONArray funicularJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < funicularJsonArray.length(); j++) {
@@ -158,9 +171,12 @@ public class InsertDataDB {
 			create.insertInto(Funiculartimetable.FUNICULARTIMETABLE).set(funicularRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.funicularTimetable + " with success!");
+		
+		return recordAdded = Constant.NumberFunicularTimetableRecord;
 	}
 
-	public static void tramTimetable(DSLContext create) throws IOException {
+	public static int tramTimetable(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonTramTimetable);
 		JSONArray tramJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < tramJsonArray.length(); j++) {
@@ -184,9 +200,12 @@ public class InsertDataDB {
 			create.insertInto(Tramtimetable.TRAMTIMETABLE).set(tramRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.tramTimetable + " with success!");
+		
+		return recordAdded = Constant.NumberTramTimetableRecord;
 	}
 	
-	public static void trainTimetable(DSLContext create) throws IOException {
+	public static int trainTimetable(DSLContext create) throws IOException {
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonTrainTimetable);
 		JSONArray trainJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < trainJsonArray.length(); j++) {
@@ -207,9 +226,12 @@ public class InsertDataDB {
 			create.insertInto(Traintimetable.TRAINTIMETABLE).set(trainRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.trainTimetable + " with success!");
+		
+		return recordAdded = Constant.NumberTrainTimetableRecord;
 	}
 	
-	public static void pullmanTimetable(DSLContext create) throws IOException{
+	public static int pullmanTimetable(DSLContext create) throws IOException{
+		int recordAdded=0;
 		File jsonFile = new File(Constant.jsonPullmanTimetable);
 		JSONArray pullmanJsonArray = Utility.fileReader(jsonFile);
 		for (int j = 0; j < pullmanJsonArray.length(); j++) {
@@ -231,6 +253,8 @@ public class InsertDataDB {
 			create.insertInto(Pullmantimetable.PULLMANTIMETABLE).set(pullmanRecord).execute();
 		}
 		System.out.println("Add data in " + Constant.pullmanTimetable + " with success!");
+		
+		return recordAdded = Constant.NumberPullmanTimetableRecord;
 	}
 
 }

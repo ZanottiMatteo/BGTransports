@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,6 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 import org.jooq.DSLContext;
 import org.jooq.Record1;
@@ -85,54 +88,84 @@ public class ControlDB {
 	}
 
 	public static void DBNotEmpty(String databasePath, String database) throws Exception {
-		DSLContext create = Utility.DSLContext(database);
-		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
-				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
+	    DSLContext create = Utility.DSLContext(database);
+	    Result<Record1<String>> tables = create.select(DSL.field("name", String.class))
+	                                           .from("sqlite_master")
+	                                           .where(DSL.field("type").eq("table"))
+	                                           .and(DSL.field("name").notLike("sqlite_%"))
+	                                           .fetch();
 
-		List<String> tableNames = tables.stream().map(record -> record.value1()).collect(Collectors.toList());
-		totalRecordCount = Utility.sumNumberOfRecords(tableNames);
-		DownloadDataDB db =new DownloadDataDB(totalRecordCount);
-		db.setVisible(true);
+	    List<String> tableNames = tables.stream().map(Record1::value1).collect(Collectors.toList());
+	    
+	    // Calcolo totale dei record da inserire
+	    int totalRecordCount = Utility.sumNumberOfRecords(tableNames);
+	    
+	    DownloadDataDB db = new DownloadDataDB(totalRecordCount);
+	    db.setVisible(true);
 
-		for (Record1<String> table : tables) {
-			String tableName = table.value1();
-			System.out.println("Check table: " + tableName);
+	    int progress = 0;
+	    
+	    final String[] currentTableName = {""};
+	    
+	    Timer timer = new Timer(500, new ActionListener() {
+	        private int dotCount = 0;
 
-			int count = create.fetchCount(DSL.table(DSL.name(tableName)));
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            dotCount = (dotCount + 1) % 4; // Cicla tra 0, 1, 2, 3
+	            String dots = ".".repeat(dotCount);
+	            SwingUtilities.invokeLater(() -> 
+	                db.lblNewLabel.setText("Processing table: " + currentTableName[0] + dots)
+	            );
+	        }
+	    });
+	    timer.start();
 
-			if (count == 0) {
-				System.out.println(tableName + " is empty");
-				System.out.println("Insert in table " + tableName);
-				if(tableName.equals(Constant.company)) {
-					InsertDataDB.company(create);
-				}
-				if(tableName.equals(Constant.funicularStation)) {
-					InsertDataDB.funicular_station(create);
-				}
-				if(tableName.equals(Constant.trainStation)) {
-					InsertDataDB.train_station(create);
-				}
-				if(tableName.equals(Constant.tramStop)) {
-					InsertDataDB.tram_stop(create);
-				}
-				if(tableName.equals(Constant.pullmanStop)) {
-					InsertDataDB.pullman_stop(create);
-				}
-				if(tableName.equals(Constant.funicularTimetable)) {
-					InsertDataDB.funicularTimetable(create);
-				}
-				if(tableName.equals(Constant.tramTimetable)) {
-					InsertDataDB.tramTimetable(create);
-				}
-				if(tableName.equals(Constant.trainTimetable)) {
-					InsertDataDB.trainTimetable(create);
-				}
-				if(tableName.equals(Constant.pullmanTimetable)) {
-					InsertDataDB.pullmanTimetable(create);
-				}
-			} else {
-				System.out.println(tableName + " has records");
-			}
-		}
+	    for (Record1<String> table : tables) {
+	        String tableName = table.value1();
+	        System.out.println("Check table: " + tableName);
+	        
+	        currentTableName[0] = tableName;
+
+	        int count = create.fetchCount(DSL.table(DSL.name(tableName)));
+
+	        if (count == 0) {
+	            System.out.println(tableName + " is empty");
+	            System.out.println("Insert in table " + tableName);
+
+	            if (tableName.equals(Constant.company)) {
+	                progress += InsertDataDB.company(create);
+	            } else if (tableName.equals(Constant.funicularStation)) {
+	                progress += InsertDataDB.funicular_station(create);
+	            } else if (tableName.equals(Constant.trainStation)) {
+	                progress += InsertDataDB.train_station(create);
+	            } else if (tableName.equals(Constant.tramStop)) {
+	                progress += InsertDataDB.tram_stop(create);
+	            } else if (tableName.equals(Constant.pullmanStop)) {
+	                progress += InsertDataDB.pullman_stop(create);
+	            } else if (tableName.equals(Constant.funicularTimetable)) {
+	                progress += InsertDataDB.funicularTimetable(create);
+	            } else if (tableName.equals(Constant.tramTimetable)) {
+	                progress += InsertDataDB.tramTimetable(create);
+	            } else if (tableName.equals(Constant.trainTimetable)) {
+	                progress += InsertDataDB.trainTimetable(create);
+	            } else if (tableName.equals(Constant.pullmanTimetable)) {
+	                progress += InsertDataDB.pullmanTimetable(create);
+	            }
+
+	            db.updateProgress(progress);
+	        } else {
+	            System.out.println(tableName + " has records");
+	        }
+	    }
+	    SwingUtilities.invokeLater(() -> {
+	        db.labelDownloadDataDatabases.setText("Download Complete");
+	        try {
+	            Thread.sleep(1000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+	        db.dispose();
+	    });
 	}
 }
