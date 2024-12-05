@@ -18,7 +18,8 @@ public class DownloadDataDBView extends JFrame {
 
 	public JLabel labelDownloadDataDatabases = new JLabel();
 	public JLabel lblNewLabel = new JLabel();
-    public static JProgressBar progressBar;
+	public JLabel control = new JLabel();
+    public  JProgressBar progressBar = new JProgressBar(0,100);
     public static int totalRecordCount;
     
     public DownloadDataDBView() {
@@ -33,7 +34,7 @@ public class DownloadDataDBView extends JFrame {
         getContentPane().add(labelDownloadDataDatabases);
         labelDownloadDataDatabases.setBorder(null);
 
-        progressBar = new JProgressBar(0, totalRecordCount);
+        
         progressBar.setFont(new Font("SansSerif", Font.BOLD, 17));
         progressBar.setForeground(new Color(0, 168, 0));
         progressBar.setBounds(64, 115, 306, 14);
@@ -43,6 +44,9 @@ public class DownloadDataDBView extends JFrame {
         lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
         lblNewLabel.setBounds(109, 128, 216, 25);
         getContentPane().add(lblNewLabel);
+        control.setHorizontalAlignment(SwingConstants.RIGHT);
+        control.setBounds(372, 104, 52, 25);
+        getContentPane().add(control);
 
         setSize(450, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

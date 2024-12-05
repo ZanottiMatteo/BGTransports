@@ -81,7 +81,6 @@ public class ControlDB {
 			Constant.update = false;
 		}
 	}
-
 	public static int totalRecordCount(String database) throws IOException, SQLException {
 		DSLContext create = Utility.DSLContext(database);
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
@@ -89,18 +88,52 @@ public class ControlDB {
 
 		tableNames = tables.stream().map(Record1::value1).collect(Collectors.toList());
 
-		return Utility.sumNumberOfRecords(tableNames);
+		int totalRecord = 0;
+		
+		for (int i = 0; i < tableNames.size(); i++) {
+			System.out.println("Check table: " + tableNames.get(i));
+
+			currentTableName[0] = tableNames.get(i);
+
+			int count = create.fetchCount(DSL.table(DSL.name(tableNames.get(i))));
+
+			if (count == 0) {
+				System.out.println(tableNames.get(i) + " is empty");
+				System.out.println("Insert in table " + tableNames.get(i));
+
+				if (tableNames.get(i).equals(Constant.company)) {
+					totalRecord += Constant.NumberCompanyRecord;
+				} else if (tableNames.get(i).equals(Constant.funicularStation)) {
+					totalRecord += Constant.NumberFunicularStationRecord;
+				} else if (tableNames.get(i).equals(Constant.trainStation)) {
+					totalRecord += Constant.NumberTrainStationRecord;
+				} else if (tableNames.get(i).equals(Constant.tramStop)) {
+					totalRecord += Constant.NumberTramStopRecord;
+				} else if (tableNames.get(i).equals(Constant.pullmanStop)) {
+					totalRecord += Constant.NumberPullmanStopRecord;
+				} else if (tableNames.get(i).equals(Constant.funicularTimetable)) {
+					totalRecord += Constant.NumberFunicularTimetableRecord;
+				} else if (tableNames.get(i).equals(Constant.tramTimetable)) {
+					totalRecord += Constant.NumberTramTimetableRecord;
+				} else if (tableNames.get(i).equals(Constant.trainTimetable)) {
+					totalRecord += Constant.NumberTrainTimetableRecord;
+				} else if (tableNames.get(i).equals(Constant.pullmanTimetable)) {
+					totalRecord += Constant.NumberPullmanTimetableRecord;
+				}
+			}
+		}
+		return totalRecord;
 	}
 
-	public static int progressiveTotalCount(String database) throws IOException, SQLException {
+	public static void progressiveTotalCount(String database) throws IOException, SQLException {
 		DSLContext create = Utility.DSLContext(database);
-	    
+
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
 				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
-		
+
 		tableNames = tables.stream().map(Record1::value1).collect(Collectors.toList());
-		
-		for (int i=0; i <tableNames.size() ; i++) {
+
+		for (int i = 0; i < tableNames.size(); i++) {
 			System.out.println("Check table: " + tableNames.get(i));
 
 			currentTableName[0] = tableNames.get(i);
@@ -134,6 +167,5 @@ public class ControlDB {
 				System.out.println(tableNames.get(i) + " has records");
 			}
 		}
-		return progress;
 	}
 }
