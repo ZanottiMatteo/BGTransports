@@ -15,6 +15,7 @@ import org.jxmapviewer.JXMapViewer;
 import view.SignUpView;
 import view.UserView;
 import view.AccountIconView;
+import view.DownloadDataDBView;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
@@ -32,6 +33,7 @@ public class MainController {
 	public static LoginView loginV = new LoginView();
 	public static UserView userV = new UserView();
 	public static AccountIconView accountV = new AccountIconView();
+    
 	public int framesize;
 	public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
@@ -41,6 +43,5 @@ public class MainController {
 		MapController.generateMiniMap();
 		ThemeController.updateThemes();
 		NewWindowController.openHomePanel(homeV);
-		
 	}
 }
