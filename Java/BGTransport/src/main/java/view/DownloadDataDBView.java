@@ -29,19 +29,19 @@ public class DownloadDataDBView extends JFrame {
         labelDownloadDataDatabases.setForeground(new Color(210, 105, 30));
         labelDownloadDataDatabases.setHorizontalAlignment(SwingConstants.CENTER);
         labelDownloadDataDatabases.setText("Download Data Databases");
-        labelDownloadDataDatabases.setBounds(69, 72, 306, 32);
+        labelDownloadDataDatabases.setBounds(64, 72, 306, 32);
         getContentPane().add(labelDownloadDataDatabases);
         labelDownloadDataDatabases.setBorder(null);
 
         progressBar = new JProgressBar(0, totalRecordCount);
         progressBar.setFont(new Font("SansSerif", Font.BOLD, 17));
         progressBar.setForeground(new Color(0, 168, 0));
-        progressBar.setBounds(69, 115, 306, 14);
+        progressBar.setBounds(64, 115, 306, 14);
         getContentPane().add(progressBar);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         
         lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
-        lblNewLabel.setBounds(121, 128, 216, 25);
+        lblNewLabel.setBounds(109, 128, 216, 25);
         getContentPane().add(lblNewLabel);
 
         setSize(450, 250);

@@ -1,5 +1,7 @@
 package model;
 
+import javax.swing.SwingUtilities;
+
 import controller.DownloadDataDBController;
 import controller.MainController;
 import view.DownloadDataDBView;
@@ -21,8 +23,11 @@ public class MainModel {
 		ControlDB.controlJSON(Constant.jsonPullmanTimetable, Constant.excelPullmanTimetable);
 		
 		ControlDB.DBcheck(Constant.DBPublicTransportation, Constant.DBUrlPublicTransportation, Constant.jooqTransportation, Constant.srcTransportation);
+		
+		SwingUtilities.invokeLater(() -> {
+			db.setVisible(true);
+		});
 		DownloadDataDBController.updateProgressbar();
-		db.setVisible(true);
 		
 		ControlDB.DBupdate(Constant.update, Constant.DBUrlPublicTransportation);
 		

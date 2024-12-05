@@ -92,7 +92,7 @@ public class ControlDB {
 		return Utility.sumNumberOfRecords(tableNames);
 	}
 
-	public static void progressiveTotalCount(String database) throws IOException, SQLException {
+	public static int progressiveTotalCount(String database) throws IOException, SQLException {
 		DSLContext create = Utility.DSLContext(database);
 	    
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
@@ -134,5 +134,6 @@ public class ControlDB {
 				System.out.println(tableNames.get(i) + " has records");
 			}
 		}
+		return progress;
 	}
 }
