@@ -37,6 +37,7 @@ public class HomeView extends JFrame {
     public WeatherWidget weatherPanel = new WeatherWidget(); // Usa la nuova classe WeatherPanel.
     public TimeWidget timePanel = new TimeWidget();
     public static MiniMapWidget miniMapPanel = new MiniMapWidget();
+    public UserWidget userPanel = new UserWidget();
    
     // Background wallpaper.
     public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
@@ -48,7 +49,7 @@ public class HomeView extends JFrame {
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
     public final Dimension MenuPanelSize = new Dimension(100, 900);
     public final Dimension WidgetPanelSizeMedium = new Dimension(350, 250);
-    public final Dimension WidgetPanelSizeSmall = new Dimension(250, 180);
+    public final Dimension WidgetPanelSizeSmall = new Dimension(350, 180);
     public final Dimension MinPanelSize = new Dimension(1085, 615);
     public final Dimension MapSize = new Dimension(550, 350);
     public final Dimension MapPanelSize = new Dimension(600, 400);
@@ -93,6 +94,7 @@ public class HomeView extends JFrame {
         homePanel.add(weatherPanel);
         homePanel.add(timePanel);
         homePanel.add(miniMapPanel);
+        homePanel.add(userPanel);
         homePanel.add(menuPanel);
         // Time panel setup.
 

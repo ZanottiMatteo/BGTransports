@@ -14,6 +14,7 @@ import view.MapView;
 import view.RoundedPanel;
 import view.SignUpView;
 import view.UserView;
+import view.UserWidget;
 import controller.ThemeController;;
 
 public class NewWindowController {
@@ -35,6 +36,8 @@ public class NewWindowController {
 						homeV.miniMapPanel);
 				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.menuPanel.componentBounds,
 						homeV.menuPanel);
+				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.userPanel.componentBounds,
+						homeV.userPanel);
 				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconUser, homeV.menuPanel.userButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconMap, homeV.menuPanel.mapButton);
@@ -53,6 +56,9 @@ public class NewWindowController {
 						homeV.miniMapPanel.miniMapPanelPoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, MapController.miniMapViewer, homeV.MapSize,
 						homeV.miniMapPanel.mappoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.userPanel, homeV.WidgetPanelSizeMedium,
+						homeV.userPanel.userpanelpoint);
+				
 			}
 		});
 	}
@@ -90,15 +96,17 @@ public class NewWindowController {
 
 	public static void choseUserLogin(UserView userV, LoginView loginV) {
 		if (LoginController.user.getEmail() == null) {
-			openLoginPanel(loginV);
-		} else
-			openUserPanel(userV);
+			openLoginPanel(loginV);	
+			
+		} else			
+		openUserPanel(userV);
 	}
-
+			
 	public static void openUserPanel(UserView userV) {
 		SwingUtilities.invokeLater(() -> {
 			userV.setVisible(true);
 		});
+		UserInfoController.showDataWidget();
 		UserInfoController.setProfileIcon();
 		UserInfoController.disableTextFields();
 		userV.addComponentListener(new ComponentAdapter() {

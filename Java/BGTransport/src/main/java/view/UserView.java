@@ -85,9 +85,7 @@ public class UserView extends JFrame {
 		// Configure window properties.
 		setExtendedState(Frame.MAXIMIZED_BOTH); // Launch in maximized state.
 		setMinimumSize(MinPanelSize); // Set minimum size.
-		// Initialize main panel with custom background rendering.
 
-		initializeTheme();
 		mainPanel = new JPanel() {
 			@Override
 			public void paintComponent(Graphics g) {
@@ -124,14 +122,6 @@ public class UserView extends JFrame {
 
 		// Initialize other components.
 		initComponents();
-	}
-
-	private void initializeTheme() {
-		try {
-			UIManager.setLookAndFeel(new FlatLightLaf()); // Set light theme
-		} catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
 	}
 
 	private void setupCenterPanel() {
@@ -279,6 +269,7 @@ public class UserView extends JFrame {
 				e1.printStackTrace();
 			}
 			UserInfoController.disableTextFields();
+			UserInfoController.showDataWidget();
 			saveData.setVisible(false);
 			discardData.setVisible(false);
 			changeData.setVisible(true);

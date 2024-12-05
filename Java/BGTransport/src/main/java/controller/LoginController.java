@@ -29,8 +29,8 @@ public class LoginController {
 						System.out.println("Login OK");
 						FinalEmail = email;
 						user.setEmail(FinalEmail);
+						NewWindowController.openUserPanel(MainController.userV);
 						MainController.loginV.setVisible(false);
-						MainController.homeV.setVisible(true);
 					}										
 					else if ((email.equals(QueryDB.getAllUserEmails().get(i)) && (!password.equals(QueryDB.getAllUserPassword().get(i))))){
 						MainController.loginV.passwordField.setText("");

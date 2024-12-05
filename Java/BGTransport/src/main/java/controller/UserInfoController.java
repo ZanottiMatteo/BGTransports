@@ -1,6 +1,7 @@
 package controller;
 
 import view.UserView;
+import view.UserWidget;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -22,7 +23,10 @@ public class UserInfoController {
     	String str = String.valueOf(n);
     	UserView.chooseIcon.setIcon(null);
     	UserView.profilePhoto.setIcon(new ImageIcon (AccountController.getAccountIcon(str, 242, 2)));
-    	} else UserView.chooseIcon.setIcon(new ImageIcon(AccountController.class.getResource("/images/Addimage.png")));
+    	UserWidget.accounticon.setIcon(new ImageIcon (AccountController.getAccountIcon(str, 128, 2)));
+    	} else {
+    		UserView.chooseIcon.setIcon(new ImageIcon(AccountController.class.getResource("/images/Addimage.png")));
+    	}
     }
 
     /**
@@ -99,4 +103,16 @@ public class UserInfoController {
     	if (!textFields[5].getText().isEmpty())LoginController.user.setCity(textFields[5].getText());
     	if (!textFields[6].getText().isEmpty())LoginController.user.setZIPcode(textFields[6].getText());
     }
+    
+    public static void showDataWidget() {
+    	UserWidget.usernamelabel.setVisible(true);
+    	UserWidget.usernamelabel.setText(LoginController.user.getUsername());
+    	UserWidget.complnamelabel.setVisible(true);
+    	UserWidget.complnamelabel.setText(LoginController.user.getName() + " " + LoginController.user.getSurname());
+    	UserWidget.emaillabel.setVisible(true);
+    	UserWidget.emaillabel.setText(LoginController.user.getEmail());
+    	UserWidget.accounticon.setVisible(true);
+    	UserWidget.titlelabel.setVisible(true);
+    	UserWidget.errorlabel.setVisible(false);
+    	}
 }

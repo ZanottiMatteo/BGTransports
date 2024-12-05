@@ -103,8 +103,6 @@ public class MapView extends JFrame {
         // Configure the main window
         configureWindow();
 
-        // Initialize components
-        initializeTheme();
         setupComponentArcs();
         setupMainPanel();
         setupMapPanel();
@@ -123,17 +121,6 @@ public class MapView extends JFrame {
         setTitle("BGTransport"); // Set window title
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
         setLocationRelativeTo(null); // Center the window on the screen
-    }
-
-    /**
-     * Configures the theme for the application.
-     */
-    private void initializeTheme() {
-        try {
-            UIManager.setLookAndFeel(new FlatLightLaf()); // Set light theme
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
     }
 
     /**

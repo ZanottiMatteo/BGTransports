@@ -26,7 +26,7 @@ public class TimeWidget extends RoundedPanel {
      */
     public TimeWidget() {
         setLayout(null);
-        setBounds(235, 310, 250, 180);
+        setBounds(235, 310, 350, 180);
 
         setupTimeComponents();
     }
@@ -44,11 +44,11 @@ public class TimeWidget extends RoundedPanel {
 
         lbltime.setHorizontalAlignment(SwingConstants.CENTER);
         lbltime.setFont(new Font("SansSerif", Font.BOLD, 20));
-        lbltime.setBounds(15, 25, 220, 50);
+        lbltime.setBounds(65, 25, 220, 50);
 
         lbldate.setHorizontalAlignment(SwingConstants.CENTER);
         lbldate.setFont(new Font("SansSerif", Font.BOLD, 20));
-        lbldate.setBounds(15, 110, 220, 50);
+        lbldate.setBounds(65, 110, 220, 50);
 
         add(lbltime);
         add(lbldate);
