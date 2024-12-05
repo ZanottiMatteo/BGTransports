@@ -48,15 +48,7 @@ public class MapView extends JFrame {
 	public JPanel mainPanel = new JPanel();
 
 	// Side menu panel with rounded corners.
-	public RoundedPanel menuPanel = new RoundedPanel();
-	// Position of the menu panel within the main layout.
-	public final Point menupanelpoint = new Point(15, 30);
-
-	// Buttons for user interaction and navigation.
-	public JButton switchThemeButton; // Button to toggle between light and dark themes.
-	public JButton userButton;        // Button to navigate to the user menu.
-	public JButton mapButton;         // Button to navigate to the map view.
-	public JButton homeButton;
+	public MenuPanel menuPanel = new MenuPanel();
 
 	public JButton busButton;
 	public JButton trainButton;
@@ -115,7 +107,6 @@ public class MapView extends JFrame {
         initializeTheme();
         setupComponentArcs();
         setupMainPanel();
-        setupMenuPanel();
         setupMapPanel();
         setupActionListeners();
         
@@ -175,35 +166,10 @@ public class MapView extends JFrame {
         homePanel.setLayout(null);
         homePanel.setBounds(26, 40, 1854, 960);
         mainPanel.add(homePanel);
-    }
-
-    /**
-     * Sets up the side menu panel and its components.
-     */
-    private void setupMenuPanel() {
-        // Configure the menu panel
-        menuPanel.setBounds(15, 30, 100, 900);
-        menuPanel.setBackground(new Color(210, 105, 30));
-        menuPanel.setLayout(null);
         homePanel.add(menuPanel);
-
-        // Add user button
-        userButton = createIconButton(iconUser, 20, 20);
-        menuPanel.add(userButton);
-
-        // Add home button
-        homeButton = createIconButton(iconHome, 20, 140);
-        menuPanel.add(homeButton);
-        
-        // Add map button
-        mapButton = createIconButton(iconMap, 20, 260);
-        menuPanel.add(mapButton);
-
-        // Add theme switch button
-        switchThemeButton = createIconButton(new ImageIcon(MapView.class.getResource("/images/LDMode.png")), 20, 830);
-        menuPanel.add(switchThemeButton);
     }
 
+    
     /**
      * Creates a JButton with an icon and specific dimensions.
      */
@@ -241,13 +207,13 @@ public class MapView extends JFrame {
      */
     private void setupActionListeners() {
         // Action listener for the user button
-        userButton.addActionListener(e -> {
+    	menuPanel.userButton.addActionListener(e -> {
 			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
 			this.setVisible(false);
 		});
 
 		// Action listener for the home button
-		homeButton.addActionListener(e -> {
+    	menuPanel.homeButton.addActionListener(e -> {
 			NewWindowController.openHomePanel(MainController.homeV);
 			setVisible(false);
 		});
@@ -289,7 +255,7 @@ public class MapView extends JFrame {
 		});
 
         // Action listener for the theme switch button
-        switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
         
     }
 

@@ -32,6 +32,7 @@ public class MainController {
 	public static LoginView loginV = new LoginView();
 	public static UserView userV = new UserView();
 	public static AccountIconView accountV = new AccountIconView();
+	public int framesize;
 	public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
 	public static void main(String[] args) {
