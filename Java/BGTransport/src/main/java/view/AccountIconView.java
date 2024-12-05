@@ -198,62 +198,50 @@ public class AccountIconView extends JFrame {
 
 		button1Label.addActionListener(e -> {
 			iconNumber = 1;
-			System.out.println("Icona 0 selezionata");
 		});
 
 		button2Label.addActionListener(e -> {
 			iconNumber = 2;
-			System.out.println("Icona 1 selezionata");
 		});
 
 		button3Label.addActionListener(e -> {
 			iconNumber = 3;
-			System.out.println("Icona 2 selezionata");
 		});
 
 		button4Label.addActionListener(e -> {
 			iconNumber = 4;
-			System.out.println("Icona 3 selezionata");
 		});
 
 		button5Label.addActionListener(e -> {
 			iconNumber = 5;
-			System.out.println("Icona 4 selezionata");
 		});
 
 		button6Label.addActionListener(e -> {
 			iconNumber = 6;
-			System.out.println("Icona 5 selezionata");
 		});
 
 		button7Label.addActionListener(e -> {
 			iconNumber = 7;
-			System.out.println("Icona 6 selezionata");
 		});
 
 		button8Label.addActionListener(e -> {
 			iconNumber = 8;
-			System.out.println("Icona 7 selezionata");
 		});
 
 		button9Label.addActionListener(e -> {
 			iconNumber = 9;
-			System.out.println("Icona 8 selezionata");
 		});
 
 		button10Label.addActionListener(e -> {
 			iconNumber = 10;
-			System.out.println("Icona 9 selezionata");
 		});
 
 		button11Label.addActionListener(e -> {
 			iconNumber = 11;
-			System.out.println("Icona 10 selezionata");
 		});
 
 		button12Label.addActionListener(e -> {
 			iconNumber = 12;
-			System.out.println("Icona 11 selezionata");
 		});
 
 		ConfirmButton.addActionListener(e -> {

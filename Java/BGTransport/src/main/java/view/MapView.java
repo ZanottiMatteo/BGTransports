@@ -242,12 +242,12 @@ public class MapView extends JFrame {
     private void setupActionListeners() {
         // Action listener for the user button
         userButton.addActionListener(e -> {
-            NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
-            this.setVisible(false);
-        });
+			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
+			this.setVisible(false);
+		});
 
-        // Action listener for the home button
-        homeButton.addActionListener(e -> {
+		// Action listener for the home button
+		homeButton.addActionListener(e -> {
 			NewWindowController.openHomePanel(MainController.homeV);
 			setVisible(false);
 		});

@@ -13,12 +13,11 @@ import model.QueryDB;
 import model.RegisteredUser;
 
 public class UserInfoController {
-    // Default placeholder text when fields are disabled
-    private static final String DISABLED_TEXT = "Field disabled";
-
-
+    
+	private static String email = null;
+	
     public static void setProfileIcon() {
-    	int n = LoginController.user.getImageAccount();
+		int n = LoginController.user.getImageAccount();
     	if (n != 0) {
     	String str = String.valueOf(n);
     	UserView.chooseIcon.setIcon(null);
@@ -49,7 +48,7 @@ public class UserInfoController {
      * @param isEnabled True to enable, false to disable.
      */
     private static void toggleTextFields(boolean isEnabled) {
-        JTextField[] textFields = {
+        JTextField[] textFields = {	
         	UserView.tfName,
         	UserView.tfSurname,
         	UserView.tfUsername,
@@ -57,25 +56,47 @@ public class UserInfoController {
             UserView.tfAddress,
             UserView.tfCity,
             UserView.tfZip,
-            UserView.tfEmail
+            UserView.tfEmail // It always have to be the last because it can't be modified directly.
         };
 
         for (int i = 0; i < textFields.length; i++) {
             if (isEnabled) {
+            	if (i != textFields.length-1) {
                 // Restore original content and make editable
             	textFields[i].setText(""); // Clear the placeholder or keep existing text
             	textFields[i].setEditable(true);
+            	}
             } else {
                 // Set placeholder text and make non-editable
             	
             	try {
             		System.out.println(LoginController.user.getEmail());
-					textFields[i].setText(QueryDB.getUserDetailsByEmail(LoginController.user.getEmail()).get(i));
+            		email = LoginController.user.getEmail();
+					textFields[i].setText(QueryDB.getUserDetailsByEmail(email).get(i));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
             	textFields[i].setEditable(false);
             }
         }
+    }
+    
+    public static void setDataFromTF() throws SQLException {
+    	JTextField[] textFields = {
+            	UserView.tfName,
+            	UserView.tfSurname,
+            	UserView.tfUsername,
+            	UserView.tfBirthday,
+                UserView.tfAddress,
+                UserView.tfCity,
+                UserView.tfZip
+            };
+    	if (!textFields[0].getText().isEmpty()) LoginController.user.setName(textFields[0].getText());
+    	if (!textFields[1].getText().isEmpty())LoginController.user.setSurname(textFields[1].getText());
+    	if (!textFields[2].getText().isEmpty())LoginController.user.setUsername(textFields[2].getText());
+    	if (!textFields[3].getText().isEmpty())LoginController.user.setBirthday(textFields[3].getText());
+    	if (!textFields[4].getText().isEmpty())LoginController.user.setAddress(textFields[4].getText());
+    	if (!textFields[5].getText().isEmpty())LoginController.user.setCity(textFields[5].getText());
+    	if (!textFields[6].getText().isEmpty())LoginController.user.setZIPcode(textFields[6].getText());
     }
 }

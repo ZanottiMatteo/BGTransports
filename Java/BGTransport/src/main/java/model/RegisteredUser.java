@@ -120,7 +120,7 @@ public class RegisteredUser extends User{
 
 	public void setCity(String city) throws SQLException {
 		this.city = city;
-		QueryDB.setAddressUser(this.email, city);
+		QueryDB.setTownUser(this.email, city);
 	}
 
 	public String getZIPcode() {
@@ -129,7 +129,7 @@ public class RegisteredUser extends User{
 
 	public void setZIPcode(String ZIPcode) throws SQLException {
 		this.ZIPcode = ZIPcode;
-		QueryDB.setAddressUser(this.email, ZIPcode);
+		QueryDB.setCAPUser(this.email, ZIPcode);
 	}
 
 	public int getImageAccount() {

@@ -69,7 +69,7 @@ public class NewWindowController {
 	}
 	
 	public static void choseUserLogin(UserView userV, LoginView loginV) {
-		if (LoginController.user.getEmail() == null ) {
+		if (LoginController.user.getEmail() == null) {
 			openLoginPanel(loginV);		
 		}
 		else openUserPanel(userV);

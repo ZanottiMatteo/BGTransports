@@ -290,6 +290,22 @@ public class UserView extends JFrame {
 		 changeData.setFont(new Font("SansSerif", Font.BOLD, 16));
 		 changeData.setBackground(new Color(210, 105, 30));
 		 centerPanel.add(changeData);
+		 
+		 saveData.setBounds(650, yPosition, 200, 50);
+		 saveData.setVisible(false);
+		 saveData.setText("Salva");
+		 saveData.setForeground(Color.WHITE);
+		 saveData.setFont(new Font("SansSerif", Font.BOLD, 16));
+		 saveData.setBackground(new Color(210, 105, 30));
+		 centerPanel.add(saveData);
+		 
+		 discardData.setBounds(950, yPosition, 200, 50);
+		 discardData.setVisible(false);
+		 discardData.setText("Annulla");
+		 discardData.setForeground(Color.WHITE);
+		 discardData.setFont(new Font("SansSerif", Font.BOLD, 16));
+		 discardData.setBackground(new Color(210, 105, 30));
+		 centerPanel.add(discardData);
 	    }
 
 	 private void setupActionListeners() {	
@@ -310,6 +326,11 @@ public class UserView extends JFrame {
 	        });
 	        
 	        saveData.addActionListener(e -> {
+	        	try {
+					UserInfoController.setDataFromTF();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
 	        	UserInfoController.disableTextFields();
 	        	saveData.setVisible(false);
 	        	discardData.setVisible(false);
