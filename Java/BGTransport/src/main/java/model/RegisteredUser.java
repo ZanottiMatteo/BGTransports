@@ -46,32 +46,36 @@ public class RegisteredUser extends User{
 		return this.name;
 	}
 
-	public void setName(String name) {
+	public void setName(String name) throws SQLException {
 		this.name = name;
+		QueryDB.setNameUser(this.email, name);
 	}
 
 	public String getSurname() {
 		return this.surname;
 	}
 
-	public void setSurname(String surname) {
+	public void setSurname(String surname) throws SQLException {
 		this.surname = surname;
+		QueryDB.setSurnameUser(this.email, surname);
 	}
 
 	public String getBirthday() {
 		return this.birthday;
 	}
 
-	public void setBirthday(String birthday) {
+	public void setBirthday(String birthday) throws SQLException {
 		this.birthday = birthday;
+		QueryDB.setBirthdayUser(this.email, birthday);
 	}
 
 	public int getRole() {
 		return this.role;
 	}
 
-	public void setRole(int role) {
+	public void setRole(int role) throws SQLException {
 		this.role = role;
+		QueryDB.setRoleUser(this.email, role);
 	}
 
 	public String getEmail() {
@@ -96,39 +100,45 @@ public class RegisteredUser extends User{
 		return this.username;
 	}
 
-	public void setUsername(String username) {
+	public void setUsername(String username) throws SQLException {
 		this.username = username;
+		QueryDB.setUsernameUser(this.email, username);
 	}
 	
 	public String getAddress() {
 		return this.address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(String address) throws SQLException {
 		this.address = address;
+		QueryDB.setAddressUser(this.email, address);
 	}
 
 	public String getCity() {
 		return this.city;
 	}
 
-	public void setCity(String city) {
+	public void setCity(String city) throws SQLException {
 		this.city = city;
+		QueryDB.setAddressUser(this.email, city);
 	}
 
 	public String getZIPcode() {
 		return this.ZIPcode;
 	}
 
-	public void setZIPcode(String ZIPcode) {
+	public void setZIPcode(String ZIPcode) throws SQLException {
 		this.ZIPcode = ZIPcode;
+		QueryDB.setAddressUser(this.email, ZIPcode);
 	}
 
-	public void setImageAccount(int imageAccount) {
-		this.imageAccount = imageAccount;
-	}	
-	
 	public int getImageAccount() {
 		return this.imageAccount;
 	}
+	public void setImageAccount(int imageAccount) throws SQLException {
+		this.imageAccount = imageAccount;
+		QueryDB.setIconUser(this.email, imageAccount);
+	}	
+	
+	
 }

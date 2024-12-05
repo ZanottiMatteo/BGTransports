@@ -257,7 +257,8 @@ public class QueryDB {
 	    return geopositions;
 	}
 
-
+	// --------- Name ---------
+	
 	public static String getNameUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
@@ -270,7 +271,23 @@ public class QueryDB {
 	    // Return the name or null if not found
 	    return record != null ? record.value1() : null;
 	}
+	
+	public static void setNameUser(String email, String newName) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
+	    // Update the user's name where the email matches
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.NAME, newName)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- Surname ---------
+	
 	public static String getSurnameUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
@@ -281,7 +298,21 @@ public class QueryDB {
 
 	    return record != null ? record.value1() : null;
 	}
+	
+	public static void setSurnameUser(String email, String newSurname) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.SURNAME, newSurname)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- Username ---------
 
 	public static String getUsernameUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
@@ -293,7 +324,21 @@ public class QueryDB {
 
 	    return record != null ? record.value1() : null;
 	}
+	
+	public static void setUsernameUser(String email, String newUsername) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.USERNAME, newUsername)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- Birthday ---------
 
 	public static String getBirthdayUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
@@ -305,7 +350,22 @@ public class QueryDB {
 
 	    return record != null ? record.value1() : null;
 	}
+	
+	public static void setBirthdayUser(String email, String newBirthday) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.DATEOFBIRTH, newBirthday)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- Address ---------
+	
 	public static String getAddressUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
@@ -317,6 +377,21 @@ public class QueryDB {
 	    return record != null ? record.value1() : null;
 	}
 	
+	public static void setAddressUser(String email, String newAddress) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
+
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.ADDRESS, newAddress)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- Town ---------
+	
 	public static String getTownUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
@@ -327,6 +402,21 @@ public class QueryDB {
 
 	    return record != null ? record.value1() : null;
 	}
+	
+	public static void setTownUser(String email, String newTown) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
+
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.TOWN, newTown)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- ZIPcode ---------
 
 	public static String getCAPUser(String email) throws SQLException {
 	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
@@ -338,8 +428,76 @@ public class QueryDB {
 
 	    return record != null ? record.value1() : null;
 	}
+	
+	public static void setCAPUser(String email, String newCAP) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
-	public static void getMailUser() throws SQLException {
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.CAP, newCAP)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	// --------- Role ---------
+	
+	public static Integer getRoleUser(String email) throws SQLException {
+        DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
+
+        @Nullable Record1<Integer> record = create.select(User.USER.ROLE)
+                                                  .from(User.USER)
+                                                  .where(User.USER.MAIL.eq(email))
+                                                  .fetchOne();
+
+        return record != null ? record.value1() : null;
+    }
+	
+	public static void setRoleUser(String email, Integer newRole) throws SQLException {
+	    DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
+
+	    int rowsUpdated = create.update(User.USER)
+	                            .set(User.USER.ROLE, newRole)
+	                            .where(User.USER.MAIL.eq(email))
+	                            .execute();
+
+	    if (rowsUpdated == 0) {
+	        throw new SQLException("No rows updated. User not found for email: " + email);
+	    }
+	}
+
+	
+	// --------- IconUser ---------
+    
+    public static Integer getIconUser(String email) throws SQLException {
+        DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
+
+        @Nullable Record1<Integer> record = create.select(User.USER.ICONNUMBER)
+                                                  .from(User.USER)
+                                                  .where(User.USER.MAIL.eq(email))
+                                                  .fetchOne();
+
+        return record != null ? record.value1() : null;
+    }
+
+    public static void setIconUser(String email, Integer newIconNumber) throws SQLException {
+        DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
+
+        int rowsUpdated = create.update(User.USER)
+                                .set(User.USER.ICONNUMBER, newIconNumber)
+                                .where(User.USER.MAIL.eq(email))
+                                .execute();
+
+        if (rowsUpdated == 0) {
+            throw new SQLException("No rows updated. User not found for email: " + email);
+        }
+    }
+
+    
+    
+    public static void getMailUser() throws SQLException {
 		DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
 
 		@NotNull
@@ -399,28 +557,6 @@ public class QueryDB {
 
         // Return the list of emails
         return passwords;
-    }
-
-    public static Integer getRoleUser(String email) throws SQLException {
-        DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
-
-        @Nullable Record1<Integer> record = create.select(User.USER.ROLE)
-                                                  .from(User.USER)
-                                                  .where(User.USER.MAIL.eq(email))
-                                                  .fetchOne();
-
-        return record != null ? record.value1() : null;
-    }
-    
-    public static Integer getIconUser(String email) throws SQLException {
-        DSLContext create = Utility.DSLContext(Constant.DBUrlUsers);
-
-        @Nullable Record1<Integer> record = create.select(User.USER.ICONNUMBER)
-                                                  .from(User.USER)
-                                                  .where(User.USER.MAIL.eq(email))
-                                                  .fetchOne();
-
-        return record != null ? record.value1() : null;
     }
 
 	

@@ -257,8 +257,12 @@ public class AccountIconView extends JFrame {
 		});
 
 		ConfirmButton.addActionListener(e -> {
-			LoginController.user.setImageAccount(iconNumber);
 			UserInfoController.setProfileIcon();
+			try {
+				LoginController.user.setImageAccount(iconNumber);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			System.out.println("Confermato: icona " + iconNumber);
 		});
 
