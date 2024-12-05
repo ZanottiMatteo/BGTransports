@@ -3,7 +3,6 @@ package model;
 import javax.swing.SwingUtilities;
 
 import controller.DownloadDataDBController;
-import controller.MainController;
 import view.DownloadDataDBView;
 
 public class MainModel {

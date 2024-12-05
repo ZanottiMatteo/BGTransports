@@ -2,16 +2,12 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.sql.SQLException;
-
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import model.Constant;
 import model.ControlDB;
 import model.MainModel;
-import view.DownloadDataDBView;
 
 public class DownloadDataDBController {
 

@@ -44,8 +44,9 @@ public class DownloadDataDBView extends JFrame {
         lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
         lblNewLabel.setBounds(109, 128, 216, 25);
         getContentPane().add(lblNewLabel);
-        control.setHorizontalAlignment(SwingConstants.RIGHT);
-        control.setBounds(372, 104, 52, 25);
+        control.setFont(new Font("SansSerif", Font.BOLD, 12));
+        control.setHorizontalAlignment(SwingConstants.LEFT);
+        control.setBounds(375, 110, 49, 25);
         getContentPane().add(control);
 
         setSize(450, 250);
