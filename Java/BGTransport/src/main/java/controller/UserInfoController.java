@@ -18,7 +18,7 @@ public class UserInfoController {
 	private static String email = null;
 	
     public static void setProfileIcon() {
-		int n = LoginController.user.getImageAccount();
+		int n = LoginController.userlogged.getImageAccount();
     	if (n != 0) {
     	String str = String.valueOf(n);
     	UserView.chooseIcon.setIcon(null);
@@ -74,8 +74,8 @@ public class UserInfoController {
                 // Set placeholder text and make non-editable
             	
             	try {
-            		System.out.println(LoginController.user.getEmail());
-            		email = LoginController.user.getEmail();
+            		System.out.println(LoginController.userlogged.getEmail());
+            		email = LoginController.userlogged.getEmail();
 					textFields[i].setText(QueryDB.getUserDetailsByEmail(email).get(i));
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -95,22 +95,22 @@ public class UserInfoController {
                 UserView.tfCity,
                 UserView.tfZip
             };
-    	if (!textFields[0].getText().isEmpty()) LoginController.user.setName(textFields[0].getText());
-    	if (!textFields[1].getText().isEmpty())LoginController.user.setSurname(textFields[1].getText());
-    	if (!textFields[2].getText().isEmpty())LoginController.user.setUsername(textFields[2].getText());
-    	if (!textFields[3].getText().isEmpty())LoginController.user.setBirthday(textFields[3].getText());
-    	if (!textFields[4].getText().isEmpty())LoginController.user.setAddress(textFields[4].getText());
-    	if (!textFields[5].getText().isEmpty())LoginController.user.setCity(textFields[5].getText());
-    	if (!textFields[6].getText().isEmpty())LoginController.user.setZIPcode(textFields[6].getText());
+    	if (!textFields[0].getText().isEmpty()) LoginController.userlogged.setName(textFields[0].getText());
+    	if (!textFields[1].getText().isEmpty())LoginController.userlogged.setSurname(textFields[1].getText());
+    	if (!textFields[2].getText().isEmpty())LoginController.userlogged.setUsername(textFields[2].getText());
+    	if (!textFields[3].getText().isEmpty())LoginController.userlogged.setBirthday(textFields[3].getText());
+    	if (!textFields[4].getText().isEmpty())LoginController.userlogged.setAddress(textFields[4].getText());
+    	if (!textFields[5].getText().isEmpty())LoginController.userlogged.setCity(textFields[5].getText());
+    	if (!textFields[6].getText().isEmpty())LoginController.userlogged.setZIPcode(textFields[6].getText());
     }
     
     public static void showDataWidget() {
     	UserWidget.usernamelabel.setVisible(true);
-    	UserWidget.usernamelabel.setText(LoginController.user.getUsername());
+    	UserWidget.usernamelabel.setText(LoginController.userlogged.getUsername());
     	UserWidget.complnamelabel.setVisible(true);
-    	UserWidget.complnamelabel.setText(LoginController.user.getName() + " " + LoginController.user.getSurname());
+    	UserWidget.complnamelabel.setText(LoginController.userlogged.getName() + " " + LoginController.userlogged.getSurname());
     	UserWidget.emaillabel.setVisible(true);
-    	UserWidget.emaillabel.setText(LoginController.user.getEmail());
+    	UserWidget.emaillabel.setText(LoginController.userlogged.getEmail());
     	UserWidget.accounticon.setVisible(true);
     	UserWidget.titlelabel.setVisible(true);
     	UserWidget.errorlabel.setVisible(false);

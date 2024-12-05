@@ -22,7 +22,7 @@ public class RegisteredUser extends User{
 	int role;
 	
 	 public RegisteredUser() {
-	        this.email = LoginController.FinalEmail;
+	       
 	    }
 	
 	private void loadUserDetails() throws SQLException {

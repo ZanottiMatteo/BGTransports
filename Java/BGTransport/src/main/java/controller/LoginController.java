@@ -13,10 +13,10 @@ import view.LoginView;
 
 public class LoginController {
 	
-	public static RegisteredUser user = new RegisteredUser();
-	public static String FinalEmail = null;
+	public static RegisteredUser userlogged = new RegisteredUser();
+	public static String email;
 	public static void Login(JTextField emailField, JPasswordField passwordField) {
-		String email = emailField.getText();
+		email = emailField.getText();
 		
 		String password = new String(passwordField.getPassword());
 
@@ -27,8 +27,7 @@ public class LoginController {
 					for(int i = 0; i < QueryDB.getAllUserEmails().size(); i++) {
 					if ((email.equals(QueryDB.getAllUserEmails().get(i)) && (password.equals(QueryDB.getAllUserPassword().get(i))))) {
 						System.out.println("Login OK");
-						FinalEmail = email;
-						user.setEmail(FinalEmail);
+						userlogged.setEmail(email);
 						NewWindowController.openUserPanel(MainController.userV);
 						MainController.loginV.setVisible(false);
 					}										

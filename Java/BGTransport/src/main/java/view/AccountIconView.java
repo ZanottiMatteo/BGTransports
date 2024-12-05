@@ -246,7 +246,7 @@ public class AccountIconView extends JFrame {
 
 		ConfirmButton.addActionListener(e -> {		
 			try {
-				LoginController.user.setImageAccount(iconNumber);
+				LoginController.userlogged.setImageAccount(iconNumber);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
