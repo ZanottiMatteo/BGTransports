@@ -37,7 +37,7 @@ public class Company extends TableImpl<CompanyRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>COMPANY</code>
+     * The reference instance of <code>company</code>
      */
     public static final Company COMPANY = new Company();
 
@@ -50,89 +50,89 @@ public class Company extends TableImpl<CompanyRecord> {
     }
 
     /**
-     * The column <code>COMPANY.name</code>.
+     * The column <code>company.name</code>.
      */
     public final TableField<CompanyRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.legal_structure</code>.
+     * The column <code>company.legalStructure</code>.
      */
-    public final TableField<CompanyRecord, String> LEGAL_STRUCTURE = createField(DSL.name("legal_structure"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> LEGALSTRUCTURE = createField(DSL.name("legalStructure"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.business_tax_code</code>.
+     * The column <code>company.businessTaxCode</code>.
      */
-    public final TableField<CompanyRecord, String> BUSINESS_TAX_CODE = createField(DSL.name("business_tax_code"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> BUSINESSTAXCODE = createField(DSL.name("businessTaxCode"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.company_registration_number</code>.
+     * The column <code>company.companyRegistrationNumber</code>.
      */
-    public final TableField<CompanyRecord, String> COMPANY_REGISTRATION_NUMBER = createField(DSL.name("company_registration_number"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> COMPANYREGISTRATIONNUMBER = createField(DSL.name("companyRegistrationNumber"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.incorporation_date</code>.
+     * The column <code>company.incorporationDate</code>.
      */
-    public final TableField<CompanyRecord, String> INCORPORATION_DATE = createField(DSL.name("incorporation_date"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> INCORPORATIONDATE = createField(DSL.name("incorporationDate"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.legal_representative</code>.
+     * The column <code>company.legalRepresentative</code>.
      */
-    public final TableField<CompanyRecord, String> LEGAL_REPRESENTATIVE = createField(DSL.name("legal_representative"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> LEGALREPRESENTATIVE = createField(DSL.name("legalRepresentative"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.number_of_employees</code>.
+     * The column <code>company.numberOfEmployees</code>.
      */
-    public final TableField<CompanyRecord, String> NUMBER_OF_EMPLOYEES = createField(DSL.name("number_of_employees"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> NUMBEROFEMPLOYEES = createField(DSL.name("numberOfEmployees"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.ateco_code</code>.
+     * The column <code>company.atecoCode</code>.
      */
-    public final TableField<CompanyRecord, String> ATECO_CODE = createField(DSL.name("ateco_code"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> ATECOCODE = createField(DSL.name("atecoCode"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.registered_office</code>.
+     * The column <code>company.registeredOffice</code>.
      */
-    public final TableField<CompanyRecord, String> REGISTERED_OFFICE = createField(DSL.name("registered_office"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> REGISTEREDOFFICE = createField(DSL.name("registeredOffice"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.province</code>.
+     * The column <code>company.province</code>.
      */
     public final TableField<CompanyRecord, String> PROVINCE = createField(DSL.name("province"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.cap</code>.
+     * The column <code>company.cap</code>.
      */
     public final TableField<CompanyRecord, String> CAP = createField(DSL.name("cap"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.address</code>.
+     * The column <code>company.address</code>.
      */
     public final TableField<CompanyRecord, String> ADDRESS = createField(DSL.name("address"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.street_number</code>.
+     * The column <code>company.streetNumber</code>.
      */
-    public final TableField<CompanyRecord, String> STREET_NUMBER = createField(DSL.name("street_number"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> STREETNUMBER = createField(DSL.name("streetNumber"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.telephone</code>.
+     * The column <code>company.telephone</code>.
      */
     public final TableField<CompanyRecord, String> TELEPHONE = createField(DSL.name("telephone"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.mail</code>.
+     * The column <code>company.mail</code>.
      */
     public final TableField<CompanyRecord, String> MAIL = createField(DSL.name("mail"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.social</code>.
+     * The column <code>company.social</code>.
      */
     public final TableField<CompanyRecord, String> SOCIAL = createField(DSL.name("social"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>COMPANY.web_site</code>.
+     * The column <code>company.webSite</code>.
      */
-    public final TableField<CompanyRecord, String> WEB_SITE = createField(DSL.name("web_site"), SQLDataType.VARCHAR(255), this, "");
+    public final TableField<CompanyRecord, String> WEBSITE = createField(DSL.name("webSite"), SQLDataType.VARCHAR(255), this, "");
 
     private Company(Name alias, Table<CompanyRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
@@ -143,24 +143,24 @@ public class Company extends TableImpl<CompanyRecord> {
     }
 
     /**
-     * Create an aliased <code>COMPANY</code> table reference
+     * Create an aliased <code>company</code> table reference
      */
     public Company(String alias) {
         this(DSL.name(alias), COMPANY);
     }
 
     /**
-     * Create an aliased <code>COMPANY</code> table reference
+     * Create an aliased <code>company</code> table reference
      */
     public Company(Name alias) {
         this(alias, COMPANY);
     }
 
     /**
-     * Create a <code>COMPANY</code> table reference
+     * Create a <code>company</code> table reference
      */
     public Company() {
-        this(DSL.name("COMPANY"), null);
+        this(DSL.name("company"), null);
     }
 
     @Override

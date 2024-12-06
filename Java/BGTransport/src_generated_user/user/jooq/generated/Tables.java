@@ -14,7 +14,7 @@ import user.jooq.generated.tables.User;
 public class Tables {
 
     /**
-     * The table <code>USER</code>.
+     * The table <code>user</code>.
      */
     public static final User USER = User.USER;
 }

@@ -37,7 +37,7 @@ public class User extends TableImpl<UserRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>USER</code>
+     * The reference instance of <code>user</code>
      */
     public static final User USER = new User();
 
@@ -50,54 +50,59 @@ public class User extends TableImpl<UserRecord> {
     }
 
     /**
-     * The column <code>USER.username</code>.
+     * The column <code>user.username</code>.
      */
     public final TableField<UserRecord, String> USERNAME = createField(DSL.name("username"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.name</code>.
+     * The column <code>user.name</code>.
      */
     public final TableField<UserRecord, String> NAME = createField(DSL.name("name"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.surname</code>.
+     * The column <code>user.surname</code>.
      */
     public final TableField<UserRecord, String> SURNAME = createField(DSL.name("surname"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.date_of_birth</code>.
+     * The column <code>user.dateOfBirth</code>.
      */
-    public final TableField<UserRecord, String> DATE_OF_BIRTH = createField(DSL.name("date_of_birth"), SQLDataType.VARCHAR(20), this, "");
+    public final TableField<UserRecord, String> DATEOFBIRTH = createField(DSL.name("dateOfBirth"), SQLDataType.VARCHAR(20), this, "");
 
     /**
-     * The column <code>USER.address</code>.
+     * The column <code>user.address</code>.
      */
     public final TableField<UserRecord, String> ADDRESS = createField(DSL.name("address"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>USER.town</code>.
+     * The column <code>user.town</code>.
      */
     public final TableField<UserRecord, String> TOWN = createField(DSL.name("town"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>USER.cap</code>.
+     * The column <code>user.cap</code>.
      */
     public final TableField<UserRecord, String> CAP = createField(DSL.name("cap"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.password</code>.
+     * The column <code>user.password</code>.
      */
     public final TableField<UserRecord, String> PASSWORD = createField(DSL.name("password"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>USER.mail</code>.
+     * The column <code>user.mail</code>.
      */
     public final TableField<UserRecord, String> MAIL = createField(DSL.name("mail"), SQLDataType.VARCHAR(100), this, "");
 
     /**
-     * The column <code>USER.role</code>.
+     * The column <code>user.role</code>.
      */
     public final TableField<UserRecord, Integer> ROLE = createField(DSL.name("role"), SQLDataType.INTEGER, this, "");
+
+    /**
+     * The column <code>user.IconNumber</code>.
+     */
+    public final TableField<UserRecord, Integer> ICONNUMBER = createField(DSL.name("IconNumber"), SQLDataType.INTEGER, this, "");
 
     private User(Name alias, Table<UserRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
@@ -108,24 +113,24 @@ public class User extends TableImpl<UserRecord> {
     }
 
     /**
-     * Create an aliased <code>USER</code> table reference
+     * Create an aliased <code>user</code> table reference
      */
     public User(String alias) {
         this(DSL.name(alias), USER);
     }
 
     /**
-     * Create an aliased <code>USER</code> table reference
+     * Create an aliased <code>user</code> table reference
      */
     public User(Name alias) {
         this(alias, USER);
     }
 
     /**
-     * Create a <code>USER</code> table reference
+     * Create a <code>user</code> table reference
      */
     public User() {
-        this(DSL.name("USER"), null);
+        this(DSL.name("user"), null);
     }
 
     @Override

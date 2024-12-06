@@ -5,14 +5,14 @@ package transportation.jooq.generated;
 
 
 import transportation.jooq.generated.tables.Company;
-import transportation.jooq.generated.tables.Funicular;
-import transportation.jooq.generated.tables.FunicularStation;
-import transportation.jooq.generated.tables.Pullman;
-import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.Train;
-import transportation.jooq.generated.tables.TrainStation;
-import transportation.jooq.generated.tables.Tram;
-import transportation.jooq.generated.tables.TramStop;
+import transportation.jooq.generated.tables.Funicularstation;
+import transportation.jooq.generated.tables.Funiculartimetable;
+import transportation.jooq.generated.tables.Pullmanstop;
+import transportation.jooq.generated.tables.Pullmantimetable;
+import transportation.jooq.generated.tables.Trainstation;
+import transportation.jooq.generated.tables.Traintimetable;
+import transportation.jooq.generated.tables.Tramstop;
+import transportation.jooq.generated.tables.Tramtimetable;
 
 
 /**
@@ -22,47 +22,47 @@ import transportation.jooq.generated.tables.TramStop;
 public class Tables {
 
     /**
-     * The table <code>COMPANY</code>.
+     * The table <code>company</code>.
      */
     public static final Company COMPANY = Company.COMPANY;
 
     /**
-     * The table <code>FUNICULAR</code>.
+     * The table <code>funicularStation</code>.
      */
-    public static final Funicular FUNICULAR = Funicular.FUNICULAR;
+    public static final Funicularstation FUNICULARSTATION = Funicularstation.FUNICULARSTATION;
 
     /**
-     * The table <code>FUNICULAR STATION</code>.
+     * The table <code>funicularTimetable</code>.
      */
-    public static final FunicularStation FUNICULAR_STATION = FunicularStation.FUNICULAR_STATION;
+    public static final Funiculartimetable FUNICULARTIMETABLE = Funiculartimetable.FUNICULARTIMETABLE;
 
     /**
-     * The table <code>PULLMAN</code>.
+     * The table <code>pullmanStop</code>.
      */
-    public static final Pullman PULLMAN = Pullman.PULLMAN;
+    public static final Pullmanstop PULLMANSTOP = Pullmanstop.PULLMANSTOP;
 
     /**
-     * The table <code>PULLMAN STOP</code>.
+     * The table <code>pullmanTimetable</code>.
      */
-    public static final PullmanStop PULLMAN_STOP = PullmanStop.PULLMAN_STOP;
+    public static final Pullmantimetable PULLMANTIMETABLE = Pullmantimetable.PULLMANTIMETABLE;
 
     /**
-     * The table <code>TRAIN</code>.
+     * The table <code>trainStation</code>.
      */
-    public static final Train TRAIN = Train.TRAIN;
+    public static final Trainstation TRAINSTATION = Trainstation.TRAINSTATION;
 
     /**
-     * The table <code>TRAIN STATION</code>.
+     * The table <code>trainTimetable</code>.
      */
-    public static final TrainStation TRAIN_STATION = TrainStation.TRAIN_STATION;
+    public static final Traintimetable TRAINTIMETABLE = Traintimetable.TRAINTIMETABLE;
 
     /**
-     * The table <code>TRAM</code>.
+     * The table <code>tramStop</code>.
      */
-    public static final Tram TRAM = Tram.TRAM;
+    public static final Tramstop TRAMSTOP = Tramstop.TRAMSTOP;
 
     /**
-     * The table <code>TRAM STOP</code>.
+     * The table <code>tramTimetable</code>.
      */
-    public static final TramStop TRAM_STOP = TramStop.TRAM_STOP;
+    public static final Tramtimetable TRAMTIMETABLE = Tramtimetable.TRAMTIMETABLE;
 }

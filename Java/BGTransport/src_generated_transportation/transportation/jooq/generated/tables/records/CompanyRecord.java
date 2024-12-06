@@ -19,240 +19,240 @@ public class CompanyRecord extends UpdatableRecordImpl<CompanyRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>COMPANY.name</code>.
+     * Setter for <code>company.name</code>.
      */
     public void setName(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>COMPANY.name</code>.
+     * Getter for <code>company.name</code>.
      */
     public String getName() {
         return (String) get(0);
     }
 
     /**
-     * Setter for <code>COMPANY.legal_structure</code>.
+     * Setter for <code>company.legalStructure</code>.
      */
-    public void setLegalStructure(String value) {
+    public void setLegalstructure(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>COMPANY.legal_structure</code>.
+     * Getter for <code>company.legalStructure</code>.
      */
-    public String getLegalStructure() {
+    public String getLegalstructure() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>COMPANY.business_tax_code</code>.
+     * Setter for <code>company.businessTaxCode</code>.
      */
-    public void setBusinessTaxCode(String value) {
+    public void setBusinesstaxcode(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>COMPANY.business_tax_code</code>.
+     * Getter for <code>company.businessTaxCode</code>.
      */
-    public String getBusinessTaxCode() {
+    public String getBusinesstaxcode() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>COMPANY.company_registration_number</code>.
+     * Setter for <code>company.companyRegistrationNumber</code>.
      */
-    public void setCompanyRegistrationNumber(String value) {
+    public void setCompanyregistrationnumber(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>COMPANY.company_registration_number</code>.
+     * Getter for <code>company.companyRegistrationNumber</code>.
      */
-    public String getCompanyRegistrationNumber() {
+    public String getCompanyregistrationnumber() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>COMPANY.incorporation_date</code>.
+     * Setter for <code>company.incorporationDate</code>.
      */
-    public void setIncorporationDate(String value) {
+    public void setIncorporationdate(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>COMPANY.incorporation_date</code>.
+     * Getter for <code>company.incorporationDate</code>.
      */
-    public String getIncorporationDate() {
+    public String getIncorporationdate() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>COMPANY.legal_representative</code>.
+     * Setter for <code>company.legalRepresentative</code>.
      */
-    public void setLegalRepresentative(String value) {
+    public void setLegalrepresentative(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>COMPANY.legal_representative</code>.
+     * Getter for <code>company.legalRepresentative</code>.
      */
-    public String getLegalRepresentative() {
+    public String getLegalrepresentative() {
         return (String) get(5);
     }
 
     /**
-     * Setter for <code>COMPANY.number_of_employees</code>.
+     * Setter for <code>company.numberOfEmployees</code>.
      */
-    public void setNumberOfEmployees(String value) {
+    public void setNumberofemployees(String value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>COMPANY.number_of_employees</code>.
+     * Getter for <code>company.numberOfEmployees</code>.
      */
-    public String getNumberOfEmployees() {
+    public String getNumberofemployees() {
         return (String) get(6);
     }
 
     /**
-     * Setter for <code>COMPANY.ateco_code</code>.
+     * Setter for <code>company.atecoCode</code>.
      */
-    public void setAtecoCode(String value) {
+    public void setAtecocode(String value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>COMPANY.ateco_code</code>.
+     * Getter for <code>company.atecoCode</code>.
      */
-    public String getAtecoCode() {
+    public String getAtecocode() {
         return (String) get(7);
     }
 
     /**
-     * Setter for <code>COMPANY.registered_office</code>.
+     * Setter for <code>company.registeredOffice</code>.
      */
-    public void setRegisteredOffice(String value) {
+    public void setRegisteredoffice(String value) {
         set(8, value);
     }
 
     /**
-     * Getter for <code>COMPANY.registered_office</code>.
+     * Getter for <code>company.registeredOffice</code>.
      */
-    public String getRegisteredOffice() {
+    public String getRegisteredoffice() {
         return (String) get(8);
     }
 
     /**
-     * Setter for <code>COMPANY.province</code>.
+     * Setter for <code>company.province</code>.
      */
     public void setProvince(String value) {
         set(9, value);
     }
 
     /**
-     * Getter for <code>COMPANY.province</code>.
+     * Getter for <code>company.province</code>.
      */
     public String getProvince() {
         return (String) get(9);
     }
 
     /**
-     * Setter for <code>COMPANY.cap</code>.
+     * Setter for <code>company.cap</code>.
      */
     public void setCap(String value) {
         set(10, value);
     }
 
     /**
-     * Getter for <code>COMPANY.cap</code>.
+     * Getter for <code>company.cap</code>.
      */
     public String getCap() {
         return (String) get(10);
     }
 
     /**
-     * Setter for <code>COMPANY.address</code>.
+     * Setter for <code>company.address</code>.
      */
     public void setAddress(String value) {
         set(11, value);
     }
 
     /**
-     * Getter for <code>COMPANY.address</code>.
+     * Getter for <code>company.address</code>.
      */
     public String getAddress() {
         return (String) get(11);
     }
 
     /**
-     * Setter for <code>COMPANY.street_number</code>.
+     * Setter for <code>company.streetNumber</code>.
      */
-    public void setStreetNumber(String value) {
+    public void setStreetnumber(String value) {
         set(12, value);
     }
 
     /**
-     * Getter for <code>COMPANY.street_number</code>.
+     * Getter for <code>company.streetNumber</code>.
      */
-    public String getStreetNumber() {
+    public String getStreetnumber() {
         return (String) get(12);
     }
 
     /**
-     * Setter for <code>COMPANY.telephone</code>.
+     * Setter for <code>company.telephone</code>.
      */
     public void setTelephone(String value) {
         set(13, value);
     }
 
     /**
-     * Getter for <code>COMPANY.telephone</code>.
+     * Getter for <code>company.telephone</code>.
      */
     public String getTelephone() {
         return (String) get(13);
     }
 
     /**
-     * Setter for <code>COMPANY.mail</code>.
+     * Setter for <code>company.mail</code>.
      */
     public void setMail(String value) {
         set(14, value);
     }
 
     /**
-     * Getter for <code>COMPANY.mail</code>.
+     * Getter for <code>company.mail</code>.
      */
     public String getMail() {
         return (String) get(14);
     }
 
     /**
-     * Setter for <code>COMPANY.social</code>.
+     * Setter for <code>company.social</code>.
      */
     public void setSocial(String value) {
         set(15, value);
     }
 
     /**
-     * Getter for <code>COMPANY.social</code>.
+     * Getter for <code>company.social</code>.
      */
     public String getSocial() {
         return (String) get(15);
     }
 
     /**
-     * Setter for <code>COMPANY.web_site</code>.
+     * Setter for <code>company.webSite</code>.
      */
-    public void setWebSite(String value) {
+    public void setWebsite(String value) {
         set(16, value);
     }
 
     /**
-     * Getter for <code>COMPANY.web_site</code>.
+     * Getter for <code>company.webSite</code>.
      */
-    public String getWebSite() {
+    public String getWebsite() {
         return (String) get(16);
     }
 
@@ -279,26 +279,26 @@ public class CompanyRecord extends UpdatableRecordImpl<CompanyRecord> {
     /**
      * Create a detached, initialised CompanyRecord
      */
-    public CompanyRecord(String name, String legalStructure, String businessTaxCode, String companyRegistrationNumber, String incorporationDate, String legalRepresentative, String numberOfEmployees, String atecoCode, String registeredOffice, String province, String cap, String address, String streetNumber, String telephone, String mail, String social, String webSite) {
+    public CompanyRecord(String name, String legalstructure, String businesstaxcode, String companyregistrationnumber, String incorporationdate, String legalrepresentative, String numberofemployees, String atecocode, String registeredoffice, String province, String cap, String address, String streetnumber, String telephone, String mail, String social, String website) {
         super(Company.COMPANY);
 
         setName(name);
-        setLegalStructure(legalStructure);
-        setBusinessTaxCode(businessTaxCode);
-        setCompanyRegistrationNumber(companyRegistrationNumber);
-        setIncorporationDate(incorporationDate);
-        setLegalRepresentative(legalRepresentative);
-        setNumberOfEmployees(numberOfEmployees);
-        setAtecoCode(atecoCode);
-        setRegisteredOffice(registeredOffice);
+        setLegalstructure(legalstructure);
+        setBusinesstaxcode(businesstaxcode);
+        setCompanyregistrationnumber(companyregistrationnumber);
+        setIncorporationdate(incorporationdate);
+        setLegalrepresentative(legalrepresentative);
+        setNumberofemployees(numberofemployees);
+        setAtecocode(atecocode);
+        setRegisteredoffice(registeredoffice);
         setProvince(province);
         setCap(cap);
         setAddress(address);
-        setStreetNumber(streetNumber);
+        setStreetnumber(streetnumber);
         setTelephone(telephone);
         setMail(mail);
         setSocial(social);
-        setWebSite(webSite);
+        setWebsite(website);
         resetChangedOnNotNull();
     }
 }

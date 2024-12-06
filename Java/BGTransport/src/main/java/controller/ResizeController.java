@@ -6,12 +6,8 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,13 +16,15 @@ import javax.swing.JPanel;
 
 import org.jxmapviewer.JXMapViewer;
 
-import view.ResizableImage;
+import model.ConstantString;
+import model.ResizableImage;
+import view.BigLabel;
+import view.LittleLabel;
+import view.MediumLabel;
+import view.MiniLabel;
 
 public class ResizeController {
 
-	private static BufferedImage originalImage;
-    private Image scaledImage;
-	
 	public static void resizeComponents(Dimension originalPanelSize, JFrame jframe, Map<Component, Rectangle> componentBounds, JPanel panel) {
     	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;        
@@ -35,16 +33,37 @@ public class ResizeController {
         for (Map.Entry<Component, Rectangle> entry : componentBounds.entrySet()) {
             Component comp = entry.getKey();
             Rectangle originalBounds = entry.getValue();
-            int size = 0;
             comp.setBounds((int)(originalBounds.x * widthRatio), (int)(originalBounds.y * heightRatio), (int)(originalBounds.width * widthRatio), (int)(originalBounds.height * heightRatio));
-            if (comp instanceof JLabel) {
+            if (comp instanceof LittleLabel) {
+            	LittleLabel label = (LittleLabel) comp;
+                
+                int fontSize = Math.max(jframe.getWidth() / 100, 10);
+
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+            } else if (comp instanceof MiniLabel) {
+            	MiniLabel label = (MiniLabel) comp;
+                
+                int fontSize = Math.max(jframe.getWidth() / 130, 10);
+
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.ITALIC, fontSize));
+            } else if (comp instanceof MediumLabel) {
+            	MediumLabel label = (MediumLabel) comp;
+                
+                int fontSize = Math.max(jframe.getWidth() / 90, 10);
+
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+            } else if (comp instanceof BigLabel) {
+            	BigLabel label = (BigLabel) comp;
+                
+                int fontSize = Math.max(jframe.getWidth() / 50, 10);
+
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+            } else if (comp instanceof JLabel) {
                 JLabel label = (JLabel) comp;
                 
-                // Calcoliamo una nuova dimensione del font in base alla larghezza della finestra
-                int fontSize = Math.max(jframe.getWidth() / 60, 10);  // La dimensione del font deve essere almeno 10
+                int fontSize = Math.max(jframe.getWidth() / 60, 10);
 
-                // Impostiamo il nuovo font per la JLabel
-                label.setFont(new Font("SanSerif", Font.BOLD, fontSize));
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
             }
         }       
         panel.repaint();
@@ -59,46 +78,46 @@ public class ResizeController {
         panel.revalidate();
     }
 	
-	public static void resizePanel(Dimension originalPanelSize, JFrame jframe, JXMapViewer MapViewer, Dimension paneldimension, Point point) {
+	public static void resizePanel(Dimension originalPanelSize, JFrame jframe, JXMapViewer mapViewer, Dimension paneldimension, Point point) {
     	double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;         
-        MapViewer.setBounds((int)(point.x*widthRatio), (int)(point.y*heightRatio), (int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
-        MapViewer.repaint();
-        MapViewer.revalidate();
+        mapViewer.setBounds((int)(point.x*widthRatio), (int)(point.y*heightRatio), (int)(paneldimension.width * widthRatio), (int)(paneldimension.height * heightRatio));
+        mapViewer.repaint();
+        mapViewer.revalidate();
     }
 	
-	public static void resizeImagePanel(JFrame jframe, ResizableImage Rimage, JPanel panel) {
+	public static void resizeImagePanel(JFrame jframe, ResizableImage rimage, JPanel panel) {
 		int newWidth = jframe.getWidth();
         int newHeight = jframe.getHeight();
-        Rimage.resizeImage(newWidth, newHeight);
+        rimage.resizeImage(newWidth, newHeight);
         panel.repaint();
         panel.revalidate();
 	}
 	
-	public static void resizeImageButton(Dimension originalPanelSize, JFrame jframe, ImageIcon Rimage, JButton jbutton) {
+	public static void resizeImageButton(Dimension originalPanelSize, JFrame jframe, ImageIcon rimage, JButton jbutton) {
 		double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
-        double singleRatio = 0.0;
+        double singleRatio;
         if (widthRatio > heightRatio) {
         	singleRatio = heightRatio;
         } else {
         	singleRatio = widthRatio;
         }     
-        Image scaledImage = Rimage.getImage().getScaledInstance((int)(Rimage.getIconWidth() * singleRatio), (int)(Rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
+        Image scaledImage = rimage.getImage().getScaledInstance((int)(rimage.getIconWidth() * singleRatio), (int)(rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
         ImageIcon resizedIcon = new ImageIcon(scaledImage);
         jbutton.setIcon(resizedIcon);
 	}
 	
-	public static void resizeImageLabel(Dimension originalPanelSize, JFrame jframe, ImageIcon Rimage, JLabel jlabel) {
+	public static void resizeImageLabel(Dimension originalPanelSize, JFrame jframe, ImageIcon rimage, JLabel jlabel) {
 		double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
         double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
-        double singleRatio = 0.0;
+        double singleRatio;
         if (widthRatio > heightRatio) {
         	singleRatio = heightRatio;
         } else {
         	singleRatio = widthRatio;
         }     
-        Image scaledImage = Rimage.getImage().getScaledInstance((int)(Rimage.getIconWidth() * singleRatio), (int)(Rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
+        Image scaledImage = rimage.getImage().getScaledInstance((int)(rimage.getIconWidth() * singleRatio), (int)(rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
         ImageIcon resizedIcon = new ImageIcon(scaledImage);
         jlabel.setIcon(resizedIcon);
 	}

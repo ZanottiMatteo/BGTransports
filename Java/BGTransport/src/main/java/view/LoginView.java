@@ -1,162 +1,237 @@
 package view;
 
 import javax.swing.*;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.Rectangle;
-import java.io.InputStream;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Image;
 
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
-import controller.ResizeController;
+import model.ConstantString;
+import model.ResizableImage;
 import controller.LoginController;
-import view.RoundedPanel;
-
 
 public class LoginView extends JFrame {
 
-	public JPanel mainPanel;	
-	public JLabel LogoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
-	public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
-	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png")); 
-	public JPasswordField passwordField = new JPasswordField();;
-	public JButton switchThemeButton;
-	public JButton returnButton = new JButton();
-	public ImageIcon iconReturn = new ImageIcon(LoginView.class.getResource("/images/Return.png"));
-	public JPanel BGpanel;
-	public JTextField textField = new JTextField();
-	
-	public Map<Component, Rectangle> componentBounds = new HashMap<>();
-	public final Dimension originalPanelSize = new Dimension(1920, 1080);
-	public final Dimension MinPanelSize = new Dimension(1075, 615);
-	
-	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4391409465142244190L;
+	// Declare UI components
+    public JPanel mainPanel;
+    public JLabel logoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
+    public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
+    public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
+    public JPasswordField passwordField = new JPasswordField();
+    public JButton switchThemeButton;
+    public JButton returnButton = new JButton();
+    public ImageIcon iconReturn = new ImageIcon(LoginView.class.getResource("/images/Return.png"));
+    public JPanel bgPanel;
+    public JTextField textField = new JTextField();
+    public JButton signInButton = new JButton();
+    public LittleLabel textEmail = new LittleLabel("Email");
+    public JButton signupButton = new JButton("Sign Up");
+    public RoundedPanel centerPanel = new RoundedPanel();
+    public final Point centerPanelpoint = new Point(580, 167);
+    public LittleLabel lblPassword = new LittleLabel("Password");
+    public MiniLabel errorLabel = new MiniLabel();
+
+    // Map to store component bounds for later resizing
+    public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
+    
+    // Define dimensions for the frame and panel
+    public final Dimension originalPanelSize = new Dimension(1920, 1080);
+    public final Dimension minPanelSize = new Dimension(1150, 660);
+    public final Dimension centralPanelSize = new Dimension(760, 644);
+    
+    
     public LoginView() {
-    	 mainPanel = new JPanel() {
-         	@Override
-         	public void paintComponent(Graphics g) {
-         		super.paintComponent(g);
-         		g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
-         	}
-         };      
-    	setExtendedState(Frame.MAXIMIZED_BOTH);
-    	setMinimumSize(MinPanelSize);    	    
-    	System.out.println("login" + ThemeController.getTheme());
-    	if (ThemeController.getTheme()) {
-			try {
-		        UIManager.setLookAndFeel(new FlatLightLaf());
-		    } catch (UnsupportedLookAndFeelException e) {
-		        e.printStackTrace();
-		    }}
-		else {
-			try {
-	            UIManager.setLookAndFeel(new FlatDarkLaf());
-	        } catch (UnsupportedLookAndFeelException e) {
-	            e.printStackTrace();
-	        }
-		}
- 	
-    	UIManager.put("Button.arc", 999);         
-        UIManager.put("TextComponent.arc", 15); 
-        UIManager.put("Component.arc", 15);
-    	getContentPane().setLayout(null);
-    	
-    	returnButton.setBounds(30, 30, 60, 60);
-    	returnButton.setBorderPainted(false);
-    	returnButton.setBackground(new Color(0, 0, 0, 0));
-    	returnButton.setIcon(iconReturn);
-    	returnButton.addActionListener(e -> {
-    		NewWindowController.openHomePanel(MainController.homeV);
-    		setVisible(false);
-    	});
-    	mainPanel.add(returnButton);
-    	
-    	JButton signInButton = new JButton();
-    	signInButton.setText("Sign In");
-    	signInButton.setForeground(new Color(255, 255, 255));
-    	signInButton.setFont(new Font("SansSerif", Font.BOLD, 16));
-    	signInButton.setBackground(new Color(210, 105, 30));
-    	signInButton.setBounds(885, 645, 150, 60);	
-    	signInButton.addActionListener(e -> LoginController.Login(textField, passwordField));
-    	mainPanel.add(signInButton);
-    	
-    	JButton signupButton = new JButton("Sign Up");
-    	signupButton.setForeground(new Color(210, 105, 30));
-    	signupButton.setRolloverEnabled(false);
-    	signupButton.setBounds(885, 730, 150, 35);
-    	signupButton.setPreferredSize(null);
-    	signupButton.setFont(new Font("SansSerif", Font.BOLD, 15));
-    	signupButton.setBorderPainted(false);       
-    	signupButton.setBackground(new Color(0,0,0,0));
-    	signupButton.addActionListener(e -> NewWindowController.openSignUp(MainController.signupV));
-    	mainPanel.add(signupButton);
-    	
-    	mainPanel.setBounds(0, 0, 1920, 1080);      
-    	mainPanel.setLayout(null);
-    	getContentPane().add(mainPanel);   	
-    	
-    	JLabel textEmail = new JLabel("Email");
-    	textEmail.setHorizontalAlignment(SwingConstants.LEFT);
-    	textEmail.setFont(new Font("SansSerif", Font.BOLD, 12));
-    	textEmail.setBounds(852, 405, 150, 30);
-    	mainPanel.add(textEmail);
-	        	
-    	LogoLabel.setBounds(662, 167, 596, 260);
-    	mainPanel.add(LogoLabel);
-	       	   	
-    	switchThemeButton = new JButton();
-    	switchThemeButton.setBackground(new Color(0,0,0,0));
-    	switchThemeButton.setBounds(938, 850, 44, 35);
-    	switchThemeButton.setIcon(iconLDmode);
-    	switchThemeButton.setForeground(new Color(230, 230, 250));    	
-    	switchThemeButton.setRolloverEnabled(false);
-    	switchThemeButton.setBorderPainted(false);
-    	 switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
- 				MainController.signupV));
-        mainPanel.add(switchThemeButton);
+        // Initialize main panel
+        initializeMainPanel();
+
+        // Initialize buttons and actions
+        initializeReturnButton();
+        initializeSignInButton();
+        initializeSignUpButton();
+        initializeThemeSwitchButton();
+
+        // Initialize text fields and labels
+        initializeTextFields();
+        initializeLabels();
+
+        // Initialize logo
+        initializeLogo();
         
+        // Initailize Central Panel
+        initializeCentralPanel();
+        
+        // Store bounds for resizing
+        storeComponentBounds();
+        
+        // Set frame properties and layout
+        initComponents();
+    }
+
+    /**
+     * Initializes the main panel with the background wallpaper.
+     */
+    private void initializeMainPanel() {
+        mainPanel = new JPanel() {
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = -2563297190423775145L;
+
+			@Override
+            public void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
+            }
+        };
+
+        mainPanel.setBounds(0, 0, 1920, 1080);
+        mainPanel.setLayout(null);
+        getContentPane().add(mainPanel);
+        centerPanel.setLayout(null);
+        centerPanel.setBounds(580, 167, 760, 644);
+        mainPanel.add(centerPanel);
+    }
+    
+    /**
+     * Initializes the main panel with the background wallpaper.
+     */
+    private void initializeCentralPanel() {
+        centerPanel.setLayout(null);
+        centerPanel.setBounds(580, 167, 760, 644);
+        mainPanel.add(centerPanel);
+    }
+
+    /**
+     * Configures the return button (back to home screen).
+     */
+    private void initializeReturnButton() {
+        returnButton.setBounds(30, 30, 60, 60);
+        returnButton.setBorderPainted(false);
+        returnButton.setBackground(new Color(0, 0, 0, 0));
+        returnButton.setIcon(iconReturn);
+        returnButton.addActionListener(e -> {
+            NewWindowController.openHomePanel(MainController.homeV);
+            setVisible(false);
+        });
+        mainPanel.add(returnButton);
+    }
+
+    /**
+     * Configures the "Sign In" button and its action.
+     */
+    private void initializeSignInButton() {
+        signInButton.setText("Sign In");
+        signInButton.setForeground(new Color(255, 255, 255));
+        signInButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+        signInButton.setBackground(new Color(210, 105, 30));
+        signInButton.setBounds(885, 645, 150, 60);
+        signInButton.addActionListener(e -> LoginController.login(textField, passwordField));
+        mainPanel.add(signInButton);
+    }
+
+    /**
+     * Configures the "Sign Up" button and its action.
+     */
+    private void initializeSignUpButton() {
+        signupButton.setForeground(new Color(210, 105, 30));
+        signupButton.setRolloverEnabled(false);
+        signupButton.setBounds(885, 730, 150, 35);
+        signupButton.setPreferredSize(null);
+        signupButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 15));
+        signupButton.setBorderPainted(false);
+        signupButton.setBackground(new Color(0, 0, 0, 0));
+        signupButton.addActionListener(e -> NewWindowController.openSignUp(MainController.signupV));
+        mainPanel.add(signupButton);
+    }
+
+    /**
+     * Configures the theme switching button.
+     */
+    private void initializeThemeSwitchButton() {
+        switchThemeButton = new JButton();
+        switchThemeButton.setBackground(new Color(0, 0, 0, 0));
+        switchThemeButton.setBounds(938, 850, 44, 35);
+        switchThemeButton.setIcon(iconLDmode);
+        switchThemeButton.setForeground(new Color(230, 230, 250));
+        switchThemeButton.setRolloverEnabled(false);
+        switchThemeButton.setBorderPainted(false);
+        switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        mainPanel.add(switchThemeButton);
+    }
+
+    /**
+     * Initializes the text fields (email and password).
+     */
+    private void initializeTextFields() {
+        textField.setBounds(852, 445, 216, 50);
+        textField.setColumns(10);
+        mainPanel.add(textField);
+
         passwordField.setBounds(852, 550, 216, 50);
         mainPanel.add(passwordField);
-        
-        textField.setBounds(852, 445, 216, 50);
-        mainPanel.add(textField);
-        textField.setColumns(10);
-        
-        JLabel lblPassword = new JLabel("Password");
+    }
+
+    /**
+     * Configures the labels for the email and password fields.
+     */
+    private void initializeLabels() {
+        textEmail.setHorizontalAlignment(SwingConstants.LEFT);
+        textEmail.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+        textEmail.setBounds(852, 405, 150, 30);
+        mainPanel.add(textEmail);
+
         lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
-        lblPassword.setFont(new Font("SansSerif", Font.BOLD, 12));
+        lblPassword.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
         lblPassword.setBounds(852, 515, 150, 30);
         mainPanel.add(lblPassword);
         
-        RoundedPanel panel = new RoundedPanel();
-        panel.setLayout(null);
-        panel.setBounds(580, 167, 760, 644);
-        mainPanel.add(panel);
-    	           
+        errorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        errorLabel.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+        errorLabel.setForeground(new Color(255, 0, 0));
+        errorLabel.setBounds(580, 605, 760, 30);
+        errorLabel.setVisible(false);
+        mainPanel.add(errorLabel);
+    }
+
+    /**
+     * Initializes the logo label.
+     */
+    private void initializeLogo() {
+        logoLabel.setBounds(662, 167, 596, 260);
+        mainPanel.add(logoLabel);
+    }
+
+    /**
+     * Stores the component bounds for later resizing purposes.
+     */
+    private void storeComponentBounds() {
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
-        } 
-        initComponents();
+        }
     }
-    
+
+    /**
+     * Initializes the frame properties such as title, size, close operation, and location.
+     */
     private void initComponents() {
-        setTitle("BGTransport");
-        setSize(1920,1080);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        SwingUtilities.updateComponentTreeUI(this); 
-        setLocationRelativeTo(null);
+    	setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
+        setMinimumSize(minPanelSize); // Set minimum window size
+        setTitle("BGTransport"); // Set window title
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
+        setLocationRelativeTo(null); // Center the window on the screen
     }
 }
-
-
-

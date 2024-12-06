@@ -12,14 +12,14 @@ import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
 import transportation.jooq.generated.tables.Company;
-import transportation.jooq.generated.tables.Funicular;
-import transportation.jooq.generated.tables.FunicularStation;
-import transportation.jooq.generated.tables.Pullman;
-import transportation.jooq.generated.tables.PullmanStop;
-import transportation.jooq.generated.tables.Train;
-import transportation.jooq.generated.tables.TrainStation;
-import transportation.jooq.generated.tables.Tram;
-import transportation.jooq.generated.tables.TramStop;
+import transportation.jooq.generated.tables.Funicularstation;
+import transportation.jooq.generated.tables.Funiculartimetable;
+import transportation.jooq.generated.tables.Pullmanstop;
+import transportation.jooq.generated.tables.Pullmantimetable;
+import transportation.jooq.generated.tables.Trainstation;
+import transportation.jooq.generated.tables.Traintimetable;
+import transportation.jooq.generated.tables.Tramstop;
+import transportation.jooq.generated.tables.Tramtimetable;
 
 
 /**
@@ -36,49 +36,49 @@ public class DefaultSchema extends SchemaImpl {
     public static final DefaultSchema DEFAULT_SCHEMA = new DefaultSchema();
 
     /**
-     * The table <code>COMPANY</code>.
+     * The table <code>company</code>.
      */
     public final Company COMPANY = Company.COMPANY;
 
     /**
-     * The table <code>FUNICULAR</code>.
+     * The table <code>funicularStation</code>.
      */
-    public final Funicular FUNICULAR = Funicular.FUNICULAR;
+    public final Funicularstation FUNICULARSTATION = Funicularstation.FUNICULARSTATION;
 
     /**
-     * The table <code>FUNICULAR STATION</code>.
+     * The table <code>funicularTimetable</code>.
      */
-    public final FunicularStation FUNICULAR_STATION = FunicularStation.FUNICULAR_STATION;
+    public final Funiculartimetable FUNICULARTIMETABLE = Funiculartimetable.FUNICULARTIMETABLE;
 
     /**
-     * The table <code>PULLMAN</code>.
+     * The table <code>pullmanStop</code>.
      */
-    public final Pullman PULLMAN = Pullman.PULLMAN;
+    public final Pullmanstop PULLMANSTOP = Pullmanstop.PULLMANSTOP;
 
     /**
-     * The table <code>PULLMAN STOP</code>.
+     * The table <code>pullmanTimetable</code>.
      */
-    public final PullmanStop PULLMAN_STOP = PullmanStop.PULLMAN_STOP;
+    public final Pullmantimetable PULLMANTIMETABLE = Pullmantimetable.PULLMANTIMETABLE;
 
     /**
-     * The table <code>TRAIN</code>.
+     * The table <code>trainStation</code>.
      */
-    public final Train TRAIN = Train.TRAIN;
+    public final Trainstation TRAINSTATION = Trainstation.TRAINSTATION;
 
     /**
-     * The table <code>TRAIN STATION</code>.
+     * The table <code>trainTimetable</code>.
      */
-    public final TrainStation TRAIN_STATION = TrainStation.TRAIN_STATION;
+    public final Traintimetable TRAINTIMETABLE = Traintimetable.TRAINTIMETABLE;
 
     /**
-     * The table <code>TRAM</code>.
+     * The table <code>tramStop</code>.
      */
-    public final Tram TRAM = Tram.TRAM;
+    public final Tramstop TRAMSTOP = Tramstop.TRAMSTOP;
 
     /**
-     * The table <code>TRAM STOP</code>.
+     * The table <code>tramTimetable</code>.
      */
-    public final TramStop TRAM_STOP = TramStop.TRAM_STOP;
+    public final Tramtimetable TRAMTIMETABLE = Tramtimetable.TRAMTIMETABLE;
 
     /**
      * No further instances allowed
@@ -97,14 +97,14 @@ public class DefaultSchema extends SchemaImpl {
     public final List<Table<?>> getTables() {
         return Arrays.asList(
             Company.COMPANY,
-            Funicular.FUNICULAR,
-            FunicularStation.FUNICULAR_STATION,
-            Pullman.PULLMAN,
-            PullmanStop.PULLMAN_STOP,
-            Train.TRAIN,
-            TrainStation.TRAIN_STATION,
-            Tram.TRAM,
-            TramStop.TRAM_STOP
+            Funicularstation.FUNICULARSTATION,
+            Funiculartimetable.FUNICULARTIMETABLE,
+            Pullmanstop.PULLMANSTOP,
+            Pullmantimetable.PULLMANTIMETABLE,
+            Trainstation.TRAINSTATION,
+            Traintimetable.TRAINTIMETABLE,
+            Tramstop.TRAMSTOP,
+            Tramtimetable.TRAMTIMETABLE
         );
     }
 }

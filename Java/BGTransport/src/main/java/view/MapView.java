@@ -1,34 +1,23 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-
-import org.jxmapviewer.JXMapViewer;
-
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.io.IOException;
+import java.io.File;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
 import java.awt.Point;
 
 import controller.MainController;
 import controller.MapController;
 import controller.NewWindowController;
-import controller.ResizeController;
 import controller.ThemeController;
-import model.WeatherModel;
-import view.RoundedPanel;
-import java.awt.Font;
+import model.ResizableImage;
 
 /**
  * HomeView class represents the main view of the application, displaying a
@@ -38,168 +27,221 @@ import java.awt.Font;
  */
 public class MapView extends JFrame {
 
+	// Main container panel for the application.
 	public JPanel mainPanel = new JPanel();
 
-	public RoundedPanel menuPanel = new RoundedPanel();
-	public final Point menupanelpoint = new Point(15, 30);
-	public JButton switchThemeButton;
-	public JButton userButton;
-	public JButton mapButton;
+	// Side menu panel with rounded corners.
+	public MenuPanel menuPanel = new MenuPanel();
 
-	public RoundedPanel homePanel = new RoundedPanel();
-	public JXMapViewer mapPanel = new JXMapViewer();
-	public final Point mappoint = new Point(50, 50);
+	public JButton busButton;
+	public JButton trainButton;
+	public JButton funicularButton;
+	public JButton tramButton;
 	
-	public RoundedPanel externmapPanel = new RoundedPanel();
+	// Main content panel with rounded corners.
+	public RoundedPanel homePanel = new RoundedPanel();
+	// Position of the map panel within the layout.
+	public final Point mappoint = new Point(100, 50);
+
+	// Container panel for the map, designed with rounded corners. 
+	public static RoundedPanel externmapPanel = new RoundedPanel();
+	// Position of the external map panel within the layout.
 	public final Point mappanelpoint = new Point(200, 30);
-	// Background wallpaper (image that adjusts to screen size).
-	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png"));
 
-	// Icon for the user button.
-	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png"));
-	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
+	// Resizable background wallpaper that adjusts to the screen size.
+	public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
-	// Map for storing the bounds of each component (used for resizing).
-	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+	// Icons for the user and map buttons.
+	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png")); // Icon for the user button.
+	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));   // Icon for the map button.
+	public ImageIcon iconHome = new ImageIcon(MapView.class.getResource("/images/Home.png"));
+	public ImageIcon iconBus = new ImageIcon(MapView.class.getResource("/images/Bus.png"));
+	public ImageIcon iconTrain = new ImageIcon(MapView.class.getResource("/images/Train.png"));
+	public ImageIcon iconTram = new ImageIcon(MapView.class.getResource("/images/Tram.png"));
+	public ImageIcon iconFunicular = new ImageIcon(MapView.class.getResource("/images/Funicular.png"));
 
-	// Original and minimum size for the window.
+
+	// A map to store the bounds (dimensions and positions) of each component for resizing purposes.
+	public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
+
+	// Original size of the application window when maximized.
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
-	public final Dimension MenuPanelSize = new Dimension(100, 900);
-	public final Dimension MinPanelSize = new Dimension(1085, 615);
-	public final Dimension MapPanelSize = new Dimension(1600, 900);
-	public final Dimension MapSize = new Dimension(1500, 800);
+	// Fixed size of the menu panel.
+	public final Dimension menuPanelSize = new Dimension(100, 900);
+	// Minimum size of the application window to prevent it from being resized too small.
+	public final Dimension minPanelSize = new Dimension(1085, 615);
+	// Size of the panel containing the map.
+	public final Dimension mapPanelSize = new Dimension(1600, 900);
+	// Default size of the map itself within the map panel.
+	public final Dimension mapSize = new Dimension(1450, 800);
+
 	/**
      * Constructor that sets up the UI components, layout, and theming for the home view.
      * It also initializes the main panel, menu panel, and other UI elements.
      */
-    public MapView(){
-        // Set the window to be maximized on launch.
-        setExtendedState(Frame.MAXIMIZED_BOTH);
+	/**
+     * Constructor initializes the MapView window, setting up UI components and behavior.
+     */
+    public MapView() {
+        // Configure the main window
+        configureWindow();
+
+        setupComponentArcs();
+        setupMainPanel();
+        setupMapPanel();
+        setupActionListeners();
         
-        // Set the minimum size for the window to prevent resizing below this threshold.
-        setMinimumSize(MinPanelSize);
-        
-        // Set the main panel and override its paintComponent method to draw the background image.
+        // Store bounds for resizing
+        storeComponentBounds();
+    }
+
+    /**
+     * Configures the main window properties.
+     */
+    private void configureWindow() {
+        setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
+        setMinimumSize(minPanelSize); // Set minimum window size
+        setTitle("BGTransport"); // Set window title
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
+        setLocationRelativeTo(null); // Center the window on the screen
+    }
+
+    /**
+     * Sets rounded UI properties for components.
+     */
+    private void setupComponentArcs() {
+        UIManager.put("Button.arc", 999); // Fully rounded buttons
+        UIManager.put("TextComponent.arc", 15); // Slightly rounded text components
+        UIManager.put("Component.arc", 15); // Rounded corners for general components
+    }
+
+    /**
+     * Sets up the main panel and background.
+     */
+    private void setupMainPanel() {
+        // Override the paintComponent method to draw the background image
         mainPanel = new JPanel() {
             @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);  // Draw background image
+                g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this); // Draw background image
             }
         };
-        System.out.println("map:" + ThemeController.getTheme());
-        // Apply the selected theme (Light or Dark).
-        if (ThemeController.getTheme()) {
-            try {
-                UIManager.setLookAndFeel(new FlatLightLaf());  // Set light theme
-            } catch (UnsupportedLookAndFeelException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                UIManager.setLookAndFeel(new FlatDarkLaf());  // Set dark theme
-            } catch (UnsupportedLookAndFeelException e) {
-                e.printStackTrace();
-            }
-        }
 
-        
-        // Set rounded corner UI properties.
-        UIManager.put("Button.arc", 999);
-        UIManager.put("TextComponent.arc", 15);
-        UIManager.put("Component.arc", 15);
-        
-        // Set the layout for the content pane.
-        getContentPane().setLayout(null);
-        
-        // Initialize and configure the main panel.
-        mainPanel.setBounds(0, 0, 1920, 1041);      
+        mainPanel.setBounds(0, 0, 1920, 1080);
         mainPanel.setLayout(null);
         getContentPane().add(mainPanel);
-        
-        // Create and configure a rounded panel for the main content area.
+
+        // Configure the home panel
         homePanel.setLayout(null);
-        homePanel.setOpaque(true);
-         
         homePanel.setBounds(26, 40, 1854, 960);
         mainPanel.add(homePanel);
-        
-        // Create and configure a menu panel for user options.
-       
-        menuPanel.setBounds(15, 30, 100, 900);       
-        menuPanel.setBackground(new Color(210, 105, 30));  
-        menuPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
-        menuPanel.setLayout(null);
         homePanel.add(menuPanel);
-        
-        // Create and configure the user button (with user icon).
-        userButton = new JButton();
-        userButton.setBounds(20, 20, 60, 60);
-        userButton.setRolloverEnabled(false);  
-        userButton.setBorderPainted(false);   // Remove border.
-        userButton.setIcon(iconUser);         // Set the icon.
-        userButton.setBackground(new Color(0, 0, 0, 0));  // Transparent background.
-        userButton.addActionListener(e -> {
-        	NewWindowController.openLoginPanel(MainController.loginV);
-        	this.setVisible(false);
-        });
-        menuPanel.add(userButton);
-        
-        mapButton = new JButton();
-        mapButton.setBounds(20, 150, 60, 60);
-        mapButton.setRolloverEnabled(false);  
-        mapButton.setBorderPainted(false);   // Remove border.
-        mapButton.setIcon(iconUser);         // Set the icon.
-        mapButton.setBackground(new Color(0, 0, 0, 0));  // Transparent background.
-        mapButton.addActionListener(e -> {
-        	NewWindowController.openMapPanel(MainController.mapV);
-        	this.setVisible(false);
-        });
-        menuPanel.add(mapButton);
-        
-        // Create and configure the theme switch button.
-        switchThemeButton = new JButton();
-        switchThemeButton.setBounds(20, 830, 60, 60);       
-        switchThemeButton.setBackground(new Color(0, 0, 0, 0));  
-        switchThemeButton.setIcon(new ImageIcon(MapView.class.getResource("/images/LDMode.png"))); 
-        switchThemeButton.setForeground(new Color(230, 230, 250)); 
-        switchThemeButton.setRolloverEnabled(false); 
-        switchThemeButton.setBorderPainted(false);
-        menuPanel.add(switchThemeButton);
-        
-        switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV, MainController.loginV,
-				MainController.signupV));
-        
-        mapPanel = MapController.generateMap();
-        mapPanel.setBounds(50, 50, 1500, 800);
+    }
+
+    
+    /**
+     * Creates a JButton with an icon and specific dimensions.
+     */
+    private JButton createIconButton(ImageIcon icon, int x, int y) {
+        JButton button = new JButton();
+        button.setBounds(x, y, 60, 60);
+        button.setRolloverEnabled(false);
+        button.setBorderPainted(false); // Remove border
+        button.setIcon(icon); // Set the icon
+        button.setBackground(new Color(0, 0, 0, 0)); // Transparent background
+        return button;
+    }
+    
+    /**
+     * Sets up the map panel and its container.
+     */
+    private void setupMapPanel() {
+        // Configure the map panel
         externmapPanel.setBounds(200, 30, 1600, 900);
-        externmapPanel.add(mapPanel);
-        homePanel.add(externmapPanel);
         externmapPanel.setLayout(null);
         
+        busButton = createIconButton(iconBus, 20, 300);
+        externmapPanel.add(busButton);
+        trainButton = createIconButton(iconTrain, 20, 380);
+        externmapPanel.add(trainButton);
+        funicularButton = createIconButton(iconFunicular, 20, 460);
+        externmapPanel.add(funicularButton);
+        tramButton = createIconButton(iconTram, 20, 540);
+        externmapPanel.add(tramButton);
+        homePanel.add(externmapPanel);
+    }
+
+    /**
+     * Adds action listeners to buttons for handling user interactions.
+     */
+    private void setupActionListeners() {
+        // Action listener for the user button
+    	menuPanel.userButton.addActionListener(e -> {
+			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
+			this.setVisible(false);
+		});
+
+		// Action listener for the home button
+    	menuPanel.homeButton.addActionListener(e -> {
+			NewWindowController.openHomePanel(MainController.homeV);
+			setVisible(false);
+		});
+		
+        // Action listener for the theme switch button
+        busButton.addActionListener(e -> {
+			try {
+				MapController.showBus();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
         
-        // Store the bounds of each component for possible future resizing.
+        // Action listener for the theme switch button
+        trainButton.addActionListener(e -> {
+			try {
+				MapController.showTrain();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+        
+        // Action listener for the theme switch button
+        funicularButton.addActionListener(e -> {
+			try {
+				MapController.showFunicular();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+        
+        // Action listener for the theme switch button
+        tramButton.addActionListener(e -> {
+			try {
+				MapController.showTram();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+
+        // Action listener for the theme switch button
+        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        
+    }
+
+    /**
+     * Stores the bounds of each component for resizing purposes.
+     */
+    private void storeComponentBounds() {
         for (Component comp : mainPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }
-        
         for (Component comp : menuPanel.getComponents()) {
             componentBounds.put(comp, comp.getBounds());
-        }        
-        // Initialize other components like the title and default window behavior.
-        initComponents();
+        }
+        for (Component comp : externmapPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
     }
-
-	/**
-	 * Initializes the window settings such as title, size, close operation, and
-	 * positioning.
-	 */
-	private void initComponents() {
-		setTitle("BGTransport"); // Set the window title.
-		setSize(1920, 1080); // Set the initial size of the window.
-
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed.
-		SwingUtilities.updateComponentTreeUI(this); // Update the UI components after changes.
-		setLocationRelativeTo(null); // Center the window on the screen.
-	}
 }
+

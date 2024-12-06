@@ -1,31 +1,15 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.io.IOException;
+import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Point;
 
 import controller.MainController;
 import controller.NewWindowController;
-import controller.ResizeController;
 import controller.ThemeController;
-import model.TimestampModel;
-import model.WeatherModel;
-import view.RoundedPanel;
-import java.awt.Font;
+import model.ResizableImage;
 
 /**
  * HomeView class represents the main view of the application, displaying a
@@ -35,244 +19,130 @@ import java.awt.Font;
  */
 public class HomeView extends JFrame {
 
-	public JPanel mainPanel = new JPanel();
+    public JPanel mainPanel = new JPanel();
+    public final MenuPanel menuPanel = new MenuPanel();
+    public final RoundedPanel homePanel = new RoundedPanel();
+    public final WeatherWidget weatherPanel = new WeatherWidget();
+    public final TimeWidget timePanel = new TimeWidget();
+    public static MiniMapWidget miniMapPanel = new MiniMapWidget();
+    public final UserWidget userPanel = new UserWidget();
+   
+    // Background wallpaper.
+    public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
-	public RoundedPanel menuPanel = new RoundedPanel();
-	public final Point menupanelpoint = new Point(15,30);
-	public JButton switchThemeButton;
-	public JButton userButton;
-	public JButton mapButton;
+    // Component bounds storage for resizing purposes.
+    public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
-	public RoundedPanel homePanel = new RoundedPanel();
-	public RoundedPanel weatherPanel = new RoundedPanel();
-	public final Point weatherpanelpoint = new Point(235,30);
-	public JLabel lblweather = new JLabel();
-	public JLabel lblweatherwind = new JLabel();
+    // Window and panel dimensions.
+    public final Dimension originalPanelSize = new Dimension(1920, 1080);
+    public final Dimension menuPanelSize = new Dimension(100, 900);
+    public final Dimension widgetPanelSizeMedium = new Dimension(350, 250);
+    public final Dimension widgetPanelSizeSmall = new Dimension(350, 180);
+    public final Dimension minPanelSize = new Dimension(1085, 615);
+    public final Dimension mapSize = new Dimension(550, 350);
+    public final Dimension mapPanelSize = new Dimension(600, 400);
 
-	public RoundedPanel timePanel = new RoundedPanel();
-	public final Point timepanelpoint = new Point(235,310);
-	public JLabel lbltime = new JLabel();
-	public JLabel lbldate = new JLabel();
+    /**
+     * Constructor that sets up the UI components, layout, and theming for the home
+     * view. It also initializes the main panel, menu panel, and other UI elements.
+     */
+    public HomeView() {
+        // Configure window properties.
+        setExtendedState(Frame.MAXIMIZED_BOTH); // Launch in maximized state.
+        setMinimumSize(minPanelSize); // Set minimum size.
 
-	public CircleLabel lblweatherimg = new CircleLabel("");
-	public JLabel lblweathertxt = new JLabel("🏠 Bergamo");
+        // Initialize main panel with custom background rendering.
+        mainPanel = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this); // Draw background image.
+            }
+        };
 
-	// Background wallpaper (image that adjusts to screen size).
-	public ResizableImage lblBGwallpaper = new ResizableImage(LoginView.class.getResource("/images/BG.png"));
+        // Configure rounded corners for UI components.
+        UIManager.put("Button.arc", 999);
+        UIManager.put("TextComponent.arc", 15);
+        UIManager.put("Component.arc", 15);
 
-	// Icon for the user button.
-	public ImageIcon iconUser = new ImageIcon(HomeView.class.getResource("/images/User.png"));
-	public ImageIcon iconLDmode = new ImageIcon(HomeView.class.getResource("/images/LDMode.png"));
-	public ImageIcon iconWeather;
-	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
+        // Configure content layout.
+        getContentPane().setLayout(null);
+        mainPanel.setBounds(0, 0, 1920, 1041);
+        mainPanel.setLayout(null);
+        getContentPane().add(mainPanel);
 
-	// Map for storing the bounds of each component (used for resizing).
-	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+        // Initialize the home panel.
+        homePanel.setLayout(null);
+        homePanel.setOpaque(true);
+        homePanel.setBounds(26, 40, 1854, 960);
+        mainPanel.add(homePanel);
 
-	// Original and minimum size for the window.
-	public final Dimension originalPanelSize = new Dimension(1920, 1080);
-	public final Dimension MenuPanelSize = new Dimension(100, 900);
-	public final Dimension WidgetPanelSizeMedium = new Dimension(350, 250);
-	public final Dimension WidgetPanelSizeSmall = new Dimension(250, 180);
-	public final Dimension MinPanelSize = new Dimension(1085, 615);
+        // Weather panel setup using the new WeatherPanel class.
 
-	/**
-	 * Constructor that sets up the UI components, layout, and theming for the home
-	 * view. It also initializes the main panel, menu panel, and other UI elements.
-	 */
-	public HomeView() {
-		try {
-			WeatherModel.getMeteo();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		iconWeather = WeatherModel.getWeatherIcon();
-		// Set the window to be maximized on launch.
-		setExtendedState(Frame.MAXIMIZED_BOTH);
+        homePanel.add(weatherPanel);
+        homePanel.add(timePanel);
+        homePanel.add(miniMapPanel);
+        homePanel.add(userPanel);
+        homePanel.add(menuPanel);
+        // Time panel setup.
 
-		// Set the minimum size for the window to prevent resizing below this threshold.
-		setMinimumSize(MinPanelSize);
+        // Store initial bounds for resizing purposes.
+        storeComponentBounds();
 
-		// Set the main panel and override its paintComponent method to draw the
-		// background image.
-		mainPanel = new JPanel() {
-			@Override
-			public void paintComponent(Graphics g) {
-				super.paintComponent(g);
-				g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this); // Draw background image
-			}
-		};
+        setupActionListeners();
+        // Initialize other components.
+        initComponents();
+    }
 
-		// Apply the selected theme (Light or Dark).
-		System.out.println("home" + ThemeController.getTheme());
-		if (ThemeController.getTheme()) {
-			try {
-				UIManager.setLookAndFeel(new FlatLightLaf()); // Set light theme
-			} catch (UnsupportedLookAndFeelException e) {
-				e.printStackTrace();
-			}
-		} else {
-			try {
-				UIManager.setLookAndFeel(new FlatDarkLaf()); // Set dark theme
-			} catch (UnsupportedLookAndFeelException e) {
-				e.printStackTrace();
-			}
-		}
+    /**
+     * Creates a menu button with a specific icon and position.
+     */
+    /*private JButton createMenuButton(ImageIcon icon, int x, int y) {
+        JButton button = new JButton();
+        button.setBounds(x, y, 60, 60);
+        button.setIcon(icon);
+        button.setBorderPainted(false);
+        button.setRolloverEnabled(false);
+        button.setBackground(new Color(0, 0, 0, 0));
+        return button;
+    }*/
 
-		// Set rounded corner UI properties.
-		UIManager.put("Button.arc", 999);
-		UIManager.put("TextComponent.arc", 15);
-		UIManager.put("Component.arc", 15);
-
-		// Set the layout for the content pane.
-		getContentPane().setLayout(null);
-
-		// Initialize and configure the main panel.
-		mainPanel.setBounds(0, 0, 1920, 1041);
-		mainPanel.setLayout(null);
-		getContentPane().add(mainPanel);
-
-		// Create and configure a rounded panel for the main content area.
-		homePanel.setLayout(null);
-		homePanel.setOpaque(true);
-
-		homePanel.setBounds(26, 40, 1854, 960);
-		mainPanel.add(homePanel);
-
-		// Create and configure a menu panel for user options.
-
-		menuPanel.setBounds(15, 30, 100, 900);
-		menuPanel.setBackground(new Color(210, 105, 30));
-		menuPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
-		menuPanel.setLayout(null);
-		homePanel.add(menuPanel);
-
-		lblweather.setHorizontalAlignment(SwingConstants.LEFT);
-		lblweather.setFont(new Font("SansSerif", Font.BOLD, 70));
-		lblweather.setBounds(140, 170, 200, 50);
-		lblweatherwind.setHorizontalAlignment(SwingConstants.LEFT);
-		lblweatherwind.setFont(new Font("SansSerif", Font.BOLD, 70));
-		lblweatherwind.setBounds(140, 100, 200, 50);
-		lblweatherimg.setVerticalAlignment(SwingConstants.TOP);
-		lblweatherimg.setIcon(iconWeather);
-
-		try {
-			WeatherModel.getMeteo(lblweather, lblweatherwind);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		weatherPanel.setLayout(null);
-		weatherPanel.setLocation(235, 30);
-		weatherPanel.setSize(350, 250);
-		weatherPanel.add(lblweather);
-		lblweatherimg.setHorizontalAlignment(SwingConstants.LEFT);
-		lblweatherimg.setLocation(25, 75);
-		lblweatherimg.setSize(100, 100);
-		lblweatherimg.setCircleColor(new Color(87, 198, 250));
-
-		lblweathertxt.setHorizontalAlignment(SwingConstants.LEFT);
-		lblweathertxt.setForeground(new Color(210, 105, 30));
-		lblweathertxt.setFont(new Font("SansSerif", Font.BOLD, 30));
-		lblweathertxt.setSize(200, 50);
-		lblweathertxt.setLocation(140, 30);
-
-		weatherPanel.add(lblweatherwind);
-		weatherPanel.add(lblweathertxt);
-		weatherPanel.add(lblweatherimg);
-
-		homePanel.add(weatherPanel);
-
-		try {
-			TimestampModel.getTime(lbltime);
-			TimestampModel.getDate(lbldate);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		lbltime.setHorizontalAlignment(SwingConstants.CENTER);
-		lbltime.setFont(new Font("SansSerif", Font.BOLD, 20));
-		lbltime.setSize(220, 50);
-		lbltime.setLocation(15, 25);
-		lbldate.setHorizontalAlignment(SwingConstants.CENTER);
-		lbldate.setFont(new Font("SansSerif", Font.BOLD, 20));
-		lbldate.setSize(220, 50);
-		lbldate.setLocation(15, 110);
-
-		timePanel.setLayout(null);
-		timePanel.setLocation(235, 310);
-		timePanel.setSize(250, 180);
-		timePanel.add(lbltime);
-		timePanel.add(lbldate);
-		homePanel.add(timePanel);
-
-		// Create and configure the user button (with user icon).
-		userButton = new JButton();
-		userButton.setBounds(20, 20, 60, 60);
-		userButton.setRolloverEnabled(false);
-		userButton.setBorderPainted(false); // Remove border.
-		userButton.setIcon(iconUser); // Set the icon.
-		userButton.setBackground(new Color(0, 0, 0, 0)); // Transparent background.
-		userButton.addActionListener(e ->{
-			NewWindowController.openLoginPanel(MainController.loginV);
-			setVisible(false);
+    /**
+     * Stores the bounds of all components for resizing.
+     */
+    private void storeComponentBounds() {
+        for (Component comp : mainPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
+        
+    }
+    
+    private void setupActionListeners() {
+        // Action listener for the user button
+    	menuPanel.userButton.addActionListener(e -> {
+			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
+			this.setVisible(false);
 		});
-		menuPanel.add(userButton);
 
-		mapButton = new JButton();
-		mapButton.setBounds(20, 150, 60, 60);
-		mapButton.setRolloverEnabled(false);
-		mapButton.setBorderPainted(false); // Remove border.
-		mapButton.setIcon(iconUser); // Set the icon.
-		mapButton.setBackground(new Color(0, 0, 0, 0)); // Transparent background.
-		mapButton.addActionListener(e -> {
+		// Action listener for the home button
+    	menuPanel.mapButton.addActionListener(e -> {
 			NewWindowController.openMapPanel(MainController.mapV);
 			setVisible(false);
 		});
-		menuPanel.add(mapButton);
+		
+        // Action listener for the theme switch button
+    	menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        
+    }
 
-		// Create and configure the theme switch button.
-		switchThemeButton = new JButton();
-		switchThemeButton.setBounds(20, 830, 60, 60);
-		menuPanel.add(switchThemeButton);
-
-		switchThemeButton.setBackground(new Color(0, 0, 0, 0));
-		switchThemeButton.setIcon(iconLDmode);
-		switchThemeButton.setForeground(new Color(230, 230, 250));
-		switchThemeButton.setRolloverEnabled(false);
-		switchThemeButton.setBorderPainted(false);
-		switchThemeButton.addActionListener(e -> ThemeController.updateThemes(MainController.homeV, MainController.mapV,
-				MainController.loginV, MainController.signupV));
-
-		// Store the bounds of each component for possible future resizing.
-		for (Component comp : mainPanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-
-		for (Component comp : menuPanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-
-		for (Component comp : weatherPanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-
-		for (Component comp : timePanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-		// Initialize other components like the title and default window behavior.
-		initComponents();
-	}
-
-	/**
-	 * Initializes the window settings such as title, size, close operation, and
-	 * positioning.
-	 */
-	private void initComponents() {
-		setTitle("BGTransport"); // Set the window title.
-		setSize(1920, 1080); // Set the initial size of the window.
-
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Close the application when the window is closed.
-		SwingUtilities.updateComponentTreeUI(this); // Update the UI components after changes.
-		setLocationRelativeTo(null); // Center the window on the screen.
-	}
+    /**
+     * Initializes basic window properties.
+     */
+    private void initComponents() {
+        setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
+        setMinimumSize(minPanelSize); // Set minimum window size
+        setTitle("BGTransport"); // Set window title
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
+        setLocationRelativeTo(null); // Center the window on the screen
+    }
 }

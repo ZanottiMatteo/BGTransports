@@ -3,25 +3,15 @@ package model;
 import javax.swing.*;
 
 import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
 import javax.imageio.ImageIO;
 
 public class WeatherModel {
@@ -86,9 +76,8 @@ public class WeatherModel {
         }
 	}
 	
-	@SuppressWarnings("deprecation")
+
 	public static ImageIcon getWeatherIcon() {
-		String iconPath;
         String code = Integer.toString(weathercode);
         System.out.println(code);
         try (FileReader openJSON = new FileReader("json/weather_images.json")) {
@@ -123,7 +112,7 @@ public class WeatherModel {
                 // Get the image stream
                 InputStream inputStream = connection.getInputStream();
                 BufferedImage image = ImageIO.read(inputStream);
-                image.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+                image.getScaledInstance(150, 150, Image.SCALE_REPLICATE);
                 inputStream.close();
                 return new ImageIcon(image);
             } else System.out.println("error");
