@@ -16,13 +16,17 @@ import java.awt.Frame;
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
-import model.Constant;
+import model.ConstantString;
 import model.ResizableImage;
 import controller.LoginController;
 
 public class LoginView extends JFrame {
 
-    // Declare UI components
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4391409465142244190L;
+	// Declare UI components
     public JPanel mainPanel;
     public JLabel logoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
     public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
@@ -82,7 +86,12 @@ public class LoginView extends JFrame {
      */
     private void initializeMainPanel() {
         mainPanel = new JPanel() {
-            @Override
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = -2563297190423775145L;
+
+			@Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
@@ -127,7 +136,7 @@ public class LoginView extends JFrame {
     private void initializeSignInButton() {
         signInButton.setText("Sign In");
         signInButton.setForeground(new Color(255, 255, 255));
-        signInButton.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+        signInButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
         signInButton.setBackground(new Color(210, 105, 30));
         signInButton.setBounds(885, 645, 150, 60);
         signInButton.addActionListener(e -> LoginController.login(textField, passwordField));
@@ -142,7 +151,7 @@ public class LoginView extends JFrame {
         signupButton.setRolloverEnabled(false);
         signupButton.setBounds(885, 730, 150, 35);
         signupButton.setPreferredSize(null);
-        signupButton.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 15));
+        signupButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 15));
         signupButton.setBorderPainted(false);
         signupButton.setBackground(new Color(0, 0, 0, 0));
         signupButton.addActionListener(e -> NewWindowController.openSignUp(MainController.signupV));
@@ -181,17 +190,17 @@ public class LoginView extends JFrame {
      */
     private void initializeLabels() {
         textEmail.setHorizontalAlignment(SwingConstants.LEFT);
-        textEmail.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
+        textEmail.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
         textEmail.setBounds(852, 405, 150, 30);
         mainPanel.add(textEmail);
 
         lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
-        lblPassword.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
+        lblPassword.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
         lblPassword.setBounds(852, 515, 150, 30);
         mainPanel.add(lblPassword);
         
         errorLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        errorLabel.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
+        errorLabel.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
         errorLabel.setForeground(new Color(255, 0, 0));
         errorLabel.setBounds(580, 605, 760, 30);
         errorLabel.setVisible(false);

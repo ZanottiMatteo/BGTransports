@@ -6,11 +6,15 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.SQLException;
 
-import model.Constant;
+import model.ConstantString;
 import controller.SignUpController;
 
 public class SignUpView extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6878992684117226389L;
 	private JFrame frame;
 	private JPanel panel;
 	private JLabel lblSignUp;
@@ -46,7 +50,7 @@ public class SignUpView extends JFrame {
 		lblSignUp = new JLabel("Sign Up");
 		lblSignUp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSignUp.setForeground(new Color(210, 105, 30));
-		lblSignUp.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 50));
+		lblSignUp.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 50));
 		lblSignUp.setBounds(141, 11, 301, 95);
 		panel.add(lblSignUp);
 
@@ -86,7 +90,7 @@ public class SignUpView extends JFrame {
 		panel.add(textZIP);
 
 		signUpButton.setForeground(Color.WHITE);
-		signUpButton.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+		signUpButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		signUpButton.setBackground(new Color(210, 105, 30));
 		signUpButton.setBounds(216, 805, 150, 50);
 		signUpButton.addActionListener(e -> {
@@ -102,14 +106,14 @@ public class SignUpView extends JFrame {
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEmail.setForeground(new Color(210, 105, 30));
-		lblEmail.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblEmail.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblEmail.setBounds(75, 344, 105, 35);
 		panel.add(lblEmail);
 
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setForeground(new Color(210, 105, 30));
-		lblUsername.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblUsername.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblUsername.setBounds(75, 406, 105, 35);
 		panel.add(lblUsername);
 
@@ -123,42 +127,42 @@ public class SignUpView extends JFrame {
 		JLabel lblPassword1 = new JLabel("Confirm");
 		lblPassword1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword1.setForeground(new Color(210, 105, 30));
-		lblPassword1.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblPassword1.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblPassword1.setBounds(75, 524, 105, 21);
 		panel.add(lblPassword1);
 
 		lblPassword2 = new JLabel("Password");
 		lblPassword2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword2.setForeground(new Color(210, 105, 30));
-		lblPassword2.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblPassword2.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblPassword2.setBounds(75, 546, 105, 28);
 		panel.add(lblPassword2);
 
 		lblAddress = new JLabel("Indirizzo");
 		lblAddress.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAddress.setForeground(new Color(210, 105, 30));
-		lblAddress.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblAddress.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblAddress.setBounds(75, 592, 105, 35);
 		panel.add(lblAddress);
 
 		lblCity = new JLabel("Città");
 		lblCity.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCity.setForeground(new Color(210, 105, 30));
-		lblCity.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblCity.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblCity.setBounds(75, 654, 105, 35);
 		panel.add(lblCity);
 
 		lblZip = new JLabel("CAP");
 		lblZip.setHorizontalAlignment(SwingConstants.CENTER);
 		lblZip.setForeground(new Color(210, 105, 30));
-		lblZip.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblZip.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblZip.setBounds(75, 716, 105, 35);
 		panel.add(lblZip);
 
 		JLabel lblBirthday = new JLabel("Data di Nascita");
 		lblBirthday.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBirthday.setForeground(new Color(210, 105, 30));
-		lblBirthday.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblBirthday.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblBirthday.setBounds(60, 282, 120, 35);
 		panel.add(lblBirthday);
 
@@ -170,7 +174,7 @@ public class SignUpView extends JFrame {
 		JLabel lblSurname = new JLabel("Cognome");
 		lblSurname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSurname.setForeground(new Color(210, 105, 30));
-		lblSurname.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblSurname.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblSurname.setBounds(75, 220, 105, 35);
 		panel.add(lblSurname);
 
@@ -182,7 +186,7 @@ public class SignUpView extends JFrame {
 		JLabel lblName = new JLabel("Nome");
 		lblName.setHorizontalAlignment(SwingConstants.CENTER);
 		lblName.setForeground(new Color(210, 105, 30));
-		lblName.setFont(new Font(Constant.SANSSERIF, Font.PLAIN, 16));
+		lblName.setFont(new Font(ConstantString.SANSSERIF, Font.PLAIN, 16));
 		lblName.setBounds(75, 155, 105, 35);
 		panel.add(lblName);
 

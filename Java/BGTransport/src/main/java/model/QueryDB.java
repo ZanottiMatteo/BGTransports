@@ -28,7 +28,7 @@ import user.jooq.generated.tables.User;
 public class QueryDB {
 
 	public static List<String> getLatFunicularStation() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<String> latitude = new ArrayList<String>();
 
 		@NotNull
@@ -44,7 +44,7 @@ public class QueryDB {
 
 	public static String getLatFunicularStation(int index) throws SQLException {
 		// Creazione del contesto DSL
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		// Esegui la query per ottenere tutte le latitudini
 		@NotNull
@@ -64,7 +64,7 @@ public class QueryDB {
 	}
 
 	public static List<String> getLonFunicularStation() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<String> longitude = new ArrayList<String>();
 
 		@NotNull
@@ -80,7 +80,7 @@ public class QueryDB {
 
 	public static String getLongFunicularStation(int index) throws SQLException {
 		// Creazione del contesto DSL
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		// Esegui la query per ottenere tutte le latitudini
 		@NotNull
@@ -99,7 +99,7 @@ public class QueryDB {
 	}
 
 	public static List<GeoPosition> getFunicularGeopositions() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<GeoPosition> geopositions = new ArrayList<>();
 
 		@NotNull
@@ -118,7 +118,7 @@ public class QueryDB {
 	}
 
 	public static void getLatPullmanStop() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.LAT).from(Pullmanstop.PULLMANSTOP)
@@ -130,7 +130,7 @@ public class QueryDB {
 	}
 
 	public static void getLonPullmanStop() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.LON).from(Pullmanstop.PULLMANSTOP)
@@ -142,7 +142,7 @@ public class QueryDB {
 	}
 
 	public static List<GeoPosition> getPullmanGeopositions() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<GeoPosition> geopositions = new ArrayList<>();
 
 		@NotNull
@@ -160,7 +160,7 @@ public class QueryDB {
 	}
 
 	public static void getLatTrainStation() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(Trainstation.TRAINSTATION.LAT).from(Trainstation.TRAINSTATION)
@@ -172,7 +172,7 @@ public class QueryDB {
 	}
 
 	public static void getLonTrainStation() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(Trainstation.TRAINSTATION.LON).from(Trainstation.TRAINSTATION)
@@ -184,7 +184,7 @@ public class QueryDB {
 	}
 
 	public static List<GeoPosition> getTrainGeopositions() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<GeoPosition> geopositions = new ArrayList<>();
 
 		@NotNull
@@ -203,7 +203,7 @@ public class QueryDB {
 	}
 
 	public static void getLatTramStop() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(Tramstop.TRAMSTOP.LAT).from(Tramstop.TRAMSTOP).fetch();
@@ -214,7 +214,7 @@ public class QueryDB {
 	}
 
 	public static void getLonTramStop() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(Tramstop.TRAMSTOP.LON).from(Tramstop.TRAMSTOP).fetch();
@@ -225,7 +225,7 @@ public class QueryDB {
 	}
 
 	public static List<GeoPosition> getTramGeopositions() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<GeoPosition> geopositions = new ArrayList<>();
 
 		@NotNull
@@ -245,7 +245,7 @@ public class QueryDB {
 	// --------- Name ---------
 
 	public static String getNameUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		// Fetch the name of the user with the given email
 		@Nullable
@@ -257,7 +257,7 @@ public class QueryDB {
 	}
 
 	public static void setNameUser(String email, String newName) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		// Update the user's name where the email matches
 		int rowsUpdated = create.update(User.USER).set(User.USER.NAME, newName).where(User.USER.MAIL.eq(email))
@@ -271,7 +271,7 @@ public class QueryDB {
 	// --------- Surname ---------
 
 	public static String getSurnameUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<String> surname = create.select(User.USER.SURNAME).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -281,7 +281,7 @@ public class QueryDB {
 	}
 
 	public static void setSurnameUser(String email, String newSurname) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.SURNAME, newSurname).where(User.USER.MAIL.eq(email))
 				.execute();
@@ -294,7 +294,7 @@ public class QueryDB {
 	// --------- Username ---------
 
 	public static String getUsernameUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<String> username = create.select(User.USER.USERNAME).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -304,7 +304,7 @@ public class QueryDB {
 	}
 
 	public static void setUsernameUser(String email, String newUsername) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.USERNAME, newUsername).where(User.USER.MAIL.eq(email))
 				.execute();
@@ -317,7 +317,7 @@ public class QueryDB {
 	// --------- Birthday ---------
 
 	public static String getBirthdayUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<String> dateOfBirth = create.select(User.USER.DATEOFBIRTH).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -327,7 +327,7 @@ public class QueryDB {
 	}
 
 	public static void setBirthdayUser(String email, String newBirthday) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.DATEOFBIRTH, newBirthday)
 				.where(User.USER.MAIL.eq(email)).execute();
@@ -340,7 +340,7 @@ public class QueryDB {
 	// --------- Address ---------
 
 	public static String getAddressUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<String> address = create.select(User.USER.ADDRESS).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -350,7 +350,7 @@ public class QueryDB {
 	}
 
 	public static void setAddressUser(String email, String newAddress) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.ADDRESS, newAddress).where(User.USER.MAIL.eq(email))
 				.execute();
@@ -363,7 +363,7 @@ public class QueryDB {
 	// --------- Town ---------
 
 	public static String getTownUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<String> town = create.select(User.USER.TOWN).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -373,7 +373,7 @@ public class QueryDB {
 	}
 
 	public static void setTownUser(String email, String newTown) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.TOWN, newTown).where(User.USER.MAIL.eq(email))
 				.execute();
@@ -386,7 +386,7 @@ public class QueryDB {
 	// --------- ZIPcode ---------
 
 	public static String getCAPUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<String> cap = create.select(User.USER.CAP).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -396,7 +396,7 @@ public class QueryDB {
 	}
 
 	public static void setCAPUser(String email, String newCAP) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.CAP, newCAP).where(User.USER.MAIL.eq(email))
 				.execute();
@@ -409,7 +409,7 @@ public class QueryDB {
 	// --------- Role ---------
 
 	public static Integer getRoleUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<Integer> role = create.select(User.USER.ROLE).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -419,7 +419,7 @@ public class QueryDB {
 	}
 
 	public static void setRoleUser(String email, Integer newRole) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.ROLE, newRole).where(User.USER.MAIL.eq(email))
 				.execute();
@@ -432,7 +432,7 @@ public class QueryDB {
 	// --------- IconUser ---------
 
 	public static Integer getIconUser(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
 		Record1<Integer> iconNumber = create.select(User.USER.ICONNUMBER).from(User.USER).where(User.USER.MAIL.eq(email))
@@ -442,7 +442,7 @@ public class QueryDB {
 	}
 
 	public static void setIconUser(String email, Integer newIconNumber) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		int rowsUpdated = create.update(User.USER).set(User.USER.ICONNUMBER, newIconNumber)
 				.where(User.USER.MAIL.eq(email)).execute();
@@ -453,7 +453,7 @@ public class QueryDB {
 	}
 
 	public static void getMailUser() throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@NotNull
 		Result<Record1<String>> result = create.select(User.USER.MAIL).from(User.USER).fetch();
@@ -472,7 +472,7 @@ public class QueryDB {
 	 */
 	public static List<String> getAllUserEmails() throws SQLException {
 		// Initialize the DSL context to interact with the database
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		// Fetch all emails from the User table
 		Result<Record1<String>> result = create.select(User.USER.MAIL).from(User.USER).fetch();
@@ -495,7 +495,7 @@ public class QueryDB {
 	 */
 	public static List<String> getAllUserPassword() throws SQLException {
 		// Initialize the DSL context to interact with the database
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		// Fetch all emails from the User table
 		Result<Record1<String>> result = create.select(User.USER.PASSWORD).from(User.USER).fetch();
@@ -511,7 +511,7 @@ public class QueryDB {
 	}
 
 	public static List<String> getUserDetailsByEmail(String email) throws SQLException {
-		DSLContext create = Utility.dslContext(Constant.DB_URL_USERS);
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		// Fetch the user record with the specified email
 		@Nullable
@@ -551,39 +551,39 @@ public class QueryDB {
 		}
 
 		for (String tableName : modifiedList) {
-			if (tableName.equals(Constant.COMPANY)) {
+			if (tableName.equals(ConstantString.COMPANY)) {
 				create.deleteFrom(Company.COMPANY).execute();
 				InsertDataDB.company(create);
 			}
-			if (tableName.equals(Constant.FUNICULAR_STATION)) {
+			if (tableName.equals(ConstantString.FUNICULAR_STATION)) {
 				create.deleteFrom(Funicularstation.FUNICULARSTATION).execute();
 				InsertDataDB.funicularStation(create);
 			}
-			if (tableName.equals(Constant.TRAIN_STATION)) {
+			if (tableName.equals(ConstantString.TRAIN_STATION)) {
 				create.deleteFrom(Trainstation.TRAINSTATION).execute();
 				InsertDataDB.trainStation(create);
 			}
-			if (tableName.equals(Constant.TRAM_STOP)) {
+			if (tableName.equals(ConstantString.TRAM_STOP)) {
 				create.deleteFrom(Tramstop.TRAMSTOP).execute();
 				InsertDataDB.tramStop(create);
 			}
-			if (tableName.equals(Constant.PULLMAN_STOP)) {
+			if (tableName.equals(ConstantString.PULLMAN_STOP)) {
 				create.deleteFrom(Pullmanstop.PULLMANSTOP).execute();
 				InsertDataDB.pullmanStop(create);
 			}
-			if (tableName.equals(Constant.FUNICULAR_TIMETABLE)) {
+			if (tableName.equals(ConstantString.FUNICULAR_TIMETABLE)) {
 				create.deleteFrom(Funiculartimetable.FUNICULARTIMETABLE).execute();
 				InsertDataDB.funicularTimetable(create);
 			}
-			if (tableName.equals(Constant.TRAM_TIMETABLE)) {
+			if (tableName.equals(ConstantString.TRAM_TIMETABLE)) {
 				create.deleteFrom(Tramtimetable.TRAMTIMETABLE).execute();
 				InsertDataDB.tramTimetable(create);
 			}
-			if (tableName.equals(Constant.TRAIN_TIMETABLE)) {
+			if (tableName.equals(ConstantString.TRAIN_TIMETABLE)) {
 				create.deleteFrom(Traintimetable.TRAINTIMETABLE).execute();
 				InsertDataDB.trainTimetable(create);
 			}
-			if (tableName.equals(Constant.PULLMAN_TIMETABLE)) {
+			if (tableName.equals(ConstantString.PULLMAN_TIMETABLE)) {
 				create.deleteFrom(Pullmantimetable.PULLMANTIMETABLE).execute();
 				InsertDataDB.pullmanTimetable(create);
 			}

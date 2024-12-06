@@ -5,7 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-import model.Constant;
+import model.ConstantString;
+
 import javax.swing.JProgressBar;
 import java.awt.Color;
 import java.awt.Font;
@@ -22,7 +23,7 @@ public class DownloadDataDBView extends JFrame {
         getContentPane().setLayout(null);
         
         labelDownloadDataDatabases.setBackground(new Color(240, 240, 240));
-        labelDownloadDataDatabases.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 20));
+        labelDownloadDataDatabases.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 20));
         labelDownloadDataDatabases.setForeground(new Color(210, 105, 30));
         labelDownloadDataDatabases.setHorizontalAlignment(SwingConstants.CENTER);
         labelDownloadDataDatabases.setText("Download Data Databases");
@@ -31,16 +32,16 @@ public class DownloadDataDBView extends JFrame {
         labelDownloadDataDatabases.setBorder(null);
 
         
-        progressBar.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 17));
+        progressBar.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 17));
         progressBar.setForeground(new Color(0, 168, 0));
         progressBar.setBounds(64, 115, 306, 14);
         getContentPane().add(progressBar);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         
-        lblNewLabel.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
+        lblNewLabel.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
         lblNewLabel.setBounds(109, 128, 216, 25);
         getContentPane().add(lblNewLabel);
-        control.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
+        control.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
         control.setHorizontalAlignment(SwingConstants.LEFT);
         control.setBounds(375, 110, 49, 25);
         getContentPane().add(control);

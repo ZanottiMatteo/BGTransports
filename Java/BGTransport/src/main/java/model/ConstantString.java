@@ -1,41 +1,6 @@
 package model;
 
-public class Constant {
-
-	public static final String JDBC = "org.sqlite.JDBC";
-	public static final String SQLITEDATABASE = "org.jooq.meta.sqlite.SQLiteDatabase";
-
-	public static final String SRC_TRANSPORTATION = "src_generated_transportation/";
-	public static final String SRC_USER = "src_generated_user/";
-
-	public static final String DB_PUBLIC_TRANSPORTATION = "database/PublicTransportation.db3";
-	public static final String DB_URL_PUBLIC_TRANSPORTATION = "jdbc:sqlite:" + DB_PUBLIC_TRANSPORTATION;
-	public static final String DB_USERS = "database/Users.db3";
-	public static final String DB_URL_USERS = "jdbc:sqlite:" + DB_USERS;
-
-	public static final String JOOQ_TRANSPORTATION = "transportation.jooq.generated";
-	public static final String JOOQ_USER = "user.jooq.generated";
-
-	public static final String JSON_COMPANY = "json/company.json";
-	public static final String JSON_TRAM_STOP = "json/tramStop.json";
-	public static final String JSON_TRAIN_STATION = "json/trainStation.json";
-	public static final String JSON_FUNICULAR_STATION = "json/funicularStation.json";
-	public static final String JSON_PULLMAN_STOP = "json/pullmanStop.json";
-	public static final String JSON_FUNICULAR_TIMETABLE = "json/funicularTimetable.json";
-	public static final String JSON_TRAM_TIMETABLE = "json/tramTimetable.json";
-	public static final String JSON_PULLMAN_TIMETABLE = "json/pullmanTimetable.json";
-	public static final String JSON_TRAIN_TIMETABLE = "json/trainTimetable.json";
-
-	public static final String EXCEL_COMPANY = "src/main/resources/excel/list/company.xlsx";
-	public static final String EXCEL_FUNICULAR_STATION = "src/main/resources/excel/list/funicularStation.xlsx";
-	public static final String EXCEL_PULLMAN_STOP = "src/main/resources/excel/list/pullmanStop.xlsx";
-	public static final String EXCEL_TRAIN_STATION = "src/main/resources/excel/list/trainStation.xlsx";
-	public static final String EXCEL_TRAM_STOP = "src/main/resources/excel/list/tramStop.xlsx";
-	public static final String EXCEL_FUNICULAR_TIMETABLE = "src/main/resources/excel/timetable/funicularTimetable.xlsx";
-	public static final String EXCEL_TRAM_TIMETABLE = "src/main/resources/excel/timetable/tramTimetable.xlsx";
-	public static final String EXCEL_PULLMAN_TIMETABLE = "src/main/resources/excel/timetable/pullmanTimetable.xlsx";
-	public static final String EXCEL_TRAIN_TIMETABLE = "src/main/resources/excel/timetable/trainTimetable.xlsx";
-
+public class ConstantString {
 	public static final String ADDRESS = "address";
 	public static final String ARRIVAL_FUNICULAR_STATION = "arrivalFunicularStation";
 	public static final String ARRIVAL_PULLMAN_STOP = "arrivalPullmanStop";

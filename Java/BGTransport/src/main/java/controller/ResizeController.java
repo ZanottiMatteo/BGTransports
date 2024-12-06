@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 import org.jxmapviewer.JXMapViewer;
 
-import model.Constant;
+import model.ConstantString;
 import model.ResizableImage;
 import view.BigLabel;
 import view.LittleLabel;
@@ -39,31 +39,31 @@ public class ResizeController {
                 
                 int fontSize = Math.max(jframe.getWidth() / 100, 10);
 
-                label.setFont(new Font(Constant.SANSSERIF, Font.BOLD, fontSize));
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
             } else if (comp instanceof MiniLabel) {
             	MiniLabel label = (MiniLabel) comp;
                 
                 int fontSize = Math.max(jframe.getWidth() / 130, 10);
 
-                label.setFont(new Font(Constant.SANSSERIF, Font.ITALIC, fontSize));
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.ITALIC, fontSize));
             } else if (comp instanceof MediumLabel) {
             	MediumLabel label = (MediumLabel) comp;
                 
                 int fontSize = Math.max(jframe.getWidth() / 90, 10);
 
-                label.setFont(new Font(Constant.SANSSERIF, Font.BOLD, fontSize));
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
             } else if (comp instanceof BigLabel) {
             	BigLabel label = (BigLabel) comp;
                 
                 int fontSize = Math.max(jframe.getWidth() / 50, 10);
 
-                label.setFont(new Font(Constant.SANSSERIF, Font.BOLD, fontSize));
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
             } else if (comp instanceof JLabel) {
                 JLabel label = (JLabel) comp;
                 
                 int fontSize = Math.max(jframe.getWidth() / 60, 10);
 
-                label.setFont(new Font(Constant.SANSSERIF, Font.BOLD, fontSize));
+                label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
             }
         }       
         panel.repaint();

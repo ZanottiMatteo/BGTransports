@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controller.UserInfoController;
-import model.Constant;
+import model.ConstantString;
 import controller.LoginController;
 
 public class AccountIconView extends JFrame {
@@ -53,14 +53,14 @@ public class AccountIconView extends JFrame {
 
 		lblSignUp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSignUp.setForeground(new Color(210, 105, 30));
-		lblSignUp.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 50));
+		lblSignUp.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 50));
 		lblSignUp.setBounds(84, 11, 412, 95);
 		panel.add(lblSignUp);
 
 		JScrollPane scrollPane = new JScrollPane(panel);
 
 		confirmButton.setForeground(Color.WHITE);
-		confirmButton.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+		confirmButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		confirmButton.setBackground(new Color(210, 105, 30));
 		confirmButton.setBounds(215, 805, 150, 50);
 		confirmButton.addActionListener(e -> {
@@ -142,7 +142,7 @@ public class AccountIconView extends JFrame {
 
 		JLabel lblScegliLaTua = new JLabel("Scegli la tua immagine profilo per l'account");
 		lblScegliLaTua.setHorizontalAlignment(SwingConstants.CENTER);
-		lblScegliLaTua.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+		lblScegliLaTua.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		lblScegliLaTua.setBounds(84, 106, 412, 95);
 		panel.add(lblScegliLaTua);
 

@@ -11,10 +11,15 @@ import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
 import controller.UserInfoController;
-import model.Constant;
+import model.ConstantString;
 import model.ResizableImage;
 
 public class UserView extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6180578220567180030L;
 
 	// Main application panel.
 	public JPanel mainPanel = new JPanel();
@@ -80,6 +85,11 @@ public class UserView extends JFrame {
 		setMinimumSize(minPanelSize); // Set minimum size.
 
 		mainPanel = new JPanel() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 8925281806572340340L;
+
 			@Override
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
@@ -209,7 +219,7 @@ public class UserView extends JFrame {
 		changeData.setBounds(800, yPosition, 200, 50);
 		changeData.setText("Modifica");
 		changeData.setForeground(Color.WHITE);
-		changeData.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+		changeData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		changeData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(changeData);
 
@@ -217,7 +227,7 @@ public class UserView extends JFrame {
 		saveData.setVisible(false);
 		saveData.setText("Salva");
 		saveData.setForeground(Color.WHITE);
-		saveData.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+		saveData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		saveData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(saveData);
 
@@ -225,7 +235,7 @@ public class UserView extends JFrame {
 		discardData.setVisible(false);
 		discardData.setText("Annulla");
 		discardData.setForeground(Color.WHITE);
-		discardData.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
+		discardData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		discardData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(discardData);
 	}

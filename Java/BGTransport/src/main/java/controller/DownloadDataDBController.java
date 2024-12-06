@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
-import model.Constant;
+import model.ConstantDB;
 import model.ControlDB;
 
 public class DownloadDataDBController {
@@ -30,12 +30,12 @@ public class DownloadDataDBController {
 	}
 
 	public static void updateProgressbar() throws Exception {
-		totalRecordCount = ControlDB.totalRecordCount(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+		totalRecordCount = ControlDB.totalRecordCount(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 		new Thread(() -> {
 			try {
 				while (ControlDB.progress < totalRecordCount) {
-					ControlDB.progressiveTotalCount(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+					ControlDB.progressiveTotalCount(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 					String currentTableName = ControlDB.currentTableName[0];
 					SwingUtilities.invokeLater(() -> value = (ControlDB.progress / totalRecordCount) * 100);

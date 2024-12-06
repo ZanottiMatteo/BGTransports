@@ -39,7 +39,7 @@ public class ControlDB {
 
 			if (!excelData.equals(jsonData)) {
 				objectMapper.writeValue(jsonFile, excelData);
-				Constant.update = true;
+				ConstantRecordNumber.update = true;
 				System.out.println("File JSON need to be updated: " + json);
 				myList.add(json);
 
@@ -58,12 +58,12 @@ public class ControlDB {
 			System.out.println("Creating tables in the database: " + database + " ...");
 			DSLContext create = Utility.dslContext(database);
 
-			if (databasePath.equals(Constant.DB_PUBLIC_TRANSPORTATION)) {
+			if (databasePath.equals(ConstantDB.DB_PUBLIC_TRANSPORTATION)) {
 				CreateTablesDB.createTablesPublicTransportation(create);
 			} else {
 				CreateTablesDB.createTablesUsers(create);
 			}
-			GenerateCode.generateCode(database, Constant.JDBC, Constant.SQLITEDATABASE, jooq, src);
+			GenerateCode.generateCode(database, ConstantDB.JDBC, ConstantDB.SQLITEDATABASE, jooq, src);
 		} else {
 			System.out.println("Database already exists: " + database);
 		}
@@ -72,11 +72,11 @@ public class ControlDB {
 	
 
 	public static void dbUpdate(String database) throws IOException, SQLException {
-		if (Boolean.TRUE.equals(Constant.update)) {
+		if (Boolean.TRUE.equals(ConstantRecordNumber.update)) {
 			System.out.println("Database update: " + database);
 			DSLContext create = Utility.dslContext(database);
 			QueryDB.deleteAll(create, myList);
-			Constant.update = false;
+			ConstantRecordNumber.update = false;
 		}
 	}
 	public static int totalRecordCount(String database) throws Exception{
@@ -99,24 +99,24 @@ public class ControlDB {
 				System.out.println(tableNames.get(i) + " is empty");
 				System.out.println("Insert in table " + tableNames.get(i));
 
-				if (tableNames.get(i).equals(Constant.COMPANY)) {
-					totalRecord += Constant.NUMBER_COMPANY_RECORD;
-				} else if (tableNames.get(i).equals(Constant.FUNICULAR_STATION)) {
-					totalRecord += Constant.NUMBER_FUNICULAR_STATION_RECORD;
-				} else if (tableNames.get(i).equals(Constant.TRAIN_STATION)) {
-					totalRecord += Constant.NUMBER_TRAIN_STATION_RECORD;
-				} else if (tableNames.get(i).equals(Constant.TRAM_STOP)) {
-					totalRecord += Constant.NUMBER_TRAM_STOP_RECORD;
-				} else if (tableNames.get(i).equals(Constant.PULLMAN_STOP)) {
-					totalRecord += Constant.NUMBER_PULLMAN_STOP_RECORD;
-				} else if (tableNames.get(i).equals(Constant.FUNICULAR_TIMETABLE)) {
-					totalRecord += Constant.NUMBER_FUNICULAR_TIMETABLE_RECORD;
-				} else if (tableNames.get(i).equals(Constant.TRAM_TIMETABLE)) {
-					totalRecord += Constant.NUMBER_TRAM_TIMETABLE_RECORD;
-				} else if (tableNames.get(i).equals(Constant.TRAIN_TIMETABLE)) {
-					totalRecord += Constant.NUMBER_TRAIN_TIMETABLE_RECORD;
-				} else if (tableNames.get(i).equals(Constant.PULLMAN_TIMETABLE)) {
-					totalRecord += Constant.NUMBER_PULLMAN_TIMETABLE_RECORD;
+				if (tableNames.get(i).equals(ConstantString.COMPANY)) {
+					totalRecord += ConstantString.NUMBER_COMPANY_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.FUNICULAR_STATION)) {
+					totalRecord += ConstantString.NUMBER_FUNICULAR_STATION_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.TRAIN_STATION)) {
+					totalRecord += ConstantString.NUMBER_TRAIN_STATION_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.TRAM_STOP)) {
+					totalRecord += ConstantString.NUMBER_TRAM_STOP_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.PULLMAN_STOP)) {
+					totalRecord += ConstantString.NUMBER_PULLMAN_STOP_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.FUNICULAR_TIMETABLE)) {
+					totalRecord += ConstantString.NUMBER_FUNICULAR_TIMETABLE_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.TRAM_TIMETABLE)) {
+					totalRecord += ConstantString.NUMBER_TRAM_TIMETABLE_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.TRAIN_TIMETABLE)) {
+					totalRecord += ConstantString.NUMBER_TRAIN_TIMETABLE_RECORD;
+				} else if (tableNames.get(i).equals(ConstantString.PULLMAN_TIMETABLE)) {
+					totalRecord += ConstantString.NUMBER_PULLMAN_TIMETABLE_RECORD;
 				}
 			}
 		}
@@ -143,23 +143,23 @@ public class ControlDB {
 				System.out.println(tableNames.get(i) + " is empty");
 				System.out.println("Insert in table " + tableNames.get(i));
 
-				if (tableNames.get(i).equals(Constant.COMPANY)) {
+				if (tableNames.get(i).equals(ConstantString.COMPANY)) {
 					progress += InsertDataDB.company(create);
-				} else if (tableNames.get(i).equals(Constant.FUNICULAR_STATION)) {
+				} else if (tableNames.get(i).equals(ConstantString.FUNICULAR_STATION)) {
 					progress += InsertDataDB.funicularStation(create);
-				} else if (tableNames.get(i).equals(Constant.TRAIN_STATION)) {
+				} else if (tableNames.get(i).equals(ConstantString.TRAIN_STATION)) {
 					progress += InsertDataDB.trainStation(create);
-				} else if (tableNames.get(i).equals(Constant.TRAM_STOP)) {
+				} else if (tableNames.get(i).equals(ConstantString.TRAM_STOP)) {
 					progress += InsertDataDB.tramStop(create);
-				} else if (tableNames.get(i).equals(Constant.PULLMAN_STOP)) {
+				} else if (tableNames.get(i).equals(ConstantString.PULLMAN_STOP)) {
 					progress += InsertDataDB.pullmanStop(create);
-				} else if (tableNames.get(i).equals(Constant.FUNICULAR_TIMETABLE)) {
+				} else if (tableNames.get(i).equals(ConstantString.FUNICULAR_TIMETABLE)) {
 					progress += InsertDataDB.funicularTimetable(create);
-				} else if (tableNames.get(i).equals(Constant.TRAM_TIMETABLE)) {
+				} else if (tableNames.get(i).equals(ConstantString.TRAM_TIMETABLE)) {
 					progress += InsertDataDB.tramTimetable(create);
-				} else if (tableNames.get(i).equals(Constant.TRAIN_TIMETABLE)) {
+				} else if (tableNames.get(i).equals(ConstantString.TRAIN_TIMETABLE)) {
 					progress += InsertDataDB.trainTimetable(create);
-				} else if (tableNames.get(i).equals(Constant.PULLMAN_TIMETABLE)) {
+				} else if (tableNames.get(i).equals(ConstantString.PULLMAN_TIMETABLE)) {
 					progress += InsertDataDB.pullmanTimetable(create);
 				}
 			} else {
