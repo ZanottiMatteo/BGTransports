@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-
 import org.jooq.DSLContext;
 import org.jooq.Record1;
 import org.jooq.Result;
@@ -65,7 +63,7 @@ public class ControlDB {
 			} else {
 				CreateTablesDB.createTablesUsers(create);
 			}
-			GenerateCode.generateCode(database, Constant.JDBC, Constant.SQLiteDatabase, jooq, src);
+			GenerateCode.generateCode(database, Constant.JDBC, Constant.SQLITEDATABASE, jooq, src);
 		} else {
 			System.out.println("Database already exists: " + database);
 		}
@@ -73,7 +71,7 @@ public class ControlDB {
 	}
 	
 
-	public static void DBupdate(Boolean update, String database) throws IOException, SQLException {
+	public static void DBupdate(String database) throws IOException, SQLException {
 		if (Constant.update) {
 			System.out.println("Database update: " + database);
 			DSLContext create = Utility.DSLContext(database);
@@ -86,7 +84,7 @@ public class ControlDB {
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
 				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
 
-		tableNames = tables.stream().map(Record1::value1).collect(Collectors.toList());
+		tableNames = tables.stream().map(Record1::value1).toList();
 
 		int totalRecord = 0;
 		
@@ -132,7 +130,7 @@ public class ControlDB {
 		Result<Record1<String>> tables = create.select(DSL.field("name", String.class)).from("sqlite_master")
 				.where(DSL.field("type").eq("table")).and(DSL.field("name").notLike("sqlite_%")).fetch();
 
-		tableNames = tables.stream().map(Record1::value1).collect(Collectors.toList());
+		tableNames = tables.stream().map(Record1::value1).toList();
 
 		for (int i = 0; i < tableNames.size(); i++) {
 			System.out.println("Check table: " + tableNames.get(i));

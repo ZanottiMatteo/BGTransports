@@ -9,7 +9,7 @@ public class CreateTablesDB {
 	public static void createTablesPublicTransportation(DSLContext create) {
 		// Creates the "PULLMAN TIMETABLE" table if it does not already exist
 		create.createTableIfNotExists(Constant.pullmanTimetable)
-				.column(Constant.id, SQLDataType.INTEGER) 
+				.column(Constant.ID, SQLDataType.INTEGER) 
 				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.line, SQLDataType.VARCHAR(255)) 
 				.column(Constant.departurePullmanStop, SQLDataType.VARCHAR(255)) 
@@ -19,13 +19,13 @@ public class CreateTablesDB {
 				.column(Constant.nextStop, SQLDataType.VARCHAR(255)) 
 				.column(Constant.timeStop, SQLDataType.VARCHAR(255)) 
 				.column(Constant.type, SQLDataType.VARCHAR(255))
-				.constraints(DSL.constraint("PK_" + Constant.pullmanTimetable).primaryKey(Constant.id) 
+				.constraints(DSL.constraint("PK_" + Constant.pullmanTimetable).primaryKey(Constant.ID) 
 				).execute();
 		System.out.println("Table " + Constant.pullmanTimetable + " created successfully!");
 
 		// Creates the "FUNICULAR TIMETABLE" table if it does not already exist
 		create.createTableIfNotExists(Constant.funicularTimetable)
-				.column(Constant.id, SQLDataType.INTEGER) 
+				.column(Constant.ID, SQLDataType.INTEGER) 
 				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
 				.column(Constant.departureFunicularStation, SQLDataType.VARCHAR(255)) 
@@ -34,13 +34,13 @@ public class CreateTablesDB {
 				.column(Constant.arrivalTime, SQLDataType.VARCHAR(255)) 
 				.column(Constant.type, SQLDataType.VARCHAR(255)) 
 				.column(Constant.numberOfSeats, SQLDataType.VARCHAR(255)) 
-				.constraints(DSL.constraint("PK_" + Constant.funicularTimetable).primaryKey(Constant.id) 
+				.constraints(DSL.constraint("PK_" + Constant.funicularTimetable).primaryKey(Constant.ID) 
 				).execute();
 		System.out.println("Table " + Constant.funicularTimetable + " created successfully!");
 
 		// Creates the "TRAIN TIMETABLE" table if it does not already exist
 		create.createTableIfNotExists(Constant.trainTimetable)
-				.column(Constant.id, SQLDataType.INTEGER) 
+				.column(Constant.ID, SQLDataType.INTEGER) 
 				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
 				.column(Constant.departureTrainStation, SQLDataType.VARCHAR(255)) 
@@ -49,13 +49,13 @@ public class CreateTablesDB {
 				.column(Constant.arrivalTime, SQLDataType.VARCHAR(255)) 
 				.column(Constant.nextStop, SQLDataType.VARCHAR(255)) 
 				.column(Constant.timeStop, SQLDataType.VARCHAR(255))
-				.constraints(DSL.constraint("PK_" + Constant.trainTimetable).primaryKey(Constant.id)
+				.constraints(DSL.constraint("PK_" + Constant.trainTimetable).primaryKey(Constant.ID)
 				).execute();
 		System.out.println("Table " + Constant.trainTimetable + " created successfully!");
 
 		// Creates the "TRAM TIMETABLE" table if it does not already exist
 		create.createTableIfNotExists(Constant.tramTimetable)
-				.column(Constant.id, SQLDataType.INTEGER) 
+				.column(Constant.ID, SQLDataType.INTEGER) 
 				.column(Constant.companyName, SQLDataType.VARCHAR(255)) 
 				.column(Constant.name, SQLDataType.VARCHAR(255)) 
 				.column(Constant.departureTramStation, SQLDataType.VARCHAR(255)) 
@@ -67,7 +67,7 @@ public class CreateTablesDB {
 				.column(Constant.type, SQLDataType.VARCHAR(255)) 
 				.column(Constant.numberOfSeats, SQLDataType.VARCHAR(255)) 
 				.column(Constant.numberOfCarriages, SQLDataType.VARCHAR(255))
-				.constraints(DSL.constraint("PK_" + Constant.tramTimetable).primaryKey(Constant.id) 
+				.constraints(DSL.constraint("PK_" + Constant.tramTimetable).primaryKey(Constant.ID) 
 				).execute();
 		System.out.println("Table " + Constant.tramTimetable + " created successfully!");
 

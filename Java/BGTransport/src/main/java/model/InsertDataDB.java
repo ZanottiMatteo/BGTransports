@@ -156,7 +156,7 @@ public class InsertDataDB {
 		for (int j = 0; j < funicularJsonArray.length(); j++) {
 			JSONObject funicularJson = funicularJsonArray.getJSONObject(j);
 
-			int id = funicularJson.getInt(Constant.id);
+			int id = funicularJson.getInt(Constant.ID);
 			String company_name = funicularJson.getString(Constant.companyName);
 			String name = funicularJson.getString(Constant.name);
 			String departureFunicularStation = funicularJson.getString(Constant.departureFunicularStation);
@@ -182,7 +182,7 @@ public class InsertDataDB {
 		for (int j = 0; j < tramJsonArray.length(); j++) {
 			JSONObject tramJson = tramJsonArray.getJSONObject(j);
 
-			int id = tramJson.getInt(Constant.id);
+			int id = tramJson.getInt(Constant.ID);
 			String company_name = tramJson.getString(Constant.companyName);
 			String name = tramJson.getString(Constant.name);
 			String departureTramStation = tramJson.getString(Constant.departureTramStation);
@@ -211,7 +211,7 @@ public class InsertDataDB {
 		for (int j = 0; j < trainJsonArray.length(); j++) {
 			JSONObject trainJson = trainJsonArray.getJSONObject(j);
 
-			int id = trainJson.getInt(Constant.id);
+			int id = trainJson.getInt(Constant.ID);
 			String company_name = trainJson.getString(Constant.companyName);
 			String name = trainJson.getString(Constant.name);
 			String departureTrainStation = trainJson.getString(Constant.departureTrainStation);
@@ -237,7 +237,7 @@ public class InsertDataDB {
 		for (int j = 0; j < pullmanJsonArray.length(); j++) {
 			JSONObject pullmanJson = pullmanJsonArray.getJSONObject(j);
 			
-			int id = pullmanJson.getInt(Constant.id);
+			int id = pullmanJson.getInt(Constant.ID);
 			String company_name = pullmanJson.getString(Constant.companyName);
 			String line = pullmanJson.getString(Constant.line);
 			String departurePullmanStop = pullmanJson.getString(Constant.departurePullmanStop);

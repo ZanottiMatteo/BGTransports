@@ -2,10 +2,6 @@ package view;
 
 import javax.swing.*;
 
-import org.apache.poi.ss.formula.functions.Choose;
-
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -13,10 +9,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import controller.ThemeController;
 import controller.UserInfoController;
+import model.Constant;
 import controller.LoginController;
-import controller.SignUpController;
 
 public class AccountIconView extends JFrame {
 
@@ -50,7 +45,7 @@ public class AccountIconView extends JFrame {
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 800);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		panel = new JPanel();
@@ -61,14 +56,14 @@ public class AccountIconView extends JFrame {
 		lblSignUp = new JLabel("Immagine Profilo");
 		lblSignUp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSignUp.setForeground(new Color(210, 105, 30));
-		lblSignUp.setFont(new Font("SansSerif", Font.BOLD, 50));
+		lblSignUp.setFont(new Font(Constant.sansSerif, Font.BOLD, 50));
 		lblSignUp.setBounds(84, 11, 412, 95);
 		panel.add(lblSignUp);
 
 		JScrollPane scrollPane = new JScrollPane(panel);
 
 		ConfirmButton.setForeground(Color.WHITE);
-		ConfirmButton.setFont(new Font("SansSerif", Font.BOLD, 16));
+		ConfirmButton.setFont(new Font(Constant.sansSerif, Font.BOLD, 16));
 		ConfirmButton.setBackground(new Color(210, 105, 30));
 		ConfirmButton.setBounds(215, 805, 150, 50);
 		ConfirmButton.addActionListener(e -> {
@@ -162,7 +157,7 @@ public class AccountIconView extends JFrame {
 
 		JLabel lblScegliLaTua = new JLabel("Scegli la tua immagine profilo per l'account");
 		lblScegliLaTua.setHorizontalAlignment(SwingConstants.CENTER);
-		lblScegliLaTua.setFont(new Font("SansSerif", Font.BOLD, 16));
+		lblScegliLaTua.setFont(new Font(Constant.sansSerif, Font.BOLD, 16));
 		lblScegliLaTua.setBounds(84, 106, 412, 95);
 		panel.add(lblScegliLaTua);
 
@@ -170,8 +165,8 @@ public class AccountIconView extends JFrame {
 		verticalScrollBar.setUnitIncrement(16); // Unit scroll speed (higher value = faster scroll)
 		verticalScrollBar.setBlockIncrement(32);
 
-		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(0, 0, 600, 500);
 		getContentPane().add(scrollPane);
 
@@ -183,7 +178,7 @@ public class AccountIconView extends JFrame {
 	private void initComponents() {
 		setTitle("BGTransport");
 		setSize(600, 700);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		SwingUtilities.updateComponentTreeUI(this);
 		setLocationRelativeTo(null);
 	}

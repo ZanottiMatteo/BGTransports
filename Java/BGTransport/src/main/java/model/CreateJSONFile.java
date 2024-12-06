@@ -21,52 +21,44 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class CreateJSONFile {
-	// Funzione che legge il file Excel e restituisce i dati come lista di Map
+	
 	public static List<Map<String, String>> readExcelFile(String filePath) throws Exception {
 	    List<Map<String, String>> dataList = new ArrayList<>();
 	    FileInputStream file = new FileInputStream(new File(filePath));
 
-	    // Crea un workbook (cartella di lavoro) a partire dal file Excel
 	    Workbook workbook = new XSSFWorkbook(file);
-	    Sheet sheet = workbook.getSheetAt(0); // Legge il primo foglio
+	    Sheet sheet = workbook.getSheetAt(0);
 
-	    // Ottiene le intestazioni (prima riga del foglio)
 	    Row headerRow = sheet.getRow(0);
 	    List<String> headers = new ArrayList<>();
-	    if (headerRow != null) { // Controlla se la riga delle intestazioni esiste
+	    if (headerRow != null) {
 	        for (Cell cell : headerRow) {
 	            headers.add(cell.getStringCellValue());
 	        }
 	    }
 
-	    // Legge tutte le righe restanti
-	    for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Usa getLastRowNum per evitare problemi con righe vuote in fondo
+	    for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 	        Row row = sheet.getRow(i);
 
-	        // Se la riga è nulla, salta questa iterazione
 	        if (row == null) {
 	            continue;
 	        }
 
-	        Map<String, String> rowData = new LinkedHashMap<>(); // Utilizziamo LinkedHashMap per preservare l'ordine
-	        boolean hasNonEmptyValue = false; // Controllo se la riga ha almeno un valore non vuoto
+	        Map<String, String> rowData = new LinkedHashMap<>();
+	        boolean hasNonEmptyValue = false;
 
-	        // Assegna i valori delle celle alle rispettive intestazioni mantenendo l'ordine
 	        for (int j = 0; j < headers.size(); j++) {
-	            String columnName = headers.get(j); // Ottieni il nome della colonna
+	            String columnName = headers.get(j);
 	            Cell cell = (row.getCell(j) != null) ? row.getCell(j) : null;
 	            
-	            // Passa il nome della colonna alla funzione getCellValue
 	            String cellValue = (cell != null) ? getCellValue(cell, columnName) : ""; 
 	            rowData.put(columnName, cellValue);
 
-	            // Verifica se almeno una cella della riga contiene un valore non vuoto
 	            if (!cellValue.isEmpty()) {
 	                hasNonEmptyValue = true;
 	            }
 	        }
 
-	        // Aggiungi la riga alla lista solo se ha almeno un valore non vuoto
 	        if (hasNonEmptyValue) {
 	            dataList.add(rowData);
 	        }
@@ -78,35 +70,29 @@ public class CreateJSONFile {
 	    return dataList;
 	}
 
-	// Funzione che ottiene il valore di una cella e lo converte correttamente
 	public static String getCellValue(Cell cell, String columnName) {
 	    if (cell == null) {
-	        return ""; // Se la cella è vuota, restituiamo una stringa vuota
+	        return "";
 	    }
 
-	    // Se la colonna è 'lat' o 'lon', trattiamo il valore come un numero decimale
 	    if (columnName.equalsIgnoreCase("lat") || columnName.equalsIgnoreCase("lon")) {
 	        if (cell.getCellType() == CellType.NUMERIC) {
-	            // Se la cella è numerica, la trattiamo come un numero decimale
-	            return String.valueOf(cell.getNumericCellValue()); // Manteniamo il valore come decimale
+	            return String.valueOf(cell.getNumericCellValue());
 	        } else if (cell.getCellType() == CellType.STRING) {
-	            return cell.getStringCellValue(); // Restituiamo la stringa se è già una stringa
+	            return cell.getStringCellValue();
 	        }
 	    }
 
-	    // Se la cella contiene un orario (time), lo trattiamo come tale
 	    if (cell.getCellType() == CellType.NUMERIC) {
 	        double numericValue = cell.getNumericCellValue();
 	        
-	        // Se il numero è una frazione di giorno (indica un orario)
 	        if (numericValue >= 0 && numericValue < 1) {
 	            Date time = cell.getDateCellValue();
-	            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); // Modifica il formato dell'orario
-	            return sdf.format(time); // Restituiamo l'orario formattato come stringa
+	            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	            return sdf.format(time);
 	        }
 	    }
 
-	    // Gestione delle celle con valore numerico per altre colonne (id e altre)
 	    if (cell.getCellType() == CellType.NUMERIC) {
 	        double numericValue = cell.getNumericCellValue();
 	        

@@ -1,5 +1,4 @@
-package BGTransport;
-
+package bgTransport;
 
 public class Main {
     public static void main(String[] args) throws Exception {

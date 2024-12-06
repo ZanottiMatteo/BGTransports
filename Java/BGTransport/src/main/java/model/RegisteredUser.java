@@ -3,10 +3,6 @@ package model;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.jooq.DSLContext;
-
-import controller.LoginController;
-
 public class RegisteredUser extends User{
 
 	String name;
