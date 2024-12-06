@@ -11,63 +11,42 @@ import model.ControlDB;
 public class DownloadDataDBController {
 
 	public static int totalRecordCount = 0;
-	public static double value;
-	
+	public static int value;
+
 	public static void updateProgress() {
 		if (totalRecordCount != -1) {
-		value = (ControlDB.progress*100)/totalRecordCount;			
-		MainController.dbV.progressBar.setValue((int) value);
-		String str = Integer.toString((int) value);
-		MainController.dbV.control.setText(str + "%");		
+			value = (ControlDB.progress * 100) / totalRecordCount;
+			MainController.dbV.progressBar.setValue(value);
+			String str = Integer.toString(value);
+			MainController.dbV.control.setText(str + "%");
 		}
 	}
 
 	public static int returnProgress() {
-		if (totalRecordCount == -1) return 100;
-		else return (int)value;
+		if (totalRecordCount == -1)
+			return 100;
+		else
+			return value;
 	}
-	
-	public static void updateProgressbar() throws Exception {
-		// Calcolo totale record
-		totalRecordCount = ControlDB.totalRecordCount(Constant.DBUrlPublicTransportation);
 
-		// Avvio di un thread separato per aggiornare il progresso
+	public static void updateProgressbar() throws Exception {
+		totalRecordCount = ControlDB.totalRecordCount(Constant.DB_URL_PUBLIC_TRANSPORTATION);
+
 		new Thread(() -> {
 			try {
-				// Simula il progresso
 				while (ControlDB.progress < totalRecordCount) {
-					
+					ControlDB.progressiveTotalCount(Constant.DB_URL_PUBLIC_TRANSPORTATION);
 
-						ControlDB.progressiveTotalCount(Constant.DBUrlPublicTransportation);
-					
-					// Aggiorna i dati e il progresso
 					String currentTableName = ControlDB.currentTableName[0];
-					// Aggiorna la barra di progresso
-					SwingUtilities.invokeLater(() -> {
-	                    // Aggiorna la percentuale sulla label
-						value = (ControlDB.progress/totalRecordCount)*100;
-                      
-	                    Integer.toString((int) value);
-	                     
-	                    // Aggiorna la barra di progresso
-	                    
-	                });
+					SwingUtilities.invokeLater(() -> value = (ControlDB.progress / totalRecordCount) * 100);
 
-					// Aggiorna il nome della tabella in modo asincrono
-					SwingUtilities.invokeLater(() -> {
-						MainController.dbV.lblNewLabel.setText("Processing table: " + currentTableName);
-					});
-
-					// Simula un piccolo delay per test/debug
-					Thread.sleep(500);
+					SwingUtilities.invokeLater(
+							() -> MainController.dbV.lblNewLabel.setText("Processing table: " + currentTableName));
 				}
 
-				// Quando il progresso è completato
 				SwingUtilities.invokeLater(() -> {
-					// Ferma il timer e aggiorna il messaggio di completamento
 					MainController.dbV.labelDownloadDataDatabases.setText("Download Complete");
 					NewWindowController.openHomePanel(MainController.homeV);
-					// Chiudi la finestra dopo un breve ritardo
 					Timer closeTimer = new Timer(1000, evt -> MainController.dbV.dispose());
 					closeTimer.setRepeats(false);
 					closeTimer.start();
@@ -77,20 +56,20 @@ public class DownloadDataDBController {
 			}
 		}).start();
 
-		// Timer per i "dot" animati nella label
 		Timer timer = new Timer(500, new ActionListener() {
 			private int dotCount = 0;
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dotCount = (dotCount + 1) % 4; // Cicla tra 0, 1, 2, 3
+				dotCount = (dotCount + 1) % 4;
 				String dots = ".".repeat(dotCount);
 
 				SwingUtilities.invokeLater(() -> {
 					if (ControlDB.currentTableName != null && ControlDB.currentTableName.length > 0) {
-						MainController.dbV.lblNewLabel.setText("Processing table: " + ControlDB.currentTableName[0] + dots);
+						MainController.dbV.lblNewLabel
+								.setText("Processing table: " + ControlDB.currentTableName[0] + dots);
 
-							updateProgress();
+						updateProgress();
 
 					}
 				});

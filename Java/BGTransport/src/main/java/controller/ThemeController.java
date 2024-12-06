@@ -1,28 +1,17 @@
 package controller;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Window;
-import java.util.List;
-
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLaf;
-import com.formdev.flatlaf.FlatLightLaf;
-
 import model.MyLighterLaf;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
-import view.SignUpView;
 import view.UserView;
 
 public class ThemeController {
@@ -57,13 +46,10 @@ public class ThemeController {
 	
 	public static void setThemeLoginPanel(LoginView loginV) {
 		if (themeDark) {
-			loginV.LogoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
+			loginV.logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
 		} else {
-			loginV.LogoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/LogoDark.png")));
+			loginV.logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/LogoDark.png")));
 		}
-	}
-		
-	public static void setThemeSignUpPanel(SignUpView signupV) {
 	}
 	
 	public static void updateThemes() {
@@ -85,8 +71,7 @@ public class ThemeController {
 
 		    setThemeHomePanel(MainController.homeV);		    
 		    setThemeMapPanel(MainController.mapV);
-		    setThemeLoginPanel(MainController.loginV);		  
-		    setThemeSignUpPanel(MainController.signupV);
+		    setThemeLoginPanel(MainController.loginV);
 		    setThemeUserPanel(MainController.userV); 
 		
 	}

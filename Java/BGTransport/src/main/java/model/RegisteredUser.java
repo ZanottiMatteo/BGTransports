@@ -3,7 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.List;
 
-public class RegisteredUser extends User{
+public class RegisteredUser{
 
 	String name;
 	String surname;
@@ -13,13 +13,9 @@ public class RegisteredUser extends User{
 	String username;
 	String address;
 	String city;
-	String ZIPcode;
+	String zipCode;
 	int imageAccount;
 	int role;
-	
-	 public RegisteredUser() {
-	       
-	    }
 	
 	private void loadUserDetails() throws SQLException {
         List<String> userDetails = QueryDB.getUserDetailsByEmail(this.email);
@@ -31,9 +27,9 @@ public class RegisteredUser extends User{
             this.birthday = userDetails.get(3);
             this.address = userDetails.get(4);
             this.city = userDetails.get(5);
-            this.ZIPcode = userDetails.get(6);
-            this.password = userDetails.get(7);  // Se desideri includere la password
-            this.role = Integer.parseInt(userDetails.get(8));  // Converte il ruolo in intero
+            this.zipCode = userDetails.get(6);
+            this.password = userDetails.get(7);
+            this.role = Integer.parseInt(userDetails.get(8));
             this.imageAccount = Integer.parseInt(userDetails.get(9));
         }
     }
@@ -120,12 +116,12 @@ public class RegisteredUser extends User{
 	}
 
 	public String getZIPcode() {
-		return this.ZIPcode;
+		return this.zipCode;
 	}
 
-	public void setZIPcode(String ZIPcode) throws SQLException {
-		this.ZIPcode = ZIPcode;
-		QueryDB.setCAPUser(this.email, ZIPcode);
+	public void setZIPcode(String zipCode) throws SQLException {
+		this.zipCode = zipCode;
+		QueryDB.setCAPUser(this.email, zipCode);
 	}
 
 	public int getImageAccount() {

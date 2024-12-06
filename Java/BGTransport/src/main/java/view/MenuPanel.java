@@ -23,7 +23,7 @@ public class MenuPanel extends RoundedPanel {
     public final ImageIcon iconMap = new ImageIcon(MenuPanel.class.getResource("/images/Map.png"));
     public final ImageIcon iconHome = new ImageIcon(MenuPanel.class.getResource("/images/Home.png"));
 
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     /**
      * Constructor for MenuPanel.

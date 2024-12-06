@@ -1,25 +1,14 @@
 package controller;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.io.File;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.event.MouseInputListener;
 
 import org.jxmapviewer.JXMapViewer;
@@ -44,10 +33,10 @@ public class MapController {
 
     // List of unique waypoints across all maps
     public static List<GeoPosition> positions = new ArrayList<>();
-    public static List<GeoPosition> Train = new ArrayList<>();
-    public static List<GeoPosition> Bus = new ArrayList<>();
-    public static List<GeoPosition> Funicular = new ArrayList<>();
-    public static List<GeoPosition> Tram = new ArrayList<>();
+    public static List<GeoPosition> trainPosition = new ArrayList<>();
+    public static List<GeoPosition> busPosition = new ArrayList<>();
+    public static List<GeoPosition> funicularPosition = new ArrayList<>();
+    public static List<GeoPosition> tramPosition = new ArrayList<>();
     private static final List<Painter<JXMapViewer>> painters = new ArrayList<>();
     private static final List<Painter<JXMapViewer>> transport = new ArrayList<>();
     public static JXMapViewer fullMapViewer = new JXMapViewer(); // Create a separate instance for the full map
@@ -239,9 +228,6 @@ public class MapController {
         CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
         fullMapViewer.setOverlayPainter(compoundPainter);
         miniMapViewer.setOverlayPainter(compoundPainter);
-
-        // Debug per confermare il numero di marker sulla mappa
-        System.out.println("Total painters: " + allPainters.size());
     }
     
     public static void showTrain() throws SQLException {
@@ -286,9 +272,6 @@ public class MapController {
         CompoundPainter<JXMapViewer> compoundPainter = new CompoundPainter<>(allPainters);
         fullMapViewer.setOverlayPainter(compoundPainter);
         miniMapViewer.setOverlayPainter(compoundPainter);
-
-        // Debug to confirm the total number of markers on the map
-        System.out.println("Total painters: " + allPainters.size());
     }
 
     public static void showFunicular() throws SQLException {

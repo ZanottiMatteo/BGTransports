@@ -1,40 +1,23 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-
-import org.jxmapviewer.JXMapViewer;
-import org.jxmapviewer.viewer.GeoPosition;
-
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Rectangle;
-import java.awt.Toolkit;
 import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
 import java.awt.Point;
 
 import controller.MainController;
 import controller.MapController;
 import controller.NewWindowController;
-import controller.ResizeController;
 import controller.ThemeController;
 import model.ResizableImage;
-import model.WeatherModel;
-import view.RoundedPanel;
-import java.awt.Font;
 
 /**
  * HomeView class represents the main view of the application, displaying a
@@ -66,7 +49,7 @@ public class MapView extends JFrame {
 	public final Point mappanelpoint = new Point(200, 30);
 
 	// Resizable background wallpaper that adjusts to the screen size.
-	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
+	public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
 	// Icons for the user and map buttons.
 	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png")); // Icon for the user button.
@@ -79,18 +62,18 @@ public class MapView extends JFrame {
 
 
 	// A map to store the bounds (dimensions and positions) of each component for resizing purposes.
-	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+	public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
 	// Original size of the application window when maximized.
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
 	// Fixed size of the menu panel.
-	public final Dimension MenuPanelSize = new Dimension(100, 900);
+	public final Dimension menuPanelSize = new Dimension(100, 900);
 	// Minimum size of the application window to prevent it from being resized too small.
-	public final Dimension MinPanelSize = new Dimension(1085, 615);
+	public final Dimension minPanelSize = new Dimension(1085, 615);
 	// Size of the panel containing the map.
-	public final Dimension MapPanelSize = new Dimension(1600, 900);
+	public final Dimension mapPanelSize = new Dimension(1600, 900);
 	// Default size of the map itself within the map panel.
-	public final Dimension MapSize = new Dimension(1450, 800);
+	public final Dimension mapSize = new Dimension(1450, 800);
 
 	/**
      * Constructor that sets up the UI components, layout, and theming for the home view.
@@ -117,9 +100,9 @@ public class MapView extends JFrame {
      */
     private void configureWindow() {
         setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-        setMinimumSize(MinPanelSize); // Set minimum window size
+        setMinimumSize(minPanelSize); // Set minimum window size
         setTitle("BGTransport"); // Set window title
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
         setLocationRelativeTo(null); // Center the window on the screen
     }
 

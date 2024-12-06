@@ -1,25 +1,18 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import controller.MainController;
-import controller.MapController;
 import controller.NewWindowController;
-import controller.ResizeController;
 import controller.ThemeController;
 import controller.UserInfoController;
+import model.Constant;
 import model.ResizableImage;
-import model.TimestampModel;
-import model.WeatherModel;
 
 public class UserView extends JFrame {
 
@@ -66,16 +59,16 @@ public class UserView extends JFrame {
 	public static JButton chooseIcon = new JButton();
 
 	// Background wallpaper.
-	public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
+	public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
 	// Component bounds storage for resizing purposes.
-	public Map<Component, Rectangle> componentBounds = new HashMap<>();
+	public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
 	// Window and panel dimensions.
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
-	public final Dimension MenuPanelSize = new Dimension(100, 900);
-	public final Dimension MinPanelSize = new Dimension(1085, 615);
-	public final Dimension CenterPanelSize = new Dimension(1600, 900);
+	public final Dimension menuPanelSize = new Dimension(100, 900);
+	public final Dimension minPanelSize = new Dimension(1085, 615);
+	public final Dimension centerPanelSize = new Dimension(1600, 900);
 
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
@@ -84,7 +77,7 @@ public class UserView extends JFrame {
 	public UserView() {
 		// Configure window properties.
 		setExtendedState(Frame.MAXIMIZED_BOTH); // Launch in maximized state.
-		setMinimumSize(MinPanelSize); // Set minimum size.
+		setMinimumSize(minPanelSize); // Set minimum size.
 
 		mainPanel = new JPanel() {
 			@Override
@@ -216,7 +209,7 @@ public class UserView extends JFrame {
 		changeData.setBounds(800, yPosition, 200, 50);
 		changeData.setText("Modifica");
 		changeData.setForeground(Color.WHITE);
-		changeData.setFont(new Font("SansSerif", Font.BOLD, 16));
+		changeData.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
 		changeData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(changeData);
 
@@ -224,7 +217,7 @@ public class UserView extends JFrame {
 		saveData.setVisible(false);
 		saveData.setText("Salva");
 		saveData.setForeground(Color.WHITE);
-		saveData.setFont(new Font("SansSerif", Font.BOLD, 16));
+		saveData.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
 		saveData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(saveData);
 
@@ -232,7 +225,7 @@ public class UserView extends JFrame {
 		discardData.setVisible(false);
 		discardData.setText("Annulla");
 		discardData.setForeground(Color.WHITE);
-		discardData.setFont(new Font("SansSerif", Font.BOLD, 16));
+		discardData.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
 		discardData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(discardData);
 	}
@@ -245,16 +238,14 @@ public class UserView extends JFrame {
 		});
 
 		// Action listener for the home button
-    	menuPanel.mapButton.addActionListener(e -> {
+		menuPanel.mapButton.addActionListener(e -> {
 			NewWindowController.openMapPanel(MainController.mapV);
 			setVisible(false);
 		});
-    	
+
 		// Action listener for the theme switch button
 		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
 
-		
-    	
 		changeData.addActionListener(e -> {
 			UserInfoController.enableTextFields();
 			saveData.setVisible(true);
@@ -282,9 +273,7 @@ public class UserView extends JFrame {
 			changeData.setVisible(true);
 		});
 
-		chooseIcon.addActionListener(e -> {
-			NewWindowController.openAccountIconPanel(MainController.accountV);
-		});
+		chooseIcon.addActionListener(e -> NewWindowController.openAccountIconPanel(MainController.accountV));
 	}
 
 	/**
@@ -307,9 +296,9 @@ public class UserView extends JFrame {
 	 */
 	private void initComponents() {
 		setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-		setMinimumSize(MinPanelSize); // Set minimum window size
+		setMinimumSize(minPanelSize); // Set minimum window size
 		setTitle("BGTransport"); // Set window title
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
 		setLocationRelativeTo(null); // Center the window on the screen
 	}
 }

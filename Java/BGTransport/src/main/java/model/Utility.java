@@ -6,13 +6,10 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
-
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class Utility {
 	public static JSONArray fileReader(File jsonFile) throws IOException {
@@ -25,28 +22,11 @@ public class Utility {
 		}
 		fileReader.close();
 
-		// Converti il contenuto JSON in un JSONArray
-		JSONArray JsonArray = new JSONArray(jsonContent.toString());
-
-		return JsonArray;
+		return new JSONArray(jsonContent.toString());
 	}
 
-	public static DSLContext DSLContext(String database) throws SQLException {
+	public static DSLContext dslContext(String database) throws SQLException {
 		Connection connection = DriverManager.getConnection(database);
-		DSLContext create = DSL.using(connection, SQLDialect.SQLITE);
-		return create;
-	}
-
-	public static int sumNumberOfRecords(List<String> tableNames) throws IOException {
-		File jsonFile = new File("json/recordCount.json");
-		JSONArray jsonArray = fileReader(jsonFile);
-		int totalRecordCount = 0;
-		for (int i = 0; i < jsonArray.length(); i++) {
-			JSONObject jsonObject = jsonArray.getJSONObject(i);
-			String tableName = jsonObject.getString("table");
-			int recordCount = jsonObject.getInt("recordCount");
-			totalRecordCount = totalRecordCount + recordCount;
-		}
-		return totalRecordCount;
+		return DSL.using(connection, SQLDialect.SQLITE);
 	}
 }

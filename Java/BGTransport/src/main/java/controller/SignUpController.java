@@ -16,12 +16,12 @@ public class SignUpController {
 
 	static RegisteredUser newUser;
 
-	public static void SignUp(JTextField nameField, JTextField surnameField, JTextField brithdayField,
+	public static void signUp(JTextField nameField, JTextField surnameField, JTextField brithdayField,
 			JTextField emailField, JPasswordField passwordField, JPasswordField passwordconfField,
 			JTextField usernameField, JTextField addressField, JTextField cityField, JTextField zipcodeField)
 			throws SQLException {
 
-		DSLContext user = Utility.DSLContext(Constant.DBUrlUsers);
+		DSLContext user = Utility.dslContext(Constant.DB_URL_USERS);
 
 		String name = nameField.getText();
 		String surname = surnameField.getText();
@@ -41,9 +41,8 @@ public class SignUpController {
 				+ "\naddress: " + address + "\ncity: " + city + "\nzipcode: " + zipcode);
 
 		if (name != null && surname != null && birthday != null && (birthday.contains("/") || birthday.contains("-"))
-				&& email != null && email.contains("@") && email.contains(".") && password != null
-				&& passwordconf != null && password.equals(passwordconf) && username != null
-				&& !username.contains(" ")) {
+				&& email != null && email.contains("@") && email.contains(".") && password.equals(passwordconf)
+				&& username != null && !username.contains(" ")) {
 
 			user.insertInto(User.USER).set(User.USER.NAME, name).set(User.USER.SURNAME, surname)
 					.set(User.USER.DATEOFBIRTH, birthday).set(User.USER.ROLE, role)

@@ -3,25 +3,15 @@ package model;
 import javax.swing.*;
 
 import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
 import javax.imageio.ImageIO;
 
 public class WeatherModel {

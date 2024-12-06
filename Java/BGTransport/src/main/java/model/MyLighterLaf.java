@@ -1,5 +1,6 @@
 package model;
 
+import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
 public class MyLighterLaf extends FlatLightLaf {
@@ -7,7 +8,7 @@ public class MyLighterLaf extends FlatLightLaf {
         // Load the custom properties file
         try {
             System.out.println("Initializing MyLighterLaf...");
-            FlatLightLaf.setup(new MyLighterLaf());
+            FlatLaf.setup(new MyLighterLaf());
             return true;
         } catch (Exception ex) {
             System.err.println("Failed to initialize MyLighterLaf");

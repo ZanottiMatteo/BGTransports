@@ -1,18 +1,14 @@
 package view;
 
 import javax.swing.*;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.io.File;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Frame;
@@ -20,22 +16,22 @@ import java.awt.Frame;
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
+import model.Constant;
 import model.ResizableImage;
 import controller.LoginController;
-import view.RoundedPanel;
 
 public class LoginView extends JFrame {
 
     // Declare UI components
     public JPanel mainPanel;
-    public JLabel LogoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
+    public JLabel logoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
     public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
-    public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
+    public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
     public JPasswordField passwordField = new JPasswordField();
     public JButton switchThemeButton;
     public JButton returnButton = new JButton();
     public ImageIcon iconReturn = new ImageIcon(LoginView.class.getResource("/images/Return.png"));
-    public JPanel BGpanel;
+    public JPanel bgPanel;
     public JTextField textField = new JTextField();
     public JButton signInButton = new JButton();
     public LittleLabel textEmail = new LittleLabel("Email");
@@ -43,15 +39,15 @@ public class LoginView extends JFrame {
     public RoundedPanel centerPanel = new RoundedPanel();
     public final Point centerPanelpoint = new Point(580, 167);
     public LittleLabel lblPassword = new LittleLabel("Password");
-    public MiniLabel ErrorLabel = new MiniLabel();
+    public MiniLabel errorLabel = new MiniLabel();
 
     // Map to store component bounds for later resizing
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
     
     // Define dimensions for the frame and panel
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
-    public final Dimension MinPanelSize = new Dimension(1150, 660);
-    public final Dimension CentralPanelSize = new Dimension(760, 644);
+    public final Dimension minPanelSize = new Dimension(1150, 660);
+    public final Dimension centralPanelSize = new Dimension(760, 644);
     
     
     public LoginView() {
@@ -131,10 +127,10 @@ public class LoginView extends JFrame {
     private void initializeSignInButton() {
         signInButton.setText("Sign In");
         signInButton.setForeground(new Color(255, 255, 255));
-        signInButton.setFont(new Font("SansSerif", Font.BOLD, 16));
+        signInButton.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 16));
         signInButton.setBackground(new Color(210, 105, 30));
         signInButton.setBounds(885, 645, 150, 60);
-        signInButton.addActionListener(e -> LoginController.Login(textField, passwordField));
+        signInButton.addActionListener(e -> LoginController.login(textField, passwordField));
         mainPanel.add(signInButton);
     }
 
@@ -146,7 +142,7 @@ public class LoginView extends JFrame {
         signupButton.setRolloverEnabled(false);
         signupButton.setBounds(885, 730, 150, 35);
         signupButton.setPreferredSize(null);
-        signupButton.setFont(new Font("SansSerif", Font.BOLD, 15));
+        signupButton.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 15));
         signupButton.setBorderPainted(false);
         signupButton.setBackground(new Color(0, 0, 0, 0));
         signupButton.addActionListener(e -> NewWindowController.openSignUp(MainController.signupV));
@@ -185,29 +181,29 @@ public class LoginView extends JFrame {
      */
     private void initializeLabels() {
         textEmail.setHorizontalAlignment(SwingConstants.LEFT);
-        textEmail.setFont(new Font("SansSerif", Font.BOLD, 12));
+        textEmail.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
         textEmail.setBounds(852, 405, 150, 30);
         mainPanel.add(textEmail);
 
         lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
-        lblPassword.setFont(new Font("SansSerif", Font.BOLD, 12));
+        lblPassword.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
         lblPassword.setBounds(852, 515, 150, 30);
         mainPanel.add(lblPassword);
         
-        ErrorLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        ErrorLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
-        ErrorLabel.setForeground(new Color(255, 0, 0));
-        ErrorLabel.setBounds(580, 605, 760, 30);
-        ErrorLabel.setVisible(false);
-        mainPanel.add(ErrorLabel);
+        errorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        errorLabel.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 12));
+        errorLabel.setForeground(new Color(255, 0, 0));
+        errorLabel.setBounds(580, 605, 760, 30);
+        errorLabel.setVisible(false);
+        mainPanel.add(errorLabel);
     }
 
     /**
      * Initializes the logo label.
      */
     private void initializeLogo() {
-        LogoLabel.setBounds(662, 167, 596, 260);
-        mainPanel.add(LogoLabel);
+        logoLabel.setBounds(662, 167, 596, 260);
+        mainPanel.add(logoLabel);
     }
 
     /**
@@ -224,9 +220,9 @@ public class LoginView extends JFrame {
      */
     private void initComponents() {
     	setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-        setMinimumSize(MinPanelSize); // Set minimum window size
+        setMinimumSize(minPanelSize); // Set minimum window size
         setTitle("BGTransport"); // Set window title
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
         setLocationRelativeTo(null); // Center the window on the screen
     }
 }

@@ -13,7 +13,7 @@ public class MiniMapWidget extends RoundedPanel {
 
     public final Point miniMapPanelPoint = new Point(1200, 30);
     public final Point mappoint = new Point(25, 25);
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     /**
      * Constructor for MiniMapWidget.

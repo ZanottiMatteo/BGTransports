@@ -18,23 +18,29 @@ public class TimeWidget extends RoundedPanel {
     public JLabel lbldate = new JLabel();
     public final Point timepanelpoint = new Point(235, 310);
 
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     /**
      * Constructor for TimeWidget.
      * Sets up the layout and adds time-related components.
+     * @throws Exception 
      */
     public TimeWidget() {
         setLayout(null);
         setBounds(235, 310, 350, 180);
 
-        setupTimeComponents();
+        try {
+			setupTimeComponents();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     /**
      * Sets up the time-related components.
+     * @throws Exception 
      */
-    private void setupTimeComponents() {
+    private void setupTimeComponents() throws Exception {
         try {
             TimestampModel.getTime(lbltime);
             TimestampModel.getDate(lbldate);

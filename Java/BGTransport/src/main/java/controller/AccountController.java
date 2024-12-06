@@ -18,22 +18,17 @@ import org.json.JSONObject;
 import view.AccountIconView;
 
 public class AccountController {
-	
-	private AccountController() {
-		
-	}
-
 
 	public static void showImages() {
 		int x = 1;
 		for (JButton button : AccountIconView.getButtonList()) {
 			String str = String.valueOf(x);
-			button.setIcon(new ImageIcon (getAccountIcon(str, 128, 2)));
+			button.setIcon(new ImageIcon (getAccountIcon(str, 128)));
 			x++;
 		}
 	}
 
-	public static Image getAccountIcon(String number, int diameter, int borderThickness) {
+	public static Image getAccountIcon(String number, int diameter) {
 	    try (FileReader openJSON = new FileReader("json/AccountIcon.json")) {
 	        StringBuilder sb = new StringBuilder();
 	        int c;

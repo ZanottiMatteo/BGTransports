@@ -2,15 +2,9 @@ package view;
 
 import javax.swing.*;
 
-import controller.LoginController;
-import controller.UserInfoController;
-
 import java.awt.*;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import model.WeatherModel;
 
 /**
  * WeatherPanel class represents a panel displaying weather-related information,
@@ -27,7 +21,7 @@ public class UserWidget extends RoundedPanel {
     public static JLabel errorlabel = new JLabel("Effettua il Login");
     public static MediumLabel titlelabel = new MediumLabel("Dati Utente");
     
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     /**
      * Constructor for WeatherPanel.

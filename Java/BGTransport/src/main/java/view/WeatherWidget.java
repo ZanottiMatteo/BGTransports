@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import model.Constant;
 import model.WeatherModel;
 
 /**
@@ -21,7 +22,7 @@ public class WeatherWidget extends RoundedPanel {
     public final Point weatherpanelpoint = new Point(235, 30);
     public ImageIcon iconWeather;
     
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
     /**
      * Constructor for WeatherPanel.
      * Sets up the layout and adds weather-related components.
@@ -40,11 +41,11 @@ public class WeatherWidget extends RoundedPanel {
     	iconWeather = WeatherModel.getWeatherIcon();
     	
         lblweather.setHorizontalAlignment(SwingConstants.LEFT);
-        lblweather.setFont(new Font("SansSerif", Font.BOLD, 70));
+        lblweather.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 70));
         lblweather.setBounds(140, 170, 200, 50);
 
         lblweatherwind.setHorizontalAlignment(SwingConstants.LEFT);
-        lblweatherwind.setFont(new Font("SansSerif", Font.BOLD, 70));
+        lblweatherwind.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 70));
         lblweatherwind.setBounds(140, 100, 200, 50);
 
         lblweatherimg.setVerticalAlignment(SwingConstants.CENTER);
@@ -55,7 +56,7 @@ public class WeatherWidget extends RoundedPanel {
 
         lblweathertxt.setHorizontalAlignment(SwingConstants.LEFT);
         lblweathertxt.setForeground(new Color(210, 105, 30));
-        lblweathertxt.setFont(new Font("SansSerif", Font.BOLD, 30));
+        lblweathertxt.setFont(new Font(Constant.SANSSERIF, Font.BOLD, 30));
         lblweathertxt.setBounds(140, 30, 200, 50);
 
         try {

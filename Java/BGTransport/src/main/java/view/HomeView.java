@@ -1,23 +1,15 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import controller.MainController;
-import controller.MapController;
 import controller.NewWindowController;
-import controller.ResizeController;
 import controller.ThemeController;
 import model.ResizableImage;
-import model.TimestampModel;
 
 /**
  * HomeView class represents the main view of the application, displaying a
@@ -27,32 +19,28 @@ import model.TimestampModel;
  */
 public class HomeView extends JFrame {
 
-    // Main application panel.
     public JPanel mainPanel = new JPanel();
-
-    // Panels and layout-related fields.
-    public MenuPanel menuPanel = new MenuPanel();
-    
-    public RoundedPanel homePanel = new RoundedPanel();
-    public WeatherWidget weatherPanel = new WeatherWidget(); // Usa la nuova classe WeatherPanel.
-    public TimeWidget timePanel = new TimeWidget();
+    public final MenuPanel menuPanel = new MenuPanel();
+    public final RoundedPanel homePanel = new RoundedPanel();
+    public final WeatherWidget weatherPanel = new WeatherWidget();
+    public final TimeWidget timePanel = new TimeWidget();
     public static MiniMapWidget miniMapPanel = new MiniMapWidget();
-    public UserWidget userPanel = new UserWidget();
+    public final UserWidget userPanel = new UserWidget();
    
     // Background wallpaper.
-    public ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
+    public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
     // Component bounds storage for resizing purposes.
-    public Map<Component, Rectangle> componentBounds = new HashMap<>();
+    public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     // Window and panel dimensions.
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
-    public final Dimension MenuPanelSize = new Dimension(100, 900);
-    public final Dimension WidgetPanelSizeMedium = new Dimension(350, 250);
-    public final Dimension WidgetPanelSizeSmall = new Dimension(350, 180);
-    public final Dimension MinPanelSize = new Dimension(1085, 615);
-    public final Dimension MapSize = new Dimension(550, 350);
-    public final Dimension MapPanelSize = new Dimension(600, 400);
+    public final Dimension menuPanelSize = new Dimension(100, 900);
+    public final Dimension widgetPanelSizeMedium = new Dimension(350, 250);
+    public final Dimension widgetPanelSizeSmall = new Dimension(350, 180);
+    public final Dimension minPanelSize = new Dimension(1085, 615);
+    public final Dimension mapSize = new Dimension(550, 350);
+    public final Dimension mapPanelSize = new Dimension(600, 400);
 
     /**
      * Constructor that sets up the UI components, layout, and theming for the home
@@ -61,7 +49,7 @@ public class HomeView extends JFrame {
     public HomeView() {
         // Configure window properties.
         setExtendedState(Frame.MAXIMIZED_BOTH); // Launch in maximized state.
-        setMinimumSize(MinPanelSize); // Set minimum size.
+        setMinimumSize(minPanelSize); // Set minimum size.
 
         // Initialize main panel with custom background rendering.
         mainPanel = new JPanel() {
@@ -109,7 +97,7 @@ public class HomeView extends JFrame {
     /**
      * Creates a menu button with a specific icon and position.
      */
-    private JButton createMenuButton(ImageIcon icon, int x, int y) {
+    /*private JButton createMenuButton(ImageIcon icon, int x, int y) {
         JButton button = new JButton();
         button.setBounds(x, y, 60, 60);
         button.setIcon(icon);
@@ -117,7 +105,7 @@ public class HomeView extends JFrame {
         button.setRolloverEnabled(false);
         button.setBackground(new Color(0, 0, 0, 0));
         return button;
-    }
+    }*/
 
     /**
      * Stores the bounds of all components for resizing.
@@ -152,9 +140,9 @@ public class HomeView extends JFrame {
      */
     private void initComponents() {
         setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-        setMinimumSize(MinPanelSize); // Set minimum window size
+        setMinimumSize(minPanelSize); // Set minimum window size
         setTitle("BGTransport"); // Set window title
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the window is closed
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
         setLocationRelativeTo(null); // Center the window on the screen
     }
 }
