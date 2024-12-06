@@ -1,14 +1,6 @@
 package model;
 
-import javax.swing.SwingUtilities;
-
-import controller.DownloadDataDBController;
-import view.DownloadDataDBView;
-
 public class MainModel {
-	
-
-
 	public static void main(String[] args) throws Exception {
 		// create database Public Transportation
 		ControlDB.controlJSON(Constant.jsonFunicularStation, Constant.excelFunicularStation);

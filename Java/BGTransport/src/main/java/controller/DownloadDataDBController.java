@@ -7,7 +7,6 @@ import javax.swing.Timer;
 
 import model.Constant;
 import model.ControlDB;
-import model.MainModel;
 
 public class DownloadDataDBController {
 
@@ -48,7 +47,7 @@ public class DownloadDataDBController {
 	                    // Aggiorna la percentuale sulla label
 						value = (ControlDB.progress/totalRecordCount)*100;
                       
-	                    String str = Integer.toString((int) value);
+	                    Integer.toString((int) value);
 	                     
 	                    // Aggiorna la barra di progresso
 	                    

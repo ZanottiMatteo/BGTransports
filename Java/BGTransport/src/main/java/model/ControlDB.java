@@ -30,8 +30,6 @@ public class ControlDB {
 			System.out.println("File JSON creation: " + json);
 			List<Map<String, String>> list = CreateJSONFile.readExcelFile(excel);
 			CreateJSONFile.writeJsonToFile(list, json);
-			Constant.update = true;
-			myList.add(json);
 		} else {
 			System.out.println("Check if file JSON is up-to-date: " + json);
 			List<Map<String, String>> excelData = CreateJSONFile.readExcelFile(excel);
@@ -44,7 +42,7 @@ public class ControlDB {
 			if (!excelData.equals(jsonData)) {
 				objectMapper.writeValue(jsonFile, excelData);
 				Constant.update = true;
-				System.out.println("File JSON is up-to-date: " + json);
+				System.out.println("File JSON need to be updated: " + json);
 				myList.add(json);
 
 			} else {
