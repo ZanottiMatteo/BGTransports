@@ -71,7 +71,9 @@ public class ControlDB {
 		} else {
 			System.out.println("Database already exists: " + database);
 		}
+		
 	}
+	
 
 	public static void DBupdate(Boolean update, String database) throws IOException, SQLException {
 		if (Constant.update) {
@@ -122,6 +124,7 @@ public class ControlDB {
 				}
 			}
 		}
+		if (totalRecord == 0) return -1;
 		return totalRecord;
 	}
 

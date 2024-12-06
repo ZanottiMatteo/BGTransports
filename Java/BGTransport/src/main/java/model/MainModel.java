@@ -7,7 +7,7 @@ import view.DownloadDataDBView;
 
 public class MainModel {
 	
-	public static DownloadDataDBView db = new DownloadDataDBView();
+
 
 	public static void main(String[] args) throws Exception {
 		// create database Public Transportation
@@ -22,11 +22,6 @@ public class MainModel {
 		ControlDB.controlJSON(Constant.jsonPullmanTimetable, Constant.excelPullmanTimetable);
 		
 		ControlDB.DBcheck(Constant.DBPublicTransportation, Constant.DBUrlPublicTransportation, Constant.jooqTransportation, Constant.srcTransportation);
-		
-		SwingUtilities.invokeLater(() -> {
-			db.setVisible(true);
-		});
-		DownloadDataDBController.updateProgressbar();
 		
 		ControlDB.DBupdate(Constant.update, Constant.DBUrlPublicTransportation);
 		

@@ -26,7 +26,7 @@ import model.WeatherModel;
 
 public class MainController {
 
-	
+	public static DownloadDataDBView dbV = new DownloadDataDBView();
 	public static HomeView homeV = new HomeView();
 	public static SignUpView signupV = new SignUpView();
 	public static MapView mapV = new MapView();
@@ -37,11 +37,11 @@ public class MainController {
 	public int framesize;
 	public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
         // Pass the map to the view
-		MapController.generateMap();
-		MapController.generateMiniMap();
 		ThemeController.updateThemes();
-		NewWindowController.openHomePanel(homeV);
-	}
+		NewWindowController.openDBloader(dbV);
+		DownloadDataDBController.updateProgressbar();
+		
+		}
 }

@@ -8,7 +8,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.SQLException;
 
-import BGTransport.BGTransport.App;
 import controller.ThemeController;
 import controller.SignUpController;
 

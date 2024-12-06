@@ -12,14 +12,22 @@ import model.MainModel;
 public class DownloadDataDBController {
 
 	public static int totalRecordCount = 0;
-
+	public static double value;
+	
 	public static void updateProgress() {
-		double value = (ControlDB.progress*100)/totalRecordCount;			
-		MainModel.db.progressBar.setValue((int) value);
+		if (totalRecordCount != -1) {
+		value = (ControlDB.progress*100)/totalRecordCount;			
+		MainController.dbV.progressBar.setValue((int) value);
 		String str = Integer.toString((int) value);
-		MainModel.db.control.setText(str + "%");		
+		MainController.dbV.control.setText(str + "%");		
+		}
 	}
 
+	public static int returnProgress() {
+		if (totalRecordCount == -1) return 100;
+		else return (int)value;
+	}
+	
 	public static void updateProgressbar() throws Exception {
 		// Calcolo totale record
 		totalRecordCount = ControlDB.totalRecordCount(Constant.DBUrlPublicTransportation);
@@ -38,7 +46,7 @@ public class DownloadDataDBController {
 					// Aggiorna la barra di progresso
 					SwingUtilities.invokeLater(() -> {
 	                    // Aggiorna la percentuale sulla label
-						double value = (ControlDB.progress/totalRecordCount)*100;
+						value = (ControlDB.progress/totalRecordCount)*100;
                       
 	                    String str = Integer.toString((int) value);
 	                     
@@ -48,7 +56,7 @@ public class DownloadDataDBController {
 
 					// Aggiorna il nome della tabella in modo asincrono
 					SwingUtilities.invokeLater(() -> {
-						MainModel.db.lblNewLabel.setText("Processing table: " + currentTableName);
+						MainController.dbV.lblNewLabel.setText("Processing table: " + currentTableName);
 					});
 
 					// Simula un piccolo delay per test/debug
@@ -58,10 +66,10 @@ public class DownloadDataDBController {
 				// Quando il progresso è completato
 				SwingUtilities.invokeLater(() -> {
 					// Ferma il timer e aggiorna il messaggio di completamento
-					MainModel.db.labelDownloadDataDatabases.setText("Download Complete");
-
+					MainController.dbV.labelDownloadDataDatabases.setText("Download Complete");
+					NewWindowController.openHomePanel(MainController.homeV);
 					// Chiudi la finestra dopo un breve ritardo
-					Timer closeTimer = new Timer(1000, evt -> MainModel.db.dispose());
+					Timer closeTimer = new Timer(1000, evt -> MainController.dbV.dispose());
 					closeTimer.setRepeats(false);
 					closeTimer.start();
 				});
@@ -81,8 +89,10 @@ public class DownloadDataDBController {
 
 				SwingUtilities.invokeLater(() -> {
 					if (ControlDB.currentTableName != null && ControlDB.currentTableName.length > 0) {
-						MainModel.db.lblNewLabel.setText("Processing table: " + ControlDB.currentTableName[0] + dots);
-						updateProgress();
+						MainController.dbV.lblNewLabel.setText("Processing table: " + ControlDB.currentTableName[0] + dots);
+
+							updateProgress();
+
 					}
 				});
 			}

@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import view.AccountIconView;
+import view.DownloadDataDBView;
 import view.HomeView;
 import view.LoginView;
 import view.MapView;
@@ -20,6 +21,8 @@ import controller.ThemeController;;
 public class NewWindowController {
 
 	public static void openHomePanel(HomeView homeV) {
+		MapController.generateMap();
+		MapController.generateMiniMap();
 		SwingUtilities.invokeLater(() -> {
 			homeV.setVisible(true);
 		});
@@ -155,6 +158,13 @@ public class NewWindowController {
 			signupV.setVisible(true);
 		});
 	}
+	
+	public static void openDBloader(DownloadDataDBView dbV) {
+		SwingUtilities.invokeLater(() -> {
+			dbV.setVisible(true);
+		});
+	}
+
 
 	public static void openAccountIconPanel(AccountIconView accountIconV) {
 		AccountController.showImages();
