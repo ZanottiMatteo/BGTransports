@@ -10,6 +10,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import com.formdev.flatlaf.FlatDarkLaf;
 import model.MyLighterLaf;
 import view.HomeView;
+import view.LineView;
 import view.LoginView;
 import view.MapView;
 import view.UserView;
@@ -44,6 +45,14 @@ public class ThemeController {
 		}	
 	}
 	
+	public static void setThemeLinePanel(LineView lineV) {	
+		if (themeDark) {
+			lineV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+		} else {
+			lineV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+		}	
+	}
+	
 	public static void setThemeLoginPanel(LoginView loginV) {
 		if (themeDark) {
 			loginV.logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
@@ -73,7 +82,7 @@ public class ThemeController {
 		    setThemeMapPanel(MainController.mapV);
 		    setThemeLoginPanel(MainController.loginV);
 		    setThemeUserPanel(MainController.userV); 
-		
+		    setThemeLinePanel(MainController.lineV);
 	}
 	
 	/*

@@ -5,6 +5,7 @@ import view.UserView;
 import view.AccountIconView;
 import view.DownloadDataDBView;
 import view.HomeView;
+import view.LineView;
 import view.LoginView;
 import view.MapView;
 
@@ -17,8 +18,8 @@ public class MainController {
 	public static LoginView loginV = new LoginView();
 	public static UserView userV = new UserView();
 	public static AccountIconView accountV = new AccountIconView();
+	public static LineView lineV = new LineView();
     
-	public int framesize;
 	//public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
 	public static void main(String[] args) throws Exception {

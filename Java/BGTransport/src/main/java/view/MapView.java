@@ -187,6 +187,11 @@ public class MapView extends JFrame {
 			NewWindowController.openHomePanel(MainController.homeV);
 			setVisible(false);
 		});
+    	
+    	menuPanel.lineButton.addActionListener(e -> {
+			NewWindowController.openLinePanel(MainController.lineV);
+			setVisible(false);
+		});
 		
         // Action listener for the theme switch button
         busButton.addActionListener(e -> {

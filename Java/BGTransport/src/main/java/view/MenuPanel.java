@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,12 +17,14 @@ public class MenuPanel extends RoundedPanel {
     public JButton userButton;
     public JButton homeButton;
     public JButton mapButton;
+    public JButton lineButton;
     public JButton switchThemeButton;
     
     public final ImageIcon iconUser = new ImageIcon(MenuPanel.class.getResource("/images/User.png"));
     public final ImageIcon iconLDmode = new ImageIcon(MenuPanel.class.getResource("/images/LDMode.png"));
     public final ImageIcon iconMap = new ImageIcon(MenuPanel.class.getResource("/images/Map.png"));
     public final ImageIcon iconHome = new ImageIcon(MenuPanel.class.getResource("/images/Home.png"));
+    public final ImageIcon iconLine = new ImageIcon(MenuPanel.class.getResource("/images/Line.png"));
 
     public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
@@ -35,13 +38,13 @@ public class MenuPanel extends RoundedPanel {
         setBackground(new Color(210, 105, 30));
         setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 
-        setupMenuButtons(iconUser, iconHome, iconMap, iconLDmode);
+        setupMenuButtons(iconUser, iconHome, iconMap, iconLine, iconLDmode);
     }
 
     /**
      * Sets up the menu buttons with the provided icons.
      */
-    private void setupMenuButtons(ImageIcon iconUser, ImageIcon iconHome, ImageIcon iconMap, ImageIcon iconLDmode) {
+    private void setupMenuButtons(ImageIcon iconUser, ImageIcon iconHome, ImageIcon iconMap, ImageIcon iconLine, ImageIcon iconLDmode) {
         // User button
         userButton = createMenuButton(iconUser, 20, 20);
         add(userButton);
@@ -53,6 +56,10 @@ public class MenuPanel extends RoundedPanel {
         // Map button
         mapButton = createMenuButton(iconMap, 20, 260);
         add(mapButton);
+        
+        // Map button
+        lineButton = createMenuButton(iconLine, 20, 380);
+        add(lineButton);
 
         // Theme switch button
         switchThemeButton = createMenuButton(iconLDmode, 20, 830);
@@ -62,6 +69,7 @@ public class MenuPanel extends RoundedPanel {
         for (Component comp : getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }
+
     }
 
     /**

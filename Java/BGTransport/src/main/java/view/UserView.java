@@ -252,6 +252,11 @@ public class UserView extends JFrame {
 			NewWindowController.openMapPanel(MainController.mapV);
 			setVisible(false);
 		});
+		
+		menuPanel.lineButton.addActionListener(e -> {
+			NewWindowController.openLinePanel(MainController.lineV);
+			setVisible(false);
+		});
 
 		// Action listener for the theme switch button
 		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
