@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -8,8 +7,6 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.io.File;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,17 +15,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
-import controller.DatabaseController;
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
-import model.ConstantDB;
 import model.ResizableImage;
-import model.Utility;
+import javax.swing.JButton;
 
 public class DatabaseView extends JFrame {
 
@@ -61,6 +55,18 @@ public class DatabaseView extends JFrame {
 	public final Dimension lineSize = new Dimension(1450, 800);
 
 	public final Dimension centerPanelSize = new Dimension(1600, 900);
+	private final JButton company = new JButton("COMPANY");
+	private final JButton user = new JButton("USER");
+	
+	public JScrollPane scrollPane = new JScrollPane();
+	private final JButton funicularStation = new JButton("FUNICULAR STATION");
+	private final JButton funicularTimetable = new JButton("FUNICULAR TIMETABLE");
+	private final JButton pullmanStop = new JButton("PULLMAN STOP");
+	private final JButton trainStation = new JButton("TRAIN STATION");
+	private final JButton tramTimetable = new JButton("TRAM TIMETABLE");
+	private final JButton trainTimetable = new JButton("TRAIN TIMETABLE");
+	private final JButton pullmanTimetable = new JButton("PULLMAN TIMETABLE");
+	private final JButton tramStop = new JButton("TRAM STOP");
 
 	public DatabaseView() {
 		configureWindow();
@@ -120,9 +126,38 @@ public class DatabaseView extends JFrame {
 		centerPanel.setLayout(null);
 		homePanel.add(centerPanel);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(130, 93, 373, 118);
+		scrollPane.setBounds(23, 24, 1550, 804);
 		centerPanel.add(scrollPane);
+		
+		company.setBounds(105, 850, 120, 40);
+		centerPanel.add(company);
+		
+		user.setBounds(20, 850, 85, 40);
+		centerPanel.add(user);
+		funicularStation.setBounds(225, 850, 200, 40);
+		
+		centerPanel.add(funicularStation);
+		funicularTimetable.setBounds(425, 850, 200, 40);
+		
+		centerPanel.add(funicularTimetable);
+		pullmanStop.setBounds(625, 850, 200, 40);
+		
+		centerPanel.add(pullmanStop);
+		pullmanTimetable.setBounds(825, 850, 200, 40);
+		
+		centerPanel.add(pullmanTimetable);
+		trainStation.setBounds(1025, 850, 200, 40);
+		
+		centerPanel.add(trainStation);
+		trainTimetable.setBounds(1225, 850, 200, 40);
+		
+		centerPanel.add(trainTimetable);
+		tramStop.setBounds(1425, 850, 200, 40);
+		
+		centerPanel.add(tramStop);
+		tramTimetable.setBounds(1625, 850, 200, 40);
+		
+		centerPanel.add(tramTimetable);
 
 	}
 

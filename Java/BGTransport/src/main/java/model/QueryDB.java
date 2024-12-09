@@ -3,11 +3,13 @@ package model;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jooq.DSLContext;
+import org.jooq.Record;
 import org.jooq.Record1;
 import org.jooq.Record10;
 import org.jooq.Record2;
@@ -26,6 +28,9 @@ import transportation.jooq.generated.tables.Tramtimetable;
 import user.jooq.generated.tables.User;
 
 public class QueryDB {
+
+	public static String[] columnNames;
+	public static Object[][] data;
 
 	public static List<String> getLatFunicularStation() throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
@@ -153,8 +158,7 @@ public class QueryDB {
 
 		// Fetch the name of the user with the given email
 		@Nullable
-		Record1<String> mail = create.select(User.USER.NAME).from(User.USER).where(User.USER.MAIL.eq(email))
-				.fetchOne();
+		Record1<String> mail = create.select(User.USER.NAME).from(User.USER).where(User.USER.MAIL.eq(email)).fetchOne();
 
 		// Return the name or null if not found
 		return mail != null ? mail.value1() : null;
@@ -224,8 +228,8 @@ public class QueryDB {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
-		Record1<String> dateOfBirth = create.select(User.USER.DATEOFBIRTH).from(User.USER).where(User.USER.MAIL.eq(email))
-				.fetchOne();
+		Record1<String> dateOfBirth = create.select(User.USER.DATEOFBIRTH).from(User.USER)
+				.where(User.USER.MAIL.eq(email)).fetchOne();
 
 		return dateOfBirth != null ? dateOfBirth.value1() : null;
 	}
@@ -270,8 +274,7 @@ public class QueryDB {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
-		Record1<String> town = create.select(User.USER.TOWN).from(User.USER).where(User.USER.MAIL.eq(email))
-				.fetchOne();
+		Record1<String> town = create.select(User.USER.TOWN).from(User.USER).where(User.USER.MAIL.eq(email)).fetchOne();
 
 		return town != null ? town.value1() : null;
 	}
@@ -293,8 +296,7 @@ public class QueryDB {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
-		Record1<String> cap = create.select(User.USER.CAP).from(User.USER).where(User.USER.MAIL.eq(email))
-				.fetchOne();
+		Record1<String> cap = create.select(User.USER.CAP).from(User.USER).where(User.USER.MAIL.eq(email)).fetchOne();
 
 		return cap != null ? cap.value1() : null;
 	}
@@ -302,8 +304,7 @@ public class QueryDB {
 	public static void setCAPUser(String email, String newCAP) throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-		int rowsUpdated = create.update(User.USER).set(User.USER.CAP, newCAP).where(User.USER.MAIL.eq(email))
-				.execute();
+		int rowsUpdated = create.update(User.USER).set(User.USER.CAP, newCAP).where(User.USER.MAIL.eq(email)).execute();
 
 		if (rowsUpdated == 0) {
 			throw new SQLException(email);
@@ -339,8 +340,8 @@ public class QueryDB {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
 		@Nullable
-		Record1<Integer> iconNumber = create.select(User.USER.ICONNUMBER).from(User.USER).where(User.USER.MAIL.eq(email))
-				.fetchOne();
+		Record1<Integer> iconNumber = create.select(User.USER.ICONNUMBER).from(User.USER)
+				.where(User.USER.MAIL.eq(email)).fetchOne();
 
 		return iconNumber != null ? iconNumber.value1() : null;
 	}
@@ -484,4 +485,85 @@ public class QueryDB {
 		}
 		System.out.println("Data updated");
 	}
+
+	public static void getDataFromDatabaseUsers(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(User.USER).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+
+	public static void getDataFromCompany(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Company.COMPANY).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromFunicularStation(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Funicularstation.FUNICULARSTATION).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromFunicularTimetable(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Funiculartimetable.FUNICULARTIMETABLE).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromPullmanStop(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Pullmanstop.PULLMANSTOP).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromPullmanTimetable(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Pullmantimetable.PULLMANTIMETABLE).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromTrainStation(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Trainstation.TRAINSTATION).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromTrainTimetable(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Traintimetable.TRAINTIMETABLE).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromTramStop(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Tramstop.TRAMSTOP).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+	
+	public static void getDataFromTramTimetable(String database) throws SQLException {
+		DSLContext create = Utility.dslContext(database);
+		@NotNull
+		Result<Record> result = create.select().from(Tramtimetable.TRAMTIMETABLE).fetch();
+		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
+		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+	}
+
 }

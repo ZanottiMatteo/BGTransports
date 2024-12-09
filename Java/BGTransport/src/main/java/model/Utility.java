@@ -6,8 +6,11 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
+
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
+import org.jooq.Table;
 import org.jooq.impl.DSL;
 import org.json.JSONArray;
 
@@ -29,4 +32,11 @@ public class Utility {
 		Connection connection = DriverManager.getConnection(database);
 		return DSL.using(connection, SQLDialect.SQLITE);
 	}
+	
+	public static List<String> getTableNames(DSLContext context) {
+        return context.meta().getTables()
+                      .stream()
+                      .map(Table::getName)
+                      .toList();
+    }
 }

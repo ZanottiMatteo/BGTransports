@@ -2,6 +2,7 @@ package controller;
 
 import view.SignUpView;
 import view.UserView;
+import model.ConstantDB;
 import view.AccountIconView;
 import view.DatabaseView;
 import view.DownloadDataDBView;
@@ -31,6 +32,15 @@ public class MainController {
 		ThemeController.updateThemes();
 		NewWindowController.openDBloader(dbV);
 		DownloadDataDBController.updateProgressbar();
-		
+		DatabaseController.scrollPanelUser(ConstantDB.DB_URL_USERS);
+		DatabaseController.scrollPanelCompany(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelFunicularStation(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelFunicularTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelPullmanStop(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelPullmanTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelTrainStation(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelTrainTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelTramStop(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		DatabaseController.scrollPanelTramTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		}
 }
