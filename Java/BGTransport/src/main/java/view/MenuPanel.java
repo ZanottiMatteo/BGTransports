@@ -19,12 +19,14 @@ public class MenuPanel extends RoundedPanel {
     public JButton mapButton;
     public JButton lineButton;
     public JButton switchThemeButton;
+    public JButton databaseButton;
     
     public final ImageIcon iconUser = new ImageIcon(MenuPanel.class.getResource("/images/User.png"));
     public final ImageIcon iconLDmode = new ImageIcon(MenuPanel.class.getResource("/images/LDMode.png"));
     public final ImageIcon iconMap = new ImageIcon(MenuPanel.class.getResource("/images/Map.png"));
     public final ImageIcon iconHome = new ImageIcon(MenuPanel.class.getResource("/images/Home.png"));
     public final ImageIcon iconLine = new ImageIcon(MenuPanel.class.getResource("/images/Line.png"));
+    public final ImageIcon iconDatabase = new ImageIcon(MenuPanel.class.getResource("/images/Database.png"));
 
     public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
@@ -38,13 +40,13 @@ public class MenuPanel extends RoundedPanel {
         setBackground(new Color(210, 105, 30));
         setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 
-        setupMenuButtons(iconUser, iconHome, iconMap, iconLine, iconLDmode);
+        setupMenuButtons(iconUser, iconHome, iconMap, iconLine, iconDatabase, iconLDmode);
     }
 
     /**
      * Sets up the menu buttons with the provided icons.
      */
-    private void setupMenuButtons(ImageIcon iconUser, ImageIcon iconHome, ImageIcon iconMap, ImageIcon iconLine, ImageIcon iconLDmode) {
+    private void setupMenuButtons(ImageIcon iconUser, ImageIcon iconHome, ImageIcon iconMap, ImageIcon iconLine, ImageIcon iconDatabase, ImageIcon iconLDmode) {
         // User button
         userButton = createMenuButton(iconUser, 20, 20);
         add(userButton);
@@ -60,6 +62,9 @@ public class MenuPanel extends RoundedPanel {
         // Map button
         lineButton = createMenuButton(iconLine, 20, 380);
         add(lineButton);
+        
+        databaseButton = createMenuButton(iconDatabase, 20, 500);
+        add(databaseButton);
 
         // Theme switch button
         switchThemeButton = createMenuButton(iconLDmode, 20, 830);

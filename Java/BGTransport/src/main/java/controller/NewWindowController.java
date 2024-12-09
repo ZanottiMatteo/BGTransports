@@ -6,6 +6,7 @@ import java.awt.event.ComponentEvent;
 import javax.swing.SwingUtilities;
 
 import view.AccountIconView;
+import view.DatabaseView;
 import view.DownloadDataDBView;
 import view.HomeView;
 import view.LineView;
@@ -44,6 +45,8 @@ public class NewWindowController {
 						homeV.menuPanel.homeButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLine,
 						homeV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconDatabase,
+						homeV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLDmode,
 						homeV.menuPanel.switchThemeButton);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.weatherPanel.iconWeather,
@@ -82,6 +85,8 @@ public class NewWindowController {
 						mapV.menuPanel.homeButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconLine,
 						mapV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconDatabase,
+						mapV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconBus, mapV.busButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconTrain, mapV.trainButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconFunicular,
@@ -128,6 +133,8 @@ public class NewWindowController {
 						userV.menuPanel.homeButton);
 				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconLine,
 						userV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconDatabase,
+						userV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconLDmode,
 						userV.menuPanel.switchThemeButton);
 				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.menuPanel, userV.menuPanelSize,
@@ -173,12 +180,43 @@ public class NewWindowController {
 						lineV.menuPanel.homeButton);
 				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconLine,
 						lineV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconDatabase,
+						lineV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconLDmode,
 						lineV.menuPanel.switchThemeButton);
 				ResizeController.resizePanel(lineV.originalPanelSize, lineV, lineV.menuPanel, lineV.menuPanelSize,
 						lineV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(lineV.originalPanelSize, lineV, lineV.centerPanel, lineV.centerPanelSize,
 						lineV.centerpanelpoint);
+			}
+		});
+	}
+	
+	public static void openDatabasePanel(DatabaseView databaseV) {
+		SwingUtilities.invokeLater(() -> databaseV.setVisible(true));
+		databaseV.addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent e) {
+				ResizeController.resizeComponents(databaseV.originalPanelSize, databaseV, databaseV.componentBounds, databaseV.mainPanel);
+				ResizeController.resizeComponents(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.componentBounds,
+						databaseV.menuPanel);
+				ResizeController.resizeImagePanel(databaseV, databaseV.lblBGwallpaper, databaseV.mainPanel);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconUser,
+						databaseV.menuPanel.userButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconMap,
+						databaseV.menuPanel.mapButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconHome,
+						databaseV.menuPanel.homeButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconLine,
+						databaseV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconDatabase,
+						databaseV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconLDmode,
+						databaseV.menuPanel.switchThemeButton);
+				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.menuPanel, databaseV.menuPanelSize,
+						databaseV.menuPanel.menupanelpoint);
+				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.centerPanel, databaseV.centerPanelSize,
+						databaseV.centerpanelpoint);
 			}
 		});
 	}
@@ -195,5 +233,4 @@ public class NewWindowController {
 		AccountController.showImages();
 		SwingUtilities.invokeLater(() -> accountIconV.setVisible(true));
 	}
-
 }

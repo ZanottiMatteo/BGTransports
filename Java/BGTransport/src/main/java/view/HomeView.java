@@ -137,6 +137,11 @@ public class HomeView extends JFrame {
 			NewWindowController.openLinePanel(MainController.lineV);
 			setVisible(false);
 		});
+		
+		menuPanel.databaseButton.addActionListener(e -> {
+			NewWindowController.openDatabasePanel(MainController.databaseV);
+			setVisible(false);
+		});
 
 		// Action listener for the theme switch button
 		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());

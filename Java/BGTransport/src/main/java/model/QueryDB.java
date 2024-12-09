@@ -43,20 +43,16 @@ public class QueryDB {
 	}
 
 	public static String getLatFunicularStation(int index) throws SQLException {
-		// Creazione del contesto DSL
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
-		// Esegui la query per ottenere tutte le latitudini
 		@NotNull
 		Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LAT)
 				.from(Funicularstation.FUNICULARSTATION).fetch();
 
-		// Controllo che l'indice sia valido
 		if (index < 0 || index >= result.size()) {
 			throw new IllegalArgumentException("Indice non valido: " + index);
 		}
 
-		// Recupero il valore corrispondente all'indice
 		String lat = result.get(index).value1();
 		System.out.println("Latitude (indice " + index + "): " + lat);
 
@@ -482,8 +478,6 @@ public class QueryDB {
 		for (Record1<String> mail : result) {
 			emails.add(mail.value1());
 		}
-
-		// Return the list of emails
 		return emails;
 	}
 
@@ -494,26 +488,20 @@ public class QueryDB {
 	 * @throws SQLException if a database access error occurs.
 	 */
 	public static List<String> getAllUserPassword() throws SQLException {
-		// Initialize the DSL context to interact with the database
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-		// Fetch all emails from the User table
 		Result<Record1<String>> result = create.select(User.USER.PASSWORD).from(User.USER).fetch();
 
-		// Convert the result into a List<String>
 		List<String> passwords = new ArrayList<>();
 		for (Record1<String> password : result) {
 			passwords.add(password.value1());
 		}
-
-		// Return the list of emails
 		return passwords;
 	}
 
 	public static List<String> getUserDetailsByEmail(String email) throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-		// Fetch the user record with the specified email
 		@Nullable
 		Record10<String, String, String, String, String, String, String, String, Integer, Integer> data = create
 				.select(User.USER.NAME, User.USER.SURNAME, User.USER.USERNAME, User.USER.DATEOFBIRTH, User.USER.ADDRESS,
@@ -522,7 +510,6 @@ public class QueryDB {
 				.fetchOne();
 
 		if (data != null) {
-			// Create a list of user details
 			List<String> userDetails = new ArrayList<>();
 			userDetails.add(data.get(User.USER.NAME));
 			userDetails.add(data.get(User.USER.SURNAME));
@@ -535,9 +522,8 @@ public class QueryDB {
 			userDetails.add(data.get(User.USER.ROLE).toString());
 			userDetails.add(data.get(User.USER.ICONNUMBER).toString());
 
-			return userDetails; // Return the list
+			return userDetails;
 		} else {
-			// Return an empty list if no user is found
 			return new ArrayList<>();
 		}
 	}
@@ -588,7 +574,6 @@ public class QueryDB {
 				InsertDataDB.pullmanTimetable(create);
 			}
 		}
-
 		System.out.println("Data updated");
 	}
 }

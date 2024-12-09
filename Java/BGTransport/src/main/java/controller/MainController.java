@@ -3,6 +3,7 @@ package controller;
 import view.SignUpView;
 import view.UserView;
 import view.AccountIconView;
+import view.DatabaseView;
 import view.DownloadDataDBView;
 import view.HomeView;
 import view.LineView;
@@ -19,6 +20,7 @@ public class MainController {
 	public static UserView userV = new UserView();
 	public static AccountIconView accountV = new AccountIconView();
 	public static LineView lineV = new LineView();
+	public static DatabaseView databaseV = new DatabaseView();
     
 	//public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
