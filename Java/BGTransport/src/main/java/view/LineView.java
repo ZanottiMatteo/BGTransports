@@ -1,6 +1,8 @@
 package view;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -9,6 +11,7 @@ import java.awt.Rectangle;
 import java.io.File;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -17,7 +20,9 @@ import controller.MainController;
 import controller.MapController;
 import controller.NewWindowController;
 import controller.ThemeController;
+import model.ConstantString;
 import model.ResizableImage;
+import java.awt.Font;
 
 /**
  * HomeView class represents the main view of the application, displaying a
@@ -45,8 +50,7 @@ public class LineView extends JFrame {
 			new File("src/main/resources/images/BG.png"));
 
 	// Icons for the user and map buttons.
-	public ImageIcon iconUser = new ImageIcon(LineView.class.getResource("/images/User.png")); // Icon for the user
-																								// button.
+	public ImageIcon iconUser = new ImageIcon(LineView.class.getResource("/images/User.png")); // Icon for the user																						// button.
 	public ImageIcon iconMap = new ImageIcon(LineView.class.getResource("/images/Map.png")); // Icon for the map button.
 	public ImageIcon iconHome = new ImageIcon(LineView.class.getResource("/images/Home.png"));
 
@@ -67,6 +71,21 @@ public class LineView extends JFrame {
 	public final Dimension lineSize = new Dimension(1450, 800);
 
 	public final Dimension centerPanelSize = new Dimension(1600, 900);
+	
+	private final BigLabel titlelabel = new BigLabel("Trova la tua fermata");
+	
+	private final MediumLabel departurelabel = new MediumLabel("Punto di Partenza:");
+
+	private final MediumLabel arrivelabel = new MediumLabel("Punto di Arrivo:");
+
+	public JButton selectbutton = new JButton();
+	
+	public static JComboBox<String> depaturestation;
+		
+	public static JComboBox<String> arrivestation;
+	
+	public static List<String> station;
+	
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
 	 * view. It also initializes the main panel, menu panel, and other UI elements.
@@ -78,11 +97,10 @@ public class LineView extends JFrame {
 	public LineView() {
 		// Configure the main window
 		configureWindow();
-
 		setupComponentArcs();
 		setupMainPanel();
 		setupActionListeners();
-
+		setupCenterPanel();		
 		// Store bounds for resizing
 		storeComponentBounds();
 	}
@@ -133,9 +151,70 @@ public class LineView extends JFrame {
 		centerPanel.setBounds(200, 30, 1600, 900); // Adjust the panel size as needed
 		centerPanel.setLayout(null);
 		homePanel.add(centerPanel);
-
+		titlelabel.setForeground(new Color(210, 105, 30));
+		titlelabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+		titlelabel.setBounds(0, 50, 1600, 60);
 		
+		centerPanel.add(titlelabel);		
 	}
+	
+	private void setupCenterPanel() {
+		depaturestation = createSearchableComboBox(station);
+		arrivestation = createSearchableComboBox(station);
+		
+		int y = 200;
+		
+		departurelabel.setLocation(30, y);
+		departurelabel.setSize(500, 50);
+		centerPanel.add(departurelabel);
+		
+		depaturestation.setLocation(80, y + 70);
+		depaturestation.setSize(500, 50);
+		centerPanel.add(depaturestation);
+		
+		arrivelabel.setLocation(900, y);
+		arrivelabel.setSize(500, 50);		
+		centerPanel.add(arrivelabel);
+
+		arrivestation.setLocation(950, y + 70);
+		arrivestation.setSize(500, 50);
+		centerPanel.add(arrivestation);
+
+		selectbutton.setText("Conferma");
+		selectbutton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		selectbutton.setHorizontalAlignment(SwingConstants.CENTER);
+		selectbutton.setBackground(new Color(210, 105, 30));
+		selectbutton.setForeground(new Color(255, 255, 255));
+		selectbutton.setLocation(650, 450);
+		selectbutton.setSize(300, 70);
+		centerPanel.add(selectbutton);
+
+	}
+	
+	private static JComboBox<String> createSearchableComboBox(List<String> options) {
+        JComboBox<String> comboBox = new JComboBox<>();
+        for (int i = 0; i < options.size(); i++) comboBox.addItem(options.get(i));
+        comboBox.setEditable(true);
+
+        JTextComponent editor = (JTextComponent) comboBox.getEditor().getEditorComponent();
+        editor.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyReleased(java.awt.event.KeyEvent e) {
+                String input = editor.getText();
+                comboBox.removeAllItems();
+
+                // Filtraggio delle opzioni
+                options.stream()
+                        .filter(option -> option.toLowerCase().contains(input.toLowerCase()))
+                        .forEach(comboBox::addItem);
+
+                editor.setText(input);
+                comboBox.showPopup();
+            }
+        });
+
+        return comboBox;
+    }
 
 	/**
 	 * Creates a JButton with an icon and specific dimensions.

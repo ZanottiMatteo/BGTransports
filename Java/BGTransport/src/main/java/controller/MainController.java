@@ -19,13 +19,15 @@ public class MainController {
 	public static LoginView loginV = new LoginView();
 	public static UserView userV = new UserView();
 	public static AccountIconView accountV = new AccountIconView();
-	public static LineView lineV = new LineView();
+	public static LineView lineV;
 	public static DatabaseView databaseV = new DatabaseView();
     
 	//public static List<RegisteredUser> users = new ArrayList<RegisteredUser>();
 
 	public static void main(String[] args) throws Exception {
         // Pass the map to the view
+		LineController.setStation();
+		lineV = new LineView();
 		ThemeController.updateThemes();
 		NewWindowController.openDBloader(dbV);
 		DownloadDataDBController.updateProgressbar();

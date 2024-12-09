@@ -140,6 +140,12 @@ public class DatabaseView extends JFrame {
 		});
 
 		// Action listener for the home button
+		menuPanel.lineButton.addActionListener(e -> {
+			NewWindowController.openLinePanel(MainController.lineV);
+			setVisible(false);
+		});
+
+		// Action listener for the home button
 		menuPanel.homeButton.addActionListener(e -> {
 			NewWindowController.openHomePanel(MainController.homeV);
 			setVisible(false);

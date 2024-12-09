@@ -42,23 +42,6 @@ public class QueryDB {
 		return latitude;
 	}
 
-	public static String getLatFunicularStation(int index) throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LAT)
-				.from(Funicularstation.FUNICULARSTATION).fetch();
-
-		if (index < 0 || index >= result.size()) {
-			throw new IllegalArgumentException("Indice non valido: " + index);
-		}
-
-		String lat = result.get(index).value1();
-		System.out.println("Latitude (indice " + index + "): " + lat);
-
-		return lat;
-	}
-
 	public static List<String> getLonFunicularStation() throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<String> longitude = new ArrayList<String>();
@@ -72,26 +55,6 @@ public class QueryDB {
 			longitude.add(lon);
 		}
 		return longitude;
-	}
-
-	public static String getLongFunicularStation(int index) throws SQLException {
-		// Creazione del contesto DSL
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		// Esegui la query per ottenere tutte le latitudini
-		@NotNull
-		Result<Record1<String>> result = create.select(Funicularstation.FUNICULARSTATION.LON)
-				.from(Funicularstation.FUNICULARSTATION).fetch();
-
-		// Controllo che l'indice sia valido
-		if (index < 0 || index >= result.size()) {
-			throw new IllegalArgumentException("Indice non valido: " + index);
-		}
-
-		// Recupero il valore corrispondente all'indice
-		String lon = result.get(index).value1();
-		System.out.println("Latitude (indice " + index + "): " + lon);
-		return lon;
 	}
 
 	public static List<GeoPosition> getFunicularGeopositions() throws SQLException {
@@ -113,30 +76,6 @@ public class QueryDB {
 		return geopositions;
 	}
 
-	public static void getLatPullmanStop() throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.LAT).from(Pullmanstop.PULLMANSTOP)
-				.fetch();
-
-		for (Record1<String> pullmanStopLat : result) {
-			pullmanStopLat.value1();
-		}
-	}
-
-	public static void getLonPullmanStop() throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.LON).from(Pullmanstop.PULLMANSTOP)
-				.fetch();
-
-		for (Record1<String> pullmanStopLon : result) {
-			pullmanStopLon.value1();
-		}
-	}
-
 	public static List<GeoPosition> getPullmanGeopositions() throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<GeoPosition> geopositions = new ArrayList<>();
@@ -153,30 +92,6 @@ public class QueryDB {
 		}
 
 		return geopositions;
-	}
-
-	public static void getLatTrainStation() throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Trainstation.TRAINSTATION.LAT).from(Trainstation.TRAINSTATION)
-				.fetch();
-
-		for (Record1<String> trainStationLat : result) {
-			trainStationLat.value1();
-		}
-	}
-
-	public static void getLonTrainStation() throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Trainstation.TRAINSTATION.LON).from(Trainstation.TRAINSTATION)
-				.fetch();
-
-		for (Record1<String> trainStationLon : result) {
-			trainStationLon.value1();
-		}
 	}
 
 	public static List<GeoPosition> getTrainGeopositions() throws SQLException {
@@ -198,28 +113,6 @@ public class QueryDB {
 		return geopositions;
 	}
 
-	public static void getLatTramStop() throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Tramstop.TRAMSTOP.LAT).from(Tramstop.TRAMSTOP).fetch();
-
-		for (Record1<String> tramStopLat : result) {
-			tramStopLat.value1();
-		}
-	}
-
-	public static void getLonTramStop() throws SQLException {
-		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-
-		@NotNull
-		Result<Record1<String>> result = create.select(Tramstop.TRAMSTOP.LON).from(Tramstop.TRAMSTOP).fetch();
-
-		for (Record1<String> tramStopLon : result) {
-			tramStopLon.value1();
-		}
-	}
-
 	public static List<GeoPosition> getTramGeopositions() throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<GeoPosition> geopositions = new ArrayList<>();
@@ -233,6 +126,21 @@ public class QueryDB {
 			double lon = Double.parseDouble(tramStopLatLon.value2());
 			GeoPosition geoPosition = new GeoPosition(lat, lon);
 			geopositions.add(geoPosition);
+		}
+
+		return geopositions;
+	}
+	
+	public static List<String> getNameStation() throws SQLException {
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		List<String> geopositions = new ArrayList<>();
+
+		@NotNull
+		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.NAME)
+				.from(Pullmanstop.PULLMANSTOP).fetch();
+
+		for (Record1<String> nameStation : result) {
+			geopositions.add(nameStation.value1());
 		}
 
 		return geopositions;
