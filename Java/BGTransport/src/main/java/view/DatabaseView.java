@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,11 +19,16 @@ import javax.swing.JScrollPane;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
+import controller.DatabaseController;
 import controller.MainController;
 import controller.NewWindowController;
 import controller.ThemeController;
+import model.ConstantDB;
+import model.ConstantString;
 import model.ResizableImage;
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class DatabaseView extends JFrame {
 
@@ -129,36 +135,40 @@ public class DatabaseView extends JFrame {
 		scrollPane.setBounds(23, 24, 1550, 804);
 		centerPanel.add(scrollPane);
 		
+		JLabel selectTable = new JLabel("Select the table");
+		scrollPane.setViewportView(selectTable);
+		selectTable.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 25));
+		selectTable.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		company.setBounds(105, 850, 120, 40);
 		centerPanel.add(company);
 		
 		user.setBounds(20, 850, 85, 40);
 		centerPanel.add(user);
+		
 		funicularStation.setBounds(225, 850, 200, 40);
-		
 		centerPanel.add(funicularStation);
+		
 		funicularTimetable.setBounds(425, 850, 200, 40);
-		
 		centerPanel.add(funicularTimetable);
+		
 		pullmanStop.setBounds(625, 850, 200, 40);
-		
 		centerPanel.add(pullmanStop);
+		
 		pullmanTimetable.setBounds(825, 850, 200, 40);
-		
 		centerPanel.add(pullmanTimetable);
+		
 		trainStation.setBounds(1025, 850, 200, 40);
-		
 		centerPanel.add(trainStation);
+		
 		trainTimetable.setBounds(1225, 850, 200, 40);
-		
 		centerPanel.add(trainTimetable);
+		
 		tramStop.setBounds(1425, 850, 200, 40);
-		
 		centerPanel.add(tramStop);
-		tramTimetable.setBounds(1625, 850, 200, 40);
 		
+		tramTimetable.setBounds(1625, 850, 200, 40);
 		centerPanel.add(tramTimetable);
-
 	}
 
 	private void setupActionListeners() {
@@ -184,6 +194,86 @@ public class DatabaseView extends JFrame {
 		menuPanel.homeButton.addActionListener(e -> {
 			NewWindowController.openHomePanel(MainController.homeV);
 			setVisible(false);
+		});
+		
+		user.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelUser(ConstantDB.DB_URL_USERS);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		company.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelCompany(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		funicularStation.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelFunicularStation(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		funicularTimetable.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelFunicularTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		pullmanStop.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelPullmanStop(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		pullmanTimetable.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelPullmanTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		trainStation.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelTrainStation(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		trainTimetable.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelTrainTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		tramStop.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelTramStop(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		tramTimetable.addActionListener(e -> {
+			try {
+				DatabaseController.scrollPanelTramTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 		});
 
 		// Action listener for the theme switch button
