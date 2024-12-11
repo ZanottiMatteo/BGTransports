@@ -12,6 +12,7 @@ import org.jooq.DSLContext;
 import org.jooq.Record;
 import org.jooq.Record1;
 import org.jooq.Record10;
+import org.jooq.Record11;
 import org.jooq.Record2;
 import org.jooq.Result;
 import org.jxmapviewer.viewer.GeoPosition;
@@ -135,14 +136,14 @@ public class QueryDB {
 
 		return geopositions;
 	}
-	
+
 	public static List<String> getNameStation() throws SQLException {
 		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 		List<String> geopositions = new ArrayList<>();
 
 		@NotNull
-		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.NAME)
-				.from(Pullmanstop.PULLMANSTOP).fetch();
+		Result<Record1<String>> result = create.select(Pullmanstop.PULLMANSTOP.NAME).from(Pullmanstop.PULLMANSTOP)
+				.fetch();
 
 		for (Record1<String> nameStation : result) {
 			geopositions.add(nameStation.value1());
@@ -437,6 +438,44 @@ public class QueryDB {
 		}
 	}
 
+	public static List<String> getPullmanStopDeparture(String stop, String time, String type) throws SQLException {
+		DSLContext create = Utility.dslContext(ConstantDB.DB_PUBLIC_TRANSPORTATION);
+
+		@Nullable
+		Record10<Integer, String, String, String, String, String, String, String, String, String> data = create
+				.select(Pullmantimetable.PULLMANTIMETABLE.ID, 
+						Pullmantimetable.PULLMANTIMETABLE.COMPANYNAME,
+						Pullmantimetable.PULLMANTIMETABLE.LINE, 
+						Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP,
+						Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME,
+						Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP,
+						Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME, 
+						Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP, 
+						Pullmantimetable.PULLMANTIMETABLE.TIMESTOP,
+						Pullmantimetable.PULLMANTIMETABLE.TYPE)
+				.from(Pullmantimetable.PULLMANTIMETABLE)
+				.where(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP.eq(stop))
+				.fetchOne();
+
+		if (data != null) {
+			List<String> stopDetails = new ArrayList<>();
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.ID).toString());
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.COMPANYNAME));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+			stopDetails.add(data.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
+
+			return stopDetails;
+		} else {
+			return new ArrayList<>();
+		}
+	}
+
 	public static void deleteAll(DSLContext create, List<String> myList) throws IOException {
 		ArrayList<String> modifiedList = new ArrayList<>();
 
@@ -501,7 +540,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromFunicularStation(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -509,7 +548,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromFunicularTimetable(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -517,7 +556,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromPullmanStop(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -525,7 +564,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromPullmanTimetable(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -533,7 +572,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromTrainStation(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -541,7 +580,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromTrainTimetable(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -549,7 +588,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromTramStop(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull
@@ -557,7 +596,7 @@ public class QueryDB {
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
 		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
 	}
-	
+
 	public static void getDataFromTramTimetable(String database) throws SQLException {
 		DSLContext create = Utility.dslContext(database);
 		@NotNull

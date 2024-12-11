@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class TimestampModel {
 	
@@ -15,10 +16,10 @@ public class TimestampModel {
                 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
                 // Format the timestamp
-                String formattedTimestamp = new SimpleDateFormat("HH:mm:ss").format(timestamp);
+                String formattedTimestamp = new SimpleDateFormat("HH:mm").format(timestamp);
 
                 // Update the label on the Event Dispatch Thread
-                SwingUtilities.invokeLater(() -> label.setText("🕦 " + formattedTimestamp));
+                SwingUtilities.invokeLater(() -> label.setText(formattedTimestamp));
 
                 try {
                     // Sleep for 1 second
@@ -39,10 +40,10 @@ public class TimestampModel {
                 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
                 // Format the timestamp
-                String formattedTimestamp = new SimpleDateFormat("dd/MM/yyyy").format(timestamp);
+                String formattedTimestamp = new SimpleDateFormat("dd MMMM yyyy", Locale.ITALIAN).format(timestamp);
 
                 // Update the label on the Event Dispatch Thread
-                SwingUtilities.invokeLater(() -> label.setText("🗓 " + formattedTimestamp));
+                SwingUtilities.invokeLater(() -> label.setText(formattedTimestamp));
 
                 try {
                     // Sleep for 1 second

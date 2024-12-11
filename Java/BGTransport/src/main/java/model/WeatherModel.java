@@ -44,8 +44,8 @@ public class WeatherModel {
             weathercode = currentWeather.getInt("weathercode");
             isday = currentWeather.getInt("is_day");
 
-                label.setText("🌡 " + temperature + "°C w" + weathercode);
-                label2.setText("💨 " + windspeed + "Km/h " + isday);
+                label.setText("🌡 " + temperature + "°C");
+                label2.setText("💨 " + windspeed + "Km/h");
         } catch (Exception e) {
             e.printStackTrace();
         }

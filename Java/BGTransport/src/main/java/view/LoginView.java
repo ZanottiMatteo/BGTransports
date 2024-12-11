@@ -28,7 +28,10 @@ public class LoginView extends JFrame {
 	private static final long serialVersionUID = -4391409465142244190L;
 	// Declare UI components
     public JPanel mainPanel;
-    public JLabel logoLabel = new JLabel(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
+    public JLabel logoLabel = new JLabel();
+    public JLabel logoLabelD = new JLabel();
+    public ImageIcon iconLogo = new ImageIcon(LoginView.class.getResource("/images/Logo.png"));
+    public ImageIcon iconLogoD = new ImageIcon(LoginView.class.getResource("/images/LogoDark.png"));
     public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
     public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
     public JPasswordField passwordField = new JPasswordField();
@@ -211,8 +214,14 @@ public class LoginView extends JFrame {
      * Initializes the logo label.
      */
     private void initializeLogo() {
-        logoLabel.setBounds(662, 167, 596, 260);
+        logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        logoLabel.setBounds(662, 167, 596, 240);
+        logoLabel.setIcon(iconLogo);
         mainPanel.add(logoLabel);
+        logoLabelD.setHorizontalAlignment(SwingConstants.CENTER);
+        logoLabelD.setBounds(662, 167, 596, 240);
+        logoLabelD.setIcon(iconLogoD);
+        mainPanel.add(logoLabelD);
     }
 
     /**

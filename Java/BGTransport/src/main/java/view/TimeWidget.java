@@ -14,9 +14,9 @@ import model.TimestampModel;
  */
 public class TimeWidget extends RoundedPanel {
 
-    public JLabel lbltime = new JLabel();
+    public VeryBigLabel lbltime = new VeryBigLabel();
     public JLabel lbldate = new JLabel();
-    public final Point timepanelpoint = new Point(235, 310);
+    public final Point timepanelpoint = new Point(1450, 620);
 
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
@@ -27,8 +27,6 @@ public class TimeWidget extends RoundedPanel {
      */
     public TimeWidget() {
         setLayout(null);
-        setBounds(235, 310, 350, 180);
-
         try {
 			setupTimeComponents();
 		} catch (Exception e) {
@@ -50,11 +48,11 @@ public class TimeWidget extends RoundedPanel {
 
         lbltime.setHorizontalAlignment(SwingConstants.CENTER);
         lbltime.setFont(new Font("SansSerif", Font.BOLD, 20));
-        lbltime.setBounds(65, 25, 220, 50);
+        lbltime.setBounds(25, 25, 300, 130);
 
         lbldate.setHorizontalAlignment(SwingConstants.CENTER);
         lbldate.setFont(new Font("SansSerif", Font.BOLD, 20));
-        lbldate.setBounds(65, 110, 220, 50);
+        lbldate.setBounds(25, 166, 300, 60);
 
         add(lbltime);
         add(lbldate);

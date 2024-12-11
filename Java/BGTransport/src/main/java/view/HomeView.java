@@ -26,6 +26,8 @@ public class HomeView extends JFrame {
 	public final TimeWidget timePanel = new TimeWidget();
 	public static MiniMapWidget miniMapPanel = new MiniMapWidget();
 	public final UserWidget userPanel = new UserWidget();
+	public final TitleWidget infoPanel = new TitleWidget();
+
 
 	// Background wallpaper.
 	public final transient ResizableImage lblBGwallpaper = new ResizableImage(
@@ -37,11 +39,13 @@ public class HomeView extends JFrame {
 	// Window and panel dimensions.
 	public final Dimension originalPanelSize = new Dimension(1920, 1080);
 	public final Dimension menuPanelSize = new Dimension(100, 900);
+	public final Dimension widgetPanelTitle = new Dimension(1565, 135);
+	public final Dimension widgetPanelSizeLarge = new Dimension(600, 400);
 	public final Dimension widgetPanelSizeMedium = new Dimension(350, 250);
 	public final Dimension widgetPanelSizeSmall = new Dimension(350, 180);
 	public final Dimension minPanelSize = new Dimension(1085, 615);
 	public final Dimension mapSize = new Dimension(550, 350);
-	public final Dimension mapPanelSize = new Dimension(600, 400);
+	
 
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
@@ -85,6 +89,7 @@ public class HomeView extends JFrame {
 		homePanel.add(miniMapPanel);
 		homePanel.add(userPanel);
 		homePanel.add(menuPanel);
+		homePanel.add(infoPanel);
 		// Time panel setup.
 
 		// Store initial bounds for resizing purposes.
@@ -120,13 +125,7 @@ public class HomeView extends JFrame {
 			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
 			this.setVisible(false);
 		});
-
-		// Action listener for the home button
-		menuPanel.homeButton.addActionListener(e -> {
-			NewWindowController.openHomePanel(MainController.homeV);
-			setVisible(false);
-		});
-
+		
 		// Action listener for the home button
 		menuPanel.mapButton.addActionListener(e -> {
 			NewWindowController.openMapPanel(MainController.mapV);

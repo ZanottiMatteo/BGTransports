@@ -11,6 +11,7 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import model.MyLighterLaf;
 import view.DatabaseView;
 import view.HomeView;
+import view.TitleWidget;
 import view.LineView;
 import view.LoginView;
 import view.MapView;
@@ -24,8 +25,12 @@ public class ThemeController {
 	public static void setThemeHomePanel(HomeView homeV) {
 		if (themeDark) {
 			homeV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+			homeV.infoPanel.logoLabelD.setVisible(false);
+			homeV.infoPanel.logoLabel.setVisible(true);			 
 		} else {
 			homeV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+			homeV.infoPanel.logoLabel.setVisible(false); 
+			homeV.infoPanel.logoLabelD.setVisible(true); 
 		}
 		
 	}
@@ -64,9 +69,11 @@ public class ThemeController {
 	
 	public static void setThemeLoginPanel(LoginView loginV) {
 		if (themeDark) {
-			loginV.logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/Logo.png")));
+			loginV.logoLabelD.setVisible(false);
+			loginV.logoLabel.setVisible(true);			
 		} else {
-			loginV.logoLabel.setIcon(new ImageIcon(LoginView.class.getResource("/images/LogoDark.png")));
+			loginV.logoLabel.setVisible(false);	
+			loginV.logoLabelD.setVisible(true);				
 		}
 	}
 	

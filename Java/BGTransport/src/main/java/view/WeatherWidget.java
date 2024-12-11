@@ -23,7 +23,7 @@ public class WeatherWidget extends RoundedPanel {
     public JLabel lblweatherwind = new JLabel();
     private JLabel lblweathertxt = new JLabel("🏠 Bergamo");
     public CircleLabel lblweatherimg = new CircleLabel("");
-    public final Point weatherpanelpoint = new Point(235, 30);
+    public final Point weatherpanelpoint = new Point(1450, 270);
     public ImageIcon iconWeather;
     
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
@@ -33,8 +33,6 @@ public class WeatherWidget extends RoundedPanel {
      */
     public WeatherWidget() {
         setLayout(null);
-        setBounds(235, 30, 350, 250);
-
         setupWeatherComponents();
     }
 

@@ -36,7 +36,8 @@ public class NewWindowController {
 						homeV.menuPanel);
 				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.userPanel.componentBounds,
 						homeV.userPanel);
-				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
+				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.infoPanel.componentBounds,
+						homeV.infoPanel);					
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconUser,
 						homeV.menuPanel.userButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconMap,
@@ -50,19 +51,26 @@ public class NewWindowController {
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLDmode,
 						homeV.menuPanel.switchThemeButton);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.weatherPanel.iconWeather,
-						homeV.weatherPanel.lblweatherimg);
+						homeV.weatherPanel.lblweatherimg);	
+				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogo,
+						homeV.infoPanel.logoLabel);
+				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogoD,
+						homeV.infoPanel.logoLabelD);
+				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.menuPanel, homeV.menuPanelSize,
 						homeV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.weatherPanel,
 						homeV.widgetPanelSizeMedium, homeV.weatherPanel.weatherpanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.timePanel,
-						homeV.widgetPanelSizeSmall, homeV.timePanel.timepanelpoint);
-				ResizeController.resizePanel(homeV.originalPanelSize, homeV, HomeView.miniMapPanel, homeV.mapPanelSize,
+						homeV.widgetPanelSizeMedium, homeV.timePanel.timepanelpoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, HomeView.miniMapPanel, homeV.widgetPanelSizeLarge,
 						HomeView.miniMapPanel.miniMapPanelPoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, MapController.miniMapViewer, homeV.mapSize,
 						HomeView.miniMapPanel.mappoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.userPanel,
 						homeV.widgetPanelSizeMedium, homeV.userPanel.userpanelpoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.infoPanel,
+						homeV.widgetPanelTitle, homeV.infoPanel.infopanelpoint);
 
 			}
 		});
@@ -159,6 +167,10 @@ public class NewWindowController {
 						loginV.returnButton);
 				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconLDmode,
 						loginV.switchThemeButton);
+				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogo,
+						loginV.logoLabel);
+				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogoD,
+						loginV.logoLabelD);
 			}
 		});
 	}
