@@ -17,33 +17,8 @@ import javax.imageio.ImageIO;
 public class WeatherModel {
 	
 	static int weathercode;
-	static int isday;
-	
-	public static void getMeteo() throws IOException{
-        String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
-        try {
-            URL url = new URL(apiUrl);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String inputLine;
-            StringBuilder content = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine);
-            }
-            in.close();
-            conn.disconnect();
-            String response = content.toString();           
-            JSONObject json = new JSONObject(response);
-            JSONObject currentWeather = json.getJSONObject("current_weather");
-            weathercode = currentWeather.getInt("weathercode");
-            isday = currentWeather.getInt("is_day");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-	}
-	
+	static int isday = 1;
+		
 	public static void getMeteo(JLabel label, JLabel label2) throws IOException{
         String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
         try {
@@ -69,8 +44,8 @@ public class WeatherModel {
             weathercode = currentWeather.getInt("weathercode");
             isday = currentWeather.getInt("is_day");
 
-                label.setText("🌡 " + temperature + "°C");
-                label2.setText("💨 " + windspeed + "Km/h");
+                label.setText("🌡 " + temperature + "°C w" + weathercode);
+                label2.setText("💨 " + windspeed + "Km/h " + isday);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,7 +54,6 @@ public class WeatherModel {
 
 	public static ImageIcon getWeatherIcon() {
         String code = Integer.toString(weathercode);
-        System.out.println(code);
         try (FileReader openJSON = new FileReader("json/weather_images.json")) {
         	 StringBuilder sb = new StringBuilder();
              int c;
@@ -93,18 +67,13 @@ public class WeatherModel {
 
             String dayImage = weatherCode.getJSONObject("day").getString("image");
             String nightImage = weatherCode.getJSONObject("night").getString("image");
-            String imageUrl;
-			if (isday == 1) {
-			      imageUrl = dayImage;
-            } else {
-            	  imageUrl = nightImage;
-            }
+            String imageUrl = (isday == 1) ? dayImage : nightImage;
 			
             URL url = new URL(imageUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setConnectTimeout(5000);
-            connection.setReadTimeout(5000);
+            connection.setConnectTimeout(1000);
+            connection.setReadTimeout(1000);
 
             // Check the HTTP response code
             int responseCode = connection.getResponseCode();
@@ -112,7 +81,6 @@ public class WeatherModel {
                 // Get the image stream
                 InputStream inputStream = connection.getInputStream();
                 BufferedImage image = ImageIO.read(inputStream);
-                image.getScaledInstance(150, 150, Image.SCALE_REPLICATE);
                 inputStream.close();
                 return new ImageIcon(image);
             } else System.out.println("error");

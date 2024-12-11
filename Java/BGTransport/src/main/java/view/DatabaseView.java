@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -69,7 +70,6 @@ public class DatabaseView extends JFrame {
 	private final JButton funicularTimetable = new JButton("FUNICULAR TIMETABLE");
 	private final JButton pullmanStop = new JButton("PULLMAN STOP");
 	private final JButton trainStation = new JButton("TRAIN STATION");
-	private final JButton tramTimetable = new JButton("TRAM TIMETABLE");
 	private final JButton trainTimetable = new JButton("TRAIN TIMETABLE");
 	private final JButton pullmanTimetable = new JButton("PULLMAN TIMETABLE");
 	private final JButton tramStop = new JButton("TRAM STOP");
@@ -140,35 +140,59 @@ public class DatabaseView extends JFrame {
 		selectTable.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 25));
 		selectTable.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		company.setBounds(105, 850, 120, 40);
-		centerPanel.add(company);
-		
-		user.setBounds(20, 850, 85, 40);
+		user.setBounds(65, 850, 85, 40);
+		user.setForeground(Color.WHITE);
+		user.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		user.setBackground(new Color(210, 105, 30));
 		centerPanel.add(user);
 		
-		funicularStation.setBounds(225, 850, 200, 40);
+		company.setBounds(157, 850, 120, 40);
+		company.setForeground(Color.WHITE);
+		company.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		company.setBackground(new Color(210, 105, 30));
+		centerPanel.add(company);
+		
+		funicularStation.setBounds(284, 850, 180, 40);
+		funicularStation.setForeground(Color.WHITE);
+		funicularStation.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		funicularStation.setBackground(new Color(210, 105, 30));
 		centerPanel.add(funicularStation);
 		
-		funicularTimetable.setBounds(425, 850, 200, 40);
+		funicularTimetable.setBounds(471, 850, 190, 40);
+		funicularTimetable.setForeground(Color.WHITE);
+		funicularTimetable.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		funicularTimetable.setBackground(new Color(210, 105, 30));
 		centerPanel.add(funicularTimetable);
 		
-		pullmanStop.setBounds(625, 850, 200, 40);
+		pullmanStop.setBounds(668, 850, 160, 40);
+		pullmanStop.setForeground(Color.WHITE);
+		pullmanStop.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		pullmanStop.setBackground(new Color(210, 105, 30));
 		centerPanel.add(pullmanStop);
 		
-		pullmanTimetable.setBounds(825, 850, 200, 40);
+		pullmanTimetable.setBounds(835, 850, 180, 40);
+		pullmanTimetable.setForeground(Color.WHITE);
+		pullmanTimetable.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		pullmanTimetable.setBackground(new Color(210, 105, 30));
 		centerPanel.add(pullmanTimetable);
 		
-		trainStation.setBounds(1025, 850, 200, 40);
+		trainStation.setBounds(1022, 850, 160, 40);
+		trainStation.setForeground(Color.WHITE);
+		trainStation.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		trainStation.setBackground(new Color(210, 105, 30));
 		centerPanel.add(trainStation);
 		
-		trainTimetable.setBounds(1225, 850, 200, 40);
+		trainTimetable.setBounds(1189, 850, 160, 40);
+		trainTimetable.setForeground(Color.WHITE);
+		trainTimetable.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		trainTimetable.setBackground(new Color(210, 105, 30));
 		centerPanel.add(trainTimetable);
 		
-		tramStop.setBounds(1425, 850, 200, 40);
+		tramStop.setBounds(1356, 850, 160, 40);
+		tramStop.setForeground(Color.WHITE);
+		tramStop.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+		tramStop.setBackground(new Color(210, 105, 30));
 		centerPanel.add(tramStop);
-		
-		tramTimetable.setBounds(1625, 850, 200, 40);
-		centerPanel.add(tramTimetable);
 	}
 
 	private void setupActionListeners() {
@@ -263,14 +287,6 @@ public class DatabaseView extends JFrame {
 		tramStop.addActionListener(e -> {
 			try {
 				DatabaseController.scrollPanelTramStop(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		});
-		
-		tramTimetable.addActionListener(e -> {
-			try {
-				DatabaseController.scrollPanelTramTimetable(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
