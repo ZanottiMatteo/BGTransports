@@ -6,6 +6,7 @@ import java.awt.RenderingHints;
 import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,6 +14,8 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import view.AccountIconView;
@@ -73,8 +76,12 @@ public class AccountController {
 	        } else {
 	            System.out.println("Error: Unable to fetch image, Response Code: " + responseCode);
 	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
+	    } catch (JSONException e) {
+	        // Return null or a default image if the key is not found
+	        return null;
+	    } catch (IOException e) {
+	        // Handle file reading errors
+	        return null;
 	    }
 	    return null;
 	}

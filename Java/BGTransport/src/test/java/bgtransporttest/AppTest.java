@@ -1,4 +1,4 @@
-package BGTransport.BGTransport;
+package bgtransporttest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
