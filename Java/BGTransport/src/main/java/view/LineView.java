@@ -16,6 +16,7 @@ import java.util.Map;
 import java.awt.Graphics;
 import java.awt.Point;
 
+import controller.LineController;
 import controller.MainController;
 import controller.MapController;
 import controller.NewWindowController;
@@ -77,6 +78,18 @@ public class LineView extends JFrame {
 	private final MediumLabel departurelabel = new MediumLabel("Punto di Partenza:");
 
 	private final MediumLabel arrivelabel = new MediumLabel("Punto di Arrivo:");
+	
+	private final MediumLabel linelabel = new MediumLabel("Linea:");
+	
+	private final MediumLabel departuretimelabel = new MediumLabel("Orario di Partenza:");
+	
+	private final MediumLabel arrivaltimelabel = new MediumLabel("Orario di Arrivo:");
+	
+	private final MediumLabel nextstoplabel = new MediumLabel("Prossima Fermata:");
+	
+	private final MediumLabel nextstoptimelabel = new MediumLabel("Orario Prossima Fermata:");
+	
+	private final MediumLabel weeklabel = new MediumLabel("Periodo:");
 
 	public JButton selectbutton = new JButton();
 	
@@ -84,7 +97,25 @@ public class LineView extends JFrame {
 		
 	public static JComboBox<String> arrivestation;
 	
+	public static JComboBox<String> line;
+	
+	public static JComboBox<String> arrivetime;
+	
+	public static JComboBox<String> departuretime;
+	
+	public static JComboBox<String> week;
+	
+	public static JComboBox<String> nextstop;
+	
+	public static JComboBox<String> timestop;
+	
 	public static List<String> station;
+	
+	public static List<String> linelist;
+	
+	public static List<String> timelist;
+	
+	public static List<String> weeklist;
 	
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
@@ -99,8 +130,9 @@ public class LineView extends JFrame {
 		configureWindow();
 		setupComponentArcs();
 		setupMainPanel();
+		setupCenterPanel();	
 		setupActionListeners();
-		setupCenterPanel();		
+			
 		// Store bounds for resizing
 		storeComponentBounds();
 	}
@@ -161,34 +193,78 @@ public class LineView extends JFrame {
 	private void setupCenterPanel() {
 		depaturestation = createSearchableComboBox(station);
 		arrivestation = createSearchableComboBox(station);
+		line = createSearchableComboBox(linelist);
+		arrivetime = createSearchableComboBox(timelist);
+		departuretime = createSearchableComboBox(timelist);
+		timestop = createSearchableComboBox(timelist);
+		nextstop = createSearchableComboBox(station);
+		week = createSearchableComboBox(weeklist);
 		
 		int y = 200;
-		
 		departurelabel.setLocation(30, y);
 		departurelabel.setSize(500, 50);
 		centerPanel.add(departurelabel);
-		
 		depaturestation.setLocation(80, y + 70);
 		depaturestation.setSize(500, 50);
 		centerPanel.add(depaturestation);
 		
-		arrivelabel.setLocation(900, y);
+		departuretimelabel.setLocation(490, y);
+		departuretimelabel.setSize(500, 50);
+		centerPanel.add(departuretimelabel);
+		departuretime.setLocation(640, y + 70);
+		departuretime.setSize(200, 50);
+		centerPanel.add(departuretime);
+		
+		arrivelabel.setLocation(30, y + 140);
 		arrivelabel.setSize(500, 50);		
 		centerPanel.add(arrivelabel);
-
-		arrivestation.setLocation(950, y + 70);
+		arrivestation.setLocation(80, y + 210);
 		arrivestation.setSize(500, 50);
 		centerPanel.add(arrivestation);
+		
+		arrivaltimelabel.setLocation(490, y + 140);
+		arrivaltimelabel.setSize(500, 50);
+		centerPanel.add(arrivaltimelabel);
+		arrivetime.setLocation(640, y + 210);
+		arrivetime.setSize(200, 50);
+		centerPanel.add(arrivetime);
+		
+		linelabel.setLocation(1000, y);
+		linelabel.setSize(500, 50);
+		centerPanel.add(linelabel);
+		line.setLocation(1150, y + 70);
+		line.setSize(200, 50);
+		centerPanel.add(line);
 
+		nextstoplabel.setLocation(30, y + 280);
+		nextstoplabel.setSize(500, 50);
+		centerPanel.add(nextstoplabel);
+		nextstop.setLocation(80, y + 350);
+		nextstop.setSize(500, 50);
+		centerPanel.add(nextstop);
+		
+		nextstoptimelabel.setLocation(490, y + 280);
+		nextstoptimelabel.setSize(500, 50);
+		centerPanel.add(nextstoptimelabel);
+		timestop.setLocation(640, y + 350);
+		timestop.setSize(200, 50);
+		centerPanel.add(timestop);
+		
+		weeklabel.setLocation(1000, y + 140);
+		weeklabel.setSize(500, 50);
+		centerPanel.add(weeklabel);
+		week.setLocation(1000, y + 210);
+		week.setSize(500, 50);
+		centerPanel.add(week);
+		
 		selectbutton.setText("Conferma");
 		selectbutton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		selectbutton.setHorizontalAlignment(SwingConstants.CENTER);
 		selectbutton.setBackground(new Color(210, 105, 30));
 		selectbutton.setForeground(new Color(255, 255, 255));
-		selectbutton.setLocation(650, 450);
+		selectbutton.setLocation(850, 600);
 		selectbutton.setSize(300, 70);
 		centerPanel.add(selectbutton);
-
 	}
 	
 	private static JComboBox<String> createSearchableComboBox(List<String> options) {
@@ -254,6 +330,15 @@ public class LineView extends JFrame {
 		menuPanel.databaseButton.addActionListener(e -> {
 			NewWindowController.openDatabasePanel(MainController.databaseV);
 			setVisible(false);
+		});
+		
+		depaturestation.addActionListener(e -> {
+			try {
+				List<List<String>> arrivalList = LineController.getComboboxSelection(depaturestation);
+				LineController.updateComboBoxes(line, departuretime, arrivestation, arrivetime, nextstop, timestop, week, arrivalList);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 		});
 
 		// Action listener for the theme switch button

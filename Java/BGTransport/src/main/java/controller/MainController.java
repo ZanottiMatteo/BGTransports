@@ -28,6 +28,9 @@ public class MainController {
 	public static void main(String[] args) throws Exception {
         // Pass the map to the view
 		LineController.setStation();
+		LineController.setLine();
+		LineController.setTime();
+		LineController.setWeek();
 		lineV = new LineView();
 		ThemeController.updateThemes();
 		NewWindowController.openDBloader(dbV);
