@@ -14,10 +14,12 @@ import org.jooq.Record1;
 import org.jooq.Record10;
 import org.jooq.Record11;
 import org.jooq.Record2;
+import org.jooq.Record6;
 import org.jooq.Record7;
 import org.jooq.Result;
 import org.jxmapviewer.viewer.GeoPosition;
 
+import controller.LineController;
 import transportation.jooq.generated.tables.Company;
 import transportation.jooq.generated.tables.Funicularstation;
 import transportation.jooq.generated.tables.Funiculartimetable;
@@ -482,7 +484,7 @@ public class QueryDB {
 		}
 	}
 
-	public static List<List<String>> getPullmanStopArrival(String departure) throws SQLException {
+	public static List<List<String>> getInfo(String departure) throws SQLException {
 	    DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
 	    Result<Record7<String, String, String, String, String, String, String>> data = create
@@ -497,19 +499,49 @@ public class QueryDB {
 	            .where(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP.eq(departure))
 	            .fetch();
 
-	    List<List<String>> allStopDetails = new ArrayList<>();
+	    List<List<String>> allInfo = new ArrayList<>();
 	    for (Record7<String, String, String, String, String, String, String> record : data) {
-	        List<String> stopDetails = new ArrayList<>();
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME));
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
-	        stopDetails.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
-	        allStopDetails.add(stopDetails);
+	        List<String> info = new ArrayList<>();
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
+	        allInfo.add(info);
 	    }
-	    return allStopDetails;
+	    return allInfo;
+	}
+	
+	public static List<List<String>> getInfo1(String departuretime) throws SQLException {
+	    DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+
+	    Result<Record7<String, String, String, String, String, String, String>> data = create
+	            .select(Pullmantimetable.PULLMANTIMETABLE.LINE,
+	                    Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP,
+	                    Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME, 
+	                    Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP, 
+	                    Pullmantimetable.PULLMANTIMETABLE.TIMESTOP,
+	                    Pullmantimetable.PULLMANTIMETABLE.TYPE,
+	            		Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP)
+	            .from(Pullmantimetable.PULLMANTIMETABLE)
+	            .where(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME.eq(departuretime)).and(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP.eq(LineController.selectedItem))
+	            .fetch();
+
+	    List<List<String>> allInfo = new ArrayList<>();
+	    for (Record7<String, String, String, String, String, String, String> record : data) {
+	        List<String> info = new ArrayList<>();
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP));
+	        allInfo.add(info);
+	    }
+	    return allInfo;
 	}
 
 	public static void deleteAll(DSLContext create, List<String> myList) throws IOException {

@@ -334,13 +334,22 @@ public class LineView extends JFrame {
 		
 		depaturestation.addActionListener(e -> {
 			try {
-				List<List<String>> arrivalList = LineController.getComboboxSelection(depaturestation);
+				List<List<String>> arrivalList = LineController.getComboboxSelectionStation(depaturestation);
 				LineController.updateComboBoxes(line, departuretime, arrivestation, arrivetime, nextstop, timestop, week, arrivalList);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
 		});
 
+		departuretime.addActionListener(e -> {
+			try {
+				List<List<String>> timeList = LineController.getComboboxSelectionTime(departuretime);
+				LineController.updateComboBoxes1(line, arrivestation, arrivetime, nextstop, timestop, week, timeList);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
 		// Action listener for the theme switch button
 		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
 

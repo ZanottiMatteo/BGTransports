@@ -11,6 +11,9 @@ import model.QueryDB;
 import view.LineView;
 
 public class LineController {
+	
+	public static String selectedItem;
+	public static String selectedItem1;
 
 	public static void setStation() throws SQLException{
 		LineView.station = QueryDB.getNameStation();
@@ -28,9 +31,14 @@ public class LineController {
 		LineView.weeklist = QueryDB.getWeekList();
 	}
 	
-	public static List<List<String>> getComboboxSelection(JComboBox<String> depaturestation) throws SQLException {
-		String selectedItem = (String) depaturestation.getSelectedItem();
-		return QueryDB.getPullmanStopArrival(selectedItem);
+	public static List<List<String>> getComboboxSelectionStation(JComboBox<String> depaturestation) throws SQLException {
+		selectedItem = (String) depaturestation.getSelectedItem();
+		return QueryDB.getInfo(selectedItem);
+	}
+	
+	public static List<List<String>> getComboboxSelectionTime(JComboBox<String> departuretime) throws SQLException {
+		selectedItem1 = (String) departuretime.getSelectedItem();
+		return QueryDB.getInfo1(selectedItem1);
 	}
 	
 	public static void updateComboBoxes(
@@ -71,6 +79,46 @@ public class LineController {
 
 	    uniqueLines.forEach(line::addItem);
 	    uniqueDepartureTimes.forEach(departuretime::addItem);
+	    uniqueArrivalStations.forEach(arrivestation::addItem);
+	    uniqueArrivalTimes.forEach(arrivetime::addItem);
+	    uniqueNextStops.forEach(nextstop::addItem);
+	    uniqueTimeStops.forEach(timestop::addItem);
+	    uniqueWeeks.forEach(week::addItem);
+	}
+	
+	public static void updateComboBoxes1(
+	        JComboBox<String> line,
+	        JComboBox<String> arrivestation,
+	        JComboBox<String> arrivetime,
+	        JComboBox<String> nextstop,
+	        JComboBox<String> timestop,
+	        JComboBox<String> week,
+	        List<List<String>> timelist) {
+
+	    Set<String> uniqueLines = new HashSet<>();
+	    Set<String> uniqueArrivalStations = new HashSet<>();
+	    Set<String> uniqueArrivalTimes = new HashSet<>();
+	    Set<String> uniqueNextStops = new HashSet<>();
+	    Set<String> uniqueTimeStops = new HashSet<>();
+	    Set<String> uniqueWeeks = new HashSet<>();
+
+	    for (List<String> record : timelist) {
+	        uniqueLines.add(record.get(0));
+	        uniqueArrivalStations.add(record.get(1));
+	        uniqueArrivalTimes.add(record.get(2));
+	        uniqueNextStops.add(record.get(3));
+	        uniqueTimeStops.add(record.get(4));
+	        uniqueWeeks.add(record.get(5));
+	    }
+
+	    line.removeAllItems();
+	    arrivestation.removeAllItems();
+	    arrivetime.removeAllItems();
+	    nextstop.removeAllItems();
+	    timestop.removeAllItems();
+	    week.removeAllItems();
+
+	    uniqueLines.forEach(line::addItem);
 	    uniqueArrivalStations.forEach(arrivestation::addItem);
 	    uniqueArrivalTimes.forEach(arrivetime::addItem);
 	    uniqueNextStops.forEach(nextstop::addItem);
