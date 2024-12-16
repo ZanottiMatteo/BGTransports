@@ -20,7 +20,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import controller.AccountController;
+import bgtransport.controller.AccountController;
 
 public class AccountControllerTest {
 

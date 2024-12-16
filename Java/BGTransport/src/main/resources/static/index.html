@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #position {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Location</h1>
+    <p id="position">Fetching your position...</p>
+
+    <script>
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+
+                document.getElementById("position").innerText = "Latitude: " + lat + ", Longitude: " + lon;
+
+                // Invia la posizione al backend
+                fetch('/api/position', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ latitude: lat, longitude: lon })
+                }).then(() => {
+                    // Chiudi la finestra dopo aver inviato la posizione
+                    window.close();
+                }).catch(error => {
+                    console.error('Error sending position:', error);
+                });
+            }, function(error) {
+                document.getElementById("position").innerText = "Unable to retrieve your location.";
+            });
+        } else {
+            document.getElementById("position").innerText = "Geolocation is not supported by your browser.";
+        }
+    </script>
+</body>
+</html>

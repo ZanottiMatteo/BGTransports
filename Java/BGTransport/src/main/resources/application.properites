@@ -1,0 +1,13 @@
+# Ensure static files are served correctly
+spring.web.resources.static-locations=classpath:/static/
+
+# Log level (optional for debugging)
+logging.level.org.springframework.web=DEBUG
+
+server.ssl.enabled=true
+server.ssl.key-store=classpath:keystore.p12
+server.ssl.key-store-password=yourpassword
+server.ssl.key-store-type=PKCS12
+server.ssl.key-alias=selfsigned
+server.port=8080
+
