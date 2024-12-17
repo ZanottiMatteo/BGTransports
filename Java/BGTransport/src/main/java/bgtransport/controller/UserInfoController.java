@@ -19,6 +19,8 @@ public class UserInfoController {
 			UserView.profilePhoto.setIcon(new ImageIcon(AccountController.getAccountIcon(str, 242)));
 			UserWidget.accounticon.setIcon(new ImageIcon(AccountController.getAccountIcon(str, 128)));
 		} else {
+			UserView.profilePhoto.setIcon(null);
+			UserWidget.accounticon.setIcon(null);
 			UserView.chooseIcon.setIcon(new ImageIcon(AccountController.class.getResource("/images/Addimage.png")));
 		}
 	}
@@ -106,4 +108,20 @@ public class UserInfoController {
 		UserWidget.titlelabel.setVisible(true);
 		UserWidget.errorlabel.setVisible(false);
 	}
+	
+	public static void hideDataWidget() {
+	    // Nasconde i widget
+	    UserWidget.usernamelabel.setVisible(false);
+	    UserWidget.complnamelabel.setVisible(false);
+	    UserWidget.emaillabel.setVisible(false);
+	    UserWidget.accounticon.setVisible(false);
+	    UserWidget.titlelabel.setVisible(false);
+	    UserWidget.errorlabel.setVisible(true);
+	    
+	    // Pulisce il contenuto delle etichette
+	    UserWidget.usernamelabel.setText("");
+	    UserWidget.complnamelabel.setText("");
+	    UserWidget.emaillabel.setText("");
+	}
+
 }

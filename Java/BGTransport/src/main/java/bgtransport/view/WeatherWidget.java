@@ -2,8 +2,8 @@ package bgtransport.view;
 
 import javax.swing.*;
 
+import bgtransport.controller.WeatherController;
 import bgtransport.model.ConstantString;
-import bgtransport.model.WeatherModel;
 
 import java.awt.*;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class WeatherWidget extends RoundedPanel {
      * Sets up the weather-related components.
      */
     private void setupWeatherComponents() {
-    	iconWeather = WeatherModel.getWeatherIcon();
+    	iconWeather = WeatherController.getWeatherIcon();
     	
         lblweather.setHorizontalAlignment(SwingConstants.LEFT);
         lblweather.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 70));
@@ -62,7 +62,7 @@ public class WeatherWidget extends RoundedPanel {
         lblweathertxt.setBounds(140, 30, 200, 50);
 
         try {
-            WeatherModel.getMeteo(lblweather, lblweatherwind);
+            WeatherController.getMeteo(lblweather, lblweatherwind);
             lblweatherimg.setIcon(iconWeather);
         } catch (IOException e) {
             e.printStackTrace();

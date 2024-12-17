@@ -2,6 +2,7 @@ package bgtransport.view;
 
 import javax.swing.*;
 
+import bgtransport.controller.LoginController;
 import bgtransport.controller.MainController;
 import bgtransport.controller.NewWindowController;
 import bgtransport.controller.ThemeController;
@@ -63,6 +64,7 @@ public class UserView extends JFrame {
 	public JButton saveData = new JButton();
 	public JButton discardData = new JButton();
 	public static JButton chooseIcon = new JButton();
+	public JButton logoutbutton = new JButton();
 
 	// Background wallpaper.
 	public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
@@ -239,6 +241,13 @@ public class UserView extends JFrame {
 		discardData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
 		discardData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(discardData);
+		
+		logoutbutton.setBounds(1400, 50, 100, 50);
+		logoutbutton.setText("Log Out");
+		logoutbutton.setForeground(Color.WHITE);
+		logoutbutton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		logoutbutton.setBackground(new Color(210, 105, 30));
+		centerPanel.add(logoutbutton);
 	}
 
 	private void setupActionListeners() {
@@ -292,6 +301,11 @@ public class UserView extends JFrame {
 			saveData.setVisible(false);
 			discardData.setVisible(false);
 			changeData.setVisible(true);
+		});
+		
+		logoutbutton.addActionListener(e -> {
+			LoginController.logout();
+			setVisible(false);
 		});
 
 		chooseIcon.addActionListener(e -> NewWindowController.openAccountIconPanel(MainController.accountV));

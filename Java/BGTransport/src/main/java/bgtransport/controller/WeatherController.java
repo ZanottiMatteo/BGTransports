@@ -1,4 +1,4 @@
-package bgtransport.model;
+package bgtransport.controller;
 
 import javax.swing.*;
 
@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import javax.imageio.ImageIO;
 
-public class WeatherModel {
+public class WeatherController {
 	
 	static int weathercode;
 	static int isday = 1;

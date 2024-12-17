@@ -2,7 +2,7 @@ package bgtransport.view;
 
 import javax.swing.*;
 
-import bgtransport.model.TimestampModel;
+import bgtransport.controller.TimestampController;
 
 import java.awt.*;
 import java.io.IOException;
@@ -41,8 +41,8 @@ public class TimeWidget extends RoundedPanel {
      */
     private void setupTimeComponents() throws Exception {
         try {
-            TimestampModel.getTime(lbltime);
-            TimestampModel.getDate(lbldate);
+            TimestampController.getTime(lbltime);
+            TimestampController.getDate(lbldate);
         } catch (IOException e) {
             e.printStackTrace();
         }

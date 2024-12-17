@@ -32,7 +32,7 @@ public class ResizeController {
 			Map<Component, Rectangle> componentBounds, JPanel panel) {
 		double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
 		double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
-		System.out.println("W: " + jframe.getWidth() + "H: " + jframe.getHeight());
+		//System.out.println("W: " + jframe.getWidth() + "H: " + jframe.getHeight());
 
 		for (Map.Entry<Component, Rectangle> entry : componentBounds.entrySet()) {
 			Component comp = entry.getKey();

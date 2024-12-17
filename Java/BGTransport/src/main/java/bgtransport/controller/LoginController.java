@@ -45,4 +45,15 @@ public class LoginController {
 		}
 		
 	}
+	public static void logout() {
+        // Resetta l'utente loggato
+        userlogged = new RegisteredUser();
+        email = null;
+
+        System.out.println("Logout eseguito.");
+        NewWindowController.openHomePanel(MainController.homeV);
+        UserInfoController.hideDataWidget();
+        MainController.loginV.passwordField.setText(""); // Pulisce il campo password
+        MainController.loginV.errorLabel.setVisible(false); // Nasconde errori
+    }
 }

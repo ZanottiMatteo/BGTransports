@@ -1,4 +1,4 @@
-package bgtransport.model;
+package bgtransport.controller;
 
 import javax.swing.*;
 
@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-public class TimestampModel {
+public class TimestampController {
 	
 	public static void getTime(JLabel label) throws Exception{
         Thread thread = new Thread(() -> {
