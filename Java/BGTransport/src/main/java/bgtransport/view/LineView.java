@@ -117,6 +117,12 @@ public class LineView extends JFrame {
 	
 	public static List<String> weeklist;
 	
+	public static List<List<String>> departureList;
+	
+	public static List<List<String>> timeList;
+	
+	public static List<List<String>> arriveList;
+	
 	/**
 	 * Constructor that sets up the UI components, layout, and theming for the home
 	 * view. It also initializes the main panel, menu panel, and other UI elements.
@@ -200,7 +206,7 @@ public class LineView extends JFrame {
 		nextstop = createSearchableComboBox(station);
 		week = createSearchableComboBox(weeklist);
 		
-		int y = 200;
+		int y = 150;
 		departurelabel.setLocation(30, y);
 		departurelabel.setSize(500, 50);
 		centerPanel.add(departurelabel);
@@ -208,10 +214,10 @@ public class LineView extends JFrame {
 		depaturestation.setSize(500, 50);
 		centerPanel.add(depaturestation);
 		
-		departuretimelabel.setLocation(490, y);
+		departuretimelabel.setLocation(540, y);
 		departuretimelabel.setSize(500, 50);
 		centerPanel.add(departuretimelabel);
-		departuretime.setLocation(640, y + 70);
+		departuretime.setLocation(690, y + 70);
 		departuretime.setSize(200, 50);
 		centerPanel.add(departuretime);
 		
@@ -222,11 +228,12 @@ public class LineView extends JFrame {
 		arrivestation.setSize(500, 50);
 		centerPanel.add(arrivestation);
 		
-		arrivaltimelabel.setLocation(490, y + 140);
+		arrivaltimelabel.setLocation(540, y + 140);
 		arrivaltimelabel.setSize(500, 50);
 		centerPanel.add(arrivaltimelabel);
-		arrivetime.setLocation(640, y + 210);
+		arrivetime.setLocation(690, y + 210);
 		arrivetime.setSize(200, 50);
+		arrivetime.setEnabled(false);
 		centerPanel.add(arrivetime);
 		
 		linelabel.setLocation(1000, y);
@@ -234,6 +241,7 @@ public class LineView extends JFrame {
 		centerPanel.add(linelabel);
 		line.setLocation(1150, y + 70);
 		line.setSize(200, 50);
+		line.setEnabled(false);
 		centerPanel.add(line);
 
 		nextstoplabel.setLocation(30, y + 280);
@@ -241,13 +249,15 @@ public class LineView extends JFrame {
 		centerPanel.add(nextstoplabel);
 		nextstop.setLocation(80, y + 350);
 		nextstop.setSize(500, 50);
+		nextstop.setEnabled(false);
 		centerPanel.add(nextstop);
 		
-		nextstoptimelabel.setLocation(490, y + 280);
+		nextstoptimelabel.setLocation(540, y + 280);
 		nextstoptimelabel.setSize(500, 50);
 		centerPanel.add(nextstoptimelabel);
-		timestop.setLocation(640, y + 350);
+		timestop.setLocation(690, y + 350);
 		timestop.setSize(200, 50);
+		timestop.setEnabled(false);
 		centerPanel.add(timestop);
 		
 		weeklabel.setLocation(1000, y + 140);
@@ -262,8 +272,9 @@ public class LineView extends JFrame {
 		selectbutton.setHorizontalAlignment(SwingConstants.CENTER);
 		selectbutton.setBackground(new Color(210, 105, 30));
 		selectbutton.setForeground(new Color(255, 255, 255));
-		selectbutton.setLocation(850, 600);
+		selectbutton.setLocation(650, 800);
 		selectbutton.setSize(300, 70);
+		selectbutton.setEnabled(false);
 		centerPanel.add(selectbutton);
 	}
 	
@@ -334,8 +345,9 @@ public class LineView extends JFrame {
 		
 		depaturestation.addActionListener(e -> {
 			try {
-				List<List<String>> arrivalList = LineController.getComboboxSelectionStation(depaturestation);
-				LineController.updateComboBoxes(line, departuretime, arrivestation, arrivetime, nextstop, timestop, week, arrivalList);
+				LineController.getComboboxSelectionStation(depaturestation);
+				LineController.updateComboBoxes(line, departuretime, arrivestation, arrivetime, nextstop, timestop, week, departureList);
+				selectbutton.setEnabled(true);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
@@ -343,8 +355,19 @@ public class LineView extends JFrame {
 
 		departuretime.addActionListener(e -> {
 			try {
-				List<List<String>> timeList = LineController.getComboboxSelectionTime(departuretime);
+				LineController.getComboboxSelectionTime(departuretime);
 				LineController.updateComboBoxes1(line, arrivestation, arrivetime, nextstop, timestop, week, timeList);
+				selectbutton.setEnabled(true);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		arrivestation.addActionListener(e -> {
+			try {
+				LineController.getComboboxSelectionFinalStation(arrivestation);
+				LineController.updateComboBoxes2(line, arrivetime, nextstop, timestop, week, arriveList);
+				selectbutton.setEnabled(true);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}

@@ -12,8 +12,8 @@ import org.jooq.DSLContext;
 import org.jooq.Record;
 import org.jooq.Record1;
 import org.jooq.Record10;
-import org.jooq.Record11;
 import org.jooq.Record2;
+import org.jooq.Record5;
 import org.jooq.Record6;
 import org.jooq.Record7;
 import org.jooq.Result;
@@ -514,23 +514,22 @@ public class QueryDB {
 	    return allInfo;
 	}
 	
-	public static List<List<String>> getInfo1(String departuretime) throws SQLException {
+	public static List<List<String>> getInfo1(String departuretime, String departure) throws SQLException {
 	    DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
 
-	    Result<Record7<String, String, String, String, String, String, String>> data = create
+	    Result<Record6<String, String, String, String, String, String>> data = create
 	            .select(Pullmantimetable.PULLMANTIMETABLE.LINE,
 	                    Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP,
 	                    Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME, 
 	                    Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP, 
 	                    Pullmantimetable.PULLMANTIMETABLE.TIMESTOP,
-	                    Pullmantimetable.PULLMANTIMETABLE.TYPE,
-	            		Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP)
+	                    Pullmantimetable.PULLMANTIMETABLE.TYPE)
 	            .from(Pullmantimetable.PULLMANTIMETABLE)
-	            .where(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME.eq(departuretime)).and(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP.eq(LineController.selectedItem))
+	            .where(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME.eq(departuretime)).and(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP.eq(departure))
 	            .fetch();
 
 	    List<List<String>> allInfo = new ArrayList<>();
-	    for (Record7<String, String, String, String, String, String, String> record : data) {
+	    for (Record6<String, String, String, String, String, String> record : data) {
 	        List<String> info = new ArrayList<>();
 	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
 	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
@@ -538,7 +537,32 @@ public class QueryDB {
 	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
 	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
 	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP));
+	        allInfo.add(info);
+	    }
+	    return allInfo;
+	}
+	
+	public static List<List<String>> getInfo2(String arrival, String departuretime, String departure) throws SQLException{
+		DSLContext create = Utility.dslContext(ConstantDB.DB_URL_PUBLIC_TRANSPORTATION);
+		
+		Result<Record5<String, String, String, String, String >> data = create
+	            .select(Pullmantimetable.PULLMANTIMETABLE.LINE,
+	                    Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME, 
+	                    Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP, 
+	                    Pullmantimetable.PULLMANTIMETABLE.TIMESTOP,
+	                    Pullmantimetable.PULLMANTIMETABLE.TYPE)
+	            .from(Pullmantimetable.PULLMANTIMETABLE)
+	            .where(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP.eq(arrival)).and(Pullmantimetable.PULLMANTIMETABLE.DEPARTUREPULLMANSTOP.eq(departure)).and(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME.eq(departuretime))
+	            .fetch();
+		
+		List<List<String>> allInfo = new ArrayList<>();
+	    for (Record5<String, String, String, String, String> record : data) {
+	        List<String> info = new ArrayList<>();
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
 	        allInfo.add(info);
 	    }
 	    return allInfo;
