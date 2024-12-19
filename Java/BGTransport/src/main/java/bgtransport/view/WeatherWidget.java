@@ -20,12 +20,12 @@ public class WeatherWidget extends RoundedPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = -3464306536082412512L;
-	public JLabel lblweather = new JLabel();
-    public JLabel lblweatherwind = new JLabel();
+	public static JLabel lbltemperature = new JLabel();
+	public static JLabel lblweatherwind = new JLabel();
     private JLabel lblweathertxt = new JLabel("🏠 Bergamo");
     public CircleLabel lblweatherimg = new CircleLabel("");
     public final Point weatherpanelpoint = new Point(1450, 270);
-    public ImageIcon iconWeather;
+    public static transient ImageIcon iconWeather = new ImageIcon();
     
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
     /**
@@ -41,11 +41,10 @@ public class WeatherWidget extends RoundedPanel {
      * Sets up the weather-related components.
      */
     private void setupWeatherComponents() {
-    	iconWeather = WeatherController.getWeatherIcon();
     	
-        lblweather.setHorizontalAlignment(SwingConstants.LEFT);
-        lblweather.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 70));
-        lblweather.setBounds(140, 170, 200, 50);
+        lbltemperature.setHorizontalAlignment(SwingConstants.LEFT);
+        lbltemperature.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 70));
+        lbltemperature.setBounds(140, 170, 200, 50);
 
         lblweatherwind.setHorizontalAlignment(SwingConstants.LEFT);
         lblweatherwind.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 70));
@@ -56,19 +55,13 @@ public class WeatherWidget extends RoundedPanel {
         lblweatherimg.setLocation(25, 75);
         lblweatherimg.setSize(100, 100);
         lblweatherimg.setCircleColor(new Color(76, 170, 252));
-
+        lblweatherimg.setIcon(iconWeather);
+        
         lblweathertxt.setHorizontalAlignment(SwingConstants.LEFT);
         lblweathertxt.setForeground(new Color(210, 105, 30));
         lblweathertxt.setBounds(140, 30, 200, 50);
 
-        try {
-            WeatherController.getMeteo(lblweather, lblweatherwind);
-            lblweatherimg.setIcon(iconWeather);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        add(lblweather);
+        add(lbltemperature);
         add(lblweatherwind);
         add(lblweathertxt);
         add(lblweatherimg);

@@ -22,6 +22,7 @@ public class NewWindowController {
 		MapController.generateMiniMap();
 		SwingUtilities.invokeLater(() -> homeV.setVisible(true));
 		homeV.addComponentListener(new ComponentAdapter() {
+			@SuppressWarnings("static-access")
 			@Override
 			public void componentResized(ComponentEvent e) {
 				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.componentBounds,

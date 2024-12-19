@@ -15,8 +15,8 @@ import java.util.Map;
  */
 public class TimeWidget extends RoundedPanel {
 
-    public VeryBigLabel lbltime = new VeryBigLabel();
-    public JLabel lbldate = new JLabel();
+    public static VeryBigLabel lbltime = new VeryBigLabel();
+    public static JLabel lbldate = new JLabel();
     public final Point timepanelpoint = new Point(1450, 620);
 
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
@@ -40,14 +40,8 @@ public class TimeWidget extends RoundedPanel {
      * @throws Exception 
      */
     private void setupTimeComponents() throws Exception {
-        try {
-            TimestampController.getTime(lbltime);
-            TimestampController.getDate(lbldate);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        lbltime.setHorizontalAlignment(SwingConstants.CENTER);
+    	lbltime.setHorizontalAlignment(SwingConstants.CENTER);
         lbltime.setFont(new Font("SansSerif", Font.BOLD, 20));
         lbltime.setBounds(25, 25, 300, 130);
 

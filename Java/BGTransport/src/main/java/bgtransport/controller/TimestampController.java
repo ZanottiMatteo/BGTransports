@@ -2,6 +2,8 @@ package bgtransport.controller;
 
 import javax.swing.*;
 
+import bgtransport.view.TimeWidget;
+
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -9,7 +11,7 @@ import java.util.Locale;
 
 public class TimestampController {
 	
-	public static void getTime(JLabel label) throws Exception{
+	public static void getTime() throws Exception{
         Thread thread = new Thread(() -> {
             while (true) {
                 // Get the current timestamp
@@ -19,7 +21,7 @@ public class TimestampController {
                 String formattedTimestamp = new SimpleDateFormat("HH:mm").format(timestamp);
 
                 // Update the label on the Event Dispatch Thread
-                SwingUtilities.invokeLater(() -> label.setText(formattedTimestamp));
+                SwingUtilities.invokeLater(() -> TimeWidget.lbltime.setText(formattedTimestamp));
 
                 try {
                     // Sleep for 1 second
@@ -33,7 +35,7 @@ public class TimestampController {
         thread.start(); // Start the thread
 	}
 	
-	public static void getDate(JLabel label) throws IOException{
+	public static void getDate() throws IOException{
 		Thread thread = new Thread(() -> {
             while (true) {
                 // Get the current timestamp
@@ -43,7 +45,7 @@ public class TimestampController {
                 String formattedTimestamp = new SimpleDateFormat("dd MMMM yyyy", Locale.ITALIAN).format(timestamp);
 
                 // Update the label on the Event Dispatch Thread
-                SwingUtilities.invokeLater(() -> label.setText(formattedTimestamp));
+                SwingUtilities.invokeLater(() -> TimeWidget.lbldate.setText(formattedTimestamp));
 
                 try {
                     // Sleep for 1 second

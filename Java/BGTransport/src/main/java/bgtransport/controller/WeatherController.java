@@ -3,6 +3,9 @@ package bgtransport.controller;
 import javax.swing.*;
 
 import org.json.JSONObject;
+
+import bgtransport.view.WeatherWidget;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -19,7 +22,7 @@ public class WeatherController {
 	static int weathercode;
 	static int isday = 1;
 		
-	public static void getMeteo(JLabel label, JLabel label2) throws IOException{
+	public static void getMeteo() throws IOException{
         String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
         try {
             URL url = new URL(apiUrl);
@@ -44,15 +47,15 @@ public class WeatherController {
             weathercode = currentWeather.getInt("weathercode");
             isday = currentWeather.getInt("is_day");
 
-                label.setText("🌡 " + temperature + "°C");
-                label2.setText("💨 " + windspeed + "Km/h");
+                WeatherWidget.lbltemperature.setText("🌡 " + temperature + "°C ");
+                WeatherWidget.lblweatherwind.setText("💨 " + windspeed + "Km/h");
         } catch (Exception e) {
             e.printStackTrace();
         }
 	}
 	
 
-	public static ImageIcon getWeatherIcon() {
+	public static void getWeatherIcon() {
         String code = Integer.toString(weathercode);
         try (FileReader openJSON = new FileReader("json/weather_images.json")) {
         	 StringBuilder sb = new StringBuilder();
@@ -82,7 +85,7 @@ public class WeatherController {
                 InputStream inputStream = connection.getInputStream();
                 BufferedImage image = ImageIO.read(inputStream);
                 inputStream.close();
-                return new ImageIcon(image);
+                WeatherWidget.iconWeather.setImage(image);
             } else System.out.println("error");
             
 
@@ -90,7 +93,6 @@ public class WeatherController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
 	}   
 }
 

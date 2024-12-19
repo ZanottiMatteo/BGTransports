@@ -27,6 +27,10 @@ public class MainController {
 
 	public static void main(String[] args) throws Exception {
         // Pass the map to the view
+		TimestampController.getTime();
+        TimestampController.getDate();
+		WeatherController.getMeteo();
+        WeatherController.getWeatherIcon();
 		LineController.setStation();
 		LineController.setLine();
 		LineController.setTime();
@@ -35,5 +39,6 @@ public class MainController {
 		ThemeController.updateThemes();
 		NewWindowController.openDBloader(dbV);
 		DownloadDataDBController.updateProgressbar();
+		
 		}
 }
