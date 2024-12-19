@@ -61,9 +61,9 @@ public class MapController {
     public static List<GeoPosition> busPosition = new ArrayList<>();
     public static List<GeoPosition> funicularPosition = new ArrayList<>();
     public static List<GeoPosition> tramPosition = new ArrayList<>();
-    private static List<Painter<JXMapViewer>> staticMarkers = new ArrayList<>();
+    public static List<Painter<JXMapViewer>> staticMarkers = new ArrayList<>();
     private static final List<Painter<JXMapViewer>> painters = new ArrayList<>();
-    private static final List<Painter<JXMapViewer>> transport = new ArrayList<>();
+    public static final List<Painter<JXMapViewer>> transport = new ArrayList<>();
     public static JXMapViewer fullMapViewer = new JXMapViewer(); // Create a separate instance for the full map
     public static JXMapViewer miniMapViewer = new JXMapViewer(); // Create a separate instance for the mini map
     private static final double TOLERANCE = 0.0003;
@@ -75,7 +75,7 @@ public class MapController {
     static ResizableImage funicular = new ResizableImage(new File("src/main/resources/images/Funicular.png"));
     static ResizableImage tram = new ResizableImage(new File("src/main/resources/images/Tram.png"));
      
-    private static int checkbus = 0;
+    public static int checkbus = 0;
     private static int checktrain = 0;
     private static int checkfunicular = 0;
     private static int checktram = 0;
@@ -149,7 +149,7 @@ public class MapController {
      * @param clickedPosition la posizione cliccata
      * @return il waypoint vicino, o null se nessun waypoint è vicino
      */
-    private static GeoPosition findNearbyWaypoint(GeoPosition clickedPosition) {
+    public static GeoPosition findNearbyWaypoint(GeoPosition clickedPosition) {
         for (GeoPosition position : positions) {
             if (isWithinTolerance(position, clickedPosition)) {
                 return position;
@@ -165,7 +165,7 @@ public class MapController {
      * @param pos2 la seconda posizione
      * @return true se le posizioni sono vicine, false altrimenti
      */
-    private static boolean isWithinTolerance(GeoPosition pos1, GeoPosition pos2) {
+    public static boolean isWithinTolerance(GeoPosition pos1, GeoPosition pos2) {
         double latDiff = Math.abs(pos1.getLatitude() - pos2.getLatitude());
         double lonDiff = Math.abs(pos1.getLongitude() - pos2.getLongitude());
         return latDiff <= TOLERANCE && lonDiff <= TOLERANCE;
