@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 
 import bgtransport.controller.LoginController;
 import bgtransport.model.UserQueryDB;
-import bgtransport.model.RegisteredUser;
 
 class LoginControllerTest {
 
