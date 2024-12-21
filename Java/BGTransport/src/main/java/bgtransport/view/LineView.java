@@ -102,21 +102,21 @@ public class LineView extends JFrame {
 
 	public JButton selectbutton = new JButton();
 	
-	public static JComboBox<String> depaturestation;
+	public  JComboBox<String> depaturestation;
 		
-	public static JComboBox<String> arrivestation;
+	public  JComboBox<String> arrivestation;
 	
-	public static JComboBox<String> line;
+	public JComboBox<String> line;
 	
-	public static JComboBox<String> arrivetime;
+	public  JComboBox<String> arrivetime;
 	
-	public static JComboBox<String> departuretime;
+	public  JComboBox<String> departuretime;
 	
-	public static JComboBox<String> week;
+	public  JComboBox<String> week;
 	
-	public static JComboBox<String> nextstop;
+	public  JComboBox<String> nextstop;
 	
-	public static JComboBox<String> timestop;
+	public  JComboBox<String> timestop;
 	
 	public static List<String> station;
 	
@@ -130,7 +130,7 @@ public class LineView extends JFrame {
 	
 	public static List<List<String>> departureList;
 	
-	public static List<List<String>> timeList;
+	public static List<List<String>> timeListList;
 	
 	public static List<List<String>> arriveList;
 	
@@ -362,7 +362,7 @@ public class LineView extends JFrame {
 		departuretime.addActionListener(e -> {
 			try {
 				LineController.getComboboxSelectionTime(departuretime);
-				LineController.updateComboBoxes1(line, arrivestation, arrivetime, nextstop, timestop, week, timeList);
+				LineController.updateComboBoxes1(line, arrivestation, arrivetime, nextstop, timestop, week, timeListList);
 				selectbutton.setEnabled(true);
 			} catch (SQLException e1) {
 				e1.printStackTrace();

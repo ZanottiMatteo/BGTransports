@@ -39,7 +39,7 @@ public class LineController {
 	
 	public static void getComboboxSelectionTime(JComboBox<String> departuretime) throws SQLException {
 		selectedItem1 = (String) departuretime.getSelectedItem();
-		LineView.timeList = PublicTransportationQueryDB.getInfo1(selectedItem1, selectedItem);
+		LineView.timeListList = PublicTransportationQueryDB.getInfo1(selectedItem1, selectedItem);
 	}
 	
 	public static void getComboboxSelectionFinalStation (JComboBox<String> arrivalstation) throws SQLException{
@@ -76,14 +76,14 @@ public class LineController {
 	    Set<String> uniqueTimeStops = new HashSet<>();
 	    Set<String> uniqueWeeks = new HashSet<>();
 
-	    for (List<String> record : arrivalList) {
-	        uniqueLines.add(record.get(0));
-	        uniqueDepartureTimes.add(record.get(1));
-	        uniqueArrivalStations.add(record.get(2));
-	        uniqueArrivalTimes.add(record.get(3));
-	        uniqueNextStops.add(record.get(4));
-	        uniqueTimeStops.add(record.get(5));
-	        uniqueWeeks.add(record.get(6));
+	    for (List<String> list : arrivalList) {
+	        uniqueLines.add(list.get(0));
+	        uniqueDepartureTimes.add(list.get(1));
+	        uniqueArrivalStations.add(list.get(2));
+	        uniqueArrivalTimes.add(list.get(3));
+	        uniqueNextStops.add(list.get(4));
+	        uniqueTimeStops.add(list.get(5));
+	        uniqueWeeks.add(list.get(6));
 	    }
 
 	    line.removeAllItems();
@@ -119,13 +119,13 @@ public class LineController {
 	    Set<String> uniqueTimeStops = new HashSet<>();
 	    Set<String> uniqueWeeks = new HashSet<>();
 
-	    for (List<String> record : timelist) {
-	        uniqueLines.add(record.get(0));
-	        uniqueArrivalStations.add(record.get(1));
-	        uniqueArrivalTimes.add(record.get(2));
-	        uniqueNextStops.add(record.get(3));
-	        uniqueTimeStops.add(record.get(4));
-	        uniqueWeeks.add(record.get(5));
+	    for (List<String> list : timelist) {
+	        uniqueLines.add(list.get(0));
+	        uniqueArrivalStations.add(list.get(1));
+	        uniqueArrivalTimes.add(list.get(2));
+	        uniqueNextStops.add(list.get(3));
+	        uniqueTimeStops.add(list.get(4));
+	        uniqueWeeks.add(list.get(5));
 	    }
 
 	    line.removeAllItems();
@@ -157,12 +157,12 @@ public class LineController {
 	    Set<String> uniqueTimeStops = new HashSet<>();
 	    Set<String> uniqueWeeks = new HashSet<>();
 
-	    for (List<String> record : arrivelist) {
-	        uniqueLines.add(record.get(0));
-	        uniqueArrivalTimes.add(record.get(1));
-	        uniqueNextStops.add(record.get(2));
-	        uniqueTimeStops.add(record.get(3));
-	        uniqueWeeks.add(record.get(4));
+	    for (List<String> list : arrivelist) {
+	        uniqueLines.add(list.get(0));
+	        uniqueArrivalTimes.add(list.get(1));
+	        uniqueNextStops.add(list.get(2));
+	        uniqueTimeStops.add(list.get(3));
+	        uniqueWeeks.add(list.get(4));
 	    }
 
 	    line.removeAllItems();

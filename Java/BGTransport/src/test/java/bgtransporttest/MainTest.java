@@ -14,7 +14,6 @@ class MainTest {
 		try {
 			Main.main(new String[] {});
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		assertNotNull(Main.springContext, "Il contesto Spring non dovrebbe essere nullo.");

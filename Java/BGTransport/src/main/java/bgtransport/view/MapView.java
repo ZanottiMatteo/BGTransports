@@ -255,13 +255,13 @@ public class MapView extends JFrame {
 			}
 		});
         
-        myposButton.addActionListener(e -> {
+        myposButton.addActionListener(e -> 
         	SwingUtilities.invokeLater(() -> {
         		MapController.openHtmlInBrowser();
             	MapController.waitForPositionAndExit();
-            });
+            })
         	
-		});
+		);
 
         // Action listener for the theme switch button
         menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());

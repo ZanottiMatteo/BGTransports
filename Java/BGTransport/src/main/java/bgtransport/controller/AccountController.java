@@ -76,13 +76,10 @@ public class AccountController {
 	        } else {
 	            System.out.println("Error: Unable to fetch image, Response Code: " + responseCode);
 	        }
-	    } catch (JSONException e) {
+	    } catch (JSONException | IOException e) {
 	        // Return null or a default image if the key is not found
 	        return null;
-	    } catch (IOException e) {
-	        // Handle file reading errors
-	        return null;
-	    }
+	    } 
 	    return null;
 	}
 }

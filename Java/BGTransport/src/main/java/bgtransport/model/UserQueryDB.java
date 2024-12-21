@@ -319,7 +319,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(User.USER).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromCompany(String database) throws SQLException {
@@ -327,7 +327,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Company.COMPANY).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromFunicularStation(String database) throws SQLException {
@@ -335,7 +335,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Funicularstation.FUNICULARSTATION).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromFunicularTimetable(String database) throws SQLException {
@@ -343,7 +343,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Funiculartimetable.FUNICULARTIMETABLE).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromPullmanStop(String database) throws SQLException {
@@ -351,7 +351,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Pullmanstop.PULLMANSTOP).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromPullmanTimetable(String database) throws SQLException {
@@ -359,7 +359,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Pullmantimetable.PULLMANTIMETABLE).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromTrainStation(String database) throws SQLException {
@@ -367,7 +367,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Trainstation.TRAINSTATION).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromTrainTimetable(String database) throws SQLException {
@@ -375,7 +375,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Traintimetable.TRAINTIMETABLE).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromTramStop(String database) throws SQLException {
@@ -383,7 +383,7 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Tramstop.TRAMSTOP).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 
 	public static void getDataFromTramTimetable(String database) throws SQLException {
@@ -391,6 +391,6 @@ public class UserQueryDB {
 		@NotNull
 		Result<Record> result = create.select().from(Tramtimetable.TRAMTIMETABLE).fetch();
 		columnNames = Arrays.stream(result.fields()).map(field -> field.getName()).toArray(String[]::new);
-		data = result.stream().map(record -> record.intoArray()).toArray(Object[][]::new);
+		data = result.stream().map(list -> list.intoArray()).toArray(Object[][]::new);
 	}
 }

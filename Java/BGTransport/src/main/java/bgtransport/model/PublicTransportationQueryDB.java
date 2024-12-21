@@ -42,15 +42,15 @@ public class PublicTransportationQueryDB {
 	            .fetch();
 
 	    List<List<String>> allInfo = new ArrayList<>();
-	    for (Record7<String, String, String, String, String, String, String> record : data) {
+	    for (Record7<String, String, String, String, String, String, String> list : data) {
 	        List<String> info = new ArrayList<>();
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.DEPARTURETIME));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
 	        allInfo.add(info);
 	    }
 	    return allInfo;
@@ -71,14 +71,14 @@ public class PublicTransportationQueryDB {
 	            .fetch();
 
 	    List<List<String>> allInfo = new ArrayList<>();
-	    for (Record6<String, String, String, String, String, String> record : data) {
+	    for (Record6<String, String, String, String, String, String> list : data) {
 	        List<String> info = new ArrayList<>();
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALPULLMANSTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
 	        allInfo.add(info);
 	    }
 	    return allInfo;
@@ -98,13 +98,13 @@ public class PublicTransportationQueryDB {
 	            .fetch();
 		
 		List<List<String>> allInfo = new ArrayList<>();
-	    for (Record5<String, String, String, String, String> record : data) {
+	    for (Record5<String, String, String, String, String> list : data) {
 	        List<String> info = new ArrayList<>();
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
-	        info.add(record.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.LINE));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.ARRIVALTIME));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.NEXTSTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.TIMESTOP));
+	        info.add(list.get(Pullmantimetable.PULLMANTIMETABLE.TYPE));
 	        allInfo.add(info);
 	    }
 	    return allInfo;
