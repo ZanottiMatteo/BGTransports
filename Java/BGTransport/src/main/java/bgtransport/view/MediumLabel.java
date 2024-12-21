@@ -7,6 +7,11 @@ import javax.swing.SwingConstants;
 
 public class MediumLabel extends JLabel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2874013393477463671L;
+
 	public MediumLabel(String text) {
         super(text, SwingConstants.CENTER);
         setOpaque(false); // Make background transparent

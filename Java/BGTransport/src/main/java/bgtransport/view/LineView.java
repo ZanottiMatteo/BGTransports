@@ -5,10 +5,9 @@ import javax.swing.text.JTextComponent;
 
 import bgtransport.controller.LineController;
 import bgtransport.controller.MainController;
-import bgtransport.controller.MapController;
 import bgtransport.controller.NewWindowController;
 import bgtransport.controller.ThemeController;
-import bgtransport.model.ConstantString;
+import bgtransport.model.ConstantString2;
 import bgtransport.model.ResizableImage;
 
 import java.awt.Color;
@@ -18,6 +17,9 @@ import java.awt.Frame;
 import java.awt.Rectangle;
 import java.io.File;
 import java.sql.SQLException;
+import java.time.Duration;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +34,11 @@ import java.awt.Font;
  * the application.
  */
 public class LineView extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8777186420120442479L;
 
 	// Main container panel for the application.
 	public JPanel mainPanel = new JPanel();
@@ -90,6 +97,8 @@ public class LineView extends JFrame {
 	private final MediumLabel nextstoptimelabel = new MediumLabel("Orario Prossima Fermata:");
 	
 	private final MediumLabel weeklabel = new MediumLabel("Periodo:");
+	
+	private final MediumLabel finallabel = new MediumLabel("");
 
 	public JButton selectbutton = new JButton();
 	
@@ -116,6 +125,8 @@ public class LineView extends JFrame {
 	public static List<String> timelist;
 	
 	public static List<String> weeklist;
+	
+	public static List<String> allValueList = new ArrayList<>();
 	
 	public static List<List<String>> departureList;
 	
@@ -169,6 +180,11 @@ public class LineView extends JFrame {
 	private void setupMainPanel() {
 		// Override the paintComponent method to draw the background image
 		mainPanel = new JPanel() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 65337158073054498L;
+
 			@Override
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
@@ -266,9 +282,14 @@ public class LineView extends JFrame {
 		week.setLocation(1000, y + 210);
 		week.setSize(500, 50);
 		centerPanel.add(week);
+		finallabel.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		finallabel.setLocation(80, y + 330);
+		finallabel.setSize(1000, 400);
+		centerPanel.add(finallabel);
 		
 		selectbutton.setText("Conferma");
-		selectbutton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		selectbutton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		selectbutton.setHorizontalAlignment(SwingConstants.CENTER);
 		selectbutton.setBackground(new Color(210, 105, 30));
 		selectbutton.setForeground(new Color(255, 255, 255));
@@ -289,8 +310,6 @@ public class LineView extends JFrame {
             public void keyReleased(java.awt.event.KeyEvent e) {
                 String input = editor.getText();
                 comboBox.removeAllItems();
-
-                // Filtraggio delle opzioni
                 options.stream()
                         .filter(option -> option.toLowerCase().contains(input.toLowerCase()))
                         .forEach(comboBox::addItem);
@@ -302,19 +321,6 @@ public class LineView extends JFrame {
 
         return comboBox;
     }
-
-	/**
-	 * Creates a JButton with an icon and specific dimensions.
-	 */
-	private JButton createIconButton(ImageIcon icon, int x, int y) {
-		JButton button = new JButton();
-		button.setBounds(x, y, 60, 60);
-		button.setRolloverEnabled(false);
-		button.setBorderPainted(false); // Remove border
-		button.setIcon(icon); // Set the icon
-		button.setBackground(new Color(0, 0, 0, 0)); // Transparent background
-		return button;
-	}
 
 	/**
 	 * Adds action listeners to buttons for handling user interactions.
@@ -373,6 +379,21 @@ public class LineView extends JFrame {
 			}
 		});
 		
+		selectbutton.addActionListener(e -> {
+			allValueList.clear();
+			LineController.getValuesOfComboBox(depaturestation, departuretime, arrivestation, arrivetime, nextstop, timestop, line, week);
+			String result = calculateTimeDifference(allValueList.get(1), allValueList.get(3));
+			System.out.println("Valori: " + allValueList);
+            finallabel.setText("<html>" +
+            					"Partenza: " + String.join(" ", allValueList.get(0)) + " Orario: " + String.join(" ", allValueList.get(1)) + "<br>" +
+            					"Arrivo: " + String.join(" ", allValueList.get(2)) + " Orario: " + String.join(" ", allValueList.get(3)) + "<br>" +
+            					"Fermata: " + String.join(" ", allValueList.get(4)) + " Orario: " + String.join(" ", allValueList.get(5)) + "<br>" +
+            					"Linea: " + String.join(" ", allValueList.get(6)) + "<br>" +
+            					"Periodo: " + String.join(" ", allValueList.get(7)) + "<br>" +
+            					"Tempo necessario: " + result+
+            					"</html>");
+		});
+		
 		// Action listener for the theme switch button
 		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
 
@@ -391,5 +412,14 @@ public class LineView extends JFrame {
 		for (Component comp : centerPanel.getComponents()) {
 			componentBounds.put(comp, comp.getBounds());
 		}
+	}
+	
+	public static String calculateTimeDifference(String departureTimeStr, String arrivalTimeStr) {
+        LocalTime departureTime = LocalTime.parse(departureTimeStr);
+        LocalTime arrivalTime = LocalTime.parse(arrivalTimeStr);
+        Duration duration = Duration.between(departureTime, arrivalTime);
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes() % 60;
+        return String.format("%d ore e %d minuti", hours, minutes);
 	}
 }

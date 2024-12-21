@@ -18,7 +18,7 @@ public class RegisteredUser{
 	int role;
 	
 	private void loadUserDetails() throws SQLException {
-        List<String> userDetails = QueryDB.getUserDetailsByEmail(this.email);
+        List<String> userDetails = UserQueryDB.getUserDetailsByEmail(this.email);
 
         if (!userDetails.isEmpty()) {
             this.name = userDetails.get(0);
@@ -40,7 +40,7 @@ public class RegisteredUser{
 
 	public void setName(String name) throws SQLException {
 		this.name = name;
-		QueryDB.setNameUser(this.email, name);
+		UserQueryDB.setNameUser(this.email, name);
 	}
 
 	public String getSurname() {
@@ -49,7 +49,7 @@ public class RegisteredUser{
 
 	public void setSurname(String surname) throws SQLException {
 		this.surname = surname;
-		QueryDB.setSurnameUser(this.email, surname);
+		UserQueryDB.setSurnameUser(this.email, surname);
 	}
 
 	public String getBirthday() {
@@ -58,7 +58,7 @@ public class RegisteredUser{
 
 	public void setBirthday(String birthday) throws SQLException {
 		this.birthday = birthday;
-		QueryDB.setBirthdayUser(this.email, birthday);
+		UserQueryDB.setBirthdayUser(this.email, birthday);
 	}
 
 	public int getRole() {
@@ -67,7 +67,7 @@ public class RegisteredUser{
 
 	public void setRole(int role) throws SQLException {
 		this.role = role;
-		QueryDB.setRoleUser(this.email, role);
+		UserQueryDB.setRoleUser(this.email, role);
 	}
 
 	public String getEmail() {
@@ -94,7 +94,7 @@ public class RegisteredUser{
 
 	public void setUsername(String username) throws SQLException {
 		this.username = username;
-		QueryDB.setUsernameUser(this.email, username);
+		UserQueryDB.setUsernameUser(this.email, username);
 	}
 	
 	public String getAddress() {
@@ -103,7 +103,7 @@ public class RegisteredUser{
 
 	public void setAddress(String address) throws SQLException {
 		this.address = address;
-		QueryDB.setAddressUser(this.email, address);
+		UserQueryDB.setAddressUser(this.email, address);
 	}
 
 	public String getCity() {
@@ -112,7 +112,7 @@ public class RegisteredUser{
 
 	public void setCity(String city) throws SQLException {
 		this.city = city;
-		QueryDB.setTownUser(this.email, city);
+		UserQueryDB.setTownUser(this.email, city);
 	}
 
 	public String getZIPcode() {
@@ -121,7 +121,7 @@ public class RegisteredUser{
 
 	public void setZIPcode(String zipCode) throws SQLException {
 		this.zipCode = zipCode;
-		QueryDB.setCAPUser(this.email, zipCode);
+		UserQueryDB.setCAPUser(this.email, zipCode);
 	}
 
 	public int getImageAccount() {
@@ -129,7 +129,7 @@ public class RegisteredUser{
 	}
 	public void setImageAccount(int imageAccount) throws SQLException {
 		this.imageAccount = imageAccount;
-		QueryDB.setIconUser(this.email, imageAccount);
+		UserQueryDB.setIconUser(this.email, imageAccount);
 	}	
 	
 	

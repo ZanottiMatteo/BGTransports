@@ -5,6 +5,10 @@ import java.awt.*;
 
 public class CircleLabel extends JLabel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6658732530121520664L;
 	private Color circleColor = new Color(0, 0, 0, 0);
 	private Color borderColor = new Color(0, 0, 0, 0);
 

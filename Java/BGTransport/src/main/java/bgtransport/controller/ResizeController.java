@@ -6,8 +6,6 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
@@ -18,7 +16,7 @@ import javax.swing.JPanel;
 
 import org.jxmapviewer.JXMapViewer;
 
-import bgtransport.model.ConstantString;
+import bgtransport.model.ConstantString2;
 import bgtransport.model.ResizableImage;
 import bgtransport.view.BigLabel;
 import bgtransport.view.LittleLabel;
@@ -44,37 +42,37 @@ public class ResizeController {
 
 				int fontSize = Math.max(jframe.getWidth() / 100, 10);
 
-				label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+				label.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, fontSize));
 			} else if (comp instanceof MiniLabel) {
 				MiniLabel label = (MiniLabel) comp;
 
 				int fontSize = Math.max(jframe.getWidth() / 130, 10);
 
-				label.setFont(new Font(ConstantString.SANSSERIF, Font.ITALIC, fontSize));
+				label.setFont(new Font(ConstantString2.SANSSERIF, Font.ITALIC, fontSize));
 			} else if (comp instanceof MediumLabel) {
 				MediumLabel label = (MediumLabel) comp;
 
 				int fontSize = Math.max(jframe.getWidth() / 90, 10);
 
-				label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+				label.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, fontSize));
 			} else if (comp instanceof BigLabel) {
 				BigLabel label = (BigLabel) comp;
 
 				int fontSize = Math.max(jframe.getWidth() / 50, 10);
 
-				label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+				label.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, fontSize));
 			} else if (comp instanceof VeryBigLabel) {
 				VeryBigLabel label = (VeryBigLabel) comp;
 
 				int fontSize = Math.max(jframe.getWidth() / 20, 10);
 
-				label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+				label.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, fontSize));
 			} else if (comp instanceof JLabel) {
 				JLabel label = (JLabel) comp;
 
 				int fontSize = Math.max(jframe.getWidth() / 60, 10);
 
-				label.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, fontSize));
+				label.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, fontSize));
 			}
 		}
 		panel.repaint();

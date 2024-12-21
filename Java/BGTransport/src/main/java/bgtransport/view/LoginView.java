@@ -6,7 +6,7 @@ import bgtransport.controller.LoginController;
 import bgtransport.controller.MainController;
 import bgtransport.controller.NewWindowController;
 import bgtransport.controller.ThemeController;
-import bgtransport.model.ConstantString;
+import bgtransport.model.ConstantString2;
 import bgtransport.model.ResizableImage;
 
 import java.awt.Color;
@@ -140,7 +140,7 @@ public class LoginView extends JFrame {
     private void initializeSignInButton() {
         signInButton.setText("Sign In");
         signInButton.setForeground(new Color(255, 255, 255));
-        signInButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+        signInButton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
         signInButton.setBackground(new Color(210, 105, 30));
         signInButton.setBounds(885, 645, 150, 60);
         signInButton.addActionListener(e -> LoginController.login(textField, passwordField));
@@ -155,7 +155,7 @@ public class LoginView extends JFrame {
         signupButton.setRolloverEnabled(false);
         signupButton.setBounds(885, 730, 150, 35);
         signupButton.setPreferredSize(null);
-        signupButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 15));
+        signupButton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 15));
         signupButton.setBorderPainted(false);
         signupButton.setBackground(new Color(0, 0, 0, 0));
         signupButton.addActionListener(e -> NewWindowController.openSignUp(MainController.signupV));
@@ -194,17 +194,17 @@ public class LoginView extends JFrame {
      */
     private void initializeLabels() {
         textEmail.setHorizontalAlignment(SwingConstants.LEFT);
-        textEmail.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+        textEmail.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 12));
         textEmail.setBounds(852, 405, 150, 30);
         mainPanel.add(textEmail);
 
         lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
-        lblPassword.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+        lblPassword.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 12));
         lblPassword.setBounds(852, 515, 150, 30);
         mainPanel.add(lblPassword);
         
         errorLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        errorLabel.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 12));
+        errorLabel.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 12));
         errorLabel.setForeground(new Color(255, 0, 0));
         errorLabel.setBounds(580, 605, 760, 30);
         errorLabel.setVisible(false);

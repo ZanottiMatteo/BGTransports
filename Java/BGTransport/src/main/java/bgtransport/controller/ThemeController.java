@@ -2,7 +2,6 @@ package bgtransport.controller;
 
 import java.awt.Color;
 import java.awt.Window;
-import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -15,7 +14,6 @@ import bgtransport.view.HomeView;
 import bgtransport.view.LineView;
 import bgtransport.view.LoginView;
 import bgtransport.view.MapView;
-import bgtransport.view.TitleWidget;
 import bgtransport.view.UserView;
 
 public class ThemeController {

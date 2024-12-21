@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import bgtransport.controller.LoginController;
 import bgtransport.controller.UserInfoController;
-import bgtransport.model.ConstantString;
+import bgtransport.model.ConstantString2;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,6 +15,10 @@ import java.util.List;
 
 public class AccountIconView extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6035159057813854015L;
 	public static final JLabel lblSignUp = new JLabel("Immagine Profilo");
 	public static final JButton button1Label = new JButton();
 	public static final JButton button2Label = new JButton();
@@ -53,14 +57,14 @@ public class AccountIconView extends JFrame {
 
 		lblSignUp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSignUp.setForeground(new Color(210, 105, 30));
-		lblSignUp.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 50));
+		lblSignUp.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 50));
 		lblSignUp.setBounds(84, 11, 412, 95);
 		panel.add(lblSignUp);
 
 		JScrollPane scrollPane = new JScrollPane(panel);
 
 		confirmButton.setForeground(Color.WHITE);
-		confirmButton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		confirmButton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		confirmButton.setBackground(new Color(210, 105, 30));
 		confirmButton.setBounds(215, 805, 150, 50);
 		confirmButton.addActionListener(e -> {
@@ -142,7 +146,7 @@ public class AccountIconView extends JFrame {
 
 		JLabel lblScegliLaTua = new JLabel("Scegli la tua immagine profilo per l'account");
 		lblScegliLaTua.setHorizontalAlignment(SwingConstants.CENTER);
-		lblScegliLaTua.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		lblScegliLaTua.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		lblScegliLaTua.setBounds(84, 106, 412, 95);
 		panel.add(lblScegliLaTua);
 

@@ -13,26 +13,14 @@ import java.net.URI;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import javax.swing.SwingUtilities;
 import javax.swing.event.MouseInputListener;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import bgtransport.model.QueryDB;
+import bgtransport.model.PublicTransportationQueryDB;
 import bgtransport.model.ResizableImage;
 import bgtransport.view.HomeView;
 import bgtransport.view.MapView;
@@ -253,7 +241,7 @@ public class MapController {
 
         if (checkbus == 1) {
             // Aggiungi i bus
-            List<GeoPosition> busPositions = QueryDB.getPullmanGeopositions();
+            List<GeoPosition> busPositions = PublicTransportationQueryDB.getPullmanGeopositions();
             if (busPositions != null) {
                 for (GeoPosition position : busPositions) {
                     // Crea un painter per ogni posizione
@@ -298,7 +286,7 @@ public class MapController {
 
         if (checktrain == 1) {
             // Add trains
-            List<GeoPosition> trainPositions = QueryDB.getTrainGeopositions();
+            List<GeoPosition> trainPositions = PublicTransportationQueryDB.getTrainGeopositions();
             if (trainPositions != null) {
                 for (GeoPosition position : trainPositions) {
                     // Create a painter for each position
@@ -342,7 +330,7 @@ public class MapController {
 
         if (checkfunicular == 1) {
             // Add funiculars
-            List<GeoPosition> funicularPositions = QueryDB.getFunicularGeopositions();
+            List<GeoPosition> funicularPositions = PublicTransportationQueryDB.getFunicularGeopositions();
             if (funicularPositions != null) {
                 for (GeoPosition position : funicularPositions) {
                     // Create a painter for each position
@@ -389,7 +377,7 @@ public class MapController {
 
         if (checktram == 1) {
             // Add trams
-            List<GeoPosition> tramPositions = QueryDB.getTramGeopositions();
+            List<GeoPosition> tramPositions = PublicTransportationQueryDB.getTramGeopositions();
             if (tramPositions != null) {
                 for (GeoPosition position : tramPositions) {
                     // Create a painter for each position

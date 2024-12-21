@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
-import bgtransport.model.QueryDB;
+import bgtransport.model.UserQueryDB;
 import bgtransport.view.UserView;
 import bgtransport.view.UserWidget;
 
@@ -68,7 +68,7 @@ public class UserInfoController {
 				try {
 					System.out.println(LoginController.userlogged.getEmail());
 					email = LoginController.userlogged.getEmail();
-					textFields[i].setText(QueryDB.getUserDetailsByEmail(email).get(i));
+					textFields[i].setText(UserQueryDB.getUserDetailsByEmail(email).get(i));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

@@ -2,7 +2,6 @@ package bgtransport.controller;
 
 import org.json.JSONObject;
 import org.jxmapviewer.viewer.GeoPosition;
-import org.springframework.boot.SpringApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

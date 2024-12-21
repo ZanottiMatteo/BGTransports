@@ -7,7 +7,12 @@ import java.awt.RenderingHints;
 import javax.swing.JPanel;
 
 public class RoundedPanel extends JPanel {
-	    @Override
+	    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -9132459862294043178L;
+
+		@Override
 	    protected void paintComponent(Graphics g) {
 	        super.paintComponent(g);
 	        Graphics2D g2d = (Graphics2D) g.create();

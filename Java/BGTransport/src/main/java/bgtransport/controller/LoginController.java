@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import bgtransport.model.QueryDB;
+import bgtransport.model.UserQueryDB;
 import bgtransport.model.RegisteredUser;
 
 public class LoginController {
@@ -21,14 +21,14 @@ public class LoginController {
 		
 		if ((email != null)) {
 				try {
-					for(int i = 0; i < QueryDB.getAllUserEmails().size(); i++) {
-					if ((email.equals(QueryDB.getAllUserEmails().get(i)) && (password.equals(QueryDB.getAllUserPassword().get(i))))) {
+					for(int i = 0; i < UserQueryDB.getAllUserEmails().size(); i++) {
+					if ((email.equals(UserQueryDB.getAllUserEmails().get(i)) && (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
 						System.out.println("Login OK");
 						userlogged.setEmail(email);
 						NewWindowController.openUserPanel(MainController.userV);
 						MainController.loginV.setVisible(false);
 					}										
-					else if ((email.equals(QueryDB.getAllUserEmails().get(i)) && (!password.equals(QueryDB.getAllUserPassword().get(i))))){
+					else if ((email.equals(UserQueryDB.getAllUserEmails().get(i)) && (!password.equals(UserQueryDB.getAllUserPassword().get(i))))){
 						MainController.loginV.passwordField.setText("");
 						MainController.loginV.errorLabel.setVisible(true);
 						MainController.loginV.errorLabel.setText("Password Errata !");

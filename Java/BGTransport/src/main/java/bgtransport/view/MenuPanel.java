@@ -2,7 +2,6 @@ package bgtransport.view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +10,11 @@ import java.util.Map;
  * encapsulating the layout and components like buttons for navigation.
  */
 public class MenuPanel extends RoundedPanel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7341471637413744104L;
 
 	public final Point menupanelpoint = new Point(15, 30);
 	

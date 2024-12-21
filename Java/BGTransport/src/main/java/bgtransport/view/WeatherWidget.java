@@ -2,11 +2,9 @@ package bgtransport.view;
 
 import javax.swing.*;
 
-import bgtransport.controller.WeatherController;
-import bgtransport.model.ConstantString;
+import bgtransport.model.ConstantString2;
 
 import java.awt.*;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,11 +41,11 @@ public class WeatherWidget extends RoundedPanel {
     private void setupWeatherComponents() {
     	
         lbltemperature.setHorizontalAlignment(SwingConstants.LEFT);
-        lbltemperature.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 70));
+        lbltemperature.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 70));
         lbltemperature.setBounds(140, 170, 200, 50);
 
         lblweatherwind.setHorizontalAlignment(SwingConstants.LEFT);
-        lblweatherwind.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 70));
+        lblweatherwind.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 70));
         lblweatherwind.setBounds(140, 100, 200, 50);
 
         lblweatherimg.setVerticalAlignment(SwingConstants.CENTER);

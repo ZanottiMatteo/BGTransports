@@ -1,12 +1,9 @@
 package bgtransport.controller;
 
-import javax.swing.*;
-
 import org.json.JSONObject;
 
 import bgtransport.view.WeatherWidget;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileReader;

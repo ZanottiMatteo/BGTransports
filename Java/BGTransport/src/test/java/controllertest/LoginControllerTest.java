@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import bgtransport.controller.LoginController;
-import bgtransport.model.QueryDB;
+import bgtransport.model.UserQueryDB;
 import bgtransport.model.RegisteredUser;
 
 class LoginControllerTest {
@@ -75,7 +75,7 @@ class LoginControllerTest {
     }    
 
     // Classe statica di supporto per simulare QueryDB con dati statici
-    static class TestQueryDB extends QueryDB {
+    static class TestQueryDB extends UserQueryDB {
 
         private static final List<String> testEmails = new ArrayList<>();
         private static final List<String> testPasswords = new ArrayList<>();

@@ -1,6 +1,5 @@
 package bgtransport.controller;
 
-import bgtransport.model.ConstantDB;
 import bgtransport.view.AccountIconView;
 import bgtransport.view.DatabaseView;
 import bgtransport.view.DownloadDataDBView;

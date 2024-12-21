@@ -2,10 +2,7 @@ package bgtransport.view;
 
 import javax.swing.*;
 
-import bgtransport.controller.TimestampController;
-
 import java.awt.*;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +12,11 @@ import java.util.Map;
  */
 public class TimeWidget extends RoundedPanel {
 
-    public static VeryBigLabel lbltime = new VeryBigLabel();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3853592167184484370L;
+	public static VeryBigLabel lbltime = new VeryBigLabel();
     public static JLabel lbldate = new JLabel();
     public final Point timepanelpoint = new Point(1450, 620);
 

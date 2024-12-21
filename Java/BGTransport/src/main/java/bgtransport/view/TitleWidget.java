@@ -1,6 +1,5 @@
 package bgtransport.view;
 
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -13,6 +12,10 @@ import javax.swing.SwingConstants;
 
 public class TitleWidget extends RoundedPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3241355394732881103L;
 	public final Point infopanelpoint = new Point(235, 30);
 	public JLabel logoLabel = new JLabel();
     public JLabel logoLabelD = new JLabel();

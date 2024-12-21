@@ -7,7 +7,7 @@ import java.util.Set;
 
 import javax.swing.JComboBox;
 
-import bgtransport.model.QueryDB;
+import bgtransport.model.PublicTransportationQueryDB;
 import bgtransport.view.LineView;
 
 public class LineController {
@@ -17,34 +17,45 @@ public class LineController {
 	public static String selectedItem2;
 
 	public static void setStation() throws SQLException{
-		LineView.station = QueryDB.getNameStation();
+		LineView.station = PublicTransportationQueryDB.getNameStation();
 	}
 	
 	public static void setLine() throws SQLException {
-		LineView.linelist = QueryDB.getLineList();
+		LineView.linelist = PublicTransportationQueryDB.getLineList();
 	}
 	
 	public static void setTime() throws SQLException {
-		LineView.timelist = QueryDB.getTimeList();
+		LineView.timelist = PublicTransportationQueryDB.getTimeList();
 	}
 	
 	public static void setWeek() throws SQLException {
-		LineView.weeklist = QueryDB.getWeekList();
+		LineView.weeklist = PublicTransportationQueryDB.getWeekList();
 	}
 	
 	public static void getComboboxSelectionStation(JComboBox<String> depaturestation) throws SQLException {
 		selectedItem = (String) depaturestation.getSelectedItem();
-		LineView.departureList = QueryDB.getInfo(selectedItem);
+		LineView.departureList = PublicTransportationQueryDB.getInfo(selectedItem);
 	}
 	
 	public static void getComboboxSelectionTime(JComboBox<String> departuretime) throws SQLException {
 		selectedItem1 = (String) departuretime.getSelectedItem();
-		LineView.timeList = QueryDB.getInfo1(selectedItem1, selectedItem);
+		LineView.timeList = PublicTransportationQueryDB.getInfo1(selectedItem1, selectedItem);
 	}
 	
 	public static void getComboboxSelectionFinalStation (JComboBox<String> arrivalstation) throws SQLException{
 		selectedItem2 = (String) arrivalstation.getSelectedItem();
-		LineView.arriveList = QueryDB.getInfo2(selectedItem2, selectedItem1, selectedItem);
+		LineView.arriveList = PublicTransportationQueryDB.getInfo2(selectedItem2, selectedItem1, selectedItem);
+	}
+	
+	public static void getValuesOfComboBox(JComboBox<String> depaturestation, JComboBox<String> departuretime, JComboBox<String> arrivestation, JComboBox<String> arrivetime, JComboBox<String> nextstop, JComboBox<String> timestop, JComboBox<String> line, JComboBox<String> week) {
+		LineView.allValueList.add((String) depaturestation.getSelectedItem());
+		LineView.allValueList.add((String) departuretime.getSelectedItem());
+		LineView.allValueList.add((String) arrivestation.getSelectedItem());
+		LineView.allValueList.add((String) arrivetime.getSelectedItem());
+		LineView.allValueList.add((String) nextstop.getSelectedItem());
+		LineView.allValueList.add((String) timestop.getSelectedItem());
+		LineView.allValueList.add((String) line.getSelectedItem());
+		LineView.allValueList.add((String) week.getSelectedItem());
 	}
 	
 	public static void updateComboBoxes(

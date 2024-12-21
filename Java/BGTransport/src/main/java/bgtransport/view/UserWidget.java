@@ -13,7 +13,11 @@ import java.util.Map;
 public class UserWidget extends RoundedPanel {
 
 	
-    public final Point userpanelpoint = new Point(235, 270);
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8199651767909840164L;
+	public final Point userpanelpoint = new Point(235, 270);
     public static CircleLabel accounticon = new CircleLabel();
     public static LittleLabel usernamelabel = new LittleLabel();
     public static LittleLabel complnamelabel = new LittleLabel();

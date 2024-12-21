@@ -7,7 +7,7 @@ import bgtransport.controller.MainController;
 import bgtransport.controller.NewWindowController;
 import bgtransport.controller.ThemeController;
 import bgtransport.controller.UserInfoController;
-import bgtransport.model.ConstantString;
+import bgtransport.model.ConstantString2;
 import bgtransport.model.ResizableImage;
 
 import java.awt.*;
@@ -222,7 +222,7 @@ public class UserView extends JFrame {
 		changeData.setBounds(800, yPosition, 200, 50);
 		changeData.setText("Modifica");
 		changeData.setForeground(Color.WHITE);
-		changeData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		changeData.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		changeData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(changeData);
 
@@ -230,7 +230,7 @@ public class UserView extends JFrame {
 		saveData.setVisible(false);
 		saveData.setText("Salva");
 		saveData.setForeground(Color.WHITE);
-		saveData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		saveData.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		saveData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(saveData);
 
@@ -238,14 +238,14 @@ public class UserView extends JFrame {
 		discardData.setVisible(false);
 		discardData.setText("Annulla");
 		discardData.setForeground(Color.WHITE);
-		discardData.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		discardData.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		discardData.setBackground(new Color(210, 105, 30));
 		centerPanel.add(discardData);
 		
 		logoutbutton.setBounds(1400, 50, 100, 50);
 		logoutbutton.setText("Log Out");
 		logoutbutton.setForeground(Color.WHITE);
-		logoutbutton.setFont(new Font(ConstantString.SANSSERIF, Font.BOLD, 16));
+		logoutbutton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		logoutbutton.setBackground(new Color(210, 105, 30));
 		centerPanel.add(logoutbutton);
 	}

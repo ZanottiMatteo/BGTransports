@@ -4,7 +4,12 @@ import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
 public class MyLighterLaf extends FlatLightLaf {
-    public static boolean setup() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8352985710899805956L;
+
+	public static boolean setup() {
         // Load the custom properties file
         try {
             System.out.println("Initializing MyLighterLaf...");

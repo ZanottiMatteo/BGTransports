@@ -6,13 +6,11 @@ import bgtransport.controller.MainController;
 import bgtransport.controller.MapController;
 import bgtransport.controller.NewWindowController;
 import bgtransport.controller.ThemeController;
-import bgtransport.model.ConstantString;
 import bgtransport.model.ResizableImage;
 
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Rectangle;
 import java.io.File;
@@ -29,6 +27,11 @@ import java.awt.Point;
  * the application.
  */
 public class MapView extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3601220816542830205L;
 
 	// Main container panel for the application.
 	public JPanel mainPanel = new JPanel();
@@ -127,7 +130,12 @@ public class MapView extends JFrame {
     private void setupMainPanel() {
         // Override the paintComponent method to draw the background image
         mainPanel = new JPanel() {
-            @Override
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 289126945885214701L;
+
+			@Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this); // Draw background image

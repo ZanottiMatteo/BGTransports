@@ -11,7 +11,11 @@ import java.util.Map;
  */
 public class MiniMapWidget extends RoundedPanel {
 
-    public final Point miniMapPanelPoint = new Point(720, 370);
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1032345262451057013L;
+	public final Point miniMapPanelPoint = new Point(720, 370);
     public final Point mappoint = new Point(25, 25);
     public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 

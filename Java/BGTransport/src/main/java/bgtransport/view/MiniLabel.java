@@ -7,6 +7,11 @@ import javax.swing.SwingConstants;
 
 public class MiniLabel extends JLabel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8782867696914753464L;
+
 	public MiniLabel(String text) {
         super(text, SwingConstants.CENTER);
         setOpaque(false); // Make background transparent

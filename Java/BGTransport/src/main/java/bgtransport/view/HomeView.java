@@ -20,6 +20,10 @@ import java.util.Map;
  */
 public class HomeView extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7834222396903699529L;
 	public JPanel mainPanel = new JPanel();
 	public final MenuPanel menuPanel = new MenuPanel();
 	public final RoundedPanel homePanel = new RoundedPanel();
@@ -59,6 +63,11 @@ public class HomeView extends JFrame {
 
 		// Initialize main panel with custom background rendering.
 		mainPanel = new JPanel() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 7765985167942887712L;
+
 			@Override
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
