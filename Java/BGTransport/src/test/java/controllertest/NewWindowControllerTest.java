@@ -46,19 +46,9 @@ public class NewWindowControllerTest {
     }
 
     @Test
-    public void testOpenHomePanel() throws InterruptedException {
-        // Utilizza CountDownLatch per sincronizzare il test
-        CountDownLatch latch = new CountDownLatch(1);
-
-        SwingUtilities.invokeLater(() -> {
-            NewWindowController.openHomePanel(homeView);
-            latch.countDown(); // Indica che l'operazione è completata
-        });
-
-        // Attendi che la finestra sia visibile
-        latch.await();
-
-        // Verifica se la finestra è visibile
+    public void testSimpleHomeViewVisibility() {
+        HomeView homeView = new HomeView();
+        NewWindowController.openHomePanel(homeView);
         assertTrue(homeView.isVisible(), "La finestra HomeView dovrebbe essere visibile");
     }
 
