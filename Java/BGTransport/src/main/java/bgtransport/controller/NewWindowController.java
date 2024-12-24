@@ -15,8 +15,18 @@ import bgtransport.view.MapView;
 import bgtransport.view.SignUpView;
 import bgtransport.view.UserView;
 
+/**
+ * Controller class for managing the opening of different views or panels in the
+ * application.
+ */
 public class NewWindowController {
 
+	/**
+	 * Opens the home panel and sets up necessary components like map generation and
+	 * resizing.
+	 * 
+	 * @param homeV The HomeView object to be displayed.
+	 */
 	public static void openHomePanel(HomeView homeV) {
 		MapController.generateMap();
 		MapController.generateMiniMap();
@@ -38,7 +48,7 @@ public class NewWindowController {
 				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.userPanel.componentBounds,
 						homeV.userPanel);
 				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.infoPanel.componentBounds,
-						homeV.infoPanel);					
+						homeV.infoPanel);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconUser,
 						homeV.menuPanel.userButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconMap,
@@ -52,7 +62,7 @@ public class NewWindowController {
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLDmode,
 						homeV.menuPanel.switchThemeButton);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.weatherPanel.iconWeather,
-						homeV.weatherPanel.lblweatherimg);	
+						homeV.weatherPanel.lblweatherimg);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogo,
 						homeV.infoPanel.logoLabel);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogoD,
@@ -64,19 +74,24 @@ public class NewWindowController {
 						homeV.widgetPanelSizeMedium, homeV.weatherPanel.weatherpanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.timePanel,
 						homeV.widgetPanelSizeMedium, homeV.timePanel.timepanelpoint);
-				ResizeController.resizePanel(homeV.originalPanelSize, homeV, HomeView.miniMapPanel, homeV.widgetPanelSizeLarge,
-						HomeView.miniMapPanel.miniMapPanelPoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, HomeView.miniMapPanel,
+						homeV.widgetPanelSizeLarge, HomeView.miniMapPanel.miniMapPanelPoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, MapController.miniMapViewer, homeV.mapSize,
 						HomeView.miniMapPanel.mappoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.userPanel,
 						homeV.widgetPanelSizeMedium, homeV.userPanel.userpanelpoint);
-				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.infoPanel,
-						homeV.widgetPanelTitle, homeV.infoPanel.infopanelpoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.infoPanel, homeV.widgetPanelTitle,
+						homeV.infoPanel.infopanelpoint);
 
 			}
 		});
 	}
 
+	/**
+	 * Opens the map panel and sets up necessary components like resizing.
+	 * 
+	 * @param mapV The MapView object to be displayed.
+	 */
 	public static void openMapPanel(MapView mapV) {
 		SwingUtilities.invokeLater(() -> mapV.setVisible(true));
 		mapV.addComponentListener(new ComponentAdapter() {
@@ -114,6 +129,13 @@ public class NewWindowController {
 		});
 	}
 
+	/**
+	 * Decides which user panel to open based on the current login status.
+	 * 
+	 * @param userV  The UserView object to be displayed.
+	 * @param loginV The LoginView object to be displayed if the user is not logged
+	 *               in.
+	 */
 	public static void choseUserLogin(UserView userV, LoginView loginV) {
 		if (LoginController.userlogged.getEmail() == null) {
 			openLoginPanel(loginV);
@@ -122,6 +144,11 @@ public class NewWindowController {
 			openUserPanel(userV);
 	}
 
+	/**
+	 * Opens the user panel and sets up the profile and user information.
+	 * 
+	 * @param userV The UserView object to be displayed.
+	 */
 	public static void openUserPanel(UserView userV) {
 		SwingUtilities.invokeLater(() -> userV.setVisible(true));
 		UserInfoController.showDataWidget();
@@ -155,6 +182,11 @@ public class NewWindowController {
 		});
 	}
 
+	/**
+	 * Opens the login panel.
+	 * 
+	 * @param loginV The LoginView object to be displayed.
+	 */
 	public static void openLoginPanel(LoginView loginV) {
 		SwingUtilities.invokeLater(() -> loginV.setVisible(true));
 		loginV.addComponentListener(new ComponentAdapter() {
@@ -169,20 +201,25 @@ public class NewWindowController {
 						loginV.returnButton);
 				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconLDmode,
 						loginV.switchThemeButton);
-				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogo,
-						loginV.logoLabel);
+				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogo, loginV.logoLabel);
 				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogoD,
 						loginV.logoLabelD);
 			}
 		});
 	}
-	
+
+	/**
+	 * Opens the line panel.
+	 * 
+	 * @param lineV The LineView object to be displayed.
+	 */
 	public static void openLinePanel(LineView lineV) {
 		SwingUtilities.invokeLater(() -> lineV.setVisible(true));
 		lineV.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {
-				ResizeController.resizeComponents(lineV.originalPanelSize, lineV, lineV.componentBounds, lineV.mainPanel);
+				ResizeController.resizeComponents(lineV.originalPanelSize, lineV, lineV.componentBounds,
+						lineV.mainPanel);
 				ResizeController.resizeComponents(lineV.originalPanelSize, lineV, lineV.menuPanel.componentBounds,
 						lineV.menuPanel);
 				ResizeController.resizeImagePanel(lineV, lineV.lblBGwallpaper, lineV.mainPanel);
@@ -205,15 +242,21 @@ public class NewWindowController {
 			}
 		});
 	}
-	
+
+	/**
+	 * Opens the database panel and sets up necessary components like resizing.
+	 * 
+	 * @param dbV The DatabaseView object to be displayed.
+	 */
 	public static void openDatabasePanel(DatabaseView databaseV) {
 		SwingUtilities.invokeLater(() -> databaseV.setVisible(true));
 		databaseV.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {
-				ResizeController.resizeComponents(databaseV.originalPanelSize, databaseV, databaseV.componentBounds, databaseV.mainPanel);
-				ResizeController.resizeComponents(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.componentBounds,
-						databaseV.menuPanel);
+				ResizeController.resizeComponents(databaseV.originalPanelSize, databaseV, databaseV.componentBounds,
+						databaseV.mainPanel);
+				ResizeController.resizeComponents(databaseV.originalPanelSize, databaseV,
+						databaseV.menuPanel.componentBounds, databaseV.menuPanel);
 				ResizeController.resizeImagePanel(databaseV, databaseV.lblBGwallpaper, databaseV.mainPanel);
 				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconUser,
 						databaseV.menuPanel.userButton);
@@ -223,26 +266,41 @@ public class NewWindowController {
 						databaseV.menuPanel.homeButton);
 				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconLine,
 						databaseV.menuPanel.lineButton);
-				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconDatabase,
-						databaseV.menuPanel.databaseButton);
-				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconLDmode,
-						databaseV.menuPanel.switchThemeButton);
-				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.menuPanel, databaseV.menuPanelSize,
-						databaseV.menuPanel.menupanelpoint);
-				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.centerPanel, databaseV.centerPanelSize,
-						databaseV.centerpanelpoint);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV,
+						databaseV.menuPanel.iconDatabase, databaseV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV,
+						databaseV.menuPanel.iconLDmode, databaseV.menuPanel.switchThemeButton);
+				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.menuPanel,
+						databaseV.menuPanelSize, databaseV.menuPanel.menupanelpoint);
+				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.centerPanel,
+						databaseV.centerPanelSize, databaseV.centerpanelpoint);
 			}
 		});
 	}
 
+	/**
+	 * Opens the sign-up panel.
+	 * 
+	 * @param signupV The SignUpView object to be displayed.
+	 */
 	public static void openSignUp(SignUpView signupV) {
 		SwingUtilities.invokeLater(() -> signupV.setVisible(true));
 	}
 
+	/**
+	 * Opens the database loader panel.
+	 * 
+	 * @param dbV The DownloadDataDBView object to be displayed.
+	 */
 	public static void openDBloader(DownloadDataDBView dbV) {
 		SwingUtilities.invokeLater(() -> dbV.setVisible(true));
 	}
 
+	/**
+	 * Opens the account icon loader panel.
+	 * 
+	 * @param accountIconV The AccountIconView object to be displayed.
+	 */
 	public static void openAccountIconPanel(AccountIconView accountIconV) {
 		AccountController.showImages();
 		SwingUtilities.invokeLater(() -> accountIconV.setVisible(true));

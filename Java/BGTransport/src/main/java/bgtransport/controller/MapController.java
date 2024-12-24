@@ -231,6 +231,14 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
     
+    /**
+     * This method toggles the state of the bus markers on the map. 
+     * If the bus markers are currently not displayed, it fetches the bus positions 
+     * from the database and adds them to the map. If they are already displayed, 
+     * it clears the bus markers from the map.
+     * 
+     * @throws SQLException if there is an error accessing the database to retrieve bus positions.
+     */
     public static void showBus() throws SQLException {
         // Alterna stato (1: aggiungi bus, 0: rimuovi bus)
         checkbus = 1 - checkbus;
@@ -276,6 +284,14 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
     
+    /**
+     * This method toggles the state of the train markers on the map. 
+     * If the bus markers are currently not displayed, it fetches the trains positions 
+     * from the database and adds them to the map. If they are already displayed, 
+     * it clears the train markers from the map.
+     * 
+     * @throws SQLException if there is an error accessing the database to retrieve train positions.
+     */
     public static void showTrain() throws SQLException {
         // Toggle state (1: add trains, 0: remove trains)
         checktrain = 1 - checktrain;
@@ -320,6 +336,14 @@ public class MapController {
         miniMapViewer.setOverlayPainter(compoundPainter);
     }
 
+    /**
+     * This method toggles the state of the funicular markers on the map. 
+     * If the funicular markers are currently not displayed, it fetches the funicular positions 
+     * from the database and adds them to the map. If they are already displayed, 
+     * it clears the funicular markers from the map.
+     * 
+     * @throws SQLException if there is an error accessing the database to retrieve funicular positions.
+     */
     public static void showFunicular() throws SQLException {
         // Toggle state (1: add funiculars, 0: remove funiculars)
         checkfunicular = 1 - checkfunicular;
@@ -367,6 +391,15 @@ public class MapController {
         System.out.println("Total painters: " + allPainters.size());
     }
 
+    /**
+     * This method toggles the state of the tram markers on the map. 
+     * If the tram markers are currently not displayed, it fetches the tram positions 
+     * from the database and adds them to the map. If they are already displayed, 
+     * it clears the tram markers from the map.
+     * 
+     * @throws SQLException if there is an error accessing the database to retrieve tram positions.
+     */
+
     public static void showTram() throws SQLException {
         // Toggle state (1: add trams, 0: remove trams)
         checktram = 1 - checktram;
@@ -413,6 +446,10 @@ public class MapController {
         System.out.println("Total painters: " + allPainters.size());
     }
     
+    
+    /**
+     * This method open the address "http://localhost:8080/index.html" to catch the gps position
+     */
     public static void openHtmlInBrowser() {
         try {
             URI uri = new URI("http://localhost:8080/index.html");
@@ -426,6 +463,10 @@ public class MapController {
         }
     }
 
+    
+    /**
+     * This method attend the longitude and the latitude from the backend of html and after it closes the window
+     */
     public static void waitForPositionAndExit() {
         new Thread(() -> {
             try {
@@ -457,7 +498,10 @@ public class MapController {
             }
         }).start();
     }
-
+    
+    /**
+     * This method read the longitude and the latitude from the backend of html 
+     */
     private static String fetchPositionFromBackend() {
         try {
             URL url = new URL("http://localhost:8080/api/position");

@@ -1,12 +1,19 @@
 package bgtransport.controller;
 
-import bgtransport.view.MenuPanel;
-
+/**
+ * The RoleController class manages the visibility of various menu buttons based
+ * on the user's role. This method adjusts the visibility of buttons across
+ * different views depending on the role defined in the system.
+ */
 public class RoleController {
 
+	/**
+	 * This method checks the current user's role and adjusts the visibility of the
+	 * buttons in the menu panels across different views accordingly.
+	 */
 	public static void roleManager() {
 		int role = LoginController.role;
-		System.out.println(role +  "ruolo");
+		System.out.println(role + "ruolo");
 		switch (role) {
 		case 0:
 			MainController.homeV.menuPanel.lineButton.setVisible(false);
@@ -43,7 +50,7 @@ public class RoleController {
 			MainController.databaseV.menuPanel.databaseButton.setVisible(false);
 			MainController.databaseV.menuPanel.mapButton.setVisible(true);
 			break;
-		
+
 		case 2:
 			MainController.homeV.menuPanel.lineButton.setVisible(true);
 			MainController.homeV.menuPanel.databaseButton.setVisible(true);
@@ -61,7 +68,7 @@ public class RoleController {
 			MainController.databaseV.menuPanel.databaseButton.setVisible(true);
 			MainController.databaseV.menuPanel.mapButton.setVisible(true);
 			break;
-			
+
 		}
 	}
 }
