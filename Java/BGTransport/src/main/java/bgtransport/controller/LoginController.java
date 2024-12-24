@@ -10,6 +10,7 @@ import bgtransport.model.RegisteredUser;
 
 public class LoginController {
 	
+	public static int role = 0;
 	public static RegisteredUser userlogged = new RegisteredUser();
 	public static String email;
 	public static void login(JTextField emailField, JPasswordField passwordField) {
@@ -25,8 +26,11 @@ public class LoginController {
 					if ((email.equals(UserQueryDB.getAllUserEmails().get(i)) && (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
 						System.out.println("Login OK");
 						userlogged.setEmail(email);
+						role = userlogged.getRole();
+						RoleController.roleManager();
 						NewWindowController.openUserPanel(MainController.userV);
 						MainController.loginV.setVisible(false);
+						
 					}										
 					else if ((email.equals(UserQueryDB.getAllUserEmails().get(i)) && (!password.equals(UserQueryDB.getAllUserPassword().get(i))))){
 						MainController.loginV.passwordField.setText("");
@@ -49,6 +53,8 @@ public class LoginController {
         // Resetta l'utente loggato
         userlogged = new RegisteredUser();
         email = null;
+        role = 0;
+        RoleController.roleManager();
 
         System.out.println("Logout eseguito.");
         NewWindowController.openHomePanel(MainController.homeV);

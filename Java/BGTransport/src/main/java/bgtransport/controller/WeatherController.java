@@ -16,8 +16,8 @@ import javax.imageio.ImageIO;
 
 public class WeatherController {
 	
-	static int weathercode;
-	static int isday = 1;
+	public static int weathercode;
+	public static int isday = 1;
 		
 	public static void getMeteo() throws IOException{
         String apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=45.7&longitude=9.67&current_weather=true";
