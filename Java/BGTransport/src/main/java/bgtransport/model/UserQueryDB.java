@@ -31,9 +31,7 @@ public class UserQueryDB {
 
     public static String[] columnNames;
     public static Object[][] data;
-
-    // --------- Name ---------
-
+    
     /**
      * Retrieves the name of the user with the given email.
      * 
@@ -44,11 +42,9 @@ public class UserQueryDB {
     public static String getNameUser(String email) throws SQLException {
         DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-        // Fetch the name of the user with the given email
         @Nullable
         Record1<String> mail = create.select(User.USER.NAME).from(User.USER).where(User.USER.MAIL.eq(email)).fetchOne();
 
-        // Return the name or null if not found
         return mail != null ? mail.value1() : null;
     }
 
@@ -62,7 +58,6 @@ public class UserQueryDB {
     public static void setNameUser(String email, String newName) throws SQLException {
         DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-        // Update the user's name where the email matches
         int rowsUpdated = create.update(User.USER).set(User.USER.NAME, newName).where(User.USER.MAIL.eq(email))
                 .execute();
 
@@ -70,8 +65,6 @@ public class UserQueryDB {
             throw new SQLException(email);
         }
     }
-
-    // --------- Surname ---------
 
     /**
      * Retrieves the surname of the user with the given email.
@@ -108,8 +101,6 @@ public class UserQueryDB {
         }
     }
 
-    // --------- Username ---------
-
     /**
      * Retrieves the username of the user with the given email.
      * 
@@ -144,8 +135,6 @@ public class UserQueryDB {
             throw new SQLException(email);
         }
     }
-
-    // --------- Birthday ---------
 
     /**
      * Retrieves the birthday of the user with the given email.
@@ -182,8 +171,6 @@ public class UserQueryDB {
         }
     }
 
-    // --------- Address ---------
-
     /**
      * Retrieves the address of the user with the given email.
      * 
@@ -219,8 +206,6 @@ public class UserQueryDB {
         }
     }
 
-    // --------- Town ---------
-
     /**
      * Retrieves the town of the user with the given email.
      * 
@@ -241,7 +226,6 @@ public class UserQueryDB {
     public static void setTownUser(String email, String newTown) throws SQLException {
         DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-        // Update the user's town where the email matches
         int rowsUpdated = create.update(User.USER).set(User.USER.TOWN, newTown).where(User.USER.MAIL.eq(email))
                 .execute();
 
@@ -383,10 +367,8 @@ public class UserQueryDB {
     public static List<String> getAllUserEmails() throws SQLException {
         DSLContext create = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
-        // Fetch all emails from the User table
         Result<Record1<String>> result = create.select(User.USER.MAIL).from(User.USER).fetch();
 
-        // Convert the result into a List<String>
         List<String> emails = new ArrayList<>();
         for (Record1<String> mail : result) {
             emails.add(mail.value1());

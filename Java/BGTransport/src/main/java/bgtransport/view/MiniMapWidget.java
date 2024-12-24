@@ -11,9 +11,6 @@ import java.util.Map;
  */
 public class MiniMapWidget extends RoundedPanel {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1032345262451057013L;
 	public final Point miniMapPanelPoint = new Point(720, 370);
     public final Point mappoint = new Point(25, 25);
@@ -34,7 +31,6 @@ public class MiniMapWidget extends RoundedPanel {
      * Sets up the components for the MiniMap panel.
      */
     private void setupMiniMapComponents() {
-        // Example: Add a JLabel or placeholder for the map
         JLabel mapPlaceholder = new JLabel("Mini Map");
         mapPlaceholder.setHorizontalAlignment(SwingConstants.CENTER);
         mapPlaceholder.setFont(new Font("SansSerif", Font.BOLD, 20));
@@ -44,7 +40,6 @@ public class MiniMapWidget extends RoundedPanel {
 
         add(mapPlaceholder);
 
-        // Store component bounds for resizing purposes
         for (Component comp : getComponents()) {
             componentBounds.put(comp, comp.getBounds());
         }

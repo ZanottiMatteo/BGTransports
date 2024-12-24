@@ -1,7 +1,6 @@
 package bgtransport.view;
 
 import javax.swing.*;
-
 import bgtransport.controller.LoginController;
 import bgtransport.controller.MainController;
 import bgtransport.controller.NewWindowController;
@@ -21,13 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.awt.Frame;
 
+/**
+ * This class represents the Login View of the BGTransport application.
+ * It is responsible for displaying the login screen, where users can sign in or sign up.
+ */
 public class LoginView extends JFrame {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -4391409465142244190L;
-	// Declare UI components
+    private static final long serialVersionUID = -4391409465142244190L;
+
+    // Declare UI components
     public JPanel mainPanel;
     public JLabel logoLabel = new JLabel();
     public JLabel logoLabelD = new JLabel();
@@ -56,46 +57,33 @@ public class LoginView extends JFrame {
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
     public final Dimension minPanelSize = new Dimension(1150, 660);
     public final Dimension centralPanelSize = new Dimension(760, 644);
-    
-    
-    public LoginView() {
-        // Initialize main panel
-        initializeMainPanel();
 
-        // Initialize buttons and actions
+    /**
+     * Constructs the LoginView and initializes all the UI components.
+     * It sets up the layout, action listeners, and the general appearance of the view.
+     */
+    public LoginView() {
+        initializeMainPanel();
         initializeReturnButton();
         initializeSignInButton();
         initializeSignUpButton();
         initializeThemeSwitchButton();
-
-        // Initialize text fields and labels
         initializeTextFields();
         initializeLabels();
-
-        // Initialize logo
         initializeLogo();
-        
-        // Initailize Central Panel
         initializeCentralPanel();
-        
-        // Store bounds for resizing
         storeComponentBounds();
-        
-        // Set frame properties and layout
         initComponents();
     }
 
     /**
-     * Initializes the main panel with the background wallpaper.
+     * Initializes the main panel and sets its layout and background image.
      */
     private void initializeMainPanel() {
         mainPanel = new JPanel() {
-            /**
-			 * 
-			 */
-			private static final long serialVersionUID = -2563297190423775145L;
+            private static final long serialVersionUID = -2563297190423775145L;
 
-			@Override
+            @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
@@ -109,9 +97,9 @@ public class LoginView extends JFrame {
         centerPanel.setBounds(580, 167, 760, 644);
         mainPanel.add(centerPanel);
     }
-    
+
     /**
-     * Initializes the main panel with the background wallpaper.
+     * Initializes the central panel where the login form and controls are displayed.
      */
     private void initializeCentralPanel() {
         centerPanel.setLayout(null);
@@ -120,7 +108,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Configures the return button (back to home screen).
+     * Initializes the "Return" button that navigates back to the Home View.
      */
     private void initializeReturnButton() {
         returnButton.setBounds(30, 30, 60, 60);
@@ -135,7 +123,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Configures the "Sign In" button and its action.
+     * Initializes the "Sign In" button that attempts to log the user in using the entered credentials.
      */
     private void initializeSignInButton() {
         signInButton.setText("Sign In");
@@ -148,7 +136,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Configures the "Sign Up" button and its action.
+     * Initializes the "Sign Up" button that navigates to the Sign Up view.
      */
     private void initializeSignUpButton() {
         signupButton.setForeground(new Color(210, 105, 30));
@@ -163,7 +151,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Configures the theme switching button.
+     * Initializes the theme switch button to toggle between light and dark modes.
      */
     private void initializeThemeSwitchButton() {
         switchThemeButton = new JButton();
@@ -178,7 +166,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Initializes the text fields (email and password).
+     * Initializes the text fields for entering email and password.
      */
     private void initializeTextFields() {
         textField.setBounds(852, 445, 216, 50);
@@ -190,7 +178,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Configures the labels for the email and password fields.
+     * Initializes the labels for the email and password fields, as well as the error label.
      */
     private void initializeLabels() {
         textEmail.setHorizontalAlignment(SwingConstants.LEFT);
@@ -212,7 +200,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Initializes the logo label.
+     * Initializes the logo images, setting them to be displayed in the center of the screen.
      */
     private void initializeLogo() {
         logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -226,7 +214,7 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Stores the component bounds for later resizing purposes.
+     * Stores the bounds of all components in the main panel for potential resizing.
      */
     private void storeComponentBounds() {
         for (Component comp : mainPanel.getComponents()) {
@@ -235,13 +223,13 @@ public class LoginView extends JFrame {
     }
 
     /**
-     * Initializes the frame properties such as title, size, close operation, and location.
+     * Initializes the frame properties such as size, title, and close operation.
      */
     private void initComponents() {
-    	setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-        setMinimumSize(minPanelSize); // Set minimum window size
-        setTitle("BGTransport"); // Set window title
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
-        setLocationRelativeTo(null); // Center the window on the screen
+        setExtendedState(Frame.MAXIMIZED_BOTH);
+        setMinimumSize(minPanelSize);
+        setTitle("BGTransport");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 }

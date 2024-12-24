@@ -14,9 +14,6 @@ import java.util.Map;
  */
 public class WeatherWidget extends RoundedPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3464306536082412512L;
 	public static JLabel lbltemperature = new JLabel();
 	public static JLabel lblweatherwind = new JLabel();
@@ -26,6 +23,7 @@ public class WeatherWidget extends RoundedPanel {
     public static transient ImageIcon iconWeather = new ImageIcon();
     
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
+    
     /**
      * Constructor for WeatherPanel.
      * Sets up the layout and adds weather-related components.

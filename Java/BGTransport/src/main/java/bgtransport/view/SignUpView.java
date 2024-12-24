@@ -10,11 +10,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.SQLException;
 
+/**
+ * The SignUpView class creates and manages the graphical user interface (GUI) for the sign-up screen.
+ * It contains fields for user input such as email, username, password, and more.
+ */
 public class SignUpView extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6878992684117226389L;
 	private JFrame frame;
 	private JPanel panel;
@@ -35,6 +36,10 @@ public class SignUpView extends JFrame {
 	private JTextField textSurname;
 	private JTextField textName;
 
+	/**
+	 * Constructor for the SignUpView that initializes the graphical user interface.
+	 * It adds all elements such as text fields, labels, and the sign-up button.
+	 */
 	public SignUpView() {
 		setResizable(false);
 
@@ -55,6 +60,7 @@ public class SignUpView extends JFrame {
 		lblSignUp.setBounds(141, 11, 301, 95);
 		panel.add(lblSignUp);
 
+		// Text fields for user input
 		textEmail = new JTextField();
 		textEmail.setColumns(10);
 		textEmail.setBounds(185, 338, 216, 50);
@@ -90,6 +96,7 @@ public class SignUpView extends JFrame {
 		textZIP.setBounds(185, 710, 216, 50);
 		panel.add(textZIP);
 
+		// Sign-up button
 		signUpButton.setForeground(Color.WHITE);
 		signUpButton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		signUpButton.setBackground(new Color(210, 105, 30));
@@ -104,6 +111,7 @@ public class SignUpView extends JFrame {
 		});
 		panel.add(signUpButton);
 
+		// Labels for each input field
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEmail.setForeground(new Color(210, 105, 30));
@@ -139,28 +147,28 @@ public class SignUpView extends JFrame {
 		lblPassword2.setBounds(75, 546, 105, 28);
 		panel.add(lblPassword2);
 
-		lblAddress = new JLabel("Indirizzo");
+		lblAddress = new JLabel("Address");
 		lblAddress.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAddress.setForeground(new Color(210, 105, 30));
 		lblAddress.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
 		lblAddress.setBounds(75, 592, 105, 35);
 		panel.add(lblAddress);
 
-		lblCity = new JLabel("Città");
+		lblCity = new JLabel("City");
 		lblCity.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCity.setForeground(new Color(210, 105, 30));
 		lblCity.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
 		lblCity.setBounds(75, 654, 105, 35);
 		panel.add(lblCity);
 
-		lblZip = new JLabel("CAP");
+		lblZip = new JLabel("ZIP");
 		lblZip.setHorizontalAlignment(SwingConstants.CENTER);
 		lblZip.setForeground(new Color(210, 105, 30));
 		lblZip.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
 		lblZip.setBounds(75, 716, 105, 35);
 		panel.add(lblZip);
 
-		JLabel lblBirthday = new JLabel("Data di Nascita");
+		JLabel lblBirthday = new JLabel("Birthday");
 		lblBirthday.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBirthday.setForeground(new Color(210, 105, 30));
 		lblBirthday.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
@@ -172,7 +180,7 @@ public class SignUpView extends JFrame {
 		textBirthday.setBounds(185, 276, 216, 50);
 		panel.add(textBirthday);
 
-		JLabel lblSurname = new JLabel("Cognome");
+		JLabel lblSurname = new JLabel("Surname");
 		lblSurname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSurname.setForeground(new Color(210, 105, 30));
 		lblSurname.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
@@ -184,7 +192,7 @@ public class SignUpView extends JFrame {
 		textSurname.setBounds(185, 214, 216, 50);
 		panel.add(textSurname);
 
-		JLabel lblName = new JLabel("Nome");
+		JLabel lblName = new JLabel("Name");
 		lblName.setHorizontalAlignment(SwingConstants.CENTER);
 		lblName.setForeground(new Color(210, 105, 30));
 		lblName.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
@@ -197,7 +205,7 @@ public class SignUpView extends JFrame {
 		panel.add(textName);
 
 		JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
-		verticalScrollBar.setUnitIncrement(16); // Unit scroll speed (higher value = faster scroll)
+		verticalScrollBar.setUnitIncrement(16); // Scroll speed (higher value = faster scroll)
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(0, 0, 600, 500);
@@ -205,6 +213,9 @@ public class SignUpView extends JFrame {
 		initComponents();
 	}
 
+	/**
+	 * Initializes the window components and configures the settings for the frame.
+	 */
 	private void initComponents() {
 		setTitle("BGTransport");
 		setSize(600, 700);

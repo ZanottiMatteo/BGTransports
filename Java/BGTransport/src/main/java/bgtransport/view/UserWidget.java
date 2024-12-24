@@ -12,10 +12,6 @@ import java.util.Map;
  */
 public class UserWidget extends RoundedPanel {
 
-	
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = -8199651767909840164L;
 	public final Point userpanelpoint = new Point(235, 270);
     public static CircleLabel accounticon = new CircleLabel();
@@ -54,17 +50,15 @@ public class UserWidget extends RoundedPanel {
     	titlelabel.setBounds(20, 25, 185, 34);
     	
     	add(titlelabel);
-    	accounticon.setBounds(212, 25, 128, 128); // Circular placeholder
+    	accounticon.setBounds(212, 25, 128, 128);
     	accounticon.setCircleColor(Color.GRAY);
         add(accounticon);
 
         usernamelabel.setBounds(20, 70, 175, 50);
         add(usernamelabel);
-        
 
         complnamelabel.setBounds(20, 130, 175, 50);
         add(complnamelabel);
-        
 
         emaillabel.setBounds(20, 190, 300, 50);
         add(emaillabel);
