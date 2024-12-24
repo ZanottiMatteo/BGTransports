@@ -28,278 +28,194 @@ import java.awt.Point;
 import java.awt.Font;
 
 /**
- * HomeView class represents the main view of the application, displaying a
- * background image, theme switching button, and user-related components. It
- * provides an interface for the user to interact with the main functionality of
- * the application.
+ * The LineView class represents the main user interface of the BGTransport application.
+ * It is responsible for setting up and managing various UI components such as panels,
+ * labels, combo boxes, and buttons.
  */
 public class LineView extends JFrame {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8777186420120442479L;
+    private static final long serialVersionUID = -8777186420120442479L;
 
-	// Main container panel for the application.
-	public JPanel mainPanel = new JPanel();
+    // Panels and UI components
+    public JPanel mainPanel = new JPanel();
+    public MenuPanel menuPanel = new MenuPanel();
+    public RoundedPanel homePanel = new RoundedPanel();
+    public final Point mappoint = new Point(100, 50);
+    public RoundedPanel centerPanel = new RoundedPanel();
+    public final Point centerpanelpoint = new Point(200, 30);
+    public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
+    public ImageIcon iconUser = new ImageIcon(LineView.class.getResource("/images/User.png"));
+    public ImageIcon iconMap = new ImageIcon(LineView.class.getResource("/images/Map.png"));
+    public ImageIcon iconHome = new ImageIcon(LineView.class.getResource("/images/Home.png"));
+    public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
-	// Side menu panel with rounded corners.
-	public MenuPanel menuPanel = new MenuPanel();
-	// Main content panel with rounded corners.
-	public RoundedPanel homePanel = new RoundedPanel();
-	// Position of the map panel within the layout.
-	public final Point mappoint = new Point(100, 50);
+    // Dimensions for panels
+    public final Dimension originalPanelSize = new Dimension(1920, 1080);
+    public final Dimension menuPanelSize = new Dimension(100, 900);
+    public final Dimension minPanelSize = new Dimension(1085, 615);
+    public final Dimension linePanelSize = new Dimension(1600, 900);
+    public final Dimension lineSize = new Dimension(1450, 800);
+    public final Dimension centerPanelSize = new Dimension(1600, 900);
 
-	public RoundedPanel centerPanel = new RoundedPanel();
-	public final Point centerpanelpoint = new Point(200, 30);
+    // Labels
+    private final BigLabel titlelabel = new BigLabel("Trova la tua fermata");
+    private final MediumLabel departurelabel = new MediumLabel("Punto di Partenza:");
+    private final MediumLabel arrivelabel = new MediumLabel("Punto di Arrivo:");
+    private final MediumLabel departuretimelabel = new MediumLabel("Orario di Partenza:");
+    private final MediumLabel arrivaltimelabel = new MediumLabel("Orario di Arrivo:");
+    private final MediumLabel finallabel1 = new MediumLabel("");
+    private final MediumLabel finallabel2 = new MediumLabel("");
 
-	// Resizable background wallpaper that adjusts to the screen size.
-	public final transient ResizableImage lblBGwallpaper = new ResizableImage(
-			new File("src/main/resources/images/BG.png"));
+    // Buttons and ComboBoxes
+    public JButton selectbutton = new JButton();
+    public JComboBox<String> depaturestation;
+    public JComboBox<String> arrivestation;
+    public JComboBox<String> arrivetime;
+    public JComboBox<String> departuretime;
 
-	// Icons for the user and map buttons.
-	public ImageIcon iconUser = new ImageIcon(LineView.class.getResource("/images/User.png")); // Icon for the user																						// button.
-	public ImageIcon iconMap = new ImageIcon(LineView.class.getResource("/images/Map.png")); // Icon for the map button.
-	public ImageIcon iconHome = new ImageIcon(LineView.class.getResource("/images/Home.png"));
+    // Data Lists
+    public static List<String> station;
+    public static List<String> timelist;
+    public static List<String> allValueList = new ArrayList<>();
+    public static List<List<String>> departureList;
+    public static List<List<String>> timeListList;
+    public static List<List<String>> arriveList;
 
-	// A map to store the bounds (dimensions and positions) of each component for
-	// resizing purposes.
-	public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
+    /**
+     * Constructor for LineView.
+     * Sets up the window and UI components.
+     */
+    public LineView() {
+        configureWindow();
+        setupComponentArcs();
+        setupMainPanel();
+        setupCenterPanel();
+        setupActionListeners();
+        storeComponentBounds();
+    }
 
-	// Original size of the application window when maximized.
-	public final Dimension originalPanelSize = new Dimension(1920, 1080);
-	// Fixed size of the menu panel.
-	public final Dimension menuPanelSize = new Dimension(100, 900);
-	// Minimum size of the application window to prevent it from being resized too
-	// small.
-	public final Dimension minPanelSize = new Dimension(1085, 615);
-	// Size of the panel containing the map.
-	public final Dimension linePanelSize = new Dimension(1600, 900);
-	// Default size of the map itself within the map panel.
-	public final Dimension lineSize = new Dimension(1450, 800);
+    /**
+     * Configures the window settings (e.g., title, size, close operation).
+     */
+    private void configureWindow() {
+        setExtendedState(Frame.MAXIMIZED_BOTH);
+        setMinimumSize(minPanelSize);
+        setTitle("BGTransport");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
 
-	public final Dimension centerPanelSize = new Dimension(1600, 900);
-	
-	private final BigLabel titlelabel = new BigLabel("Trova la tua fermata");
-	
-	private final MediumLabel departurelabel = new MediumLabel("Punto di Partenza:");
+    /**
+     * Sets rounded corners for UI components like buttons and text fields.
+     */
+    private void setupComponentArcs() {
+        UIManager.put("Button.arc", 999);
+        UIManager.put("TextComponent.arc", 15);
+        UIManager.put("Component.arc", 15);
+    }
 
-	private final MediumLabel arrivelabel = new MediumLabel("Punto di Arrivo:");
-	
-	private final MediumLabel linelabel = new MediumLabel("Linea:");
-	
-	private final MediumLabel departuretimelabel = new MediumLabel("Orario di Partenza:");
-	
-	private final MediumLabel arrivaltimelabel = new MediumLabel("Orario di Arrivo:");
-	
-	private final MediumLabel nextstoplabel = new MediumLabel("Prossima Fermata:");
-	
-	private final MediumLabel nextstoptimelabel = new MediumLabel("Orario Prossima Fermata:");
-	
-	private final MediumLabel weeklabel = new MediumLabel("Periodo:");
-	
-	private final MediumLabel finallabel = new MediumLabel("");
+    /**
+     * Configures the main panel with a background image and layout.
+     */
+    private void setupMainPanel() {
+        mainPanel = new JPanel() {
+            private static final long serialVersionUID = 65337158073054498L;
 
-	public JButton selectbutton = new JButton();
-	
-	public  JComboBox<String> depaturestation;
-		
-	public  JComboBox<String> arrivestation;
-	
-	public JComboBox<String> line;
-	
-	public  JComboBox<String> arrivetime;
-	
-	public  JComboBox<String> departuretime;
-	
-	public  JComboBox<String> week;
-	
-	public  JComboBox<String> nextstop;
-	
-	public  JComboBox<String> timestop;
-	
-	public static List<String> station;
-	
-	public static List<String> linelist;
-	
-	public static List<String> timelist;
-	
-	public static List<String> weeklist;
-	
-	public static List<String> allValueList = new ArrayList<>();
-	
-	public static List<List<String>> departureList;
-	
-	public static List<List<String>> timeListList;
-	
-	public static List<List<String>> arriveList;
-	
-	/**
-	 * Constructor that sets up the UI components, layout, and theming for the home
-	 * view. It also initializes the main panel, menu panel, and other UI elements.
-	 */
-	/**
-	 * Constructor initializes the MapView window, setting up UI components and
-	 * behavior.
-	 */
-	public LineView() {
-		// Configure the main window
-		configureWindow();
-		setupComponentArcs();
-		setupMainPanel();
-		setupCenterPanel();	
-		setupActionListeners();
-			
-		// Store bounds for resizing
-		storeComponentBounds();
-	}
+            @Override
+            public void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this);
+            }
+        };
 
-	/**
-	 * Configures the main window properties.
-	 */
-	private void configureWindow() {
-		setExtendedState(Frame.MAXIMIZED_BOTH); // Maximize the window at startup
-		setMinimumSize(minPanelSize); // Set minimum window size
-		setTitle("BGTransport"); // Set window title
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Close the application when the window is closed
-		setLocationRelativeTo(null); // Center the window on the screen
-	}
+        mainPanel.setBounds(0, 0, 1920, 1080);
+        mainPanel.setLayout(null);
+        getContentPane().add(mainPanel);
+        mainPanel.add(homePanel);
 
-	/**
-	 * Sets rounded UI properties for components.
-	 */
-	private void setupComponentArcs() {
-		UIManager.put("Button.arc", 999); // Fully rounded buttons
-		UIManager.put("TextComponent.arc", 15); // Slightly rounded text components
-		UIManager.put("Component.arc", 15); // Rounded corners for general components
-	}
+        homePanel.setLayout(null);
+        homePanel.setBounds(26, 40, 1854, 960);
+        homePanel.add(menuPanel);
 
-	/**
-	 * Sets up the main panel and background.
-	 */
-	private void setupMainPanel() {
-		// Override the paintComponent method to draw the background image
-		mainPanel = new JPanel() {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 65337158073054498L;
+        centerPanel.setBounds(200, 30, 1600, 900);
+        centerPanel.setLayout(null);
+        homePanel.add(centerPanel);
+        titlelabel.setForeground(new Color(210, 105, 30));
+        titlelabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+        titlelabel.setBounds(0, 50, 1600, 60);
+        
+        centerPanel.add(titlelabel);
+    }
 
-			@Override
-			public void paintComponent(Graphics g) {
-				super.paintComponent(g);
-				g.drawImage(lblBGwallpaper.getScaledImage(), 0, 0, this); // Draw background image
-			}
-		};
-
-		mainPanel.setBounds(0, 0, 1920, 1080);
-		mainPanel.setLayout(null);
-		getContentPane().add(mainPanel);
-		mainPanel.add(homePanel);
-		
-		// Configure the home panel
-		homePanel.setLayout(null);
-		homePanel.setBounds(26, 40, 1854, 960);
-		homePanel.add(menuPanel);
-		
-		centerPanel.setBounds(200, 30, 1600, 900); // Adjust the panel size as needed
-		centerPanel.setLayout(null);
-		homePanel.add(centerPanel);
-		titlelabel.setForeground(new Color(210, 105, 30));
-		titlelabel.setFont(new Font("SansSerif", Font.BOLD, 16));
-		titlelabel.setBounds(0, 50, 1600, 60);
-		
-		centerPanel.add(titlelabel);		
-	}
 	
-	private void setupCenterPanel() {
-		depaturestation = createSearchableComboBox(station);
-		arrivestation = createSearchableComboBox(station);
-		line = createSearchableComboBox(linelist);
-		arrivetime = createSearchableComboBox(timelist);
-		departuretime = createSearchableComboBox(timelist);
-		timestop = createSearchableComboBox(timelist);
-		nextstop = createSearchableComboBox(station);
-		week = createSearchableComboBox(weeklist);
-		
-		int y = 150;
-		departurelabel.setLocation(30, y);
-		departurelabel.setSize(500, 50);
-		centerPanel.add(departurelabel);
-		depaturestation.setLocation(80, y + 70);
-		depaturestation.setSize(500, 50);
-		centerPanel.add(depaturestation);
-		
-		departuretimelabel.setLocation(540, y);
-		departuretimelabel.setSize(500, 50);
-		centerPanel.add(departuretimelabel);
-		departuretime.setLocation(690, y + 70);
-		departuretime.setSize(200, 50);
-		centerPanel.add(departuretime);
-		
-		arrivelabel.setLocation(30, y + 140);
-		arrivelabel.setSize(500, 50);		
-		centerPanel.add(arrivelabel);
-		arrivestation.setLocation(80, y + 210);
-		arrivestation.setSize(500, 50);
-		centerPanel.add(arrivestation);
-		
-		arrivaltimelabel.setLocation(540, y + 140);
-		arrivaltimelabel.setSize(500, 50);
-		centerPanel.add(arrivaltimelabel);
-		arrivetime.setLocation(690, y + 210);
-		arrivetime.setSize(200, 50);
-		arrivetime.setEnabled(false);
-		centerPanel.add(arrivetime);
-		
-		linelabel.setLocation(1000, y);
-		linelabel.setSize(500, 50);
-		centerPanel.add(linelabel);
-		line.setLocation(1150, y + 70);
-		line.setSize(200, 50);
-		line.setEnabled(false);
-		centerPanel.add(line);
+    /**
+     * Sets up the components of the center panel for the user interface, including labels, combo boxes,
+     * and the confirm button. It positions and sizes each element within the center panel.
+     */
+    private void setupCenterPanel() {
+        depaturestation = createSearchableComboBox(station);
+        arrivestation = createSearchableComboBox(station);
+        arrivetime = createSearchableComboBox(timelist);
+        departuretime = createSearchableComboBox(timelist);
 
-		nextstoplabel.setLocation(30, y + 280);
-		nextstoplabel.setSize(500, 50);
-		centerPanel.add(nextstoplabel);
-		nextstop.setLocation(80, y + 350);
-		nextstop.setSize(500, 50);
-		nextstop.setEnabled(false);
-		centerPanel.add(nextstop);
-		
-		nextstoptimelabel.setLocation(540, y + 280);
-		nextstoptimelabel.setSize(500, 50);
-		centerPanel.add(nextstoptimelabel);
-		timestop.setLocation(690, y + 350);
-		timestop.setSize(200, 50);
-		timestop.setEnabled(false);
-		centerPanel.add(timestop);
-		
-		weeklabel.setLocation(1000, y + 140);
-		weeklabel.setSize(500, 50);
-		centerPanel.add(weeklabel);
-		week.setLocation(1000, y + 210);
-		week.setSize(500, 50);
-		centerPanel.add(week);
-		finallabel.setHorizontalAlignment(SwingConstants.LEFT);
-		
-		finallabel.setLocation(80, y + 330);
-		finallabel.setSize(1000, 400);
-		centerPanel.add(finallabel);
-		
-		selectbutton.setText("Conferma");
-		selectbutton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
-		selectbutton.setHorizontalAlignment(SwingConstants.CENTER);
-		selectbutton.setBackground(new Color(210, 105, 30));
-		selectbutton.setForeground(new Color(255, 255, 255));
-		selectbutton.setLocation(650, 800);
-		selectbutton.setSize(300, 70);
-		selectbutton.setEnabled(false);
-		centerPanel.add(selectbutton);
-	}
-	
-	private static JComboBox<String> createSearchableComboBox(List<String> options) {
+        int y = 150;
+        departurelabel.setLocation(330, y);
+        departurelabel.setSize(500, 50);
+        centerPanel.add(departurelabel);
+        depaturestation.setLocation(330, y + 70);
+        depaturestation.setSize(500, 50);
+        centerPanel.add(depaturestation);
+
+        departuretimelabel.setLocation(790, y);
+        departuretimelabel.setSize(500, 50);
+        centerPanel.add(departuretimelabel);
+        departuretime.setLocation(940, y + 70);
+        departuretime.setSize(200, 50);
+        centerPanel.add(departuretime);
+
+        arrivelabel.setLocation(330, y + 140);
+        arrivelabel.setSize(500, 50);        
+        centerPanel.add(arrivelabel);
+        arrivestation.setLocation(330, y + 210);
+        arrivestation.setSize(500, 50);
+        centerPanel.add(arrivestation);
+
+        arrivaltimelabel.setLocation(790, y + 140);
+        arrivaltimelabel.setSize(500, 50);
+        centerPanel.add(arrivaltimelabel);
+        arrivetime.setLocation(940, y + 210);
+        arrivetime.setSize(200, 50);
+        centerPanel.add(arrivetime);
+
+        finallabel1.setHorizontalAlignment(SwingConstants.LEFT);
+        finallabel1.setLocation(280, y + 270);
+        finallabel1.setSize(600, 400);
+        centerPanel.add(finallabel1);
+
+        finallabel2.setHorizontalAlignment(SwingConstants.LEFT);
+        finallabel2.setLocation(840, y + 270);
+        finallabel2.setSize(600, 400);
+        centerPanel.add(finallabel2);
+
+        selectbutton.setText("Conferma");
+        selectbutton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
+        selectbutton.setHorizontalAlignment(SwingConstants.CENTER);
+        selectbutton.setBackground(new Color(210, 105, 30));
+        selectbutton.setForeground(new Color(255, 255, 255));
+        selectbutton.setLocation(650, 800);
+        selectbutton.setSize(300, 70);
+        selectbutton.setEnabled(false);
+        centerPanel.add(selectbutton);
+    }
+
+    /**
+     * Creates a searchable combo box where the user can select from a list of options. The combo box 
+     * allows for typing and filtering of options based on the user's input.
+     *
+     * @param options List of options to be added to the combo box.
+     * @return The JComboBox component with searchable capabilities.
+     */
+    private static JComboBox<String> createSearchableComboBox(List<String> options) {
         JComboBox<String> comboBox = new JComboBox<>();
         for (int i = 0; i < options.size(); i++) comboBox.addItem(options.get(i));
         comboBox.setEditable(true);
@@ -322,104 +238,135 @@ public class LineView extends JFrame {
         return comboBox;
     }
 
-	/**
-	 * Adds action listeners to buttons for handling user interactions.
-	 */
-	private void setupActionListeners() {
-		// Action listener for the user button
-		menuPanel.userButton.addActionListener(e -> {
-			NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
-			this.setVisible(false);
-		});
+    /**
+     * Sets up action listeners for the various buttons and combo boxes in the UI. These listeners handle
+     * user interactions and trigger the necessary actions, such as updating combo boxes or switching views.
+     */
+    private void setupActionListeners() {
+        menuPanel.userButton.addActionListener(e -> {
+            NewWindowController.choseUserLogin(MainController.userV, MainController.loginV);
+            this.setVisible(false);
+        });
 
-		// Action listener for the home button
-		menuPanel.mapButton.addActionListener(e -> {
-			NewWindowController.openMapPanel(MainController.mapV);
-			setVisible(false);
-		});
+        menuPanel.mapButton.addActionListener(e -> {
+            NewWindowController.openMapPanel(MainController.mapV);
+            setVisible(false);
+        });
 
-		// Action listener for the home button
-		menuPanel.homeButton.addActionListener(e -> {
-			NewWindowController.openHomePanel(MainController.homeV);
-			setVisible(false);
-		});
-		
-		menuPanel.databaseButton.addActionListener(e -> {
-			NewWindowController.openDatabasePanel(MainController.databaseV);
-			setVisible(false);
-		});
-		
-		depaturestation.addActionListener(e -> {
-			try {
-				LineController.getComboboxSelectionStation(depaturestation);
-				LineController.updateComboBoxes(line, departuretime, arrivestation, arrivetime, nextstop, timestop, week, departureList);
-				selectbutton.setEnabled(true);
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		});
+        menuPanel.homeButton.addActionListener(e -> {
+            NewWindowController.openHomePanel(MainController.homeV);
+            setVisible(false);
+        });
 
-		departuretime.addActionListener(e -> {
-			try {
-				LineController.getComboboxSelectionTime(departuretime);
-				LineController.updateComboBoxes1(line, arrivestation, arrivetime, nextstop, timestop, week, timeListList);
-				selectbutton.setEnabled(true);
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		});
-		
-		arrivestation.addActionListener(e -> {
-			try {
-				LineController.getComboboxSelectionFinalStation(arrivestation);
-				LineController.updateComboBoxes2(line, arrivetime, nextstop, timestop, week, arriveList);
-				selectbutton.setEnabled(true);
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		});
-		
-		selectbutton.addActionListener(e -> {
-			allValueList.clear();
-			LineController.getValuesOfComboBox(depaturestation, departuretime, arrivestation, arrivetime, nextstop, timestop, line, week);
-			String result = calculateTimeDifference(allValueList.get(1), allValueList.get(3));
-			System.out.println("Valori: " + allValueList);
-            finallabel.setText("<html>" +
-            					"Partenza: " + String.join(" ", allValueList.get(0)) + " Orario: " + String.join(" ", allValueList.get(1)) + "<br>" +
-            					"Arrivo: " + String.join(" ", allValueList.get(2)) + " Orario: " + String.join(" ", allValueList.get(3)) + "<br>" +
-            					"Fermata: " + String.join(" ", allValueList.get(4)) + " Orario: " + String.join(" ", allValueList.get(5)) + "<br>" +
-            					"Linea: " + String.join(" ", allValueList.get(6)) + "<br>" +
-            					"Periodo: " + String.join(" ", allValueList.get(7)) + "<br>" +
-            					"Tempo necessario: " + result+
-            					"</html>");
-		});
-		
-		// Action listener for the theme switch button
-		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        menuPanel.databaseButton.addActionListener(e -> {
+            NewWindowController.openDatabasePanel(MainController.databaseV);
+            setVisible(false);
+        });
 
-	}
+        depaturestation.addActionListener(e -> {
+            try {
+                LineController.getComboboxSelectionStation(depaturestation);
+                LineController.updateComboBoxes(departuretime, arrivestation, arrivetime, departureList);
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        });
 
-	/**
-	 * Stores the bounds of each component for resizing purposes.
-	 */
-	private void storeComponentBounds() {
-		for (Component comp : mainPanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-		for (Component comp : menuPanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-		for (Component comp : centerPanel.getComponents()) {
-			componentBounds.put(comp, comp.getBounds());
-		}
-	}
-	
-	public static String calculateTimeDifference(String departureTimeStr, String arrivalTimeStr) {
+        departuretime.addActionListener(e -> {
+            try {
+                LineController.getComboboxSelectionTime(departuretime);
+                LineController.updateComboBoxes1(arrivestation, arrivetime, timeListList);
+                selectbutton.setEnabled(true);
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        });
+
+        arrivestation.addActionListener(e -> {
+            try {
+                LineController.getComboboxSelectionFinalStation(arrivestation);
+                LineController.updateComboBoxes2(arrivetime, arriveList);
+                selectbutton.setEnabled(true);
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        });
+
+        selectbutton.addActionListener(e -> {
+            allValueList.clear();
+            LineController.getValuesOfComboBox(depaturestation, departuretime, arrivestation, arrivetime);
+            try {
+                LineController.selectValues();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+            String result = calculateTimeDifference(allValueList.get(1), allValueList.get(3));
+            System.out.println("Valori: " + allValueList);
+            finallabel1.setText("<html>" +
+                    "<table>" +
+                    "<tr><td><b><font style='font-size:12px;'>Partenza:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(0)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Orario:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(1)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Arrivo:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(2)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Orario:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(3)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Fermata:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(5)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Orario:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(6)) + "</font></td></tr>" +
+                    "</html>");
+
+            finallabel2.setText("<html>" +
+                    "<table>" +
+                    "<tr><td><b><font style='font-size:12px;'>Linea:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(4)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Periodo:</font></b></td><td><font style='font-size:18px;'>" + String.join(" ", allValueList.get(7)) + "</font></td></tr>" +
+                    "<tr><td><b><font style='font-size:12px;'>Tempo necessario:</font></b></td><td><font style='font-size:18px;'>" + result + "</font></td></tr>" +
+                    "</table>" +
+                    "</html>");
+        });
+
+        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+    }
+
+    /**
+     * Stores the bounds (position and size) of all components in the main panel, menu panel, and center panel.
+     * This is useful for restoring the component layout when the window is resized.
+     */
+    private void storeComponentBounds() {
+        for (Component comp : mainPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
+        for (Component comp : menuPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
+        for (Component comp : centerPanel.getComponents()) {
+            componentBounds.put(comp, comp.getBounds());
+        }
+    }
+
+    /**
+     * Calculates the time difference between the departure and arrival times.
+     * 
+     * @param departureTimeStr The departure time as a string in HH:mm format.
+     * @param arrivalTimeStr The arrival time as a string in HH:mm format.
+     * @return A string representing the time difference in hours and minutes.
+     */
+    public static String calculateTimeDifference(String departureTimeStr, String arrivalTimeStr) {
         LocalTime departureTime = LocalTime.parse(departureTimeStr);
         LocalTime arrivalTime = LocalTime.parse(arrivalTimeStr);
         Duration duration = Duration.between(departureTime, arrivalTime);
         long hours = duration.toHours();
         long minutes = duration.toMinutes() % 60;
-        return String.format("%d ore e %d minuti", hours, minutes);
-	}
+
+        StringBuilder result = new StringBuilder();
+        
+        if (hours > 0) {
+            result.append(String.format("%d ore", hours));
+        }
+        if (minutes > 0) {
+            if (hours > 0) {
+                result.append(" e ");
+            }
+            result.append(String.format("%d minuti", minutes));
+        }
+        return result.toString();
+    }
+
+
 }

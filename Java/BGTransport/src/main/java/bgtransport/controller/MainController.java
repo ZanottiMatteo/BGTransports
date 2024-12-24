@@ -32,9 +32,7 @@ public class MainController {
 		WeatherController.getMeteo();
         WeatherController.getWeatherIcon();
 		LineController.setStation();
-		LineController.setLine();
 		LineController.setTime();
-		LineController.setWeek();
 		lineV = new LineView();
 		ThemeController.updateThemes();
 		NewWindowController.openDBloader(dbV);
