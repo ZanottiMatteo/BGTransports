@@ -28,6 +28,7 @@ public class HomeView extends JFrame {
 	public static MiniMapWidget miniMapPanel = new MiniMapWidget();
 	public final UserWidget userPanel = new UserWidget();
 	public final TitleWidget infoPanel = new TitleWidget();
+	public final CompanyWidget companyPanel = new CompanyWidget();
 
 	public final transient ResizableImage lblBGwallpaper = new ResizableImage(
 			new File("src/main/resources/images/BG.png"));
@@ -81,6 +82,7 @@ public class HomeView extends JFrame {
 		homePanel.add(userPanel);
 		homePanel.add(menuPanel);
 		homePanel.add(infoPanel);
+		homePanel.add(companyPanel);
 
 		storeComponentBounds();
 		setupActionListeners();

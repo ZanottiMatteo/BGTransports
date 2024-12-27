@@ -29,6 +29,13 @@ public class MenuPanel extends RoundedPanel {
 	public final ImageIcon iconHome = new ImageIcon(MenuPanel.class.getResource("/images/Home.png"));
 	public final ImageIcon iconLine = new ImageIcon(MenuPanel.class.getResource("/images/Line.png"));
 	public final ImageIcon iconDatabase = new ImageIcon(MenuPanel.class.getResource("/images/Database.png"));
+	
+	public final ImageIcon iconUserD = new ImageIcon(MenuPanel.class.getResource("/images/UserDark.png"));
+	public final ImageIcon iconLDmodeD = new ImageIcon(MenuPanel.class.getResource("/images/LDModeDark.png"));
+	public final ImageIcon iconMapD = new ImageIcon(MenuPanel.class.getResource("/images/MapDark.png"));
+	public final ImageIcon iconHomeD = new ImageIcon(MenuPanel.class.getResource("/images/HomeDark.png"));
+	public final ImageIcon iconLineD = new ImageIcon(MenuPanel.class.getResource("/images/LineDark.png"));
+	public final ImageIcon iconDatabaseD = new ImageIcon(MenuPanel.class.getResource("/images/DatabaseDark.png"));
 
 	public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
@@ -42,7 +49,7 @@ public class MenuPanel extends RoundedPanel {
 		setBackground(new Color(210, 105, 30));
 		setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 
-		setupMenuButtons(iconUser, iconHome, iconMap, iconLine, iconDatabase, iconLDmode);
+		setupMenuButtons(iconUserD, iconHomeD, iconMapD, iconLineD, iconDatabaseD, iconLDmodeD);
 	}
 
 	/**

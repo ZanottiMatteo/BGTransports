@@ -37,11 +37,23 @@ public class ThemeController {
         if (themeDark) {
             homeV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
             homeV.infoPanel.logoLabelD.setVisible(false);
-            homeV.infoPanel.logoLabel.setVisible(true);             
+            homeV.infoPanel.logoLabel.setVisible(true);      
+            homeV.menuPanel.databaseButton.setIcon(homeV.menuPanel.iconDatabase);
+            homeV.menuPanel.lineButton.setIcon(homeV.menuPanel.iconLine);
+            homeV.menuPanel.mapButton.setIcon(homeV.menuPanel.iconMap);
+            homeV.menuPanel.switchThemeButton.setIcon(homeV.menuPanel.iconLDmode);
+            homeV.menuPanel.userButton.setIcon(homeV.menuPanel.iconUser);     
+            homeV.menuPanel.homeButton.setIcon(homeV.menuPanel.iconHome);
         } else {
             homeV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
             homeV.infoPanel.logoLabel.setVisible(false); 
             homeV.infoPanel.logoLabelD.setVisible(true); 
+            homeV.menuPanel.databaseButton.setIcon(homeV.menuPanel.iconDatabaseD);
+            homeV.menuPanel.lineButton.setIcon(homeV.menuPanel.iconLineD);
+            homeV.menuPanel.mapButton.setIcon(homeV.menuPanel.iconMapD);
+            homeV.menuPanel.switchThemeButton.setIcon(homeV.menuPanel.iconLDmodeD);
+            homeV.menuPanel.userButton.setIcon(homeV.menuPanel.iconUserD);     
+            homeV.menuPanel.homeButton.setIcon(homeV.menuPanel.iconHomeD);
         }
     }
     
@@ -52,8 +64,20 @@ public class ThemeController {
     public static void setThemeMapPanel(MapView mapV) {        
         if (themeDark) {
             mapV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+            mapV.menuPanel.databaseButton.setIcon(mapV.menuPanel.iconDatabase);
+            mapV.menuPanel.lineButton.setIcon(mapV.menuPanel.iconLine);
+            mapV.menuPanel.mapButton.setIcon(mapV.menuPanel.iconMap);
+            mapV.menuPanel.switchThemeButton.setIcon(mapV.menuPanel.iconLDmode);
+            mapV.menuPanel.userButton.setIcon(mapV.menuPanel.iconUser);     
+            mapV.menuPanel.homeButton.setIcon(mapV.menuPanel.iconHome);
         } else {
             mapV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+            mapV.menuPanel.databaseButton.setIcon(mapV.menuPanel.iconDatabaseD);
+            mapV.menuPanel.lineButton.setIcon(mapV.menuPanel.iconLineD);
+            mapV.menuPanel.mapButton.setIcon(mapV.menuPanel.iconMapD);
+            mapV.menuPanel.switchThemeButton.setIcon(mapV.menuPanel.iconLDmodeD);
+            mapV.menuPanel.userButton.setIcon(mapV.menuPanel.iconUserD);     
+            mapV.menuPanel.homeButton.setIcon(mapV.menuPanel.iconHomeD);
         }    
     }
 
@@ -62,10 +86,22 @@ public class ThemeController {
      * @param userV the {@code UserView} instance to update.
      */
     public static void setThemeUserPanel(UserView userV) {    
-        if (themeDark) {
-            userV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+    	if (themeDark) {
+    		userV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+    		userV.menuPanel.databaseButton.setIcon(userV.menuPanel.iconDatabase);
+    		userV.menuPanel.lineButton.setIcon(userV.menuPanel.iconLine);
+    		userV.menuPanel.mapButton.setIcon(userV.menuPanel.iconMap);
+    		userV.menuPanel.switchThemeButton.setIcon(userV.menuPanel.iconLDmode);
+    		userV.menuPanel.userButton.setIcon(userV.menuPanel.iconUser);     
+    		userV.menuPanel.homeButton.setIcon(userV.menuPanel.iconHome);
         } else {
-            userV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+        	userV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+        	userV.menuPanel.databaseButton.setIcon(userV.menuPanel.iconDatabaseD);
+        	userV.menuPanel.lineButton.setIcon(userV.menuPanel.iconLineD);
+        	userV.menuPanel.mapButton.setIcon(userV.menuPanel.iconMapD);
+        	userV.menuPanel.switchThemeButton.setIcon(userV.menuPanel.iconLDmodeD);
+        	userV.menuPanel.userButton.setIcon(userV.menuPanel.iconUserD);     
+        	userV.menuPanel.homeButton.setIcon(userV.menuPanel.iconHomeD);
         }    
     }
     
@@ -74,10 +110,22 @@ public class ThemeController {
      * @param lineV the {@code LineView} instance to update.
      */
     public static void setThemeLinePanel(LineView lineV) {    
-        if (themeDark) {
-            lineV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+    	if (themeDark) {
+    		lineV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+    		lineV.menuPanel.databaseButton.setIcon(lineV.menuPanel.iconDatabase);
+    		lineV.menuPanel.lineButton.setIcon(lineV.menuPanel.iconLine);
+    		lineV.menuPanel.mapButton.setIcon(lineV.menuPanel.iconMap);
+    		lineV.menuPanel.switchThemeButton.setIcon(lineV.menuPanel.iconLDmode);
+    		lineV.menuPanel.userButton.setIcon(lineV.menuPanel.iconUser);     
+    		lineV.menuPanel.homeButton.setIcon(lineV.menuPanel.iconHome);
         } else {
-            lineV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+        	lineV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+        	lineV.menuPanel.databaseButton.setIcon(lineV.menuPanel.iconDatabaseD);
+        	lineV.menuPanel.lineButton.setIcon(lineV.menuPanel.iconLineD);
+        	lineV.menuPanel.mapButton.setIcon(lineV.menuPanel.iconMapD);
+        	lineV.menuPanel.switchThemeButton.setIcon(lineV.menuPanel.iconLDmodeD);
+        	lineV.menuPanel.userButton.setIcon(lineV.menuPanel.iconUserD);     
+        	lineV.menuPanel.homeButton.setIcon(lineV.menuPanel.iconHomeD);
         }    
     }
     
@@ -86,11 +134,23 @@ public class ThemeController {
      * @param databaseV the {@code DatabaseView} instance to update.
      */
     public static void setThemeDatabasePanel(DatabaseView databaseV) {    
-        if (themeDark) {
-            databaseV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+    	if (themeDark) {
+    		databaseV.homePanel.setBackground(new Color(0, 0, 0, 40)); // Light theme background 
+    		databaseV.menuPanel.databaseButton.setIcon(databaseV.menuPanel.iconDatabase);
+    		databaseV.menuPanel.lineButton.setIcon(databaseV.menuPanel.iconLine);
+    		databaseV.menuPanel.mapButton.setIcon(databaseV.menuPanel.iconMap);
+    		databaseV.menuPanel.switchThemeButton.setIcon(databaseV.menuPanel.iconLDmode);
+    		databaseV.menuPanel.userButton.setIcon(databaseV.menuPanel.iconUser);     
+    		databaseV.menuPanel.homeButton.setIcon(databaseV.menuPanel.iconHome);
         } else {
-            databaseV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
-        }    
+        	databaseV.homePanel.setBackground(new Color(0, 0, 0, 80)); // Dark theme background
+        	databaseV.menuPanel.databaseButton.setIcon(databaseV.menuPanel.iconDatabaseD);
+        	databaseV.menuPanel.lineButton.setIcon(databaseV.menuPanel.iconLineD);
+        	databaseV.menuPanel.mapButton.setIcon(databaseV.menuPanel.iconMapD);
+        	databaseV.menuPanel.switchThemeButton.setIcon(databaseV.menuPanel.iconLDmodeD);
+        	databaseV.menuPanel.userButton.setIcon(databaseV.menuPanel.iconUserD);     
+        	databaseV.menuPanel.homeButton.setIcon(databaseV.menuPanel.iconHomeD);
+        }     
     }
     
     /**
@@ -100,10 +160,14 @@ public class ThemeController {
     public static void setThemeLoginPanel(LoginView loginV) {
         if (themeDark) {
             loginV.logoLabelD.setVisible(false);
-            loginV.logoLabel.setVisible(true);            
+            loginV.logoLabel.setVisible(true);  
+            loginV.switchThemeButton.setIcon(loginV.iconLDmode);
+            loginV.returnButton.setIcon(loginV.iconReturn);
         } else {
             loginV.logoLabel.setVisible(false);    
-            loginV.logoLabelD.setVisible(true);                
+            loginV.logoLabelD.setVisible(true);       
+            loginV.switchThemeButton.setIcon(loginV.iconLDmodeD);
+            loginV.returnButton.setIcon(loginV.iconReturnD);
         }
     }
     
@@ -126,6 +190,7 @@ public class ThemeController {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
+        
 
         setThemeHomePanel(MainController.homeV);            
         setThemeMapPanel(MainController.mapV);

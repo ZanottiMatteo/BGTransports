@@ -49,6 +49,8 @@ public class NewWindowController {
 						homeV.userPanel);
 				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.infoPanel.componentBounds,
 						homeV.infoPanel);
+				ResizeController.resizeComponents(homeV.originalPanelSize, homeV, homeV.companyPanel.componentBounds,
+						homeV.companyPanel);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconUser,
 						homeV.menuPanel.userButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconMap,
@@ -61,6 +63,18 @@ public class NewWindowController {
 						homeV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLDmode,
 						homeV.menuPanel.switchThemeButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconUserD,
+						homeV.menuPanel.userButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconMapD,
+						homeV.menuPanel.mapButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconHomeD,
+						homeV.menuPanel.homeButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLineD,
+						homeV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconDatabaseD,
+						homeV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.menuPanel.iconLDmodeD,
+						homeV.menuPanel.switchThemeButton);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.weatherPanel.iconWeather,
 						homeV.weatherPanel.lblweatherimg);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogo,
@@ -68,6 +82,14 @@ public class NewWindowController {
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogoD,
 						homeV.infoPanel.logoLabelD);
 				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.companyPanel.iconatb,
+						homeV.companyPanel.atbButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.companyPanel.iconteb,
+						homeV.companyPanel.tebButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.companyPanel.icontrenord,
+						homeV.companyPanel.trenordButton);
+				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.companyPanel.iconbgt,
+						homeV.companyPanel.usButton);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.menuPanel, homeV.menuPanelSize,
 						homeV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.weatherPanel,
@@ -82,6 +104,8 @@ public class NewWindowController {
 						homeV.widgetPanelSizeMedium, homeV.userPanel.userpanelpoint);
 				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.infoPanel, homeV.widgetPanelTitle,
 						homeV.infoPanel.infopanelpoint);
+				ResizeController.resizePanel(homeV.originalPanelSize, homeV, homeV.companyPanel, homeV.widgetPanelSizeMedium,
+						homeV.companyPanel.companypanelpoint);
 
 			}
 		});
@@ -111,14 +135,27 @@ public class NewWindowController {
 						mapV.menuPanel.lineButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconDatabase,
 						mapV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconLDmode,
+						mapV.menuPanel.switchThemeButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconUserD,
+						mapV.menuPanel.userButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconMapD,
+						mapV.menuPanel.mapButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconHomeD,
+						mapV.menuPanel.homeButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconLineD,
+						mapV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconDatabaseD,
+						mapV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconLDmodeD,
+						mapV.menuPanel.switchThemeButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconBus, mapV.busButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconTrain, mapV.trainButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconFunicular,
 						mapV.funicularButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconTram, mapV.tramButton);
 				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.iconmypos, mapV.myposButton);
-				ResizeController.resizeImageButton(mapV.originalPanelSize, mapV, mapV.menuPanel.iconLDmode,
-						mapV.menuPanel.switchThemeButton);
+				
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, mapV.menuPanel, mapV.menuPanelSize,
 						mapV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(mapV.originalPanelSize, mapV, MapView.externmapPanel, mapV.mapPanelSize,
@@ -174,6 +211,18 @@ public class NewWindowController {
 						userV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconLDmode,
 						userV.menuPanel.switchThemeButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconUserD,
+						userV.menuPanel.userButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconMapD,
+						userV.menuPanel.mapButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconHomeD,
+						userV.menuPanel.homeButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconLineD,
+						userV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconDatabaseD,
+						userV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconLDmodeD,
+						userV.menuPanel.switchThemeButton);
 				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.menuPanel, userV.menuPanelSize,
 						userV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.centerPanel, userV.centerPanelSize,
@@ -200,6 +249,10 @@ public class NewWindowController {
 				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconReturn,
 						loginV.returnButton);
 				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconLDmode,
+						loginV.switchThemeButton);
+				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconReturnD,
+						loginV.returnButton);
+				ResizeController.resizeImageButton(loginV.originalPanelSize, loginV, loginV.iconLDmodeD,
 						loginV.switchThemeButton);
 				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogo, loginV.logoLabel);
 				ResizeController.resizeImageLabel(loginV.originalPanelSize, loginV, loginV.iconLogoD,
@@ -235,6 +288,18 @@ public class NewWindowController {
 						lineV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconLDmode,
 						lineV.menuPanel.switchThemeButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconUserD,
+						lineV.menuPanel.userButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconMapD,
+						lineV.menuPanel.mapButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconHomeD,
+						lineV.menuPanel.homeButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconLineD,
+						lineV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconDatabaseD,
+						lineV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(lineV.originalPanelSize, lineV, lineV.menuPanel.iconLDmodeD,
+						lineV.menuPanel.switchThemeButton);
 				ResizeController.resizePanel(lineV.originalPanelSize, lineV, lineV.menuPanel, lineV.menuPanelSize,
 						lineV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(lineV.originalPanelSize, lineV, lineV.centerPanel, lineV.centerPanelSize,
@@ -266,10 +331,22 @@ public class NewWindowController {
 						databaseV.menuPanel.homeButton);
 				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconLine,
 						databaseV.menuPanel.lineButton);
-				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV,
-						databaseV.menuPanel.iconDatabase, databaseV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconDatabase, 
+						databaseV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV,
 						databaseV.menuPanel.iconLDmode, databaseV.menuPanel.switchThemeButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconUserD,
+						databaseV.menuPanel.userButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconMapD,
+						databaseV.menuPanel.mapButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconHomeD,
+						databaseV.menuPanel.homeButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconLineD,
+						databaseV.menuPanel.lineButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV, databaseV.menuPanel.iconDatabaseD, 
+						databaseV.menuPanel.databaseButton);
+				ResizeController.resizeImageButton(databaseV.originalPanelSize, databaseV,
+						databaseV.menuPanel.iconLDmodeD, databaseV.menuPanel.switchThemeButton);
 				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.menuPanel,
 						databaseV.menuPanelSize, databaseV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(databaseV.originalPanelSize, databaseV, databaseV.centerPanel,

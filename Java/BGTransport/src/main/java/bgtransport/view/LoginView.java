@@ -35,11 +35,13 @@ public class LoginView extends JFrame {
     public ImageIcon iconLogo = new ImageIcon(LoginView.class.getResource("/images/Logo.png"));
     public ImageIcon iconLogoD = new ImageIcon(LoginView.class.getResource("/images/LogoDark.png"));
     public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
+    public ImageIcon iconLDmodeD = new ImageIcon(LoginView.class.getResource("/images/LDModeDark.png"));
     public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
     public JPasswordField passwordField = new JPasswordField();
     public JButton switchThemeButton;
     public JButton returnButton = new JButton();
     public ImageIcon iconReturn = new ImageIcon(LoginView.class.getResource("/images/Return.png"));
+    public ImageIcon iconReturnD = new ImageIcon(LoginView.class.getResource("/images/ReturnDark.png"));
     public JPanel bgPanel;
     public JTextField textField = new JTextField();
     public JButton signInButton = new JButton();
@@ -114,7 +116,7 @@ public class LoginView extends JFrame {
         returnButton.setBounds(30, 30, 60, 60);
         returnButton.setBorderPainted(false);
         returnButton.setBackground(new Color(0, 0, 0, 0));
-        returnButton.setIcon(iconReturn);
+        returnButton.setIcon(iconReturnD);
         returnButton.addActionListener(e -> {
             NewWindowController.openHomePanel(MainController.homeV);
             setVisible(false);
@@ -157,7 +159,7 @@ public class LoginView extends JFrame {
         switchThemeButton = new JButton();
         switchThemeButton.setBackground(new Color(0, 0, 0, 0));
         switchThemeButton.setBounds(938, 850, 44, 35);
-        switchThemeButton.setIcon(iconLDmode);
+        switchThemeButton.setIcon(iconLDmodeD);
         switchThemeButton.setForeground(new Color(230, 230, 250));
         switchThemeButton.setRolloverEnabled(false);
         switchThemeButton.setBorderPainted(false);
