@@ -28,7 +28,7 @@ public class RegisteredUser {
      * 
      * @throws SQLException if a database error occurs while fetching user details.
      */
-    private void loadUserDetails() throws SQLException {
+    public void loadUserDetails() throws SQLException {
         List<String> userDetails = UserQueryDB.getUserDetailsByEmail(this.email);
 
         if (!userDetails.isEmpty()) {
