@@ -21,7 +21,7 @@ public class TimestampController {
      *
      * @throws Exception if any error occurs during thread execution
      */
-    public static void getTime() throws Exception {
+    public static void getTime() {
         Thread thread = new Thread(() -> {
             while (true) {
                 // Get the current timestamp
@@ -51,7 +51,7 @@ public class TimestampController {
      *
      * @throws IOException if any I/O error occurs during execution
      */
-    public static void getDate() throws IOException {
+    public static void getDate() {
         Thread thread = new Thread(() -> {
             while (true) {
                 // Get the current timestamp

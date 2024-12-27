@@ -2,7 +2,6 @@ package modeltest;
 
 import org.junit.jupiter.api.Test;
 
-import bgtransport.model.ConstantDB;
 import bgtransport.model.ConstantFile;
 import bgtransport.model.MainModel;
 

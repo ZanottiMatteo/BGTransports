@@ -24,7 +24,7 @@ public class AccountControllerTest {
     private static List<JButton> mockButtons;
 
     @BeforeAll
-    public static void setup() throws IOException {
+    public static void setup() {
         // Create a mock JSON file
         File jsonFile = new File("json/AccountIcon.json");
         jsonFile.getParentFile().mkdirs();

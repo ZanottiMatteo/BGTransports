@@ -13,19 +13,19 @@ import bgtransport.controller.MainController;
 import bgtransport.model.ConstantDB;
 import bgtransport.model.UserQueryDB;
 
-public class DatabaseControllerTest {
+class DatabaseControllerTest {
 
 	private static String databasePublicTransport;
 	private static String databaseUser;
 
 	@BeforeAll
-	static void setup() throws SQLException {
+	static void setup() {
 		databasePublicTransport = ConstantDB.DB_URL_PUBLIC_TRANSPORTATION;
 		databaseUser = ConstantDB.DB_URL_USERS;
 	}
 
 	@Test
-	public void testScrollPanelUser() throws SQLException {
+	void testScrollPanelUser() throws SQLException {
 		UserQueryDB.getDataFromDatabaseUsers(databaseUser);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -36,7 +36,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelCompany() throws SQLException {
+	void testScrollPanelCompany() throws SQLException {
 		UserQueryDB.getDataFromCompany(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -48,7 +48,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelFunicularStation() throws SQLException {
+	void testScrollPanelFunicularStation() throws SQLException {
 		UserQueryDB.getDataFromFunicularStation(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -60,7 +60,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelFunicularTimetable() throws SQLException {
+	void testScrollPanelFunicularTimetable() throws SQLException {
 		UserQueryDB.getDataFromFunicularTimetable(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -72,7 +72,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelPullmanStop() throws SQLException {
+	void testScrollPanelPullmanStop() throws SQLException {
 		UserQueryDB.getDataFromPullmanStop(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -84,7 +84,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelPullmanTimetable() throws SQLException {
+	void testScrollPanelPullmanTimetable() throws SQLException {
 		UserQueryDB.getDataFromPullmanTimetable(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -96,7 +96,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelTrainStation() throws SQLException {
+	void testScrollPanelTrainStation() throws SQLException {
 		UserQueryDB.getDataFromTrainStation(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -108,7 +108,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelTrainTimetable() throws SQLException {
+	void testScrollPanelTrainTimetable() throws SQLException {
 		UserQueryDB.getDataFromTrainTimetable(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -120,7 +120,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelTramStop() throws SQLException {
+	void testScrollPanelTramStop() throws SQLException {
 		UserQueryDB.getDataFromTramStop(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);
@@ -132,7 +132,7 @@ public class DatabaseControllerTest {
 	}
 
 	@Test
-	public void testScrollPanelTramTimetable() throws SQLException {
+	void testScrollPanelTramTimetable() throws SQLException {
 		UserQueryDB.getDataFromTramTimetable(databasePublicTransport);
 		DefaultTableModel model = new DefaultTableModel(UserQueryDB.data, UserQueryDB.columnNames);
 		JTable table = new JTable(model);

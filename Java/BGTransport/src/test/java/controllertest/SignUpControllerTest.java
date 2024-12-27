@@ -8,8 +8,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import org.jooq.DSLContext;
-import org.jooq.impl.DSL;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

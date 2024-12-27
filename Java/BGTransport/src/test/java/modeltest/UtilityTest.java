@@ -90,7 +90,7 @@ class UtilityTest {
      * This test will check if the DSLContext can be created successfully for an H2 in-memory database.
      */
     @Test
-    void testDslContext() throws SQLException {
+    void testDslContext() {
         // Create a DSLContext using the H2 in-memory database
         DSLContext context = dslContext;
 

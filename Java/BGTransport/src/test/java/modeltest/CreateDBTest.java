@@ -26,7 +26,7 @@ public class CreateDBTest {
 	}
 
 	@Test
-    public void testCreateDatabase() {
+    void testCreateDatabase() {
         try {
             conn = DriverManager.getConnection(DB_URL);
             assertNotNull(conn, "La connessione al database SQLite è fallita!");

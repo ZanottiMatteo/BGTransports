@@ -2,16 +2,10 @@ package controllertest;
 
 import bgtransport.controller.WeatherController;
 import bgtransport.view.WeatherWidget;
-import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.awt.image.BufferedImage;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -42,7 +36,7 @@ class WeatherControllerTest {
     }
 
     @Test
-    void testGetWeatherIconValidResponse() throws IOException {
+    void testGetWeatherIconValidResponse() {
         // Set weathercode and isday for testing
         WeatherController.weathercode = 0;
         WeatherController.isday = 1;

@@ -9,10 +9,10 @@ import bgtransport.controller.DownloadDataDBController;
 import bgtransport.controller.MainController;
 import bgtransport.model.ControlDB;
 
-public class DownloadDataDBControllerTest {
+class DownloadDataDBControllerTest {
 
     @Test
-    public void testUpdateProgress() throws InterruptedException {
+    void testUpdateProgress() {
         DownloadDataDBController.totalRecordCount = 100;
         ControlDB.progress = 25;
         DownloadDataDBController.updateProgress();
@@ -21,7 +21,7 @@ public class DownloadDataDBControllerTest {
     }
 
     @Test
-    public void testReturnProgress() {
+    void testReturnProgress() {
         DownloadDataDBController.totalRecordCount = 100;
         ControlDB.progress = 50;
 
@@ -30,7 +30,7 @@ public class DownloadDataDBControllerTest {
     }
 
     @Test
-    public void testUpdateProgressbar() throws Exception {
+    void testUpdateProgressbar() throws Exception {
         DownloadDataDBController.totalRecordCount = 100;
         ControlDB.progress = 25;
         CountDownLatch latch = new CountDownLatch(1);

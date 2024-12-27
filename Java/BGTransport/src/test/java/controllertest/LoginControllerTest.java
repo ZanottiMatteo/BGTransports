@@ -2,7 +2,6 @@ package controllertest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +30,7 @@ class LoginControllerTest {
     }
 
     @Test
-    void testLoginNonExistentEmail() throws SQLException {
+    void testLoginNonExistentEmail() {
         // Simula input con email non esistente
         emailField.setText("unknown@example.com");
         passwordField.setText("password123");
@@ -45,7 +44,7 @@ class LoginControllerTest {
     }
     
     @Test
-    void testLoginWrongPassword() throws SQLException {
+    void testLoginWrongPassword() {
         // Simula input con password errata
         emailField.setText("test2@example.com");
         passwordField.setText("wrongPassword");
@@ -60,7 +59,7 @@ class LoginControllerTest {
     }
     
     @Test
-    void testLoginSuccess() throws SQLException {
+    void testLoginSuccess() {
         // Simula input corretto
         emailField.setText("test@example.com");
         passwordField.setText("password123");

@@ -43,7 +43,7 @@ public class TimeWidget extends RoundedPanel {
 	 * @throws Exception If an error occurs during the configuration of the
 	 *                   components.
 	 */
-	private void setupTimeComponents() throws Exception {
+	private void setupTimeComponents() {
 
 		lbltime.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltime.setFont(new Font("SansSerif", Font.BOLD, 20));

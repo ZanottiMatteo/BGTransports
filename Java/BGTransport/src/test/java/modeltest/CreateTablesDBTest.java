@@ -45,7 +45,7 @@ class CreateTablesDBTest {
     }
 
     @Test
-    void testTableCreationPublicTransportation() throws SQLException {
+    void testTableCreationPublicTransportation() {
         List<String> tableNames = create1.select(DSL.field("TABLE_NAME"))
             								.from("INFORMATION_SCHEMA.TABLES")
                                             .where(DSL.field("TABLE_SCHEMA").eq("PUBLIC"))
@@ -63,7 +63,7 @@ class CreateTablesDBTest {
     }
 
     @Test
-    void testTableCreationUsers() throws SQLException {
+    void testTableCreationUsers() {
         List<String> tableNames = create2.select(DSL.field("TABLE_NAME"))
     										.from("INFORMATION_SCHEMA.TABLES")
                                             .where(DSL.field("TABLE_SCHEMA").eq("PUBLIC"))
