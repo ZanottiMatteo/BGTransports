@@ -2,6 +2,8 @@ package bgtransport.view;
 
 import javax.swing.*;
 
+import bgtransport.controller.AccountController;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +22,7 @@ public class UserWidget extends RoundedPanel {
     public static LittleLabel emaillabel = new LittleLabel();
     public static JLabel errorlabel = new JLabel("Effettua il Login");
     public static JLabel titlelabel = new JLabel("Dati Utente");
-    
+    public static ImageIcon image = new ImageIcon(UserWidget.class.getResource("/images/Addimage.png"));
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     /**

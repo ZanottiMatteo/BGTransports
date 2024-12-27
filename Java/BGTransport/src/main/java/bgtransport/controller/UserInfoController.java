@@ -20,12 +20,13 @@ public class UserInfoController {
         if (n != 0) {
             String str = String.valueOf(n);
             UserView.chooseIcon.setIcon(null);
-            UserView.profilePhoto.setIcon(new ImageIcon(AccountController.getAccountIcon(str, 242)));
-            UserWidget.accounticon.setIcon(new ImageIcon(AccountController.getAccountIcon(str, 128)));
+            UserView.image = new ImageIcon(AccountController.getAccountIcon(str, 252));
+            UserView.profilePhoto.setIcon(UserView.image);
+            UserWidget.image = new ImageIcon(AccountController.getAccountIcon(str, 128));
+            UserWidget.accounticon.setIcon(UserWidget.image);
         } else {
             UserView.profilePhoto.setIcon(null);
-            UserWidget.accounticon.setIcon(null);
-            UserView.chooseIcon.setIcon(new ImageIcon(AccountController.class.getResource("/images/Addimage.png")));
+           UserView.chooseIcon.setIcon(new ImageIcon(AccountController.class.getResource("/images/Addimage.png")));
         }
     }
 

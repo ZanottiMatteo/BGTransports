@@ -44,9 +44,6 @@ public class LineView extends JFrame {
     public RoundedPanel centerPanel = new RoundedPanel();
     public final Point centerpanelpoint = new Point(200, 30);
     public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
-    public ImageIcon iconUser = new ImageIcon(LineView.class.getResource("/images/User.png"));
-    public ImageIcon iconMap = new ImageIcon(LineView.class.getResource("/images/Map.png"));
-    public ImageIcon iconHome = new ImageIcon(LineView.class.getResource("/images/Home.png"));
     public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
     // Dimensions for panels

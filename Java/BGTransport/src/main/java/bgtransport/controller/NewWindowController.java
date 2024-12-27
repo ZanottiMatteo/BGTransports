@@ -81,6 +81,8 @@ public class NewWindowController {
 						homeV.infoPanel.logoLabel);
 				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.infoPanel.iconLogoD,
 						homeV.infoPanel.logoLabelD);
+				ResizeController.resizeImageLabel(homeV.originalPanelSize, homeV, homeV.userPanel.image,
+						homeV.userPanel.accounticon);
 				ResizeController.resizeImagePanel(homeV, homeV.lblBGwallpaper, homeV.mainPanel);
 				ResizeController.resizeImageButton(homeV.originalPanelSize, homeV, homeV.companyPanel.iconatb,
 						homeV.companyPanel.atbButton);
@@ -223,6 +225,8 @@ public class NewWindowController {
 						userV.menuPanel.databaseButton);
 				ResizeController.resizeImageButton(userV.originalPanelSize, userV, userV.menuPanel.iconLDmodeD,
 						userV.menuPanel.switchThemeButton);
+				ResizeController.resizeImageLabel(userV.originalPanelSize, userV, userV.image,
+						userV.profilePhoto);
 				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.menuPanel, userV.menuPanelSize,
 						userV.menuPanel.menupanelpoint);
 				ResizeController.resizePanel(userV.originalPanelSize, userV, userV.centerPanel, userV.centerPanelSize,

@@ -53,10 +53,6 @@ public class DatabaseView extends JFrame {
 
     public transient Map<Component, Rectangle> componentBounds = new HashMap<>();
 
-    public ImageIcon iconUser = new ImageIcon(LineView.class.getResource("/images/User.png"));
-    public ImageIcon iconMap = new ImageIcon(LineView.class.getResource("/images/Map.png"));
-    public ImageIcon iconHome = new ImageIcon(LineView.class.getResource("/images/Home.png"));
-
     public final Dimension originalPanelSize = new Dimension(1920, 1080);
     public final Dimension menuPanelSize = new Dimension(100, 900);
     public final Dimension minPanelSize = new Dimension(1085, 615);

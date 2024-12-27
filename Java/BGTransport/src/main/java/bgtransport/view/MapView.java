@@ -43,9 +43,6 @@ public class MapView extends JFrame {
 	public final transient ResizableImage lblBGwallpaper = new ResizableImage(
 			new File("src/main/resources/images/BG.png"));
 
-	public ImageIcon iconUser = new ImageIcon(MapView.class.getResource("/images/User.png"));
-	public ImageIcon iconMap = new ImageIcon(MapView.class.getResource("/images/Map.png"));
-	public ImageIcon iconHome = new ImageIcon(MapView.class.getResource("/images/Home.png"));
 	public ImageIcon iconBus = new ImageIcon(MapView.class.getResource("/images/Bus.png"));
 	public ImageIcon iconTrain = new ImageIcon(MapView.class.getResource("/images/Train.png"));
 	public ImageIcon iconTram = new ImageIcon(MapView.class.getResource("/images/Tram.png"));

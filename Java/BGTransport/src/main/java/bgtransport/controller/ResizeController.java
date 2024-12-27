@@ -169,17 +169,17 @@ public class ResizeController {
 	 * @param jlabel            The label containing the image.
 	 */
 	public static void resizeImageLabel(Dimension originalPanelSize, JFrame jframe, ImageIcon rimage, JLabel jlabel) {
-		double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
-		double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
-		double singleRatio;
-		if (widthRatio > heightRatio) {
-			singleRatio = heightRatio;
-		} else {
-			singleRatio = widthRatio;
-		}
-		Image scaledImage = rimage.getImage().getScaledInstance((int) (rimage.getIconWidth() * singleRatio),
-				(int) (rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
-		ImageIcon resizedIcon = new ImageIcon(scaledImage);
-		jlabel.setIcon(resizedIcon);
+			double widthRatio = (double) jframe.getWidth() / originalPanelSize.width;
+			double heightRatio = (double) jframe.getHeight() / originalPanelSize.height;
+			double singleRatio;
+			if (widthRatio > heightRatio) {
+				singleRatio = heightRatio;
+			} else {
+				singleRatio = widthRatio;
+			}
+			Image scaledImage = rimage.getImage().getScaledInstance((int) (rimage.getIconWidth() * singleRatio),
+					(int) (rimage.getIconHeight() * singleRatio), Image.SCALE_SMOOTH);
+			ImageIcon resizedIcon = new ImageIcon(scaledImage);
+			jlabel.setIcon(resizedIcon);
 	}
 }
