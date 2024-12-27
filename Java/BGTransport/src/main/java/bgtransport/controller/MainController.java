@@ -47,6 +47,8 @@ public class MainController {
 		WeatherController.getMeteo();
 		WeatherController.getWeatherIcon();
 
+		
+		
 		// Initialize line-related controllers
 		LineController.setStation();
 		LineController.setTime();

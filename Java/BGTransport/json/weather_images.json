@@ -2,241 +2,241 @@
     "0": {
         "day": {
             "description": "Clear",
-            "image": "https://raw.githubusercontent.com/Leftium/weather-sense/62d94b403f198c5531cf9e74f09d995249eb6a5a/static/icons/airy/clear%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163662.png"
         },
         "night": {
             "description": "Clear",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Normal%20Conditions/Night/Clear/Clear%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163645.png"
         }
     },
     "1": {
         "day": {
             "description": "Mostly Clear",
-            "image": "https://raw.githubusercontent.com/Leftium/weather-sense/62d94b403f198c5531cf9e74f09d995249eb6a5a/static/icons/airy/mostly-clear%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163662.png"
         },
         "night": {
             "description": "Mostly Clear",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Normal%20Conditions/Night/Mostly%20Clear/Mostly%20Clear%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163645.png"
         }
     },
     "2": {
         "day": {
             "description": "Partly Cloudy",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Normal%20Conditions/Day/Partly%20Cloudy/Partly%20Cloudy%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163661.png"
         },
         "night": {
             "description": "Partly Cloudy",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Normal%20Conditions/Night/Partly%20Cloudy/Partly%20Cloudy%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163625.png"
         }
     },
     "3": {
         "day": {
             "description": "Overcast",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Normal%20Conditions/Day/Overcast/Overcast%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163624.png"
         },
         "night": {
             "description": "Overcast",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Normal%20Conditions/Night/Overcast/Overcast%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163624.png"
         }
     },
     "45": {
         "day": {
             "description": "Fog",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Fog/Day/Fog/Fog%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         },
         "night": {
             "description": "Fog",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Fog/Night/Fog/Fog%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         }
     },
     "48": {
         "day": {
             "description": "Icy Fog",
-        	"image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Fog/Day/Fog/Fog%404x.png"
+        	"image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         },
         "night": {
             "description": "Icy Fog",
-          	"image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Fog/Night/Fog/Fog%404x.png"
+          	"image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         }
     },
     "51": {
         "day": {
             "description": "Light Drizzle",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Drizzle/Day/Light%20Drizzle/Light%20Drizzle%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Light Drizzle",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Drizzle/Night/Light%20Drizzle/Light%20Drizzle%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "53": {
         "day": {
             "description": "Drizzle",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Drizzle/Day/Dense%20Drizzle/Dense%20Drizzle%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Drizzle",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Drizzle/Night/Dense%20Drizzle/Dense%20Drizzle%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "55": {
         "day": {
             "description": "Heavy Drizzle",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Drizzle/Day/Dense%20Drizzle/Dense%20Drizzle%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Heavy Drizzle",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Drizzle/Night/Dense%20Drizzle/Dense%20Drizzle%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "61": {
         "day": {
             "description": "Light Rain",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Day/Rain/Light%20Rain/Light%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Light Rain",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Night/Rain/Light%20Rain/Light%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "63": {
         "day": {
             "description": "Rain",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Day/Rain/Moderate%20Rain/Moderate%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Rain",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Night/Rain/Moderate%20Rain/Moderate%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "65": {
         "day": {
             "description": "Heavy Rain",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Day/Rain/Heavy%20Rain/Heavy%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         },
         "night": {
             "description": "Heavy Rain",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Night/Rain/Heavy%20Rain/Heavy%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         }
     },
 	"71": {
         "day": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Day/Snowfall/Moderate%20Snowfall/Slight%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Night/Snowfall/Moderate%20Snowfall/Moderate%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
 	"73": {
         "day": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Day/Snowfall/Moderate%20Snowfall/Slight%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Night/Snowfall/Moderate%20Snowfall/Moderate%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
 	"75": {
         "day": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Day/Snowfall/Moderate%20Snowfall/Slight%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Night/Snowfall/Moderate%20Snowfall/Moderate%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
 	"77": {
         "day": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Day/Snowfall/Moderate%20Snowfall/Slight%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Night/Snowfall/Moderate%20Snowfall/Moderate%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
     "80": {
         "day": {
             "description": "Light Showers",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Day/Rain/Light%20Rain/Light%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         },
         "night": {
             "description": "Light Showers",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Night/Rain/Light%20Rain/Light%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         }
     },
     "81": {
         "day": {
             "description": "Showers",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Day/Rain/Light%20Rain/Light%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         },
         "night": {
             "description": "Showers",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Night/Rain/Light%20Rain/Light%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         }
     },
     "82": {
         "day": {
             "description": "Heavy Showers",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Day/Rain/Heavy%20Rain/Heavy%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         },
         "night": {
             "description": "Heavy Showers",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Night/Rain/Heavy%20Rain/Heavy%20Rain%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         }
     },
 	"85": {
         "day": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Day/Snowfall/Moderate%20Snowfall/Slight%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Night/Snowfall/Moderate%20Snowfall/Moderate%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
 	"86": {
         "day": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Day/Snowfall/Moderate%20Snowfall/Slight%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
             "description": "Snow",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Snow/Night/Snowfall/Moderate%20Snowfall/Moderate%20Snowfall%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
     "95": {
         "day": {
             "description": "Thunderstorm",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Thunderstorm/Day/Thunderstorm/Thunderstorm%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         },
         "night": {
             "description": "Thunderstorm",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Thunderstorm/Night/Thunderstorm/Thunderstorm%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         }
     },
     "96": {
         "day": {
             "description": "Light Thunderstorm with Hail",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Thunderstorm/Day/Thunderstorm%20with%20Hail/Thunderstorm%20with%20Hail%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         },
         "night": {
             "description": "Light Thunderstorm with Hail",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Thunderstorm/Night/Thunderstorm%20with%20Hail/Thunderstorm%20with%20Hail%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         }
     },
     "99": {
         "day": {
             "description": "Thunderstorm with Hail",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Thunderstorm/Day/Thunderstorm%20with%20Hail/Thunderstorm%20with%20Hail%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         },
         "night": {
             "description": "Thunderstorm with Hail",
-            "image": "https://raw.githubusercontent.com/HaroleDev/Airycons/refs/heads/main/icons/Thunderstorm/Night/Thunderstorm%20with%20Hail/Thunderstorm%20with%20Hail%404x.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         }
     }
 }

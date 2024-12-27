@@ -9,9 +9,19 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+/**
+ * The TimestampController class provides methods to update UI components
+ * with the current time and date in real-time using separate threads.
+ */
 public class TimestampController {
-	
-	public static void getTime() throws Exception{
+
+    /**
+     * Updates the `lbltime` label in the TimeWidget with the current time in HH:mm format.
+     * This method runs in a continuous loop using a separate thread.
+     *
+     * @throws Exception if any error occurs during thread execution
+     */
+    public static void getTime() throws Exception {
         Thread thread = new Thread(() -> {
             while (true) {
                 // Get the current timestamp
@@ -33,10 +43,16 @@ public class TimestampController {
         });
 
         thread.start(); // Start the thread
-	}
-	
-	public static void getDate() throws IOException{
-		Thread thread = new Thread(() -> {
+    }
+
+    /**
+     * Updates the `lbldate` label in the TimeWidget with the current date in dd MMMM yyyy format (Italian locale).
+     * This method runs in a continuous loop using a separate thread.
+     *
+     * @throws IOException if any I/O error occurs during execution
+     */
+    public static void getDate() throws IOException {
+        Thread thread = new Thread(() -> {
             while (true) {
                 // Get the current timestamp
                 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -57,7 +73,5 @@ public class TimestampController {
         });
 
         thread.start(); // Start the thread
-	}
+    }
 }
-
-

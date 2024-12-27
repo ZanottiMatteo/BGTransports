@@ -44,7 +44,7 @@ public class WeatherController {
             weathercode = currentWeather.getInt("weathercode");
             isday = currentWeather.getInt("is_day");
 
-                WeatherWidget.lbltemperature.setText("🌡 " + temperature + "°C ");
+                WeatherWidget.lbltemperature.setText("🌡 " + temperature + "°C");
                 WeatherWidget.lblweatherwind.setText("💨 " + windspeed + "Km/h");
         } catch (Exception e) {
             e.printStackTrace();
