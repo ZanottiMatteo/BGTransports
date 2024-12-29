@@ -318,7 +318,7 @@ public class LineView extends JFrame {
                     "</html>");
         });
 
-        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.toggleThemes());
     }
 
     /**

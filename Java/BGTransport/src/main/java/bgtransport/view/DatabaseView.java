@@ -309,6 +309,6 @@ public class DatabaseView extends JFrame {
             }
         });
 
-        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.toggleThemes());
     }
 }

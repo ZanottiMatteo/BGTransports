@@ -37,8 +37,6 @@ public class LoginController {
 
 		String password = new String(passwordField.getPassword());
 
-		System.out.println("Email: " + email + " Password: " + password);
-
 		// Check if email is not null before proceeding
 		if ((email != null)) {
 			try {
@@ -47,7 +45,6 @@ public class LoginController {
 					// If email and password match
 					if ((email.equals(UserQueryDB.getAllUserEmails().get(i))
 							&& (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
-						System.out.println("Login OK");
 						userlogged.setEmail(email);
 						role = userlogged.getRole();
 						RoleController.roleManager();
@@ -83,8 +80,6 @@ public class LoginController {
 		email = null;
 		role = 0;
 		RoleController.roleManager();
-
-		System.out.println("Logout eseguito.");
 		NewWindowController.openHomePanel(MainController.homeV);
 		UserInfoController.hideDataWidget();
 		MainController.loginV.passwordField.setText(""); // Clears the password field

@@ -119,6 +119,7 @@ public class UserView extends JFrame {
 
         chooseIcon.setBounds(105, 70, 250, 250);
         chooseIcon.setBorderPainted(false);
+        chooseIcon.setRolloverEnabled(false);
         chooseIcon.setBackground(new Color(0, 0, 0, 0));
         centerPanel.add(chooseIcon);
 
@@ -250,7 +251,7 @@ public class UserView extends JFrame {
             setVisible(false);
         });
 
-        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        menuPanel.switchThemeButton.addActionListener(e -> ThemeController.toggleThemes());
 
         changeData.addActionListener(e -> {
             UserInfoController.enableTextFields();

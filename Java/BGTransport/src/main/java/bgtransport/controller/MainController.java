@@ -56,7 +56,7 @@ public class MainController {
 		lineV = new LineView();
 
 		// Update application theme
-		ThemeController.updateThemes();
+		ThemeController.toggleThemes();
 
 		// Open the Database Loader window
 		NewWindowController.openDBloader(dbV);

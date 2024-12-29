@@ -124,7 +124,7 @@ public class HomeView extends JFrame {
 			setVisible(false);
 		});
 
-		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.toggleThemes());
 	}
 
 	/**

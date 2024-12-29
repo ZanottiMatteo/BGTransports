@@ -32,10 +32,10 @@ public class LoginView extends JFrame {
     public JPanel mainPanel;
     public JLabel logoLabel = new JLabel();
     public JLabel logoLabelD = new JLabel();
-    public ImageIcon iconLogo = new ImageIcon(LoginView.class.getResource("/images/Logo.png"));
-    public ImageIcon iconLogoD = new ImageIcon(LoginView.class.getResource("/images/LogoDark.png"));
-    public ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
-    public ImageIcon iconLDmodeD = new ImageIcon(LoginView.class.getResource("/images/LDModeDark.png"));
+    public final ImageIcon iconLogo = new ImageIcon(LoginView.class.getResource("/images/Logo.png"));
+    public final ImageIcon iconLogoD = new ImageIcon(LoginView.class.getResource("/images/LogoDark.png"));
+    public final ImageIcon iconLDmode = new ImageIcon(LoginView.class.getResource("/images/LDMode.png"));
+    public final ImageIcon iconLDmodeD = new ImageIcon(LoginView.class.getResource("/images/LDModeDark.png"));
     public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
     public JPasswordField passwordField = new JPasswordField();
     public JButton switchThemeButton;
@@ -116,7 +116,6 @@ public class LoginView extends JFrame {
         returnButton.setBounds(30, 30, 60, 60);
         returnButton.setBorderPainted(false);
         returnButton.setBackground(new Color(0, 0, 0, 0));
-        returnButton.setIcon(iconReturnD);
         returnButton.addActionListener(e -> {
             NewWindowController.openHomePanel(MainController.homeV);
             setVisible(false);
@@ -159,11 +158,10 @@ public class LoginView extends JFrame {
         switchThemeButton = new JButton();
         switchThemeButton.setBackground(new Color(0, 0, 0, 0));
         switchThemeButton.setBounds(938, 850, 44, 35);
-        switchThemeButton.setIcon(iconLDmodeD);
         switchThemeButton.setForeground(new Color(230, 230, 250));
         switchThemeButton.setRolloverEnabled(false);
         switchThemeButton.setBorderPainted(false);
-        switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+        switchThemeButton.addActionListener(e -> ThemeController.toggleThemes());
         mainPanel.add(switchThemeButton);
     }
 
@@ -207,11 +205,9 @@ public class LoginView extends JFrame {
     private void initializeLogo() {
         logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
         logoLabel.setBounds(662, 167, 596, 240);
-        logoLabel.setIcon(iconLogo);
         mainPanel.add(logoLabel);
         logoLabelD.setHorizontalAlignment(SwingConstants.CENTER);
         logoLabelD.setBounds(662, 167, 596, 240);
-        logoLabelD.setIcon(iconLogoD);
         mainPanel.add(logoLabelD);
     }
 

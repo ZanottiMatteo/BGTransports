@@ -16,12 +16,12 @@ public class MenuPanel extends RoundedPanel {
 
 	public final Point menupanelpoint = new Point(15, 30);
 
-	public JButton userButton;
-	public JButton homeButton;
-	public JButton mapButton;
-	public JButton lineButton;
-	public JButton switchThemeButton;
-	public JButton databaseButton;
+	public JButton userButton = new JButton();
+	public JButton homeButton = new JButton();
+	public JButton mapButton = new JButton();
+	public JButton lineButton = new JButton();
+	public JButton switchThemeButton = new JButton();
+	public JButton databaseButton = new JButton();
 
 	public final ImageIcon iconUser = new ImageIcon(MenuPanel.class.getResource("/images/User.png"));
 	public final ImageIcon iconLDmode = new ImageIcon(MenuPanel.class.getResource("/images/LDMode.png"));
@@ -49,7 +49,7 @@ public class MenuPanel extends RoundedPanel {
 		setBackground(new Color(210, 105, 30));
 		setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 
-		setupMenuButtons(iconUserD, iconHomeD, iconMapD, iconLineD, iconDatabaseD, iconLDmodeD);
+		setupMenuButtons();
 	}
 
 	/**
@@ -63,48 +63,46 @@ public class MenuPanel extends RoundedPanel {
 	 * @param iconDatabase The icon for the database button.
 	 * @param iconLDmode   The icon for the switch theme button.
 	 */
-	private void setupMenuButtons(ImageIcon iconUser, ImageIcon iconHome, ImageIcon iconMap, ImageIcon iconLine,
-			ImageIcon iconDatabase, ImageIcon iconLDmode) {
+	private void setupMenuButtons() {
 
-		userButton = createMenuButton(iconUser, 20, 20);
+		userButton.setBounds(20, 20, 60, 60);
+		userButton.setBorderPainted(false);
+		userButton.setRolloverEnabled(false);
+		userButton.setBackground(new Color(0, 0, 0, 0));
 		add(userButton);
-
-		homeButton = createMenuButton(iconHome, 20, 140);
+		
+		homeButton.setBounds(20, 140, 60, 60);
+		homeButton.setBorderPainted(false);
+		homeButton.setRolloverEnabled(false);
+		homeButton.setBackground(new Color(0, 0, 0, 0));
 		add(homeButton);
 
-		mapButton = createMenuButton(iconMap, 20, 260);
+		mapButton.setBounds(20, 260, 60, 60);
+		mapButton.setBorderPainted(false);
+		mapButton.setRolloverEnabled(false);
+		mapButton.setBackground(new Color(0, 0, 0, 0));
 		add(mapButton);
 
-		lineButton = createMenuButton(iconLine, 20, 380);
+		lineButton.setBounds(20, 380, 60, 60);
+		lineButton.setBorderPainted(false);
+		lineButton.setRolloverEnabled(false);
+		lineButton.setBackground(new Color(0, 0, 0, 0));
 		add(lineButton);
 
-		databaseButton = createMenuButton(iconDatabase, 20, 500);
+		databaseButton.setBounds(20, 500, 60, 60);
+		databaseButton.setBorderPainted(false);
+		databaseButton.setRolloverEnabled(false);
+		databaseButton.setBackground(new Color(0, 0, 0, 0));
 		add(databaseButton);
 
-		switchThemeButton = createMenuButton(iconLDmode, 20, 830);
+		switchThemeButton.setBounds(20, 830, 60, 60);
+		switchThemeButton.setBorderPainted(false);
+		switchThemeButton.setRolloverEnabled(false);
+		switchThemeButton.setBackground(new Color(0, 0, 0, 0));
 		add(switchThemeButton);
 
 		for (Component comp : getComponents()) {
 			componentBounds.put(comp, comp.getBounds());
 		}
-	}
-
-	/**
-	 * Creates a menu button with a specific icon and position. The button will have
-	 * a transparent background and no borders, with a specific size.
-	 * 
-	 * @param icon The icon to display on the button.
-	 * @param x    The x-coordinate of the button's position.
-	 * @param y    The y-coordinate of the button's position.
-	 * @return The created JButton with the given icon and position.
-	 */
-	private JButton createMenuButton(ImageIcon icon, int x, int y) {
-		JButton button = new JButton();
-		button.setBounds(x, y, 60, 60);
-		button.setIcon(icon);
-		button.setBorderPainted(false);
-		button.setRolloverEnabled(false);
-		button.setBackground(new Color(0, 0, 0, 0));
-		return button;
 	}
 }

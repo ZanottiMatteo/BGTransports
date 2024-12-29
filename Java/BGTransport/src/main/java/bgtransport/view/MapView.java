@@ -226,7 +226,7 @@ public class MapView extends JFrame {
 			MapController.waitForPositionAndExit();
 		}));
 
-		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.updateThemes());
+		menuPanel.switchThemeButton.addActionListener(e -> ThemeController.toggleThemes());
 	}
 
 	/**
