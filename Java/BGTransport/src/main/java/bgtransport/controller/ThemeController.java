@@ -6,7 +6,6 @@ package bgtransport.controller;
  * to reflect the selected theme and handles look-and-feel changes at a global level.
  */
 import java.awt.Color;
-import java.awt.Frame;
 import java.awt.Window;
 
 import javax.swing.JFrame;

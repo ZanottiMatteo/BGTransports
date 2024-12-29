@@ -2,8 +2,6 @@ package bgtransport.view;
 
 import javax.swing.*;
 
-import bgtransport.controller.AccountController;
-
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
