@@ -9,10 +9,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  * initializes and runs the Spring Boot application context and also starts
  * other components such as the MainModel and MainController.
  * 
- * <p>
  * It is responsible for bootstrapping the application and initializing
  * essential components for the bgtransport project.
- * </p>
  * 
  * @author Your Name
  */
