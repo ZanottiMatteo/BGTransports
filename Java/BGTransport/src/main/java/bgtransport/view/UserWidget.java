@@ -44,12 +44,14 @@ public class UserWidget extends RoundedPanel {
 		emaillabel.setHorizontalAlignment(SwingConstants.LEFT);
 		emaillabel.setVisible(false);
     	
-    	accounticon.setVisible(false);
+    	
     	titlelabel.setForeground(new Color(210, 105, 30));
     	titlelabel.setVisible(false);
     	titlelabel.setBounds(20, 25, 185, 34);
-    	
     	add(titlelabel);
+    	
+    	accounticon.setVisible(false);
+    	accounticon.setHorizontalAlignment(SwingConstants.CENTER);
     	accounticon.setBounds(212, 25, 128, 128);
     	accounticon.setCircleColor(Color.GRAY);
         add(accounticon);

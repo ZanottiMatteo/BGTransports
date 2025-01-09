@@ -154,9 +154,12 @@ public class MapController {
      * @return true se le posizioni sono vicine, false altrimenti
      */
     public static boolean isWithinTolerance(GeoPosition pos1, GeoPosition pos2) {
+    	if (pos2 != null) {
         double latDiff = Math.abs(pos1.getLatitude() - pos2.getLatitude());
         double lonDiff = Math.abs(pos1.getLongitude() - pos2.getLongitude());
         return latDiff <= TOLERANCE && lonDiff <= TOLERANCE;
+    	}
+    	else return false;
     }
 
     /**

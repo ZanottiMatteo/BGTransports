@@ -1,6 +1,8 @@
 package bgtransport.view;
 
 import javax.swing.*;
+
+import bgtransport.controller.AccountController;
 import bgtransport.controller.LoginController;
 import bgtransport.controller.MainController;
 import bgtransport.controller.NewWindowController;
@@ -59,7 +61,7 @@ public class UserView extends JFrame {
     public static JButton chooseIcon = new JButton();
     public JButton logoutbutton = new JButton();
 
-    public static ImageIcon image = new ImageIcon();
+    public static ImageIcon image;
     public final transient ResizableImage lblBGwallpaper = new ResizableImage(new File("src/main/resources/images/BG.png"));
 
     public final transient Map<Component, Rectangle> componentBounds = new HashMap<>();

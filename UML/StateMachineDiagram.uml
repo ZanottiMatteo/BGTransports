@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_xcKvQM6pEe-2__oD16VsZw" name="BGTransport">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_xcbN8M6pEe-2__oD16VsZw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_xcLWUM6pEe-2__oD16VsZw" name="BGTransport">
+    <region xmi:type="uml:Region" xmi:id="_xcPAsM6pEe-2__oD16VsZw" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_IMS4IM6qEe-2__oD16VsZw" source="_5luQUM6pEe-2__oD16VsZw" target="_-RIPgM6pEe-2__oD16VsZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Q4mg8M6qEe-2__oD16VsZw" source="_-RIPgM6pEe-2__oD16VsZw" target="_O-PGAM6qEe-2__oD16VsZw"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_5luQUM6pEe-2__oD16VsZw" name="Start"/>
+      <subvertex xmi:type="uml:State" xmi:id="_-RIPgM6pEe-2__oD16VsZw" name="Visualizzazione Home"/>
+      <subvertex xmi:type="uml:State" xmi:id="_O-PGAM6qEe-2__oD16VsZw" name="Login"/>
+    </region>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_AvXzkM6qEe-2__oD16VsZw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ava24M6qEe-2__oD16VsZw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
