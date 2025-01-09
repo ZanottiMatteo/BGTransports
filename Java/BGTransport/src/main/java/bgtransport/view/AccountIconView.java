@@ -1,7 +1,6 @@
 package bgtransport.view;
 
 import javax.swing.*;
-import bgtransport.controller.LoginController;
 import bgtransport.controller.MainController;
 import bgtransport.controller.UserInfoController;
 import bgtransport.model.ConstantString2;
@@ -9,7 +8,6 @@ import bgtransport.model.ConstantString2;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

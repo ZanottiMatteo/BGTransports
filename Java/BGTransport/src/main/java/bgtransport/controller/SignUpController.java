@@ -10,7 +10,6 @@ import org.jooq.DSLContext;
 import bgtransport.model.ConstantDB;
 import bgtransport.model.RegisteredUser;
 import bgtransport.model.Utility;
-import bgtransport.view.SignUpView;
 import user.jooq.generated.tables.User;
 
 /**

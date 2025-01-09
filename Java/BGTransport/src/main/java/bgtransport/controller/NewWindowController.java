@@ -201,6 +201,7 @@ public class NewWindowController {
 		UserInfoController.disableTextFields();
 		userV.addComponentListener(new ComponentAdapter() {
 			//@SuppressWarnings("static-access")
+			@SuppressWarnings("static-access")
 			@Override
 			public void componentResized(ComponentEvent e) {
 				if (ThemeController.getTheme()) {

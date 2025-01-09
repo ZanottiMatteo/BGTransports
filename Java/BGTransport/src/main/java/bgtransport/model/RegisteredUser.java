@@ -4,11 +4,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Represents a registered user in the system.
- * This class contains user details such as name, surname, email, password, and other related information.
- * It also provides methods to get and set these details, with changes being persisted in the database.
+ * Represents a registered user in the system. This class contains user details such as name, surname, email,
+ * password, and other related information. It provides methods to get and set these details, with changes being
+ * persisted in the database.
  */
-public class RegisteredUser extends User{
+public class RegisteredUser extends User {
 
     private String name;
     private String surname;
@@ -23,11 +23,12 @@ public class RegisteredUser extends User{
     private int role = 1;
 
     /**
-     * Loads user details from the database based on the user's email.
-     * This method retrieves user information from the database and populates the user's attributes.
+     * Loads user details from the database based on the user's email. This method retrieves user information from
+     * the database and populates the user's attributes.
      * 
      * @throws SQLException if a database error occurs while fetching user details.
      */
+    @Override
     public void loadUserDetails() throws SQLException {
         List<String> userDetails = UserQueryDB.getUserDetailsByEmail(this.email);
 
@@ -50,6 +51,7 @@ public class RegisteredUser extends User{
      * 
      * @return the user's name.
      */
+    @Override
     public String getName() {
         return this.name;
     }
@@ -64,10 +66,10 @@ public class RegisteredUser extends User{
     public void setName(String name) {
         this.name = name;
         try {
-			UserQueryDB.setNameUser(this.email, name);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setNameUser(this.email, name);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -89,10 +91,10 @@ public class RegisteredUser extends User{
     public void setSurname(String surname) {
         this.surname = surname;
         try {
-			UserQueryDB.setSurnameUser(this.email, surname);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setSurnameUser(this.email, surname);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -114,10 +116,10 @@ public class RegisteredUser extends User{
     public void setBirthday(String birthday) {
         this.birthday = birthday;
         try {
-			UserQueryDB.setBirthdayUser(this.email, birthday);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setBirthdayUser(this.email, birthday);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -129,17 +131,6 @@ public class RegisteredUser extends User{
     public int getRole() {
         return this.role;
     }
-
-    /**
-     * Sets the user's role and updates it in the database.
-     * 
-     * @param role the new role to be set.
-     * @throws SQLException if a database error occurs while updating the role.
-     */
-    /*public void setRole(int role) throws SQLException {
-        this.role = role;
-        UserQueryDB.setRoleUser(this.email, role);
-    }*/
 
     /**
      * Gets the user's email address.
@@ -156,13 +147,14 @@ public class RegisteredUser extends User{
      * 
      * @param email the new email address to be set.
      */
+    @Override
     public void setEmail(String email) {
         this.email = email;
         try {
-			loadUserDetails();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            loadUserDetails();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -204,10 +196,10 @@ public class RegisteredUser extends User{
     public void setUsername(String username) {
         this.username = username;
         try {
-			UserQueryDB.setUsernameUser(this.email, username);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setUsernameUser(this.email, username);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -229,10 +221,10 @@ public class RegisteredUser extends User{
     public void setAddress(String address) {
         this.address = address;
         try {
-			UserQueryDB.setAddressUser(this.email, address);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setAddressUser(this.email, address);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -254,10 +246,10 @@ public class RegisteredUser extends User{
     public void setCity(String city) {
         this.city = city;
         try {
-			UserQueryDB.setTownUser(this.email, city);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setTownUser(this.email, city);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -279,10 +271,10 @@ public class RegisteredUser extends User{
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
         try {
-			UserQueryDB.setCAPUser(this.email, zipCode);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setCAPUser(this.email, zipCode);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -304,9 +296,9 @@ public class RegisteredUser extends User{
     public void setImageAccount(int imageAccount) {
         this.imageAccount = imageAccount;
         try {
-			UserQueryDB.setIconUser(this.email, imageAccount);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-    }    
+            UserQueryDB.setIconUser(this.email, imageAccount);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

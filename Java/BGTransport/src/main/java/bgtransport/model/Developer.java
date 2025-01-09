@@ -4,11 +4,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Represents a registered user in the system.
- * This class contains user details such as name, surname, email, password, and other related information.
- * It also provides methods to get and set these details, with changes being persisted in the database.
+ * Represents a developer, a special type of user with additional privileges.
+ * This class extends the User class and provides additional methods
+ * for loading and updating user details in the database.
  */
-public class Developer extends User{
+public class Developer extends User {
 
     private String name;
     private String surname;
@@ -24,10 +24,12 @@ public class Developer extends User{
 
     /**
      * Loads user details from the database based on the user's email.
-     * This method retrieves user information from the database and populates the user's attributes.
+     * This method retrieves the user's information and populates the
+     * instance variables with the retrieved values.
      * 
      * @throws SQLException if a database error occurs while fetching user details.
      */
+    @Override
     public void loadUserDetails() throws SQLException {
         List<String> userDetails = UserQueryDB.getUserDetailsByEmail(this.email);
 
@@ -50,6 +52,7 @@ public class Developer extends User{
      * 
      * @return the user's name.
      */
+    @Override
     public String getName() {
         return this.name;
     }
@@ -64,10 +67,10 @@ public class Developer extends User{
     public void setName(String name) {
         this.name = name;
         try {
-			UserQueryDB.setNameUser(this.email, name);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setNameUser(this.email, name);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -84,15 +87,16 @@ public class Developer extends User{
      * Sets the user's surname and updates it in the database.
      * 
      * @param surname the new surname to be set.
+     * @throws SQLException if a database error occurs while updating the surname.
      */
     @Override
     public void setSurname(String surname) {
         this.surname = surname;
         try {
-			UserQueryDB.setSurnameUser(this.email, surname);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setSurnameUser(this.email, surname);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -109,37 +113,27 @@ public class Developer extends User{
      * Sets the user's birthday and updates it in the database.
      * 
      * @param birthday the new birthday to be set.
+     * @throws SQLException if a database error occurs while updating the birthday.
      */
     @Override
     public void setBirthday(String birthday) {
         this.birthday = birthday;
         try {
-			UserQueryDB.setBirthdayUser(this.email, birthday);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setBirthdayUser(this.email, birthday);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * Gets the user's role.
      * 
-     * @return the user's role.
+     * @return the user's role (2 for Developer).
      */
     @Override
     public int getRole() {
         return this.role;
     }
-
-    /**
-     * Sets the user's role and updates it in the database.
-     * 
-     * @param role the new role to be set.
-     * @throws SQLException if a database error occurs while updating the role.
-     */
-    /*public void setRole(int role) throws SQLException {
-        this.role = role;
-        UserQueryDB.setRoleUser(this.email, role);
-    }*/
 
     /**
      * Gets the user's email address.
@@ -155,15 +149,16 @@ public class Developer extends User{
      * Sets the user's email address and reloads the user details from the database.
      * 
      * @param email the new email address to be set.
+     * @throws SQLException if a database error occurs while reloading the user details.
      */
     @Override
     public void setEmail(String email) {
         this.email = email;
         try {
-			loadUserDetails();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            loadUserDetails();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -200,15 +195,16 @@ public class Developer extends User{
      * Sets the user's username and updates it in the database.
      * 
      * @param username the new username to be set.
+     * @throws SQLException if a database error occurs while updating the username.
      */
     @Override
     public void setUsername(String username) {
         this.username = username;
         try {
-			UserQueryDB.setUsernameUser(this.email, username);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setUsernameUser(this.email, username);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -225,15 +221,16 @@ public class Developer extends User{
      * Sets the user's address and updates it in the database.
      * 
      * @param address the new address to be set.
+     * @throws SQLException if a database error occurs while updating the address.
      */
     @Override
     public void setAddress(String address) {
         this.address = address;
         try {
-			UserQueryDB.setAddressUser(this.email, address);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setAddressUser(this.email, address);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -250,15 +247,16 @@ public class Developer extends User{
      * Sets the user's city and updates it in the database.
      * 
      * @param city the new city to be set.
+     * @throws SQLException if a database error occurs while updating the city.
      */
     @Override
     public void setCity(String city) {
         this.city = city;
         try {
-			UserQueryDB.setTownUser(this.email, city);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setTownUser(this.email, city);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -275,15 +273,16 @@ public class Developer extends User{
      * Sets the user's ZIP code and updates it in the database.
      * 
      * @param zipCode the new ZIP code to be set.
+     * @throws SQLException if a database error occurs while updating the ZIP code.
      */
     @Override
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
         try {
-			UserQueryDB.setCAPUser(this.email, zipCode);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setCAPUser(this.email, zipCode);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -300,14 +299,15 @@ public class Developer extends User{
      * Sets the user's account image ID and updates it in the database.
      * 
      * @param imageAccount the new image account ID to be set.
+     * @throws SQLException if a database error occurs while updating the image account.
      */
     @Override
     public void setImageAccount(int imageAccount) {
         this.imageAccount = imageAccount;
         try {
-			UserQueryDB.setIconUser(this.email, imageAccount);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+            UserQueryDB.setIconUser(this.email, imageAccount);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }    
 }
