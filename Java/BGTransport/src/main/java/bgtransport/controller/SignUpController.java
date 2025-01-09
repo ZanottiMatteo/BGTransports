@@ -71,9 +71,9 @@ public class SignUpController {
         zipcodeField.setText("");
 
         // Print input data for debugging purposes
-        System.out.println("Name: " + name + "\nsurname: " + surname + "\nbirthday: " + birthday + "\nEmail: " + email
+        /*System.out.println("Name: " + name + "\nsurname: " + surname + "\nbirthday: " + birthday + "\nEmail: " + email
                 + "\nPassword: " + password + "\npasswordconf: " + passwordconf + "\nusername: " + username
-                + "\naddress: " + address + "\ncity: " + city + "\nzipcode: " + zipcode);
+                + "\naddress: " + address + "\ncity: " + city + "\nzipcode: " + zipcode);*/
 
         // Input validation
         if (name != null && surname != null && birthday != null && (birthday.contains("/") || birthday.contains("-"))

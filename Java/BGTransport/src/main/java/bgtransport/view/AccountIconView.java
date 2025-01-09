@@ -196,7 +196,6 @@ public class AccountIconView extends JFrame {
         	MainController.userlogged.setImageAccount(iconNumber);
             UserInfoController.setProfileIcon();
             setVisible(false);
-            System.out.println("Confermato: icona " + iconNumber);
         });
     }
 

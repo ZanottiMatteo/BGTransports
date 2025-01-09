@@ -13,7 +13,6 @@ public class RoleController {
 	 */
 	public static void roleManager() {
 		int role = MainController.userlogged.getRole();
-		System.out.println("ruolo " + role);
 		switch (role) {
 		case 0:
 			MainController.homeV.menuPanel.lineButton.setVisible(false);

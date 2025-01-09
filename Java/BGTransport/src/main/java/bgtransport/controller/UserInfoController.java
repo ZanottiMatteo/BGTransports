@@ -17,7 +17,6 @@ public class UserInfoController {
      */
     public static void setProfileIcon() {
         int n = MainController.userlogged.getImageAccount();
-        System.out.println("n  " + n);
         if (n != 0) {
             String str = String.valueOf(n);
             UserView.chooseIcon.setIcon(null);
@@ -71,7 +70,6 @@ public class UserInfoController {
             } else {
                 // Set placeholder text and make non-editable
                 try {
-                    System.out.println(MainController.userlogged.getEmail());
                     email = MainController.userlogged.getEmail();
                     textFields[i].setText(UserQueryDB.getUserDetailsByEmail(email).get(i));
                 } catch (SQLException e) {

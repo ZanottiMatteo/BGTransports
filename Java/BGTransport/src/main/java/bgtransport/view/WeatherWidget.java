@@ -50,7 +50,7 @@ public class WeatherWidget extends RoundedPanel {
         lblweatherimg.setHorizontalAlignment(SwingConstants.CENTER);
         lblweatherimg.setLocation(25, 75);
         lblweatherimg.setSize(100, 100);
-        lblweatherimg.setCircleColor(new Color(76, 170, 252));
+        lblweatherimg.setCircleColor(new Color(171, 252, 255));
         lblweatherimg.setIcon(iconWeather);
         
         lblweathertxt.setHorizontalAlignment(SwingConstants.LEFT);

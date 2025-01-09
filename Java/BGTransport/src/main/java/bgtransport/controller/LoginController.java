@@ -47,7 +47,6 @@ public class LoginController {
 							&& (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
 						uservolatile.setEmail(email);
 						int role = uservolatile.getRole();
-						System.out.println("ruolo loginnnn " + role);
 						MainController.userlogged = null;
 						if (role == 1) MainController.userlogged = new RegisteredUser();
 						else if (role == 2) MainController.userlogged = new Developer();

@@ -38,7 +38,6 @@ public class MyLocationController {
 	 */
 	@PostMapping("/api/position")
 	public void receivePosition(@RequestBody Position position) {
-		System.out.println("Received position: " + position);
 		MapView.myposwrite.setText(position.toString()); // Update the map view with the received position
 		MapController.myposition = new GeoPosition(position.getLatitude(), position.getLongitude());
 		MapController.addUnchangeableMarker(new GeoPosition(position.getLatitude(), position.getLongitude()));

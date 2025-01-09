@@ -2,7 +2,6 @@ package bgtransport.view;
 
 import javax.swing.*;
 
-import bgtransport.controller.AccountController;
 import bgtransport.controller.LoginController;
 import bgtransport.controller.MainController;
 import bgtransport.controller.NewWindowController;
