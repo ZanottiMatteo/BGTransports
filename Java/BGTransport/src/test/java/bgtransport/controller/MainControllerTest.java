@@ -1,11 +1,10 @@
-package controllertest;
+package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import bgtransport.controller.MainController;
 import bgtransport.view.AccountIconView;
 import bgtransport.view.DatabaseView;
 import bgtransport.view.DownloadDataDBView;

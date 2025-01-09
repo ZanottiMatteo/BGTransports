@@ -1,4 +1,4 @@
-package controllertest;
+package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,8 +16,6 @@ import javax.swing.JButton;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import bgtransport.controller.AccountController;
 
 public class AccountControllerTest {
 

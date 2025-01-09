@@ -1,8 +1,6 @@
-package modeltest;
+package bgtransport.model;
 
 import org.junit.jupiter.api.Test;
-
-import bgtransport.model.GenerateCode;
 
 import static org.junit.jupiter.api.Assertions.*;
 

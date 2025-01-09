@@ -1,6 +1,5 @@
-package controllertest;
+package bgtransport.controller;
 
-import bgtransport.controller.TimestampController;
 import bgtransport.view.TimeWidget;
 import bgtransport.view.VeryBigLabel;
 

@@ -1,7 +1,6 @@
-package bgtransporttest;
+package bgtransport;
 
 import org.junit.jupiter.api.Test;
-import bgtransport.Main;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 

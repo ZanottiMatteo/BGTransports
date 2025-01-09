@@ -1,4 +1,4 @@
-package controllertest;
+package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,7 +11,6 @@ import javax.swing.JTextField;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import bgtransport.controller.LoginController;
 import bgtransport.model.UserQueryDB;
 
 class LoginControllerTest {

@@ -1,4 +1,4 @@
-package controllertest;
+package bgtransport.controller;
 
 import java.sql.SQLException;
 import javax.swing.JTable;
@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import bgtransport.controller.DatabaseController;
-import bgtransport.controller.MainController;
 import bgtransport.model.ConstantDB;
 import bgtransport.model.UserQueryDB;
 

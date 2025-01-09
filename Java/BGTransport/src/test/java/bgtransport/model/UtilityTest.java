@@ -1,11 +1,9 @@
-package modeltest;
+package bgtransport.model;
 
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.*;
-
-import bgtransport.model.Utility;
 
 import org.json.JSONArray;
 

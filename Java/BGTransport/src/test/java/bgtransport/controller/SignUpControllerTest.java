@@ -1,4 +1,4 @@
-package controllertest;
+package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,7 +11,6 @@ import org.jooq.DSLContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import bgtransport.controller.SignUpController;
 import bgtransport.model.ConstantDB;
 import bgtransport.model.Utility;
 import user.jooq.generated.tables.User;

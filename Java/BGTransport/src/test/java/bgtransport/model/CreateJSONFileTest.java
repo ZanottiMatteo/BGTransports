@@ -1,4 +1,4 @@
-package modeltest;
+package bgtransport.model;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -8,9 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
-
-import bgtransport.model.ConstantFile;
-import bgtransport.model.CreateJSONFile;
 
 class CreateJSONFileTest {
     private static final String JSON_FILE_PATH = "src/test/resources/output.json";

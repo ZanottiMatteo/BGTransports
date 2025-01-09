@@ -1,9 +1,6 @@
-package modeltest;
+package bgtransport.model;
 
 import org.junit.jupiter.api.Test;
-
-import bgtransport.model.ConstantFile;
-import bgtransport.model.MainModel;
 
 import java.io.File;
 

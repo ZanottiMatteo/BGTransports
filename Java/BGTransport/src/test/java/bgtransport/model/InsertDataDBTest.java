@@ -1,4 +1,4 @@
-package modeltest;
+package bgtransport.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import bgtransport.model.CreateTablesDB;
 import transportation.jooq.generated.tables.Company;
 import transportation.jooq.generated.tables.records.CompanyRecord;
 

@@ -1,4 +1,4 @@
-package controllertest;
+package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,8 +12,6 @@ import javax.swing.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.jxmapviewer.JXMapViewer;
-
-import bgtransport.controller.ResizeController;
 
 class ResizeControllerTest {
 

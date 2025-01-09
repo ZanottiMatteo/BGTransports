@@ -1,6 +1,5 @@
-package controllertest;
+package bgtransport.controller;
 
-import bgtransport.controller.WeatherController;
 import bgtransport.view.WeatherWidget;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

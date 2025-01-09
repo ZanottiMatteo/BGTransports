@@ -1,12 +1,10 @@
-package controllertest;
+package bgtransport.controller;
 
 import java.util.concurrent.CountDownLatch;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import bgtransport.controller.DownloadDataDBController;
-import bgtransport.controller.MainController;
 import bgtransport.model.ControlDB;
 
 class DownloadDataDBControllerTest {

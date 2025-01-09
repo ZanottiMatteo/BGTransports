@@ -1,7 +1,6 @@
-package modeltest;
+package bgtransport.model;
 
 import static org.junit.jupiter.api.Assertions.*;
-import bgtransport.model.UserQueryDB;
 import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;

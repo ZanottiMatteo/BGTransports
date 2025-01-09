@@ -1,10 +1,8 @@
-package controllertest;
+package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.jxmapviewer.viewer.GeoPosition;
-
-import bgtransport.controller.MapController;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
