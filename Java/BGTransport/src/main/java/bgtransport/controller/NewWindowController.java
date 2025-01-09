@@ -182,7 +182,7 @@ public class NewWindowController {
 	 *               in.
 	 */
 	public static void choseUserLogin(UserView userV, LoginView loginV) {
-		if (LoginController.userlogged.getEmail() == null) {
+		if (MainController.userlogged.getEmail() == null) {
 			openLoginPanel(loginV);
 
 		} else
@@ -200,7 +200,7 @@ public class NewWindowController {
 		UserInfoController.setProfileIcon();
 		UserInfoController.disableTextFields();
 		userV.addComponentListener(new ComponentAdapter() {
-			@SuppressWarnings("static-access")
+			//@SuppressWarnings("static-access")
 			@Override
 			public void componentResized(ComponentEvent e) {
 				if (ThemeController.getTheme()) {

@@ -12,8 +12,8 @@ public class RoleController {
 	 * buttons in the menu panels across different views accordingly.
 	 */
 	public static void roleManager() {
-		int role = LoginController.role;
-		System.out.println(role + "ruolo");
+		int role = MainController.userlogged.getRole();
+		System.out.println("ruolo " + role);
 		switch (role) {
 		case 0:
 			MainController.homeV.menuPanel.lineButton.setVisible(false);

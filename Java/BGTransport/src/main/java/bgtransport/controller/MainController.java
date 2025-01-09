@@ -1,5 +1,6 @@
 package bgtransport.controller;
 
+import bgtransport.model.User;
 import bgtransport.view.AccountIconView;
 import bgtransport.view.DatabaseView;
 import bgtransport.view.DownloadDataDBView;
@@ -29,6 +30,8 @@ public class MainController {
 	public static LineView lineV;
 	public static DatabaseView databaseV = new DatabaseView();
 
+	public static User userlogged = new User();
+
 	/**
 	 * Main entry point of the application. This method initializes the required
 	 * controllers and views and starts the application. It also sets up data and
@@ -46,8 +49,6 @@ public class MainController {
 		// Initialize weather controllers
 		WeatherController.getMeteo();
 		WeatherController.getWeatherIcon();
-
-		
 		
 		// Initialize line-related controllers
 		LineController.setStation();

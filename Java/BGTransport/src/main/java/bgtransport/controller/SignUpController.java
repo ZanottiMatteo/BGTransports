@@ -10,6 +10,7 @@ import org.jooq.DSLContext;
 import bgtransport.model.ConstantDB;
 import bgtransport.model.RegisteredUser;
 import bgtransport.model.Utility;
+import bgtransport.view.SignUpView;
 import user.jooq.generated.tables.User;
 
 /**
@@ -20,7 +21,7 @@ import user.jooq.generated.tables.User;
 public class SignUpController {
 
     static RegisteredUser newUser;
-
+    public static int control;
     /**
      * Handles the sign-up process for a new user. Validates the input fields 
      * and inserts the user's data into the database if the inputs meet the 
@@ -42,23 +43,33 @@ public class SignUpController {
             JTextField emailField, JPasswordField passwordField, JPasswordField passwordconfField,
             JTextField usernameField, JTextField addressField, JTextField cityField, JTextField zipcodeField)
             throws SQLException {
-
+    	control = 0;
         // Create a DSLContext instance for database operations
         DSLContext user = Utility.dslContext(ConstantDB.DB_URL_USERS);
 
         // Retrieve and validate input values
         String name = nameField.getText();
+        nameField.setText("");
         String surname = surnameField.getText();
+        surnameField.setText("");
         String birthday = brithdayField.getText();
+        brithdayField.setText("");
         int role = 1; // Default role ID for new users
         int imageaccount = 0; // Default icon number
         String email = emailField.getText();
+        emailField.setText("");
         String password = new String(passwordField.getPassword());
+        passwordField.setText("");
         String passwordconf = new String(passwordconfField.getPassword());
+        passwordconfField.setText("");
         String username = usernameField.getText();
+        usernameField.setText("");
         String address = addressField.getText();
+        addressField.setText("");
         String city = cityField.getText();
+        cityField.setText("");
         String zipcode = zipcodeField.getText();
+        zipcodeField.setText("");
 
         // Print input data for debugging purposes
         System.out.println("Name: " + name + "\nsurname: " + surname + "\nbirthday: " + birthday + "\nEmail: " + email
@@ -76,6 +87,12 @@ public class SignUpController {
                     .set(User.USER.ICONNUMBER, imageaccount).set(User.USER.MAIL, email)
                     .set(User.USER.PASSWORD, password).set(User.USER.USERNAME, username).set(User.USER.ADDRESS, address)
                     .set(User.USER.TOWN, city).set(User.USER.CAP, zipcode).execute();
+            MainController.signupV.setVisible(false);
+            MainController.signupV.errorLabel.setVisible(false);
+        }
+        else {
+        	MainController.signupV.errorLabel.setVisible(true);
+        	MainController.signupV.errorLabel.setText("Utente non registrato, inserire i dati correttamente");
         }
     }
 }

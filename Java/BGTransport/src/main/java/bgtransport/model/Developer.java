@@ -8,7 +8,7 @@ import java.util.List;
  * This class contains user details such as name, surname, email, password, and other related information.
  * It also provides methods to get and set these details, with changes being persisted in the database.
  */
-public class RegisteredUser extends User{
+public class Developer extends User{
 
     private String name;
     private String surname;
@@ -20,7 +20,7 @@ public class RegisteredUser extends User{
     private String city;
     private String zipCode;
     private int imageAccount;
-    private int role = 1;
+    private int role = 2;
 
     /**
      * Loads user details from the database based on the user's email.
@@ -156,6 +156,7 @@ public class RegisteredUser extends User{
      * 
      * @param email the new email address to be set.
      */
+    @Override
     public void setEmail(String email) {
         this.email = email;
         try {

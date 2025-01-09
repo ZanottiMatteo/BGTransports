@@ -6,7 +6,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import bgtransport.model.UserQueryDB;
+import bgtransport.model.Developer;
 import bgtransport.model.RegisteredUser;
+import bgtransport.model.User;
 
 /**
  * This class is responsible for handling the login and logout functionality in
@@ -15,11 +17,9 @@ import bgtransport.model.RegisteredUser;
  */
 public class LoginController {
 
-	/** The role of the currently logged-in user */
-	public static int role = 0;
-
 	/** The object that holds the information of the logged-in user */
-	public static RegisteredUser userlogged = new RegisteredUser();
+	public static User uservolatile = new User();
+	
 
 	/** The email address of the currently logged-in user */
 	public static String email;
@@ -45,8 +45,13 @@ public class LoginController {
 					// If email and password match
 					if ((email.equals(UserQueryDB.getAllUserEmails().get(i))
 							&& (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
-						userlogged.setEmail(email);
-						role = userlogged.getRole();
+						uservolatile.setEmail(email);
+						int role = uservolatile.getRole();
+						System.out.println("ruolo loginnnn " + role);
+						MainController.userlogged = null;
+						if (role == 1) MainController.userlogged = new RegisteredUser();
+						else if (role == 2) MainController.userlogged = new Developer();
+						MainController.userlogged.setEmail(email);
 						RoleController.roleManager();
 						NewWindowController.openUserPanel(MainController.userV);
 						MainController.loginV.setVisible(false);
@@ -76,12 +81,11 @@ public class LoginController {
 	 */
 	public static void logout() {
 		// Reset the logged-in user information
-		userlogged = new RegisteredUser();
+		MainController.userlogged = new User();
 		email = null;
-		role = 0;
 		RoleController.roleManager();
-		NewWindowController.openHomePanel(MainController.homeV);
 		UserInfoController.hideDataWidget();
+		NewWindowController.openHomePanel(MainController.homeV);	
 		MainController.loginV.passwordField.setText(""); // Clears the password field
 		MainController.loginV.errorLabel.setVisible(false); // Hides error messages
 	}

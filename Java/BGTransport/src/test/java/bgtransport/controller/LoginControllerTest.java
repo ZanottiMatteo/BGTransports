@@ -38,7 +38,7 @@ class LoginControllerTest {
         LoginController.login(emailField, passwordField);
 
         // Verifica che l'utente non sia loggato
-        assertNull(LoginController.userlogged.getEmail(), "L'utente non dovrebbe essere loggato con email inesistente.");
+        assertNull(MainController.userlogged.getEmail(), "L'utente non dovrebbe essere loggato con email inesistente.");
         LoginController.logout();
     }
     
@@ -52,7 +52,7 @@ class LoginControllerTest {
         LoginController.login(emailField, passwordField);
 
         // Verifica che l'utente non sia loggato
-        assertNull(LoginController.userlogged.getEmail(), "L'utente non dovrebbe essere loggato con password errata.");
+        assertNull(MainController.userlogged.getEmail(), "L'utente non dovrebbe essere loggato con password errata.");
         
         LoginController.logout();
     }
@@ -67,7 +67,7 @@ class LoginControllerTest {
         LoginController.login(emailField, passwordField);
 
         // Verifica se l'utente è loggato
-        assertEquals("test@example.com", LoginController.userlogged.getEmail(), "L'utente dovrebbe essere loggato correttamente.");  
+        assertEquals("test@example.com", MainController.userlogged.getEmail(), "L'utente dovrebbe essere loggato correttamente.");  
         LoginController.logout();
     }    
 

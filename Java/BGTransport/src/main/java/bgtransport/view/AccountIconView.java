@@ -2,6 +2,7 @@ package bgtransport.view;
 
 import javax.swing.*;
 import bgtransport.controller.LoginController;
+import bgtransport.controller.MainController;
 import bgtransport.controller.UserInfoController;
 import bgtransport.model.ConstantString2;
 
@@ -194,11 +195,7 @@ public class AccountIconView extends JFrame {
         button12Label.addActionListener(e -> iconNumber = 12);
 
         confirmButton.addActionListener(e -> {
-            try {
-                LoginController.userlogged.setImageAccount(iconNumber);
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
+        	MainController.userlogged.setImageAccount(iconNumber);
             UserInfoController.setProfileIcon();
             setVisible(false);
             System.out.println("Confermato: icona " + iconNumber);

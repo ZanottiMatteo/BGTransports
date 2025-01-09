@@ -20,6 +20,7 @@ public class SignUpView extends JFrame {
 	private JFrame frame;
 	private JPanel panel;
 	private JLabel lblSignUp;
+	public JLabel errorLabel = new JLabel();
 	private JTextField textEmail;
 	private JPasswordField passwordFirst;
 	private JPasswordField passwordConfirm;
@@ -61,37 +62,60 @@ public class SignUpView extends JFrame {
 		panel.add(lblSignUp);
 
 		// Text fields for user input
+		textName = new JTextField();
+		textName.setColumns(10);
+		textName.setBounds(185, 149, 216, 50);
+		panel.add(textName);
+		
+		textSurname = new JTextField();
+		textSurname.setColumns(10);
+		textSurname.setBounds(185, 214, 216, 50);
+		panel.add(textSurname);
+		
+		textBirthday = new JTextField();
+		textBirthday.setToolTipText("es. GG/MM/AAAA oppure GG-MM-AAAA");
+		textBirthday.setColumns(10);
+		textBirthday.setBounds(185, 276, 216, 50);
+		panel.add(textBirthday);
+		
 		textEmail = new JTextField();
+		textEmail.setToolTipText("es. piero.rossi@gmail.com");
 		textEmail.setColumns(10);
 		textEmail.setBounds(185, 338, 216, 50);
 		panel.add(textEmail);
 
 		passwordFirst = new JPasswordField();
+		passwordFirst.setToolTipText("Le password devono coincidere");
 		passwordFirst.setBounds(185, 462, 216, 50);
 		panel.add(passwordFirst);
 
 		passwordConfirm = new JPasswordField();
+		passwordConfirm.setToolTipText("Le password devono coincidere");
 		passwordConfirm.setBounds(185, 524, 216, 50);
 		panel.add(passwordConfirm);
 
 		JScrollPane scrollPane = new JScrollPane(panel);
 
 		textUsername = new JTextField();
+		textUsername.setToolTipText("es. GigiRiva44 \nIl nome NON deve contenere spazi");
 		textUsername.setColumns(10);
 		textUsername.setBounds(185, 400, 216, 50);
 		panel.add(textUsername);
 
 		textAddress = new JTextField();
+		textAddress.setToolTipText("es. via Roma, 20");
 		textAddress.setColumns(10);
 		textAddress.setBounds(185, 586, 216, 50);
 		panel.add(textAddress);
 
 		textCity = new JTextField();
+		textCity.setToolTipText("es. Bergamo");
 		textCity.setColumns(10);
 		textCity.setBounds(185, 648, 216, 50);
 		panel.add(textCity);
 
 		textZIP = new JTextField();
+		textZIP.setToolTipText("es. 24048");
 		textZIP.setColumns(10);
 		textZIP.setBounds(185, 710, 216, 50);
 		panel.add(textZIP);
@@ -100,7 +124,7 @@ public class SignUpView extends JFrame {
 		signUpButton.setForeground(Color.WHITE);
 		signUpButton.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 16));
 		signUpButton.setBackground(new Color(210, 105, 30));
-		signUpButton.setBounds(216, 805, 150, 50);
+		signUpButton.setBounds(216, 823, 150, 50);
 		signUpButton.addActionListener(e -> {
 			try {
 				SignUpController.signUp(textName, textSurname, textBirthday, textEmail, passwordFirst, passwordConfirm,
@@ -175,11 +199,6 @@ public class SignUpView extends JFrame {
 		lblBirthday.setBounds(60, 282, 120, 35);
 		panel.add(lblBirthday);
 
-		textBirthday = new JTextField();
-		textBirthday.setColumns(10);
-		textBirthday.setBounds(185, 276, 216, 50);
-		panel.add(textBirthday);
-
 		JLabel lblSurname = new JLabel("Surname");
 		lblSurname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSurname.setForeground(new Color(210, 105, 30));
@@ -187,22 +206,20 @@ public class SignUpView extends JFrame {
 		lblSurname.setBounds(75, 220, 105, 35);
 		panel.add(lblSurname);
 
-		textSurname = new JTextField();
-		textSurname.setColumns(10);
-		textSurname.setBounds(185, 214, 216, 50);
-		panel.add(textSurname);
-
 		JLabel lblName = new JLabel("Name");
 		lblName.setHorizontalAlignment(SwingConstants.CENTER);
 		lblName.setForeground(new Color(210, 105, 30));
 		lblName.setFont(new Font(ConstantString2.SANSSERIF, Font.PLAIN, 16));
 		lblName.setBounds(75, 155, 105, 35);
 		panel.add(lblName);
-
-		textName = new JTextField();
-		textName.setColumns(10);
-		textName.setBounds(185, 149, 216, 50);
-		panel.add(textName);
+		
+		
+		errorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		errorLabel.setBounds(140, 783, 301, 29);
+        errorLabel.setFont(new Font(ConstantString2.SANSSERIF, Font.BOLD, 12));
+        errorLabel.setForeground(new Color(255, 0, 0));
+        errorLabel.setVisible(false);
+		panel.add(errorLabel);
 
 		JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
 		verticalScrollBar.setUnitIncrement(16); // Scroll speed (higher value = faster scroll)
