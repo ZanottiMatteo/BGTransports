@@ -5,11 +5,107 @@
   </packageImport>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_xcLWUM6pEe-2__oD16VsZw" name="BGTransport">
     <region xmi:type="uml:Region" xmi:id="_xcPAsM6pEe-2__oD16VsZw" name="Region1">
-      <transition xmi:type="uml:Transition" xmi:id="_IMS4IM6qEe-2__oD16VsZw" source="_5luQUM6pEe-2__oD16VsZw" target="_-RIPgM6pEe-2__oD16VsZw"/>
-      <transition xmi:type="uml:Transition" xmi:id="_Q4mg8M6qEe-2__oD16VsZw" source="_-RIPgM6pEe-2__oD16VsZw" target="_O-PGAM6qEe-2__oD16VsZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_gqDd4M9iEe-i8oJXfEwzdw" name="Utente registrato/login fatto" source="_O-PGAM6qEe-2__oD16VsZw" target="_WdQ5wM9iEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_xb2xsM9jEe-i8oJXfEwzdw" source="_5luQUM6pEe-2__oD16VsZw" target="_IfwxMM9vEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_yCod0M9jEe-i8oJXfEwzdw" name="pulsante user premuto" source="_IfwxMM9vEe-i8oJXfEwzdw" target="_O-PGAM6qEe-2__oD16VsZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_CKddAM9kEe-i8oJXfEwzdw" name="Utente non registrato/errore" source="_O-PGAM6qEe-2__oD16VsZw" target="_O-PGAM6qEe-2__oD16VsZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_NQG7wM9kEe-i8oJXfEwzdw" name="pulsante sign up premuto" source="_O-PGAM6qEe-2__oD16VsZw" target="_H24NQM9kEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Rma0sM9kEe-i8oJXfEwzdw" name="registrazione effettuata" source="_H24NQM9kEe-i8oJXfEwzdw" target="_O-PGAM6qEe-2__oD16VsZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_WMaIYM9kEe-i8oJXfEwzdw" name="registrazione fallita" source="_H24NQM9kEe-i8oJXfEwzdw" target="_H24NQM9kEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_vZmwoM9kEe-i8oJXfEwzdw" name="logout" source="_WdQ5wM9iEe-i8oJXfEwzdw" target="_O-PGAM6qEe-2__oD16VsZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_mHmt4M9xEe-i8oJXfEwzdw" source="_aarNsM9mEe-i8oJXfEwzdw" target="_NolsMM9vEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_uj6L0M9xEe-i8oJXfEwzdw" source="_WdQ5wM9iEe-i8oJXfEwzdw" target="_irks4M9mEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_wosuEM9xEe-i8oJXfEwzdw" source="_DsMOIM9nEe-i8oJXfEwzdw" target="_irks4M9mEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_1pu_AM9xEe-i8oJXfEwzdw" source="_aarNsM9mEe-i8oJXfEwzdw" target="_irks4M9mEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_8v_QAM9xEe-i8oJXfEwzdw" source="_irks4M9mEe-i8oJXfEwzdw" target="_aarNsM9mEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_9kyxEM9xEe-i8oJXfEwzdw" source="_irks4M9mEe-i8oJXfEwzdw" target="_DsMOIM9nEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="__WQHoM9xEe-i8oJXfEwzdw" source="_irks4M9mEe-i8oJXfEwzdw" target="_WdQ5wM9iEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_FYsLMM9yEe-i8oJXfEwzdw" source="_irks4M9mEe-i8oJXfEwzdw" target="_NolsMM9vEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_P2bVYM9yEe-i8oJXfEwzdw" source="_WdQ5wM9iEe-i8oJXfEwzdw" target="_NolsMM9vEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_ScLPoM9yEe-i8oJXfEwzdw" source="_WdQ5wM9iEe-i8oJXfEwzdw" target="_DsMOIM9nEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_TAjIAM9yEe-i8oJXfEwzdw" source="_DsMOIM9nEe-i8oJXfEwzdw" target="_WdQ5wM9iEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_fFkZEM9yEe-i8oJXfEwzdw" source="_DsMOIM9nEe-i8oJXfEwzdw" target="_NolsMM9vEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_lsr3AM9yEe-i8oJXfEwzdw" source="_DsMOIM9nEe-i8oJXfEwzdw" target="_aarNsM9mEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_m_BooM9yEe-i8oJXfEwzdw" source="_aarNsM9mEe-i8oJXfEwzdw" target="_DsMOIM9nEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_qLgLsM9yEe-i8oJXfEwzdw" source="_aarNsM9mEe-i8oJXfEwzdw" target="_WdQ5wM9iEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_snjXYM9yEe-i8oJXfEwzdw" source="_WdQ5wM9iEe-i8oJXfEwzdw" target="_aarNsM9mEe-i8oJXfEwzdw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_b9af4M9zEe-i8oJXfEwzdw" name="pulsante X premuto" source="_-OCgMM9iEe-i8oJXfEwzdw" target="_YudQkM9zEe-i8oJXfEwzdw"/>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_5luQUM6pEe-2__oD16VsZw" name="Start"/>
-      <subvertex xmi:type="uml:State" xmi:id="_-RIPgM6pEe-2__oD16VsZw" name="Visualizzazione Home"/>
+      <subvertex xmi:type="uml:State" xmi:id="_WdQ5wM9iEe-i8oJXfEwzdw" name="Profilo">
+        <region xmi:type="uml:Region" xmi:id="_FHEioM9lEe-i8oJXfEwzdw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_KyBTQM9lEe-i8oJXfEwzdw" source="_F_BeUM9lEe-i8oJXfEwzdw" target="_Hw_yQM9lEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_VYYjEM9nEe-i8oJXfEwzdw" name="pulsante modifica premuto" source="_Hw_yQM9lEe-i8oJXfEwzdw" target="_StKS8M9nEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_YyyNYM9nEe-i8oJXfEwzdw" name="pulsante annulla premuto" source="_StKS8M9nEe-i8oJXfEwzdw" target="_Hw_yQM9lEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_pHWoEM9nEe-i8oJXfEwzdw" name="pulsante conferma premuto/inserimento dati nel database" source="_StKS8M9nEe-i8oJXfEwzdw" target="_Hw_yQM9lEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="__S6EQM9nEe-i8oJXfEwzdw" source="_Hw_yQM9lEe-i8oJXfEwzdw" target="_WdQ5wM9iEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Ts1w0M9zEe-i8oJXfEwzdw" name="pulsante X premuto" source="_Hw_yQM9lEe-i8oJXfEwzdw" target="_SApUwM9zEe-i8oJXfEwzdw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_F_BeUM9lEe-i8oJXfEwzdw" name=""/>
+          <subvertex xmi:type="uml:State" xmi:id="_Hw_yQM9lEe-i8oJXfEwzdw" name="Visualizzazione Dati"/>
+          <subvertex xmi:type="uml:State" xmi:id="_StKS8M9nEe-i8oJXfEwzdw" name="Modifica Dati"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_SApUwM9zEe-i8oJXfEwzdw"/>
+        </region>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_-OCgMM9iEe-i8oJXfEwzdw" name="Home">
+        <region xmi:type="uml:Region" xmi:id="_Dbe_As9vEe-i8oJXfEwzdw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_n2PZ8M9xEe-i8oJXfEwzdw" source="_NolsMM9vEe-i8oJXfEwzdw" target="_aarNsM9mEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_so20YM9xEe-i8oJXfEwzdw" name="pulsante database premuto [Utente == Developer]" source="_NolsMM9vEe-i8oJXfEwzdw" target="_irks4M9mEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_LrTYwM9yEe-i8oJXfEwzdw" source="_NolsMM9vEe-i8oJXfEwzdw" target="_WdQ5wM9iEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Z2wK0M9yEe-i8oJXfEwzdw" source="_NolsMM9vEe-i8oJXfEwzdw" target="_DsMOIM9nEe-i8oJXfEwzdw"/>
+          <subvertex xmi:type="uml:State" xmi:id="_NolsMM9vEe-i8oJXfEwzdw" name="Visualizzazione completa"/>
+        </region>
+        <region xmi:type="uml:Region" xmi:id="_EUdOYM9vEe-i8oJXfEwzdw" name="Region2">
+          <subvertex xmi:type="uml:State" xmi:id="_IfwxMM9vEe-i8oJXfEwzdw" name="Visualizzazione base"/>
+        </region>
+      </subvertex>
       <subvertex xmi:type="uml:State" xmi:id="_O-PGAM6qEe-2__oD16VsZw" name="Login"/>
+      <subvertex xmi:type="uml:State" xmi:id="_H24NQM9kEe-i8oJXfEwzdw" name="Sign Up"/>
+      <subvertex xmi:type="uml:State" xmi:id="_aarNsM9mEe-i8oJXfEwzdw" name="Mappa">
+        <region xmi:type="uml:Region" xmi:id="_NH2a0s9oEe-i8oJXfEwzdw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_R550kM9oEe-i8oJXfEwzdw" source="_NH3o9s9oEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_exOsUM9oEe-i8oJXfEwzdw" name="pulsante pullman premuto/mostra fermate" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_k8pswM9oEe-i8oJXfEwzdw" name="pulsante treno premuto/mostra fermate" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_tj52cM9oEe-i8oJXfEwzdw" name="pulsante funicolare premuto/mostra fermate" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_u5sksM9oEe-i8oJXfEwzdw" name="pulsante tram premuto/mostra fermate" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_-kQZEM9oEe-i8oJXfEwzdw" name="pulsante posizione premuto/mostra posizione" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_WC9fMM9pEe-i8oJXfEwzdw" name="doppio click del mouse" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_PVwAUM9pEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_v99WsM9rEe-i8oJXfEwzdw" source="_PVwAUM9pEe-i8oJXfEwzdw" target="_OsFNsM9oEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_0hWCUM9rEe-i8oJXfEwzdw" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_aarNsM9mEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_PGt6QM9zEe-i8oJXfEwzdw" name="pulsante X premuto" source="_OsFNsM9oEe-i8oJXfEwzdw" target="_N5EbYM9zEe-i8oJXfEwzdw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_NH3o9s9oEe-i8oJXfEwzdw"/>
+          <subvertex xmi:type="uml:State" xmi:id="_OsFNsM9oEe-i8oJXfEwzdw" name="Visualizzazione Mappa"/>
+          <subvertex xmi:type="uml:State" xmi:id="_PVwAUM9pEe-i8oJXfEwzdw" name="Inserimento waypont"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_N5EbYM9zEe-i8oJXfEwzdw" name=""/>
+        </region>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_irks4M9mEe-i8oJXfEwzdw" name="Database">
+        <region xmi:type="uml:Region" xmi:id="_s5g40M9sEe-i8oJXfEwzdw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_zb6O0M9sEe-i8oJXfEwzdw" source="_s5hf5s9sEe-i8oJXfEwzdw" target="_uWAsAM9sEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_SDifcM9tEe-i8oJXfEwzdw" name="pulsante tabella premuto" source="_uWAsAM9sEe-i8oJXfEwzdw" target="_N_aisM9tEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_S511UM9tEe-i8oJXfEwzdw" source="_N_aisM9tEe-i8oJXfEwzdw" target="_uWAsAM9sEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_K8IwMM9zEe-i8oJXfEwzdw" name="pulsante X premuto" source="_uWAsAM9sEe-i8oJXfEwzdw" target="_JpQzEM9zEe-i8oJXfEwzdw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_s5hf5s9sEe-i8oJXfEwzdw" name=""/>
+          <subvertex xmi:type="uml:State" xmi:id="_uWAsAM9sEe-i8oJXfEwzdw" name="Visualizzazione Database"/>
+          <subvertex xmi:type="uml:State" xmi:id="_N_aisM9tEe-i8oJXfEwzdw" name="Seleziona Tabella"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_JpQzEM9zEe-i8oJXfEwzdw" name=""/>
+        </region>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_DsMOIM9nEe-i8oJXfEwzdw" name="Percorso">
+        <region xmi:type="uml:Region" xmi:id="_2WhwYs9tEe-i8oJXfEwzdw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_HkdcAM9uEe-i8oJXfEwzdw" source="_37SuwM9tEe-i8oJXfEwzdw" target="__HHcQM9tEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_TJPt0M9uEe-i8oJXfEwzdw" source="__HHcQM9tEe-i8oJXfEwzdw" target="_PbRAMM9uEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Y-JEoM9uEe-i8oJXfEwzdw" source="_PbRAMM9uEe-i8oJXfEwzdw" target="_U1o-MM9uEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ZVvsUM9uEe-i8oJXfEwzdw" name="pulsante conferma premuto" source="_U1o-MM9uEe-i8oJXfEwzdw" target="_37SuwM9tEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ghPpsM9uEe-i8oJXfEwzdw" source="_2WiXds9tEe-i8oJXfEwzdw" target="_37SuwM9tEe-i8oJXfEwzdw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_FK2HAM9zEe-i8oJXfEwzdw" name="pulsante X premuto" source="_37SuwM9tEe-i8oJXfEwzdw" target="_9m0U4M9yEe-i8oJXfEwzdw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_2WiXds9tEe-i8oJXfEwzdw" name=""/>
+          <subvertex xmi:type="uml:State" xmi:id="_37SuwM9tEe-i8oJXfEwzdw" name="Visualizzazione schermata"/>
+          <subvertex xmi:type="uml:State" xmi:id="__HHcQM9tEe-i8oJXfEwzdw" name="Selezione fermata di partenza"/>
+          <subvertex xmi:type="uml:State" xmi:id="_PbRAMM9uEe-i8oJXfEwzdw" name="Selezione orario di partenza"/>
+          <subvertex xmi:type="uml:State" xmi:id="_U1o-MM9uEe-i8oJXfEwzdw" name="Selezione fermata di arrivo"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_9m0U4M9yEe-i8oJXfEwzdw" name=""/>
+        </region>
+      </subvertex>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_YudQkM9zEe-i8oJXfEwzdw" name=""/>
     </region>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_AvXzkM6qEe-2__oD16VsZw">
