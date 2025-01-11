@@ -3,5 +3,9 @@
   <packageImport xmi:type="uml:PackageImport" xmi:id="_DC4DAM91Ee-i8oJXfEwzdw">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_IPza4M91Ee-i8oJXfEwzdw" name="BGTransport"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_IPza4M91Ee-i8oJXfEwzdw" name="BGTransport" node="_0VQ5oNAlEe-Mc_78aT4G-w" group="_meDSMNAlEe-Mc_78aT4G-w _nXteENAlEe-Mc_78aT4G-w">
+    <group xmi:type="uml:ActivityPartition" xmi:id="_meDSMNAlEe-Mc_78aT4G-w" name="Utente" node="_0VQ5oNAlEe-Mc_78aT4G-w"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_nXteENAlEe-Mc_78aT4G-w" name="ActivityPartition2"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_0VQ5oNAlEe-Mc_78aT4G-w" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+  </packagedElement>
 </uml:Model>
