@@ -303,7 +303,7 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dTodMM95Ee-i8oJXfEwzdw" id="(0.5,0.451035254616676)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dTpEQM95Ee-i8oJXfEwzdw" id="(0.5,0.451035254616676)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_w4N3IM95Ee-i8oJXfEwzdw" type="Message_AsynchEdge" source="_gFlncM95Ee-i8oJXfEwzdw" target="_7T8zAM91Ee-i8oJXfEwzdw">
+  <edges xmi:type="notation:Connector" xmi:id="_w4N3IM95Ee-i8oJXfEwzdw" type="Message_AsynchEdge" source="_5YcIkM91Ee-i8oJXfEwzdw" target="_7T8zAM91Ee-i8oJXfEwzdw">
     <children xmi:type="notation:DecorationNode" xmi:id="_w4N3I895Ee-i8oJXfEwzdw" type="Message_AsynchNameLabel">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_w4N3JM95Ee-i8oJXfEwzdw" x="1" y="-13"/>
     </children>
@@ -313,7 +313,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_w4N3Ic95Ee-i8oJXfEwzdw"/>
     <element xmi:type="uml:Message" href="SequenceDiagram.uml#_w4IXkM95Ee-i8oJXfEwzdw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_w4N3Is95Ee-i8oJXfEwzdw" points="[0, 0, -120, 0]$[120, 0, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_w4XoIM95Ee-i8oJXfEwzdw" id="(0.5,0.49580302182428654)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_w4XoIM95Ee-i8oJXfEwzdw" id="(0.5,0.4930050363738109)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_w4YPMM95Ee-i8oJXfEwzdw" id="(0.5,0.49580302182428654)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_AXMtoM96Ee-i8oJXfEwzdw" type="Message_SynchEdge" source="_7T8zAM91Ee-i8oJXfEwzdw" target="_Y1jk0M94Ee-i8oJXfEwzdw">
