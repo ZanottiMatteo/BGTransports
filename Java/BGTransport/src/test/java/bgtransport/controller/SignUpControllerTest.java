@@ -8,6 +8,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import org.jooq.DSLContext;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -25,6 +26,13 @@ class SignUpControllerTest {
         dslContext = Utility.dslContext(ConstantDB.DB_URL_USERS);
     }
 
+    @AfterEach
+    void tearDown() {
+        // Rimuovi gli utenti creati durante i test
+        dslContext.deleteFrom(User.USER)
+                .where(User.USER.USERNAME.in("piero"))
+                .execute();
+    }
 
     @Test
     void testSignUpSuccess() throws SQLException {

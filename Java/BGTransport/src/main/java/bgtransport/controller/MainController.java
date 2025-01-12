@@ -66,6 +66,6 @@ public class MainController {
 		DownloadDataDBController.updateProgressbar();
 
 		// Manage user roles
-		RoleController.roleManager();
+		RoleController.roleManager(0);
 	}
 }

@@ -2,95 +2,77 @@ package bgtransport.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import bgtransport.model.UserQueryDB;
+import bgtransport.model.User;
 
 class LoginControllerTest {
 
-    private JTextField emailField;
-    private JPasswordField passwordField;
+	private JTextField emailField;
+	private JPasswordField passwordField;
 
-    @BeforeEach
-    void setUp() {
-        // Inizializza i campi input
-        emailField = new JTextField();
-        passwordField = new JPasswordField();
+	@BeforeEach
+	void setUp() {
+		// Inizializza i campi input
+		emailField = new JTextField();
+		passwordField = new JPasswordField();
+		LoginController.uservolatile = new User();
+		LoginController.email = null;
+		MainController.userlogged = null;
+		try {
+			MainController.main(null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-        // Configura dati statici di QueryDB per i test
-        TestQueryDB.initializeTestData();
-    }
+	@Test
+	void testLoginWithNonExistentEmail() {
+		emailField.setText("nonexistent@example.com");
+		passwordField.setText("password123");
 
-    @Test
-    void testLoginNonExistentEmail() {
-        // Simula input con email non esistente
-        emailField.setText("unknown@example.com");
-        passwordField.setText("password123");
+		LoginController.login(emailField, passwordField);
 
-        // Esegui login
-        LoginController.login(emailField, passwordField);
+		assertNull(MainController.userlogged, "L'utente non dovrebbe essere loggato con un'email non esistente.");
+	}
 
-        // Verifica che l'utente non sia loggato
-        assertNull(MainController.userlogged.getEmail(), "L'utente non dovrebbe essere loggato con email inesistente.");
-        LoginController.logout();
-    }
-    
-    @Test
-    void testLoginWrongPassword() {
-        // Simula input con password errata
-        emailField.setText("test2@example.com");
-        passwordField.setText("wrongPassword");
+	@Test
+	void testLoginWithWrongPassword() {
+		emailField.setText("testRU@example.com");
+		passwordField.setText("wrongpassword");
 
-        // Esegui login
-        LoginController.login(emailField, passwordField);
+		LoginController.login(emailField, passwordField);
 
-        // Verifica che l'utente non sia loggato
-        assertNull(MainController.userlogged.getEmail(), "L'utente non dovrebbe essere loggato con password errata.");
-        
-        LoginController.logout();
-    }
-    
-    @Test
-    void testLoginSuccess() {
-        // Simula input corretto
-        emailField.setText("test@example.com");
-        passwordField.setText("password123");
+		assertNull(MainController.userlogged, "L'utente non dovrebbe essere loggato con una password errata.");
+	}
 
-        // Esegui login
-        LoginController.login(emailField, passwordField);
+	@Test
+	void testSuccessfulLoginandLogoutRegUser() {
+		emailField.setText("testRU@example.com");
+		passwordField.setText("password123");
 
-        // Verifica se l'utente è loggato
-        assertEquals("test@example.com", MainController.userlogged.getEmail(), "L'utente dovrebbe essere loggato correttamente.");  
-        LoginController.logout();
-    }    
+		LoginController.login(emailField, passwordField);
 
-    // Classe statica di supporto per simulare QueryDB con dati statici
-    static class TestQueryDB extends UserQueryDB {
+		assertNotNull(MainController.userlogged, "L'utente dovrebbe essere loggato con credenziali corrette.");
+		assertEquals("testRU@example.com", MainController.userlogged.getEmail(), "L'email dell'utente loggato dovrebbe corrispondere.");
+		LoginController.logout();
+		assertNull(MainController.userlogged.getEmail(), "L'utente dovrebbe essere disconnesso dopo il logout.");
+	}
+	
+	@Test
+	void testSuccessfulLoginandLogoutDev() {
+		emailField.setText("testD@example.com");
+		passwordField.setText("password123");
 
-        private static final List<String> testEmails = new ArrayList<>();
-        private static final List<String> testPasswords = new ArrayList<>();
+		LoginController.login(emailField, passwordField);
 
-        public static void initializeTestData() {
-            // Pulisce i dati e inserisce utenti di test
-            testEmails.clear();
-            testPasswords.clear();
-            testEmails.add("test@example.com");
-            testPasswords.add("password123");
-        }
-
-        public static List<String> getAllUserEmails() {
-            return testEmails;
-        }
-
-        public static List<String> getAllUserPassword() {
-            return testPasswords;
-        }
-    }
+		assertNotNull(MainController.userlogged, "L'utente dovrebbe essere loggato con credenziali corrette.");
+		assertEquals("testD@example.com", MainController.userlogged.getEmail(), "L'email dell'utente loggato dovrebbe corrispondere.");
+		LoginController.logout();
+		assertNull(MainController.userlogged.getEmail(), "L'utente dovrebbe essere disconnesso dopo il logout.");
+	}
 }

@@ -11,8 +11,8 @@ public class RoleController {
 	 * This method checks the current user's role and adjusts the visibility of the
 	 * buttons in the menu panels across different views accordingly.
 	 */
-	public static void roleManager() {
-		int role = MainController.userlogged.getRole();
+	public static void roleManager(int role) {
+		
 		switch (role) {
 		case 0:
 			MainController.homeV.menuPanel.lineButton.setVisible(false);

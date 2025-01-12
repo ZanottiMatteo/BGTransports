@@ -22,7 +22,7 @@ public class LoginController {
 	
 
 	/** The email address of the currently logged-in user */
-	public static String email;
+	public static String email; 
 
 	/**
 	 * Handles the login process by verifying the email and password against the
@@ -43,15 +43,14 @@ public class LoginController {
 				// Loop through all the emails in the database to verify the user credentials
 				for (int i = 0; i < UserQueryDB.getAllUserEmails().size(); i++) {
 					// If email and password match
-					if ((email.equals(UserQueryDB.getAllUserEmails().get(i))
-							&& (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
+					if ((email.equals(UserQueryDB.getAllUserEmails().get(i)) && (password.equals(UserQueryDB.getAllUserPassword().get(i))))) {
 						uservolatile.setEmail(email);
 						int role = uservolatile.getRole();
 						MainController.userlogged = null;
 						if (role == 1) MainController.userlogged = new RegisteredUser();
 						else if (role == 2) MainController.userlogged = new Developer();
 						MainController.userlogged.setEmail(email);
-						RoleController.roleManager();
+						RoleController.roleManager(role);
 						NewWindowController.openUserPanel(MainController.userV);
 						MainController.loginV.setVisible(false);
 					}
@@ -82,7 +81,7 @@ public class LoginController {
 		// Reset the logged-in user information
 		MainController.userlogged = new User();
 		email = null;
-		RoleController.roleManager();
+		RoleController.roleManager(0);
 		UserInfoController.hideDataWidget();
 		NewWindowController.openHomePanel(MainController.homeV);	
 		MainController.loginV.passwordField.setText(""); // Clears the password field
