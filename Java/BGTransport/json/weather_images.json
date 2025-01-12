@@ -1,122 +1,242 @@
 {
     "0": {
         "day": {
-            "description": "Sunny",
-            "image": "https://cdn-icons-png.flaticon.com/64/869/869869.png"
+            "description": "Clear",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163662.png"
         },
         "night": {
             "description": "Clear",
-            "image": "https://cdn-icons-png.flaticon.com/64/869/869861.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163645.png"
         }
     },
     "1": {
         "day": {
-            "description": "Mainly Sunny",
-            "image": "https://cdn-icons-png.flaticon.com/64/146/146167.png"
+            "description": "Mostly Clear",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163662.png"
         },
         "night": {
-            "description": "Mainly Clear",
-            "image": "https://cdn-icons-png.flaticon.com/64/869/869861.png"
+            "description": "Mostly Clear",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163645.png"
         }
     },
     "2": {
         "day": {
             "description": "Partly Cloudy",
-            "image": "https://cdn-icons-png.flaticon.com/64/414/414927.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163661.png"
         },
         "night": {
             "description": "Partly Cloudy",
-            "image": "https://cdn-icons-png.flaticon.com/64/414/414931.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163625.png"
         }
     },
     "3": {
         "day": {
-            "description": "Cloudy",
-            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163661.png"
+            "description": "Overcast",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163624.png"
         },
         "night": {
-            "description": "Cloudy",
-            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163661.png"
+            "description": "Overcast",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163624.png"
         }
     },
     "45": {
         "day": {
-            "description": "Foggy",
-            "image": "https://cdn-icons-png.flaticon.com/64/414/414949.png"
+            "description": "Fog",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         },
         "night": {
-            "description": "Foggy",
-            "image": "https://cdn-icons-png.flaticon.com/64/414/414949.png"
+            "description": "Fog",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         }
     },
     "48": {
         "day": {
-            "description": "Rime Fog",
-            "image": "https://cdn-icons-png.flaticon.com/64/2698/2698220.png"
+            "description": "Icy Fog",
+        	"image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         },
         "night": {
-            "description": "Rime Fog",
-            "image": "https://cdn-icons-png.flaticon.com/64/2698/2698220.png"
+            "description": "Icy Fog",
+          	"image": "https://cdn-icons-png.flaticon.com/64/1163/1163673.png"
         }
     },
     "51": {
         "day": {
             "description": "Light Drizzle",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447994.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Light Drizzle",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447994.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
+        }
+    },
+    "53": {
+        "day": {
+            "description": "Drizzle",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
+        },
+        "night": {
+            "description": "Drizzle",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
+        }
+    },
+    "55": {
+        "day": {
+            "description": "Heavy Drizzle",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
+        },
+        "night": {
+            "description": "Heavy Drizzle",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "61": {
         "day": {
             "description": "Light Rain",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447975.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         },
         "night": {
             "description": "Light Rain",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447975.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
+        }
+    },
+    "63": {
+        "day": {
+            "description": "Rain",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
+        },
+        "night": {
+            "description": "Rain",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163626.png"
         }
     },
     "65": {
         "day": {
             "description": "Heavy Rain",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447976.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         },
         "night": {
             "description": "Heavy Rain",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447976.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
         }
     },
-    "71": {
+	"71": {
         "day": {
-            "description": "Light Snow",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447991.png"
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
-            "description": "Light Snow",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447991.png"
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
-    "75": {
+	"73": {
         "day": {
-            "description": "Heavy Snow",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447978.png"
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         },
         "night": {
-            "description": "Heavy Snow",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447978.png"
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        }
+    },
+	"75": {
+        "day": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        },
+        "night": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        }
+    },
+	"77": {
+        "day": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        },
+        "night": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        }
+    },
+    "80": {
+        "day": {
+            "description": "Light Showers",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
+        },
+        "night": {
+            "description": "Light Showers",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
+        }
+    },
+    "81": {
+        "day": {
+            "description": "Showers",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
+        },
+        "night": {
+            "description": "Showers",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
+        }
+    },
+    "82": {
+        "day": {
+            "description": "Heavy Showers",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
+        },
+        "night": {
+            "description": "Heavy Showers",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163627.png"
+        }
+    },
+	"85": {
+        "day": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        },
+        "night": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        }
+    },
+	"86": {
+        "day": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
+        },
+        "night": {
+            "description": "Snow",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163629.png"
         }
     },
     "95": {
         "day": {
             "description": "Thunderstorm",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447985.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         },
         "night": {
             "description": "Thunderstorm",
-            "image": "https://cdn-icons-png.flaticon.com/64/3447/3447985.png"
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
+        }
+    },
+    "96": {
+        "day": {
+            "description": "Light Thunderstorm with Hail",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
+        },
+        "night": {
+            "description": "Light Thunderstorm with Hail",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
+        }
+    },
+    "99": {
+        "day": {
+            "description": "Thunderstorm with Hail",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
+        },
+        "night": {
+            "description": "Thunderstorm with Hail",
+            "image": "https://cdn-icons-png.flaticon.com/64/1163/1163636.png"
         }
     }
 }

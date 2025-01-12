@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_DCrOsM91Ee-i8oJXfEwzdw" name="BGTransport">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_DC4DAM91Ee-i8oJXfEwzdw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_IPza4M91Ee-i8oJXfEwzdw" name="BGTransport" node="_0VQ5oNAlEe-Mc_78aT4G-w _qVSXkNAnEe-n_O-wR0shtA _4zkmENAnEe-n_O-wR0shtA _U4issNAoEe-n_O-wR0shtA _cwNMgNAoEe-n_O-wR0shtA _tQWlENAoEe-n_O-wR0shtA _zNBX0NAoEe-n_O-wR0shtA _1Y6AkNAoEe-n_O-wR0shtA _Tq3jMNApEe-n_O-wR0shtA _f10dINApEe-n_O-wR0shtA _isD1ANAqEe-n_O-wR0shtA _xsDCYNAqEe-n_O-wR0shtA _GCWNINArEe-n_O-wR0shtA _KpZ30NArEe-n_O-wR0shtA _SH4mINAsEe-n_O-wR0shtA _WtYxoNAsEe-n_O-wR0shtA _YZK-ANAsEe-n_O-wR0shtA _btw7QNAsEe-n_O-wR0shtA _eksFENAsEe-n_O-wR0shtA _hcc8YNAsEe-n_O-wR0shtA _qaDwkNAsEe-n_O-wR0shtA _02It4NAsEe-n_O-wR0shtA _-fEXANAsEe-n_O-wR0shtA _tSfg0NAtEe-n_O-wR0shtA _7cWXcNAtEe-n_O-wR0shtA _A-vB8NAuEe-n_O-wR0shtA _XETx8NAuEe-n_O-wR0shtA _aaIeQNAuEe-n_O-wR0shtA _e_XkANAuEe-n_O-wR0shtA _sUJz0NAuEe-n_O-wR0shtA _uvTAkNAuEe-n_O-wR0shtA _IAf_ENAvEe-n_O-wR0shtA _7nIOoNAuEe-n_O-wR0shtA _XNxagNAvEe-n_O-wR0shtA _ZXb1sNAvEe-n_O-wR0shtA _b9BX4NAvEe-n_O-wR0shtA _-FE3wNAuEe-n_O-wR0shtA _BKRHENAvEe-n_O-wR0shtA _zD4lwNAvEe-n_O-wR0shtA __HapENAvEe-n_O-wR0shtA _TEkUANAwEe-n_O-wR0shtA _Xw_m4NAwEe-n_O-wR0shtA _cJIr0NAwEe-n_O-wR0shtA" group="_meDSMNAlEe-Mc_78aT4G-w _nXteENAlEe-Mc_78aT4G-w _XNjRsNAnEe-n_O-wR0shtA _aWmGQNAnEe-n_O-wR0shtA _amTWMNAnEe-n_O-wR0shtA _a3GLQNAnEe-n_O-wR0shtA _MRYXsNAqEe-n_O-wR0shtA _M8ZqoNAqEe-n_O-wR0shtA _NZ2boNAqEe-n_O-wR0shtA _NtfwYNAqEe-n_O-wR0shtA _4hJxoNAtEe-n_O-wR0shtA">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9lsRQNAnEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w" target="_4zkmENAnEe-n_O-wR0shtA" source="_qVSXkNAnEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_LT3RcNAoEe-n_O-wR0shtA" name="[NOT OK]" inPartition="_meDSMNAlEe-Mc_78aT4G-w" target="_qVSXkNAnEe-n_O-wR0shtA" source="_4zkmENAnEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fHnv0NAoEe-n_O-wR0shtA" target="_U4issNAoEe-n_O-wR0shtA" source="_cwNMgNAoEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_kA_dENApEe-n_O-wR0shtA" target="_qVSXkNAnEe-n_O-wR0shtA" source="_f10dINApEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pcCJcNApEe-n_O-wR0shtA" inPartition="_amTWMNAnEe-n_O-wR0shtA" target="_Tq3jMNApEe-n_O-wR0shtA" source="_0VQ5oNAlEe-Mc_78aT4G-w"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sx7HMNApEe-n_O-wR0shtA" target="_f10dINApEe-n_O-wR0shtA" source="_Tq3jMNApEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7AamMNApEe-n_O-wR0shtA" target="_qVSXkNAnEe-n_O-wR0shtA" source="_U4issNAoEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Ck65cNAqEe-n_O-wR0shtA" target="_f10dINApEe-n_O-wR0shtA" source="_zNBX0NAoEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_chLAENAqEe-n_O-wR0shtA" name="[OK]" target="_tQWlENAoEe-n_O-wR0shtA" source="_4zkmENAnEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_oW4p0NAqEe-n_O-wR0shtA" target="_isD1ANAqEe-n_O-wR0shtA" source="_1Y6AkNAoEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1dZNENAqEe-n_O-wR0shtA" target="_xsDCYNAqEe-n_O-wR0shtA" source="_U4issNAoEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_509DMNAqEe-n_O-wR0shtA" target="_GCWNINArEe-n_O-wR0shtA" source="_isD1ANAqEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_w8q-cNArEe-n_O-wR0shtA" target="_xsDCYNAqEe-n_O-wR0shtA" source="_GCWNINArEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yQpHwNArEe-n_O-wR0shtA" target="_tQWlENAoEe-n_O-wR0shtA" source="_xsDCYNAqEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1H1XUNArEe-n_O-wR0shtA" inPartition="_aWmGQNAnEe-n_O-wR0shtA" target="_tQWlENAoEe-n_O-wR0shtA" source="_KpZ30NArEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6LVGYNArEe-n_O-wR0shtA" target="_KpZ30NArEe-n_O-wR0shtA" source="_isD1ANAqEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aWvd8NAsEe-n_O-wR0shtA" target="_WtYxoNAsEe-n_O-wR0shtA" source="_YZK-ANAsEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_kdcoMNAsEe-n_O-wR0shtA" target="_tQWlENAoEe-n_O-wR0shtA" source="_hcc8YNAsEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_uQ0mwNAsEe-n_O-wR0shtA" target="_qaDwkNAsEe-n_O-wR0shtA" source="_SH4mINAsEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6flpsNAsEe-n_O-wR0shtA" target="_02It4NAsEe-n_O-wR0shtA" source="_btw7QNAsEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_KFGmANAtEe-n_O-wR0shtA" target="_-fEXANAsEe-n_O-wR0shtA" source="_eksFENAsEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_J0Xl4NAuEe-n_O-wR0shtA" target="_A-vB8NAuEe-n_O-wR0shtA" source="_tSfg0NAtEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_U5oDENAuEe-n_O-wR0shtA" target="_aaIeQNAuEe-n_O-wR0shtA" source="_A-vB8NAuEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jrZOQNAuEe-n_O-wR0shtA" target="_e_XkANAuEe-n_O-wR0shtA" source="_XETx8NAuEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ngkJANAuEe-n_O-wR0shtA" target="_XETx8NAuEe-n_O-wR0shtA" source="_7cWXcNAtEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yEBgsNAuEe-n_O-wR0shtA" target="_uvTAkNAuEe-n_O-wR0shtA" source="_sUJz0NAuEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_eR3IUNAvEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w" target="_ZXb1sNAvEe-n_O-wR0shtA" source="_XNxagNAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fKpxgNAvEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w" target="_b9BX4NAvEe-n_O-wR0shtA" source="_ZXb1sNAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sXyhMNAvEe-n_O-wR0shtA" target="_7nIOoNAuEe-n_O-wR0shtA" source="_XNxagNAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_uHiAgNAvEe-n_O-wR0shtA" target="_-FE3wNAuEe-n_O-wR0shtA" source="_ZXb1sNAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_wLPksNAvEe-n_O-wR0shtA" target="_BKRHENAvEe-n_O-wR0shtA" source="_b9BX4NAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1-O3ANAvEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA" target="_zD4lwNAvEe-n_O-wR0shtA" source="_BKRHENAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_DOZskNAwEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w" target="__HapENAvEe-n_O-wR0shtA" source="_b9BX4NAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_MR0N0NAwEe-n_O-wR0shtA" target="_IAf_ENAvEe-n_O-wR0shtA" source="__HapENAvEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fjXXANAwEe-n_O-wR0shtA" target="_Xw_m4NAwEe-n_O-wR0shtA" source="_TEkUANAwEe-n_O-wR0shtA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gg4vMNAwEe-n_O-wR0shtA" target="_cJIr0NAwEe-n_O-wR0shtA" source="_Xw_m4NAwEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_meDSMNAlEe-Mc_78aT4G-w" name="Utente" node="_qVSXkNAnEe-n_O-wR0shtA _4zkmENAnEe-n_O-wR0shtA _cwNMgNAoEe-n_O-wR0shtA _isD1ANAqEe-n_O-wR0shtA _SH4mINAsEe-n_O-wR0shtA _YZK-ANAsEe-n_O-wR0shtA _btw7QNAsEe-n_O-wR0shtA _eksFENAsEe-n_O-wR0shtA _hcc8YNAsEe-n_O-wR0shtA _tSfg0NAtEe-n_O-wR0shtA _7cWXcNAtEe-n_O-wR0shtA _sUJz0NAuEe-n_O-wR0shtA _XNxagNAvEe-n_O-wR0shtA _ZXb1sNAvEe-n_O-wR0shtA _b9BX4NAvEe-n_O-wR0shtA __HapENAvEe-n_O-wR0shtA _TEkUANAwEe-n_O-wR0shtA" edge="_9lsRQNAnEe-n_O-wR0shtA _LT3RcNAoEe-n_O-wR0shtA _eR3IUNAvEe-n_O-wR0shtA _fKpxgNAvEe-n_O-wR0shtA _DOZskNAwEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_nXteENAlEe-Mc_78aT4G-w" name="SignUp" node="_U4issNAoEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_XNjRsNAnEe-n_O-wR0shtA" name="Login" node="_f10dINApEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_aWmGQNAnEe-n_O-wR0shtA" name="View Profilo" node="_tQWlENAoEe-n_O-wR0shtA _zNBX0NAoEe-n_O-wR0shtA _1Y6AkNAoEe-n_O-wR0shtA _GCWNINArEe-n_O-wR0shtA _KpZ30NArEe-n_O-wR0shtA" edge="_1H1XUNArEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_amTWMNAnEe-n_O-wR0shtA" name="View Home" node="_0VQ5oNAlEe-Mc_78aT4G-w _Tq3jMNApEe-n_O-wR0shtA _WtYxoNAsEe-n_O-wR0shtA" edge="_pcCJcNApEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_a3GLQNAnEe-n_O-wR0shtA" name="DB Utenti" node="_xsDCYNAqEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_MRYXsNAqEe-n_O-wR0shtA" name="View Mappa" node="_qaDwkNAsEe-n_O-wR0shtA _aaIeQNAuEe-n_O-wR0shtA _e_XkANAuEe-n_O-wR0shtA _uvTAkNAuEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_M8ZqoNAqEe-n_O-wR0shtA" name="View Percorso" node="_02It4NAsEe-n_O-wR0shtA _7nIOoNAuEe-n_O-wR0shtA _-FE3wNAuEe-n_O-wR0shtA _BKRHENAvEe-n_O-wR0shtA _IAf_ENAvEe-n_O-wR0shtA _zD4lwNAvEe-n_O-wR0shtA" edge="_1-O3ANAvEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_NZ2boNAqEe-n_O-wR0shtA" name="DB Trasporti" node="_A-vB8NAuEe-n_O-wR0shtA _Xw_m4NAwEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_NtfwYNAqEe-n_O-wR0shtA" name="View Database" node="_-fEXANAsEe-n_O-wR0shtA _cJIr0NAwEe-n_O-wR0shtA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_4hJxoNAtEe-n_O-wR0shtA" name="GPS" node="_XETx8NAuEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_0VQ5oNAlEe-Mc_78aT4G-w" outgoing="_pcCJcNApEe-n_O-wR0shtA" inPartition="_amTWMNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qVSXkNAnEe-n_O-wR0shtA" name="Inserimento credenziali" incoming="_LT3RcNAoEe-n_O-wR0shtA _kA_dENApEe-n_O-wR0shtA _7AamMNApEe-n_O-wR0shtA" outgoing="_9lsRQNAnEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_4zkmENAnEe-n_O-wR0shtA" incoming="_9lsRQNAnEe-n_O-wR0shtA" outgoing="_LT3RcNAoEe-n_O-wR0shtA _chLAENAqEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_U4issNAoEe-n_O-wR0shtA" name="Creazione profilo" incoming="_fHnv0NAoEe-n_O-wR0shtA" outgoing="_7AamMNApEe-n_O-wR0shtA _1dZNENAqEe-n_O-wR0shtA" inPartition="_nXteENAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_cwNMgNAoEe-n_O-wR0shtA" name="Inserimento dati personali" outgoing="_fHnv0NAoEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_tQWlENAoEe-n_O-wR0shtA" name="Visualizza dati personali" incoming="_chLAENAqEe-n_O-wR0shtA _yQpHwNArEe-n_O-wR0shtA _1H1XUNArEe-n_O-wR0shtA _kdcoMNAsEe-n_O-wR0shtA" inPartition="_aWmGQNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_zNBX0NAoEe-n_O-wR0shtA" name="Logout" outgoing="_Ck65cNAqEe-n_O-wR0shtA" inPartition="_aWmGQNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_1Y6AkNAoEe-n_O-wR0shtA" name="Modifica dati personali" outgoing="_oW4p0NAqEe-n_O-wR0shtA" inPartition="_aWmGQNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Tq3jMNApEe-n_O-wR0shtA" name="reindirizzamento al Login" incoming="_pcCJcNApEe-n_O-wR0shtA" outgoing="_sx7HMNApEe-n_O-wR0shtA" inPartition="_amTWMNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_f10dINApEe-n_O-wR0shtA" name="Richiesta credenziali" incoming="_sx7HMNApEe-n_O-wR0shtA _Ck65cNAqEe-n_O-wR0shtA" outgoing="_kA_dENApEe-n_O-wR0shtA" inPartition="_XNjRsNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_isD1ANAqEe-n_O-wR0shtA" name="Modifica dati personali" incoming="_oW4p0NAqEe-n_O-wR0shtA" outgoing="_509DMNAqEe-n_O-wR0shtA _6LVGYNArEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_xsDCYNAqEe-n_O-wR0shtA" name="Inserimento dati utente" incoming="_1dZNENAqEe-n_O-wR0shtA _w8q-cNArEe-n_O-wR0shtA" outgoing="_yQpHwNArEe-n_O-wR0shtA" inPartition="_a3GLQNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_GCWNINArEe-n_O-wR0shtA" name="Salva modifiche" incoming="_509DMNAqEe-n_O-wR0shtA" outgoing="_w8q-cNArEe-n_O-wR0shtA" inPartition="_aWmGQNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_KpZ30NArEe-n_O-wR0shtA" name="Annulla modifiche" incoming="_6LVGYNArEe-n_O-wR0shtA" outgoing="_1H1XUNArEe-n_O-wR0shtA" inPartition="_aWmGQNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_SH4mINAsEe-n_O-wR0shtA" name="Clicca pulsante Mappa" outgoing="_uQ0mwNAsEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_WtYxoNAsEe-n_O-wR0shtA" name="Visualizza Home" incoming="_aWvd8NAsEe-n_O-wR0shtA" inPartition="_amTWMNAnEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_YZK-ANAsEe-n_O-wR0shtA" name="Clicca pulsante Home" outgoing="_aWvd8NAsEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_btw7QNAsEe-n_O-wR0shtA" name="Clicca pulsante Percorso" outgoing="_6flpsNAsEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_eksFENAsEe-n_O-wR0shtA" name="Clicca pulsante Database [Utente == Developer]" outgoing="_KFGmANAtEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w">
+      <localPrecondition xmi:type="uml:Constraint" xmi:id="_VQ3T0NAtEe-n_O-wR0shtA" name="[Utente == Developer]"/>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hcc8YNAsEe-n_O-wR0shtA" name="Clicca pulsante Profilo" outgoing="_kdcoMNAsEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qaDwkNAsEe-n_O-wR0shtA" name="Visualizza Mappa vuota" incoming="_uQ0mwNAsEe-n_O-wR0shtA" inPartition="_MRYXsNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_02It4NAsEe-n_O-wR0shtA" name="Visualizza fermate e orari" incoming="_6flpsNAsEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_-fEXANAsEe-n_O-wR0shtA" name="Visualizza pulsanti tabelle" incoming="_KFGmANAtEe-n_O-wR0shtA" inPartition="_NtfwYNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_tSfg0NAtEe-n_O-wR0shtA" name="Clicca pulsante mezzo pubblico" outgoing="_J0Xl4NAuEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_7cWXcNAtEe-n_O-wR0shtA" name="Clicca pulsante posizione" outgoing="_ngkJANAuEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_A-vB8NAuEe-n_O-wR0shtA" name="Seleziona fermate" incoming="_J0Xl4NAuEe-n_O-wR0shtA" outgoing="_U5oDENAuEe-n_O-wR0shtA" inPartition="_NZ2boNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XETx8NAuEe-n_O-wR0shtA" name="Seleziona posizione" incoming="_ngkJANAuEe-n_O-wR0shtA" outgoing="_jrZOQNAuEe-n_O-wR0shtA" inPartition="_4hJxoNAtEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_aaIeQNAuEe-n_O-wR0shtA" name="Vsualizza fermate" incoming="_U5oDENAuEe-n_O-wR0shtA" inPartition="_MRYXsNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_e_XkANAuEe-n_O-wR0shtA" name="Visualizza posizione" incoming="_jrZOQNAuEe-n_O-wR0shtA" inPartition="_MRYXsNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_sUJz0NAuEe-n_O-wR0shtA" name="Doppio click sulla mappa" outgoing="_yEBgsNAuEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_uvTAkNAuEe-n_O-wR0shtA" name="Inserimento waypoint" incoming="_yEBgsNAuEe-n_O-wR0shtA" inPartition="_MRYXsNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_7nIOoNAuEe-n_O-wR0shtA" name="Visualizza fermata di partenza" incoming="_sXyhMNAvEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_-FE3wNAuEe-n_O-wR0shtA" name="Visualizza orario di partenza" incoming="_uHiAgNAvEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_BKRHENAvEe-n_O-wR0shtA" name="Visualizza fermata di arrivo" incoming="_wLPksNAvEe-n_O-wR0shtA" outgoing="_1-O3ANAvEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_IAf_ENAvEe-n_O-wR0shtA" name="Visualizza dati relativi al percorso" incoming="_MR0N0NAwEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XNxagNAvEe-n_O-wR0shtA" name="Seleziona fermata di partenza" outgoing="_eR3IUNAvEe-n_O-wR0shtA _sXyhMNAvEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ZXb1sNAvEe-n_O-wR0shtA" name="Seleziona orario di arrivo" incoming="_eR3IUNAvEe-n_O-wR0shtA" outgoing="_fKpxgNAvEe-n_O-wR0shtA _uHiAgNAvEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_b9BX4NAvEe-n_O-wR0shtA" name="Seleziona fermata di arrivo" incoming="_fKpxgNAvEe-n_O-wR0shtA" outgoing="_wLPksNAvEe-n_O-wR0shtA _DOZskNAwEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_zD4lwNAvEe-n_O-wR0shtA" name="Visualizza orario di arrivo" incoming="_1-O3ANAvEe-n_O-wR0shtA" inPartition="_M8ZqoNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="__HapENAvEe-n_O-wR0shtA" name="Clicca conferma selezione" incoming="_DOZskNAwEe-n_O-wR0shtA" outgoing="_MR0N0NAwEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_TEkUANAwEe-n_O-wR0shtA" name="Clicca tabella" outgoing="_fjXXANAwEe-n_O-wR0shtA" inPartition="_meDSMNAlEe-Mc_78aT4G-w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Xw_m4NAwEe-n_O-wR0shtA" name="Seleziona tabella" incoming="_fjXXANAwEe-n_O-wR0shtA" outgoing="_gg4vMNAwEe-n_O-wR0shtA" inPartition="_NZ2boNAqEe-n_O-wR0shtA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_cJIr0NAwEe-n_O-wR0shtA" name="Visualizza tabella" incoming="_gg4vMNAwEe-n_O-wR0shtA" inPartition="_NtfwYNAqEe-n_O-wR0shtA"/>
+  </packagedElement>
+</uml:Model>

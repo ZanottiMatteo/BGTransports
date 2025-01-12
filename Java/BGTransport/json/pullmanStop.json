@@ -74,62 +74,62 @@
   "name" : "ALZANO",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2407",
-  "lon" : "13.19113"
+  "lat" : "45.73179",
+  "lon" : "9.72468"
 }, {
   "name" : "ALZANO Burro via Bracc",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.758894",
+  "lon" : "9.717675"
 }, {
   "name" : "ALZANO Castello",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2407",
-  "lon" : "13.19113"
+  "lat" : "45.76833",
+  "lon" : "9.71451"
 }, {
   "name" : "ALZANO GARIBALDI",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2407",
-  "lon" : "13.19113"
+  "lat" : "45.731712",
+  "lon" : "9.728575"
 }, {
   "name" : "ALZANO SOPRA via Piave TEB",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.734798",
+  "lon" : "9.740445"
 }, {
   "name" : "ALZANO via Busa",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.74432",
+  "lon" : "9.71748"
 }, {
   "name" : "ALZANO via Europa 64 fr. Scuole",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.738378",
+  "lon" : "9.719753"
 }, {
   "name" : "ALZANO via Europa 83 Scuole",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.738264",
+  "lon" : "9.719782"
 }, {
   "name" : "ALZANO via IV novembre (parcheggio)",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.73132",
+  "lon" : "9.73006"
 }, {
   "name" : "ALZANO via Lacca",
   "town" : "Alzano",
   "province" : "BG",
-  "lat" : "42.2409962",
-  "lon" : "13.1913421"
+  "lat" : "45.751759",
+  "lon" : "9.700146"
 }, {
   "name" : "Astino fermata 977",
   "town" : "Bergamo",
@@ -488,8 +488,8 @@
   "name" : "LOCATE via Don Foiadelli fr.1",
   "town" : "Locate",
   "province" : "BG",
-  "lat" : "45.690341",
-  "lon" : "8.930829"
+  "lat" : "45.70303",
+  "lon" : "9.56615"
 }, {
   "name" : "LONGUELO ORATORIO",
   "town" : "Longuelo",
@@ -518,8 +518,8 @@
   "name" : "MALPENSATA",
   "town" : "Loreto",
   "province" : "BG",
-  "lat" : "43.433888",
-  "lon" : "13.607885"
+  "lat" : "45.687135",
+  "lon" : "9.672557"
 }, {
   "name" : "MALPENSATA via Carnovali 88",
   "town" : "Bergamo",
@@ -1040,8 +1040,8 @@
   "name" : "SERIATE v.le Italia 51 Comune",
   "town" : "Seriate",
   "province" : "BG",
-  "lat" : "44.347321",
-  "lon" : "9.3186138"
+  "lat" : "45.684925",
+  "lon" : "9.718227"
 }, {
   "name" : "SERIATE via Brusaporto fr.34",
   "town" : "Seriate",
